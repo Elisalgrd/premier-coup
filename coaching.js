@@ -18,7 +18,7 @@ export function explainMistake(p,after,move,lineIndex=0){
  const replies=after.moves({verbose:true});
  for(const r of replies){const probe=new Chess(after.fen());probe.move(r);if(probe.isCheckmate())return 'Après ton coup, '+r.san.replace(/[KQRBN]/g,c=>({K:'R',Q:'D',R:'T',B:'F',N:'C'}[c]))+' permet à l’adversaire de te mater. Vérifie d’abord les menaces sur ton roi.';}
  const capture=replies.find(r=>r.to===move.to&&r.captured);
- if(capture)return 'Ta pièce ('+names[move.piece]+') en '+move.to+' peut être repris par le '+names[capture.piece]+' depuis '+capture.from+'. Calcule cet échange avant de choisir ta capture. Cherche une suite qui réalise l’objectif.';
+ if(capture)return 'Ta pièce ('+names[move.piece]+') en '+move.to+' peut être reprise par le '+names[capture.piece]+' depuis '+capture.from+'. Calcule cet échange avant de choisir ta capture. Cherche une suite qui réalise l’objectif.';
  if(p.mate||p.mateEnd)return after.isCheck()?'Tu donnes échec, mais il reste '+replies.length+' réponse(s) légale(s). Cherche comment fermer les fuites, les prises et les interpositions.':'Le roi adverse n’est pas en échec. Pour mater, il faut l’attaquer tout en supprimant ses défenses.';
  return 'Ce coup est légal, mais ne réalise pas le plan demandé. '+(p.hints?.[Math.floor(lineIndex/2)]||p.hint||p.objective)+' D’autres coups peuvent être jouables dans une partie : ici, on travaille ce motif précis.';
 }
