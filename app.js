@@ -1,7 +1,7 @@
 import {Chess} from './chess.js';
 import {lessons,puzzles} from './content.js';
 import {strategies} from './advanced.js';
-import {fresh,dayKey,offsetDay,streak,plan,recordPuzzle,recordLesson,recordStudy,recordReflection,validateSave,trainingLessons} from './training.js';
+import {fresh,dayKey,offsetDay,streak,plan,recordPuzzle,recordLesson,recordStudy,recordReflection,validateSave,trainingLessons} from './training.js?v=3';
 let strategyId='italian',studyGame=new Chess(),studyIndex=0,studyAnswer=null,lineIndex=0;
 const $=s=>document.querySelector(s),KEY='premier-coup-v1';
 let storageOK=true,state;
