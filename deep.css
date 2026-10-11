@@ -17,3 +17,12 @@
  .deep-timeline{min-height:26px}
  .deep-playback{margin-top:9px}
 }
+/* Compact phones and large text need a scrolling page rather than clipped controls. */
+@media(max-width:700px) and (max-height:700px){
+ .deep-screen:has(.deep-lesson-layout){height:auto;min-height:100svh;overflow:visible;display:block}
+ .deep-lesson-layout,.deep-conversation{display:block}
+ .deep-visual #deep-board{width:min(100%,40svh)}
+ .deep-conversation #deep-spoken{overflow:visible;min-height:0;padding:0}
+ .deep-conversation .deep-buttons{margin-top:18px}
+ .deep-conversation .deep-quiet{display:block}
+}
