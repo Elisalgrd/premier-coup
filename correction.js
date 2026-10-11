@@ -1,5 +1,5 @@
 import {Chess} from './chess.js';
-import {explainMistake} from './coaching.js?v=7';
+import {explainMistake} from './coaching.js?v=8';
 const fr=s=>s.replace(/[KQRBN]/g,c=>({K:'R',Q:'D',R:'T',B:'F',N:'C'}[c]));
 const points={p:1,n:3,b:3,r:5,q:9,k:0};
 const names={p:'pion',n:'cavalier',b:'fou',r:'tour',q:'dame',k:'roi'};
@@ -7,7 +7,7 @@ export function mistakeReview(p,after,move,index=0){const replies=after.moves({v
  if(!reply){reply=replies.find(r=>r.to===move.to&&r.captured);type='capture';}
  if(!reply&&(p.mate||p.mateEnd)){reply=replies.find(r=>r.piece==='k')||replies[0];type='escape';}
  const frames=[base];if(reply){const g=new Chess(after.fen());g.move(reply);frames.push({fen:g.fen(),title:'L’adversaire peut jouer '+fr(reply.san),text:type==='mate'?'Cette réponse fait échec et mat : ton roi est attaqué et aucun coup ne le sauve. Il fallait répondre à cette menace.':type==='capture'?'Le '+names[reply.piece]+' prend ta pièce en '+reply.to+'. Cette reprise est légale. '+(move.captured?'Sur ces deux coups, tu prends '+points[move.captured]+' point(s) de matériel et tu en donnes '+points[move.piece]+'. ':'Tu donnes '+points[move.piece]+' point(s) de matériel sans capture en échange. ')+'Vérifie les reprises suivantes avant de juger tout l’échange.':'Voilà une défense légale : le roi n’est pas mat. Observe la case de fuite, la capture ou la pièce qui bloque l’attaque.',arrows:[[reply.from,reply.to]],marks:[reply.to]});}
- else if(!after.isStalemate()){frames[0].text='Ce coup est légal. Il ne réalise pas l’objectif travaillé ; cela ne suffit pas à dire qu’il perd la partie. '+(p.objective||p.hint||'Cherche le motif expliqué dans la leçon.');}
+ else if(!after.isStalemate()&&!p.mistakes?.[move.from+move.to+(move.promotion||'')]){frames[0].text='Ce coup est légal. Il ne réalise pas l’objectif travaillé ; cela ne suffit pas à dire qu’il perd la partie. '+(p.objective||p.hint||'Cherche le motif expliqué dans la leçon.');}
  return {frames,index:0};}
 export function renderCorrection(review,boardHtml){const f=review.frames[review.index];return '<section class="correction-screen"><div class="eyebrow">COMPRENDRE TON ESSAI · '+(review.index+1)+' / '+review.frames.length+'</div><h1>'+f.title+'</h1><p class="correction-copy">'+f.text+'</p><div class="correction-board">'+boardHtml(new Chess(f.fen),{arrows:f.arrows,marks:f.marks,interactive:false})+'</div><div class="button-row">'+(review.index?'<button class="btn secondary" data-action="review-prev">← Ton coup</button>':'')+(review.index<review.frames.length-1?'<button class="btn" data-action="review-next">Voir la réponse adverse →</button>':'<button class="btn" data-action="review-retry">Revenir et réessayer →</button>')+'</div><p class="small muted">Ceci est une démonstration. Ta position d’exercice reste sauvegardée pour réessayer.</p></section>';}
 

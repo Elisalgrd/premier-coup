@@ -1,4 +1,6 @@
 const definitions={
+ principe:{title:'Un principe',text:'Un conseil général pour choisir un coup. Vérifie les menaces avant de l’appliquer : ce n’est pas une obligation valable dans toutes les positions.'},
+ finale:{title:'Une finale',text:'La phase où il reste peu de pièces. Le roi peut souvent y participer davantage, si son chemin est sûr.'},
  fourchette:{title:'Fourchette',text:'Une seule pièce attaque deux cibles à la fois. Par exemple, un cavalier menace le roi et la dame : le roi doit être sauvé, puis le cavalier peut prendre la dame.',course:'forks'},
  clouage:{title:'Clouage',text:'Une pièce bloque une attaque contre une pièce située derrière elle. Si c’est son roi, elle n’a pas le droit de bouger en laissant ce roi attaqué.',course:'pins'},
  enfilade:{title:'Enfilade',text:'Deux pièces adverses sont sur la même ligne. Tu attaques celle de devant ; quand elle s’écarte, tu peux prendre celle de derrière. Exemple : une tour donne échec au roi, qui découvre sa dame en bougeant.'},
@@ -15,6 +17,7 @@ const definitions={
  colonne:{title:'Colonne ouverte',text:'Une ligne verticale de huit cases sans aucun pion des deux camps. Une tour peut s’y activer et viser le camp adverse.'}
 };
 export function termsForPuzzle(p){
+ if(p.principle){const key={'king-safety':'roque',center:'developpement',development:'developpement','queen-time':'principe','active-piece':'colonne','king-endgame':'finale'}[p.principle];return [{id:key,...definitions[key],course:p.principle}];}
  const text=[p.id,p.theme,p.title,p.objective].join(' ').toLowerCase();let ids=[];
  if(/fourchette|fork/.test(text))ids.push('fourchette');
  if(/clouage|cloué|pinned|pin-new/.test(text))ids.push('clouage');
