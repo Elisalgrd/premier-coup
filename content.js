@@ -1,7 +1,7 @@
-import {foundationPuzzles} from './foundations.js?v=8';
-import {puzzleBank} from './puzzle-bank.js?v=8';
-import {transferPuzzles} from './academy-positions.js?v=8';
-import {extraPuzzles} from './coaching.js?v=8';
+import {foundationPuzzles} from './foundations.js?v=9';
+import {puzzleBank} from './puzzle-bank.js?v=9';
+import {transferPuzzles} from './academy-positions.js?v=9';
+import {extraPuzzles} from './coaching.js?v=9';
 import {advancedLessons,combinations} from './advanced.js';
 export const lessons=[
 {id:'pieces',title:'Fais connaissance avec tes pièces',tag:'Les bases',time:3,icon:'♘',text:['Ton objectif est de mettre le roi adverse échec et mat : il est attaqué et aucun coup ne permet de le sauver. On ne capture jamais le roi.','La tour avance en ligne droite, le fou en diagonale et la dame combine les deux. Ces pièces ne peuvent pas sauter par-dessus une autre pièce.','Le cavalier fait un L : deux cases dans une direction, puis une sur le côté. Il peut sauter par-dessus les pièces. Le roi avance d’une case, sans entrer sur une case attaquée.','Un pion avance d’une case (ou de deux depuis sa case de départ si le chemin est libre), mais capture une case en diagonale vers l’avant. Il ne recule jamais.'],question:'Quelle pièce peut sauter par-dessus les autres ?',answers:['Le fou','Le cavalier','La tour'],correct:1,why:'Le cavalier est la seule pièce qui saute. Son déplacement en L ne dépend pas des pièces entre son départ et son arrivée.'},
