@@ -1,11 +1,12 @@
-import {validateObservation} from './observation.js?v=16';
-import {validateCoach} from './coach.js?v=16';
-import {validNarrator} from './narrator.js?v=16';
-import {validateLibrary} from './lesson-library.js?v=16';
-import {validateAdaptive} from './adaptive.js?v=16';
-import {validateDrill} from './drills.js?v=16';
-import {validateAcademy} from './academy.js?v=16';
-import {lessons,puzzles} from './content.js?v=16';
+import {validateDeep} from './deep-player.js?v=17';
+import {validateObservation} from './observation.js?v=17';
+import {validateCoach} from './coach.js?v=17';
+import {validNarrator} from './narrator.js?v=17';
+import {validateLibrary} from './lesson-library.js?v=17';
+import {validateAdaptive} from './adaptive.js?v=17';
+import {validateDrill} from './drills.js?v=17';
+import {validateAcademy} from './academy.js?v=17';
+import {lessons,puzzles} from './content.js?v=17';
 import {strategies} from './advanced.js';
 export const trainingLessons=['scan','candidates','fork','pin','opening','italian-plan','black-plan','mate','convert','improve','endgame','review-game'].map(id=>lessons.find(l=>l.id===id));
 const tacticIds=['fork','backrank','remove','fork-finish','pawn-fork','skewer','queen-mate','exchange-chain','ladder','scholar','ladder-two','safe-capture','pinned-defender','fork-transfer','backrank-transfer','avoid-stalemate','italian-center','defend-f7','open-file'];
@@ -47,7 +48,7 @@ export function recordReflection(state,text,today=dayKey()){const d=plan(state,t
 function finish(d){d.complete=d.learned&&d.puzzles.every(id=>d.solved.includes(id))&&(!d.format||(d.studied&&d.reflection.length>=10));}
 export function validateSave(value){
  if(!value||value.version!==1||!Array.isArray(value.lessons)||!value.attempts||!value.days||typeof value.attempts!=='object'||typeof value.days!=='object')throw Error('Format de sauvegarde non reconnu.');
- const s=fresh();if(value.observation)s.observation=validateObservation(value.observation);s.narrator=validNarrator(value.narrator);if(value.coach)s.coach=validateCoach(value.coach);if(value.library)s.library=validateLibrary(value.library);if(value.adaptive)s.adaptive=validateAdaptive(value.adaptive);if(value.drill){const drill=validateDrill(value.drill);if(drill)s.drill=drill;}if(value.academy)s.academy=validateAcademy(value.academy);s.lessons=[...new Set(value.lessons.filter(id=>lessons.some(l=>l.id===id)))];
+ const s=fresh();if(value.deep)s.deep=validateDeep(value.deep);if(value.observation)s.observation=validateObservation(value.observation);s.narrator=validNarrator(value.narrator);if(value.coach)s.coach=validateCoach(value.coach);if(value.library)s.library=validateLibrary(value.library);if(value.adaptive)s.adaptive=validateAdaptive(value.adaptive);if(value.drill){const drill=validateDrill(value.drill);if(drill)s.drill=drill;}if(value.academy)s.academy=validateAcademy(value.academy);s.lessons=[...new Set(value.lessons.filter(id=>lessons.some(l=>l.id===id)))];
  for(const p of puzzles){const a=value.attempts[p.id];if(a&&Number.isSafeInteger(a.solves)&&a.solves>=0&&a.solves<=1e7&&Number.isSafeInteger(a.clean)&&a.clean>=0&&a.clean<=a.solves&&/^\d{4}-\d{2}-\d{2}$/.test(a.last)){const date=x=>typeof x==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x);s.attempts[p.id]={solves:a.solves,clean:a.clean,review:!!a.review,last:a.last,box:Number.isInteger(a.box)&&a.box>=0&&a.box<=4?a.box:0,failures:Number.isSafeInteger(a.failures)&&a.failures>=0?a.failures:0};for(const key of ['due','lastCleanDay','troubledOn'])if(date(a[key]))s.attempts[p.id][key]=a[key];}}
  for(const [key,d] of Object.entries(value.days)){if(!/^\d{4}-\d{2}-\d{2}$/.test(key)||!d||!lessons.some(l=>l.id===d.lesson)||!Array.isArray(d.puzzles)||![3,5].includes(d.puzzles.length)||new Set(d.puzzles).size!==d.puzzles.length||!d.puzzles.every(id=>puzzles.some(p=>p.id===id))||!Array.isArray(d.solved))continue;const clean={lesson:d.lesson,puzzles:d.puzzles,solved:[...new Set(d.solved.filter(id=>d.puzzles.includes(id)))],learned:!!d.learned,complete:false};if(d.format===2){clean.format=2;clean.strategy=strategies.some(x=>x.id===d.strategy)?d.strategy:strategies[0].id;clean.studied=!!d.studied;clean.reflection=typeof d.reflection==='string'?d.reflection.trim().slice(0,600):'';}if(d.curriculum==='tactics-v1')clean.curriculum=d.curriculum;s.days[key]=clean;finish(clean);}
  if(value.game&&Array.isArray(value.game.moves)&&value.game.moves.length<2000&&value.game.moves.every(m=>typeof m==='string'&&m.length<16))s.game={moves:value.game.moves,level:value.game.level==='challenge'?'challenge':'gentle'};

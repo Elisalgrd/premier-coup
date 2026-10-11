@@ -1,6 +1,6 @@
-import {adaptation,difficulty,levelNames} from './adaptive.js?v=16';
-import {puzzles} from './content.js?v=16';
-import {essentialSkills,skillTheme} from './essential-skills.js?v=16';
+import {adaptation,difficulty,levelNames} from './adaptive.js?v=17';
+import {puzzles} from './content.js?v=17';
+import {essentialSkills,skillTheme} from './essential-skills.js?v=17';
 export const drillThemes={mix:{title:'Les essentiels',ids:['safe-capture','capture-new','fork-finish','fork-transfer','pinned-defender','pin-new','backrank','backrank-transfer','queen-mate','queen-mate-new','ladder','defense-guided','defense-new','pawn-fork','skewer','scholar','exchange-chain','ladder-two']},material:{title:'Gagner du matériel',ids:['safe-capture','capture-new','fork-finish','fork-transfer','pinned-defender','pin-new','pawn-fork','skewer','exchange-chain']},mate:{title:'Trouver le mat',ids:['backrank','backrank-transfer','queen-mate','queen-mate-new','ladder','scholar','ladder-two']},defense:{title:'Répondre aux menaces',ids:['defense-guided','defense-new','defend-f7','remove','escape','safe-capture']}};
 
 for(const id of ['rook-queen','bishop-rook','knight-queen','pawn-capture','queen-rook','fork'])for(const theme of ['mix','material'])if(!drillThemes[theme].ids.includes(id))drillThemes[theme].ids.push(id);
@@ -13,7 +13,7 @@ export function focusLevel(state,theme){
  while(level<3&&pool.filter(p=>difficulty(p)===level&&state.attempts[p.id]?.clean>0&&!state.attempts[p.id]?.review).length>=4)level++;
  return level;
 }
-export function createDrill(state,theme='mix',today=new Date().toLocaleDateString('en-CA')){
+export function createDrill(state,theme='mix',today=new Date().toLocaleDateString('en-CA'),{exclude=[]}={}){
  const selected=drillThemes[theme]||drillThemes.mix,level=selected.skill?focusLevel(state,theme):adaptation(state).level;
  const byId=id=>puzzles.find(p=>p.id===id),rank=z=>z?.review?0:z?.due&&z.due<=today?1:!z?2:3;
  const sorted=[...selected.ids].filter(id=>difficulty(byId(id))<=level||state.attempts[id]?.review).sort((a,b)=>{
@@ -22,7 +22,8 @@ export function createDrill(state,theme='mix',today=new Date().toLocaleDateStrin
  // Prefer distinct compositions within each priority bucket, then use their variants.
  const diverse=[];
  for(const priority of [0,1,2,3]){const bucket=sorted.filter(id=>rank(state.attempts[id])===priority),families=new Set(),rest=[];for(const id of bucket){const key=byId(id).variantOf||id;if(families.has(key))rest.push(id);else{families.add(key);diverse.push(id);}}diverse.push(...rest);}
- const ids=(selected.skill?diverse:sorted).slice(0,5);
+ const ordered=selected.skill?diverse:sorted,novel=ordered.filter(id=>!exclude.includes(id));
+ const ids=(novel.length>=5?novel:ordered).slice(0,5);
  return {theme:drillThemes[theme]?theme:'mix',ids,index:0,results:[],date:today};
 }
 export function recordDrill(session,id,assisted){if(!session||session.ids[session.index]!==id)return false;session.results.push({id,assisted:!!assisted});session.index++;delete session.pendingAssisted;return true;}
