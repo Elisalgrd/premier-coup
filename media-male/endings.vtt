@@ -1,0 +1,58 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.585
+Dans cette leçon : Gagner sans provoquer le pat.
+
+00:00:03.585 --> 00:00:07.209
+Ton pion C sept peut se transformer en dame.
+
+00:00:07.209 --> 00:00:10.558
+Mais le roi noir A sept a déjà peu de cases.
+
+00:00:10.558 --> 00:00:14.093
+Vérifie ce qui se passerait après la promotion.
+
+00:00:14.500 --> 00:00:18.565
+Après C huit=D, A huit et A six sont attaquées par
+
+00:00:18.565 --> 00:00:19.304
+la dame.
+
+00:00:19.304 --> 00:00:22.867
+Ton roi contrôle B six et B sept ; B huit
+
+00:00:22.867 --> 00:00:24.811
+est aussi contrôlée par la dame.
+
+00:00:24.811 --> 00:00:27.950
+Le roi noir n’est pourtant pas en échec.
+
+00:00:28.333 --> 00:00:32.667
+Aucun coup légal, mais pas d’échec : la partie est nulle.
+
+00:00:32.667 --> 00:00:37.223
+Une promotion en dame peut donc transformer une victoire possible en
+
+00:00:37.223 --> 00:00:37.637
+nulle.
+
+00:00:38.000 --> 00:00:41.426
+C huit=T laisse A six au roi noir.
+
+00:00:41.426 --> 00:00:43.943
+Il peut jouer roi en A six.
+
+00:00:43.943 --> 00:00:48.196
+Avec roi et tour, tu peux ensuite construire un mat :
+
+00:00:48.196 --> 00:00:50.903
+la partie n’est pas encore gagnée automatiquement.
+
+00:00:51.333 --> 00:00:54.218
+Choisis une tour dans ce cas précis.
+
+00:00:54.218 --> 00:00:58.760
+Dans la plupart des autres positions, une dame reste préférable.
+
+00:00:58.760 --> 00:01:03.168
+Vérifie le pat plutôt que de mémoriser un choix automatique.

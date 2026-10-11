@@ -1,5 +1,5 @@
-import {adaptation,difficulty,levelNames} from './adaptive.js?v=12';
-import {puzzles} from './content.js?v=12';
+import {adaptation,difficulty,levelNames} from './adaptive.js?v=13';
+import {puzzles} from './content.js?v=13';
 export const drillThemes={mix:{title:'Les essentiels',ids:['safe-capture','capture-new','fork-finish','fork-transfer','pinned-defender','pin-new','backrank','backrank-transfer','queen-mate','queen-mate-new','ladder','defense-guided','defense-new','pawn-fork','skewer','scholar','exchange-chain','ladder-two']},material:{title:'Gagner du matériel',ids:['safe-capture','capture-new','fork-finish','fork-transfer','pinned-defender','pin-new','pawn-fork','skewer','exchange-chain']},mate:{title:'Trouver le mat',ids:['backrank','backrank-transfer','queen-mate','queen-mate-new','ladder','scholar','ladder-two']},defense:{title:'Répondre aux menaces',ids:['defense-guided','defense-new','defend-f7','remove','escape','safe-capture']}};
 
 for(const id of ['rook-queen','bishop-rook','knight-queen','pawn-capture','queen-rook','fork'])for(const theme of ['mix','material'])if(!drillThemes[theme].ids.includes(id))drillThemes[theme].ids.push(id);
