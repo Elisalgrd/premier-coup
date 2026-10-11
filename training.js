@@ -1,7 +1,7 @@
-import {validateAdaptive} from './adaptive.js?v=9';
-import {validateDrill} from './drills.js?v=9';
-import {validateAcademy} from './academy.js?v=9';
-import {lessons,puzzles} from './content.js?v=9';
+import {validateAdaptive} from './adaptive.js?v=10';
+import {validateDrill} from './drills.js?v=10';
+import {validateAcademy} from './academy.js?v=10';
+import {lessons,puzzles} from './content.js?v=10';
 import {strategies} from './advanced.js';
 export const trainingLessons=['scan','candidates','fork','pin','opening','italian-plan','black-plan','mate','convert','improve','endgame','review-game'].map(id=>lessons.find(l=>l.id===id));
 const tacticIds=['fork','backrank','remove','fork-finish','pawn-fork','skewer','queen-mate','exchange-chain','ladder','scholar','ladder-two','safe-capture','pinned-defender','fork-transfer','backrank-transfer','avoid-stalemate','italian-center','defend-f7','open-file'];
