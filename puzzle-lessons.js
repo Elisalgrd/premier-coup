@@ -1,4 +1,4 @@
-import {termsForPuzzle} from './glossary.js?v=11';
+import {termsForPuzzle} from './glossary.js?v=12';
 const frame=(title,text,moves=[],arrows=[],marks=[])=>({title,text,moves,arrows,marks});
 export function lessonForPuzzle(p,courses){if(p.principle)return courses.find(c=>c.id===p.principle);const id=p.variantOf||p.id;let course=termsForPuzzle(p)[0]?.course;
  if(['castle','ep','promotion','open-file'].includes(id))return {id:'mini-'+id,title:{castle:'Mettre le roi à l’abri',ep:'La prise en passant',promotion:'Transformer un pion', 'open-file':'Activer une tour'}[id],demo:p.id,guided:p.id,solo:p.id,frames:[frame('Le principe à comprendre',termsForPuzzle(p)[0].text),frame('Observe un exemple',p.why,p.solution.slice(0,1),[[p.solution[0].slice(0,2),p.solution[0].slice(2,4)]])]};

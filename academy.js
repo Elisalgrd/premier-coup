@@ -1,16 +1,16 @@
-import {applyNarration} from './narration.js?v=11';
-import {addReasoning} from './reasoning.js?v=11';
-import {foundationCourses} from './foundations.js?v=11';
-import {mistakeReview,renderCorrection} from './correction.js?v=11';
-import {renderVocabulary} from './glossary.js?v=11';
+import {applyNarration} from './narration.js?v=12';
+import {addReasoning} from './reasoning.js?v=12';
+import {foundationCourses} from './foundations.js?v=12';
+import {mistakeReview,renderCorrection} from './correction.js?v=12';
+import {renderVocabulary} from './glossary.js?v=12';
 import {Chess} from './chess.js';
-import {puzzles} from './content.js?v=11';
-import {explainMistake} from './coaching.js?v=11';
+import {puzzles} from './content.js?v=12';
+import {explainMistake} from './coaching.js?v=12';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const names={p:'pion',n:'cavalier',b:'fou',r:'tour',q:'dame',k:'roi'};
 const glyph={p:'♟',n:'♞',b:'♝',r:'♜',q:'♛',k:'♚'};
 const fr=s=>s.replace(/[KQRBN]/g,c=>({K:'R',Q:'D',R:'T',B:'F',N:'C'}[c]));
-import {transferPuzzles} from './academy-positions.js?v=11';
+import {transferPuzzles} from './academy-positions.js?v=12';
 export {transferPuzzles};
 export function findPuzzle(id){return transferPuzzles.find(p=>p.id===id)||puzzles.find(p=>p.id===id);}
 export function position(p){const g=p.fen?new Chess(p.fen):new Chess();for(const m of p.moves||[])g.move(m);return g;}
@@ -122,7 +122,8 @@ export class CoursePlayer{
  const phase=demo?(this.demoOnly?'Leçon avant l’exercice':'La leçon'):r.stage==='guided'?'Exercice avec aide':r.stage==='solo'?'Exercice sans aide':r.stage==='recall'?'Dernière question':'Leçon terminée';
  let content='';
  if(r.stage==='done'){
-  content=`<section class="course-end"><div class="done-symbol">✓</div><h1>Tu as terminé la leçon.</h1><p class="rule-quote">${esc(c.rule)}</p><p>Continue avec cinq problèmes courts pour t’entraîner.</p><button class="btn full" data-action="daily-challenge">Passer aux 5 problèmes →</button><button class="btn ghost" data-action="aca-exit">Retour à l’accueil</button></section>`;
+  const order=[...coreCourses,...['forks','pins','mates','italian','endings','finish'].map(id=>courses.find(x=>x.id===id))],index=order.findIndex(x=>x.id===c.id),next=[...order.slice(index+1),...order.slice(0,index+1)].find(x=>academyState(this.state).courses[x.id]?.stage!=='done');
+  content=`<section class="course-end"><div class="done-symbol">✓</div><h1>Tu as terminé la leçon.</h1><p class="rule-quote">${esc(c.rule)}</p>${next?`<p>Tu peux continuer maintenant. Prochaine leçon : <strong>${esc(next.title)}</strong>.</p><button class="btn full" data-action="path-next" data-value="${next.id}">Commencer la leçon suivante →</button>`:'<p>Tu as terminé les 14 leçons du parcours. Reviens sur tes erreurs et continue les problèmes pour consolider ces idées.</p>'}<button class="btn secondary full" data-action="daily-challenge">Faire 5 problèmes</button><button class="btn ghost" data-action="aca-exit">Retour au parcours</button></section>`;
  }else if(r.stage==='recall'){
   content=`<section class="recall-card"><span class="mode-chip">RÉPONDS À LA QUESTION</span><h1>${c.question}</h1><p>Touche la réponse qui explique le principe.</p>${c.answers.map((x,i)=>`<button class="answer ${this.questionChoice===i?'wrong':''}" data-action="aca-answer" data-value="${i}">${esc(x)}</button>`).join('')}${this.feedback?`<div class="coach-feedback bad" role="status">${esc(this.feedback)}</div>`:''}<button class="btn ghost" data-action="aca-watch">Revoir la leçon</button></section>`;
  }else{
