@@ -1,6 +1,6 @@
-import {mediaLessons} from './media-library.js?v=14';
+import {mediaLessons} from './media-library.js?v=15';
 export {mediaLessons};
-import {narratorFor,narrationFor,mediaBase,narratorPicker,narrationPosition} from './narrator.js?v=14';
+import {narratorFor,narrationFor,mediaBase,narratorPicker,narrationPosition} from './narrator.js?v=15';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const time=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
 export function libraryState(state){return state.library??={positions:{},notes:{},watched:[]};}

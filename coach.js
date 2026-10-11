@@ -1,7 +1,7 @@
-import {courses,frameGame,boardHtml,findPuzzle} from './academy.js?v=14';
-import {puzzles} from './content.js?v=14';
-import {lessonForPuzzle} from './puzzle-lessons.js?v=14';
-import {narratorFor,narrationFor,mediaBase,narratorPicker} from './narrator.js?v=14';
+import {courses,frameGame,boardHtml,findPuzzle} from './academy.js?v=15';
+import {puzzles} from './content.js?v=15';
+import {lessonForPuzzle} from './puzzle-lessons.js?v=15';
+import {narratorFor,narrationFor,mediaBase,narratorPicker} from './narrator.js?v=15';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const coachCourses=[...courses];
 for(const p of puzzles){const c=lessonForPuzzle(p,courses);if(!coachCourses.some(x=>x.id===c.id))coachCourses.push(c);}
