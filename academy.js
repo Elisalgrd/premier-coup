@@ -1,16 +1,16 @@
-import {applyNarration} from './narration.js?v=13';
-import {addReasoning} from './reasoning.js?v=13';
-import {foundationCourses} from './foundations.js?v=13';
-import {mistakeReview,renderCorrection} from './correction.js?v=13';
-import {renderVocabulary} from './glossary.js?v=13';
+import {applyNarration} from './narration.js?v=14';
+import {addReasoning} from './reasoning.js?v=14';
+import {foundationCourses} from './foundations.js?v=14';
+import {mistakeReview,renderCorrection} from './correction.js?v=14';
+import {renderVocabulary} from './glossary.js?v=14';
 import {Chess} from './chess.js';
-import {puzzles} from './content.js?v=13';
-import {explainMistake} from './coaching.js?v=13';
+import {puzzles} from './content.js?v=14';
+import {explainMistake} from './coaching.js?v=14';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const names={p:'pion',n:'cavalier',b:'fou',r:'tour',q:'dame',k:'roi'};
 const glyph={p:'♟',n:'♞',b:'♝',r:'♜',q:'♛',k:'♚'};
 const fr=s=>s.replace(/[KQRBN]/g,c=>({K:'R',Q:'D',R:'T',B:'F',N:'C'}[c]));
-import {transferPuzzles} from './academy-positions.js?v=13';
+import {transferPuzzles} from './academy-positions.js?v=14';
 export {transferPuzzles};
 export function findPuzzle(id){return transferPuzzles.find(p=>p.id===id)||puzzles.find(p=>p.id===id);}
 export function position(p){const g=p.fen?new Chess(p.fen):new Chess();for(const m of p.moves||[])g.move(m);return g;}
@@ -31,7 +31,7 @@ frame('Il reste à encaisser le gain','Le cavalier prend la dame en d7. Trouver 
 frame('Trois pièces sur une ligne','La tour e1 vise le roi e8. Le cavalier e7 est entre les deux : il bloque cette attaque.',[],[['e1','e8']],['e1','e7','e8']),
 frame('Le cavalier semble défendre d5','Un cavalier e7 attaque normalement d5. Mais ici, quitter e7 laisserait la tour attaquer le roi. Ce déplacement serait illégal.',[],[['e7','d5']],['e7','e8']),
 frame('Tu peux donc prendre le pion','La dame prend d5. Le cavalier ne peut pas répondre en prenant la dame : le roi e8 serait en échec.',['d1d5'],[['d1','d5'],['e1','e8']],['e7']),
-frame('Vérifie toujours ce qu’il y a derrière','Le clouage est absolu parce que la cible derrière le cavalier est le roi. Si c’était une dame, bouger resterait légal, même si cela pouvait coûter cher.',[],[['e1','e8']],['e8'])],question:'Pourquoi ...Cxd5 est-il impossible ici ?',answers:['Le cavalier ne capture jamais une dame.','Cela laisserait le roi noir en échec.','Les noirs doivent déplacer leur roi à chaque tour.'],correct:1,why:'Une pièce peut être un défenseur en apparence, mais ne pas pouvoir reprendre légalement à cause de la sécurité de son roi.'},
+frame('Vérifie toujours ce qu’il y a derrière','Le clouage est absolu parce que la cible derrière le cavalier est le roi. Si c’était une dame, bouger resterait légal, même si cela pouvait coûter cher.',[],[['e1','e8']],['e8'])],question:'Pourquoi le cavalier noir ne peut-il pas reprendre ta dame ?',answers:['Le cavalier ne capture jamais une dame.','Cela laisserait le roi noir en échec.','Les noirs doivent déplacer leur roi à chaque tour.'],correct:1,why:'Une pièce peut être un défenseur en apparence, mais ne pas pouvoir reprendre légalement à cause de la sécurité de son roi.'},
 {id:'mates',title:'Reconnaître le mat du couloir',category:'TACTIQUE · MAT',promise:'Distinguer un simple échec d’un vrai mat.',symbol:'♚',demo:'backrank',guided:'backrank',solo:'backrank-transfer',rule:'Pour vérifier un mat : fuite, capture, interposition.',frames:[
 frame('Le roi est enfermé','Les pions f7, g7 et h7 empêchent le roi g8 de descendre. Ses cases de fuite se trouvent sur la huitième rangée.',[],[],['f7','g7','h7','g8']),
 frame('La tour ferme la rangée','La tour va de d1 à d8. Elle attaque le roi et contrôle toute la huitième rangée.',['d1d8'],[['d8','h8']],['d8','g8']),
@@ -43,7 +43,7 @@ frame('Trouve le prochain objectif','Le pion e5 occupe le centre noir. Jouer d4 
 frame('Prépare avant de pousser','Tu joues c3. Le pion c3 défend maintenant d4. Si un pion noir prend en d4, ton pion c pourra parfois reprendre.',['c2c3'],[['c3','d4']],['c3','d4']),
 frame('Calcule une réponse concrète','Dans cet exemple, les noirs roquent et tu pousses d4. La menace au centre devient réelle. Cette suite est un exemple, pas une obligation pour l’adversaire.',['c2c3','e8g8','d3d4'],[['d4','e5']],['d4']),
 frame('Voilà à quoi servait c3','Après ...exd4, ton pion c3 reprend en d4. Tu gardes deux pions centraux en d4 et e4. Il faudra encore surveiller les captures et développer le fou c1.',['c2c3','e8g8','d3d4','e5d4','c3d4'],[['c3','d4']],['d4','e4']),
-frame('Un plan s’adapte à la réponse','c3 prépare d4 dans cette position calme. Si l’adversaire crée une menace directe, réponds-y d’abord. Aucun ordre de coups ne gagne automatiquement.',[],[['c2','c3'],['d3','d4']],['e4'])],question:'Pourquoi préparer d4 par c3 ?',answers:['Pour soutenir d4 et disposer parfois de cxd4 après un échange.','Pour garantir un mat sur f7.','Pour éviter de regarder le coup adverse.'],correct:0,why:'Un plan relie plusieurs coups à un objectif. c3 soutient la poussée centrale ; tu dois encore calculer les réponses adverses.'},
+frame('Un plan s’adapte à la réponse','c3 prépare d4 dans cette position calme. Si l’adversaire crée une menace directe, réponds-y d’abord. Aucun ordre de coups ne gagne automatiquement.',[],[['c2','c3'],['d3','d4']],['e4'])],question:'Pourquoi préparer la poussée du pion central ?',answers:['Pour soutenir le centre et préparer une reprise après un échange.','Pour garantir un mat sur f7.','Pour éviter de regarder le coup adverse.'],correct:0,why:'Un plan relie plusieurs coups à un objectif. c3 soutient la poussée centrale ; tu dois encore calculer les réponses adverses.'},
 {id:'defense',title:'Déjouer le mat du berger',category:'STRATÉGIE · AVEC LES NOIRS',promise:'Répondre à la menace avant de poursuivre ton plan.',symbol:'♛',demo:'defense-guided',guided:'defense-guided',solo:'defense-new',rule:'Après chaque coup adverse, cherche ce qui vient de changer.',frames:[
 frame('Repère la vraie menace','Tu joues les noirs. La dame h5 et le fou c4 visent f7. Les blancs menacent de prendre en f7 avec leur dame, protégée par le fou.',[],[['h5','f7'],['c4','f7']],['f7']),
 frame('La mauvaise réaction : chasser sans défendre','Jouer ...Cf6 attaquerait la dame, mais laisserait Dxf7 mat. La menace sur ton roi est plus urgente qu’une attaque sur la dame.',[],[['g8','f6'],['h5','f7']],['f7']),

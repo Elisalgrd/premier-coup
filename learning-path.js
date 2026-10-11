@@ -1,4 +1,4 @@
-import {courses,coreCourses,academyState} from './academy.js?v=13';
+import {courses,coreCourses,academyState} from './academy.js?v=14';
 export const pathGroups=[
  {title:'Les réflexes qui changent tes parties',subtitle:'Protéger, observer, développer.',ids:coreCourses.map(c=>c.id)},
  {title:'Gagner du matériel et mater',subtitle:'Fourchettes, clouages et menaces de mat.',ids:['forks','pins','mates']},

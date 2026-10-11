@@ -1,10 +1,10 @@
-import {mediaLessons} from './media-library.js?v=13';
-import {maleMediaLessons} from './media-male-library.js?v=13';
+import {mediaLessons} from './media-library.js?v=14';
+import {maleMediaLessons} from './media-male-library.js?v=14';
 
 export const validNarrator=value=>value==='female'?'female':'male';
 export const narratorFor=state=>validNarrator(state.narrator);
 export const narrationFor=(id,voice)=> (validNarrator(voice)==='male'?maleMediaLessons:mediaLessons).find(c=>c.id===id);
-export const mediaBase=(id,voice)=>`./${validNarrator(voice)==='male'?'media-male':'media'}/${id}`;
+export const mediaBase=(id,voice)=>`./${validNarrator(voice)==='male'?'media-male-neural':'media'}/${id}`;
 export function narratorPicker(state,id){
  return `<label class="narrator-choice" for="${id}"><span>Voix du coach</span><select id="${id}"><option value="male" ${narratorFor(state)==='male'?'selected':''}>Homme · français</option><option value="female" ${narratorFor(state)==='female'?'selected':''}>Femme · français</option></select></label>`;
 }

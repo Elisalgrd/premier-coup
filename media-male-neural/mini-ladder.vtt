@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00:00.102 --> 00:00:02.163
+Tes deux tours vont se partager le travail
+
+00:00:03.067 --> 00:00:06.211
+L’une peut fermer une rangée pour empêcher le roi noir de descendre
+
+00:00:07.101 --> 00:00:09.716
+L’autre pourra ensuite donner échec sur la rangée du haut
+
+00:00:10.619 --> 00:00:12.384
+On appelle cela le mat de l’escalier
+
+00:00:13.273 --> 00:00:16.108
+Repère d’abord la tour la plus haute c’est elle qui va couper
+
+00:00:16.121 --> 00:00:16.753
+les sorties
+
+00:00:18.866 --> 00:00:20.373
+Regarde la tour la plus haute
+
+00:00:21.277 --> 00:00:23.777
+Cette tour monte d’une case et coupe les sorties vers le bas
+
+00:00:24.666 --> 00:00:27.630
+Les noirs doivent jouer leur roi se déplace vers la gauche
+
+00:00:28.532 --> 00:00:30.207
+Il reste sur la dernière rangée
+
+00:00:31.096 --> 00:00:33.751
+L’autre tour pourra maintenant s’occuper de cette rangée
+
+00:00:34.653 --> 00:00:37.746
+Tu dois toujours regarder la réponse adverse avant ton deuxième coup
+
+00:00:39.866 --> 00:00:42.597
+C’est au tour de la deuxième tour tout à gauche
+
+00:00:43.501 --> 00:00:46.104
+Cette tour monte sur la dernière rangée et donne échec
+
+00:00:47.006 --> 00:00:49.996
+L’une attaque le roi l’autre lui interdit de descendre
+
+00:00:50.885 --> 00:00:52.998
+Le roi est trop loin pour prendre une tour
+
+00:00:53.888 --> 00:00:55.950
+Il n’a plus de défense c’est mat
