@@ -1,8 +1,8 @@
-import {renderSongReference} from './song-method.js?v=17';
-import {courses,frameGame,boardHtml,findPuzzle} from './academy.js?v=17';
-import {puzzles} from './content.js?v=17';
-import {lessonForPuzzle} from './puzzle-lessons.js?v=17';
-import {narratorFor,narrationFor,mediaBase,narratorPicker} from './narrator.js?v=17';
+import {renderSongReference} from './song-method.js?v=18';
+import {courses,frameGame,boardHtml,findPuzzle} from './academy.js?v=18';
+import {puzzles} from './content.js?v=18';
+import {lessonForPuzzle} from './puzzle-lessons.js?v=18';
+import {narratorFor,narrationFor,mediaBase,narratorPicker} from './narrator.js?v=18';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const coachCourses=[...courses];
 for(const p of puzzles){const c=lessonForPuzzle(p,courses);if(!coachCourses.some(x=>x.id===c.id))coachCourses.push(c);}

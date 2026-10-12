@@ -1,0 +1,394 @@
+WEBVTT
+
+00:00:00.102 --> 00:00:01.996
+On peut donner beaucoup d’échecs sans gagner
+
+00:00:02.887 --> 00:00:05.296
+Faire échec c’est attaquer le roi maintenant
+
+00:00:06.198 --> 00:00:09.626
+Faire mat c’est l’attaquer sans lui laisser aucune défense légale
+
+00:00:10.515 --> 00:00:13.930
+Nous allons donc regarder les portes de sortie et pas seulement trouver
+
+00:00:13.943 --> 00:00:15.026
+un coup qui fait du bruit
+
+00:00:15.915 --> 00:00:18.479
+Sur cette position le roi noir est dans le coin en haut
+
+00:00:18.492 --> 00:00:20.129
+à droite derrière trois pions
+
+00:00:21.031 --> 00:00:23.441
+Ta tour blanche est tout en bas un peu à gauche du
+
+00:00:23.454 --> 00:00:23.892
+milieu
+
+00:00:24.781 --> 00:00:26.186
+La ligne devant elle est vide
+
+00:00:27.075 --> 00:00:30.039
+Quand un roi est en échec son camp peut essayer trois familles
+
+00:00:30.052 --> 00:00:33.518
+de réponses déplacer le roi sur une case sûre prendre la pièce
+
+00:00:33.531 --> 00:00:36.160
+qui attaque ou bloquer sa ligne avec une pièce
+
+00:00:37.062 --> 00:00:39.768
+Le blocage ne marche pas contre une attaque de cavalier ou une
+
+00:00:39.781 --> 00:00:41.881
+attaque de très près sans case intermédiaire
+
+00:00:42.783 --> 00:00:45.490
+Tu n’as pas besoin de réciter ces mots à toute vitesse
+
+00:00:46.392 --> 00:00:48.608
+Prends chaque possibilité une par une
+
+00:00:49.497 --> 00:00:51.559
+C’est plus fiable que de te dire que le roi a l’air
+
+00:00:51.572 --> 00:00:52.126
+coincé
+
+00:00:53.942 --> 00:00:56.287
+Regarde les trois pions noirs juste devant leur roi
+
+00:00:57.178 --> 00:01:00.154
+Ils occupent les trois cases vers lesquelles le roi pourrait descendre
+
+00:01:01.044 --> 00:01:03.350
+Un roi ne peut pas aller sur une case occupée par une
+
+00:01:03.363 --> 00:01:04.214
+pièce de son camp
+
+00:01:05.116 --> 00:01:07.680
+À gauche et à droite il lui reste des cases sur sa
+
+00:01:07.693 --> 00:01:08.157
+rangée
+
+00:01:09.059 --> 00:01:11.984
+Notre idée est donc de contrôler cette rangée avec la tour
+
+00:01:12.874 --> 00:01:15.657
+Les pions bloquent les portes de devant la tour va fermer les
+
+00:01:15.670 --> 00:01:16.701
+portes sur les côtés
+
+00:01:17.590 --> 00:01:19.794
+Suis la flèche verticale depuis ta tour
+
+00:01:20.683 --> 00:01:22.487
+La tour monte au fond du camp noir
+
+00:01:23.389 --> 00:01:26.688
+Elle attaque maintenant le roi en ligne droite sur la dernière rangée
+
+00:01:27.590 --> 00:01:30.451
+Elle contrôle aussi les cases sur lesquelles il voudrait se décaler
+
+00:01:31.340 --> 00:01:32.822
+Le roi est bien en échec
+
+00:01:33.724 --> 00:01:36.946
+Maintenant nous allons vérifier les défenses au lieu de conclure trop
+
+00:01:36.959 --> 00:01:37.410
+vite
+
+00:01:38.299 --> 00:01:41.340
+Ce motif s’appelle le mat du couloir le roi est enfermé dans
+
+00:01:41.353 --> 00:01:44.123
+une rangée par ses propres pions et par la pièce qui attaque
+
+00:01:45.942 --> 00:01:48.016
+Première question le roi peut-il fuir
+
+00:01:48.920 --> 00:01:51.626
+Les cases à gauche et à droite sont attaquées par la tour
+
+00:01:52.515 --> 00:01:55.221
+Les trois cases devant lui sont occupées par ses propres pions
+
+00:01:56.124 --> 00:01:58.211
+Il ne peut pas sortir de l’échiquier par le haut
+
+00:01:59.100 --> 00:02:01.549
+Deuxième question peut-on prendre notre tour
+
+00:02:02.451 --> 00:02:05.105
+Le roi est trop loin et les pions ne peuvent pas capturer
+
+00:02:05.118 --> 00:02:07.142
+une pièce située derrière eux sur cette rangée
+
+00:02:08.044 --> 00:02:11.446
+Dans cette position simplifiée il n’y a pas d’autre pièce noire pour
+
+00:02:11.459 --> 00:02:12.077
+la prendre
+
+00:02:12.966 --> 00:02:16.033
+Troisième question peut-on mettre une pièce entre la tour et le roi
+
+00:02:16.935 --> 00:02:19.848
+Les noirs n’ont ici aucune pièce capable de venir sur les cases
+
+00:02:19.861 --> 00:02:20.466
+entre les deux
+
+00:02:21.368 --> 00:02:24.165
+Les pions avancent vers le bas pas vers leur propre rangée du
+
+00:02:24.178 --> 00:02:24.461
+fond
+
+00:02:25.363 --> 00:02:27.373
+Aucune des trois défenses ne fonctionne
+
+00:02:28.263 --> 00:02:30.763
+C’est donc bien mat et la partie est terminée
+
+00:02:31.652 --> 00:02:34.139
+Le même coup de tour ne serait pas forcément mat si un
+
+00:02:34.152 --> 00:02:36.613
+fou pouvait bloquer la ligne ou si le roi avait une sortie
+
+00:02:36.626 --> 00:02:37.013
+sûre
+
+00:02:38.846 --> 00:02:40.147
+Nous changeons de position
+
+00:02:41.051 --> 00:02:43.937
+Ta dame est en bas proche du milieu et le roi noir
+
+00:02:43.950 --> 00:02:46.038
+est encore derrière ses trois pions en haut à droite
+
+00:02:46.940 --> 00:02:50.174
+D’autres pièces sont présentes ce n’est plus le petit dessin vide
+
+00:02:51.064 --> 00:02:53.499
+Regarde le passage vertical devant la dame
+
+00:02:54.401 --> 00:02:56.167
+La dame rejoint la rangée du roi
+
+00:02:57.056 --> 00:02:59.092
+Elle attaque horizontalement comme une tour
+
+00:02:59.981 --> 00:03:02.803
+Le motif du couloir peut donc être réalisé par une tour ou
+
+00:03:02.816 --> 00:03:06.257
+une dame si le chemin est libre et les défenses sont insuffisantes
+
+00:03:07.159 --> 00:03:10.200
+Cette fois encore il faut vérifier les pièces restantes
+
+00:03:11.102 --> 00:03:14.659
+La tour noire sur la gauche ne peut pas capturer notre dame
+
+00:03:14.672 --> 00:03:16.154
+ni se placer entre elle et le roi
+
+00:03:17.043 --> 00:03:19.440
+Le fou noir ne peut pas non plus bloquer cette ligne
+
+00:03:20.342 --> 00:03:22.455
+Les pions du roi ferment toujours ses sorties
+
+00:03:23.344 --> 00:03:27.069
+Ce contrôle est essentiel reconnaître un dessin te donne une idée mais
+
+00:03:27.082 --> 00:03:29.955
+seule l’analyse des réponses te permet de dire c’est mat
+
+00:03:30.857 --> 00:03:32.326
+Tu vas t’entraîner à faire les deux
+
+00:03:34.146 --> 00:03:37.419
+Regarde cette finale le roi noir est dans le coin supérieur droit
+
+00:03:38.309 --> 00:03:41.054
+Ta dame blanche est juste en dessous et à gauche et ton
+
+00:03:41.067 --> 00:03:42.601
+roi blanc se trouve à côté d’elle
+
+00:03:43.490 --> 00:03:46.145
+La dame peut venir tout près du roi noir pour fermer ses
+
+00:03:46.157 --> 00:03:46.673
+sorties
+
+00:03:47.575 --> 00:03:49.521
+Mais elle ne doit pas s’offrir gratuitement
+
+00:03:50.423 --> 00:03:53.786
+Regarde la case entourée au-dessus de la dame ton roi blanc protège
+
+00:03:53.799 --> 00:03:55.023
+cette case en diagonale
+
+00:03:55.913 --> 00:03:58.683
+C’est la coopération entre ton roi et ta dame qui rend l’approche
+
+00:03:58.696 --> 00:03:59.070
+sûre
+
+00:03:59.972 --> 00:04:02.137
+La dame monte d’une case près du roi noir
+
+00:04:03.039 --> 00:04:04.946
+Elle donne échec et contrôle ses sorties
+
+00:04:05.848 --> 00:04:08.593
+Le roi noir voudrait prendre la dame mais la case de la
+
+00:04:08.606 --> 00:04:10.075
+dame est protégée par ton roi
+
+00:04:10.964 --> 00:04:13.799
+Ce serait entrer dans une attaque donc c’est interdit
+
+00:04:14.688 --> 00:04:17.395
+Cette fois ton roi aide directement à faire mat.
+
+00:04:18.297 --> 00:04:20.294
+Tu vois pourquoi on ne peut pas dire que le roi ne
+
+00:04:20.307 --> 00:04:21.312
+sert qu’à se cacher
+
+00:04:22.214 --> 00:04:24.598
+Son rôle dépend des pièces qui restent et des dangers de la
+
+00:04:24.611 --> 00:04:25.204
+position
+
+00:04:27.046 --> 00:04:28.618
+Un autre exemple de finale
+
+00:04:29.508 --> 00:04:32.253
+Ton pion blanc est tout près de la dernière rangée ton roi
+
+00:04:32.266 --> 00:04:34.405
+le soutient et le roi noir est sur le bord gauche
+
+00:04:35.307 --> 00:04:38.310
+Tu pourrais être tentée de choisir automatiquement une dame en faisant
+
+00:04:38.323 --> 00:04:39.032
+la promotion
+
+00:04:39.934 --> 00:04:41.545
+Je transforme le pion en dame
+
+00:04:42.447 --> 00:04:44.728
+Regarde le roi noir il n’est pas attaqué
+
+00:04:45.617 --> 00:04:48.864
+Pourtant il n’a plus de case légale et il n’a aucune autre
+
+00:04:48.877 --> 00:04:49.599
+pièce à jouer
+
+00:04:50.488 --> 00:04:53.645
+Ce n’est pas un mat c’est un pat donc une partie nulle
+
+00:04:54.534 --> 00:04:56.828
+La distinction est simple et très importante
+
+00:04:57.730 --> 00:05:02.266
+Roi attaqué aucune défense mat. Roi non attaqué aucun coup légal pour
+
+00:05:02.279 --> 00:05:03.362
+son camp pat
+
+00:05:04.264 --> 00:05:07.782
+Avec un gros avantage ne ferme pas toutes les sorties sans vérifier
+
+00:05:07.794 --> 00:05:08.426
+l’échec
+
+00:05:09.328 --> 00:05:12.588
+Dans cette position une promotion en tour aurait laissé une case au
+
+00:05:12.601 --> 00:05:14.457
+roi et conservé une finale gagnante
+
+00:05:15.359 --> 00:05:18.452
+Tu n’as pas à apprendre toutes les promotions maintenant retiens qu’une
+
+00:05:18.465 --> 00:05:21.209
+pièce plus puissante n’est pas automatiquement le meilleur choix si
+
+00:05:21.222 --> 00:05:22.240
+elle provoque le pat
+
+00:05:24.054 --> 00:05:26.476
+Reprenons le motif du couloir une dernière fois
+
+00:05:27.367 --> 00:05:30.022
+Les pions noirs bloquent leur roi la ligne de ta tour est
+
+00:05:30.034 --> 00:05:33.385
+libre et aucune défense ne peut interrompre son attaque après son
+
+00:05:33.398 --> 00:05:33.926
+arrivée
+
+00:05:34.815 --> 00:05:37.457
+Dans tes parties ces trois indices peuvent t’alerter
+
+00:05:38.346 --> 00:05:41.800
+Mais surveille aussi ton propre roi s’il est enfermé derrière ses pions
+
+00:05:42.148 --> 00:05:44.068
+une tour adverse pourrait avoir la même idée
+
+00:05:44.957 --> 00:05:48.050
+Avant de gagner un pion à l’autre bout du plateau vérifie que
+
+00:05:48.063 --> 00:05:50.060
+tu n’offres pas ce mat à ton adversaire
+
+00:05:50.949 --> 00:05:53.411
+Tu as maintenant une méthode pour finir une attaque
+
+00:05:54.313 --> 00:05:59.197
+Cherche un échec puis fais le tour des défenses fuite capture blocage
+
+00:06:00.099 --> 00:06:03.656
+Si l’une fonctionne la partie continue il faut chercher mieux ou
+
+00:06:03.669 --> 00:06:04.854
+améliorer ta position
+
+00:06:05.756 --> 00:06:08.076
+Si aucune ne fonctionne tu as le mat.
+
+00:06:08.978 --> 00:06:10.743
+Le quiz va tester cette logique
+
+00:06:11.645 --> 00:06:15.576
+Ensuite nous ferons le premier mat ensemble puis plusieurs positions te
+
+00:06:15.589 --> 00:06:18.436
+demanderont de reconnaître le motif avec d’autres pièces et parfois
+
+00:06:18.449 --> 00:06:19.274
+avec les noirs

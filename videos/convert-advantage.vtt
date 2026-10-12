@@ -1,0 +1,202 @@
+WEBVTT
+
+00:00:00.102 --> 00:00:01.455
+Tu joues les blancs en bas
+
+00:00:02.358 --> 00:00:04.678
+Les deux camps ont un roi une tour et trois pions
+
+00:00:05.580 --> 00:00:07.629
+Tu as en plus un fou au milieu à gauche
+
+00:00:08.531 --> 00:00:12.178
+C’est un avantage matériel tu disposes d’une pièce supplémentaire
+
+00:00:13.080 --> 00:00:15.606
+Mais le roi noir n’est pas mat et ta propre tour peut
+
+00:00:15.619 --> 00:00:16.624
+encore être perdue
+
+00:00:17.526 --> 00:00:20.747
+Une position favorable demande encore des décisions précises
+
+00:00:21.637 --> 00:00:24.304
+Regarde les deux tours face à face sur une colonne libre
+
+00:00:25.193 --> 00:00:27.745
+Les échanger retirerait la pièce noire la plus puissante et
+
+00:00:27.758 --> 00:00:29.356
+conserverait ton fou de plus
+
+00:00:30.258 --> 00:00:33.170
+Ce type d’échange peut rendre la suite plus facile à contrôler
+
+00:00:34.059 --> 00:00:36.662
+Il faut quand même vérifier qui reprend et quelles pièces restent
+
+00:00:36.933 --> 00:00:39.987
+échanger automatiquement pourrait parfois supprimer ton dernier moyen
+
+00:00:40.000 --> 00:00:40.515
+de gagner
+
+00:00:42.326 --> 00:00:45.547
+Dans cette position précise ta tour prend la tour noire et donne
+
+00:00:45.560 --> 00:00:46.153
+échec
+
+00:00:47.056 --> 00:00:50.330
+Regarde la colonne entièrement libre rien ne bloquait le passage
+
+00:00:51.232 --> 00:00:54.556
+Le roi noir est trop loin pour reprendre immédiatement donc ici cette
+
+00:00:54.569 --> 00:00:58.023
+capture gagne même la tour au lieu de provoquer un simple échange
+
+00:00:58.925 --> 00:01:02.301
+Vérifier les distances change complètement l’évaluation de la capture
+
+00:01:03.203 --> 00:01:06.180
+Le roi noir se décale vers le coin en descendant d’une case
+
+00:01:07.082 --> 00:01:09.028
+C’est une réponse légale à l’échec
+
+00:01:09.930 --> 00:01:12.572
+Tu as désormais une tour et un fou de plus mais tu
+
+00:01:12.585 --> 00:01:14.544
+dois continuer à protéger tes pièces
+
+00:01:15.446 --> 00:01:18.191
+Le but de cet exemple était de te faire regarder la reprise
+
+00:01:18.203 --> 00:01:21.335
+réelle une tour en face d’une autre n’est pas forcément protégée
+
+00:01:23.134 --> 00:01:26.136
+Nouvel exemple le roi noir se trouve cette fois juste à côté
+
+00:01:26.149 --> 00:01:26.948
+de sa tour
+
+00:01:27.839 --> 00:01:29.901
+Ta tour prend la tour noire et donne échec
+
+00:01:30.803 --> 00:01:33.895
+Le trajet est le même mais la distance du roi a changé
+
+00:01:34.785 --> 00:01:37.130
+Ne mémorise pas seulement la forme de la capture
+
+00:01:38.032 --> 00:01:41.215
+Cherche toujours le défenseur qui pourra reprendre dans la position que
+
+00:01:41.228 --> 00:01:42.117
+tu as devant toi
+
+00:01:43.019 --> 00:01:44.643
+Le roi noir reprend ta tour
+
+00:01:45.532 --> 00:01:48.496
+Les deux tours ont disparu et tu conserves ton fou de plus
+
+00:01:48.509 --> 00:01:50.210
+avec autant de pions que l’adversaire
+
+00:01:51.099 --> 00:01:54.630
+Cet échange a réduit les possibilités d’échecs lointains contre ton roi
+
+00:01:55.532 --> 00:01:56.962
+Il n’a pas terminé la partie
+
+00:01:57.864 --> 00:02:00.957
+Tu vas maintenant devoir utiliser ton roi ton fou et tes pions
+
+00:02:00.970 --> 00:02:01.511
+ensemble
+
+00:02:03.334 --> 00:02:05.434
+Ton roi se rapproche du centre d’une case
+
+00:02:06.338 --> 00:02:09.095
+Quand les dames et les tours ont disparu le danger change
+
+00:02:09.997 --> 00:02:13.503
+Ton roi peut souvent participer à condition de ne jamais entrer sur
+
+00:02:13.516 --> 00:02:14.405
+une case attaquée
+
+00:02:15.294 --> 00:02:18.670
+Il peut soutenir des pions empêcher le roi adverse d’avancer et aider
+
+00:02:18.683 --> 00:02:20.616
+à créer un pion qui progresse jusqu’au bout
+
+00:02:21.505 --> 00:02:24.095
+Ton fou peut contrôler des diagonales pendant que le roi aide les
+
+00:02:24.108 --> 00:02:24.418
+pions
+
+00:02:25.320 --> 00:02:27.987
+Ne donne pas ton fou pour un pion sans raison simplement parce
+
+00:02:28.000 --> 00:02:29.018
+que tu veux aller vite
+
+00:02:29.920 --> 00:02:32.768
+Avant un échange de pions demande-toi ce qui restera
+
+00:02:33.657 --> 00:02:35.771
+Un roi et un fou seuls ne peuvent pas mater un roi
+
+00:02:35.784 --> 00:02:38.296
+seul garder des pions peut donc être essentiel
+
+00:02:40.134 --> 00:02:43.484
+Quand tu as gagné du matériel ton adversaire cherchera souvent des
+
+00:02:43.497 --> 00:02:46.190
+menaces des fourchettes ou un pat pour se sauver
+
+00:02:47.081 --> 00:02:49.156
+Continue ton petit contrôle avant chaque coup
+
+00:02:50.045 --> 00:02:50.934
+Qu’attaque-t-il
+
+00:02:51.836 --> 00:02:53.808
+Ma pièce supplémentaire est-elle protégée
+
+00:02:54.710 --> 00:02:56.488
+Mon coup lui donne-t-il un échec dangereux
+
+00:02:57.390 --> 00:03:00.406
+Tu n’as pas besoin d’un sacrifice spectaculaire pour valoriser un
+
+00:03:00.419 --> 00:03:01.681
+avantage déjà présent
+
+00:03:02.584 --> 00:03:05.767
+Ton plan pratique est d’améliorer les pièces limiter les menaces
+
+00:03:05.779 --> 00:03:09.091
+adverses et choisir les échanges qui gardent un avantage exploitable
+
+00:03:09.980 --> 00:03:13.086
+Les pions ne s’échangent pas tous automatiquement ils peuvent être ta
+
+00:03:13.099 --> 00:03:14.401
+réserve de futures dames
+
+00:03:15.303 --> 00:03:18.022
+Rejoins ensuite le grand cours sur le plan et l’avantage pour
+
+00:03:18.035 --> 00:03:21.153
+travailler l’activité du roi les tours et la fin de partie
