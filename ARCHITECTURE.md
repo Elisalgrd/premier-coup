@@ -57,3 +57,5 @@ La banque de repérage stratégique contient aussi 1 440 exercices : 180 positio
 L’analyse utilise un signal d’annulation vérifié après chaque recherche. `analysisStatus` distingue une interruption ; `autoAnalyze` est consommé seulement après succès. Toute partie sans rapport reste visible, même si une ancienne version avait déjà consommé son drapeau.
 
 Chaque série conserve son identifiant, son score et le classement de départ dans son instantané. `entries[id].lastSeries` garde le bilan ; les exercices de repérage n’inventent pas de variation du classement. `masteryHint` explique les mêmes premières rencontres et fenêtres de 15 que `entryStatus`, sans modifier la règle.
+
+`capturedPieces` lit les captures dans l’historique ; son écart compare le matériel présent sur le plateau, donc respecte les promotions et positions personnalisées. `playerStrip` et `PlayerBoard` sont partagés entre jeu, moments analysés et relecture des imports. Les variantes du rapport conservent l’historique précédant le coup étudié.

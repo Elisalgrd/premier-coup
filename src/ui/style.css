@@ -1877,3 +1877,17 @@ html[data-theme="dark"] .demo-comment {
 .lesson-receipt { text-align: left; background: var(--paper, #f4f6ef); border: 1px solid #c8d6bc; border-radius: 16px; padding: 1.2rem; margin: 1rem 0; }
 .lesson-receipt h2 { font-size: 1.25rem; margin-top: 0; }
 .mastery-hint { font-size: .85rem; color: #435b36; line-height: 1.5; }
+
+.player-strip { display: flex; align-items: center; gap: .6rem; padding: .65rem .25rem; min-height: 62px; min-width: 0; }
+.player-identity { display: grid; gap: .1rem; min-width: 0; max-width: 38%; }
+.player-identity strong { overflow-wrap: anywhere; font-size: .9rem; }
+.player-identity small { color: var(--muted); font-size: .72rem; }
+.captured-pieces { display: flex; flex: 1; flex-wrap: wrap; gap: .2rem; align-items: center; }
+.captured-group { display: inline-flex; align-items: center; }
+.captured-group .piece { width: 18px; height: 21px; display: inline-block; filter: none; }
+.captured-group .piece svg { width: 100%; height: 100%; }
+.captured-group small { font-size: .68rem; }
+.player-clock { padding: .3rem .5rem; border-radius: 6px; background: #e7eade; font-variant-numeric: tabular-nums; font-size: 1.1rem; }
+.to-play .player-clock { background: #244d39; color: white; }
+.material-advantage { color: #315b3d; font-size: .9rem; }
+.game-list article { flex-wrap: wrap; gap: .65rem; }
