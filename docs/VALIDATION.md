@@ -39,3 +39,5 @@ Stockfish analyse 40 coups de l’élève à profondeur 12 en 5,44 secondes sur 
 - La classification des motifs de partie utilise des heuristiques ; l’évaluation et la variante proviennent du moteur.
 
 Les données personnelles restent locales. Aucune migration n’efface la sauvegarde v1.
+
+Le contenu courant de l’application occupe environ 83 Mo. GitHub indique environ 190 Mo pour le dépôt avec son historique : le critère de 150 Mo n’est donc pas satisfait pour un clone complet. Les anciennes versions ne sont pas purgées.
