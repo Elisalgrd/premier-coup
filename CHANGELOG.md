@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.0
+
+- Bilan sauvegardé à la fin des séries : réussites au premier essai, évolution du classement et statut de la leçon.
+- La condition manquante pour valider la leçon est expliquée dans le bilan, À retenir et le catalogue.
+- Confirmation discrète après sauvegarde, avec reprise des compteurs de série après fermeture. Les règles de maîtrise restent inchangées.
+
 ## 2.1.3
 
 - Une analyse interrompue reste à faire, même après avoir quitté son écran.

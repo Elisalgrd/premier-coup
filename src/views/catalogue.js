@@ -1,3 +1,4 @@
+import { masteryHint } from "../learn/mastery.js";
 import { entryStatus, statusLabel } from "../state/schema.js";
 import { esc } from "../ui/helpers.js";
 export const tiers = [
@@ -12,7 +13,7 @@ export function entryCard(e, state) {
     attempts = state.history.filter(
       (x) => x.entryId === e.id && !x.review,
     ).length;
-  return `<a class="entry-card" href="#lesson/${e.id}"><span class="priority ${e.priority}">${e.priority}</span><div><small>${esc(e.domain)} · NIVEAU ${e.tier}</small><h3>${esc(e.title)}</h3><p>${esc(e.principle)}</p><span class="status ${status}">${statusLabel[status]}</span>${attempts ? `<span class="attempt-count">${attempts} positions travaillées</span>` : ""}<progress max="15" value="${status === "mastered" ? 15 : Math.min(15, attempts)}" aria-label="Pratique de ${esc(e.title)}"></progress></div><span aria-hidden="true">↗</span></a>`;
+  return `<a class="entry-card" href="#lesson/${e.id}"><span class="priority ${e.priority}">${e.priority}</span><div><small>${esc(e.domain)} · NIVEAU ${e.tier}</small><h3>${esc(e.title)}</h3><p>${esc(e.principle)}</p><span class="status ${status}">${statusLabel[status]}</span>${attempts ? `<span class="attempt-count">${attempts} positions travaillées</span>` : ""}${status === "practice" ? `<p class="mastery-hint">${esc(masteryHint(state, e))}</p>` : ""}<progress max="15" value="${status === "mastered" ? 15 : Math.min(15, attempts)}" aria-label="Pratique de ${esc(e.title)}"></progress></div><span aria-hidden="true">↗</span></a>`;
 }
 export function catalogueView(entries, state, filters = {}) {
   let filtered = entries.filter(

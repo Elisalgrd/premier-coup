@@ -1,0 +1,53 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { emptyState, entryStatus, validateState } from "../src/state/schema.js";
+import { masteryHint, lessonReceipt, saveSeries } from "../src/learn/mastery.js";
+import { PuzzlePlayer } from "../src/learn/puzzle-player.js";
+const entry = { id: "tac-fork", prerequisites: [] };
+const stateWith = (n = 15, correct = 13) => {
+  const state = emptyState();
+  state.entries[entry.id] = { viewedAt: "2026-10-12" };
+  state.history = Array.from({ length: n }, (_, i) => ({ puzzleId: String(i), entryId: entry.id, clean: i < correct, day: "2026-10-12" }));
+  return state;
+};
+test("13/15 on one day explains the remaining day without changing mastery", () => {
+  const state = stateWith(), original = structuredClone(state);
+  assert.equal(entryStatus(state, entry), "practice");
+  assert.match(masteryHint(state, entry, "2026-10-12"), /Encore 1 jour.*demain/);
+  assert.match(masteryHint(state, entry, "2026-10-13"), /aujourd’hui/);
+  assert.deepEqual(state, original);
+  state.history[14].day = "2026-10-13";
+  assert.equal(entryStatus(state, entry), "mastered");
+  assert.match(masteryHint(state, entry), /Leçon validée/);
+});
+test("missing positions, repeated problems, reviews and insufficient accuracy get honest hints", () => {
+  const state = stateWith(10);
+  state.history.push(...state.history, ...state.history.map((h) => ({ ...h, review: true, puzzleId: "review:" + h.puzzleId })));
+  assert.match(masteryHint(state, entry), /Encore 5 positions/);
+  const weak = stateWith(15, 8);
+  assert.match(masteryHint(weak, entry), /8 réussites.*Vise 12/);
+  weak.entries[entry.id].masteredAt = "2026-10-01";
+  weak.history.push(...weak.history.slice(0, 5).map((h, i) => ({ ...h, puzzleId: "fail" + i, clean: false })));
+  assert.equal(entryStatus(weak, entry), "review");
+  assert.match(masteryHint(weak, entry), /13 réussites sur tes 20 derniers/);
+});
+test("series receipt and initial rating survive a backup and a resumed series", async () => {
+  const state = stateWith();
+  let saves = 0;
+  const ctx = { state, entries: [entry], save: async () => saves++ };
+  const series = { id: "series1", clean: 13, total: 15, ratingBefore: 903, ratingAfter: 938 };
+  await saveSeries(ctx, entry.id, series);
+  await saveSeries(ctx, entry.id, series);
+  assert.equal(saves, 1);
+  const restored = validateState(state);
+  assert.match(lessonReceipt(restored, entry), /13 \/ 15/);
+  assert.match(lessonReceipt(restored, entry), /903 → 938/);
+  state.exercise = { scope: "lesson:tac-fork", batch: { id: "series2", rows: [], position: 2, cleanCount: 1, ratingBefore: 938 } };
+  const player = new PuzzlePlayer(ctx, [], {}, { scope: "lesson:tac-fork" });
+  assert.equal(player.batchId, "series2");
+  assert.equal(player.ratingBefore, 938);
+  assert.equal(player.cleanCount, 1);
+  await saveSeries(ctx, entry.id, { id: "drill1", total: 10, clean: 7 });
+  assert.match(lessonReceipt(state, entry), /ne changent pas ton classement/);
+  assert.doesNotMatch(lessonReceipt(state, entry), /938/);
+});

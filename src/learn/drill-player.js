@@ -1,3 +1,4 @@
+import { lessonReceipt, saveSeries } from "./mastery.js";
 import { Board } from "../chess/board.js";
 import { Chess } from "../chess/chess.js";
 import { moveUci, describeMove } from "../chess/notation.js";
@@ -27,6 +28,8 @@ export function startDrill(
     ),
     saved = ctx.state.drill?.scope === scope ? ctx.state.drill : null,
     rows = saved?.rows || ordered.slice(0, count);
+  const batchId = saved?.batchId || crypto.randomUUID();
+  let cleanCount = saved?.cleanCount || 0;
   let i = saved?.index || 0,
     clean = true,
     board,
@@ -34,18 +37,19 @@ export function startDrill(
     started = Date.now(),
     complete = false;
   const persist = () => {
-    ctx.state.drill = { scope, rows, index: i, clean, complete };
+    ctx.state.drill = { scope, rows, index: i, clean, complete, batchId, cleanCount };
     ctx.save();
   };
-  const show = () => {
+  const show = async () => {
     board?.destroy();
     if (disposed) return;
     if (i >= rows.length) {
       const r = (ctx.state.entries[entry.id] ??= {});
       r.drillAt = dateKey();
       ctx.state.drill = null;
-      ctx.save();
-      root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>${rows.length} repères travaillés.</h1><p>${all.length} variantes disponibles pour cette notion.</p><button id="drill-done" class="button primary">Continuer →</button></section>`;
+      await saveSeries(ctx, entry.id, { id: batchId, total: rows.length, clean: cleanCount });
+      if (disposed) return;
+      root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>${rows.length} repères travaillés.</h1><p>${all.length} variantes disponibles pour cette notion.</p>${ctx.store?.error ? `<p class="feedback wrong">${esc(ctx.store.error)}</p>` : lessonReceipt(ctx.state, entry)}<button id="drill-done" class="button primary">Continuer →</button></section>`;
       $("#drill-done", root).onclick = () =>
         onDone ? onDone() : ctx.navigate("train");
       return;
@@ -72,6 +76,7 @@ export function startDrill(
       }
       if (ok) {
         complete = true;
+        if (clean) cleanCount++;
         const id = entry.id + ":" + c.id;
         ctx.state.history.push({
           puzzleId: id,
