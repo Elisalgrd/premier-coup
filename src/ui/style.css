@@ -1871,3 +1871,5 @@ html[data-theme="dark"] .demo-comment {
 .glossary-term:hover {
   color: #85516e;
 }
+
+.analysis-pending { display: grid; gap: .35rem; margin-bottom: 1.5rem; }

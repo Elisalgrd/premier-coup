@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.3
+
+- Une analyse interrompue reste à faire, même après avoir quitté son écran.
+- Les parties en attente, y compris les anciennes, sont visibles dans Aujourd’hui et S’entraîner.
+- Le statut terminé et les exercices issus de la partie ne sont enregistrés qu’après une analyse complète.
+
 ## 2.1.2
 
 - Les mises à jour rechargent les fichiers de l’interface pour éviter de mélanger un nouvel écran et un ancien module conservé dans le cache HTTP. La progression reste intacte.

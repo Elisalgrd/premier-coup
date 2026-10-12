@@ -91,7 +91,7 @@ export async function render() {
     } else
       html =
         page === "train"
-          ? trainView(entries)
+          ? trainView(entries, store.state)
           : page === "progress"
             ? progressView(entries, store.state)
             : dailyView(entries, store.state);

@@ -120,10 +120,12 @@ export async function analyzeGame(
     if (side !== record.color) continue;
     onProgress(n, total);
     const before = await engine.search(fen, { depth });
+    if (signal?.aborted) throw Error("Analyse interrompue.");
     let after;
     if (g.isCheckmate()) after = { type: "mate", score: 0, line: [] };
     else if (g.isDraw()) after = { type: "cp", score: 0, line: [] };
     else after = await engine.search(g.fen(), { depth });
+    if (signal?.aborted) throw Error("Analyse interrompue.");
     const cls = classify(before, after);
     if (
       cls.severity &&
@@ -157,6 +159,7 @@ export async function analyzeGame(
     n++;
     onProgress(n, total);
   }
+  if (signal?.aborted) throw Error("Analyse interrompue.");
   moments.sort((a, b) => b.loss - a.loss);
   const result = {
     depth,
