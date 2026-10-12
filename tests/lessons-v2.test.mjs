@@ -1,3 +1,4 @@
+import {glossaryContext} from "../src/ui/helpers.js";
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -185,4 +186,10 @@ test("move explanation names pieces, captures, castling and promotion in plain F
   assert.match(describeMove(moveUci(g, "e2e4")), /pion de e2 à e4/);
   const castle = new Chess("4k3/8/8/8/8/8/8/4K2R w K - 0 1");
   assert.match(describeMove(moveUci(castle, "e1g1")), /roi va de e1 à g1/);
+});
+
+test('glossary distinguishes the game and everyday phrases from chess terms',()=>{
+ assert.equal(glossaryContext('ÉCHECS','TON ATELIER D’ÉCHECS',14),false);
+ assert.equal(glossaryContext('nulle','ne peut aller nulle part',14),false);
+ assert.equal(glossaryContext('échecs','Regarde ses échecs possibles',12),true);
 });

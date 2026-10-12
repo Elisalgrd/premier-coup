@@ -40,3 +40,10 @@ export const friendlyMistake = (label) =>
     "Capture gratuite ratée": "Tu pouvais prendre une pièce sans rien perdre",
     "Menace adverse ignorée": "Un danger adverse reste sans réponse",
   })[label] || label;
+
+export function glossaryContext(term, text, index) {
+  const word = term.toLocaleLowerCase('fr');
+  if (word === 'nulle' && /^nulle part\b/iu.test(text.slice(index))) return false;
+  if (word === 'échecs' && /(?:d[’']|aux\s+|des\s+)$/iu.test(text.slice(0, index))) return false;
+  return true;
+}

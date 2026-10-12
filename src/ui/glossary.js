@@ -1,4 +1,4 @@
-import { esc, $ } from "./helpers.js";
+import { esc, $, glossaryContext } from "./helpers.js";
 let words = [],
   pattern,
   observer,
@@ -55,7 +55,7 @@ function decorate(root) {
   observer.disconnect();
   for (const node of nodes) {
     const text = node.textContent,
-      matches = [...text.matchAll(pattern)];
+      matches = [...text.matchAll(pattern)].filter(m=>glossaryContext(m[0],text,m.index));
     if (!matches.length) continue;
     let at = 0;
     const f = document.createDocumentFragment();

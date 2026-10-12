@@ -1,3 +1,4 @@
+import {glossaryContext} from "../src/ui/helpers.js";
 import { Chess, validateFen } from "../src/chess/chess.js";
 import { moveUci } from "../src/chess/notation.js";
 export const forbidden =
@@ -57,14 +58,8 @@ export function glossaryMatcher(glossary) {
   );
   return (text) =>
     [...String(text).matchAll(re)]
-      .filter(
-        (m) =>
-          !(
-            m[1].toLowerCase() === "nulle" &&
-            String(text).slice(m.index).startsWith("nulle part")
-          ),
-      )
-      .map(
+      .filter(m=>glossaryContext(m[0],String(text),m.index))
+    .map(
         (m) => aliases.find((x) => x.a.toLowerCase() === m[1].toLowerCase()).g,
       );
 }
