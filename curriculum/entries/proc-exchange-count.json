@@ -42,6 +42,7 @@
   },
   "guided": [
     {
+      "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
       "move": "c2a4",
       "text": "",
       "arrows": [

@@ -18,8 +18,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "8/8/6pp/4Rp1k/7P/3rp1PK/8/8 w - - 0 57",
+    "solution": [
+      "g3g4"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/jb7UI",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "8/8/6pp/4Rp1k/7P/3rp1PK/8/8 w - - 0 57",
+      "move": "g3g4",
+      "text": "",
+      "arrows": [
+        [
+          "g3",
+          "g4"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "rookEndgame"
   ],

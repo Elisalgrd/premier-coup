@@ -24,8 +24,55 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
+    "solution": [
+      "a8f8",
+      "g8f8",
+      "a1a8"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/j28K9",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
+      "move": "a8f8",
+      "text": "",
+      "arrows": [
+        [
+          "a8",
+          "f8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "5Rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 b - - 0 29",
+      "move": "g8f8",
+      "text": "",
+      "arrows": [
+        [
+          "g8",
+          "f8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "5k2/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 30",
+      "move": "a1a8",
+      "text": "",
+      "arrows": [
+        [
+          "a1",
+          "a8"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "attraction"
   ],

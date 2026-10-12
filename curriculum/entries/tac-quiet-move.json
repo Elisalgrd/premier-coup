@@ -18,8 +18,55 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
+    "solution": [
+      "c3e5",
+      "b8a8",
+      "e5d6"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/Rd49A",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
+      "move": "c3e5",
+      "text": "",
+      "arrows": [
+        [
+          "c3",
+          "e5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "1k4r1/1p6/p1pq4/P3Bp2/1P2p2p/3rP2P/1Q3P1K/2R5 b - - 6 40",
+      "move": "b8a8",
+      "text": "",
+      "arrows": [
+        [
+          "b8",
+          "a8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "k5r1/1p6/p1pq4/P3Bp2/1P2p2p/3rP2P/1Q3P1K/2R5 w - - 7 41",
+      "move": "e5d6",
+      "text": "",
+      "arrows": [
+        [
+          "e5",
+          "d6"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "quietMove",
     "defensiveMove"

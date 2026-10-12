@@ -22,7 +22,15 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
+  "entryChallenge": {
+    "fen": "4k3/8/8/8/8/8/8/4K3 w - - 0 1",
+    "solution": [
+      "e5"
+    ],
+    "prompt": "Touche la case e5.",
+    "mode": "square",
+    "source": "Exemple pédagogique validé"
+  },
   "guided": [],
   "lichessThemes": [],
   "ratingBand": [

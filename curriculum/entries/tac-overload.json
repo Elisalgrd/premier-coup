@@ -23,8 +23,55 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
+    "solution": [
+      "e5e4",
+      "f5e4",
+      "a5g5"
+    ],
+    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/XAua5",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
+      "move": "e5e4",
+      "text": "",
+      "arrows": [
+        [
+          "e5",
+          "e4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "8/5k2/8/r4KR1/4p3/7P/6P1/8 w - - 0 49",
+      "move": "f5e4",
+      "text": "",
+      "arrows": [
+        [
+          "f5",
+          "e4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "8/5k2/8/r5R1/4K3/7P/6P1/8 b - - 0 49",
+      "move": "a5g5",
+      "text": "",
+      "arrows": [
+        [
+          "a5",
+          "g5"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "deflection",
     "capturingDefender"

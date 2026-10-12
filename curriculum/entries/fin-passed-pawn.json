@@ -16,11 +16,34 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "4nk2/1pr1qp2/pR4p1/P1pPQ3/4PP2/8/6Bp/4K3 w - - 0 26",
+    "solution": [
+      "e5h8"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/Njruu",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "4nk2/1pr1qp2/pR4p1/P1pPQ3/4PP2/8/6Bp/4K3 w - - 0 26",
+      "move": "e5h8",
+      "text": "",
+      "arrows": [
+        [
+          "e5",
+          "h8"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "advancedPawn",
-    "endgame"
+    "endgame",
+    "promotion",
+    "underPromotion"
   ],
   "ratingBand": [
     400,

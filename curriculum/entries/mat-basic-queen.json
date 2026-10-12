@@ -23,8 +23,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
+    "solution": [
+      "g6g7"
+    ],
+    "prompt": "Fais mat en un coup.",
+    "mode": "move",
+    "source": "Exemple pédagogique validé"
+  },
+  "guided": [
+    {
+      "fen": "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
+      "move": "g6g7",
+      "text": "",
+      "arrows": [
+        [
+          "g6",
+          "g7"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [],
   "ratingBand": [
     400,

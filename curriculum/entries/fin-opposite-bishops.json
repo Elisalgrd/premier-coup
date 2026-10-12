@@ -19,8 +19,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "8/8/1pp3p1/p1k2p2/P1Pb1P1B/1P6/6K1/8 w - - 10 47",
+    "solution": [
+      "h4e7"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/BP6KZ",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "8/8/1pp3p1/p1k2p2/P1Pb1P1B/1P6/6K1/8 w - - 10 47",
+      "move": "h4e7",
+      "text": "",
+      "arrows": [
+        [
+          "h4",
+          "e7"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "bishopEndgame"
   ],

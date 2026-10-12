@@ -28,8 +28,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "5r1k/p5pp/8/2b5/1p6/1Q3PqR/PPP5/5R1K b - - 0 35",
+    "solution": [
+      "g3h3"
+    ],
+    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/pO2rt",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "5r1k/p5pp/8/2b5/1p6/1Q3PqR/PPP5/5R1K b - - 0 35",
+      "move": "g3h3",
+      "text": "",
+      "arrows": [
+        [
+          "g3",
+          "h3"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "defensiveMove",
     "hangingPiece"

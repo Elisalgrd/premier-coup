@@ -16,8 +16,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+    "solution": [
+      "c7a7"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/MnWJt",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+      "move": "c7a7",
+      "text": "",
+      "arrows": [
+        [
+          "c7",
+          "a7"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "arabianMate"
   ],

@@ -25,8 +25,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "r1bq1k1r/pppp2p1/8/2bBp1Q1/4Pp2/2PP3p/PP3PP1/nNBK3R w - - 2 16",
+    "solution": [
+      "g5d8"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/Scg2J",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "r1bq1k1r/pppp2p1/8/2bBp1Q1/4Pp2/2PP3p/PP3PP1/nNBK3R w - - 2 16",
+      "move": "g5d8",
+      "text": "",
+      "arrows": [
+        [
+          "g5",
+          "d8"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "hangingPiece"
   ],

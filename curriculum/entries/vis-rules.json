@@ -16,8 +16,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "4k3/8/8/8/8/8/8/4K2R w K - 0 1",
+    "solution": [
+      "e1g1"
+    ],
+    "prompt": "Mets ton roi à l’abri en faisant le petit roque.",
+    "mode": "move",
+    "source": "Exemple pédagogique validé"
+  },
+  "guided": [
+    {
+      "fen": "4k3/8/8/8/8/8/8/4K2R w K - 0 1",
+      "move": "e1g1",
+      "text": "",
+      "arrows": [
+        [
+          "e1",
+          "g1"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [],
   "ratingBand": [
     400,

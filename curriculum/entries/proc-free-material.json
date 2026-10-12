@@ -22,11 +22,59 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
+    "solution": [
+      "g2d5",
+      "g8f8",
+      "d5c6"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/LoN6J",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
+      "move": "g2d5",
+      "text": "",
+      "arrows": [
+        [
+          "g2",
+          "d5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "6k1/p1p3p1/1pn4p/3Bp3/8/4P1PP/PP3P2/6K1 b - - 0 24",
+      "move": "g8f8",
+      "text": "",
+      "arrows": [
+        [
+          "g8",
+          "f8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "5k2/p1p3p1/1pn4p/3Bp3/8/4P1PP/PP3P2/6K1 w - - 1 25",
+      "move": "d5c6",
+      "text": "",
+      "arrows": [
+        [
+          "d5",
+          "c6"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "hangingPiece",
-    "crushing"
+    "crushing",
+    "endgame"
   ],
   "ratingBand": [
     400,
