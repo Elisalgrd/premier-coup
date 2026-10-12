@@ -1,0 +1,52 @@
+{
+  "id": "mat-greek-gift",
+  "title": "Le sacrifice grec (Fxh7+)",
+  "tier": 3,
+  "priority": "B",
+  "domain": "mats",
+  "prerequisites": [
+    "mat-queen-support"
+  ],
+  "principle": "Sacrifier le fou en h7 avec échec pour exposer le roi roqué, puis Cg5+ et Dh5 menacent le mat.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "kingsideAttack",
+    "sacrifice"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "8 positions « le sacrifice marche-t-il ? » (oui / non + coup) à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Sacrifier le fou en h7 avec échec pour exposer le roi roqué, puis Cg5+ et Dh5 menacent le mat.",
+      "audio": null
+    },
+    {
+      "title": "Conditions à vérifier",
+      "text": "fou sur la diagonale b1-h7 ; cavalier pouvant aller en g5 sans être pris utilement ; dame pouvant aller en h5 rapidement ; pas de cavalier noir en f6 (souvent chassé par e5) ; pas de défense rapide par ...Ff5 ou ...Dxg5.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

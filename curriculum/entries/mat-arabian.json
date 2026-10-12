@@ -1,0 +1,52 @@
+{
+  "id": "mat-arabian",
+  "title": "Le mat arabe",
+  "tier": 2,
+  "priority": "B",
+  "domain": "mats",
+  "prerequisites": [
+    "mat-back-rank"
+  ],
+  "principle": "Tour et cavalier coopèrent : le cavalier protège la tour collée au roi dans le coin et contrôle une case de fuite.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "arabianMate"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes arabianMate à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Tour et cavalier coopèrent : le cavalier protège la tour collée au roi dans le coin et contrôle une case de fuite.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "7k/7R/5N2/8/8/8/8/6K1 b - - 0 1",
+      "outcome": "mate",
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

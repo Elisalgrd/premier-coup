@@ -1,0 +1,113 @@
+{
+  "id": "proc-exchange-count",
+  "title": "Compter les échanges",
+  "tier": 1,
+  "priority": "S",
+  "domain": "réflexes",
+  "prerequisites": [
+    "vis-values",
+    "vis-attacked-squares"
+  ],
+  "principle": "Avant de prendre, compte les attaquants et les défenseurs de la case, et joue l'échange dans ta tête jusqu'au bout.",
+  "why": [
+    "« Elle est défendue » ne veut pas dire « je ne peux pas la prendre ». Et « je peux la prendre » ne veut pas dire « je gagne »."
+  ],
+  "signals": [
+    "une pièce adverse attaquée par l'une des tiennes."
+  ],
+  "method": [
+    "Compte : combien de mes pièces attaquent la case ? Combien des siennes la défendent ?",
+    "Si je n'attaque pas plus de fois qu'il ne défend, je ne gagne pas la pièce (sauf si ma première pièce vaut moins que la cible).",
+    "Capture toujours avec la pièce la moins précieuse d'abord.",
+    "Joue la séquence complète : je prends, il reprend, je reprends... Additionne ce que chacun perd.",
+    "Il n'est jamais obligé de reprendre : vérifie aussi ce qui se passe s'il s'arrête en route."
+  ],
+  "pitfall": {
+    "text": "prendre une pièce défendue par un pion avec ta dame. Exemple dans l'app actuelle (cours 1) : Dxd5 exd5 perd la dame contre une tour.",
+    "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+    "line": [
+      "d1d5",
+      "e6d5"
+    ]
+  },
+  "entryChallenge": {
+    "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+    "solution": [
+      "c2a4"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": null,
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "c2a4",
+      "text": "",
+      "arrows": [
+        [
+          "c2",
+          "a4"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "hangingPiece",
+    "capturingDefender"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "20 problèmes « Captures et reprises » à 85 %."
+  },
+  "sources": [],
+  "videoId": "course-captures",
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Avant de prendre, compte les attaquants et les défenseurs de la case, et joue l'échange dans ta tête jusqu'au bout.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "« Elle est défendue » ne veut pas dire « je ne peux pas la prendre ». Et « je peux la prendre » ne veut pas dire « je gagne ».",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une pièce adverse attaquée par l'une des tiennes.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Compte : combien de mes pièces attaquent la case ? Combien des siennes la défendent ? Si je n'attaque pas plus de fois qu'il ne défend, je ne gagne pas la pièce (sauf si ma première pièce vaut moins que la cible). Capture toujours avec la pièce la moins précieuse d'abord. Joue la séquence complète : je prends, il reprend,",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "je reprends... Additionne ce que chacun perd. Il n'est jamais obligé de reprendre : vérifie aussi ce qui se passe s'il s'arrête en route.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "prendre une pièce défendue par un pion avec ta dame. Exemple dans l'app actuelle (cours 1) : Dxd5 exd5 perd la dame contre une tour.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

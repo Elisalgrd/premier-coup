@@ -1,0 +1,53 @@
+{
+  "id": "fin-rook-behind",
+  "title": "Les tours derrière les pions passés",
+  "tier": 3,
+  "priority": "A",
+  "domain": "finales",
+  "prerequisites": [
+    "fin-passed-pawn"
+  ],
+  "principle": "Place ta tour derrière les pions passés : derrière les tiens pour les pousser, derrière ceux de l'adversaire pour les freiner (règle de Tarrasch).",
+  "why": [
+    "Derrière un pion, l'activité de la tour augmente à chaque pas du pion. Devant, elle diminue."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "rookEndgame"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes rookEndgame à 70 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Place ta tour derrière les pions passés : derrière les tiens pour les pousser, derrière ceux de l'adversaire pour les freiner (règle de Tarrasch).",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Derrière un pion, l'activité de la tour augmente à chaque pas du pion. Devant, elle diminue.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

@@ -1,0 +1,54 @@
+{
+  "id": "meta-time-management",
+  "title": "Gérer son temps",
+  "tier": 3,
+  "priority": "A",
+  "domain": "méthode",
+  "prerequisites": [
+    "meta-play-slow"
+  ],
+  "principle": "Joue vite les coups évidents et les ouvertures connues, réfléchis longtemps aux moments critiques (une capture, un sacrifice, la fin de l'ouverture, une décision d'échange).",
+  "why": [],
+  "signals": [],
+  "method": [
+    "en 15+10, viser environ 20 % du temps sur les 10 premiers coups",
+    "jamais moins de 2 min à la pendule sans raison",
+    "en zeitnot, simplifier."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "sur 10 parties, aucune perdue au temps dans une position gagnante ou égale."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Joue vite les coups évidents et les ouvertures connues, réfléchis longtemps aux moments critiques (une capture, un sacrifice, la fin de l'ouverture, une décision d'échange).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "en 15+10, viser environ 20 % du temps sur les 10 premiers coups ; jamais moins de 2 min à la pendule sans raison ; en zeitnot, simplifier.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "game-review"
+}

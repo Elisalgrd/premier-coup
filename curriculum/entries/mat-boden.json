@@ -1,0 +1,73 @@
+{
+  "id": "mat-boden",
+  "title": "Le mat de Boden",
+  "tier": 2,
+  "priority": "B",
+  "domain": "mats",
+  "prerequisites": [
+    "tac-pin"
+  ],
+  "principle": "Deux fous sur des diagonales qui se croisent matent un roi roqué côté dame, bloqué par ses propres pièces.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
+    "solution": [
+      "e2a6"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": "mate",
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "e2a6",
+      "text": "",
+      "arrows": [
+        [
+          "e2",
+          "a6"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "bodenMate"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes bodenMate à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Deux fous sur des diagonales qui se croisent matent un roi roqué côté dame, bloqué par ses propres pièces.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

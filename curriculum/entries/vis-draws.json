@@ -1,0 +1,62 @@
+{
+  "id": "vis-draws",
+  "title": "Les nulles qui sauvent et celles qui gâchent",
+  "tier": 0,
+  "priority": "A",
+  "domain": "vision",
+  "prerequisites": [
+    "vis-rules"
+  ],
+  "principle": "Devant au matériel, évite le pat et la répétition. Derrière, cherche-les.",
+  "why": [
+    "Un pat dans une position gagnée est la défaite la plus frustrante. Un pat ou un échec perpétuel peut sauver une position perdue."
+  ],
+  "signals": [],
+  "method": [
+    "Quand tu es largement devant : avant chaque coup, vérifie que l'adversaire aura encore un coup légal.",
+    "Quand tu es largement derrière : cherche à n'avoir plus aucun coup légal sauf de roi (sacrifier ses dernières pièces peut créer le pat), ou un échec perpétuel avec ta dame.",
+    "Répétition : si l'adversaire répète, change de plan si tu es devant."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "endgame"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 positions « trouve le coup gagnant qui ne fait pas pat » à 90 %.\n\n---"
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Devant au matériel, évite le pat et la répétition. Derrière, cherche-les.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Un pat dans une position gagnée est la défaite la plus frustrante. Un pat ou un échec perpétuel peut sauver une position perdue.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Quand tu es largement devant : avant chaque coup, vérifie que l'adversaire aura encore un coup légal. Quand tu es largement derrière : cherche à n'avoir plus aucun coup légal sauf de roi (sacrifier ses dernières pièces peut créer le pat), ou un échec perpétuel avec ta dame. Répétition : si l'adversaire répète, change de plan si tu es devant.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

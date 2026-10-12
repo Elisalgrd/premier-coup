@@ -1,0 +1,69 @@
+{
+  "id": "tac-overload",
+  "title": "La surcharge",
+  "tier": 2,
+  "priority": "A",
+  "domain": "tactique",
+  "prerequisites": [
+    "tac-remove-defender"
+  ],
+  "principle": "Une pièce adverse défend deux choses à la fois. Attaque l'une : en la défendant, elle abandonne l'autre.",
+  "why": [
+    "Une pièce ne peut être qu'à un endroit. Si elle a deux missions, elle en rate forcément une."
+  ],
+  "signals": [
+    "une pièce adverse qui est l'unique défenseur de deux cibles (deux pièces, ou une pièce et une case de mat)."
+  ],
+  "method": [
+    "repère les défenseurs à double emploi",
+    "force-les à choisir avec une capture ou un échec."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "deflection",
+    "capturingDefender"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Une pièce adverse défend deux choses à la fois. Attaque l'une : en la défendant, elle abandonne l'autre.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Une pièce ne peut être qu'à un endroit. Si elle a deux missions, elle en rate forcément une.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une pièce adverse qui est l'unique défenseur de deux cibles (deux pièces, ou une pièce et une case de mat).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "repère les défenseurs à double emploi ; force-les à choisir avec une capture ou un échec.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

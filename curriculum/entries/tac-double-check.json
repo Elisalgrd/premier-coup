@@ -1,0 +1,73 @@
+{
+  "id": "tac-double-check",
+  "title": "L'échec double",
+  "tier": 2,
+  "priority": "A",
+  "domain": "tactique",
+  "prerequisites": [
+    "tac-discovered"
+  ],
+  "principle": "Deux pièces donnent échec en même temps. Seul le roi peut répondre, en fuyant.",
+  "why": [
+    "On ne peut ni prendre deux attaquants ni s'interposer sur deux lignes. C'est l'échec le plus puissant",
+    "il mène souvent au mat."
+  ],
+  "signals": [
+    "une découverte vers le roi adverse où la pièce qui bouge peut, elle aussi, donner échec."
+  ],
+  "method": [
+    "cherche une découverte où la pièce qui bouge donne aussi échec, puis regarde les cases de fuite restantes."
+  ],
+  "pitfall": {
+    "text": "si le roi a des cases de fuite sûres, l'échec double ne gagne pas forcément.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "doubleCheck"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes doubleCheck à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Deux pièces donnent échec en même temps. Seul le roi peut répondre, en fuyant.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "On ne peut ni prendre deux attaquants ni s'interposer sur deux lignes. C'est l'échec le plus puissant ; il mène souvent au mat.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une découverte vers le roi adverse où la pièce qui bouge peut, elle aussi, donner échec.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "cherche une découverte où la pièce qui bouge donne aussi échec, puis regarde les cases de fuite restantes.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "si le roi a des cases de fuite sûres, l'échec double ne gagne pas forcément.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

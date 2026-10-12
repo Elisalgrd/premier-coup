@@ -1,0 +1,54 @@
+{
+  "id": "meta-woodpecker",
+  "title": "La méthode pic-vert",
+  "tier": 3,
+  "priority": "B",
+  "domain": "méthode",
+  "prerequisites": [
+    "proc-forcing-moves"
+  ],
+  "principle": "Résoudre le même set de problèmes en cycles de plus en plus rapides grave les motifs dans la reconnaissance automatique.",
+  "why": [],
+  "signals": [],
+  "method": [
+    "set de 100 à 300 problèmes de ton niveau",
+    "premier cycle lent et juste",
+    "puis refaire le set entier en moitié moins de temps, plusieurs fois."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "3 cycles terminés avec ≥ 90 % de réussite au dernier.\n\n---"
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Résoudre le même set de problèmes en cycles de plus en plus rapides grave les motifs dans la reconnaissance automatique.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "set de 100 à 300 problèmes de ton niveau ; premier cycle lent et juste ; puis refaire le set entier en moitié moins de temps, plusieurs fois.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "game-review"
+}

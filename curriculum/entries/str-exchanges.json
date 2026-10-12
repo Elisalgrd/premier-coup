@@ -1,0 +1,45 @@
+{
+  "id": "str-exchanges",
+  "title": "Quand échanger ?",
+  "tier": 4,
+  "priority": "A",
+  "domain": "stratégie",
+  "prerequisites": [
+    "fin-convert"
+  ],
+  "principle": "Échange quand tu es devant au matériel, quand tu manques de place, ou pour éliminer une pièce adverse très active ou un défenseur clé. Évite d'échanger quand tu attaques ou quand tu es derrière.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 positions « échanger ou pas ? » à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Échange quand tu es devant au matériel, quand tu manques de place, ou pour éliminer une pièce adverse très active ou un défenseur clé. Évite d'échanger quand tu attaques ou quand tu es derrière.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "plan-choice"
+}

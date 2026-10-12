@@ -1,0 +1,194 @@
+{
+  "id": "ouv-principles",
+  "title": "Les trois principes de l'ouverture",
+  "tier": 1,
+  "priority": "S",
+  "domain": "ouvertures",
+  "prerequisites": [
+    "vis-notation"
+  ],
+  "principle": "Dans les 10 premiers coups : prends le centre, sors tes pièces, mets ton roi à l'abri.",
+  "why": [
+    "Le centre donne de l'espace et des cases aux pièces. Chaque pièce sortie est une pièce qui joue. Un roi au centre se fait attaquer dès que les lignes s'ouvrent. Ces trois buts se soutiennent (idée reprise de Julien Song : comprendre le but des coups, pas les réciter)."
+  ],
+  "signals": [],
+  "method": [
+    "Premier coup : e4 ou d4 (avec les noirs : répondre e5 ou d5, ou contester le centre autrement).",
+    "Sors les cavaliers avant les fous, vers le centre (Cf3, Cc3 / ...Cf6, ...Cc6).",
+    "Ne bouge pas deux fois la même pièce sans raison (capture, menace à parer).",
+    "Ne sors pas ta dame trop tôt : elle se fait chasser avec gain de temps.",
+    "Roque tôt, en général avant le 10e coup.",
+    "Connecte tes tours (plus aucune pièce entre elles), puis place-les sur les colonnes ouvertes ou centrales.",
+    "Ne pousse pas les pions devant ton roi roqué sans raison.",
+    "Ne prends pas des pions éloignés (a, b, g, h) au prix de ton développement."
+  ],
+  "pitfall": {
+    "text": "une règle cède devant une tactique. Si la dame peut prendre une pièce gratuite, ce n'est pas « sortir la dame trop tôt ». Si l'adversaire menace quelque chose, on y répond avant de développer.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "solution": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5",
+      "d2d3",
+      "g8f6",
+      "e1g1"
+    ],
+    "prompt": "Trait aux blancs. Développe tes pièces en contrôlant le centre.",
+    "outcome": null,
+    "mode": "opening",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "e2e4",
+      "text": "",
+      "arrows": [
+        [
+          "e2",
+          "e4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e7e5",
+      "text": "",
+      "arrows": [
+        [
+          "e7",
+          "e5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g1f3",
+      "text": "",
+      "arrows": [
+        [
+          "g1",
+          "f3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b8c6",
+      "text": "",
+      "arrows": [
+        [
+          "b8",
+          "c6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "f1c4",
+      "text": "",
+      "arrows": [
+        [
+          "f1",
+          "c4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "f8c5",
+      "text": "",
+      "arrows": [
+        [
+          "f8",
+          "c5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d2d3",
+      "text": "",
+      "arrows": [
+        [
+          "d2",
+          "d3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g8f6",
+      "text": "",
+      "arrows": [
+        [
+          "g8",
+          "f6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e1g1",
+      "text": "",
+      "arrows": [
+        [
+          "e1",
+          "g1"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "opening"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "5 parties contre le moteur où, au coup 10, le roi est roqué et au moins 3 pièces mineures sont développées."
+  },
+  "sources": [],
+  "videoId": "course-italian",
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Dans les 10 premiers coups : prends le centre, sors tes pièces, mets ton roi à l'abri.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Le centre donne de l'espace et des cases aux pièces. Chaque pièce sortie est une pièce qui joue. Un roi au centre se fait attaquer dès que les lignes s'ouvrent. Ces trois buts se soutiennent (idée reprise de Julien Song : comprendre le but des coups, pas les réciter).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Premier coup : e4 ou d4 (avec les noirs : répondre e5 ou d5, ou contester le centre autrement). Sors les cavaliers avant les fous, vers le centre (Cf3, Cc3 / ...Cf6, ...Cc6). Ne bouge pas deux fois la même pièce sans raison (capture, menace à parer). Ne sors pas ta dame trop tôt : elle se fait chasser avec",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "gain de temps. Roque tôt, en général avant le 10e coup. Connecte tes tours (plus aucune pièce entre elles), puis place-les sur les colonnes ouvertes ou centrales. Ne pousse pas les pions devant ton roi roqué sans raison. Ne prends pas des pions éloignés (a, b, g, h) au prix de ton développement.",
+      "audio": null
+    },
+    {
+      "title": "Piège / exceptions",
+      "text": "une règle cède devant une tactique. Si la dame peut prendre une pièce gratuite, ce n'est pas « sortir la dame trop tôt ». Si l'adversaire menace quelque chose, on y répond avant de développer.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

@@ -1,0 +1,134 @@
+{
+  "id": "tac-fork",
+  "title": "La fourchette (double attaque)",
+  "tier": 2,
+  "priority": "S",
+  "domain": "tactique",
+  "prerequisites": [
+    "proc-hanging-pieces"
+  ],
+  "principle": "Une seule pièce attaque deux cibles en même temps. L'adversaire ne peut en sauver qu'une.",
+  "why": [
+    "L'adversaire n'a qu'un coup pour répondre à deux problèmes. Si l'une des cibles est le roi (échec), il doit s'occuper du roi et perd l'autre."
+  ],
+  "signals": [
+    "Le roi et la dame (ou une tour) adverses sont à un saut de cavalier d'une même case.",
+    "Deux pièces adverses non défendues.",
+    "Deux pièces adverses côte à côte sur la même rangée, avec un pion qui peut avancer entre elles (fourchette de pion).",
+    "Le roi et une pièce non défendue sur des lignes que ta dame peut croiser."
+  ],
+  "method": [
+    "Repère les cibles (roi, dame, tours, pièces non défendues).",
+    "Cherche une case d'où une de tes pièces les attaque toutes les deux.",
+    "Vérifie que ta pièce n'est pas prise sur cette case (ou que la prise te coûte moins que ce que tu gagnes).",
+    "Après sa réponse, prends la seconde cible."
+  ],
+  "pitfall": {
+    "text": "l'adversaire peut parfois répondre par un échec ou en protégeant une cible tout en sauvant l'autre. Et une fourchette sur deux pièces défendues ne gagne rien.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "solution": [
+      "e4d6",
+      "e8d7",
+      "d6b5"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": null,
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "e4d6",
+      "text": "",
+      "arrows": [
+        [
+          "e4",
+          "d6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e8d7",
+      "text": "",
+      "arrows": [
+        [
+          "e8",
+          "d7"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d6b5",
+      "text": "",
+      "arrows": [
+        [
+          "d6",
+          "b5"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "fork"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 problèmes fork inédits à 80 %, sur 2 jours."
+  },
+  "sources": [],
+  "videoId": "course-forks",
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Une seule pièce attaque deux cibles en même temps. L'adversaire ne peut en sauver qu'une.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "L'adversaire n'a qu'un coup pour répondre à deux problèmes. Si l'une des cibles est le roi (échec), il doit s'occuper du roi et perd l'autre.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "Le roi et la dame (ou une tour) adverses sont à un saut de cavalier d'une même case. Deux pièces adverses non défendues. Deux pièces adverses côte à côte sur la même rangée, avec un pion qui peut avancer entre elles (fourchette de pion). Le roi et une pièce non défendue sur des lignes que ta dame peut croiser.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Repère les cibles (roi, dame, tours, pièces non défendues). Cherche une case d'où une de tes pièces les attaque toutes les deux. Vérifie que ta pièce n'est pas prise sur cette case (ou que la prise te coûte moins que ce que tu gagnes). Après sa réponse, prends la seconde cible.",
+      "audio": null
+    },
+    {
+      "title": "Types à couvrir",
+      "text": "fourchette de cavalier (la reine des fourchettes, souvent « royale » roi + dame), fourchette de pion, fourchette de dame (souvent échec + pièce non défendue), fourchette de roi (en finale), fourchette de fou ou tour (plus rare).",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "l'adversaire peut parfois répondre par un échec ou en protégeant une cible tout en sauvant l'autre. Et une fourchette sur deux pièces défendues ne gagne rien.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

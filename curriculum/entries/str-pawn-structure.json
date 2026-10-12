@@ -1,0 +1,55 @@
+{
+  "id": "str-pawn-structure",
+  "title": "Les structures de pions",
+  "tier": 4,
+  "priority": "A",
+  "domain": "stratégie",
+  "prerequisites": [
+    "vis-values"
+  ],
+  "principle": "Les pions ne reculent pas : chaque poussée crée des forces et des faiblesses permanentes.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "12 positions « nomme la faiblesse et la cible » à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Les pions ne reculent pas : chaque poussée crée des forces et des faiblesses permanentes.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Pion isolé : aucun pion ami sur les colonnes voisines. Faible en finale, mais donne de l'activité en milieu de partie. Pions doublés : deux pions sur la même colonne. Souvent faibles, mais ouvrent une colonne. Pion arriéré : ne peut plus être soutenu par un pion voisin, sur une colonne semi-ouverte : cible. Chaîne de pions : attaque la",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "base de la chaîne adverse ; joue du côté où pointent tes pions. Majorité : plus de pions sur une aile : peut créer un pion passé. Îlots de pions : moins d'îlots = structure plus saine.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "plan-choice"
+}

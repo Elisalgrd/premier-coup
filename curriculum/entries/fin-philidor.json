@@ -1,0 +1,103 @@
+{
+  "id": "fin-philidor",
+  "title": "La position de Philidor (sauver une finale de tours)",
+  "tier": 3,
+  "priority": "A",
+  "domain": "finales",
+  "prerequisites": [
+    "fin-lucena"
+  ],
+  "principle": "En défense, roi devant le pion, tour sur ta 3e rangée (6e pour les noirs) tant que le pion n'a pas avancé ; dès qu'il avance, ta tour descend sur la 1re rangée et donne des échecs par derrière.",
+  "why": [
+    "Le roi attaquant ne peut plus s'abriter derrière son pion une fois celui-ci avancé."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "4k3/7R/1r6/3KP3/8/8/8/8 b - - 0 1",
+    "solution": [
+      "b6a6",
+      "e5e6",
+      "a6a1"
+    ],
+    "prompt": "Trait aux noirs. Trouve le coup qui applique ce principe.",
+    "outcome": null,
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "b6a6",
+      "text": "",
+      "arrows": [
+        [
+          "b6",
+          "a6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e5e6",
+      "text": "",
+      "arrows": [
+        [
+          "e5",
+          "e6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "a6a1",
+      "text": "",
+      "arrows": [
+        [
+          "a6",
+          "a1"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "annuler la position 3 fois sur 3 contre le moteur."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "En défense, roi devant le pion, tour sur ta 3e rangée (6e pour les noirs) tant que le pion n'a pas avancé ; dès qu'il avance, ta tour descend sur la 1re rangée et donne des échecs par derrière.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Le roi attaquant ne peut plus s'abriter derrière son pion une fois celui-ci avancé.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "4k3/7R/1r6/3KP3/8/8/8/8 b - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ],
+  "drill": "endgame"
+}

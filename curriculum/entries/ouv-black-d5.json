@@ -1,0 +1,228 @@
+{
+  "id": "ouv-black-d5",
+  "title": "Avec les noirs contre 1.d4 : la structure d5-e6",
+  "tier": 2,
+  "priority": "A",
+  "domain": "ouvertures",
+  "prerequisites": [
+    "ouv-principles"
+  ],
+  "principle": "d5, e6, Cf6, Fe7, O-O, puis ...c5 ou ...b6 et ...Fb7. Une base solide qui marche contre presque tous les systèmes avec d4.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "solution": [
+      "d2d4",
+      "d7d5",
+      "c2c4",
+      "e7e6",
+      "b1c3",
+      "g8f6",
+      "c1g5",
+      "f8e7",
+      "e2e3",
+      "e8g8",
+      "g1f3",
+      "h7h6",
+      "g5h4",
+      "b7b6"
+    ],
+    "prompt": "Trait aux blancs. Développe tes pièces en contrôlant le centre.",
+    "outcome": null,
+    "mode": "opening",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "d2d4",
+      "text": "",
+      "arrows": [
+        [
+          "d2",
+          "d4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d7d5",
+      "text": "",
+      "arrows": [
+        [
+          "d7",
+          "d5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c2c4",
+      "text": "",
+      "arrows": [
+        [
+          "c2",
+          "c4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e7e6",
+      "text": "",
+      "arrows": [
+        [
+          "e7",
+          "e6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b1c3",
+      "text": "",
+      "arrows": [
+        [
+          "b1",
+          "c3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g8f6",
+      "text": "",
+      "arrows": [
+        [
+          "g8",
+          "f6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c1g5",
+      "text": "",
+      "arrows": [
+        [
+          "c1",
+          "g5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "f8e7",
+      "text": "",
+      "arrows": [
+        [
+          "f8",
+          "e7"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e2e3",
+      "text": "",
+      "arrows": [
+        [
+          "e2",
+          "e3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e8g8",
+      "text": "",
+      "arrows": [
+        [
+          "e8",
+          "g8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g1f3",
+      "text": "",
+      "arrows": [
+        [
+          "g1",
+          "f3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "h7h6",
+      "text": "",
+      "arrows": [
+        [
+          "h7",
+          "h6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g5h4",
+      "text": "",
+      "arrows": [
+        [
+          "g5",
+          "h4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b7b6",
+      "text": "",
+      "arrows": [
+        [
+          "b7",
+          "b6"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "opening"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "3 parties contre le moteur depuis 1.d4."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "d5, e6, Cf6, Fe7, O-O, puis ...c5 ou ...b6 et ...Fb7. Une base solide qui marche contre presque tous les systèmes avec d4.",
+      "audio": null
+    },
+    {
+      "title": "Plans",
+      "text": "...c5 pour attaquer le centre blanc ; le fou c8 est la pièce difficile, le sortir par b7 (après ...b6) ou f5 (avant ...e6).",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

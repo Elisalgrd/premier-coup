@@ -1,0 +1,53 @@
+{
+  "id": "str-prophylaxis",
+  "title": "La prophylaxie",
+  "tier": 4,
+  "priority": "A",
+  "domain": "stratégie",
+  "prerequisites": [
+    "proc-opponent-threat"
+  ],
+  "principle": "Avant ton plan, demande-toi quel est le sien. Le meilleur coup est parfois celui qui l'empêche.",
+  "why": [
+    "C'est l'extension stratégique de « que veut son dernier coup ? »."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "defensiveMove"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "8 positions plan-choice à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Avant ton plan, demande-toi quel est le sien. Le meilleur coup est parfois celui qui l'empêche.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "C'est l'extension stratégique de « que veut son dernier coup ? ».",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

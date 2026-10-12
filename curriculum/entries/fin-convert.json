@@ -1,0 +1,69 @@
+{
+  "id": "fin-convert",
+  "title": "Convertir un avantage matériel",
+  "tier": 3,
+  "priority": "S",
+  "domain": "finales",
+  "prerequisites": [
+    "proc-blunder-check"
+  ],
+  "principle": "Avec du matériel en plus : échange les pièces, pas les pions ; garde ton roi en sécurité ; supprime le contre-jeu avant d'attaquer.",
+  "why": [
+    "Chaque échange de pièces augmente proportionnellement ton avantage (5 contre 2 vaut mieux que 39 contre 36). Les pions sont ce qui te permettra de promouvoir."
+  ],
+  "signals": [],
+  "method": [
+    "Vérifie la sécurité de ton roi et les menaces adverses.",
+    "Propose des échanges de pièces, surtout de la pièce adverse la plus active.",
+    "Crée un pion passé et pousse-le avec l'aide du roi.",
+    "Pas de complications inutiles : le coup simple et sûr suffit."
+  ],
+  "pitfall": {
+    "text": "pressé de gagner, on laisse une pièce en prise ou on autorise un échec perpétuel.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "crushing",
+    "endgame"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "contre le moteur, depuis 10 positions avec une pièce d'avance, gagner 9 fois."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Avec du matériel en plus : échange les pièces, pas les pions ; garde ton roi en sécurité ; supprime le contre-jeu avant d'attaquer.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Chaque échange de pièces augmente proportionnellement ton avantage (5 contre 2 vaut mieux que 39 contre 36). Les pions sont ce qui te permettra de promouvoir.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Vérifie la sécurité de ton roi et les menaces adverses. Propose des échanges de pièces, surtout de la pièce adverse la plus active. Crée un pion passé et pousse-le avec l'aide du roi. Pas de complications inutiles : le coup simple et sûr suffit.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "pressé de gagner, on laisse une pièce en prise ou on autorise un échec perpétuel.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

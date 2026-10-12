@@ -1,0 +1,809 @@
+[
+  {
+    "id": "vis-rules",
+    "title": "Les règles complètes",
+    "tier": 0,
+    "priority": "S",
+    "domain": "vision",
+    "prerequisites": [],
+    "principle": "Le but est de mater le roi adverse : il est attaqué et aucun coup ne le sauve.",
+    "drill": "rules"
+  },
+  {
+    "id": "vis-notation",
+    "title": "Les coordonnées et la notation",
+    "tier": 0,
+    "priority": "S",
+    "domain": "vision",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "principle": "Chaque case a un nom (colonne a à h, rangée 1 à 8). Chaque coup s'écrit.",
+    "drill": "coordinates"
+  },
+  {
+    "id": "vis-values",
+    "title": "La valeur des pièces",
+    "tier": 0,
+    "priority": "S",
+    "domain": "vision",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "principle": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Le roi n'a pas de prix.",
+    "drill": "material"
+  },
+  {
+    "id": "vis-attacked-squares",
+    "title": "Voir qui attaque quoi",
+    "tier": 0,
+    "priority": "S",
+    "domain": "vision",
+    "prerequisites": [
+      "vis-notation"
+    ],
+    "principle": "Avant de penser à un plan, sache quelles cases et quelles pièces chaque camp attaque."
+  },
+  {
+    "id": "vis-check-escape",
+    "title": "Sortir d'un échec",
+    "tier": 0,
+    "priority": "S",
+    "domain": "vision",
+    "prerequisites": [
+      "vis-attacked-squares"
+    ],
+    "principle": "Trois réponses à un échec : prendre la pièce qui attaque, s'interposer, fuir. Toujours examiner les trois."
+  },
+  {
+    "id": "mat-basic-queen",
+    "title": "Mat avec roi et dame contre roi",
+    "tier": 0,
+    "priority": "S",
+    "domain": "mats",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "principle": "La dame enferme le roi adverse dans une boîte de plus en plus petite. Ton roi vient l'aider pour le coup final.",
+    "drill": "endgame"
+  },
+  {
+    "id": "mat-two-rooks",
+    "title": "Le mat de l'escalier (deux tours ou dame + tour)",
+    "tier": 0,
+    "priority": "S",
+    "domain": "mats",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "principle": "Une tour coupe une rangée, l'autre donne échec sur la rangée suivante. On alterne jusqu'au bord."
+  },
+  {
+    "id": "mat-basic-rook",
+    "title": "Mat avec roi et tour contre roi",
+    "tier": 0,
+    "priority": "A",
+    "domain": "mats",
+    "prerequisites": [
+      "mat-basic-queen"
+    ],
+    "principle": "La tour coupe le roi adverse, ton roi le fait reculer, la tour donne le mat sur le bord.",
+    "drill": "endgame"
+  },
+  {
+    "id": "vis-draws",
+    "title": "Les nulles qui sauvent et celles qui gâchent",
+    "tier": 0,
+    "priority": "A",
+    "domain": "vision",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "principle": "Devant au matériel, évite le pat et la répétition. Derrière, cherche-les."
+  },
+  {
+    "id": "proc-blunder-check",
+    "title": "La routine anti-gaffe : échecs, captures, menaces",
+    "tier": 1,
+    "priority": "S",
+    "domain": "réflexes",
+    "prerequisites": [
+      "vis-attacked-squares"
+    ],
+    "principle": "Avant de jouer, regarde les échecs, captures et menaces possibles. Pour l'adversaire d'abord, pour toi ensuite."
+  },
+  {
+    "id": "proc-opponent-threat",
+    "title": "Que veut son dernier coup ?",
+    "tier": 1,
+    "priority": "S",
+    "domain": "réflexes",
+    "prerequisites": [
+      "proc-blunder-check"
+    ],
+    "principle": "Chaque coup adverse change quelque chose. Trouve quoi avant de penser à ton plan."
+  },
+  {
+    "id": "proc-hanging-pieces",
+    "title": "Les pièces non défendues tombent",
+    "tier": 1,
+    "priority": "S",
+    "domain": "réflexes",
+    "prerequisites": [
+      "vis-attacked-squares"
+    ],
+    "principle": "Une pièce non défendue est une cible. Chez l'adversaire, prends-la. Chez toi, protège-la."
+  },
+  {
+    "id": "proc-exchange-count",
+    "title": "Compter les échanges",
+    "tier": 1,
+    "priority": "S",
+    "domain": "réflexes",
+    "prerequisites": [
+      "vis-values",
+      "vis-attacked-squares"
+    ],
+    "principle": "Avant de prendre, compte les attaquants et les défenseurs de la case, et joue l'échange dans ta tête jusqu'au bout."
+  },
+  {
+    "id": "proc-free-material",
+    "title": "Prendre ce qui est offert",
+    "tier": 1,
+    "priority": "A",
+    "domain": "réflexes",
+    "prerequisites": [
+      "proc-exchange-count"
+    ],
+    "principle": "Si une pièce est gratuite et que la prendre ne te met pas en danger, prends-la."
+  },
+  {
+    "id": "ouv-principles",
+    "title": "Les trois principes de l'ouverture",
+    "tier": 1,
+    "priority": "S",
+    "domain": "ouvertures",
+    "prerequisites": [
+      "vis-notation"
+    ],
+    "principle": "Dans les 10 premiers coups : prends le centre, sors tes pièces, mets ton roi à l'abri."
+  },
+  {
+    "id": "ouv-early-traps",
+    "title": "Les pièges d'ouverture à connaître",
+    "tier": 1,
+    "priority": "A",
+    "domain": "ouvertures",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "principle": "f7 (et f2) est la case faible du début de partie : seul le roi la défend. Beaucoup de pièges la visent."
+  },
+  {
+    "id": "meta-play-slow",
+    "title": "Jouer lentement pour apprendre",
+    "tier": 1,
+    "priority": "S",
+    "domain": "méthode",
+    "prerequisites": [],
+    "principle": "Pour progresser, joue des parties avec assez de temps pour faire ta routine à chaque coup : 15 min + 10 s par coup minimum.",
+    "drill": "game-review"
+  },
+  {
+    "id": "meta-game-review",
+    "title": "Transformer chaque partie en progrès",
+    "tier": 1,
+    "priority": "S",
+    "domain": "méthode",
+    "prerequisites": [
+      "vis-notation"
+    ],
+    "principle": "Analyse d'abord seule, ensuite avec le moteur. Retiens une seule leçon par partie.",
+    "drill": "game-review"
+  },
+  {
+    "id": "proc-forcing-moves",
+    "title": "Les coups forçants d'abord",
+    "tier": 2,
+    "priority": "S",
+    "domain": "réflexes",
+    "prerequisites": [
+      "proc-blunder-check"
+    ],
+    "principle": "Cherche d'abord les échecs, puis les captures, puis les menaces. Pour toi et pour lui.",
+    "drill": "mixed"
+  },
+  {
+    "id": "tac-fork",
+    "title": "La fourchette (double attaque)",
+    "tier": 2,
+    "priority": "S",
+    "domain": "tactique",
+    "prerequisites": [
+      "proc-hanging-pieces"
+    ],
+    "principle": "Une seule pièce attaque deux cibles en même temps. L'adversaire ne peut en sauver qu'une."
+  },
+  {
+    "id": "tac-pin",
+    "title": "Le clouage",
+    "tier": 2,
+    "priority": "S",
+    "domain": "tactique",
+    "prerequisites": [
+      "proc-hanging-pieces"
+    ],
+    "principle": "Une pièce ne peut pas (ou ne doit pas) bouger parce qu'elle protège une pièce plus précieuse derrière elle."
+  },
+  {
+    "id": "tac-skewer",
+    "title": "L'enfilade",
+    "tier": 2,
+    "priority": "A",
+    "domain": "tactique",
+    "prerequisites": [
+      "tac-pin"
+    ],
+    "principle": "Le clouage à l'envers. On attaque la pièce précieuse devant ; quand elle bouge, on prend celle de derrière."
+  },
+  {
+    "id": "tac-discovered",
+    "title": "L'attaque à la découverte",
+    "tier": 2,
+    "priority": "S",
+    "domain": "tactique",
+    "prerequisites": [
+      "tac-pin"
+    ],
+    "principle": "En déplaçant une pièce, tu ouvres la ligne d'une autre pièce qui attaque. Deux menaces d'un coup : celle de la pièce qui bouge et celle de la pièce qui est découverte."
+  },
+  {
+    "id": "tac-double-check",
+    "title": "L'échec double",
+    "tier": 2,
+    "priority": "A",
+    "domain": "tactique",
+    "prerequisites": [
+      "tac-discovered"
+    ],
+    "principle": "Deux pièces donnent échec en même temps. Seul le roi peut répondre, en fuyant."
+  },
+  {
+    "id": "tac-remove-defender",
+    "title": "Éliminer le défenseur",
+    "tier": 2,
+    "priority": "S",
+    "domain": "tactique",
+    "prerequisites": [
+      "proc-exchange-count"
+    ],
+    "principle": "Si une pièce adverse n'est défendue qu'une fois, prends ou chasse son défenseur. La pièce devient gratuite."
+  },
+  {
+    "id": "tac-overload",
+    "title": "La surcharge",
+    "tier": 2,
+    "priority": "A",
+    "domain": "tactique",
+    "prerequisites": [
+      "tac-remove-defender"
+    ],
+    "principle": "Une pièce adverse défend deux choses à la fois. Attaque l'une : en la défendant, elle abandonne l'autre."
+  },
+  {
+    "id": "tac-deflection",
+    "title": "La déviation",
+    "tier": 2,
+    "priority": "A",
+    "domain": "tactique",
+    "prerequisites": [
+      "tac-overload"
+    ],
+    "principle": "Force une pièce adverse à quitter une case ou une ligne qu'elle doit garder."
+  },
+  {
+    "id": "tac-attraction",
+    "title": "L'attraction (le leurre)",
+    "tier": 2,
+    "priority": "A",
+    "domain": "tactique",
+    "prerequisites": [
+      "tac-deflection"
+    ],
+    "principle": "Force une pièce adverse (souvent le roi) à venir sur une case où elle subira une tactique."
+  },
+  {
+    "id": "tac-trapped-piece",
+    "title": "La pièce piégée",
+    "tier": 2,
+    "priority": "A",
+    "domain": "tactique",
+    "prerequisites": [
+      "vis-attacked-squares"
+    ],
+    "principle": "Une pièce qui n'a plus de case sûre peut être gagnée simplement en l'attaquant."
+  },
+  {
+    "id": "tac-promotion",
+    "title": "Les pions qui deviennent des dames",
+    "tier": 2,
+    "priority": "A",
+    "domain": "tactique",
+    "prerequisites": [
+      "proc-forcing-moves"
+    ],
+    "principle": "Un pion sur la 7e rangée (2e pour les noirs) vaut presque une dame. Tout sacrifice qui le fait promouvoir est à examiner."
+  },
+  {
+    "id": "mat-back-rank",
+    "title": "Le mat du couloir",
+    "tier": 2,
+    "priority": "S",
+    "domain": "mats",
+    "prerequisites": [
+      "mat-two-rooks"
+    ],
+    "principle": "Un roi roqué derrière ses pions non avancés peut être maté par une tour ou une dame sur la dernière rangée."
+  },
+  {
+    "id": "mat-queen-support",
+    "title": "Le mat du baiser (dame soutenue)",
+    "tier": 2,
+    "priority": "S",
+    "domain": "mats",
+    "prerequisites": [
+      "mat-basic-queen"
+    ],
+    "principle": "La dame se colle au roi adverse, protégée par une autre pièce : le roi ne peut pas la prendre."
+  },
+  {
+    "id": "mat-smothered",
+    "title": "Le mat à l'étouffée",
+    "tier": 2,
+    "priority": "A",
+    "domain": "mats",
+    "prerequisites": [
+      "tac-fork"
+    ],
+    "principle": "Le roi est entouré de ses propres pièces ; un cavalier donne échec et le mate, car rien ne peut fuir ni s'interposer."
+  },
+  {
+    "id": "mat-arabian",
+    "title": "Le mat arabe",
+    "tier": 2,
+    "priority": "B",
+    "domain": "mats",
+    "prerequisites": [
+      "mat-back-rank"
+    ],
+    "principle": "Tour et cavalier coopèrent : le cavalier protège la tour collée au roi dans le coin et contrôle une case de fuite."
+  },
+  {
+    "id": "mat-anastasia",
+    "title": "Le mat d'Anastasia",
+    "tier": 2,
+    "priority": "B",
+    "domain": "mats",
+    "prerequisites": [
+      "mat-arabian"
+    ],
+    "principle": "Un cavalier en e7 (ou e2) bloque les cases de fuite, une tour ou une dame mate sur la colonne h."
+  },
+  {
+    "id": "mat-boden",
+    "title": "Le mat de Boden",
+    "tier": 2,
+    "priority": "B",
+    "domain": "mats",
+    "prerequisites": [
+      "tac-pin"
+    ],
+    "principle": "Deux fous sur des diagonales qui se croisent matent un roi roqué côté dame, bloqué par ses propres pièces."
+  },
+  {
+    "id": "mat-patterns-misc",
+    "title": "Les autres motifs de mat à reconnaître",
+    "tier": 2,
+    "priority": "C",
+    "domain": "mats",
+    "prerequisites": [
+      "mat-queen-support"
+    ],
+    "principle": "Chaque motif est une « image » de mat. Plus tu en connais, plus vite tu les vois."
+  },
+  {
+    "id": "proc-candidates-calc",
+    "title": "Coups candidats et calcul",
+    "tier": 3,
+    "priority": "S",
+    "domain": "réflexes",
+    "prerequisites": [
+      "proc-forcing-moves"
+    ],
+    "principle": "Choisis 2 ou 3 coups candidats, calcule pour chacun la meilleure réponse adverse, compare les positions finales."
+  },
+  {
+    "id": "tac-intermezzo",
+    "title": "Le coup intermédiaire",
+    "tier": 3,
+    "priority": "A",
+    "domain": "tactique",
+    "prerequisites": [
+      "proc-candidates-calc"
+    ],
+    "principle": "Avant de reprendre « automatiquement », regarde s'il existe un coup plus fort (échec, menace plus grosse), puis reprends ensuite."
+  },
+  {
+    "id": "tac-xray",
+    "title": "Le rayon X",
+    "tier": 3,
+    "priority": "B",
+    "domain": "tactique",
+    "prerequisites": [
+      "tac-skewer"
+    ],
+    "principle": "Une pièce longue agit à travers une autre pièce (amie ou ennemie) sur la même ligne."
+  },
+  {
+    "id": "tac-interference-clearance",
+    "title": "Interception et dégagement",
+    "tier": 3,
+    "priority": "B",
+    "domain": "tactique",
+    "prerequisites": [
+      "tac-deflection"
+    ],
+    "principle": "Interception : place une pièce entre un défenseur et ce qu'il défend. Dégagement : libère une case ou une ligne pour une autre de tes pièces, souvent avec gain de temps."
+  },
+  {
+    "id": "tac-quiet-move",
+    "title": "Le coup calme décisif",
+    "tier": 3,
+    "priority": "B",
+    "domain": "tactique",
+    "prerequisites": [
+      "proc-candidates-calc"
+    ],
+    "principle": "Parfois le coup gagnant n'est ni un échec ni une capture : il crée une menace imparable ou enlève la seule défense."
+  },
+  {
+    "id": "mat-greek-gift",
+    "title": "Le sacrifice grec (Fxh7+)",
+    "tier": 3,
+    "priority": "B",
+    "domain": "mats",
+    "prerequisites": [
+      "mat-queen-support"
+    ],
+    "principle": "Sacrifier le fou en h7 avec échec pour exposer le roi roqué, puis Cg5+ et Dh5 menacent le mat."
+  },
+  {
+    "id": "fin-active-king",
+    "title": "En finale, le roi attaque",
+    "tier": 3,
+    "priority": "S",
+    "domain": "finales",
+    "prerequisites": [
+      "vis-values"
+    ],
+    "principle": "Quand les dames sont échangées, ton roi devient une pièce forte : amène-le au centre et vers les pions."
+  },
+  {
+    "id": "fin-square",
+    "title": "La règle du carré",
+    "tier": 3,
+    "priority": "A",
+    "domain": "finales",
+    "prerequisites": [
+      "fin-active-king"
+    ],
+    "principle": "Trace le carré entre le pion et sa case de promotion. Si le roi adverse peut y entrer, il rattrape le pion."
+  },
+  {
+    "id": "fin-opposition",
+    "title": "Roi et pion contre roi, l'opposition",
+    "tier": 3,
+    "priority": "S",
+    "domain": "finales",
+    "prerequisites": [
+      "fin-active-king"
+    ],
+    "principle": "Dans une finale de rois, celui qui n'a pas le trait quand les rois se font face (une case entre eux) « a l'opposition » et gagne le duel."
+  },
+  {
+    "id": "fin-passed-pawn",
+    "title": "Le pion passé",
+    "tier": 3,
+    "priority": "A",
+    "domain": "finales",
+    "prerequisites": [
+      "fin-square"
+    ],
+    "principle": "Un pion qu'aucun pion adverse ne peut arrêter est un atout majeur : pousse-le, soutiens-le, et bloque ceux de l'adversaire."
+  },
+  {
+    "id": "fin-lucena",
+    "title": "La position de Lucena (gagner une finale de tours)",
+    "tier": 3,
+    "priority": "A",
+    "domain": "finales",
+    "prerequisites": [
+      "fin-opposition",
+      "tac-skewer"
+    ],
+    "principle": "Roi devant son pion sur la 7e, roi adverse coupé : construis un « pont » avec ta tour sur la 4e rangée pour stopper les échecs latéraux.",
+    "drill": "endgame"
+  },
+  {
+    "id": "fin-philidor",
+    "title": "La position de Philidor (sauver une finale de tours)",
+    "tier": 3,
+    "priority": "A",
+    "domain": "finales",
+    "prerequisites": [
+      "fin-lucena"
+    ],
+    "principle": "En défense, roi devant le pion, tour sur ta 3e rangée (6e pour les noirs) tant que le pion n'a pas avancé ; dès qu'il avance, ta tour descend sur la 1re rangée et donne des échecs par derrière.",
+    "drill": "endgame"
+  },
+  {
+    "id": "fin-rook-behind",
+    "title": "Les tours derrière les pions passés",
+    "tier": 3,
+    "priority": "A",
+    "domain": "finales",
+    "prerequisites": [
+      "fin-passed-pawn"
+    ],
+    "principle": "Place ta tour derrière les pions passés : derrière les tiens pour les pousser, derrière ceux de l'adversaire pour les freiner (règle de Tarrasch)."
+  },
+  {
+    "id": "fin-convert",
+    "title": "Convertir un avantage matériel",
+    "tier": 3,
+    "priority": "S",
+    "domain": "finales",
+    "prerequisites": [
+      "proc-blunder-check"
+    ],
+    "principle": "Avec du matériel en plus : échange les pièces, pas les pions ; garde ton roi en sécurité ; supprime le contre-jeu avant d'attaquer."
+  },
+  {
+    "id": "fin-opposite-bishops",
+    "title": "Fous de couleurs opposées",
+    "tier": 3,
+    "priority": "B",
+    "domain": "finales",
+    "prerequisites": [
+      "fin-convert"
+    ],
+    "principle": "En finale pure, les fous de couleurs opposées font souvent nulle même avec un ou deux pions de moins. En milieu de partie, ils favorisent l'attaquant."
+  },
+  {
+    "id": "fin-queen-vs-pawn",
+    "title": "Dame contre pion sur la 7e",
+    "tier": 3,
+    "priority": "C",
+    "domain": "finales",
+    "prerequisites": [
+      "mat-basic-queen"
+    ],
+    "principle": "La dame gagne contre un pion central ou de cavalier sur la 7e (échecs puis rapprochement du roi), mais un pion de fou ou de tour fait souvent nulle si le roi attaquant est loin (ressource de pat)."
+  },
+  {
+    "id": "meta-time-management",
+    "title": "Gérer son temps",
+    "tier": 3,
+    "priority": "A",
+    "domain": "méthode",
+    "prerequisites": [
+      "meta-play-slow"
+    ],
+    "principle": "Joue vite les coups évidents et les ouvertures connues, réfléchis longtemps aux moments critiques (une capture, un sacrifice, la fin de l'ouverture, une décision d'échange).",
+    "drill": "game-review"
+  },
+  {
+    "id": "meta-woodpecker",
+    "title": "La méthode pic-vert",
+    "tier": 3,
+    "priority": "B",
+    "domain": "méthode",
+    "prerequisites": [
+      "proc-forcing-moves"
+    ],
+    "principle": "Résoudre le même set de problèmes en cycles de plus en plus rapides grave les motifs dans la reconnaissance automatique.",
+    "drill": "game-review"
+  },
+  {
+    "id": "ouv-white-italian",
+    "title": "Avec les blancs : l'Italienne tranquille",
+    "tier": 2,
+    "priority": "A",
+    "domain": "ouvertures",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "principle": "Développer vite, roquer, préparer d4 avec c3. Une structure simple qui marche contre presque tout après 1.e4 e5."
+  },
+  {
+    "id": "ouv-black-e5",
+    "title": "Avec les noirs contre 1.e4 : 1...e5",
+    "tier": 2,
+    "priority": "A",
+    "domain": "ouvertures",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "principle": "Répondre symétriquement au centre, développer Cc6, Cf6, Fc5 ou Fe7, roquer."
+  },
+  {
+    "id": "ouv-black-d5",
+    "title": "Avec les noirs contre 1.d4 : la structure d5-e6",
+    "tier": 2,
+    "priority": "A",
+    "domain": "ouvertures",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "principle": "d5, e6, Cf6, Fe7, O-O, puis ...c5 ou ...b6 et ...Fb7. Une base solide qui marche contre presque tous les systèmes avec d4."
+  },
+  {
+    "id": "ouv-gambits",
+    "title": "Gambits : accepter ou décliner ?",
+    "tier": 3,
+    "priority": "B",
+    "domain": "ouvertures",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "principle": "Accepte un pion de gambit si tu peux continuer à développer. Si le garder te coûte plusieurs tempos ou ta sécurité, rends-le.",
+    "drill": "board-observation"
+  },
+  {
+    "id": "str-worst-piece",
+    "title": "Améliore ta pire pièce",
+    "tier": 4,
+    "priority": "S",
+    "domain": "stratégie",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "principle": "Sans tactique ni menace, trouve ta pièce la moins active et donne-lui une meilleure case.",
+    "drill": "plan-choice"
+  },
+  {
+    "id": "str-open-files",
+    "title": "Colonnes ouvertes et 7e rangée",
+    "tier": 4,
+    "priority": "A",
+    "domain": "stratégie",
+    "prerequisites": [
+      "str-worst-piece"
+    ],
+    "principle": "Les tours veulent les colonnes ouvertes (aucun pion) ou semi-ouvertes (pas de pion à toi). Une tour sur la 7e rangée attaque les pions et enferme le roi."
+  },
+  {
+    "id": "str-outposts",
+    "title": "Les avant-postes",
+    "tier": 4,
+    "priority": "A",
+    "domain": "stratégie",
+    "prerequisites": [
+      "str-worst-piece"
+    ],
+    "principle": "Une case dans le camp adverse qu'aucun pion adverse ne peut attaquer, défendue par un de tes pions, est idéale pour un cavalier.",
+    "drill": "plan-choice"
+  },
+  {
+    "id": "str-good-bad-bishop",
+    "title": "Bon et mauvais fou",
+    "tier": 4,
+    "priority": "B",
+    "domain": "stratégie",
+    "prerequisites": [
+      "str-pawn-structure"
+    ],
+    "principle": "Un fou est « mauvais » quand tes pions sont bloqués sur des cases de sa couleur. Place tes pions sur la couleur opposée à ton fou restant, ou échange ton mauvais fou.",
+    "drill": "plan-choice"
+  },
+  {
+    "id": "str-pawn-structure",
+    "title": "Les structures de pions",
+    "tier": 4,
+    "priority": "A",
+    "domain": "stratégie",
+    "prerequisites": [
+      "vis-values"
+    ],
+    "principle": "Les pions ne reculent pas : chaque poussée crée des forces et des faiblesses permanentes.",
+    "drill": "plan-choice"
+  },
+  {
+    "id": "str-weak-squares",
+    "title": "Cases faibles et trous",
+    "tier": 4,
+    "priority": "B",
+    "domain": "stratégie",
+    "prerequisites": [
+      "str-pawn-structure"
+    ],
+    "principle": "Une case qu'aucun pion ne peut plus défendre est une case faible ; si elle est près du roi ou au centre, installe-toi dessus.",
+    "drill": "plan-choice"
+  },
+  {
+    "id": "str-king-safety-middlegame",
+    "title": "Sécurité du roi en milieu de partie",
+    "tier": 4,
+    "priority": "A",
+    "domain": "stratégie",
+    "prerequisites": [
+      "ouv-principles",
+      "mat-queen-support"
+    ],
+    "principle": "Les pions devant ton roi roqué sont son toit : ne les pousse pas sans raison. Quand les roques sont opposés, la course commence : pousse tes pions vers le roi adverse."
+  },
+  {
+    "id": "str-exchanges",
+    "title": "Quand échanger ?",
+    "tier": 4,
+    "priority": "A",
+    "domain": "stratégie",
+    "prerequisites": [
+      "fin-convert"
+    ],
+    "principle": "Échange quand tu es devant au matériel, quand tu manques de place, ou pour éliminer une pièce adverse très active ou un défenseur clé. Évite d'échanger quand tu attaques ou quand tu es derrière.",
+    "drill": "plan-choice"
+  },
+  {
+    "id": "str-prophylaxis",
+    "title": "La prophylaxie",
+    "tier": 4,
+    "priority": "A",
+    "domain": "stratégie",
+    "prerequisites": [
+      "proc-opponent-threat"
+    ],
+    "principle": "Avant ton plan, demande-toi quel est le sien. Le meilleur coup est parfois celui qui l'empêche."
+  },
+  {
+    "id": "str-initiative",
+    "title": "Développement et initiative",
+    "tier": 4,
+    "priority": "B",
+    "domain": "stratégie",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "principle": "Si tu as plus de pièces développées, ouvre le jeu (échanges de pions au centre) : l'avance se transforme en attaque. Si tu es en retard, garde le jeu fermé.",
+    "drill": "plan-choice"
+  },
+  {
+    "id": "str-bishop-pair-space",
+    "title": "Paire de fous et espace",
+    "tier": 4,
+    "priority": "C",
+    "domain": "stratégie",
+    "prerequisites": [
+      "str-good-bad-bishop"
+    ],
+    "principle": "La paire de fous est forte dans les positions ouvertes ; ouvre le jeu si tu l'as. Avec plus d'espace, évite les échanges pour garder l'adversaire à l'étroit.",
+    "drill": "plan-choice"
+  },
+  {
+    "id": "str-plan-making",
+    "title": "Construire un plan",
+    "tier": 4,
+    "priority": "A",
+    "domain": "stratégie",
+    "prerequisites": [
+      "str-open-files",
+      "str-outposts",
+      "str-pawn-structure",
+      "str-king-safety-middlegame",
+      "str-exchanges",
+      "str-prophylaxis"
+    ],
+    "principle": "Un plan naît des déséquilibres : matériel, structure de pions, pièces bonnes et mauvaises, colonnes, espace, sécurité des rois, développement.",
+    "drill": "plan-choice"
+  }
+]

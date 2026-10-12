@@ -1,0 +1,60 @@
+{
+  "id": "str-plan-making",
+  "title": "Construire un plan",
+  "tier": 4,
+  "priority": "A",
+  "domain": "stratégie",
+  "prerequisites": [
+    "str-open-files",
+    "str-outposts",
+    "str-pawn-structure",
+    "str-king-safety-middlegame",
+    "str-exchanges",
+    "str-prophylaxis"
+  ],
+  "principle": "Un plan naît des déséquilibres : matériel, structure de pions, pièces bonnes et mauvaises, colonnes, espace, sécurité des rois, développement.",
+  "why": [],
+  "signals": [],
+  "method": [
+    "Liste les déséquilibres (qui a quoi de mieux).",
+    "Choisis l'aile ou la cible où tu es plus fort.",
+    "Formule le plan en une phrase (« J'installe mon cavalier en d5 puis je double mes tours sur la colonne c »).",
+    "Trouve le premier coup qui sert ce plan sans rien laisser en prise."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 positions où la phrase du plan est jugée correcte (QCM de 3 plans illustrés) à 80 %.\n\n---"
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Un plan naît des déséquilibres : matériel, structure de pions, pièces bonnes et mauvaises, colonnes, espace, sécurité des rois, développement.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Liste les déséquilibres (qui a quoi de mieux). Choisis l'aile ou la cible où tu es plus fort. Formule le plan en une phrase (« J'installe mon cavalier en d5 puis je double mes tours sur la colonne c »). Trouve le premier coup qui sert ce plan sans rien laisser en prise.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "plan-choice"
+}

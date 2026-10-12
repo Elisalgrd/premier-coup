@@ -1,0 +1,59 @@
+{
+  "id": "meta-play-slow",
+  "title": "Jouer lentement pour apprendre",
+  "tier": 1,
+  "priority": "S",
+  "domain": "méthode",
+  "prerequisites": [],
+  "principle": "Pour progresser, joue des parties avec assez de temps pour faire ta routine à chaque coup : 15 min + 10 s par coup minimum.",
+  "why": [
+    "En blitz (3 à 5 min), on répète ses mauvais réflexes. En partie lente, on installe les bons. Le blitz est un loisir, pas un entraînement à ce niveau."
+  ],
+  "signals": [],
+  "method": [
+    "3 à 5 parties lentes par semaine (Lichess 15+10 ou 30+0, ou contre le moteur de l'app).",
+    "Chaque partie perdue est analysée (voir meta-game-review).",
+    "Garde le blitz pour après, quand la routine est automatique."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 parties lentes jouées et analysées."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Pour progresser, joue des parties avec assez de temps pour faire ta routine à chaque coup : 15 min + 10 s par coup minimum.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "En blitz (3 à 5 min), on répète ses mauvais réflexes. En partie lente, on installe les bons. Le blitz est un loisir, pas un entraînement à ce niveau.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "3 à 5 parties lentes par semaine (Lichess 15+10 ou 30+0, ou contre le moteur de l'app). Chaque partie perdue est analysée (voir meta-game-review). Garde le blitz pour après, quand la routine est automatique.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "game-review"
+}

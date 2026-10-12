@@ -1,0 +1,61 @@
+{
+  "id": "tac-intermezzo",
+  "title": "Le coup intermédiaire",
+  "tier": 3,
+  "priority": "A",
+  "domain": "tactique",
+  "prerequisites": [
+    "proc-candidates-calc"
+  ],
+  "principle": "Avant de reprendre « automatiquement », regarde s'il existe un coup plus fort (échec, menace plus grosse), puis reprends ensuite.",
+  "why": [
+    "Dans un échange, tout le monde suppose la reprise. Un coup intercalé forçant change le bilan."
+  ],
+  "signals": [
+    "un échange en cours",
+    "tu as un échec ou une menace sur une pièce plus précieuse."
+  ],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "intermezzo"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes intermezzo à 70 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Avant de reprendre « automatiquement », regarde s'il existe un coup plus fort (échec, menace plus grosse), puis reprends ensuite.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Dans un échange, tout le monde suppose la reprise. Un coup intercalé forçant change le bilan.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "un échange en cours ; tu as un échec ou une menace sur une pièce plus précieuse.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

@@ -1,0 +1,69 @@
+{
+  "id": "tac-attraction",
+  "title": "L'attraction (le leurre)",
+  "tier": 2,
+  "priority": "A",
+  "domain": "tactique",
+  "prerequisites": [
+    "tac-deflection"
+  ],
+  "principle": "Force une pièce adverse (souvent le roi) à venir sur une case où elle subira une tactique.",
+  "why": [
+    "On sacrifie pour amener le roi ou la dame sur une case de fourchette, de clouage ou de mat."
+  ],
+  "signals": [
+    "une case où une fourchette ou un mat marcherait « si le roi (ou la dame) y était »."
+  ],
+  "method": [
+    "trouve la case cible",
+    "cherche un sacrifice avec échec ou capture qui oblige la pièce à y aller",
+    "vérifie la suite."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "attraction"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes attraction à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Force une pièce adverse (souvent le roi) à venir sur une case où elle subira une tactique.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "On sacrifie pour amener le roi ou la dame sur une case de fourchette, de clouage ou de mat.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une case où une fourchette ou un mat marcherait « si le roi (ou la dame) y était ».",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "trouve la case cible ; cherche un sacrifice avec échec ou capture qui oblige la pièce à y aller ; vérifie la suite.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

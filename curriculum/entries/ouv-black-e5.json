@@ -1,0 +1,204 @@
+{
+  "id": "ouv-black-e5",
+  "title": "Avec les noirs contre 1.e4 : 1...e5",
+  "tier": 2,
+  "priority": "A",
+  "domain": "ouvertures",
+  "prerequisites": [
+    "ouv-principles"
+  ],
+  "principle": "Répondre symétriquement au centre, développer Cc6, Cf6, Fc5 ou Fe7, roquer.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "solution": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5",
+      "d2d3",
+      "g8f6",
+      "e1g1",
+      "d7d6",
+      "b1c3",
+      "e8g8"
+    ],
+    "prompt": "Trait aux blancs. Développe tes pièces en contrôlant le centre.",
+    "outcome": null,
+    "mode": "opening",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "e2e4",
+      "text": "",
+      "arrows": [
+        [
+          "e2",
+          "e4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e7e5",
+      "text": "",
+      "arrows": [
+        [
+          "e7",
+          "e5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g1f3",
+      "text": "",
+      "arrows": [
+        [
+          "g1",
+          "f3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b8c6",
+      "text": "",
+      "arrows": [
+        [
+          "b8",
+          "c6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "f1c4",
+      "text": "",
+      "arrows": [
+        [
+          "f1",
+          "c4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "f8c5",
+      "text": "",
+      "arrows": [
+        [
+          "f8",
+          "c5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d2d3",
+      "text": "",
+      "arrows": [
+        [
+          "d2",
+          "d3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g8f6",
+      "text": "",
+      "arrows": [
+        [
+          "g8",
+          "f6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e1g1",
+      "text": "",
+      "arrows": [
+        [
+          "e1",
+          "g1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d7d6",
+      "text": "",
+      "arrows": [
+        [
+          "d7",
+          "d6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b1c3",
+      "text": "",
+      "arrows": [
+        [
+          "b1",
+          "c3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e8g8",
+      "text": "",
+      "arrows": [
+        [
+          "e8",
+          "g8"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "opening"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "3 parties contre le moteur avec un roque avant le 10e coup."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Répondre symétriquement au centre, développer Cc6, Cf6, Fc5 ou Fe7, roquer.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "contre l'Italienne, le même schéma que les blancs (...Fc5, ...d6, ...O-O, ...a6). Contre 2.Dh5, voir le mat du berger. Contre 3.Fc4 Cf6 4.Cg5, connaître 4...d5 5.exd5 Ca5. Contre l'écossaise (3.d4), 3...exd4 4.Cxd4 Fc5 ou Cf6.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

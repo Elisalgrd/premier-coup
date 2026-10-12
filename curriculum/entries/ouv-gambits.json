@@ -1,0 +1,54 @@
+{
+  "id": "ouv-gambits",
+  "title": "Gambits : accepter ou décliner ?",
+  "tier": 3,
+  "priority": "B",
+  "domain": "ouvertures",
+  "prerequisites": [
+    "ouv-principles"
+  ],
+  "principle": "Accepte un pion de gambit si tu peux continuer à développer. Si le garder te coûte plusieurs tempos ou ta sécurité, rends-le.",
+  "why": [],
+  "signals": [],
+  "method": [
+    "après avoir pris, compte tes pièces développées contre les siennes",
+    "si tu es en retard de 2 tempos ou plus, donne la priorité au développement et au roque.",
+    "--"
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "80 % sur 15 problèmes inédits, sur deux jours différents."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Accepte un pion de gambit si tu peux continuer à développer. Si le garder te coûte plusieurs tempos ou ta sécurité, rends-le.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "après avoir pris, compte tes pièces développées contre les siennes ; si tu es en retard de 2 tempos ou plus, donne la priorité au développement et au roque. ---",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "board-observation"
+}

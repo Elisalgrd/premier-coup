@@ -1,0 +1,162 @@
+{
+  "id": "ouv-early-traps",
+  "title": "Les pièges d'ouverture à connaître",
+  "tier": 1,
+  "priority": "A",
+  "domain": "ouvertures",
+  "prerequisites": [
+    "ouv-principles"
+  ],
+  "principle": "f7 (et f2) est la case faible du début de partie : seul le roi la défend. Beaucoup de pièges la visent.",
+  "why": [
+    "Ces pièges décident énormément de parties rapides entre débutants. Les connaître permet de les éviter et de punir ceux qui les tentent."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "solution": [
+      "e2e4",
+      "e7e5",
+      "d1h5",
+      "b8c6",
+      "f1c4",
+      "g8f6",
+      "h5f7"
+    ],
+    "prompt": "Trait aux blancs. Développe tes pièces en contrôlant le centre.",
+    "outcome": "mate",
+    "mode": "opening",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "e2e4",
+      "text": "",
+      "arrows": [
+        [
+          "e2",
+          "e4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e7e5",
+      "text": "",
+      "arrows": [
+        [
+          "e7",
+          "e5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d1h5",
+      "text": "",
+      "arrows": [
+        [
+          "d1",
+          "h5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b8c6",
+      "text": "",
+      "arrows": [
+        [
+          "b8",
+          "c6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "f1c4",
+      "text": "",
+      "arrows": [
+        [
+          "f1",
+          "c4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g8f6",
+      "text": "",
+      "arrows": [
+        [
+          "g8",
+          "f6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "h5f7",
+      "text": "",
+      "arrows": [
+        [
+          "h5",
+          "f7"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "attackingF2F7",
+    "opening"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "rejouer chaque ligne de mémoire des deux côtés (cartes SRS opening)."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "f7 (et f2) est la case faible du début de partie : seul le roi la défend. Beaucoup de pièges la visent.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Ces pièges décident énormément de parties rapides entre débutants. Les connaître permet de les éviter et de punir ceux qui les tentent.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Mat du berger et sa défense [validé] : 1.e4 e5 2.Dh5 Cc6 3.Fc4 Cf6?? 4.Dxf7#. Défense correcte : 1.e4 e5 2.Dh5 Cc6 3.Fc4 g6 4.Df3 Cf6 (le cavalier coupe la ligne de la dame vers f7). La dame blanche est sortie tôt : les noirs vont la chasser en développant. Mat de Légal [validé] : 1.e4 e5 2.Cf3 d6 3.Fc4",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Fg4 4.Cc3 g6? 5.Cxe5! Fxd1? 6.Fxf7+ Re7 7.Cd5#. Leçon : un clouage sur une dame n'est pas absolu (la dame peut être sacrifiée). Défense des deux cavaliers, attaque Cg5 sur f7 [validé] : 1.e4 e5 2.Cf3 Cc6 3.Fc4 Cf6 4.Cg5 d5 5.exd5 Ca5! (et non 5...Cxd5?! 6.Cxf7, dangereux pour les noirs). Avec les noirs, connaître 5...Ca5. Le piège du pion",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "« gratuit » : les débutants prennent un pion avec leur dame en b2/b7 et se font enfermer la dame ou la tour en a1/a8.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

@@ -1,0 +1,53 @@
+{
+  "id": "tac-xray",
+  "title": "Le rayon X",
+  "tier": 3,
+  "priority": "B",
+  "domain": "tactique",
+  "prerequisites": [
+    "tac-skewer"
+  ],
+  "principle": "Une pièce longue agit à travers une autre pièce (amie ou ennemie) sur la même ligne.",
+  "why": [
+    "Deux tours doublées, ou une dame derrière un fou, contrôlent une case même si la pièce de devant est échangée."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "xRayAttack"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes xRayAttack à 70 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Une pièce longue agit à travers une autre pièce (amie ou ennemie) sur la même ligne.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Deux tours doublées, ou une dame derrière un fou, contrôlent une case même si la pièce de devant est échangée.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

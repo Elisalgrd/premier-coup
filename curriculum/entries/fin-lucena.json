@@ -1,0 +1,200 @@
+{
+  "id": "fin-lucena",
+  "title": "La position de Lucena (gagner une finale de tours)",
+  "tier": 3,
+  "priority": "A",
+  "domain": "finales",
+  "prerequisites": [
+    "fin-opposition",
+    "tac-skewer"
+  ],
+  "principle": "Roi devant son pion sur la 7e, roi adverse coupé : construis un « pont » avec ta tour sur la 4e rangée pour stopper les échecs latéraux.",
+  "why": [
+    "C'est la position gagnante de référence des finales de tours, les plus fréquentes de toutes les finales."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
+    "solution": [
+      "d1d4",
+      "c2c1",
+      "b8a7",
+      "c1a1",
+      "a7b6",
+      "a1b1",
+      "b6c6",
+      "b1c1",
+      "c6b5",
+      "c1b1",
+      "d4b4"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": null,
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "d1d4",
+      "text": "",
+      "arrows": [
+        [
+          "d1",
+          "d4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c2c1",
+      "text": "",
+      "arrows": [
+        [
+          "c2",
+          "c1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b8a7",
+      "text": "",
+      "arrows": [
+        [
+          "b8",
+          "a7"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c1a1",
+      "text": "",
+      "arrows": [
+        [
+          "c1",
+          "a1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "a7b6",
+      "text": "",
+      "arrows": [
+        [
+          "a7",
+          "b6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "a1b1",
+      "text": "",
+      "arrows": [
+        [
+          "a1",
+          "b1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b6c6",
+      "text": "",
+      "arrows": [
+        [
+          "b6",
+          "c6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b1c1",
+      "text": "",
+      "arrows": [
+        [
+          "b1",
+          "c1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c6b5",
+      "text": "",
+      "arrows": [
+        [
+          "c6",
+          "b5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c1b1",
+      "text": "",
+      "arrows": [
+        [
+          "c1",
+          "b1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d4b4",
+      "text": "",
+      "arrows": [
+        [
+          "d4",
+          "b4"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "gagner la position 3 fois sur 3 contre le moteur."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Roi devant son pion sur la 7e, roi adverse coupé : construis un « pont » avec ta tour sur la 4e rangée pour stopper les échecs latéraux.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "C'est la position gagnante de référence des finales de tours, les plus fréquentes de toutes les finales.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ],
+  "drill": "endgame"
+}

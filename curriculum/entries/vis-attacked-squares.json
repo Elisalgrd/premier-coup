@@ -1,0 +1,83 @@
+{
+  "id": "vis-attacked-squares",
+  "title": "Voir qui attaque quoi",
+  "tier": 0,
+  "priority": "S",
+  "domain": "vision",
+  "prerequisites": [
+    "vis-notation"
+  ],
+  "principle": "Avant de penser à un plan, sache quelles cases et quelles pièces chaque camp attaque.",
+  "why": [
+    "Toute tactique repose sur une pièce attaquée plus souvent qu'elle n'est défendue. Ne pas voir une attaque = gaffe. Ne pas voir une pièce non défendue chez l'adversaire = occasion ratée."
+  ],
+  "signals": [
+    "sans objet (compétence de base)."
+  ],
+  "method": [
+    "Pour chaque pièce adverse, imagine les lignes qu'elle contrôle (tours et dame : rangées et colonnes",
+    "fous et dame : diagonales",
+    "cavalier : les 8 sauts",
+    "pions : les 2 diagonales avant).",
+    "Repère les pièces et cases attaquées par ces lignes.",
+    "Fais la même chose pour tes pièces.",
+    "Les pièces longues (D, T, F) sont les plus dangereuses à oublier, surtout quand elles sont loin."
+  ],
+  "pitfall": {
+    "text": "une pièce qui défend « par derrière » (un rayon X à travers une autre pièce) ne compte pas tant que la pièce devant n'a pas bougé.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "hangingPiece"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "jeu « Pièces en prise » : 10 positions de vraies parties, toutes les pièces non défendues trouvées en moins de 20 s chacune."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Avant de penser à un plan, sache quelles cases et quelles pièces chaque camp attaque.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Toute tactique repose sur une pièce attaquée plus souvent qu'elle n'est défendue. Ne pas voir une attaque = gaffe. Ne pas voir une pièce non défendue chez l'adversaire = occasion ratée.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "sans objet (compétence de base).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Pour chaque pièce adverse, imagine les lignes qu'elle contrôle (tours et dame : rangées et colonnes ; fous et dame : diagonales ; cavalier : les 8 sauts ; pions : les 2 diagonales avant). Repère les pièces et cases attaquées par ces lignes. Fais la même chose pour tes pièces. Les pièces longues (D, T, F) sont les plus",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "dangereuses à oublier, surtout quand elles sont loin.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "une pièce qui défend « par derrière » (un rayon X à travers une autre pièce) ne compte pas tant que la pièce devant n'a pas bougé.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

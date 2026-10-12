@@ -1,0 +1,83 @@
+{
+  "id": "mat-basic-queen",
+  "title": "Mat avec roi et dame contre roi",
+  "tier": 0,
+  "priority": "S",
+  "domain": "mats",
+  "prerequisites": [
+    "vis-rules"
+  ],
+  "principle": "La dame enferme le roi adverse dans une boîte de plus en plus petite. Ton roi vient l'aider pour le coup final.",
+  "why": [
+    "Sans cette technique, des parties gagnées finissent nulles par pat ou par la règle des 50 coups."
+  ],
+  "signals": [],
+  "method": [
+    "Place ta dame à un saut de cavalier du roi adverse : elle lui coupe une zone sans lui donner échec.",
+    "Chaque fois qu'il recule, recule la dame en gardant ce saut de cavalier. Le roi adverse est poussé vers un bord.",
+    "Quand il est sur le bord, arrête la dame et amène ton roi à côté (en face, à deux cases).",
+    "Mate avec la dame protégée par ton roi, ou sur la rangée du bord."
+  ],
+  "pitfall": {
+    "text": "quand le roi adverse est dans un coin ou sur le bord, ne joue pas un coup de dame qui lui retire sa dernière case sans donner échec. Avant chaque coup de dame, demande-toi : « Aura-t-il encore un coup ? »",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "5 mats en moins de 15 coups chacun, sans aucun pat, depuis des positions aléatoires."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "La dame enferme le roi adverse dans une boîte de plus en plus petite. Ton roi vient l'aider pour le coup final.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Sans cette technique, des parties gagnées finissent nulles par pat ou par la règle des 50 coups.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Place ta dame à un saut de cavalier du roi adverse : elle lui coupe une zone sans lui donner échec. Chaque fois qu'il recule, recule la dame en gardant ce saut de cavalier. Le roi adverse est poussé vers un bord. Quand il est sur le bord, arrête la dame et amène ton roi à côté (en face, à",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "deux cases). Mate avec la dame protégée par ton roi, ou sur la rangée du bord.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "quand le roi adverse est dans un coin ou sur le bord, ne joue pas un coup de dame qui lui retire sa dernière case sans donner échec. Avant chaque coup de dame, demande-toi : « Aura-t-il encore un coup ? »",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "k7/1Q6/2K5/8/8/8/8/8 b - - 0 1",
+      "outcome": "mate",
+      "source": "CURRICULUM.md"
+    },
+    {
+      "fen": "k7/8/1Q6/8/8/8/8/7K b - - 0 1",
+      "outcome": "stalemate",
+      "source": "CURRICULUM.md"
+    }
+  ],
+  "drill": "endgame"
+}

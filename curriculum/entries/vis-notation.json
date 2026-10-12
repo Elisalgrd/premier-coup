@@ -1,0 +1,81 @@
+{
+  "id": "vis-notation",
+  "title": "Les coordonnées et la notation",
+  "tier": 0,
+  "priority": "S",
+  "domain": "vision",
+  "prerequisites": [
+    "vis-rules"
+  ],
+  "principle": "Chaque case a un nom (colonne a à h, rangée 1 à 8). Chaque coup s'écrit.",
+  "why": [
+    "C'est la langue des échecs. Sans elle, impossible de lire une analyse, un livre, un problème Lichess, de rejouer une partie ou de suivre un coach."
+  ],
+  "signals": [
+    "sans objet (compétence de base)."
+  ],
+  "method": [
+    "2 min par jour de « Trouve la case » jusqu'à 30 bonnes réponses en 30 s des deux côtés."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "30/30 s côté blancs ET côté noirs, et 10 coups lus à voix haute sans erreur."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Chaque case a un nom (colonne a à h, rangée 1 à 8). Chaque coup s'écrit.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "C'est la langue des échecs. Sans elle, impossible de lire une analyse, un livre, un problème Lichess, de rejouer une partie ou de suivre un coach.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Les colonnes a à h de gauche à droite côté blancs. Les rangées 1 à 8 en partant des blancs. Les blancs ont toujours une case claire en bas à droite (h1). La dame se place sur sa couleur : D blanche en d1 (claire), D noire en d8 (foncée). Lire un coup : Cf3 (le cavalier va en f3),",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "exd5 (le pion e prend en d5), Fxf7+ (le fou prend en f7 avec échec), O-O petit roque, O-O-O grand roque, e8=D promotion, # mat. Repères à mémoriser : les cases centrales d4, e4, d5, e5. Les grandes diagonales a1-h8 et h1-a8. f7 et f2 (cases faibles au départ, défendues seulement par le roi). Les deux orientations : savoir lire",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "l'échiquier avec les noirs en bas.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "sans objet (compétence de base).",
+      "audio": null
+    },
+    {
+      "title": "Méthode d'entraînement",
+      "text": "2 min par jour de « Trouve la case » jusqu'à 30 bonnes réponses en 30 s des deux côtés.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "coordinates"
+}

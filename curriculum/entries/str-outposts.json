@@ -1,0 +1,52 @@
+{
+  "id": "str-outposts",
+  "title": "Les avant-postes",
+  "tier": 4,
+  "priority": "A",
+  "domain": "stratégie",
+  "prerequisites": [
+    "str-worst-piece"
+  ],
+  "principle": "Une case dans le camp adverse qu'aucun pion adverse ne peut attaquer, défendue par un de tes pions, est idéale pour un cavalier.",
+  "why": [
+    "Un cavalier installé sur un avant-poste (souvent d5, e5, c5, f5) ne peut être chassé que par un échange et domine la position."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 positions « trouve l'avant-poste » à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Une case dans le camp adverse qu'aucun pion adverse ne peut attaquer, défendue par un de tes pions, est idéale pour un cavalier.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Un cavalier installé sur un avant-poste (souvent d5, e5, c5, f5) ne peut être chassé que par un échange et domine la position.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "plan-choice"
+}

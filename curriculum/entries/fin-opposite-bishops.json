@@ -1,0 +1,54 @@
+{
+  "id": "fin-opposite-bishops",
+  "title": "Fous de couleurs opposées",
+  "tier": 3,
+  "priority": "B",
+  "domain": "finales",
+  "prerequisites": [
+    "fin-convert"
+  ],
+  "principle": "En finale pure, les fous de couleurs opposées font souvent nulle même avec un ou deux pions de moins. En milieu de partie, ils favorisent l'attaquant.",
+  "why": [
+    "Le défenseur bloque les pions sur les cases de la couleur de son fou",
+    "l'autre fou ne peut jamais les attaquer."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "bishopEndgame"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "6 positions « gagné ou nulle ? » à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "En finale pure, les fous de couleurs opposées font souvent nulle même avec un ou deux pions de moins. En milieu de partie, ils favorisent l'attaquant.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Le défenseur bloque les pions sur les cases de la couleur de son fou ; l'autre fou ne peut jamais les attaquer.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

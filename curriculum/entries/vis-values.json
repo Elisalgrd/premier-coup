@@ -1,0 +1,67 @@
+{
+  "id": "vis-values",
+  "title": "La valeur des pièces",
+  "tier": 0,
+  "priority": "S",
+  "domain": "vision",
+  "prerequisites": [
+    "vis-rules"
+  ],
+  "principle": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Le roi n'a pas de prix.",
+  "why": [
+    "C'est l'unité de mesure pour décider si une capture ou un échange est bon. Gagner 3 points sans contrepartie suffit à gagner une partie entre débutants."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "« gagner la qualité » n'est pas un gain si l'adversaire obtient une attaque de mat.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 positions « qui est devant et de combien ? » à 90 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Le roi n'a pas de prix.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "C'est l'unité de mesure pour décider si une capture ou un échange est bon. Gagner 3 points sans contrepartie suffit à gagner une partie entre débutants.",
+      "audio": null
+    },
+    {
+      "title": "Nuances à donner",
+      "text": "Ce sont des repères, pas des lois. Une pièce active vaut plus qu'une pièce enfermée. La paire de fous vaut un peu plus que fou + cavalier dans les positions ouvertes (environ un demi-pion). Tour contre fou ou cavalier = « la qualité » (environ 2 points). Trois pièces mineures valent environ une dame. Deux tours valent un peu plus",
+      "audio": null
+    },
+    {
+      "title": "Nuances à donner",
+      "text": "qu'une dame. Un pion proche de la promotion peut valoir bien plus que 1. Le mat compte plus que tout le matériel.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "« gagner la qualité » n'est pas un gain si l'adversaire obtient une attaque de mat.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "material"
+}

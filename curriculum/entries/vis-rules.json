@@ -1,0 +1,76 @@
+{
+  "id": "vis-rules",
+  "title": "Les règles complètes",
+  "tier": 0,
+  "priority": "S",
+  "domain": "vision",
+  "prerequisites": [],
+  "principle": "Le but est de mater le roi adverse : il est attaqué et aucun coup ne le sauve.",
+  "why": [
+    "Sans les règles exactes (roque, prise en passant, promotion, pat), on perd des parties gagnées et on joue des coups illégaux en ligne."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "20 questions sur l'échiquier (« ce coup est-il légal ? », « peut-on roquer ? ») à 95 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Le but est de mater le roi adverse : il est attaqué et aucun coup ne le sauve.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Sans les règles exactes (roque, prise en passant, promotion, pat), on perd des parties gagnées et on joue des coups illégaux en ligne.",
+      "audio": null
+    },
+    {
+      "title": "Contenu à couvrir, un écran chacun",
+      "text": "Déplacements : T en ligne droite, F en diagonale, D les deux, C en L (seule pièce qui saute), R d'une case, pion d'une case vers l'avant (deux depuis sa case de départ), prend en diagonale. Échec : le roi est attaqué. On doit y répondre immédiatement. Roque : roi et tour bougent ensemble. Conditions : ni le roi ni",
+      "audio": null
+    },
+    {
+      "title": "Contenu à couvrir, un écran chacun",
+      "text": "cette tour n'ont bougé, les cases entre eux sont vides, le roi n'est pas en échec, ne traverse pas et n'arrive pas sur une case attaquée. La tour, elle, peut traverser une case attaquée. Prise en passant : un pion qui avance de deux cases et arrive à côté d'un pion adverse peut être pris comme s'il n'avait avancé que",
+      "audio": null
+    },
+    {
+      "title": "Contenu à couvrir, un écran chacun",
+      "text": "d'une case. Uniquement au coup immédiatement suivant. Promotion : un pion arrivé sur la dernière rangée devient D, T, F ou C au choix. Presque toujours une dame, sauf si elle provoque un pat. Pat : le joueur au trait n'est pas en échec mais n'a aucun coup légal. C'est nulle. Autres nulles : répétition de la même position 3",
+      "audio": null
+    },
+    {
+      "title": "Contenu à couvrir, un écran chacun",
+      "text": "fois, 50 coups sans prise ni mouvement de pion, matériel insuffisant (R contre R, R+F contre R, R+C contre R), accord.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "4k3/4P3/4K3/8/8/8/8/8 b - - 0 1",
+      "outcome": "stalemate",
+      "source": "CURRICULUM.md"
+    }
+  ],
+  "drill": "rules"
+}
