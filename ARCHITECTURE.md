@@ -59,3 +59,9 @@ L’analyse utilise un signal d’annulation vérifié après chaque recherche. 
 Chaque série conserve son identifiant, son score et le classement de départ dans son instantané. `entries[id].lastSeries` garde le bilan ; les exercices de repérage n’inventent pas de variation du classement. `masteryHint` explique les mêmes premières rencontres et fenêtres de 15 que `entryStatus`, sans modifier la règle.
 
 `capturedPieces` lit les captures dans l’historique ; son écart compare le matériel présent sur le plateau, donc respecte les promotions et positions personnalisées. `playerStrip` et `PlayerBoard` sont partagés entre jeu, moments analysés et relecture des imports. Les variantes du rapport conservent l’historique précédant le coup étudié.
+
+Le coach en direct possède son propre Worker, distinct de l’adversaire, y compris aux niveaux 1 à 3. Il anticipe les positions pendant le tour de l’élève et met les recherches en cache. Profondeur 12, avec une borne de 700 ms par recherche sur écran mobile. Un échec ne bloque pas la partie. La gravité et les motifs réutilisent `classify` et `labelMistake` ; les motifs restent heuristiques.
+
+Chaque alerte conserve sa position avant/après, ses suites légales et ses textes. Le petit échiquier du panneau ne modifie jamais le plateau de jeu. `rememberMistake` partage le même identifiant avec l’analyse finale et préserve les révisions existantes. Les cartes dues issues des parties passent déjà en premier dans la séance quotidienne.
+
+Les reprises vérifient le coup, sa position et la longueur de l’historique. Elles annulent une ou deux actions, invalident les calculs en cours et restaurent les horloges antérieures. Les alertes reprises restent visibles et utiles en révision. Le mode, les alertes, l’incrément et le compteur sont conservés dans `activeGame`, puis dans le rapport. Les anciens instantanés sans incrément gardent zéro seconde ajoutée.

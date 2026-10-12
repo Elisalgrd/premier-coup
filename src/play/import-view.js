@@ -1,3 +1,4 @@
+import { coachSummaryHtml } from "./coach-panel.js";
 import { Engine } from "../chess/engine.js";
 import { analyzePendingGame } from "./analysis-task.js";
 import { PlayerBoard, gameAt } from "../ui/player-strip.js";
@@ -89,11 +90,11 @@ export async function startImport(ctx, root) {
       const cancel = () => {
         task.abort();
         taskEngine.close();
-        g.analysisStatus = "interrupted";
+        if (!g.analysis) g.analysisStatus = "interrupted";
         ctx.save();
         render();
       };
-      root.innerHTML =
+      root.innerHTML = coachSummaryHtml(g) +
         '<button class="back-link" id="report-back">← Mes parties</button><h1>Recherche des moments clés.</h1><p id="analysis-status" role="status">Chargement du moteur (environ 7 Mo au premier lancement)…</p><progress id="analysis-progress" max="1" value="0"></progress><button class="button secondary" id="analysis-cancel">Annuler</button>';
       $("#report-back", root).onclick = cancel;
       $("#analysis-cancel", root).onclick = cancel;
@@ -111,6 +112,7 @@ export async function startImport(ctx, root) {
               n + " / " + total + " coups analysés.";
           },
         });
+        if (task.signal.aborted) return;
       } catch (e) {
         if (!disposed && !task.signal.aborted) render();
         return;
@@ -124,7 +126,7 @@ export async function startImport(ctx, root) {
     }
     if (disposed) return;
     const moments = g.analysis.moments.slice(0, 3);
-    root.innerHTML = `<button class="back-link" id="report-back">← Mes parties</button><header class="page-intro"><span class="eyebrow">${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</span><h1>${moments.length ? "Tes moments clés." : "Une partie sans grosse erreur détectée."}</h1><p>${g.analysis.analyzedMoves} de tes coups vérifiés. Les positions à retravailler sont enregistrées.</p></header>${moments.map((m, i) => `<article class="report-moment"><div id="report-board-${i}"></div><section><span class="eyebrow">COUP ${Math.ceil(m.ply / 2)} · ${m.severity.toUpperCase()}</span><h2>${esc(friendlyMistake(m.label))}</h2><p>Ton coup : <strong>${esc(describeMove(moveUci(new Chess(m.fen), m.played)))}</strong> Le logiciel préfère une autre suite. Joue les deux réponses pour comprendre ce qui change.</p><p id="report-line-${i}" class="notation"></p><button data-line="${i}" class="button primary">Voir le meilleur coup →</button><button data-played="${i}" class="button secondary">Revoir mon coup et sa réponse</button><a class="text-link" href="#lesson/${m.entryId}">Revoir le principe ↗</a></section></article>`).join("")}<a class="button primary" href="#train/mistakes">Retravailler mes erreurs →</a>`;
+    root.innerHTML = `<button class="back-link" id="report-back">← Mes parties</button><header class="page-intro"><span class="eyebrow">${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</span><h1>${moments.length ? "Tes moments clés." : "Une partie sans grosse erreur détectée."}</h1><p>${g.analysis.analyzedMoves} de tes coups vérifiés. Les positions à retravailler sont enregistrées.</p></header>${coachSummaryHtml(g)}${moments.map((m, i) => `<article class="report-moment"><div id="report-board-${i}"></div><section><span class="eyebrow">COUP ${Math.ceil(m.ply / 2)} · ${m.severity.toUpperCase()}</span><h2>${esc(friendlyMistake(m.label))}</h2><p>Ton coup : <strong>${esc(describeMove(moveUci(new Chess(m.fen), m.played)))}</strong> Le logiciel préfère une autre suite. Joue les deux réponses pour comprendre ce qui change.</p><p id="report-line-${i}" class="notation"></p><button data-line="${i}" class="button primary">Voir le meilleur coup →</button><button data-played="${i}" class="button secondary">Revoir mon coup et sa réponse</button><a class="text-link" href="#lesson/${m.entryId}">Revoir le principe ↗</a></section></article>`).join("")}<a class="button primary" href="#train/mistakes">Retravailler mes erreurs →</a>`;
     $("#report-back", root).onclick = render;
     moments.forEach((m, i) => {
       const b = new PlayerBoard($("#report-board-" + i, root), gameAt(g, m.ply - 1), {

@@ -49,3 +49,9 @@ Aucun compte, backend ni suivi. Les parties et l’historique restent sur l’ap
 Le code est sous GPL-3.0-only. Les problèmes Lichess sont CC0. Stockfish et ses sources correspondantes sont fournis avec leur licence. Voir `THIRD_PARTY_LICENSES.md`.
 
 La banque de repérage stratégique contient aussi 1 440 exercices : 180 positions réelles pour huit thèmes. Elle se régénère avec `npm run build:drills`. Ces questions de cases et de pièces entraînent la reconnaissance, sans prétendre certifier le meilleur coup.
+
+## Coach pendant la partie
+
+Dans S’entraîner → Jouer une partie, choisis « Gaffes et erreurs », « Gaffes seulement » ou le mode sans coach. Le rythme conseillé est 15 minutes avec 10 secondes ajoutées après chaque coup. L’aide « Vérifier ma position » reste disponible avant de jouer. Après une erreur, le conseil et son petit échiquier restent séparés de la partie. Tu peux reprendre le dernier coup signalé, jusqu’à trois fois en mode complet.
+
+Les prises et l’avance en pièces sont affichées autour du plateau. Les parties sans rapport restent à analyser dans Aujourd’hui et S’entraîner. Dans Mes parties, « Revoir la partie » permet de parcourir tous les coups. Les erreurs enregistrées reviennent dans la séance suivante. Chaque bilan de leçon explique son statut et ce qui manque pour la valider.

@@ -6,6 +6,7 @@ export const emptyState = () => ({
     minutes: 25,
     sound: false,
     voice: "male",
+    liveCoach: "all",
     theme: "light",
     boardSize: "normal",
   },

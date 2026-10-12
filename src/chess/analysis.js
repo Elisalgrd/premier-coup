@@ -1,7 +1,7 @@
 import { Chess } from "./chess.js";
 import { moveUci, uci, sanFr, value } from "./notation.js";
 import { endangeredPieces } from "./vision.js";
-import { addCard } from "../learn/srs.js";
+import { rememberMistake } from "../learn/srs.js";
 export function centipawns(result) {
   return result.type === "mate"
     ? result.score > 0
@@ -170,19 +170,7 @@ export async function analyzeGame(
   record.analysis = result;
   if (state) {
     for (const m of result.moments)
-      addCard(state, {
-        id: "mistake:" + record.id + ":" + m.ply,
-        type: "mistake",
-        entryId: m.entryId,
-        gameId: record.id,
-        challenge: {
-          fen: m.fen,
-          solution: m.line,
-          mode: "move",
-          prompt: "Trouve une meilleure réponse dans ta partie.",
-        },
-        principle: m.label,
-      });
+      rememberMistake(state, record.id, m);
   }
   return result;
 }

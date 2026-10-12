@@ -8,12 +8,16 @@ import { beginnerMove } from "../src/chess/beginner.js";
 test("10 legal fixtures classify hanging pieces and missed mates", () => {
   const fixtures = JSON.parse(fs.readFileSync("tests/fixtures/mistakes.json"));
   assert.equal(fixtures.length, 10);
-  for (const f of fixtures)
+  for (const f of fixtures) {
+    const position = new Chess(f.fen);
+    const otherKing = position.board().flat().find((p) => p?.type === "k" && p.color !== position.turn());
+    assert.equal(position.isAttacked(otherKing.square, position.turn()), false, "The player who just moved cannot have left their king in check");
     assert.equal(
       labelMistake(f.fen, f.played, f.best, f.before, f.after).label,
       f.expected,
       JSON.stringify(f),
     );
+  }
 });
 test("classification handles side reversal, caps and mates", () => {
   assert.equal(

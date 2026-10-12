@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.4.0
+
+- Coach après chaque coup, avec moteur séparé, trois modes et explications sans chiffres de moteur.
+- Mini-échiquier indépendant, meilleur coup en vert, réponse adverse en rouge et historique des conseils.
+- Les erreurs rejoignent immédiatement les révisions, sans doublon après l’analyse finale.
+- Trois reprises maximum en entraînement, avec commentaire dans la partie et compteur au bilan.
+- Cadences 10+5 et 15+10, cette dernière proposée par défaut. Les anciennes parties conservent leur rythme.
+- Bilan du coach et principe à revoir en fin de partie.
+
 ## 2.3.0
 
 - Deux bandeaux joueur montrent les horloges, les pièces prises et l’avance en matériel. Ton camp reste en bas.
