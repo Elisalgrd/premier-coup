@@ -7,7 +7,7 @@
   "prerequisites": [
     "mat-two-rooks"
   ],
-  "principle": "Un roi roqué derrière ses pions non avancés peut être maté par une tour ou une dame sur la dernière rangée.",
+  "principle": "Ses pions peuvent enfermer le roi roqué. Une tour ou une dame peut alors mater sur sa dernière rangée.",
   "why": [
     "C'est le mat le plus fréquent en partie réelle, à tous les niveaux jusqu'à 1800."
   ],
@@ -23,9 +23,12 @@
     "Pour ton roi : au bon moment (souvent après le roque et quand rien ne presse), crée une « case de fuite » avec h3 ou g3 (h6 ou g6 avec les noirs)."
   ],
   "pitfall": {
-    "text": "créer la case de fuite trop tôt, quand l'adversaire attaque déjà ce côté, peut affaiblir le roi.",
-    "fen": null,
-    "line": []
+    "fen": "6k1/5pp1/7p/8/8/8/8/R5K1 w - - 0 1",
+    "line": [
+      "a1a8",
+      "g8h7"
+    ],
+    "text": "Ta8+ donne échec. Mais le roi noir peut sortir en h7 : ce n’est pas mat."
   },
   "entryChallenge": {
     "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
@@ -70,33 +73,28 @@
   "audio": null,
   "screens": [
     {
-      "title": "Principe",
-      "text": "Un roi roqué derrière ses pions non avancés peut être maté par une tour ou une dame sur la dernière rangée.",
-      "audio": null
-    },
-    {
       "title": "Pourquoi",
       "text": "C'est le mat le plus fréquent en partie réelle, à tous les niveaux jusqu'à 1800.",
       "audio": null
     },
     {
       "title": "Signaux",
-      "text": "roi adverse en g8 (ou g1) avec pions f7, g7, h7 intacts ; dernière rangée défendue par une seule pièce (ou aucune) ; tu as une tour ou dame qui peut y arriver.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Compte les défenseurs de la dernière rangée adverse. Si un seul : dévie-le ou surcharge-le (tac-deflection, tac-overload). Entre avec ta tour ou dame, vérifie qu'il n'y a ni interposition ni capture. Pour ton roi : au bon moment (souvent après le roque et quand rien ne presse), crée une « case de fuite » avec h3 ou g3 (h6 ou",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "g6 avec les noirs).",
+      "text": "Roi adverse en g8 (ou g1) avec pions f7, g7, h7 intacts. Dernière rangée défendue par une seule pièce (ou aucune). Tu as une tour ou dame qui peut y arriver.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "créer la case de fuite trop tôt, quand l'adversaire attaque déjà ce côté, peut affaiblir le roi.",
+      "text": "Créer la case de fuite trop tôt, quand l'adversaire attaque déjà ce côté, peut affaiblir le roi.",
+      "audio": null
+    },
+    {
+      "title": "Principe",
+      "text": "Ses pions peuvent enfermer le roi roqué. Une tour ou une dame peut alors mater sur sa dernière rangée.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Vérifie les cases de fuite du roi adverse. Vérifie les défenseurs de sa dernière rangée. Fais entrer ta tour ou ta dame. Pour ton roi, prépare une case de fuite avec h3 ou g3 quand aucune menace urgente ne l’interdit.",
       "audio": null
     }
   ],
@@ -106,5 +104,8 @@
       "outcome": null,
       "source": "CURRICULUM.md"
     }
+  ],
+  "videos": [
+    "course-mates"
   ]
 }

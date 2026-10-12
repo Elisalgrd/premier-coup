@@ -55,7 +55,7 @@
     "description": "80 % sur 15 problèmes inédits, sur deux jours différents."
   },
   "sources": [],
-  "videoId": null,
+  "videoId": "queens-gambit",
   "glossary": [],
   "audio": null,
   "screens": [
@@ -66,10 +66,18 @@
     },
     {
       "title": "Méthode",
-      "text": "après avoir pris, compte tes pièces développées contre les siennes ; si tu es en retard de 2 tempos ou plus, donne la priorité au développement et au roque. ---",
+      "text": "Après avoir pris, compte tes pièces développées contre les siennes. Si tu es en retard de 2 tempos ou plus, donne la priorité au développement et au roque.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "---",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "board-observation"
+  "drill": "board-observation",
+  "videos": [
+    "queens-gambit"
+  ]
 }

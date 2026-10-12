@@ -93,7 +93,12 @@
     "distinctDays": 2,
     "description": "15 problèmes long à 70 %."
   },
-  "sources": [],
+  "sources": [
+    {
+      "label": "Julien Song : Le temps que tu perds à calculer pour rien",
+      "url": "https://juliensong.beehiiv.com/p/le-temps-que-tu-perds-calculer-pour-rien"
+    }
+  ],
   "videoId": null,
   "glossary": [],
   "audio": null,
@@ -104,25 +109,46 @@
       "audio": null
     },
     {
+      "title": "Méthode",
+      "text": "Liste les candidats : coups forçants d'abord, puis les coups qui améliorent ta pire pièce.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Pour chacun, liste toutes les réponses adverses forçantes (échecs, captures, menaces).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Calcule 3 demi-coups (moi, lui, moi) proprement avant d'aller plus loin.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Évalue la position finale : matériel, sécurité des rois, activité.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Arrête le calcul quand la position est calme. Ne calcule pas sans but.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Avant de jouer, refais la routine anti-gaffe sur le coup choisi.",
+      "audio": null
+    },
+    {
       "title": "Pourquoi",
-      "text": "On perd souvent en calculant très loin une seule ligne en oubliant une réponse gênante dès le premier coup (idée de Julien Song : « vérifier les réponses, pas seulement la profondeur »).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Liste les candidats : coups forçants d'abord, puis les coups qui améliorent ta pire pièce. Pour chacun, liste toutes les réponses adverses forçantes (échecs, captures, menaces). Calcule 3 demi-coups (moi, lui, moi) proprement avant d'aller plus loin. Évalue la position finale : matériel, sécurité des rois, activité. Arrête le calcul quand la position est calme ; ne calcule pas sans",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "but. Avant de jouer, refais la routine anti-gaffe sur le coup choisi.",
+      "text": "Calculer loin ne suffit pas si tu ignores une réponse gênante au premier coup. Compare d’abord les réponses adverses.",
       "audio": null
     },
     {
       "title": "Exercices spécifiques",
-      "text": "problèmes long (3 coups et plus) sans déplacer les pièces (option « calcul à l'aveugle » : l'échiquier se fige, l'élève saisit la ligne entière).",
+      "text": "Sur les problèmes longs, imagine la suite avant de déplacer une pièce. Vérifie ensuite chaque réponse sur l’échiquier.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

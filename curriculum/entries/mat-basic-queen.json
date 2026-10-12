@@ -19,8 +19,8 @@
     "Mate avec la dame protégée par ton roi, ou sur la rangée du bord."
   ],
   "pitfall": {
-    "text": "quand le roi adverse est dans un coin ou sur le bord, ne joue pas un coup de dame qui lui retire sa dernière case sans donner échec. Avant chaque coup de dame, demande-toi : « Aura-t-il encore un coup ? »",
-    "fen": null,
+    "text": "Le roi n’est pas en échec et son camp ne peut jouer aucun coup légal. C’est pat : partie nulle.",
+    "fen": "k7/8/1Q6/8/8/8/8/7K b - - 0 1",
     "line": []
   },
   "entryChallenge": {
@@ -74,17 +74,12 @@
     },
     {
       "title": "Méthode",
-      "text": "Place ta dame à un saut de cavalier du roi adverse : elle lui coupe une zone sans lui donner échec. Chaque fois qu'il recule, recule la dame en gardant ce saut de cavalier. Le roi adverse est poussé vers un bord. Quand il est sur le bord, arrête la dame et amène ton roi à côté (en face, à",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "deux cases). Mate avec la dame protégée par ton roi, ou sur la rangée du bord.",
+      "text": "Place ta dame à un saut de cavalier du roi adverse. Elle lui coupe une zone sans donner échec. Réduis progressivement son espace. Rapproche ton roi pour soutenir le mat au bord. Vérifie le pat avant chaque coup.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "quand le roi adverse est dans un coin ou sur le bord, ne joue pas un coup de dame qui lui retire sa dernière case sans donner échec. Avant chaque coup de dame, demande-toi : « Aura-t-il encore un coup ? »",
+      "text": "Au bord, ne retire pas la dernière case du roi adverse sans donner échec. Sans autre coup légal, ce serait pat.",
       "audio": null
     }
   ],
@@ -100,5 +95,6 @@
       "source": "CURRICULUM.md"
     }
   ],
-  "drill": "endgame"
+  "drill": "endgame",
+  "videos": []
 }

@@ -97,20 +97,21 @@
       "audio": null
     },
     {
-      "title": "Pourquoi",
-      "text": "Classique avec un fou en a7/h7 après avoir pris un pion (piégé par b6/g6), une dame qui va chercher le pion b2, un cavalier sur le bord.",
-      "audio": null
-    },
-    {
       "title": "Signaux",
-      "text": "une pièce adverse au bord ou dans ton camp, avec peu de cases de retraite.",
+      "text": "Une pièce adverse au bord ou dans ton camp, avec peu de cases de retraite.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "compte ses cases de fuite ; contrôle-les ; attaque-la (avec un pion si possible).",
+      "text": "Compte ses cases de fuite. Contrôle-les. Attaque-la (avec un pion si possible).",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Un fou qui prend en a7 ou h7 peut être enfermé par b6 ou g6. Une dame gourmande en b2 peut manquer de sorties. Un cavalier au bord peut aussi être piégé.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

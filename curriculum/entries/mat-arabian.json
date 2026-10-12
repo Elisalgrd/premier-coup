@@ -7,7 +7,7 @@
   "prerequisites": [
     "mat-back-rank"
   ],
-  "principle": "Tour et cavalier coopèrent : le cavalier protège la tour collée au roi dans le coin et contrôle une case de fuite.",
+  "principle": "Le cavalier protège la tour collée au roi dans le coin. Il contrôle aussi une case de fuite.",
   "why": [],
   "signals": [],
   "method": [],
@@ -59,7 +59,7 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "Tour et cavalier coopèrent : le cavalier protège la tour collée au roi dans le coin et contrôle une case de fuite.",
+      "text": "Le cavalier protège la tour collée au roi dans le coin. Il contrôle aussi une case de fuite.",
       "audio": null
     }
   ],
@@ -69,5 +69,6 @@
       "outcome": "mate",
       "source": "CURRICULUM.md"
     }
-  ]
+  ],
+  "videos": []
 }

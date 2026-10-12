@@ -18,7 +18,7 @@
     "place-le devant les pions passés adverses."
   ],
   "pitfall": {
-    "text": "tant qu'il reste des tours et dame, vérifie quand même les échecs et les attaques sur la dernière rangée.",
+    "text": "Tant qu'il reste des tours et dame, vérifie quand même les échecs et les attaques sur la dernière rangée.",
     "fen": null,
     "line": []
   },
@@ -77,14 +77,15 @@
     },
     {
       "title": "Méthode",
-      "text": "dès l'échange des dames (et si aucun mat n'est possible), avance le roi vers le centre ; vise les pions faibles adverses ; place-le devant les pions passés adverses.",
+      "text": "Dès l'échange des dames (et si aucun mat n'est possible), avance le roi vers le centre. Vise les pions faibles adverses. Place-le devant les pions passés adverses.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "tant qu'il reste des tours et dame, vérifie quand même les échecs et les attaques sur la dernière rangée.",
+      "text": "Tant qu'il reste des tours et dame, vérifie quand même les échecs et les attaques sur la dernière rangée.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

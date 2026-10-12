@@ -7,7 +7,7 @@
   "prerequisites": [
     "meta-play-slow"
   ],
-  "principle": "Joue vite les coups évidents et les ouvertures connues, réfléchis longtemps aux moments critiques (une capture, un sacrifice, la fin de l'ouverture, une décision d'échange).",
+  "principle": "Joue vite les coups évidents et les ouvertures connues. Garde ton temps pour les captures, sacrifices et décisions d’échange. La fin de l’ouverture mérite aussi une pause.",
   "why": [],
   "signals": [],
   "method": [
@@ -86,16 +86,17 @@
   "audio": null,
   "screens": [
     {
-      "title": "Principe",
-      "text": "Joue vite les coups évidents et les ouvertures connues, réfléchis longtemps aux moments critiques (une capture, un sacrifice, la fin de l'ouverture, une décision d'échange).",
+      "title": "Méthode",
+      "text": "En 15+10, viser environ 20 % du temps sur les 10 premiers coups. Jamais moins de 2 min à la pendule sans raison. En zeitnot, simplifier.",
       "audio": null
     },
     {
-      "title": "Méthode",
-      "text": "en 15+10, viser environ 20 % du temps sur les 10 premiers coups ; jamais moins de 2 min à la pendule sans raison ; en zeitnot, simplifier.",
+      "title": "Principe",
+      "text": "Joue vite les coups évidents et les ouvertures connues. Garde ton temps pour les captures, sacrifices et décisions d’échange. La fin de l’ouverture mérite aussi une pause.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "game-review"
+  "drill": "game-review",
+  "videos": []
 }

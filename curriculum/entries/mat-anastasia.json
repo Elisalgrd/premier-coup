@@ -7,7 +7,7 @@
   "prerequisites": [
     "mat-arabian"
   ],
-  "principle": "Un cavalier en e7 (ou e2) bloque les cases de fuite, une tour ou une dame mate sur la colonne h.",
+  "principle": "Le cavalier en e7 bloque des cases de fuite. La tour ou la dame mate sur la colonne h.",
   "why": [],
   "signals": [],
   "method": [],
@@ -60,7 +60,7 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "Un cavalier en e7 (ou e2) bloque les cases de fuite, une tour ou une dame mate sur la colonne h.",
+      "text": "Le cavalier en e7 bloque des cases de fuite. La tour ou la dame mate sur la colonne h.",
       "audio": null
     }
   ],
@@ -70,5 +70,6 @@
       "outcome": null,
       "source": "CURRICULUM.md"
     }
-  ]
+  ],
+  "videos": []
 }

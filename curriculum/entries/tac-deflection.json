@@ -104,14 +104,15 @@
     },
     {
       "title": "Signaux",
-      "text": "une pièce adverse empêche un mat ou une promotion ; on peut l'attaquer ou lui offrir quelque chose qu'elle doit prendre.",
+      "text": "Une pièce adverse empêche un mat ou une promotion. On peut l'attaquer ou lui offrir quelque chose qu'elle doit prendre.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "identifie la mission du défenseur ; trouve un coup forçant qui l'oblige à l'abandonner ; vérifie le coup final.",
+      "text": "Identifie la mission du défenseur. Trouve un coup forçant qui l'oblige à l'abandonner. Vérifie le coup final.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

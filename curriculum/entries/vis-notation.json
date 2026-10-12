@@ -54,36 +54,27 @@
       "audio": null
     },
     {
-      "title": "Pourquoi",
-      "text": "C'est la langue des échecs. Sans elle, impossible de lire une analyse, un livre, un problème Lichess, de rejouer une partie ou de suivre un coach.",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "Les colonnes a à h de gauche à droite côté blancs. Les rangées 1 à 8 en partant des blancs. Les blancs ont toujours une case claire en bas à droite (h1). La dame se place sur sa couleur : D blanche en d1 (claire), D noire en d8 (foncée). Lire un coup : Cf3 (le cavalier va en f3),",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "exd5 (le pion e prend en d5), Fxf7+ (le fou prend en f7 avec échec), O-O petit roque, O-O-O grand roque, e8=D promotion, # mat. Repères à mémoriser : les cases centrales d4, e4, d5, e5. Les grandes diagonales a1-h8 et h1-a8. f7 et f2 (cases faibles au départ, défendues seulement par le roi). Les deux orientations : savoir lire",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "l'échiquier avec les noirs en bas.",
-      "audio": null
-    },
-    {
       "title": "Signaux",
-      "text": "sans objet (compétence de base).",
+      "text": "Sans objet (compétence de base).",
       "audio": null
     },
     {
       "title": "Méthode d'entraînement",
       "text": "2 min par jour de « Trouve la case » jusqu'à 30 bonnes réponses en 30 s des deux côtés.",
       "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "La notation permet de lire une analyse, un livre ou un problème. Elle sert aussi à rejouer une partie.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Les colonnes vont de a à h, les rangées de 1 à 8. Cf3 : le cavalier va en f3. Exd5 : le pion e prend en d5. Fxf7+ : le fou prend en f7 avec échec. O-O : petit roque. O-O-O : grand roque. E8=D : promotion en dame. Le signe # indique le mat.",
+      "audio": null
     }
   ],
   "examples": [],
-  "drill": "coordinates"
+  "drill": "coordinates",
+  "videos": []
 }

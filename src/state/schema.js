@@ -1,6 +1,96 @@
-import {dateKey} from '../ui/helpers.js';
-export const emptyState=()=>({version:2,createdAt:new Date().toISOString(),preferences:{minutes:25,sound:false,voice:'male',theme:'light',boardSize:'normal'},entries:{},history:[],cards:{},games:[],ratings:{global:{value:800,attempts:0},themes:{}},days:{},vision:{},woodpecker:null,session:null,exercise:null,activeGame:null,notes:{},legacy:null});
-export function validateState(raw){if(!raw||raw.version!==2||!raw.entries||!Array.isArray(raw.history)||!raw.cards||!Array.isArray(raw.games))throw Error('Format de sauvegarde non reconnu.');const s=emptyState();for(const key of ['entries','cards','ratings','days','vision','notes'])if(raw[key]&&typeof raw[key]==='object'&&!Array.isArray(raw[key]))s[key]=structuredClone(raw[key]);s.history=raw.history.slice(-30000);s.games=raw.games.slice(-200);s.preferences={...s.preferences,...raw.preferences};s.preferences.minutes=[15,25,45].includes(s.preferences.minutes)?s.preferences.minutes:25;s.createdAt=raw.createdAt||s.createdAt;s.session=raw.session||null;s.exercise=raw.exercise||null;s.activeGame=raw.activeGame||null;s.woodpecker=raw.woodpecker||null;s.legacy=raw.legacy||null;return s;}
-export function entryStatus(state,entry){const r=state.entries[entry.id],h=state.history.filter(x=>x.entryId===entry.id&&!x.review),first=new Map();for(const x of h)if(!first.has(x.puzzleId))first.set(x.puzzleId,x);const unique=[...first.values()],recent=h.slice(-20);let mastered=!!r?.masteredAt;for(let i=15;i<=unique.length&&!mastered;i++){const sample=unique.slice(i-15,i);mastered=sample.filter(x=>x.clean).length>=12&&new Set(sample.map(x=>x.day)).size>=2;}if(mastered&&recent.length>=20&&recent.filter(x=>x.clean).length/recent.length<.65)return 'review';if(mastered)return 'mastered';if(unique.length>=10)return 'practice';if(r?.viewedAt)return 'viewed';if(entry.prerequisites.some(id=>!state.entries[id]?.viewedAt))return 'locked';return 'new';}
-export const statusLabel={locked:'Prérequis à voir',new:'Nouvelle',viewed:'Vue',practice:'En pratique',mastered:'Maîtrisée',review:'À revoir'};
-export function markViewed(state,id){const r=state.entries[id]??={};r.viewedAt??=dateKey();}
+import { dateKey } from "../ui/helpers.js";
+export const emptyState = () => ({
+  version: 2,
+  createdAt: new Date().toISOString(),
+  preferences: {
+    minutes: 25,
+    sound: false,
+    voice: "male",
+    theme: "light",
+    boardSize: "normal",
+  },
+  entries: {},
+  history: [],
+  cards: {},
+  games: [],
+  ratings: { global: { value: 800, attempts: 0 }, themes: {} },
+  days: {},
+  vision: {},
+  woodpecker: null,
+  session: null,
+  exercise: null,
+  drill: null,
+  activeGame: null,
+  placement: null,
+  notes: {},
+  legacy: null,
+});
+export function validateState(raw) {
+  if (
+    !raw ||
+    raw.version !== 2 ||
+    !raw.entries ||
+    !Array.isArray(raw.history) ||
+    !raw.cards ||
+    !Array.isArray(raw.games)
+  )
+    throw Error("Format de sauvegarde non reconnu.");
+  const s = emptyState();
+  for (const key of ["entries", "cards", "ratings", "days", "vision", "notes"])
+    if (raw[key] && typeof raw[key] === "object" && !Array.isArray(raw[key]))
+      s[key] = structuredClone(raw[key]);
+  s.history = raw.history.slice(-30000);
+  s.games = raw.games.slice(-200);
+  s.preferences = { ...s.preferences, ...raw.preferences };
+  s.preferences.minutes = [15, 25, 45].includes(s.preferences.minutes)
+    ? s.preferences.minutes
+    : 25;
+  s.createdAt = raw.createdAt || s.createdAt;
+  s.session = raw.session || null;
+  s.exercise = raw.exercise || null;
+  s.drill = raw.drill || null;
+  s.activeGame = raw.activeGame || null;
+  s.placement = raw.placement || null;
+  s.woodpecker = raw.woodpecker || null;
+  s.legacy = raw.legacy || null;
+  return s;
+}
+export function entryStatus(state, entry) {
+  const r = state.entries[entry.id],
+    h = state.history.filter((x) => x.entryId === entry.id && !x.review),
+    first = new Map();
+  for (const x of h) if (!first.has(x.puzzleId)) first.set(x.puzzleId, x);
+  const unique = [...first.values()],
+    recent = h.slice(-20);
+  let mastered = !!r?.masteredAt;
+  for (let i = 15; i <= unique.length && !mastered; i++) {
+    const sample = unique.slice(i - 15, i);
+    mastered =
+      sample.filter((x) => x.clean).length >= 12 &&
+      new Set(sample.map((x) => x.day)).size >= 2;
+  }
+  if (
+    mastered &&
+    recent.length >= 20 &&
+    recent.filter((x) => x.clean).length / recent.length < 0.65
+  )
+    return "review";
+  if (mastered) return "mastered";
+  if (unique.length >= 10) return "practice";
+  if (r?.viewedAt) return "viewed";
+  if (entry.prerequisites.some((id) => !state.entries[id]?.viewedAt))
+    return "locked";
+  return "new";
+}
+export const statusLabel = {
+  locked: "Prérequis à voir",
+  new: "Nouvelle",
+  viewed: "Vue",
+  practice: "En pratique",
+  mastered: "Maîtrisée",
+  review: "À revoir",
+};
+export function markViewed(state, id) {
+  const r = (state.entries[id] ??= {});
+  r.viewedAt ??= dateKey();
+}

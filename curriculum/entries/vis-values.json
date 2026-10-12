@@ -56,12 +56,32 @@
     },
     {
       "title": "Nuances à donner",
-      "text": "Ce sont des repères, pas des lois. Une pièce active vaut plus qu'une pièce enfermée. La paire de fous vaut un peu plus que fou + cavalier dans les positions ouvertes (environ un demi-pion). Tour contre fou ou cavalier = « la qualité » (environ 2 points). Trois pièces mineures valent environ une dame. Deux tours valent un peu plus",
+      "text": "Ce sont des repères, pas des lois. Une pièce active vaut plus qu'une pièce enfermée.",
       "audio": null
     },
     {
       "title": "Nuances à donner",
-      "text": "qu'une dame. Un pion proche de la promotion peut valoir bien plus que 1. Le mat compte plus que tout le matériel.",
+      "text": "La paire de fous vaut un peu plus que fou + cavalier dans les positions ouvertes (environ un demi-pion).",
+      "audio": null
+    },
+    {
+      "title": "Nuances à donner",
+      "text": "Tour contre fou ou cavalier = « la qualité » (environ 2 points).",
+      "audio": null
+    },
+    {
+      "title": "Nuances à donner",
+      "text": "Trois pièces mineures valent environ une dame. Deux tours valent un peu plus qu'une dame.",
+      "audio": null
+    },
+    {
+      "title": "Nuances à donner",
+      "text": "Un pion proche de la promotion peut valoir bien plus que 1.",
+      "audio": null
+    },
+    {
+      "title": "Nuances à donner",
+      "text": "Le mat compte plus que tout le matériel.",
       "audio": null
     },
     {
@@ -71,5 +91,6 @@
     }
   ],
   "examples": [],
-  "drill": "material"
+  "drill": "material",
+  "videos": []
 }

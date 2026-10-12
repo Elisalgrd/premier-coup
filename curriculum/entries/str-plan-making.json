@@ -72,10 +72,26 @@
     },
     {
       "title": "Méthode",
-      "text": "Liste les déséquilibres (qui a quoi de mieux). Choisis l'aile ou la cible où tu es plus fort. Formule le plan en une phrase (« J'installe mon cavalier en d5 puis je double mes tours sur la colonne c »). Trouve le premier coup qui sert ce plan sans rien laisser en prise.",
+      "text": "Liste les déséquilibres (qui a quoi de mieux).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Choisis l'aile ou la cible où tu es plus fort.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Formule ton plan. Exemple : « Cavalier en d5, puis mes deux tours sur la colonne c. »",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Trouve le premier coup qui sert ce plan sans rien laisser en prise.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "plan-choice"
+  "drill": "plan-choice",
+  "videos": []
 }

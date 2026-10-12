@@ -67,9 +67,10 @@
     },
     {
       "title": "Pourquoi",
-      "text": "Le défenseur bloque les pions sur les cases de la couleur de son fou ; l'autre fou ne peut jamais les attaquer.",
+      "text": "Le défenseur bloque les pions sur les cases de la couleur de son fou. L'autre fou ne peut jamais les attaquer.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

@@ -63,16 +63,34 @@
       "audio": null
     },
     {
-      "title": "Signaux",
-      "text": "un fou bloqué par ses propres pions, un cavalier au bord, une tour sur une colonne fermée, une dame qui ne fait rien.",
+      "title": "Méthode",
+      "text": "Vérifie la routine anti-gaffe : rien d'urgent ?",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Vérifie la routine anti-gaffe : rien d'urgent ? Pour chaque pièce, demande-toi : « Que fait-elle ? » Choisis la pire ; trouve une case où elle attaque quelque chose ou contrôle le centre. Trouve le chemin (parfois 2 ou 3 coups).",
+      "text": "Pour chaque pièce, demande-toi : « Que fait-elle ? »",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Choisis la pire. Trouve une case où elle attaque quelque chose ou contrôle le centre.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Trouve le chemin (parfois 2 ou 3 coups).",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "Repère le fou bloqué par tes pions. Cherche aussi un cavalier au bord, une tour enfermée ou une dame inactive.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "plan-choice"
+  "drill": "plan-choice",
+  "videos": [
+    "course-active-piece"
+  ]
 }

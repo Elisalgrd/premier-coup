@@ -38,7 +38,7 @@
     "description": "12 positions « nomme la faiblesse et la cible » à 80 %."
   },
   "sources": [],
-  "videoId": null,
+  "videoId": "pawn-break",
   "glossary": [],
   "audio": null,
   "screens": [
@@ -49,15 +49,38 @@
     },
     {
       "title": "Contenu",
-      "text": "Pion isolé : aucun pion ami sur les colonnes voisines. Faible en finale, mais donne de l'activité en milieu de partie. Pions doublés : deux pions sur la même colonne. Souvent faibles, mais ouvrent une colonne. Pion arriéré : ne peut plus être soutenu par un pion voisin, sur une colonne semi-ouverte : cible. Chaîne de pions : attaque la",
+      "text": "Pion isolé : aucun pion ami sur les colonnes voisines. Faible en finale, mais donne de l'activité en milieu de partie.",
       "audio": null
     },
     {
       "title": "Contenu",
-      "text": "base de la chaîne adverse ; joue du côté où pointent tes pions. Majorité : plus de pions sur une aile : peut créer un pion passé. Îlots de pions : moins d'îlots = structure plus saine.",
+      "text": "Pions doublés : deux pions sur la même colonne. Souvent faibles, mais ouvrent une colonne.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Pion arriéré : ne peut plus être soutenu par un pion voisin, sur une colonne semi-ouverte : cible.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Chaîne de pions : attaque la base de la chaîne adverse. Joue du côté où pointent tes pions.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Majorité : plus de pions sur une aile : peut créer un pion passé.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Îlots de pions : moins d'îlots = structure plus saine.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "plan-choice"
+  "drill": "plan-choice",
+  "videos": [
+    "pawn-break"
+  ]
 }

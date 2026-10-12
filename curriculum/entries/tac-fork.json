@@ -24,9 +24,12 @@
     "Après sa réponse, prends la seconde cible."
   ],
   "pitfall": {
-    "text": "l'adversaire peut parfois répondre par un échec ou en protégeant une cible tout en sauvant l'autre. Et une fourchette sur deux pièces défendues ne gagne rien.",
-    "fen": null,
-    "line": []
+    "fen": "4k3/4p3/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "line": [
+      "e4d6",
+      "e7d6"
+    ],
+    "text": "Cd6+ attaque le roi et la dame. Mais le pion en e7 prend le cavalier : la fourchette échoue."
   },
   "entryChallenge": {
     "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
@@ -108,22 +111,52 @@
     },
     {
       "title": "Signaux",
-      "text": "Le roi et la dame (ou une tour) adverses sont à un saut de cavalier d'une même case. Deux pièces adverses non défendues. Deux pièces adverses côte à côte sur la même rangée, avec un pion qui peut avancer entre elles (fourchette de pion). Le roi et une pièce non défendue sur des lignes que ta dame peut croiser.",
+      "text": "Le roi et la dame (ou une tour) adverses sont à un saut de cavalier d'une même case.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "Deux pièces adverses non défendues.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "Deux pièces adverses voisines peuvent subir une fourchette de pion. Cherche une poussée qui attaque les deux.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "Le roi et une pièce non défendue sur des lignes que ta dame peut croiser.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Repère les cibles (roi, dame, tours, pièces non défendues). Cherche une case d'où une de tes pièces les attaque toutes les deux. Vérifie que ta pièce n'est pas prise sur cette case (ou que la prise te coûte moins que ce que tu gagnes). Après sa réponse, prends la seconde cible.",
+      "text": "Repère les cibles (roi, dame, tours, pièces non défendues).",
       "audio": null
     },
     {
-      "title": "Types à couvrir",
-      "text": "fourchette de cavalier (la reine des fourchettes, souvent « royale » roi + dame), fourchette de pion, fourchette de dame (souvent échec + pièce non défendue), fourchette de roi (en finale), fourchette de fou ou tour (plus rare).",
+      "title": "Méthode",
+      "text": "Cherche une case d'où une de tes pièces les attaque toutes les deux.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Vérifie si ta pièce peut être prise. Si oui, compare sa valeur au gain attendu.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Après sa réponse, prends la seconde cible.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "l'adversaire peut parfois répondre par un échec ou en protégeant une cible tout en sauvant l'autre. Et une fourchette sur deux pièces défendues ne gagne rien.",
+      "text": "L'adversaire peut parfois répondre par un échec ou en protégeant une cible tout en sauvant l'autre. Et une fourchette sur deux pièces défendues ne gagne rien.",
+      "audio": null
+    },
+    {
+      "title": "Types à couvrir",
+      "text": "Le cavalier peut attaquer roi et dame : c’est une fourchette royale. Un pion peut attaquer deux pièces voisines. La dame peut combiner échec et attaque d’une pièce. Le roi, le fou et la tour peuvent aussi créer des doubles attaques.",
       "audio": null
     }
   ],
@@ -133,5 +166,8 @@
       "outcome": null,
       "source": "CURRICULUM.md"
     }
+  ],
+  "videos": [
+    "course-forks"
   ]
 }

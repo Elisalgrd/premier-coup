@@ -22,7 +22,7 @@
     "Chez l'adversaire, chaque pièce non défendue est une raison de chercher une double attaque."
   ],
   "pitfall": {
-    "text": "une pièce non défendue mais impossible à attaquer n'est pas un problème immédiat. Mais elle le deviendra.",
+    "text": "Une pièce non défendue mais impossible à attaquer n'est pas un problème immédiat. Mais elle le deviendra.",
     "fen": null,
     "line": []
   },
@@ -105,19 +105,30 @@
     },
     {
       "title": "Signaux",
-      "text": "une pièce sans aucun défenseur ; une pièce défendue seulement par le roi ; une pièce défendue par une pièce qui a déjà un autre travail.",
+      "text": "Une pièce sans aucun défenseur. Une pièce défendue seulement par le roi. Une pièce défendue par une pièce qui a déjà un autre travail.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Après chaque coup (le tien et le sien), compte tes pièces non défendues. Moins tu en as, moins l'adversaire a de tactiques. Pendant le développement, connecte tes pièces : chacune protégée par une autre. Chez l'adversaire, chaque pièce non défendue est une raison de chercher une double attaque.",
+      "text": "Après chaque coup (le tien et le sien), compte tes pièces non défendues. Moins tu en as, moins l'adversaire a de tactiques.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Pendant le développement, connecte tes pièces : chacune protégée par une autre.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Chez l'adversaire, chaque pièce non défendue est une raison de chercher une double attaque.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "une pièce non défendue mais impossible à attaquer n'est pas un problème immédiat. Mais elle le deviendra.",
+      "text": "Une pièce non défendue mais impossible à attaquer n'est pas un problème immédiat. Mais elle le deviendra.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

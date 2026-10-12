@@ -168,7 +168,12 @@
     "distinctDays": 2,
     "description": "5 parties contre le moteur où, au coup 10, le roi est roqué et au moins 3 pièces mineures sont développées."
   },
-  "sources": [],
+  "sources": [
+    {
+      "label": "Julien Song : Ce que cachent les trois principes de l’ouverture",
+      "url": "https://juliensong.beehiiv.com/p/ce-que-cachent-3-grands-principes-ouverture-echecs"
+    }
+  ],
   "videoId": "course-italian",
   "glossary": [],
   "audio": null,
@@ -185,19 +190,53 @@
     },
     {
       "title": "Méthode",
-      "text": "Premier coup : e4 ou d4 (avec les noirs : répondre e5 ou d5, ou contester le centre autrement). Sors les cavaliers avant les fous, vers le centre (Cf3, Cc3 / ...Cf6, ...Cc6). Ne bouge pas deux fois la même pièce sans raison (capture, menace à parer). Ne sors pas ta dame trop tôt : elle se fait chasser avec",
+      "text": "Premier coup : e4 ou d4 (avec les noirs : répondre e5 ou d5, ou contester le centre autrement).",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "gain de temps. Roque tôt, en général avant le 10e coup. Connecte tes tours (plus aucune pièce entre elles), puis place-les sur les colonnes ouvertes ou centrales. Ne pousse pas les pions devant ton roi roqué sans raison. Ne prends pas des pions éloignés (a, b, g, h) au prix de ton développement.",
+      "text": "Sors les cavaliers avant les fous, vers le centre (Cf3, Cc3 / ...Cf6, ...Cc6).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Ne bouge pas deux fois la même pièce sans raison (capture, menace à parer).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Ne sors pas ta dame trop tôt : elle se fait chasser avec gain de temps.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Roque tôt, en général avant le 10e coup.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Connecte tes tours (plus aucune pièce entre elles), puis place-les sur les colonnes ouvertes ou centrales.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Ne pousse pas les pions devant ton roi roqué sans raison.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Ne prends pas des pions éloignés (a, b, g, h) au prix de ton développement.",
       "audio": null
     },
     {
       "title": "Piège / exceptions",
-      "text": "une règle cède devant une tactique. Si la dame peut prendre une pièce gratuite, ce n'est pas « sortir la dame trop tôt ». Si l'adversaire menace quelque chose, on y répond avant de développer.",
+      "text": "Une règle cède devant une tactique. Si la dame peut prendre une pièce gratuite, ce n'est pas « sortir la dame trop tôt ». Si l'adversaire menace quelque chose, on y répond avant de développer.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": [
+    "course-italian",
+    "course-king-safety"
+  ]
 }

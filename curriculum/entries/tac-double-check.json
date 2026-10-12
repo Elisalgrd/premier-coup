@@ -19,7 +19,7 @@
     "cherche une découverte où la pièce qui bouge donne aussi échec, puis regarde les cases de fuite restantes."
   ],
   "pitfall": {
-    "text": "si le roi a des cases de fuite sûres, l'échec double ne gagne pas forcément.",
+    "text": "Si le roi a des cases de fuite sûres, l'échec double ne gagne pas forcément.",
     "fen": null,
     "line": []
   },
@@ -71,24 +71,25 @@
     },
     {
       "title": "Pourquoi",
-      "text": "On ne peut ni prendre deux attaquants ni s'interposer sur deux lignes. C'est l'échec le plus puissant ; il mène souvent au mat.",
+      "text": "On ne peut ni prendre deux attaquants ni s'interposer sur deux lignes. C'est l'échec le plus puissant. Il mène souvent au mat.",
       "audio": null
     },
     {
       "title": "Signaux",
-      "text": "une découverte vers le roi adverse où la pièce qui bouge peut, elle aussi, donner échec.",
+      "text": "Une découverte vers le roi adverse où la pièce qui bouge peut, elle aussi, donner échec.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "cherche une découverte où la pièce qui bouge donne aussi échec, puis regarde les cases de fuite restantes.",
+      "text": "Cherche une découverte où la pièce qui bouge donne aussi échec, puis regarde les cases de fuite restantes.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "si le roi a des cases de fuite sûres, l'échec double ne gagne pas forcément.",
+      "text": "Si le roi a des cases de fuite sûres, l'échec double ne gagne pas forcément.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

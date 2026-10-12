@@ -262,7 +262,7 @@
     "description": "jouer la ligne de mémoire et 3 parties contre le moteur depuis la position du 9e coup."
   },
   "sources": [],
-  "videoId": null,
+  "videoId": "course-italian",
   "glossary": [],
   "audio": null,
   "screens": [
@@ -273,7 +273,7 @@
     },
     {
       "title": "Plans",
-      "text": "Cbd2-f1-g3 pour attaquer à l'aile roi ; d4 au bon moment pour ouvrir le centre ; a4 si les noirs jouent ...b5. h3 empêche ...Fg4 qui clouerait le Cf3.",
+      "text": "Cbd2-f1-g3 pour attaquer à l'aile roi. D4 au bon moment pour ouvrir le centre. A4 si les noirs jouent ...b5. H3 empêche ...Fg4 qui clouerait le Cf3.",
       "audio": null
     },
     {
@@ -283,9 +283,14 @@
     },
     {
       "title": "Piège à éviter",
-      "text": "jouer d4 trop tôt sans avoir calculé ...exd4 et la reprise.",
+      "text": "Jouer d4 trop tôt sans avoir calculé ...exd4 et la reprise.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": [
+    "course-italian",
+    "scotch",
+    "london"
+  ]
 }

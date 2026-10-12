@@ -74,18 +74,18 @@
       "audio": null
     },
     {
-      "title": "Pourquoi",
-      "text": "C'est le mat le plus courant dans les attaques sur le roi roqué (dame en g7, h7, f7 soutenue par un fou, un cavalier ou un pion).",
-      "audio": null
-    },
-    {
       "title": "Signaux",
-      "text": "ta dame peut atteindre une case collée au roi adverse ; cette case est aussi attaquée par une autre de tes pièces ; aucune pièce adverse ne la défend.",
+      "text": "Ta dame peut atteindre une case collée au roi adverse. Cette case est aussi attaquée par une autre de tes pièces. Aucune pièce adverse ne la défend.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "compte attaquants contre défenseurs de la case collée au roi ; si tu en as plus, la dame entre.",
+      "text": "Compte attaquants contre défenseurs de la case collée au roi. Si tu en as plus, la dame entre.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Une dame soutenue près du roi peut fermer ses sorties. Le roi ne peut pas la prendre. Repère notamment g7, h7 et f7 dans les attaques contre le petit roque.",
       "audio": null
     }
   ],
@@ -95,5 +95,6 @@
       "outcome": "mate",
       "source": "CURRICULUM.md"
     }
-  ]
+  ],
+  "videos": []
 }

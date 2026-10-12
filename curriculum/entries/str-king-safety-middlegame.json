@@ -61,7 +61,7 @@
     "description": "10 problèmes kingsideAttack à 70 %."
   },
   "sources": [],
-  "videoId": null,
+  "videoId": "coordinated-attack",
   "glossary": [],
   "audio": null,
   "screens": [
@@ -72,9 +72,12 @@
     },
     {
       "title": "Méthode",
-      "text": "compte attaquants contre défenseurs autour de chaque roi ; ouvre des lignes vers le roi adverse le moins protégé ; en roques opposés, chaque tempo compte, n'hésite pas à sacrifier un pion pour ouvrir une colonne.",
+      "text": "Compte attaquants contre défenseurs autour de chaque roi. Ouvre des lignes vers le roi adverse le moins protégé. En roques opposés, chaque tempo compte, n'hésite pas à sacrifier un pion pour ouvrir une colonne.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": [
+    "coordinated-attack"
+  ]
 }

@@ -1,2 +1,37 @@
-import fs from 'node:fs';import {Chess} from '../src/chess/chess.js';import {nodeEngine} from './engine-node.mjs';import {analyzeGame} from '../src/chess/analysis.js';import {parsePgn} from '../src/play/import.js';
-const g=new Chess();let seed=20261012;for(let ply=0;ply<80;ply++){const options=g.moves({verbose:true}).filter(m=>{const t=new Chess(g.fen());t.move(m);return !t.isGameOver();});seed=(seed*1664525+1013904223)>>>0;g.move(options[seed%options.length]);}const game=parsePgn(g.pgn());fs.writeFileSync('tests/fixtures/benchmark-40.pgn',game.pgn);const engine=await nodeEngine(),start=performance.now();const result=await analyzeGame(game,engine,{depth:12,onProgress:(n,total)=>{if(n%10===0)console.log(n+'/'+total);}});const report={environment:'Windows Node 24, desktop, single-thread WASM',physicalIphoneMeasured:false,seconds:Math.round((performance.now()-start)/10)/100,depth:12,analyzedMoves:result.analyzedMoves,moments:result.moments};fs.writeFileSync('docs/engine-benchmark.json',JSON.stringify(report,null,2));console.log(JSON.stringify({...report,moments:report.moments.length}));process.exit(0);
+import fs from "node:fs";
+import { Chess } from "../src/chess/chess.js";
+import { nodeEngine } from "./engine-node.mjs";
+import { analyzeGame } from "../src/chess/analysis.js";
+import { parsePgn } from "../src/play/import.js";
+const g = new Chess();
+let seed = 20261012;
+for (let ply = 0; ply < 80; ply++) {
+  const options = g.moves({ verbose: true }).filter((m) => {
+    const t = new Chess(g.fen());
+    t.move(m);
+    return !t.isGameOver();
+  });
+  seed = (seed * 1664525 + 1013904223) >>> 0;
+  g.move(options[seed % options.length]);
+}
+const game = parsePgn(g.pgn());
+fs.writeFileSync("tests/fixtures/benchmark-40.pgn", game.pgn);
+const engine = await nodeEngine(),
+  start = performance.now();
+const result = await analyzeGame(game, engine, {
+  depth: 12,
+  onProgress: (n, total) => {
+    if (n % 10 === 0) console.log(n + "/" + total);
+  },
+});
+const report = {
+  environment: "Windows Node 24, desktop, single-thread WASM",
+  physicalIphoneMeasured: false,
+  seconds: Math.round((performance.now() - start) / 10) / 100,
+  depth: 12,
+  analyzedMoves: result.analyzedMoves,
+  moments: result.moments,
+};
+fs.writeFileSync("docs/engine-benchmark.json", JSON.stringify(report, null, 2));
+console.log(JSON.stringify({ ...report, moments: report.moments.length }));
+process.exit(0);

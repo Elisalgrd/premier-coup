@@ -24,7 +24,7 @@
     "Les pièces longues (D, T, F) sont les plus dangereuses à oublier, surtout quand elles sont loin."
   ],
   "pitfall": {
-    "text": "une pièce qui défend « par derrière » (un rayon X à travers une autre pièce) ne compte pas tant que la pièce devant n'a pas bougé.",
+    "text": "Une pièce derrière un obstacle ne défend pas encore la case. Son rayon X devient actif quand l’obstacle se déplace.",
     "fen": null,
     "line": []
   },
@@ -107,24 +107,35 @@
     },
     {
       "title": "Signaux",
-      "text": "sans objet (compétence de base).",
+      "text": "Sans objet (compétence de base).",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Pour chaque pièce adverse, imagine les lignes qu'elle contrôle (tours et dame : rangées et colonnes ; fous et dame : diagonales ; cavalier : les 8 sauts ; pions : les 2 diagonales avant). Repère les pièces et cases attaquées par ces lignes. Fais la même chose pour tes pièces. Les pièces longues (D, T, F) sont les plus",
+      "text": "Pour chaque pièce adverse, imagine les lignes qu'elle contrôle (tours et dame : rangées et colonnes. Fous et dame : diagonales. Cavalier : les 8 sauts. Pions : les 2 diagonales avant).",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "dangereuses à oublier, surtout quand elles sont loin.",
+      "text": "Repère les pièces et cases attaquées par ces lignes.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Fais la même chose pour tes pièces.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Les pièces longues (D, T, F) sont les plus dangereuses à oublier, surtout quand elles sont loin.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "une pièce qui défend « par derrière » (un rayon X à travers une autre pièce) ne compte pas tant que la pièce devant n'a pas bougé.",
+      "text": "Une pièce derrière un obstacle ne défend pas encore la case. Son rayon X devient actif quand l’obstacle se déplace.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

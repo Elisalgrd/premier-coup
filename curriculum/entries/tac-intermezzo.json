@@ -100,9 +100,10 @@
     },
     {
       "title": "Signaux",
-      "text": "un échange en cours ; tu as un échec ou une menace sur une pièce plus précieuse.",
+      "text": "Un échange en cours. Tu as un échec ou une menace sur une pièce plus précieuse.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

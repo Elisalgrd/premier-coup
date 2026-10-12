@@ -7,7 +7,7 @@
   "prerequisites": [
     "ouv-principles"
   ],
-  "principle": "Si tu as plus de pièces développées, ouvre le jeu (échanges de pions au centre) : l'avance se transforme en attaque. Si tu es en retard, garde le jeu fermé.",
+  "principle": "Avec davantage de pièces développées, ouvre le centre par des échanges de pions. Ton avance peut devenir une attaque. En retard, garde plutôt le jeu fermé.",
   "why": [],
   "signals": [],
   "method": [],
@@ -57,10 +57,11 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "Si tu as plus de pièces développées, ouvre le jeu (échanges de pions au centre) : l'avance se transforme en attaque. Si tu es en retard, garde le jeu fermé.",
+      "text": "Avec davantage de pièces développées, ouvre le centre par des échanges de pions. Ton avance peut devenir une attaque. En retard, garde plutôt le jeu fermé.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "plan-choice"
+  "drill": "plan-choice",
+  "videos": []
 }

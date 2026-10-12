@@ -75,19 +75,20 @@
     },
     {
       "title": "Pourquoi",
-      "text": "Le défenseur doit garder la case de promotion en permanence ; cela crée surcharges et déviations.",
+      "text": "Le défenseur doit garder la case de promotion en permanence. Cela crée surcharges et déviations.",
       "audio": null
     },
     {
       "title": "Signaux",
-      "text": "pion passé avancé, une seule pièce adverse qui contrôle la case de promotion.",
+      "text": "Pion passé avancé, une seule pièce adverse qui contrôle la case de promotion.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "contrôle la case de promotion une fois de plus que l'adversaire ; dévie ou élimine son défenseur ; pense à la sous-promotion en cavalier si elle donne échec ou fourchette, ou en tour si la dame fait pat.",
+      "text": "Contrôle la case de promotion une fois de plus que l'adversaire. Dévie ou élimine son défenseur. Pense à la sous-promotion en cavalier si elle donne échec ou fourchette, ou en tour si la dame fait pat.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

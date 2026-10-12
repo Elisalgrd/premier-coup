@@ -44,10 +44,11 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "Une case qu'aucun pion ne peut plus défendre est une case faible ; si elle est près du roi ou au centre, installe-toi dessus.",
+      "text": "Une case qu'aucun pion ne peut plus défendre est une case faible. Si elle est près du roi ou au centre, installe-toi dessus.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "plan-choice"
+  "drill": "plan-choice",
+  "videos": []
 }

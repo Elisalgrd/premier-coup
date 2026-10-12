@@ -17,9 +17,8 @@
     "line": []
   },
   "entryChallenge": {
-    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
     "solution": [
-      "e2e4",
       "e7e5",
       "g1f3",
       "b8c6",
@@ -32,24 +31,12 @@
       "b1c3",
       "e8g8"
     ],
-    "prompt": "Trait aux blancs. Développe tes pièces en contrôlant le centre.",
+    "prompt": "Trait aux noirs. Développe tes pièces et prépare la sécurité du roi.",
     "outcome": null,
     "mode": "opening",
     "source": "CURRICULUM.md"
   },
   "guided": [
-    {
-      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
-      "move": "e2e4",
-      "text": "",
-      "arrows": [
-        [
-          "e2",
-          "e4"
-        ]
-      ],
-      "marks": []
-    },
     {
       "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
       "move": "e7e5",
@@ -197,7 +184,7 @@
     "description": "3 parties contre le moteur avec un roque avant le 10e coup."
   },
   "sources": [],
-  "videoId": null,
+  "videoId": "sicilian",
   "glossary": [],
   "audio": null,
   "screens": [
@@ -208,9 +195,14 @@
     },
     {
       "title": "Contenu",
-      "text": "contre l'Italienne, le même schéma que les blancs (...Fc5, ...d6, ...O-O, ...a6). Contre 2.Dh5, voir le mat du berger. Contre 3.Fc4 Cf6 4.Cg5, connaître 4...d5 5.exd5 Ca5. Contre l'écossaise (3.d4), 3...exd4 4.Cxd4 Fc5 ou Cf6.",
+      "text": "Contre l'Italienne, le même schéma que les blancs (...Fc5, ...d6, ...O-O, ...a6). Contre 2.Dh5, voir le mat du berger. Contre 3.Fc4 Cf6 4.Cg5, connaître 4...d5 5.exd5 Ca5. Contre l'écossaise (3.d4), 3...exd4 4.Cxd4 Fc5 ou Cf6.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": [
+    "sicilian",
+    "caro-kann",
+    "french"
+  ]
 }

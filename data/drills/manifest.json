@@ -1,0 +1,37 @@
+{
+  "source": "Positions de la banque Lichess CC0, après le coup adverse. Exercices de repérage stratégique, pas une certification du meilleur coup.",
+  "entries": {
+    "str-outposts": {
+      "count": 180,
+      "file": "str-outposts.json"
+    },
+    "str-weak-squares": {
+      "count": 180,
+      "file": "str-weak-squares.json"
+    },
+    "str-pawn-structure": {
+      "count": 180,
+      "file": "str-pawn-structure.json"
+    },
+    "str-worst-piece": {
+      "count": 180,
+      "file": "str-worst-piece.json"
+    },
+    "str-good-bad-bishop": {
+      "count": 180,
+      "file": "str-good-bad-bishop.json"
+    },
+    "str-plan-making": {
+      "count": 180,
+      "file": "str-plan-making.json"
+    },
+    "str-initiative": {
+      "count": 180,
+      "file": "str-initiative.json"
+    },
+    "str-bishop-pair-space": {
+      "count": 180,
+      "file": "str-bishop-pair-space.json"
+    }
+  }
+}

@@ -21,7 +21,7 @@
     "Pour chacun, regarde sa meilleure réponse, pas celle que tu espères."
   ],
   "pitfall": {
-    "text": "un échec « pour donner échec » qui chasse le roi vers une meilleure case. Un échec n'est utile que s'il gagne quelque chose ou prépare le mat.",
+    "text": "Un échec « pour donner échec » qui chasse le roi vers une meilleure case. Un échec n'est utile que s'il gagne quelque chose ou prépare le mat.",
     "fen": null,
     "line": []
   },
@@ -61,7 +61,12 @@
     "distinctDays": 2,
     "description": "30 problèmes mélangés au-dessus de ton classement actuel, 70 %."
   },
-  "sources": [],
+  "sources": [
+    {
+      "label": "Julien Song : Les coups gagnants que tu rates sans le savoir",
+      "url": "https://juliensong.beehiiv.com/p/les-coups-gagnants-que-tu-rates-sans-le-savoir"
+    }
+  ],
   "videoId": null,
   "glossary": [],
   "audio": null,
@@ -78,20 +83,36 @@
     },
     {
       "title": "Signaux",
-      "text": "roi adverse mal protégé, pièces non défendues, pièces alignées, pièce surchargée.",
+      "text": "Roi adverse mal protégé, pièces non défendues, pièces alignées, pièce surchargée.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Liste tous tes échecs, même ceux qui semblent absurdes (un sacrifice de dame avec échec peut mater). Liste toutes tes captures. Liste tes menaces (attaques sur une pièce non défendue ou plus précieuse, menaces de mat). Pour chacun, regarde sa meilleure réponse, pas celle que tu espères.",
+      "text": "Liste tous tes échecs, même ceux qui semblent absurdes (un sacrifice de dame avec échec peut mater).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Liste toutes tes captures.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Liste tes menaces (attaques sur une pièce non défendue ou plus précieuse, menaces de mat).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Pour chacun, regarde sa meilleure réponse, pas celle que tu espères.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "un échec « pour donner échec » qui chasse le roi vers une meilleure case. Un échec n'est utile que s'il gagne quelque chose ou prépare le mat.",
+      "text": "Un échec « pour donner échec » qui chasse le roi vers une meilleure case. Un échec n'est utile que s'il gagne quelque chose ou prépare le mat.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "mixed"
+  "drill": "mixed",
+  "videos": []
 }
