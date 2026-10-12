@@ -1,81 +1,9 @@
 {
   "id": "vis-attacked-squares",
-  "title": "Voir qui attaque quoi",
   "tier": 0,
   "priority": "S",
-  "domain": "vision",
   "prerequisites": [
     "vis-notation"
-  ],
-  "principle": "Avant de penser à un plan, sache quelles cases et quelles pièces chaque camp attaque.",
-  "why": [
-    "Toute tactique repose sur une pièce attaquée plus souvent qu'elle n'est défendue. Ne pas voir une attaque = gaffe. Ne pas voir une pièce non défendue chez l'adversaire = occasion ratée."
-  ],
-  "signals": [
-    "sans objet (compétence de base)."
-  ],
-  "method": [
-    "Pour chaque pièce adverse, imagine les lignes qu'elle contrôle (tours et dame : rangées et colonnes",
-    "fous et dame : diagonales",
-    "cavalier : les 8 sauts",
-    "pions : les 2 diagonales avant).",
-    "Repère les pièces et cases attaquées par ces lignes.",
-    "Fais la même chose pour tes pièces.",
-    "Les pièces longues (D, T, F) sont les plus dangereuses à oublier, surtout quand elles sont loin."
-  ],
-  "pitfall": {
-    "text": "Une pièce derrière un obstacle ne défend pas encore la case. Son rayon X devient actif quand l’obstacle se déplace.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "2r4k/p5pp/5p2/8/2rR4/8/Q5PP/2R4K b - - 0 33",
-    "solution": [
-      "c4c1",
-      "d4d1",
-      "c1d1"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/MQifq",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "2r4k/p5pp/5p2/8/2rR4/8/Q5PP/2R4K b - - 0 33",
-      "move": "c4c1",
-      "text": "",
-      "arrows": [
-        [
-          "c4",
-          "c1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "2r4k/p5pp/5p2/8/3R4/8/Q5PP/2r4K w - - 0 34",
-      "move": "d4d1",
-      "text": "",
-      "arrows": [
-        [
-          "d4",
-          "d1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "2r4k/p5pp/5p2/8/8/8/Q5PP/2rR3K b - - 1 34",
-      "move": "c1d1",
-      "text": "",
-      "arrows": [
-        [
-          "c1",
-          "d1"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "hangingPiece"
@@ -92,50 +20,185 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "vision",
+  "title": "Voir qui attaque quoi",
+  "introduces": [
+    "attaquer",
+    "défendre, protéger"
+  ],
+  "challenge": {
+    "fen": "r3k3/1p6/8/3n4/8/8/6B1/4K3 w - - 0 1",
+    "prompt": "Tu joues les blancs. Une pièce noire est attaquée par ton fou et personne ne la protège. Prends-la.",
+    "solution": [
+      "g2d5"
+    ],
+    "check": "engine",
+    "hint": "Suis la grande diagonale de ton fou, de g2 vers le haut à gauche.",
+    "accept": [
+      "g2d5"
+    ],
+    "engine": {
+      "best": "g2d5",
+      "score": -437,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": []
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Avant de penser à un plan, sache quelles cases et quelles pièces chaque camp attaque.",
-      "audio": null
+      "step": "principe",
+      "title": "Attaquer une case",
+      "fen": "4k3/8/8/8/3Q4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ],
+        [
+          "d4",
+          "h8"
+        ],
+        [
+          "d4",
+          "a7"
+        ],
+        [
+          "d4",
+          "h4"
+        ],
+        [
+          "d4",
+          "a4"
+        ],
+        [
+          "d4",
+          "a1"
+        ],
+        [
+          "d4",
+          "g1"
+        ],
+        [
+          "d4",
+          "d1"
+        ]
+      ],
+      "text": "Une pièce « attaque » une case si elle pourrait y aller au prochain coup. Ta dame en d4 attaque toutes les cases sur ses lignes droites et ses diagonales, jusqu’à ce qu’une pièce lui bloque le chemin. Si une pièce adverse est sur l’une de ces cases, elle est attaquée."
     },
     {
-      "title": "Pourquoi",
-      "text": "Toute tactique repose sur une pièce attaquée plus souvent qu'elle n'est défendue. Ne pas voir une attaque = gaffe. Ne pas voir une pièce non défendue chez l'adversaire = occasion ratée.",
-      "audio": null
+      "step": "principe",
+      "title": "Protéger une pièce",
+      "fen": "4k3/8/8/3n4/4p3/8/6B1/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "e4",
+          "d5"
+        ]
+      ],
+      "marks": [
+        "d5"
+      ],
+      "text": "Une pièce en « protège » une autre si elle pourrait reprendre sur sa case. Ici, le pion noir en e4 protège le cavalier en d5 : si ton fou prenait le cavalier, le pion reprendrait ton fou. Et attention, le pion bloque aussi la diagonale de ton fou."
     },
     {
-      "title": "Signaux",
-      "text": "Sans objet (compétence de base).",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Pourquoi c’est la base",
+      "fen": "r3k3/1p6/8/3n4/8/8/6B1/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "g2",
+          "d5"
+        ]
+      ],
+      "marks": [
+        "d5"
+      ],
+      "text": "Presque toutes les erreurs de débutant viennent d’une attaque qu’on n’a pas vue : une pièce à soi qui se fait prendre, ou une pièce adverse gratuite qu’on oublie de prendre. Ici, ton fou attaque le cavalier en d5 et rien ne le protège : c’est un cadeau."
     },
     {
-      "title": "Méthode",
-      "text": "Pour chaque pièce adverse, imagine les lignes qu'elle contrôle (tours et dame : rangées et colonnes. Fous et dame : diagonales. Cavalier : les 8 sauts. Pions : les 2 diagonales avant).",
-      "audio": null
+      "step": "methode",
+      "title": "La méthode",
+      "fen": "r3k3/1p6/8/3n4/8/8/6B1/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "g2",
+          "d5"
+        ],
+        [
+          "a8",
+          "a1"
+        ]
+      ],
+      "text": "Pour chaque pièce, suis ses lignes avec les yeux. Commence par les pièces qui vont loin : dame, tours, fous. Ce sont elles qu’on oublie le plus, surtout quand elles sont de l’autre côté de l’échiquier, comme la tour noire en a8 qui surveille toute la colonne a."
     },
     {
-      "title": "Méthode",
-      "text": "Repère les pièces et cases attaquées par ces lignes.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Fais la même chose pour tes pièces.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Les pièces longues (D, T, F) sont les plus dangereuses à oublier, surtout quand elles sont loin.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Une pièce derrière un obstacle ne défend pas encore la case. Son rayon X devient actif quand l’obstacle se déplace.",
-      "audio": null
+      "step": "piege",
+      "title": "Les cavaliers sont sournois",
+      "fen": "4k3/8/8/8/3n4/8/2Q5/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "c2"
+        ],
+        [
+          "d4",
+          "e2"
+        ]
+      ],
+      "marks": [
+        "c2"
+      ],
+      "text": "Le cavalier attaque en L, et c’est la pièce qu’on voit le moins venir. Ici, le cavalier noir en d4 attaque ta dame en c2. Prends l’habitude de regarder les 8 cases de chaque cavalier adverse."
     }
   ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "6k1/p4ppp/1p6/2b1n3/3Q4/8/5PPP/6K1 w - - 0 1",
+      "prompt": "Ta dame en d4 attaque deux pièces noires : le fou en c5 et le cavalier en e5. Une seule n’est protégée par personne. Prends-la.",
+      "solution": [
+        "d4e5"
+      ],
+      "check": "engine",
+      "success": "Oui. Le fou en c5, lui, était protégé par le pion en b6 : ta dame se serait fait prendre.",
+      "hint": "Regarde les pions noirs : lequel pourrait reprendre ?",
+      "accept": [
+        "d4e5"
+      ],
+      "engine": {
+        "best": "d4e5",
+        "score": 431,
+        "depth": 16
+      },
+      "alsoGood": []
+    }
+  ],
+  "retenir": "Avant chaque coup, suis les lignes des pièces : qui attaque quoi, qui protège quoi.",
+  "contentVersion": 2,
+  "principle": "Avant chaque coup, suis les lignes des pièces : qui attaque quoi, qui protège quoi.",
+  "entryChallenge": {
+    "fen": "r3k3/1p6/8/3n4/8/8/6B1/4K3 w - - 0 1",
+    "prompt": "Tu joues les blancs. Une pièce noire est attaquée par ton fou et personne ne la protège. Prends-la.",
+    "solution": [
+      "g2d5"
+    ],
+    "check": "engine",
+    "hint": "Suis la grande diagonale de ton fou, de g2 vers le haut à gauche.",
+    "accept": [
+      "g2d5"
+    ],
+    "engine": {
+      "best": "g2d5",
+      "score": -437,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": [],
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

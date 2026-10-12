@@ -1,43 +1,9 @@
 {
   "id": "str-initiative",
-  "title": "Développement et initiative",
   "tier": 4,
   "priority": "B",
-  "domain": "stratégie",
   "prerequisites": [
     "ouv-principles"
-  ],
-  "principle": "Avec davantage de pièces développées, ouvre le centre par des échanges de pions. Ton avance peut devenir une attaque. En retard, garde plutôt le jeu fermé.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
-    "solution": [
-      "d3d4"
-    ],
-    "prompt": "Ouvre le centre pour activer tes pièces développées.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
-      "move": "d3d4",
-      "text": "",
-      "arrows": [
-        [
-          "d3",
-          "d4"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -52,16 +18,159 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "plan-choice",
+  "domain": "stratégie",
+  "title": "Faire jouer tes pièces avant les siennes",
+  "introduces": [
+    "initiative",
+    "échange"
+  ],
+  "challenge": {
+    "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+    "solution": [
+      "d3d4"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton roi est à l’abri et plusieurs pièces sont sorties. Avance ton pion d3 pour attaquer e5.",
+    "accept": [
+      "d3d4"
+    ],
+    "alsoGood": [
+      "h2h3",
+      "f3d2",
+      "c1g5",
+      "c4b5",
+      "a2a4",
+      "d1e1",
+      "g1h1",
+      "f3e1",
+      "c1e3",
+      "c3d5"
+    ],
+    "hint": "Avant d’ouvrir une ligne, compare les pièces prêtes à jouer. Ici, tes cavaliers en c3 et f3 et ton fou en c4 participent déjà. Ton roi est à l’abri en g1.",
+    "success": "Le pion arrive en d4 et attaque le pion noir en e5. Si les pions s’échangent, tes pièces auront davantage de cases libres devant elles."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Avec davantage de pièces développées, ouvre le centre par des échanges de pions. Ton avance peut devenir une attaque. En retard, garde plutôt le jeu fermé.",
-      "audio": null
+      "step": "principe",
+      "title": "Faire jouer tes pièces avant les siennes",
+      "text": "Avoir l’initiative signifie créer les dangers auxquels l’adversaire doit répondre. Ici, ton fou en c4 et tes cavaliers sont déjà sortis. Avancer le pion d3 peut ouvrir des lignes pour eux.",
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Avant d’ouvrir une ligne, compare les pièces prêtes à jouer. Ici, tes cavaliers en c3 et f3 et ton fou en c4 participent déjà. Ton roi est à l’abri en g1.",
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+      "arrows": [
+        [
+          "d3",
+          "d4"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le pion blanc en d3 avance en d4 : il attaque e5 et prépare l’ouverture de lignes.",
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+      "line": [
+        {
+          "uci": "d3d4",
+          "text": "Le pion blanc en d3 avance en d4 : il attaque e5 et prépare l’ouverture de lignes."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le pion arrive en d4 et attaque le pion noir en e5. Si les pions s’échangent, tes pièces auront davantage de cases libres devant elles.",
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2BPP3/2N2N2/PPP2PPP/R1BQ1RK1 b - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ouvrir le jeu avec ton roi au milieu et tes pièces encore enfermées peut aider l’adversaire. Prépare tes pièces avant de chercher ces échanges (une prise suivie d’une reprise) de pions.",
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+      "solution": [
+        "d3d4"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Ton roi est à l’abri et plusieurs pièces sont sorties. Avance ton pion d3 pour attaquer e5.",
+      "accept": [
+        "d3d4"
+      ],
+      "alsoGood": [
+        "h2h3",
+        "f3d2",
+        "c1g5",
+        "c4b5",
+        "a2a4",
+        "d1e1",
+        "g1h1",
+        "f3e1",
+        "c1e3",
+        "c3d5"
+      ],
+      "hint": "Avant d’ouvrir une ligne, compare les pièces prêtes à jouer. Ici, tes cavaliers en c3 et f3 et ton fou en c4 participent déjà. Ton roi est à l’abri en g1.",
+      "success": "Le pion arrive en d4 et attaque le pion noir en e5. Si les pions s’échangent, tes pièces auront davantage de cases libres devant elles."
+    }
+  ],
+  "retenir": "Ouvre des lignes quand tes pièces sont prêtes à les utiliser, puis vérifie la réponse adverse.",
+  "review": {
+    "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+    "solution": [
+      "d3d4"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton roi est à l’abri et plusieurs pièces sont sorties. Avance ton pion d3 pour attaquer e5.",
+    "accept": [
+      "d3d4"
+    ],
+    "alsoGood": [],
+    "hint": "Avant d’ouvrir une ligne, compare les pièces prêtes à jouer. Ici, tes cavaliers en c3 et f3 et ton fou en c4 participent déjà. Ton roi est à l’abri en g1.",
+    "success": "Le pion arrive en d4 et attaque le pion noir en e5. Si les pions s’échangent, tes pièces auront davantage de cases libres devant elles."
+  },
+  "contentVersion": 2,
+  "principle": "Ouvre des lignes quand tes pièces sont prêtes à les utiliser, puis vérifie la réponse adverse.",
+  "entryChallenge": {
+    "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+    "solution": [
+      "d3d4"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton roi est à l’abri et plusieurs pièces sont sorties. Avance ton pion d3 pour attaquer e5.",
+    "accept": [
+      "d3d4"
+    ],
+    "alsoGood": [
+      "h2h3",
+      "f3d2",
+      "c1g5",
+      "c4b5",
+      "a2a4",
+      "d1e1",
+      "g1h1",
+      "f3e1",
+      "c1e3",
+      "c3d5"
+    ],
+    "hint": "Avant d’ouvrir une ligne, compare les pièces prêtes à jouer. Ici, tes cavaliers en c3 et f3 et ton fou en c4 participent déjà. Ton roi est à l’abri en g1.",
+    "success": "Le pion arrive en d4 et attaque le pion noir en e5. Si les pions s’échangent, tes pièces auront davantage de cases libres devant elles.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "plan-choice",
-  "videos": []
+  "pitfall": {}
 }

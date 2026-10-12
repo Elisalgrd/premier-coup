@@ -1,31 +1,10 @@
 {
   "id": "str-good-bad-bishop",
-  "title": "Bon et mauvais fou",
   "tier": 4,
   "priority": "B",
-  "domain": "stratégie",
   "prerequisites": [
     "str-pawn-structure"
   ],
-  "principle": "Un fou est « mauvais » quand tes pions sont bloqués sur des cases de sa couleur. Place tes pions sur la couleur opposée à ton fou restant, ou échange ton mauvais fou.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1",
-    "solution": [
-      "c1"
-    ],
-    "prompt": "Touche le fou limité par ses propres pions.",
-    "mode": "square",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [],
   "lichessThemes": [],
   "ratingBand": [
     400,
@@ -39,16 +18,111 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "plan-choice",
+  "domain": "stratégie",
+  "title": "Le fou gêné par ses propres pions",
+  "introduces": [
+    "mauvais fou",
+    "défendre, protéger"
+  ],
+  "challenge": {
+    "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1",
+    "solution": [
+      "c1"
+    ],
+    "kind": "square",
+    "check": "list",
+    "prompt": "Touche le fou dont les diagonales sont gênées par les pions blancs bloqués.",
+    "accept": [
+      "c1"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case c1.",
+    "success": "Ton fou peut encore bouger, mais il n’atteint pas facilement le camp noir. Ses propres pions forment une barrière sur sa couleur."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Un fou est « mauvais » quand tes pions sont bloqués sur des cases de sa couleur. Place tes pions sur la couleur opposée à ton fou restant, ou échange ton mauvais fou.",
-      "audio": null
+      "step": "principe",
+      "title": "Le fou gêné par ses propres pions",
+      "text": "On appelle mauvais fou un fou dont les chemins sont gênés par ses propres pions. Ici, ton fou en c1 parcourt les cases foncées. Tes pions en c4, d5 et e4 occupent aussi des cases foncées et sont bloqués.",
+      "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1",
+      "marks": [
+        "c1"
+      ]
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Compare la couleur du fou et celle de tes pions bloqués. Pour l’aider, cherche plus tard une sortie autour de la barrière ou un échange de pions qui ouvre une diagonale.",
+      "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Ton fou peut encore bouger, mais il n’atteint pas facilement le camp noir. Ses propres pions forment une barrière sur sa couleur.",
+      "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Un fou gêné peut rester utile pour protéger (pouvoir reprendre si l’adversaire prend cette pièce) tes pions. Ne l’échange pas automatiquement. Regarde ce qu’il protège et ce que ferait l’adversaire après son départ.",
+      "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1",
+      "solution": [
+        "c1"
+      ],
+      "kind": "square",
+      "check": "list",
+      "prompt": "Touche le fou dont les diagonales sont gênées par les pions blancs bloqués.",
+      "accept": [
+        "c1"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case c1.",
+      "success": "Ton fou peut encore bouger, mais il n’atteint pas facilement le camp noir. Ses propres pions forment une barrière sur sa couleur."
+    }
+  ],
+  "retenir": "Regarde si tes pions bloqués occupent la couleur de ton fou. Cherche comment lui ouvrir un chemin.",
+  "review": {
+    "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1",
+    "solution": [
+      "c1"
+    ],
+    "kind": "square",
+    "check": "list",
+    "prompt": "Touche le fou dont les diagonales sont gênées par les pions blancs bloqués.",
+    "accept": [
+      "c1"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case c1.",
+    "success": "Ton fou peut encore bouger, mais il n’atteint pas facilement le camp noir. Ses propres pions forment une barrière sur sa couleur."
+  },
+  "contentVersion": 2,
+  "principle": "Regarde si tes pions bloqués occupent la couleur de ton fou. Cherche comment lui ouvrir un chemin.",
+  "entryChallenge": {
+    "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1",
+    "solution": [
+      "c1"
+    ],
+    "kind": "square",
+    "check": "list",
+    "prompt": "Touche le fou dont les diagonales sont gênées par les pions blancs bloqués.",
+    "accept": [
+      "c1"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case c1.",
+    "success": "Ton fou peut encore bouger, mais il n’atteint pas facilement le camp noir. Ses propres pions forment une barrière sur sa couleur.",
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "plan-choice",
-  "videos": []
+  "pitfall": {}
 }

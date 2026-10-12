@@ -1,43 +1,9 @@
 {
   "id": "fin-queen-vs-pawn",
-  "title": "Dame contre pion sur la 7e",
   "tier": 3,
   "priority": "C",
-  "domain": "finales",
   "prerequisites": [
     "mat-basic-queen"
-  ],
-  "principle": "Contre un pion central ou de cavalier sur la septième, combine les échecs avec le rapprochement du roi. Contre un pion de fou ou de tour, cherche les ressources de pat. Un roi attaquant éloigné laisse souvent la nulle.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "1R6/5p1p/1p2pkp1/1P6/3P1P2/3RKP2/P7/1q6 b - - 0 43",
-    "solution": [
-      "b1e1"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/CiY2f",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "1R6/5p1p/1p2pkp1/1P6/3P1P2/3RKP2/P7/1q6 b - - 0 43",
-      "move": "b1e1",
-      "text": "",
-      "arrows": [
-        [
-          "b1",
-          "e1"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "queenEndgame",
@@ -55,15 +21,107 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "finales",
+  "title": "Ta dame contre un pion presque arrivé",
+  "introduces": [],
+  "challenge": {
+    "fen": "8/8/8/8/8/1K1Q4/4p3/4k3 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "e1"
+    ],
+    "check": "rule",
+    "prompt": "Touche la case où le pion noir veut devenir une dame. Quelle pièce noire la bloque actuellement ?",
+    "accept": [
+      "e1"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case e1.",
+    "success": "Ta dame en d3 surveille le pion en e2 et plusieurs cases autour du roi noir. Ton roi peut venir l’aider pendant que le pion reste bloqué par son propre roi."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Contre un pion central ou de cavalier sur la septième, combine les échecs avec le rapprochement du roi. Contre un pion de fou ou de tour, cherche les ressources de pat. Un roi attaquant éloigné laisse souvent la nulle.",
-      "audio": null
+      "step": "principe",
+      "title": "Ta dame contre un pion presque arrivé",
+      "text": "Le pion noir en e2 veut devenir une dame en e1. Mais son propre roi occupe e1. C’est un moment utile pour rapprocher ton roi blanc en b3.",
+      "fen": "8/8/8/8/8/1K1Q4/4p3/4k3 w - - 0 1",
+      "marks": [
+        "e1"
+      ]
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Utilise les échecs de dame pour forcer le roi adverse devant son pion. Quand il bloque la case d’arrivée, approche ton roi. Recommence jusqu’à pouvoir prendre le pion.",
+      "fen": "8/8/8/8/8/1K1Q4/4p3/4k3 w - - 0 1",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Ta dame en d3 surveille le pion en e2 et plusieurs cases autour du roi noir. Ton roi peut venir l’aider pendant que le pion reste bloqué par son propre roi.",
+      "fen": "8/8/8/8/8/1K1Q4/4p3/4k3 w - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Attention aux pions proches du bord, notamment en a2, c2, f2 ou h2. Le roi adverse peut parfois se cacher dans un coin sans coup possible : la partie peut finir nulle. Ne suppose pas que la dame gagne toujours.",
+      "fen": "8/8/8/8/8/1K1Q4/4p3/4k3 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "8/8/8/8/8/1K1Q4/4p3/4k3 w - - 0 1",
+      "kind": "square",
+      "solution": [
+        "e1"
+      ],
+      "check": "rule",
+      "prompt": "Touche la case où le pion noir veut devenir une dame. Quelle pièce noire la bloque actuellement ?",
+      "accept": [
+        "e1"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case e1.",
+      "success": "Ta dame en d3 surveille le pion en e2 et plusieurs cases autour du roi noir. Ton roi peut venir l’aider pendant que le pion reste bloqué par son propre roi."
+    }
+  ],
+  "retenir": "Force le roi adverse devant son pion pour gagner le temps de rapprocher ton propre roi.",
+  "review": {
+    "fen": "8/8/8/8/8/1K1Q4/4p3/4k3 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "e1"
+    ],
+    "check": "rule",
+    "prompt": "Touche la case où le pion noir veut devenir une dame. Quelle pièce noire la bloque actuellement ?",
+    "accept": [
+      "e1"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case e1.",
+    "success": "Ta dame en d3 surveille le pion en e2 et plusieurs cases autour du roi noir. Ton roi peut venir l’aider pendant que le pion reste bloqué par son propre roi."
+  },
+  "contentVersion": 2,
+  "principle": "Force le roi adverse devant son pion pour gagner le temps de rapprocher ton propre roi.",
+  "entryChallenge": {
+    "fen": "8/8/8/8/8/1K1Q4/4p3/4k3 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "e1"
+    ],
+    "check": "rule",
+    "prompt": "Touche la case où le pion noir veut devenir une dame. Quelle pièce noire la bloque actuellement ?",
+    "accept": [
+      "e1"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case e1.",
+    "success": "Ta dame en d3 surveille le pion en e2 et plusieurs cases autour du roi noir. Ton roi peut venir l’aider pendant que le pion reste bloqué par son propre roi.",
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

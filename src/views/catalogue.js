@@ -3,16 +3,16 @@ import { esc } from "../ui/helpers.js";
 export const tiers = [
   "Lire l’échiquier",
   "Ne plus rien donner",
-  "Gagner du matériel et mater",
-  "Calculer, convertir, finir",
-  "Penser en plans",
+  "Prendre des pièces et gagner",
+  "Prévoir la suite et terminer la partie",
+  "Préparer tes prochains coups",
 ];
 export function entryCard(e, state) {
   const status = entryStatus(state, e),
     attempts = state.history.filter(
       (x) => x.entryId === e.id && !x.review,
     ).length;
-  return `<a class="entry-card" href="#lesson/${e.id}"><span class="priority ${e.priority}">${e.priority}</span><div><small>${esc(e.domain)} · PALIER ${e.tier}</small><h3>${esc(e.title)}</h3><p>${esc(e.principle)}</p><span class="status ${status}">${statusLabel[status]}</span>${attempts ? `<span class="attempt-count">${attempts} positions travaillées</span>` : ""}<progress max="15" value="${status === "mastered" ? 15 : Math.min(15, attempts)}" aria-label="Pratique de ${esc(e.title)}"></progress></div><span aria-hidden="true">↗</span></a>`;
+  return `<a class="entry-card" href="#lesson/${e.id}"><span class="priority ${e.priority}">${e.priority}</span><div><small>${esc(e.domain)} · NIVEAU ${e.tier}</small><h3>${esc(e.title)}</h3><p>${esc(e.principle)}</p><span class="status ${status}">${statusLabel[status]}</span>${attempts ? `<span class="attempt-count">${attempts} positions travaillées</span>` : ""}<progress max="15" value="${status === "mastered" ? 15 : Math.min(15, attempts)}" aria-label="Pratique de ${esc(e.title)}"></progress></div><span aria-hidden="true">↗</span></a>`;
 }
 export function catalogueView(entries, state, filters = {}) {
   let filtered = entries.filter(
@@ -40,7 +40,7 @@ export function catalogueView(entries, state, filters = {}) {
               .toLowerCase(),
           )),
   );
-  return `<header class="page-intro"><span class="eyebrow">TON ARBRE DE COMPÉTENCES</span><h1>Un principe.<br>Un nouveau réflexe.</h1><p>71 fiches, dans un seul parcours. Commence par voir les menaces, puis apprends à les créer.</p></header><div class="catalogue-filters"><label class="search">Rechercher<input id="catalogue-search" placeholder="Fourchette, roi, ouverture…" value="${esc(filters.query || "")}"></label><label>Domaine<select id="filter-domain"><option value="">Tous</option>${[...new Set(entries.map((e) => e.domain))].map((d) => `<option ${filters.domain === d ? "selected" : ""}>${d}</option>`).join("")}</select></label><label>Priorité<select id="filter-priority"><option value="">Toutes</option>${["S", "A", "B", "C"].map((d) => `<option ${filters.priority === d ? "selected" : ""}>${d}</option>`).join("")}</select></label><label>État<select id="filter-status"><option value="">Tous</option>${Object.entries(
+  return `<header class="page-intro"><span class="eyebrow">TES LEÇONS, À TON RYTHME</span><h1>Un principe.<br>Un nouveau réflexe.</h1><p>${entries.length} fiches, dans un seul parcours. Commence par voir les menaces, puis apprends à les créer.</p></header><div class="catalogue-filters"><label class="search">Rechercher<input id="catalogue-search" placeholder="Fourchette, roi, ouverture…" value="${esc(filters.query || "")}"></label><label>Domaine<select id="filter-domain"><option value="">Tous</option>${[...new Set(entries.map((e) => e.domain))].map((d) => `<option ${filters.domain === d ? "selected" : ""}>${d}</option>`).join("")}</select></label><label>Priorité<select id="filter-priority"><option value="">Toutes</option>${["S", "A", "B", "C"].map((d) => `<option ${filters.priority === d ? "selected" : ""}>${d}</option>`).join("")}</select></label><label>État<select id="filter-status"><option value="">Tous</option>${Object.entries(
     statusLabel,
   )
     .map(
@@ -54,7 +54,7 @@ export function catalogueView(entries, state, filters = {}) {
       .map((title, tier) => {
         const list = filtered.filter((e) => e.tier === tier);
         return list.length
-          ? `<section class="tier"><header><span class="tier-number">0${tier}</span><div><small>PALIER ${tier}</small><h2>${title}</h2></div><span>${list.length} fiches</span></header><div class="entry-grid">${list.map((e) => entryCard(e, state)).join("")}</div></section>`
+          ? `<section class="tier"><header><span class="tier-number">0${tier}</span><div><small>NIVEAU ${tier}</small><h2>${title}</h2></div><span>${list.length} fiches</span></header><div class="entry-grid">${list.map((e) => entryCard(e, state)).join("")}</div></section>`
           : "";
       })
       .join("") ||

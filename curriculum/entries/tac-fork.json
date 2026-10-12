@@ -1,85 +1,9 @@
 {
   "id": "tac-fork",
-  "title": "La fourchette (double attaque)",
   "tier": 2,
   "priority": "S",
-  "domain": "tactique",
   "prerequisites": [
     "proc-hanging-pieces"
-  ],
-  "principle": "Une seule pièce attaque deux cibles en même temps. L'adversaire ne peut en sauver qu'une.",
-  "why": [
-    "L'adversaire n'a qu'un coup pour répondre à deux problèmes. Si l'une des cibles est le roi (échec), il doit s'occuper du roi et perd l'autre."
-  ],
-  "signals": [
-    "Le roi et la dame (ou une tour) adverses sont à un saut de cavalier d'une même case.",
-    "Deux pièces adverses non défendues.",
-    "Deux pièces adverses côte à côte sur la même rangée, avec un pion qui peut avancer entre elles (fourchette de pion).",
-    "Le roi et une pièce non défendue sur des lignes que ta dame peut croiser."
-  ],
-  "method": [
-    "Repère les cibles (roi, dame, tours, pièces non défendues).",
-    "Cherche une case d'où une de tes pièces les attaque toutes les deux.",
-    "Vérifie que ta pièce n'est pas prise sur cette case (ou que la prise te coûte moins que ce que tu gagnes).",
-    "Après sa réponse, prends la seconde cible."
-  ],
-  "pitfall": {
-    "fen": "4k3/4p3/8/1q6/4N3/8/8/4K3 w - - 0 1",
-    "line": [
-      "e4d6",
-      "e7d6"
-    ],
-    "text": "Cd6+ attaque le roi et la dame. Mais le pion en e7 prend le cavalier : la fourchette échoue."
-  },
-  "entryChallenge": {
-    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
-    "solution": [
-      "e4d6",
-      "e8d7",
-      "d6b5"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": null,
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
-      "move": "e4d6",
-      "text": "",
-      "arrows": [
-        [
-          "e4",
-          "d6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4k3/8/3N4/1q6/8/8/8/4K3 b - - 1 1",
-      "move": "e8d7",
-      "text": "",
-      "arrows": [
-        [
-          "e8",
-          "d7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/3k4/3N4/1q6/8/8/8/4K3 w - - 2 2",
-      "move": "d6b5",
-      "text": "",
-      "arrows": [
-        [
-          "d6",
-          "b5"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "fork"
@@ -96,78 +20,263 @@
   },
   "sources": [],
   "videoId": "course-forks",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Une seule pièce attaque deux cibles en même temps. L'adversaire ne peut en sauver qu'une.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "L'adversaire n'a qu'un coup pour répondre à deux problèmes. Si l'une des cibles est le roi (échec), il doit s'occuper du roi et perd l'autre.",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Le roi et la dame (ou une tour) adverses sont à un saut de cavalier d'une même case.",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Deux pièces adverses non défendues.",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Deux pièces adverses voisines peuvent subir une fourchette de pion. Cherche une poussée qui attaque les deux.",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Le roi et une pièce non défendue sur des lignes que ta dame peut croiser.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Repère les cibles (roi, dame, tours, pièces non défendues).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Cherche une case d'où une de tes pièces les attaque toutes les deux.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Vérifie si ta pièce peut être prise. Si oui, compare sa valeur au gain attendu.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Après sa réponse, prends la seconde cible.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "L'adversaire peut parfois répondre par un échec ou en protégeant une cible tout en sauvant l'autre. Et une fourchette sur deux pièces défendues ne gagne rien.",
-      "audio": null
-    },
-    {
-      "title": "Types à couvrir",
-      "text": "Le cavalier peut attaquer roi et dame : c’est une fourchette royale. Un pion peut attaquer deux pièces voisines. La dame peut combiner échec et attaque d’une pièce. Le roi, le fou et la tour peuvent aussi créer des doubles attaques.",
-      "audio": null
-    }
-  ],
-  "examples": [
-    {
-      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
-    }
-  ],
   "videos": [
     "course-forks"
-  ]
+  ],
+  "domain": "tactique",
+  "title": "La fourchette",
+  "introduces": [
+    "fourchette",
+    "menace"
+  ],
+  "challenge": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "prompt": "Tu joues les blancs. Ton cavalier en e4 peut attaquer deux pièces noires en même temps. Trouve le coup. Ça ne compte pas si tu te trompes.",
+    "solution": [
+      "e4d6",
+      "e8d7",
+      "d6b5"
+    ],
+    "check": "engine",
+    "hint": "Cherche une case d’où ton cavalier attaque à la fois le roi et la dame.",
+    "accept": [
+      "e4d6"
+    ],
+    "engine": {
+      "best": "e4d6",
+      "score": -10,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": []
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Deux attaques d’un coup",
+      "fen": "4k3/8/3N4/1q6/8/8/8/4K3 b - - 1 1",
+      "arrows": [
+        [
+          "d6",
+          "e8"
+        ],
+        [
+          "d6",
+          "b5"
+        ]
+      ],
+      "marks": [
+        "e8",
+        "b5"
+      ],
+      "text": "Une « fourchette », c’est une seule pièce qui attaque deux pièces adverses en même temps. Ici, le cavalier en d6 attaque le roi noir (c’est échec) et la dame noire. L’adversaire ne joue qu’un coup : il doit sauver son roi, et il perd sa dame."
+    },
+    {
+      "step": "exemple",
+      "title": "La suite",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "line": [
+        {
+          "uci": "e4d6",
+          "text": "Le cavalier saute en d6 : échec au roi en e8, et attaque de la dame en b5."
+        },
+        {
+          "uci": "e8d7",
+          "text": "Le roi noir est obligé de bouger, il n’a pas le temps de sauver sa dame."
+        },
+        {
+          "uci": "d6b5",
+          "text": "Le cavalier prend la dame. 9 points gagnés en un coup."
+        }
+      ],
+      "text": "Regarde la fourchette en entier."
+    },
+    {
+      "step": "pourquoi",
+      "title": "Pourquoi ça marche",
+      "fen": "4k3/8/3N4/1q6/8/8/8/4K3 b - - 1 1",
+      "text": "On ne joue qu’un coup à la fois. Face à deux problèmes, l’adversaire ne peut en régler qu’un. Et quand l’une des deux cibles est le roi, il n’a même pas le choix : il doit d’abord sortir de l’échec."
+    },
+    {
+      "step": "signaux",
+      "title": "Quand chercher une fourchette",
+      "fen": "r3k3/6pp/8/3N4/8/8/6PP/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d5",
+          "c7"
+        ]
+      ],
+      "marks": [
+        "e8",
+        "a8"
+      ],
+      "text": "Cherche une fourchette quand deux pièces adverses importantes (le roi, la dame, une tour) ou deux pièces non protégées sont à portée d’une même case. Le cavalier est le roi des fourchettes, parce que son L est difficile à voir venir. Ici, la case c7 touche le roi et la tour."
+    },
+    {
+      "step": "signaux",
+      "title": "La fourchette de pion",
+      "fen": "4k3/p5pp/8/2n1n3/8/3P4/P5PP/1R2K3 w - - 0 1",
+      "arrows": [
+        [
+          "d3",
+          "d4"
+        ]
+      ],
+      "marks": [
+        "c5",
+        "e5"
+      ],
+      "text": "Un simple pion peut faire une fourchette. Quand deux pièces adverses sont côte à côte avec une case vide entre elles, un pion qui avance sur cette case les attaque toutes les deux. Ici, d4 attaque les deux cavaliers, et aucun ne peut prendre le pion."
+    },
+    {
+      "step": "signaux",
+      "title": "La fourchette de dame",
+      "fen": "4k3/6pp/8/8/7b/8/6PP/3Q2K1 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "h5"
+        ],
+        [
+          "h5",
+          "e8"
+        ],
+        [
+          "h5",
+          "h4"
+        ]
+      ],
+      "text": "La dame fait souvent des fourchettes en donnant échec et en attaquant en même temps une pièce non protégée. Ici, Dh5 met le roi en échec et attaque le fou en h4."
+    },
+    {
+      "step": "methode",
+      "title": "La méthode",
+      "fen": "r3k3/6pp/8/3N4/8/8/6PP/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d5",
+          "c7"
+        ]
+      ],
+      "text": "Un : repère les cibles (roi, dame, tours, pièces non protégées). Deux : cherche une case d’où une de tes pièces les touche toutes les deux. Trois : vérifie que ta pièce ne se fait pas prendre gratuitement sur cette case. Quatre : après sa réponse, prends la deuxième cible."
+    },
+    {
+      "step": "piege",
+      "title": "La fourchette qui ne marche pas",
+      "fen": "4k3/4p3/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "line": [
+        {
+          "uci": "e4d6",
+          "text": "Le cavalier fait la même fourchette en d6..."
+        },
+        {
+          "uci": "e7d6",
+          "text": "...mais cette fois, le pion noir en e7 le prend. Plus de fourchette, et tu as perdu ton cavalier."
+        }
+      ],
+      "text": "Attention : si l’adversaire peut prendre la pièce qui fait la fourchette, les deux menaces (ce que l’adversaire pourrait faire de dangereux au prochain coup) disparaissent d’un coup. Vérifie toujours la case d’arrivée."
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "r3k3/6pp/8/3N4/8/8/6PP/4K3 w - - 0 1",
+      "prompt": "Trouve la fourchette de cavalier.",
+      "solution": [
+        "d5c7",
+        "e8d7",
+        "c7a8"
+      ],
+      "check": "engine",
+      "success": "Le cavalier en c7 attaque le roi et la tour. Le roi doit bouger, et tu prends la tour.",
+      "hint": "Cherche une case qui touche à la fois e8 et a8.",
+      "accept": [
+        "d5c7"
+      ],
+      "engine": {
+        "best": "d5c7",
+        "score": 397,
+        "depth": 16
+      },
+      "alsoGood": []
+    },
+    {
+      "kind": "move",
+      "fen": "4k3/p5pp/8/2n1n3/8/3P4/P5PP/1R2K3 w - - 0 1",
+      "prompt": "Les deux cavaliers noirs sont côte à côte. Un de tes pions peut les attaquer tous les deux.",
+      "solution": [
+        "d3d4"
+      ],
+      "check": "engine",
+      "success": "Le pion attaque les deux cavaliers. Un seul pourra s’enfuir.",
+      "hint": "Quel pion peut avancer juste entre les deux ?",
+      "accept": [
+        "d3d4"
+      ],
+      "engine": {
+        "best": "d3d4",
+        "score": 466,
+        "depth": 16
+      },
+      "alsoGood": []
+    },
+    {
+      "kind": "move",
+      "fen": "4k3/6pp/8/8/7b/8/6PP/3Q2K1 w - - 0 1",
+      "prompt": "Le fou noir en h4 n’est protégé par personne. Trouve un échec de ta dame qui l’attaque en même temps.",
+      "solution": [
+        "d1h5"
+      ],
+      "check": "list",
+      "accept": [
+        "d1h5",
+        "d1a4"
+      ],
+      "success": "Échec au roi, et le fou est attaqué. Au prochain coup, tu le prends.",
+      "hint": "Cherche une case d’où ta dame voit le roi en e8 et le fou en h4.",
+      "engine": {
+        "best": "d1h5",
+        "score": 793,
+        "depth": 16
+      },
+      "alsoGood": [
+        "d1e2",
+        "g1f1",
+        "d1g4",
+        "d1d5",
+        "d1d4",
+        "d1c2",
+        "d1f3"
+      ]
+    }
+  ],
+  "retenir": "Une pièce, deux cibles. Vérifie que ta pièce ne peut pas être prise sur sa case d’arrivée.",
+  "contentVersion": 2,
+  "principle": "Une pièce, deux cibles. Vérifie que ta pièce ne peut pas être prise sur sa case d’arrivée.",
+  "entryChallenge": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "prompt": "Tu joues les blancs. Ton cavalier en e4 peut attaquer deux pièces noires en même temps. Trouve le coup. Ça ne compte pas si tu te trompes.",
+    "solution": [
+      "e4d6",
+      "e8d7",
+      "d6b5"
+    ],
+    "check": "engine",
+    "hint": "Cherche une case d’où ton cavalier attaque à la fois le roi et la dame.",
+    "accept": [
+      "e4d6"
+    ],
+    "engine": {
+      "best": "e4d6",
+      "score": -10,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": [],
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

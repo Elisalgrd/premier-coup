@@ -1,52 +1,9 @@
 {
   "id": "mat-queen-support",
-  "title": "Le mat du baiser (dame soutenue)",
   "tier": 2,
   "priority": "S",
-  "domain": "mats",
   "prerequisites": [
     "mat-basic-queen"
-  ],
-  "principle": "La dame se colle au roi adverse, protégée par une autre pièce : le roi ne peut pas la prendre.",
-  "why": [
-    "C'est le mat le plus courant dans les attaques sur le roi roqué (dame en g7, h7, f7 soutenue par un fou, un cavalier ou un pion)."
-  ],
-  "signals": [
-    "ta dame peut atteindre une case collée au roi adverse",
-    "cette case est aussi attaquée par une autre de tes pièces",
-    "aucune pièce adverse ne la défend."
-  ],
-  "method": [
-    "compte attaquants contre défenseurs de la case collée au roi",
-    "si tu en as plus, la dame entre."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "2kr1b2/p1pbppp1/p4q2/8/8/8/PPP3QP/2KR4 w - - 0 19",
-    "solution": [
-      "g2a8"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/xYRfP",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "2kr1b2/p1pbppp1/p4q2/8/8/8/PPP3QP/2KR4 w - - 0 19",
-      "move": "g2a8",
-      "text": "",
-      "arrows": [
-        [
-          "g2",
-          "a8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "mateIn1",
@@ -65,36 +22,152 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "mats",
+  "title": "La dame aidée par une autre pièce",
+  "introduces": [],
+  "challenge": {
+    "fen": "k7/2Q5/2K5/8/8/8/8/8 w - - 0 1",
+    "solution": [
+      "c7b7"
+    ],
+    "kind": "move",
+    "check": "engine",
+    "prompt": "Ton roi en c6 peut protéger ta dame près du roi noir en a8. Termine la partie.",
+    "accept": [
+      "c7b7"
+    ],
+    "alsoGood": [
+      "c7h7",
+      "c7d7",
+      "c7e7",
+      "c7f7",
+      "c7g7",
+      "c7c8",
+      "c7a5",
+      "c7e5",
+      "c7f4"
+    ],
+    "hint": "Regarde b7 avant d’y poser ta dame. Le roi blanc en c6 surveille cette case. Ta dame pourra alors fermer a7, a8 et b8, tout près du roi noir.",
+    "success": "La dame arrive en b7, juste à côté du roi noir en a8. Ton roi en c6 la protège. Le roi noir ne peut ni la prendre, ni trouver une sortie : échec et mat."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "La dame se colle au roi adverse, protégée par une autre pièce : le roi ne peut pas la prendre.",
-      "audio": null
+      "step": "principe",
+      "title": "La dame aidée par une autre pièce",
+      "text": "Une dame proche du roi adverse surveille presque toutes ses sorties. Mais elle a besoin d’une protection : sinon, le roi peut la prendre. Ici, ton roi en c6 peut aider ta dame en c7.",
+      "fen": "k7/2Q5/2K5/8/8/8/8/8 w - - 0 1",
+      "marks": []
     },
     {
-      "title": "Signaux",
-      "text": "Ta dame peut atteindre une case collée au roi adverse. Cette case est aussi attaquée par une autre de tes pièces. Aucune pièce adverse ne la défend.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde b7 avant d’y poser ta dame. Le roi blanc en c6 surveille cette case. Ta dame pourra alors fermer a7, a8 et b8, tout près du roi noir.",
+      "fen": "k7/2Q5/2K5/8/8/8/8/8 w - - 0 1",
+      "arrows": [
+        [
+          "c7",
+          "b7"
+        ]
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Compte attaquants contre défenseurs de la case collée au roi. Si tu en as plus, la dame entre.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La dame en c7 va en b7, protégée par ton roi en c6 : échec et mat.",
+      "fen": "k7/2Q5/2K5/8/8/8/8/8 w - - 0 1",
+      "line": [
+        {
+          "uci": "c7b7",
+          "text": "La dame en c7 va en b7, protégée par ton roi en c6 : échec et mat."
+        }
+      ]
     },
     {
-      "title": "Pourquoi",
-      "text": "Une dame soutenue près du roi peut fermer ses sorties. Le roi ne peut pas la prendre. Repère notamment g7, h7 et f7 dans les attaques contre le petit roque.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La dame arrive en b7, juste à côté du roi noir en a8. Ton roi en c6 la protège. Le roi noir ne peut ni la prendre, ni trouver une sortie : échec et mat.",
+      "fen": "k7/1Q6/2K5/8/8/8/8/8 b - - 1 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Sans ton roi en c6, le roi noir pourrait prendre une dame arrivée en b7. Avant chaque attaque de dame près du roi, vérifie sa protection.",
+      "fen": "k7/2Q5/2K5/8/8/8/8/8 w - - 0 1"
     }
   ],
-  "examples": [
+  "exercises": [
     {
-      "fen": "6k1/5pQp/6pB/8/8/8/8/6K1 b - - 0 1",
-      "outcome": "mate",
-      "source": "CURRICULUM.md"
+      "fen": "k7/2Q5/2K5/8/8/8/8/8 w - - 0 1",
+      "solution": [
+        "c7b7"
+      ],
+      "kind": "move",
+      "check": "engine",
+      "prompt": "Ton roi en c6 peut protéger ta dame près du roi noir en a8. Termine la partie.",
+      "accept": [
+        "c7b7"
+      ],
+      "alsoGood": [
+        "c7h7",
+        "c7d7",
+        "c7e7",
+        "c7f7",
+        "c7g7",
+        "c7c8",
+        "c7a5",
+        "c7e5",
+        "c7f4"
+      ],
+      "hint": "Regarde b7 avant d’y poser ta dame. Le roi blanc en c6 surveille cette case. Ta dame pourra alors fermer a7, a8 et b8, tout près du roi noir.",
+      "success": "La dame arrive en b7, juste à côté du roi noir en a8. Ton roi en c6 la protège. Le roi noir ne peut ni la prendre, ni trouver une sortie : échec et mat."
     }
   ],
-  "videos": []
+  "retenir": "Avant un coup de dame près du roi adverse, vérifie sa protection et toutes les sorties du roi.",
+  "review": {
+    "fen": "k7/2Q5/2K5/8/8/8/8/8 w - - 0 1",
+    "solution": [
+      "c7b7"
+    ],
+    "kind": "move",
+    "check": "engine",
+    "prompt": "Ton roi en c6 peut protéger ta dame près du roi noir en a8. Termine la partie.",
+    "accept": [
+      "c7b7"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde b7 avant d’y poser ta dame. Le roi blanc en c6 surveille cette case. Ta dame pourra alors fermer a7, a8 et b8, tout près du roi noir.",
+    "success": "La dame arrive en b7, juste à côté du roi noir en a8. Ton roi en c6 la protège. Le roi noir ne peut ni la prendre, ni trouver une sortie : échec et mat."
+  },
+  "contentVersion": 2,
+  "principle": "Avant un coup de dame près du roi adverse, vérifie sa protection et toutes les sorties du roi.",
+  "entryChallenge": {
+    "fen": "k7/2Q5/2K5/8/8/8/8/8 w - - 0 1",
+    "solution": [
+      "c7b7"
+    ],
+    "kind": "move",
+    "check": "engine",
+    "prompt": "Ton roi en c6 peut protéger ta dame près du roi noir en a8. Termine la partie.",
+    "accept": [
+      "c7b7"
+    ],
+    "alsoGood": [
+      "c7h7",
+      "c7d7",
+      "c7e7",
+      "c7f7",
+      "c7g7",
+      "c7c8",
+      "c7a5",
+      "c7e5",
+      "c7f4"
+    ],
+    "hint": "Regarde b7 avant d’y poser ta dame. Le roi blanc en c6 surveille cette case. Ta dame pourra alors fermer a7, a8 et b8, tout près du roi noir.",
+    "success": "La dame arrive en b7, juste à côté du roi noir en a8. Ton roi en c6 la protège. Le roi noir ne peut ni la prendre, ni trouver une sortie : échec et mat.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

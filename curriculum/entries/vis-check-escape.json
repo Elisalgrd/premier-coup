@@ -1,75 +1,9 @@
 {
   "id": "vis-check-escape",
-  "title": "Sortir d'un échec",
   "tier": 0,
   "priority": "S",
-  "domain": "vision",
   "prerequisites": [
     "vis-attacked-squares"
-  ],
-  "principle": "Trois réponses à un échec : prendre la pièce qui attaque, s'interposer, fuir. Toujours examiner les trois.",
-  "why": [
-    "Le choix de la réponse change tout. Fuir vers la mauvaise case peut mener au mat ou à une fourchette."
-  ],
-  "signals": [],
-  "method": [
-    "Peut-on prendre l'attaquant sans danger ? (souvent le meilleur)",
-    "Peut-on interposer une pièce peu précieuse et défendue ?",
-    "Où fuir ? Préférer une case qui n'est pas sur la ligne d'une autre pièce adverse et pas à portée d'un cavalier."
-  ],
-  "pitfall": {
-    "text": "Interposer une pièce non défendue revient à la donner. Contre un échec de cavalier, on ne peut pas s'interposer.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "8/5k2/3B4/5R1p/p2P4/Pb3p1P/5PPK/r7 b - - 1 43",
-    "solution": [
-      "f7e6",
-      "f5h5",
-      "e6d6"
-    ],
-    "prompt": "Trait aux noirs. Sors de l’échec.",
-    "source": "https://lichess.org/training/JPIFO",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "8/5k2/3B4/5R1p/p2P4/Pb3p1P/5PPK/r7 b - - 1 43",
-      "move": "f7e6",
-      "text": "",
-      "arrows": [
-        [
-          "f7",
-          "e6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/8/3Bk3/5R1p/p2P4/Pb3p1P/5PPK/r7 w - - 2 44",
-      "move": "f5h5",
-      "text": "",
-      "arrows": [
-        [
-          "f5",
-          "h5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/8/3Bk3/7R/p2P4/Pb3p1P/5PPK/r7 b - - 0 44",
-      "move": "e6d6",
-      "text": "",
-      "arrows": [
-        [
-          "e6",
-          "d6"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "defensiveMove"
@@ -86,40 +20,153 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "vision",
+  "title": "Sortir d’un échec",
+  "introduces": [],
+  "challenge": {
+    "fen": "6k1/5ppp/8/8/8/8/4r1PP/R3K3 w - - 0 1",
+    "prompt": "Ton roi est en échec : la tour noire en e2 l’attaque. Trouve la meilleure façon de t’en sortir.",
+    "solution": [
+      "e1e2"
+    ],
+    "check": "engine",
+    "hint": "Personne ne protège la tour noire. Et ton roi est juste à côté d’elle.",
+    "accept": [
+      "e1e2"
+    ],
+    "engine": {
+      "best": "e1e2",
+      "score": 529,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": []
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Trois réponses à un échec : prendre la pièce qui attaque, s'interposer, fuir. Toujours examiner les trois.",
-      "audio": null
+      "step": "principe",
+      "title": "Trois façons de répondre",
+      "fen": "6k1/5ppp/8/8/8/8/4r1PP/R3K3 w - - 0 1",
+      "arrows": [
+        [
+          "e2",
+          "e1"
+        ]
+      ],
+      "marks": [
+        "e1"
+      ],
+      "text": "Quand ton roi est en échec, tu as trois façons de t’en sortir. Un : prendre la pièce qui attaque. Deux : mettre une pièce entre ton roi et l’attaquant. Trois : déplacer ton roi sur une case sûre. Regarde toujours les trois avant de choisir."
     },
     {
-      "title": "Pourquoi",
-      "text": "Le choix de la réponse change tout. Fuir vers la mauvaise case peut mener au mat ou à une fourchette.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Pourquoi ça compte",
+      "fen": "6k1/5ppp/8/8/8/8/4r1PP/R3K3 w - - 0 1",
+      "line": [
+        {
+          "uci": "e1e2",
+          "text": "Ton roi prend la tour : elle n’était protégée par aucune pièce noire. Tu gagnes 5 points en te sortant de l’échec."
+        }
+      ],
+      "text": "Le choix de la réponse change tout. Ici, fuir serait une erreur : prendre la tour te la fait gagner gratuitement."
     },
     {
-      "title": "Méthode",
-      "text": "Peut-on prendre l'attaquant sans danger ? (souvent le meilleur)",
-      "audio": null
+      "step": "methode",
+      "title": "Se mettre devant",
+      "fen": "6k1/8/8/8/8/8/3N1PPP/r5K1 w - - 0 1",
+      "arrows": [
+        [
+          "a1",
+          "g1"
+        ],
+        [
+          "d2",
+          "f1"
+        ]
+      ],
+      "text": "Ici, la tour noire attaque ton roi sur toute la rangée du bas. Ton roi ne peut pas fuir : ses pions le bloquent. Tu peux mettre ton cavalier entre les deux, en f1. Là, ton roi protège le cavalier : si la tour le prend, ton roi la reprend."
     },
     {
-      "title": "Méthode",
-      "text": "Peut-on interposer une pièce peu précieuse et défendue ?",
-      "audio": null
+      "step": "piege",
+      "title": "Se mettre devant, mais protégé",
+      "fen": "6k1/8/8/8/8/8/3N1PPP/r5K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "d2b1",
+          "text": "Le cavalier se met en b1. Mais en b1, personne ne le protège."
+        },
+        {
+          "uci": "a1b1",
+          "text": "La tour le prend, et c’est échec et mat : ton roi est toujours coincé."
+        }
+      ],
+      "text": "Attention : une pièce que tu mets devant ton roi doit être protégée, sinon l’adversaire la prend et l’échec recommence. Regarde ce qui arrive si le cavalier va en b1."
     },
     {
-      "title": "Méthode",
-      "text": "Où fuir ? Préférer une case qui n'est pas sur la ligne d'une autre pièce adverse et pas à portée d'un cavalier.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Interposer une pièce non défendue revient à la donner. Contre un échec de cavalier, on ne peut pas s'interposer.",
-      "audio": null
+      "step": "methode",
+      "title": "Fuir au bon endroit",
+      "fen": "6k1/8/8/8/8/8/8/r3K3 w - - 0 1",
+      "marks": [
+        "d2",
+        "e2",
+        "f2"
+      ],
+      "arrows": [
+        [
+          "a1",
+          "e1"
+        ]
+      ],
+      "text": "Si tu dois fuir, choisis une case qui n’est attaquée par aucune pièce adverse, et si possible pas sur la ligne d’une autre pièce dangereuse. Contre un échec de cavalier, on ne peut pas se mettre devant : le cavalier saute. Il faut le prendre ou fuir."
     }
   ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "6k1/8/8/8/8/8/3N1PPP/r5K1 w - - 0 1",
+      "prompt": "Ton roi est en échec et ne peut pas bouger. Mets une pièce devant lui, à un endroit où elle est protégée.",
+      "solution": [
+        "d2f1"
+      ],
+      "check": "engine",
+      "success": "Ton cavalier en f1 bloque l’échec, et ton roi le protège.",
+      "hint": "Ton cavalier peut aller sur une case juste à côté de ton roi.",
+      "accept": [
+        "d2f1"
+      ],
+      "engine": {
+        "best": "d2f1",
+        "score": 75,
+        "depth": 16
+      },
+      "alsoGood": []
+    }
+  ],
+  "retenir": "En échec : prendre l’attaquant, se mettre devant avec une pièce protégée, ou fuir sur une case sûre. Regarde les trois.",
+  "contentVersion": 2,
+  "principle": "En échec : prendre l’attaquant, se mettre devant avec une pièce protégée, ou fuir sur une case sûre. Regarde les trois.",
+  "entryChallenge": {
+    "fen": "6k1/5ppp/8/8/8/8/4r1PP/R3K3 w - - 0 1",
+    "prompt": "Ton roi est en échec : la tour noire en e2 l’attaque. Trouve la meilleure façon de t’en sortir.",
+    "solution": [
+      "e1e2"
+    ],
+    "check": "engine",
+    "hint": "Personne ne protège la tour noire. Et ton roi est juste à côté d’elle.",
+    "accept": [
+      "e1e2"
+    ],
+    "engine": {
+      "best": "e1e2",
+      "score": 529,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": [],
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

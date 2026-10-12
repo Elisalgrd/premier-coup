@@ -1,47 +1,9 @@
 {
   "id": "str-open-files",
-  "title": "Colonnes ouvertes et 7e rangée",
   "tier": 4,
   "priority": "A",
-  "domain": "stratégie",
   "prerequisites": [
     "str-worst-piece"
-  ],
-  "principle": "Les tours veulent les colonnes ouvertes (aucun pion) ou semi-ouvertes (pas de pion à toi). Une tour sur la 7e rangée attaque les pions et enferme le roi.",
-  "why": [],
-  "signals": [],
-  "method": [
-    "repère la colonne qui va s'ouvrir",
-    "mets-y une tour (ou double tes tours)",
-    "entre sur la 7e quand c'est possible."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "8/8/1p3k1p/p1p2pP1/P1P2KP1/3r4/1PR5/8 b - - 0 39",
-    "solution": [
-      "h6g5"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/hfGsT",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "8/8/1p3k1p/p1p2pP1/P1P2KP1/3r4/1PR5/8 b - - 0 39",
-      "move": "h6g5",
-      "text": "",
-      "arrows": [
-        [
-          "h6",
-          "g5"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "rookEndgame"
@@ -58,20 +20,127 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "stratégie",
+  "title": "Donner une route libre à ta tour",
+  "introduces": [
+    "colonne ouverte"
+  ],
+  "challenge": {
+    "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/R5K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "c1",
+      "d1",
+      "e1"
+    ],
+    "check": "rule",
+    "prompt": "Touche une case de la première rangée, sur une colonne sans aucun pion, pour donner une route à ta tour.",
+    "accept": [
+      "c1",
+      "d1",
+      "e1"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case c1.",
+    "success": "En rejoignant c1, d1 ou e1, ta tour regarde loin vers le camp noir. Sur a1, elle reste enfermée derrière son propre pion."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Les tours veulent les colonnes ouvertes (aucun pion) ou semi-ouvertes (pas de pion à toi). Une tour sur la 7e rangée attaque les pions et enferme le roi.",
-      "audio": null
+      "step": "principe",
+      "title": "Donner une route libre à ta tour",
+      "text": "Une colonne ouverte ne contient aucun pion. Ta tour peut y avancer sans être bloquée. Ici, les colonnes c, d et e sont libres. La tour en a1 manque de passage à cause du pion en a2.",
+      "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/R5K1 w - - 0 1",
+      "marks": [
+        "c1",
+        "d1",
+        "e1"
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Repère la colonne qui va s'ouvrir. Mets-y une tour (ou double tes tours). Entre sur la 7e quand c'est possible.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde chaque colonne de bas en haut. Si aucun pion ne la coupe, cherche si ta tour peut l’utiliser sans se faire prendre. Ici, elle peut glisser le long de la première rangée.",
+      "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/R5K1 w - - 0 1",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "En rejoignant c1, d1 ou e1, ta tour regarde loin vers le camp noir. Sur a1, elle reste enfermée derrière son propre pion.",
+      "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/R5K1 w - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Une colonne sans pion peut quand même être surveillée par une pièce adverse. Vérifie les attaques avant d’y envoyer ta tour. Une route libre n’est pas forcément une route sûre.",
+      "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/R5K1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/R5K1 w - - 0 1",
+      "kind": "square",
+      "solution": [
+        "c1",
+        "d1",
+        "e1"
+      ],
+      "check": "rule",
+      "prompt": "Touche une case de la première rangée, sur une colonne sans aucun pion, pour donner une route à ta tour.",
+      "accept": [
+        "c1",
+        "d1",
+        "e1"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case c1.",
+      "success": "En rejoignant c1, d1 ou e1, ta tour regarde loin vers le camp noir. Sur a1, elle reste enfermée derrière son propre pion."
+    }
+  ],
+  "retenir": "Cherche une colonne sans pion pour ta tour, puis vérifie que l’adversaire ne peut pas l’y prendre.",
+  "review": {
+    "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/R5K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "c1",
+      "d1",
+      "e1"
+    ],
+    "check": "rule",
+    "prompt": "Touche une case de la première rangée, sur une colonne sans aucun pion, pour donner une route à ta tour.",
+    "accept": [
+      "c1",
+      "d1",
+      "e1"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case c1.",
+    "success": "En rejoignant c1, d1 ou e1, ta tour regarde loin vers le camp noir. Sur a1, elle reste enfermée derrière son propre pion."
+  },
+  "contentVersion": 2,
+  "principle": "Cherche une colonne sans pion pour ta tour, puis vérifie que l’adversaire ne peut pas l’y prendre.",
+  "entryChallenge": {
+    "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/R5K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "c1",
+      "d1",
+      "e1"
+    ],
+    "check": "rule",
+    "prompt": "Touche une case de la première rangée, sur une colonne sans aucun pion, pour donner une route à ta tour.",
+    "accept": [
+      "c1",
+      "d1",
+      "e1"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case c1.",
+    "success": "En rejoignant c1, d1 ou e1, ta tour regarde loin vers le camp noir. Sur a1, elle reste enfermée derrière son propre pion.",
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

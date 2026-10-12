@@ -1,24 +1,214 @@
 {
   "id": "fin-lucena",
-  "title": "La position de Lucena (gagner une finale de tours)",
   "tier": 3,
   "priority": "A",
-  "domain": "finales",
   "prerequisites": [
     "fin-opposition",
     "tac-skewer"
   ],
-  "principle": "Roi devant son pion sur la septième, roi adverse coupé : prépare un pont. La tour rejoint la quatrième rangée et bloque les échecs latéraux.",
-  "why": [
-    "C'est la position gagnante de référence des finales de tours, les plus fréquentes de toutes les finales."
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
   ],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "gagner la position 3 fois sur 3 contre le moteur."
   },
+  "sources": [],
+  "videoId": null,
+  "videos": [],
+  "drill": "endgame",
+  "domain": "finales",
+  "title": "Mettre ta tour entre ton roi et les échecs",
+  "introduces": [
+    "position de Lucena"
+  ],
+  "challenge": {
+    "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
+    "solution": [
+      "d1d4",
+      "c2c1",
+      "b8a7",
+      "c1a1",
+      "a7b6",
+      "a1b1",
+      "b6c6",
+      "b1c1",
+      "c6b5",
+      "c1b1",
+      "d4b4"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Prépare l’abri de ton roi : place ta tour sur la quatrième rangée, puis suis la sortie du roi.",
+    "accept": [
+      "d1d4"
+    ],
+    "alsoGood": [
+      "d1b1",
+      "d1d5",
+      "b8a7",
+      "d1a1",
+      "d1f1",
+      "d1e1",
+      "d1d3",
+      "d1h1",
+      "d1g1"
+    ],
+    "hint": "Place d’abord ta tour en d4. Sors ensuite ton roi. Quand la tour noire donne échec sur la colonne b, ta tour peut venir en b4 et protéger ton roi.",
+    "success": "Ta tour finit par se placer en b4 entre la tour noire et ton roi. L’échec s’arrête. Le pion en b7 pourra avancer quand ton roi aura libéré son chemin."
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Mettre ta tour entre ton roi et les échecs",
+      "text": "La position de Lucena est une méthode pour gagner avec une tour et un pion près du bout. Ici, ton roi en b8 protège le pion en b7. Il doit quitter b8 pour laisser le pion devenir une dame.",
+      "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Place d’abord ta tour en d4. Sors ensuite ton roi. Quand la tour noire donne échec sur la colonne b, ta tour peut venir en b4 et protéger ton roi.",
+      "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "d4"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour blanche va en d4 pour pouvoir protéger le roi plus tard.",
+      "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
+      "line": [
+        {
+          "uci": "d1d4",
+          "text": "La tour blanche va en d4 pour pouvoir protéger le roi plus tard."
+        },
+        {
+          "uci": "c2c1",
+          "text": "La tour noire attend sur c1."
+        },
+        {
+          "uci": "b8a7",
+          "text": "Le roi blanc quitte b8 et va en a7."
+        },
+        {
+          "uci": "c1a1",
+          "text": "La tour noire va en a1 et attaque le roi sur la colonne a."
+        },
+        {
+          "uci": "a7b6",
+          "text": "Le roi blanc va en b6."
+        },
+        {
+          "uci": "a1b1",
+          "text": "La tour noire suit sur b1 : nouvel échec."
+        },
+        {
+          "uci": "b6c6",
+          "text": "Le roi blanc va en c6."
+        },
+        {
+          "uci": "b1c1",
+          "text": "La tour noire suit sur c1 avec échec."
+        },
+        {
+          "uci": "c6b5",
+          "text": "Le roi blanc revient vers son abri en b5."
+        },
+        {
+          "uci": "c1b1",
+          "text": "La tour noire donne échec depuis b1."
+        },
+        {
+          "uci": "d4b4",
+          "text": "La tour blanche se place en b4 entre les deux : elle coupe l’échec."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Ta tour finit par se placer en b4 entre la tour noire et ton roi. L’échec s’arrête. Le pion en b7 pourra avancer quand ton roi aura libéré son chemin.",
+      "fen": "8/1P2k3/8/1K6/1R6/8/8/1r6 b - - 11 6"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ne pousse pas ton roi au hasard devant les échecs. Prépare la tour sur la quatrième rangée avant de sortir. La démonstration montre une défense noire possible, pas tous ses choix.",
+      "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1"
+    }
+  ],
+  "exercises": [
+    {
+      "fen": "1K6/1P2k3/8/8/3R4/8/8/2r5 w - - 2 2",
+      "solution": [
+        "b8a7",
+        "c1a1",
+        "a7b6",
+        "a1b1",
+        "b6c6",
+        "b1c1",
+        "c6b5",
+        "c1b1",
+        "d4b4"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. Le roi blanc quitte b8 et va en a7.",
+      "accept": [
+        "b8a7"
+      ],
+      "alsoGood": [
+        "d4d5",
+        "b8a8",
+        "d4d2",
+        "d4b4",
+        "d4a4",
+        "d4g4",
+        "d4h4",
+        "d4d3",
+        "d4e4"
+      ],
+      "hint": "Regarde la pièce en b8.",
+      "success": "Ta tour finit par se placer en b4 entre la tour noire et ton roi. L’échec s’arrête. Le pion en b7 pourra avancer quand ton roi aura libéré son chemin."
+    }
+  ],
+  "retenir": "Prépare ta tour avant de sortir ton roi. Elle pourra se mettre entre lui et la tour adverse.",
+  "review": {
+    "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
+    "solution": [
+      "d1d4",
+      "c2c1",
+      "b8a7",
+      "c1a1",
+      "a7b6",
+      "a1b1",
+      "b6c6",
+      "b1c1",
+      "c6b5",
+      "c1b1",
+      "d4b4"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Prépare l’abri de ton roi : place ta tour sur la quatrième rangée, puis suis la sortie du roi.",
+    "accept": [
+      "d1d4"
+    ],
+    "alsoGood": [],
+    "hint": "Place d’abord ta tour en d4. Sors ensuite ton roi. Quand la tour noire donne échec sur la colonne b, ta tour peut venir en b4 et protéger ton roi.",
+    "success": "Ta tour finit par se placer en b4 entre la tour noire et ton roi. L’échec s’arrête. Le pion en b7 pourra avancer quand ton roi aura libéré son chemin."
+  },
+  "contentVersion": 2,
+  "principle": "Prépare ta tour avant de sortir ton roi. Elle pourra se mettre entre lui et la tour adverse.",
   "entryChallenge": {
     "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
     "solution": [
@@ -34,179 +224,28 @@
       "c1b1",
       "d4b4"
     ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": null,
-    "mode": "move",
-    "source": "CURRICULUM.md"
+    "kind": "move",
+    "check": "list",
+    "prompt": "Prépare l’abri de ton roi : place ta tour sur la quatrième rangée, puis suis la sortie du roi.",
+    "accept": [
+      "d1d4"
+    ],
+    "alsoGood": [
+      "d1b1",
+      "d1d5",
+      "b8a7",
+      "d1a1",
+      "d1f1",
+      "d1e1",
+      "d1d3",
+      "d1h1",
+      "d1g1"
+    ],
+    "hint": "Place d’abord ta tour en d4. Sors ensuite ton roi. Quand la tour noire donne échec sur la colonne b, ta tour peut venir en b4 et protéger ton roi.",
+    "success": "Ta tour finit par se placer en b4 entre la tour noire et ton roi. L’échec s’arrête. Le pion en b7 pourra avancer quand ton roi aura libéré son chemin.",
+    "mode": "move"
   },
-  "guided": [
-    {
-      "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
-      "move": "d1d4",
-      "text": "",
-      "arrows": [
-        [
-          "d1",
-          "d4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "1K6/1P2k3/8/8/3R4/8/2r5/8 b - - 1 1",
-      "move": "c2c1",
-      "text": "",
-      "arrows": [
-        [
-          "c2",
-          "c1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "1K6/1P2k3/8/8/3R4/8/8/2r5 w - - 2 2",
-      "move": "b8a7",
-      "text": "",
-      "arrows": [
-        [
-          "b8",
-          "a7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/KP2k3/8/8/3R4/8/8/2r5 b - - 3 2",
-      "move": "c1a1",
-      "text": "",
-      "arrows": [
-        [
-          "c1",
-          "a1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/KP2k3/8/8/3R4/8/8/r7 w - - 4 3",
-      "move": "a7b6",
-      "text": "",
-      "arrows": [
-        [
-          "a7",
-          "b6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/1P2k3/1K6/8/3R4/8/8/r7 b - - 5 3",
-      "move": "a1b1",
-      "text": "",
-      "arrows": [
-        [
-          "a1",
-          "b1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/1P2k3/1K6/8/3R4/8/8/1r6 w - - 6 4",
-      "move": "b6c6",
-      "text": "",
-      "arrows": [
-        [
-          "b6",
-          "c6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/1P2k3/2K5/8/3R4/8/8/1r6 b - - 7 4",
-      "move": "b1c1",
-      "text": "",
-      "arrows": [
-        [
-          "b1",
-          "c1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/1P2k3/2K5/8/3R4/8/8/2r5 w - - 8 5",
-      "move": "c6b5",
-      "text": "",
-      "arrows": [
-        [
-          "c6",
-          "b5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/1P2k3/8/1K6/3R4/8/8/2r5 b - - 9 5",
-      "move": "c1b1",
-      "text": "",
-      "arrows": [
-        [
-          "c1",
-          "b1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/1P2k3/8/1K6/3R4/8/8/1r6 w - - 10 6",
-      "move": "d4b4",
-      "text": "",
-      "arrows": [
-        [
-          "d4",
-          "b4"
-        ]
-      ],
-      "marks": []
-    }
-  ],
-  "lichessThemes": [],
-  "ratingBand": [
-    400,
-    2200
-  ],
-  "mastery": {
-    "attempts": 15,
-    "accuracy": 0.8,
-    "distinctDays": 2,
-    "description": "gagner la position 3 fois sur 3 contre le moteur."
-  },
-  "sources": [],
-  "videoId": null,
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Pourquoi",
-      "text": "C'est la position gagnante de référence des finales de tours, les plus fréquentes de toutes les finales.",
-      "audio": null
-    },
-    {
-      "title": "Principe",
-      "text": "Roi devant son pion sur la septième, roi adverse coupé : prépare un pont. La tour rejoint la quatrième rangée et bloque les échecs latéraux.",
-      "audio": null
-    }
-  ],
-  "examples": [
-    {
-      "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
-    }
-  ],
-  "drill": "endgame",
-  "videos": []
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

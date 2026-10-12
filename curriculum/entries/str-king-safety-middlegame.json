@@ -1,48 +1,10 @@
 {
   "id": "str-king-safety-middlegame",
-  "title": "Sécurité du roi en milieu de partie",
   "tier": 4,
   "priority": "A",
-  "domain": "stratégie",
   "prerequisites": [
     "ouv-principles",
     "mat-queen-support"
-  ],
-  "principle": "Les pions devant ton roi roqué sont son toit : ne les pousse pas sans raison. Quand les roques sont opposés, la course commence : pousse tes pions vers le roi adverse.",
-  "why": [],
-  "signals": [],
-  "method": [
-    "compte attaquants contre défenseurs autour de chaque roi",
-    "ouvre des lignes vers le roi adverse le moins protégé",
-    "en roques opposés, chaque tempo compte, n'hésite pas à sacrifier un pion pour ouvrir une colonne."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
-    "solution": [
-      "e4g2"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/PIMeN",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
-      "move": "e4g2",
-      "text": "",
-      "arrows": [
-        [
-          "e4",
-          "g2"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "kingsideAttack",
@@ -62,22 +24,124 @@
   },
   "sources": [],
   "videoId": "coordinated-attack",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Les pions devant ton roi roqué sont son toit : ne les pousse pas sans raison. Quand les roques sont opposés, la course commence : pousse tes pions vers le roi adverse.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Compte attaquants contre défenseurs autour de chaque roi. Ouvre des lignes vers le roi adverse le moins protégé. En roques opposés, chaque tempo compte, n'hésite pas à sacrifier un pion pour ouvrir une colonne.",
-      "audio": null
-    }
-  ],
-  "examples": [],
   "videos": [
     "coordinated-attack"
-  ]
+  ],
+  "domain": "stratégie",
+  "title": "Garder un abri devant ton roi",
+  "introduces": [],
+  "challenge": {
+    "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
+    "solution": [
+      "e4g2"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Ta dame en e4 et ton fou en c6 visent le même pion devant le roi blanc.",
+    "accept": [
+      "e4g2"
+    ],
+    "alsoGood": [],
+    "hint": "Avant d’avancer un pion près de ton roi, regarde quelles diagonales cela ouvre. Ici, suis la diagonale du fou en c6 jusqu’à g2 : elle traverse l’abri blanc.",
+    "success": "La dame noire prend en g2 avec échec. Le fou en c6 la protège par d5, e4 et f3. Le roi blanc ne peut pas prendre cette dame."
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Garder un abri devant ton roi",
+      "text": "Les pions devant ton roi ferment des chemins aux pièces adverses. Ici, le roi blanc en g1 a un trou sur la colonne h. La dame noire en e4 et le fou en c6 peuvent en profiter.",
+      "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Avant d’avancer un pion près de ton roi, regarde quelles diagonales cela ouvre. Ici, suis la diagonale du fou en c6 jusqu’à g2 : elle traverse l’abri blanc.",
+      "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
+      "arrows": [
+        [
+          "e4",
+          "g2"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La dame noire en e4 prend le pion en g2, protégée par le fou en c6 : échec et mat.",
+      "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
+      "line": [
+        {
+          "uci": "e4g2",
+          "text": "La dame noire en e4 prend le pion en g2, protégée par le fou en c6 : échec et mat."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La dame noire prend en g2 avec échec. Le fou en c6 la protège par d5, e4 et f3. Le roi blanc ne peut pas prendre cette dame.",
+      "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3P4/Q7/PP3Pq1/R5K1 w - - 0 24"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Il faut parfois avancer un pion pour donner une sortie au roi. Compare le trou créé et la sortie gagnée. Une règle générale ne remplace pas cette vérification.",
+      "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23"
+    }
+  ],
+  "exercises": [
+    {
+      "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
+      "solution": [
+        "e4g2"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Tu joues les noirs. Ta dame en e4 et ton fou en c6 visent le même pion devant le roi blanc.",
+      "accept": [
+        "e4g2"
+      ],
+      "alsoGood": [],
+      "hint": "Avant d’avancer un pion près de ton roi, regarde quelles diagonales cela ouvre. Ici, suis la diagonale du fou en c6 jusqu’à g2 : elle traverse l’abri blanc.",
+      "success": "La dame noire prend en g2 avec échec. Le fou en c6 la protège par d5, e4 et f3. Le roi blanc ne peut pas prendre cette dame."
+    }
+  ],
+  "retenir": "Avant de pousser un pion devant ton roi, regarde les lignes que tu ouvres à l’adversaire.",
+  "review": {
+    "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
+    "solution": [
+      "e4g2"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Ta dame en e4 et ton fou en c6 visent le même pion devant le roi blanc.",
+    "accept": [
+      "e4g2"
+    ],
+    "alsoGood": [],
+    "hint": "Avant d’avancer un pion près de ton roi, regarde quelles diagonales cela ouvre. Ici, suis la diagonale du fou en c6 jusqu’à g2 : elle traverse l’abri blanc.",
+    "success": "La dame noire prend en g2 avec échec. Le fou en c6 la protège par d5, e4 et f3. Le roi blanc ne peut pas prendre cette dame."
+  },
+  "contentVersion": 2,
+  "principle": "Avant de pousser un pion devant ton roi, regarde les lignes que tu ouvres à l’adversaire.",
+  "entryChallenge": {
+    "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
+    "solution": [
+      "e4g2"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Ta dame en e4 et ton fou en c6 visent le même pion devant le roi blanc.",
+    "accept": [
+      "e4g2"
+    ],
+    "alsoGood": [],
+    "hint": "Avant d’avancer un pion près de ton roi, regarde quelles diagonales cela ouvre. Ici, suis la diagonale du fou en c6 jusqu’à g2 : elle traverse l’abri blanc.",
+    "success": "La dame noire prend en g2 avec échec. Le fou en c6 la protège par d5, e4 et f3. Le roi blanc ne peut pas prendre cette dame.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

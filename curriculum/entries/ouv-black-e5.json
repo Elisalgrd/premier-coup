@@ -1,174 +1,9 @@
 {
   "id": "ouv-black-e5",
-  "title": "Avec les noirs contre 1.e4 : 1...e5",
   "tier": 2,
   "priority": "A",
-  "domain": "ouvertures",
   "prerequisites": [
     "ouv-principles"
-  ],
-  "principle": "Répondre symétriquement au centre, développer Cc6, Cf6, Fc5 ou Fe7, roquer.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
-    "solution": [
-      "e7e5",
-      "g1f3",
-      "b8c6",
-      "f1c4",
-      "f8c5",
-      "d2d3",
-      "g8f6",
-      "e1g1",
-      "d7d6",
-      "b1c3",
-      "e8g8"
-    ],
-    "prompt": "Trait aux noirs. Développe tes pièces et prépare la sécurité du roi.",
-    "outcome": null,
-    "mode": "opening",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
-      "move": "e7e5",
-      "text": "",
-      "arrows": [
-        [
-          "e7",
-          "e5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-      "move": "g1f3",
-      "text": "",
-      "arrows": [
-        [
-          "g1",
-          "f3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
-      "move": "b8c6",
-      "text": "",
-      "arrows": [
-        [
-          "b8",
-          "c6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
-      "move": "f1c4",
-      "text": "",
-      "arrows": [
-        [
-          "f1",
-          "c4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
-      "move": "f8c5",
-      "text": "",
-      "arrows": [
-        [
-          "f8",
-          "c5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
-      "move": "d2d3",
-      "text": "",
-      "arrows": [
-        [
-          "d2",
-          "d3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4",
-      "move": "g8f6",
-      "text": "",
-      "arrows": [
-        [
-          "g8",
-          "f6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 1 5",
-      "move": "e1g1",
-      "text": "",
-      "arrows": [
-        [
-          "e1",
-          "g1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 b kq - 2 5",
-      "move": "d7d6",
-      "text": "",
-      "arrows": [
-        [
-          "d7",
-          "d6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 w kq - 0 6",
-      "move": "b1c3",
-      "text": "",
-      "arrows": [
-        [
-          "b1",
-          "c3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 b kq - 1 6",
-      "move": "e8g8",
-      "text": "",
-      "arrows": [
-        [
-          "e8",
-          "g8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "opening"
@@ -185,24 +20,231 @@
   },
   "sources": [],
   "videoId": "sicilian",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Répondre symétriquement au centre, développer Cc6, Cf6, Fc5 ou Fe7, roquer.",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "Contre l'Italienne, le même schéma que les blancs (...Fc5, ...d6, ...O-O, ...a6). Contre 2.Dh5, voir le mat du berger. Contre 3.Fc4 Cf6 4.Cg5, connaître 4...d5 5.exd5 Ca5. Contre l'écossaise (3.d4), 3...exd4 4.Cxd4 Fc5 ou Cf6.",
-      "audio": null
-    }
-  ],
-  "examples": [],
   "videos": [
     "sicilian",
     "caro-kann",
     "french"
-  ]
+  ],
+  "domain": "ouvertures",
+  "title": "Avec les noirs, répondre au pion e4",
+  "introduces": [],
+  "challenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    "solution": [
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5",
+      "d2d3",
+      "g8f6",
+      "e1g1",
+      "d7d6",
+      "b1c3",
+      "e8g8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Réponds au pion blanc en e4 en avançant ton pion e7 de deux cases.",
+    "accept": [
+      "e7e5"
+    ],
+    "alsoGood": [
+      "e7e6",
+      "c7c6",
+      "c7c5",
+      "b8c6",
+      "a7a6",
+      "d7d6",
+      "d7d5",
+      "g7g6",
+      "h7h6"
+    ],
+    "hint": "Après e5, protège ce pion si le cavalier blanc l’attaque. Ton cavalier en b8 peut aller en c6. Sors ensuite ton autre cavalier et le fou, puis mets le roi à l’abri.",
+    "success": "Les noirs ont sorti leurs deux cavaliers et leur fou, puis mis leur roi en g8. Leurs pièces peuvent jouer sans gêner leur propre roi."
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Avec les noirs, répondre au pion e4",
+      "text": "Les blancs viennent de pousser leur pion en e4. Avec les noirs, tu peux répondre par e5. Ton pion surveille d4 et f4 et libère le passage du fou en f8.",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Après e5, protège ce pion si le cavalier blanc l’attaque. Ton cavalier en b8 peut aller en c6. Sors ensuite ton autre cavalier et le fou, puis mets le roi à l’abri.",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "arrows": [
+        [
+          "e7",
+          "e5"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le pion noir avance en e5 et surveille le milieu.",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "line": [
+        {
+          "uci": "e7e5",
+          "text": "Le pion noir avance en e5 et surveille le milieu."
+        },
+        {
+          "uci": "g1f3",
+          "text": "Le cavalier blanc va en f3 et attaque e5."
+        },
+        {
+          "uci": "b8c6",
+          "text": "Le cavalier noir sort en c6 pour protéger e5."
+        },
+        {
+          "uci": "f1c4",
+          "text": "Le fou blanc arrive en c4 et vise f7."
+        },
+        {
+          "uci": "f8c5",
+          "text": "Le fou noir va en c5 et vise f2."
+        },
+        {
+          "uci": "d2d3",
+          "text": "Le pion blanc avance en d3."
+        },
+        {
+          "uci": "g8f6",
+          "text": "Le cavalier noir sort en f6 et attaque e4."
+        },
+        {
+          "uci": "e1g1",
+          "text": "Le roi blanc se met à l’abri en g1."
+        },
+        {
+          "uci": "d7d6",
+          "text": "Le pion noir va en d6 pour soutenir e5."
+        },
+        {
+          "uci": "b1c3",
+          "text": "Le cavalier blanc sort en c3."
+        },
+        {
+          "uci": "e8g8",
+          "text": "Le roi noir va en g8 et la tour en f8 : les noirs mettent leur roi à l’abri."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Les noirs ont sorti leurs deux cavaliers et leur fou, puis mis leur roi en g8. Leurs pièces peuvent jouer sans gêner leur propre roi.",
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 2 7"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Si la dame blanche arrive tôt près de f7, vérifie son attaque avant de continuer. Une menace immédiate compte plus que l’ordre appris.",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+    }
+  ],
+  "exercises": [
+    {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "solution": [
+        "b8c6",
+        "f1c4",
+        "f8c5",
+        "d2d3",
+        "g8f6",
+        "e1g1",
+        "d7d6",
+        "b1c3",
+        "e8g8"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. Le cavalier noir sort en c6 pour protéger e5.",
+      "accept": [
+        "b8c6"
+      ],
+      "alsoGood": [
+        "d7d6",
+        "g8f6",
+        "d7d5",
+        "f8d6",
+        "c7c6",
+        "d8e7"
+      ],
+      "hint": "Regarde la pièce en b8.",
+      "success": "Les noirs ont sorti leurs deux cavaliers et leur fou, puis mis leur roi en g8. Leurs pièces peuvent jouer sans gêner leur propre roi."
+    }
+  ],
+  "retenir": "Contre e4, e5 occupe le milieu. Protège ce pion, sors tes pièces et mets ton roi à l’abri.",
+  "review": {
+    "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    "solution": [
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5",
+      "d2d3",
+      "g8f6",
+      "e1g1",
+      "d7d6",
+      "b1c3",
+      "e8g8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Réponds au pion blanc en e4 en avançant ton pion e7 de deux cases.",
+    "accept": [
+      "e7e5"
+    ],
+    "alsoGood": [],
+    "hint": "Après e5, protège ce pion si le cavalier blanc l’attaque. Ton cavalier en b8 peut aller en c6. Sors ensuite ton autre cavalier et le fou, puis mets le roi à l’abri.",
+    "success": "Les noirs ont sorti leurs deux cavaliers et leur fou, puis mis leur roi en g8. Leurs pièces peuvent jouer sans gêner leur propre roi."
+  },
+  "contentVersion": 2,
+  "principle": "Contre e4, e5 occupe le milieu. Protège ce pion, sors tes pièces et mets ton roi à l’abri.",
+  "entryChallenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    "solution": [
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5",
+      "d2d3",
+      "g8f6",
+      "e1g1",
+      "d7d6",
+      "b1c3",
+      "e8g8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Réponds au pion blanc en e4 en avançant ton pion e7 de deux cases.",
+    "accept": [
+      "e7e5"
+    ],
+    "alsoGood": [
+      "e7e6",
+      "c7c6",
+      "c7c5",
+      "b8c6",
+      "a7a6",
+      "d7d6",
+      "d7d5",
+      "g7g6",
+      "h7h6"
+    ],
+    "hint": "Après e5, protège ce pion si le cavalier blanc l’attaque. Ton cavalier en b8 peut aller en c6. Sors ensuite ton autre cavalier et le fou, puis mets le roi à l’abri.",
+    "success": "Les noirs ont sorti leurs deux cavaliers et leur fou, puis mis leur roi en g8. Leurs pièces peuvent jouer sans gêner leur propre roi.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

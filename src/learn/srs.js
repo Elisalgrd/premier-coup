@@ -1,3 +1,5 @@
+import { Chess } from "../chess/chess.js";
+import { moveUci } from "../chess/notation.js";
 import { addDays, dateKey } from "../ui/helpers.js";
 export const intervals = [1, 3, 7, 14, 30, 90];
 export function addCard(state, card, today = dateKey()) {
@@ -46,24 +48,33 @@ export function rememberPrinciple(state, e) {
     type: "principle",
     entryId: e.id,
     challenge: e.entryChallenge,
-    principle: e.principle,
+    principle: e.retenir || e.principle,
   });
-  if (e.entryChallenge.mode === "opening") {
-    let i = 0;
-    for (const frame of e.guided) {
-      if (i++ % 2 === 0)
+  const existing = state.cards["principle:" + e.id];
+  existing.principle = e.retenir || e.principle;
+  existing.challenge = e.entryChallenge;
+  if (e.id.startsWith("ouv-")) {
+    const screen = e.screens?.find((s) => s.line?.length >= 5);
+    if (!screen) return;
+    const game = new Chess(screen.fen),
+      side = e.id.includes("black") ? "b" : "w";
+    screen.line.forEach((frame, i) => {
+      if (game.turn() === side)
         addCard(state, {
-          id: "opening:" + e.id + ":" + i,
+          id: "opening:" + e.id + ":" + (i + 1),
           type: "opening",
           entryId: e.id,
           challenge: {
-            fen: frame.fen,
-            solution: [frame.move],
+            fen: game.fen(),
+            solution: [frame.uci],
+            accept: [frame.uci],
             mode: "move",
-            prompt: "Retrouve le coup de ton répertoire.",
+            prompt:
+              "Retrouve le prochain coup de l’ouverture que tu as étudiée.",
           },
-          principle: e.principle,
+          principle: frame.text,
         });
-    }
+      moveUci(game, frame.uci);
+    });
   }
 }

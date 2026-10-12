@@ -3,7 +3,7 @@ import { centipawns } from "../chess/analysis.js";
 import { rememberPuzzle } from "./srs.js";
 import { Board } from "../chess/board.js";
 import { Chess } from "../chess/chess.js";
-import { moveUci, sanFr, pieceName } from "../chess/notation.js";
+import { moveUci, sanFr, pieceName, describeMove } from "../chess/notation.js";
 import { PuzzleRun, tagsFor } from "./puzzles.js";
 import { recordRating } from "./rating.js";
 import { esc, $, dateKey, duration } from "../ui/helpers.js";
@@ -98,7 +98,7 @@ export class PuzzlePlayer {
                 ),
             )?.id || "mixed"
         : this.theme;
-    this.root.innerHTML = `<a class="back-link" href="#train">← S’entraîner</a><header class="activity-header"><div><span class="eyebrow">${esc(this.title)} · ${this.position + 1} / ${this.rows.length}</span><h1>Trouve le bon coup.</h1></div><label class="timer-label"><input id="timer-toggle" type="checkbox"> Chrono <span id="puzzle-time" hidden>${duration(this.seconds)}</span></label></header><div class="play-layout"><section><div class="board-top"><strong>${this.run.side === "w" ? "Trait aux blancs" : "Trait aux noirs"}</strong><span>Problème ${this.row[0]}</span></div><div id="puzzle-board"></div><div class="notation" id="move-notation" aria-live="polite"></div></section><section class="play-coach"><span class="eyebrow">OBSERVE, PUIS CHOISIS</span><p class="prompt">Cherche les échecs, les captures et les menaces. Imagine sa réponse avant de jouer.</p><div id="puzzle-feedback" role="status"></div><div class="puzzle-actions"><button id="puzzle-hint" class="button secondary">Un indice</button><button id="puzzle-solution" class="text-link">Voir la solution</button><button id="puzzle-next" class="button primary" hidden>Position suivante →</button></div><a class="text-link" href="https://lichess.org/analysis/${encodeURIComponent(this.run.game.fen())}" target="_blank" rel="noopener">Analyser cette position ↗</a><small>Source : <a href="https://lichess.org/training/${this.row[0]}" target="_blank" rel="noopener">Lichess, licence CC0</a>. Classement du problème : ${this.row[3]}.</small></section></div>`;
+    this.root.innerHTML = `<a class="back-link" href="#train">← S’entraîner</a><header class="activity-header"><div><span class="eyebrow">${esc(this.title)} · ${this.position + 1} / ${this.rows.length}</span><h1>Trouve le bon coup.</h1></div><label class="timer-label"><input id="timer-toggle" type="checkbox"> Chrono <span id="puzzle-time" hidden>${duration(this.seconds)}</span></label></header><div class="play-layout"><section><div class="board-top"><strong>${this.run.side === "w" ? "Tu joues les blancs. C’est à toi." : "Tu joues les noirs. C’est à toi."}</strong><span>Problème ${this.row[0]}</span></div><div id="puzzle-board"></div><div class="notation" id="move-notation" aria-live="polite"></div></section><section class="play-coach"><span class="eyebrow">OBSERVE, PUIS CHOISIS</span><p class="prompt">Cherche un coup qui attaque le roi ou prend une pièce. Imagine ensuite ce que l’adversaire peut répondre.</p><div id="puzzle-feedback" role="status"></div><div class="puzzle-actions"><button id="puzzle-hint" class="button secondary">Un indice</button><button id="puzzle-solution" class="text-link">Voir la solution</button><button id="puzzle-next" class="button primary" hidden>Position suivante →</button></div><a class="text-link" href="https://lichess.org/analysis/${encodeURIComponent(this.run.game.fen())}" target="_blank" rel="noopener">Analyser cette position ↗</a><small>Source : <a href="https://lichess.org/training/${this.row[0]}" target="_blank" rel="noopener">Lichess, licence CC0</a>. Classement du problème : ${this.row[3]}.</small></section></div>`;
     this.board = new Board($("#puzzle-board", this.root), {
       fen: saved?.id === this.row[0] ? this.run.game.fen() : this.row[1],
       flipped: this.run.side === "b",
@@ -127,7 +127,8 @@ export class PuzzlePlayer {
         this.board.render();
         const g = new Chess(this.row[1]);
         $("#move-notation", this.root).textContent =
-          "Dernier coup adverse : " + sanFr(moveUci(g, this.run.line[0]).san);
+          "Dernier coup adverse : " +
+          describeMove(moveUci(g, this.run.line[0]));
         this.persist();
       });
   }
@@ -163,7 +164,7 @@ export class PuzzlePlayer {
         last: [move.slice(0, 2), move.slice(2, 4)],
       });
       feedback.className = "feedback wrong";
-      feedback.innerHTML = `<strong>${esc(result.played)} : compare la suite.</strong><p>${result.reply?.mate ? "L’adversaire peut faire mat avec " + result.reply.san + "." : result.reply && result.loss ? "Il peut répondre " + result.reply.san + " et prendre " + result.loss + " point" + (result.loss > 1 ? "s" : "") + " de matériel." : "Cette réponse diffère de la combinaison attendue. Reviens à la position et compare les coups forçants."}</p><p id="engine-explain">Le coach vérifie la réponse adverse…</p><button id="puzzle-retry" class="button secondary">Revenir et réessayer →</button>`;
+      feedback.innerHTML = `<strong>${esc(result.played)} : compare la suite.</strong><p>${result.reply?.mate ? "Regarde sa réponse : " + result.reply.description + "." : result.reply && result.loss ? "Sa réponse : " + result.reply.description + " Tu perds " + result.loss + " point" + (result.loss > 1 ? "s" : "") + " en pièces." : "Ce problème attend une autre suite de coups. Reviens à la position et compare les attaques et les prises."}</p><p id="engine-explain">Le coach vérifie la réponse adverse…</p><button id="puzzle-retry" class="button secondary">Revenir et réessayer →</button>`;
       if (result.reply)
         this.wait(
           () => this.board.animate(result.reply.fen, result.reply.move),
@@ -177,21 +178,22 @@ export class PuzzlePlayer {
         this.timers.clear();
         this.board.set(this.run.game.fen(), {
           interactive: true,
+          arrowColor: null,
           arrows: [result.arrow],
           marks: result.arrow,
         });
-        feedback.innerHTML = `<p>Le coup de la ligne est <strong>${result.expected}</strong>. Suis la flèche, puis vérifie sa réponse.</p>`;
+        feedback.innerHTML = `<p>Regarde ce coup : <strong>${result.expected}</strong>. Suis la flèche, puis vérifie sa réponse.</p>`;
       };
       this.persist();
       return;
     }
     feedback.className = "feedback correct";
     feedback.textContent = result.finished
-      ? "Oui, la combinaison est complète."
+      ? "Oui, tu as retrouvé toute la suite."
       : "Bon coup. Observe sa réponse.";
     this.board.options.interactive = false;
     this.board.animate(result.fen, move);
-    $("#move-notation", this.root).textContent = result.san;
+    $("#move-notation", this.root).textContent = result.description;
     this.busy = true;
     if (result.finished) {
       this.complete();
@@ -202,7 +204,7 @@ export class PuzzlePlayer {
         const reply = this.run.reply();
         if (reply) {
           this.board.animate(reply.fen, reply.move);
-          $("#move-notation", this.root).textContent += " " + reply.san;
+          $("#move-notation", this.root).textContent = reply.description;
         }
         this.busy = false;
         if (this.run.finished) this.complete();
@@ -233,20 +235,19 @@ export class PuzzlePlayer {
         loss = Math.max(0, centipawns(before) + centipawns(after));
       this.board.animate(g.fen(), after.best);
       this.board.options.arrows = [[reply.from, reply.to]];
+      this.board.options.arrowColor = "danger";
       this.board.render();
       $("#engine-explain", this.root).textContent =
         after.type === "mate" && after.score > 0
-          ? sanFr(reply.san) +
-            " prépare un mat forcé. Reviens à la position pour chercher une défense."
+          ? describeMove(reply) +
+            " prépare une attaque où ton roi ne pourra plus s’échapper. Reviens pour chercher une défense."
           : loss < 50
-            ? "Ton coup conserve une évaluation proche. Ce problème attend une autre combinaison : compare-la avant de continuer."
-            : sanFr(reply.san) +
-              (reply.captured
-                ? " prend ton " + pieceName[reply.captured] + ". "
-                : ". ") +
+            ? "Ton coup est aussi intéressant. Ce problème attend une autre suite : compare les deux idées."
+            : describeMove(reply) +
+              (reply.captured ? " " : ". ") +
               "Cette suite coûte environ " +
               (loss / 100).toFixed(1) +
-              " pion d’évaluation. Observe la réponse, puis compare le coup proposé.";
+              " point selon le logiciel. Compare surtout les pièces prises et la sécurité du roi.";
     } catch {
       const el = $("#engine-explain", this.root);
       if (el && !this.disposed)
@@ -287,7 +288,7 @@ export class PuzzlePlayer {
       const move = this.run.line[this.run.index++],
         made = moveUci(this.run.game, move);
       this.board.animate(this.run.game.fen(), move);
-      $("#move-notation", this.root).textContent = sanFr(made.san);
+      $("#move-notation", this.root).textContent = describeMove(made);
       this.persist();
       this.wait(step, 700);
     };

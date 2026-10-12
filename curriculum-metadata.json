@@ -1,0 +1,1865 @@
+{
+  "fin-active-king": {
+    "id": "fin-active-king",
+    "tier": 3,
+    "priority": "S",
+    "prerequisites": [
+      "vis-values"
+    ],
+    "lichessThemes": [
+      "endgame",
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes pawnEndgame à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales"
+  },
+  "fin-convert": {
+    "id": "fin-convert",
+    "tier": 3,
+    "priority": "S",
+    "prerequisites": [
+      "proc-blunder-check"
+    ],
+    "lichessThemes": [
+      "crushing",
+      "endgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "contre le moteur, depuis 10 positions avec une pièce d'avance, gagner 9 fois."
+    },
+    "sources": [],
+    "videoId": "convert-advantage",
+    "videos": [
+      "convert-advantage"
+    ],
+    "domain": "finales"
+  },
+  "fin-lucena": {
+    "id": "fin-lucena",
+    "tier": 3,
+    "priority": "A",
+    "prerequisites": [
+      "fin-opposition",
+      "tac-skewer"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "gagner la position 3 fois sur 3 contre le moteur."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "endgame",
+    "domain": "finales"
+  },
+  "fin-opposite-bishops": {
+    "id": "fin-opposite-bishops",
+    "tier": 3,
+    "priority": "B",
+    "prerequisites": [
+      "fin-convert"
+    ],
+    "lichessThemes": [
+      "bishopEndgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "6 positions « gagné ou nulle ? » à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales"
+  },
+  "fin-opposition": {
+    "id": "fin-opposition",
+    "tier": 3,
+    "priority": "S",
+    "prerequisites": [
+      "fin-active-king"
+    ],
+    "lichessThemes": [
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "gagner R+P contre R contre le moteur depuis 5 positions et annuler en défense depuis 5 positions."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales"
+  },
+  "fin-passed-pawn": {
+    "id": "fin-passed-pawn",
+    "tier": 3,
+    "priority": "A",
+    "prerequisites": [
+      "fin-square"
+    ],
+    "lichessThemes": [
+      "advancedPawn",
+      "endgame",
+      "promotion",
+      "underPromotion"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes advancedPawn + endgame à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales"
+  },
+  "fin-philidor": {
+    "id": "fin-philidor",
+    "tier": 3,
+    "priority": "A",
+    "prerequisites": [
+      "fin-lucena"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "annuler la position 3 fois sur 3 contre le moteur."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "endgame",
+    "domain": "finales"
+  },
+  "fin-queen-vs-pawn": {
+    "id": "fin-queen-vs-pawn",
+    "tier": 3,
+    "priority": "C",
+    "prerequisites": [
+      "mat-basic-queen"
+    ],
+    "lichessThemes": [
+      "queenEndgame",
+      "queenRookEndgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "4 positions contre le moteur."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales"
+  },
+  "fin-rook-behind": {
+    "id": "fin-rook-behind",
+    "tier": 3,
+    "priority": "A",
+    "prerequisites": [
+      "fin-passed-pawn"
+    ],
+    "lichessThemes": [
+      "rookEndgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes rookEndgame à 70 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales"
+  },
+  "fin-square": {
+    "id": "fin-square",
+    "tier": 3,
+    "priority": "A",
+    "prerequisites": [
+      "fin-active-king"
+    ],
+    "lichessThemes": [
+      "pawnEndgame",
+      "advancedPawn",
+      "zugzwang"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 positions « rattrape ou pas ? » à 95 % en moins de 5 s."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales"
+  },
+  "mat-anastasia": {
+    "id": "mat-anastasia",
+    "tier": 2,
+    "priority": "B",
+    "prerequisites": [
+      "mat-arabian"
+    ],
+    "lichessThemes": [
+      "anastasiaMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes anastasiaMate à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats"
+  },
+  "mat-arabian": {
+    "id": "mat-arabian",
+    "tier": 2,
+    "priority": "B",
+    "prerequisites": [
+      "mat-back-rank"
+    ],
+    "lichessThemes": [
+      "arabianMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes arabianMate à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats"
+  },
+  "mat-back-rank": {
+    "id": "mat-back-rank",
+    "tier": 2,
+    "priority": "S",
+    "prerequisites": [
+      "mat-two-rooks"
+    ],
+    "lichessThemes": [
+      "backRankMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes backRankMate à 85 %."
+    },
+    "sources": [],
+    "videoId": "course-mates",
+    "videos": [
+      "course-mates"
+    ],
+    "domain": "mats"
+  },
+  "mat-basic-queen": {
+    "id": "mat-basic-queen",
+    "tier": 0,
+    "priority": "S",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "5 mats en moins de 15 coups chacun, sans aucun pat, depuis des positions aléatoires."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "endgame",
+    "domain": "mats"
+  },
+  "mat-basic-rook": {
+    "id": "mat-basic-rook",
+    "tier": 0,
+    "priority": "A",
+    "prerequisites": [
+      "mat-basic-queen"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "3 mats en moins de 20 coups depuis des positions aléatoires."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "endgame",
+    "domain": "mats"
+  },
+  "mat-boden": {
+    "id": "mat-boden",
+    "tier": 2,
+    "priority": "B",
+    "prerequisites": [
+      "tac-pin"
+    ],
+    "lichessThemes": [
+      "bodenMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes bodenMate à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats"
+  },
+  "mat-greek-gift": {
+    "id": "mat-greek-gift",
+    "tier": 3,
+    "priority": "B",
+    "prerequisites": [
+      "mat-queen-support"
+    ],
+    "lichessThemes": [
+      "kingsideAttack",
+      "sacrifice",
+      "queensideAttack",
+      "exposedKing"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "8 positions « le sacrifice marche-t-il ? » (oui / non + coup) à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats"
+  },
+  "mat-patterns-misc": {
+    "id": "mat-patterns-misc",
+    "tier": 2,
+    "priority": "C",
+    "prerequisites": [
+      "mat-queen-support"
+    ],
+    "lichessThemes": [
+      "hookMate",
+      "doubleBishopMate",
+      "dovetailMate",
+      "epauletteMate",
+      "cornerMate",
+      "killBoxMate",
+      "operaMate",
+      "pillsburysMate",
+      "morphysMate",
+      "swallowstailMate",
+      "triangleMate",
+      "vukovicMate",
+      "balestraMate",
+      "blindSwineMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "reconnaissance de la position finale (« quel motif ? ») à 80 % sur 20 images.\n\n---"
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats"
+  },
+  "mat-queen-support": {
+    "id": "mat-queen-support",
+    "tier": 2,
+    "priority": "S",
+    "prerequisites": [
+      "mat-basic-queen"
+    ],
+    "lichessThemes": [
+      "mateIn1",
+      "mateIn2",
+      "kingsideAttack"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "20 problèmes mateIn1 à 95 % et 15 mateIn2 à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats"
+  },
+  "mat-smothered": {
+    "id": "mat-smothered",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "tac-fork"
+    ],
+    "lichessThemes": [
+      "smotheredMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes smotheredMate à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats"
+  },
+  "mat-two-rooks": {
+    "id": "mat-two-rooks",
+    "tier": 0,
+    "priority": "S",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "lichessThemes": [
+      "mateIn2",
+      "mateIn1"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "5 mats depuis le centre de l'échiquier en moins de 10 coups."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats"
+  },
+  "meta-game-review": {
+    "id": "meta-game-review",
+    "tier": 1,
+    "priority": "S",
+    "prerequisites": [
+      "vis-notation"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 parties analysées avec une leçon écrite chacune.\n\n---"
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Pourquoi tu plafonnes aux échecs",
+        "url": "https://juliensong.beehiiv.com/p/pourquoi-tu-plafonnes-aux-checs-et-comment-repartir"
+      }
+    ],
+    "videoId": null,
+    "videos": [],
+    "drill": "game-review",
+    "domain": "méthode"
+  },
+  "meta-play-slow": {
+    "id": "meta-play-slow",
+    "tier": 1,
+    "priority": "S",
+    "prerequisites": [],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 parties lentes jouées et analysées."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "game-review",
+    "domain": "méthode"
+  },
+  "meta-time-management": {
+    "id": "meta-time-management",
+    "tier": 3,
+    "priority": "A",
+    "prerequisites": [
+      "meta-play-slow"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "sur 10 parties, aucune perdue au temps dans une position gagnante ou égale."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "game-review",
+    "domain": "méthode"
+  },
+  "meta-woodpecker": {
+    "id": "meta-woodpecker",
+    "tier": 3,
+    "priority": "B",
+    "prerequisites": [
+      "proc-forcing-moves"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "3 cycles terminés avec ≥ 90 % de réussite au dernier.\n\n---"
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "game-review",
+    "domain": "méthode"
+  },
+  "ouv-black-d5": {
+    "id": "ouv-black-d5",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "lichessThemes": [
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "3 parties contre le moteur depuis 1.d4."
+    },
+    "sources": [],
+    "videoId": "queens-gambit",
+    "videos": [
+      "queens-gambit"
+    ],
+    "domain": "ouvertures"
+  },
+  "ouv-black-e5": {
+    "id": "ouv-black-e5",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "lichessThemes": [
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "3 parties contre le moteur avec un roque avant le 10e coup."
+    },
+    "sources": [],
+    "videoId": "sicilian",
+    "videos": [
+      "sicilian",
+      "caro-kann",
+      "french"
+    ],
+    "domain": "ouvertures"
+  },
+  "ouv-early-traps": {
+    "id": "ouv-early-traps",
+    "tier": 1,
+    "priority": "A",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "lichessThemes": [
+      "attackingF2F7",
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "rejouer chaque ligne de mémoire des deux côtés (cartes SRS opening)."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "ouvertures"
+  },
+  "ouv-gambits": {
+    "id": "ouv-gambits",
+    "tier": 3,
+    "priority": "B",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "80 % sur 15 problèmes inédits, sur deux jours différents."
+    },
+    "sources": [],
+    "videoId": "queens-gambit",
+    "videos": [
+      "queens-gambit"
+    ],
+    "drill": "board-observation",
+    "domain": "ouvertures"
+  },
+  "ouv-principles": {
+    "id": "ouv-principles",
+    "tier": 1,
+    "priority": "S",
+    "prerequisites": [
+      "vis-notation"
+    ],
+    "lichessThemes": [
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "5 parties contre le moteur où, au coup 10, le roi est roqué et au moins 3 pièces mineures sont développées."
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Ce que cachent les trois principes de l’ouverture",
+        "url": "https://juliensong.beehiiv.com/p/ce-que-cachent-3-grands-principes-ouverture-echecs"
+      }
+    ],
+    "videoId": "course-italian",
+    "videos": [
+      "course-italian",
+      "course-king-safety"
+    ],
+    "domain": "ouvertures"
+  },
+  "ouv-white-italian": {
+    "id": "ouv-white-italian",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "lichessThemes": [
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "jouer la ligne de mémoire et 3 parties contre le moteur depuis la position du 9e coup."
+    },
+    "sources": [],
+    "videoId": "course-italian",
+    "videos": [
+      "course-italian",
+      "scotch",
+      "london"
+    ],
+    "domain": "ouvertures"
+  },
+  "proc-blunder-check": {
+    "id": "proc-blunder-check",
+    "tier": 1,
+    "priority": "S",
+    "prerequisites": [
+      "vis-attacked-squares"
+    ],
+    "lichessThemes": [
+      "hangingPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "en partie contre le moteur (niveau adapté), moins d'une pièce perdue sans compensation par partie sur 10 parties."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes"
+  },
+  "proc-candidates-calc": {
+    "id": "proc-candidates-calc",
+    "tier": 3,
+    "priority": "S",
+    "prerequisites": [
+      "proc-forcing-moves"
+    ],
+    "lichessThemes": [
+      "short",
+      "long",
+      "mateIn3",
+      "mateIn4",
+      "mateIn5",
+      "veryLong"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes long à 70 %."
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Le temps que tu perds à calculer pour rien",
+        "url": "https://juliensong.beehiiv.com/p/le-temps-que-tu-perds-calculer-pour-rien"
+      }
+    ],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes"
+  },
+  "proc-exchange-count": {
+    "id": "proc-exchange-count",
+    "tier": 1,
+    "priority": "S",
+    "prerequisites": [
+      "vis-values",
+      "vis-attacked-squares"
+    ],
+    "lichessThemes": [
+      "hangingPiece",
+      "capturingDefender"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "20 problèmes « Captures et reprises » à 85 %."
+    },
+    "sources": [],
+    "videoId": "course-captures",
+    "videos": [
+      "course-captures"
+    ],
+    "domain": "réflexes"
+  },
+  "proc-forcing-moves": {
+    "id": "proc-forcing-moves",
+    "tier": 2,
+    "priority": "S",
+    "prerequisites": [
+      "proc-blunder-check"
+    ],
+    "lichessThemes": [
+      "mix"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "30 problèmes mélangés au-dessus de ton classement actuel, 70 %."
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Les coups gagnants que tu rates sans le savoir",
+        "url": "https://juliensong.beehiiv.com/p/les-coups-gagnants-que-tu-rates-sans-le-savoir"
+      }
+    ],
+    "videoId": null,
+    "videos": [],
+    "drill": "mixed",
+    "domain": "réflexes"
+  },
+  "proc-free-material": {
+    "id": "proc-free-material",
+    "tier": 1,
+    "priority": "A",
+    "prerequisites": [
+      "proc-exchange-count"
+    ],
+    "lichessThemes": [
+      "hangingPiece",
+      "crushing",
+      "endgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes à 90 %, temps moyen < 10 s."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes"
+  },
+  "proc-hanging-pieces": {
+    "id": "proc-hanging-pieces",
+    "tier": 1,
+    "priority": "S",
+    "prerequisites": [
+      "vis-attacked-squares"
+    ],
+    "lichessThemes": [
+      "hangingPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "20 problèmes hangingPiece à 90 %, temps moyen < 15 s."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes"
+  },
+  "proc-opponent-threat": {
+    "id": "proc-opponent-threat",
+    "tier": 1,
+    "priority": "S",
+    "prerequisites": [
+      "proc-blunder-check"
+    ],
+    "lichessThemes": [
+      "defensiveMove",
+      "hangingPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 positions « quelle est sa menace ? » (toucher la pièce visée) à 90 %."
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Identifier et parer les menaces",
+        "url": "https://fr.linkedin.com/posts/juliensong_cest-la-raison-num%C3%A9ro-1-qui-font-que-les-activity-7255837111466037248-kwv8"
+      }
+    ],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes"
+  },
+  "str-bishop-pair-space": {
+    "id": "str-bishop-pair-space",
+    "tier": 4,
+    "priority": "C",
+    "prerequisites": [
+      "str-good-bad-bishop"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "80 % sur 15 problèmes inédits, sur deux jours différents."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie"
+  },
+  "str-exchanges": {
+    "id": "str-exchanges",
+    "tier": 4,
+    "priority": "A",
+    "prerequisites": [
+      "fin-convert"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions « échanger ou pas ? » à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie"
+  },
+  "str-good-bad-bishop": {
+    "id": "str-good-bad-bishop",
+    "tier": 4,
+    "priority": "B",
+    "prerequisites": [
+      "str-pawn-structure"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "6 positions à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie"
+  },
+  "str-initiative": {
+    "id": "str-initiative",
+    "tier": 4,
+    "priority": "B",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "6 positions à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie"
+  },
+  "str-king-safety-middlegame": {
+    "id": "str-king-safety-middlegame",
+    "tier": 4,
+    "priority": "A",
+    "prerequisites": [
+      "ouv-principles",
+      "mat-queen-support"
+    ],
+    "lichessThemes": [
+      "kingsideAttack",
+      "queensideAttack",
+      "exposedKing",
+      "sacrifice"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes kingsideAttack à 70 %."
+    },
+    "sources": [],
+    "videoId": "coordinated-attack",
+    "videos": [
+      "coordinated-attack"
+    ],
+    "domain": "stratégie"
+  },
+  "str-open-files": {
+    "id": "str-open-files",
+    "tier": 4,
+    "priority": "A",
+    "prerequisites": [
+      "str-worst-piece"
+    ],
+    "lichessThemes": [
+      "rookEndgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "stratégie"
+  },
+  "str-outposts": {
+    "id": "str-outposts",
+    "tier": 4,
+    "priority": "A",
+    "prerequisites": [
+      "str-worst-piece"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions « trouve l'avant-poste » à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie"
+  },
+  "str-pawn-structure": {
+    "id": "str-pawn-structure",
+    "tier": 4,
+    "priority": "A",
+    "prerequisites": [
+      "vis-values"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "12 positions « nomme la faiblesse et la cible » à 80 %."
+    },
+    "sources": [],
+    "videoId": "pawn-break",
+    "videos": [
+      "pawn-break"
+    ],
+    "drill": "plan-choice",
+    "domain": "stratégie"
+  },
+  "str-plan-making": {
+    "id": "str-plan-making",
+    "tier": 4,
+    "priority": "A",
+    "prerequisites": [
+      "str-open-files",
+      "str-outposts",
+      "str-pawn-structure",
+      "str-king-safety-middlegame",
+      "str-exchanges",
+      "str-prophylaxis"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions où la phrase du plan est jugée correcte (QCM de 3 plans illustrés) à 80 %.\n\n---"
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie"
+  },
+  "str-prophylaxis": {
+    "id": "str-prophylaxis",
+    "tier": 4,
+    "priority": "A",
+    "prerequisites": [
+      "proc-opponent-threat"
+    ],
+    "lichessThemes": [
+      "defensiveMove"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "8 positions plan-choice à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "stratégie"
+  },
+  "str-weak-squares": {
+    "id": "str-weak-squares",
+    "tier": 4,
+    "priority": "B",
+    "prerequisites": [
+      "str-pawn-structure"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "6 positions à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie"
+  },
+  "str-worst-piece": {
+    "id": "str-worst-piece",
+    "tier": 4,
+    "priority": "S",
+    "prerequisites": [
+      "ouv-principles"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions plan-choice à 80 %."
+    },
+    "sources": [],
+    "videoId": "course-active-piece",
+    "videos": [
+      "course-active-piece"
+    ],
+    "drill": "plan-choice",
+    "domain": "stratégie"
+  },
+  "tac-attraction": {
+    "id": "tac-attraction",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "tac-deflection"
+    ],
+    "lichessThemes": [
+      "attraction"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes attraction à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-deflection": {
+    "id": "tac-deflection",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "tac-overload"
+    ],
+    "lichessThemes": [
+      "deflection"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes deflection à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-discovered": {
+    "id": "tac-discovered",
+    "tier": 2,
+    "priority": "S",
+    "prerequisites": [
+      "tac-pin"
+    ],
+    "lichessThemes": [
+      "discoveredAttack",
+      "discoveredCheck"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes discoveredAttack à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-double-check": {
+    "id": "tac-double-check",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "tac-discovered"
+    ],
+    "lichessThemes": [
+      "doubleCheck"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes doubleCheck à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-fork": {
+    "id": "tac-fork",
+    "tier": 2,
+    "priority": "S",
+    "prerequisites": [
+      "proc-hanging-pieces"
+    ],
+    "lichessThemes": [
+      "fork"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes fork inédits à 80 %, sur 2 jours."
+    },
+    "sources": [],
+    "videoId": "course-forks",
+    "videos": [
+      "course-forks"
+    ],
+    "domain": "tactique"
+  },
+  "tac-interference-clearance": {
+    "id": "tac-interference-clearance",
+    "tier": 3,
+    "priority": "B",
+    "prerequisites": [
+      "tac-deflection"
+    ],
+    "lichessThemes": [
+      "interference",
+      "clearance"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes de chaque à 70 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-intermezzo": {
+    "id": "tac-intermezzo",
+    "tier": 3,
+    "priority": "A",
+    "prerequisites": [
+      "proc-candidates-calc"
+    ],
+    "lichessThemes": [
+      "intermezzo"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes intermezzo à 70 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-overload": {
+    "id": "tac-overload",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "tac-remove-defender"
+    ],
+    "lichessThemes": [
+      "deflection",
+      "capturingDefender"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-pin": {
+    "id": "tac-pin",
+    "tier": 2,
+    "priority": "S",
+    "prerequisites": [
+      "proc-hanging-pieces"
+    ],
+    "lichessThemes": [
+      "pin"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes pin inédits à 80 %."
+    },
+    "sources": [],
+    "videoId": "course-pins",
+    "videos": [
+      "course-pins"
+    ],
+    "domain": "tactique"
+  },
+  "tac-promotion": {
+    "id": "tac-promotion",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "proc-forcing-moves"
+    ],
+    "lichessThemes": [
+      "advancedPawn",
+      "promotion",
+      "underPromotion"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes promotion/advancedPawn à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-quiet-move": {
+    "id": "tac-quiet-move",
+    "tier": 3,
+    "priority": "B",
+    "prerequisites": [
+      "proc-candidates-calc"
+    ],
+    "lichessThemes": [
+      "quietMove",
+      "defensiveMove"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes quietMove à 65 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-remove-defender": {
+    "id": "tac-remove-defender",
+    "tier": 2,
+    "priority": "S",
+    "prerequisites": [
+      "proc-exchange-count"
+    ],
+    "lichessThemes": [
+      "capturingDefender"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes capturingDefender à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-skewer": {
+    "id": "tac-skewer",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "tac-pin"
+    ],
+    "lichessThemes": [
+      "skewer"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes skewer à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-trapped-piece": {
+    "id": "tac-trapped-piece",
+    "tier": 2,
+    "priority": "A",
+    "prerequisites": [
+      "vis-attacked-squares"
+    ],
+    "lichessThemes": [
+      "trappedPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes trappedPiece à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "tac-xray": {
+    "id": "tac-xray",
+    "tier": 3,
+    "priority": "B",
+    "prerequisites": [
+      "tac-skewer"
+    ],
+    "lichessThemes": [
+      "xRayAttack"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes xRayAttack à 70 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique"
+  },
+  "vis-attacked-squares": {
+    "id": "vis-attacked-squares",
+    "tier": 0,
+    "priority": "S",
+    "prerequisites": [
+      "vis-notation"
+    ],
+    "lichessThemes": [
+      "hangingPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "jeu « Pièces en prise » : 10 positions de vraies parties, toutes les pièces non défendues trouvées en moins de 20 s chacune."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "vision"
+  },
+  "vis-check-escape": {
+    "id": "vis-check-escape",
+    "tier": 0,
+    "priority": "S",
+    "prerequisites": [
+      "vis-attacked-squares"
+    ],
+    "lichessThemes": [
+      "defensiveMove"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 positions d'échec, meilleure réponse trouvée à 85 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "vision"
+  },
+  "vis-draws": {
+    "id": "vis-draws",
+    "tier": 0,
+    "priority": "A",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "lichessThemes": [
+      "endgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions « trouve le coup gagnant qui ne fait pas pat » à 90 %.\n\n---"
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "vision"
+  },
+  "vis-notation": {
+    "id": "vis-notation",
+    "tier": 0,
+    "priority": "S",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "30/30 s côté blancs ET côté noirs, et 10 coups lus à voix haute sans erreur."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "coordinates",
+    "domain": "vision"
+  },
+  "vis-rules": {
+    "id": "vis-rules",
+    "tier": 0,
+    "priority": "S",
+    "prerequisites": [],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "20 questions sur l'échiquier (« ce coup est-il légal ? », « peut-on roquer ? ») à 95 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "rules",
+    "domain": "vision"
+  },
+  "vis-values": {
+    "id": "vis-values",
+    "tier": 0,
+    "priority": "S",
+    "prerequisites": [
+      "vis-rules"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 positions « qui est devant et de combien ? » à 90 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "material",
+    "domain": "vision"
+  }
+}

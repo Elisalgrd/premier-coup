@@ -1,37 +1,10 @@
 {
   "id": "vis-notation",
-  "title": "Les coordonnées et la notation",
   "tier": 0,
   "priority": "S",
-  "domain": "vision",
   "prerequisites": [
     "vis-rules"
   ],
-  "principle": "Chaque case a un nom (colonne a à h, rangée 1 à 8). Chaque coup s'écrit.",
-  "why": [
-    "C'est la langue des échecs. Sans elle, impossible de lire une analyse, un livre, un problème Lichess, de rejouer une partie ou de suivre un coach."
-  ],
-  "signals": [
-    "sans objet (compétence de base)."
-  ],
-  "method": [
-    "2 min par jour de « Trouve la case » jusqu'à 30 bonnes réponses en 30 s des deux côtés."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4k3/8/8/8/8/8/8/4K3 w - - 0 1",
-    "solution": [
-      "e5"
-    ],
-    "prompt": "Touche la case e5.",
-    "mode": "square",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [],
   "lichessThemes": [],
   "ratingBand": [
     400,
@@ -45,36 +18,206 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "coordinates",
+  "domain": "vision",
+  "title": "Le nom des cases et des coups",
+  "introduces": [
+    "case, colonne, rangée",
+    "notation",
+    "R, D, T, F, C",
+    "x, +, #"
+  ],
+  "challenge": {
+    "kind": "square",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "prompt": "Chaque case a un nom. Devine où est la case e4 et touche-la. Indice : les lettres sont en bas de l’échiquier, les chiffres sur le côté.",
+    "solution": [
+      "e4"
+    ],
+    "check": "rule",
+    "hint": "Trouve la lettre e en bas, puis monte jusqu’au chiffre 4.",
+    "accept": [
+      "e4"
+    ]
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Chaque case a un nom (colonne a à h, rangée 1 à 8). Chaque coup s'écrit.",
-      "audio": null
+      "step": "principe",
+      "title": "Une lettre et un chiffre",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "e4"
+      ],
+      "text": "Chaque case a un nom, comme à la bataille navale. La lettre (de a à h) indique la colonne, de gauche à droite. Le chiffre (de 1 à 8) indique la rangée, de bas en haut quand tu as les blancs. La case colorée, c’est e4 : colonne e, rangée 4."
     },
     {
-      "title": "Signaux",
-      "text": "Sans objet (compétence de base).",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Pourquoi apprendre ça",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "g1",
+        "f3"
+      ],
+      "arrows": [
+        [
+          "g1",
+          "f3"
+        ]
+      ],
+      "text": "Parce que tout ce que tu liras ou regarderas sur les échecs utilise ces noms : les livres, les vidéos, les analyses sur Lichess. Et dans l’app, je te dirai « ton cavalier en g1 peut aller en f3 ». C’est beaucoup plus précis que « le cavalier en bas à droite »."
     },
     {
-      "title": "Méthode d'entraînement",
-      "text": "2 min par jour de « Trouve la case » jusqu'à 30 bonnes réponses en 30 s des deux côtés.",
-      "audio": null
+      "step": "principe",
+      "title": "Écrire un coup",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "arrows": [
+        [
+          "g1",
+          "f3"
+        ]
+      ],
+      "text": "Pour écrire un coup, on met la lettre de la pièce puis sa case d’arrivée. R = roi, D = dame, T = tour, F = fou, C = cavalier. Ici, le cavalier va en f3 : on écrit Cf3."
     },
     {
-      "title": "Pourquoi",
-      "text": "La notation permet de lire une analyse, un livre ou un problème. Elle sert aussi à rejouer une partie.",
-      "audio": null
+      "step": "principe",
+      "title": "Les pions",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "arrows": [
+        [
+          "e2",
+          "e4"
+        ]
+      ],
+      "text": "Les pions n’ont pas de lettre. Pour un pion, on écrit seulement la case d’arrivée. Le pion qui avance de e2 à e4 s’écrit simplement e4."
     },
     {
-      "title": "Contenu",
-      "text": "Les colonnes vont de a à h, les rangées de 1 à 8. Cf3 : le cavalier va en f3. Exd5 : le pion e prend en d5. Fxf7+ : le fou prend en f7 avec échec. O-O : petit roque. O-O-O : grand roque. E8=D : promotion en dame. Le signe # indique le mat.",
-      "audio": null
+      "step": "principe",
+      "title": "Prendre, échec, mat",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3",
+      "arrows": [
+        [
+          "c4",
+          "f7"
+        ]
+      ],
+      "text": "Trois petits signes à connaître. Le x veut dire « prend » : Fxf7 = le fou prend ce qui est en f7. Le + veut dire échec : Fxf7+ = le fou prend en f7 et met le roi en échec. Le # veut dire mat."
+    },
+    {
+      "step": "principe",
+      "title": "Le roque",
+      "fen": "r3k2r/pppppppp/8/8/8/8/PPPPPPPP/R3K2R w KQkq - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "g1"
+        ],
+        [
+          "e1",
+          "c1"
+        ]
+      ],
+      "text": "Le roque a son écriture spéciale : O-O pour le petit roque (côté droit), O-O-O pour le grand roque (côté gauche). Retiens : plus il y a de O, plus la tour vient de loin."
+    },
+    {
+      "step": "methode",
+      "title": "Quand tu as les noirs",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "marks": [
+        "a1",
+        "h8"
+      ],
+      "text": "Quand tu joues les noirs, l’échiquier est retourné : tes pièces sont en bas, et la case a1 se retrouve en haut à droite. Les noms des cases ne changent pas, seule ta façon de regarder change. Les lettres et chiffres sur les bords t’aident toujours."
+    },
+    {
+      "step": "methode",
+      "title": "Comment t’entraîner",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "d4",
+        "e4",
+        "d5",
+        "e5"
+      ],
+      "text": "Fais 2 minutes du jeu « Trouve la case » chaque jour, jusqu’à en trouver 30 en 30 secondes, côté blancs puis côté noirs. Commence par les 4 cases du milieu : d4, e4, d5, e5. Ce sont les plus importantes."
     }
   ],
+  "exercises": [
+    {
+      "kind": "square",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Touche la case d5.",
+      "solution": [
+        "d5"
+      ],
+      "check": "rule",
+      "success": "Oui, d5 : colonne d, rangée 5.",
+      "hint": "Colonne d (juste à gauche de e), rangée 5.",
+      "accept": [
+        "d5"
+      ]
+    },
+    {
+      "kind": "square",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Touche la case où se trouve ta dame au début de la partie.",
+      "solution": [
+        "d1"
+      ],
+      "check": "rule",
+      "success": "La dame blanche commence en d1. Petit truc : la dame se place sur une case de sa couleur.",
+      "hint": "C’est la pièce avec une couronne, en bas.",
+      "accept": [
+        "d1"
+      ]
+    },
+    {
+      "kind": "square",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "Touche la case f7. Elle est célèbre : au début de la partie, seul le roi noir la protège.",
+      "solution": [
+        "f7"
+      ],
+      "check": "rule",
+      "success": "f7, juste à côté du roi noir. On en reparlera.",
+      "hint": "Colonne f, rangée 7 : c’est un pion noir.",
+      "accept": [
+        "f7"
+      ]
+    },
+    {
+      "kind": "square",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "prompt": "Maintenant tu joues les noirs : l’échiquier est retourné. Touche la case f6.",
+      "solution": [
+        "f6"
+      ],
+      "check": "rule",
+      "success": "Bravo. Tu sais te repérer même échiquier retourné.",
+      "hint": "Regarde les lettres sur le bord : elles vont maintenant de h à a.",
+      "accept": [
+        "f6"
+      ]
+    }
+  ],
+  "retenir": "Une case = une lettre (colonne) + un chiffre (rangée). Un coup = la lettre de la pièce + la case d’arrivée. x prend, + échec, # mat.",
+  "contentVersion": 2,
+  "principle": "Une case = une lettre (colonne) + un chiffre (rangée). Un coup = la lettre de la pièce + la case d’arrivée. x prend, + échec, # mat.",
+  "entryChallenge": {
+    "kind": "square",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "prompt": "Chaque case a un nom. Devine où est la case e4 et touche-la. Indice : les lettres sont en bas de l’échiquier, les chiffres sur le côté.",
+    "solution": [
+      "e4"
+    ],
+    "check": "rule",
+    "hint": "Trouve la lettre e en bas, puis monte jusqu’au chiffre 4.",
+    "accept": [
+      "e4"
+    ],
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "coordinates",
-  "videos": []
+  "pitfall": {}
 }

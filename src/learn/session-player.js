@@ -38,7 +38,7 @@ export async function startSession(ctx, root) {
       ctx.save();
       const h = state.history.filter((x) => x.day === session.day),
         errors = h.filter((x) => !x.clean).slice(-3);
-      root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>Ta séance est enregistrée.</h1><p>${h.length} positions travaillées aujourd’hui. ${h.filter((x) => x.clean).length} réussies sans aide.</p>${errors.map((x) => `<p>À consolider : ${esc(ctx.entries.find((e) => e.id === x.entryId)?.title || "les coups forçants")}.</p>`).join("")}<a href="#progress" class="button primary">Voir mes progrès →</a></section>`;
+      root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>Ta séance est enregistrée.</h1><p>${h.length} positions travaillées aujourd’hui. ${h.filter((x) => x.clean).length} réussies sans aide.</p>${errors.map((x) => `<p>À revoir : ${esc(ctx.entries.find((e) => e.id === x.entryId)?.title || "les attaques et les prises")}.</p>`).join("")}<a href="#progress" class="button primary">Voir mes progrès →</a></section>`;
       return;
     }
     root.innerHTML =

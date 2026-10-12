@@ -1,43 +1,9 @@
 {
   "id": "vis-rules",
-  "title": "Les règles complètes",
   "tier": 0,
   "priority": "S",
-  "domain": "vision",
-  "prerequisites": [],
-  "principle": "Le but est de mater le roi adverse : il est attaqué et aucun coup ne le sauve.",
-  "why": [
-    "Sans les règles exactes (roque, prise en passant, promotion, pat), on perd des parties gagnées et on joue des coups illégaux en ligne."
-  ],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "Le roi n’est pas en échec et son camp ne peut jouer aucun coup légal. C’est pat : partie nulle.",
-    "fen": "4k3/4P3/4K3/8/8/8/8/8 b - - 0 1",
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4k3/8/8/8/8/8/8/4K2R w K - 0 1",
-    "solution": [
-      "e1g1"
-    ],
-    "prompt": "Mets ton roi à l’abri en faisant le petit roque.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "4k3/8/8/8/8/8/8/4K2R w K - 0 1",
-      "move": "e1g1",
-      "text": "",
-      "arrows": [
-        [
-          "e1",
-          "g1"
-        ]
-      ],
-      "marks": []
-    }
+  "prerequisites": [
+    "vis-start"
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -52,62 +18,375 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "rules",
+  "domain": "vision",
+  "title": "Comment bougent les pièces",
+  "introduces": [
+    "prendre, capturer",
+    "échec",
+    "roque",
+    "petit roque, grand roque",
+    "promotion",
+    "prise en passant",
+    "pat",
+    "nulle",
+    "diagonale"
+  ],
+  "challenge": {
+    "fen": "4k3/8/3p4/8/8/8/8/3RK3 w - - 0 1",
+    "prompt": "Tu joues les blancs, c’est à toi. Ta tour (la pièce en forme de petit château, en bas) peut prendre le pion noir. Essaie, ça ne compte pas si tu te trompes.",
+    "solution": [
+      "d1d6"
+    ],
+    "check": "rule",
+    "hint": "La tour avance tout droit. Le pion noir est sur la même colonne qu’elle.",
+    "accept": [
+      "d1d6"
+    ],
+    "kind": "move"
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Le but est de mater le roi adverse : il est attaqué et aucun coup ne le sauve.",
-      "audio": null
+      "step": "principe",
+      "title": "La tour",
+      "fen": "4k3/8/8/8/3R4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ],
+        [
+          "d4",
+          "d1"
+        ],
+        [
+          "d4",
+          "a4"
+        ],
+        [
+          "d4",
+          "h4"
+        ]
+      ],
+      "text": "La tour avance en ligne droite : vers le haut, le bas, la gauche ou la droite, d’autant de cases qu’elle veut. Elle ne peut pas sauter par-dessus une pièce. Prendre une pièce adverse, c’est aller sur sa case : la pièce prise sort du jeu."
     },
     {
-      "title": "Pourquoi",
-      "text": "Le roque, la prise en passant, la promotion et le pat changent certaines positions. Les connaître évite des erreurs décisives.",
-      "audio": null
+      "step": "principe",
+      "title": "Le fou",
+      "fen": "4k3/8/8/8/3B4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "h8"
+        ],
+        [
+          "d4",
+          "a1"
+        ],
+        [
+          "d4",
+          "a7"
+        ],
+        [
+          "d4",
+          "g1"
+        ]
+      ],
+      "text": "Le fou avance en diagonale, en biais, d’autant de cases qu’il veut. Un fou qui commence sur une case claire reste sur les cases claires toute la partie. C’est pour ça que chaque joueur a deux fous : un pour les cases claires, un pour les foncées."
     },
     {
-      "title": "Règles sur l’échiquier",
-      "text": "La tour se déplace en ligne droite. Le fou suit les diagonales. La dame combine les deux. Le cavalier saute en L. Le roi avance d’une case.",
-      "audio": null
+      "step": "principe",
+      "title": "La dame",
+      "fen": "4k3/8/8/8/3Q4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "d7"
+        ],
+        [
+          "d4",
+          "h4"
+        ],
+        [
+          "d4",
+          "g7"
+        ],
+        [
+          "d4",
+          "a1"
+        ],
+        [
+          "d4",
+          "a7"
+        ],
+        [
+          "d4",
+          "d1"
+        ]
+      ],
+      "text": "La dame (la pièce avec une couronne) combine la tour et le fou : elle va en ligne droite ET en diagonale, aussi loin qu’elle veut. C’est ta pièce la plus forte. Fais très attention à ne pas la perdre."
     },
     {
-      "title": "Règles sur l’échiquier",
-      "text": "Le pion avance d’une case, ou de deux depuis sa case de départ. Il prend en diagonale. Il ne recule jamais.",
-      "audio": null
+      "step": "principe",
+      "title": "Le cavalier",
+      "fen": "4k3/8/8/8/3N4/8/8/4K3 w - - 0 1",
+      "marks": [
+        "b3",
+        "b5",
+        "c2",
+        "c6",
+        "e2",
+        "e6",
+        "f3",
+        "f5"
+      ],
+      "arrows": [
+        [
+          "d4",
+          "e6"
+        ]
+      ],
+      "text": "Le cavalier (la tête de cheval) se déplace en L : deux cases tout droit, puis une case sur le côté. C’est la seule pièce qui peut sauter par-dessus les autres. Les cases colorées montrent toutes les cases qu’il peut atteindre depuis d4."
     },
     {
-      "title": "Règles sur l’échiquier",
-      "text": "Pour roquer, le roi et la tour concernée ne doivent jamais avoir bougé. Les cases entre eux doivent être vides. Le roi ne doit être ni en échec, ni traverser ou atteindre une case attaquée.",
-      "audio": null
+      "step": "principe",
+      "title": "Le roi",
+      "fen": "4k3/8/8/8/3K4/8/8/8 w - - 0 1",
+      "marks": [
+        "c3",
+        "c4",
+        "c5",
+        "d3",
+        "d5",
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "text": "Le roi avance d’une seule case, dans n’importe quelle direction. Il n’a jamais le droit d’aller sur une case attaquée par une pièce adverse. C’est aussi pour ça que les deux rois ne peuvent jamais être collés l’un à l’autre."
     },
     {
-      "title": "Règles sur l’échiquier",
-      "text": "La prise en passant suit immédiatement une avance adverse de deux cases. Ton pion voisin capture comme si le pion adverse n’avait avancé que d’une case.",
-      "audio": null
+      "step": "principe",
+      "title": "Le pion",
+      "fen": "4k3/8/8/3p4/4P3/8/2P5/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "c2",
+          "c4"
+        ],
+        [
+          "e4",
+          "d5"
+        ]
+      ],
+      "text": "Le pion avance tout droit d’une case. Depuis sa case de départ, il peut avancer de deux cases d’un coup (le pion en c2). Mais il prend en diagonale, vers l’avant (le pion en e4 peut prendre le pion noir en d5). Il ne recule jamais."
     },
     {
-      "title": "Règles sur l’échiquier",
-      "text": "Sur la dernière rangée, le pion devient dame, tour, fou ou cavalier. La promotion n’est pas limitée aux pièces capturées.",
-      "audio": null
+      "step": "principe",
+      "title": "L’échec",
+      "fen": "4k3/8/8/8/8/8/8/4RK2 b - - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ],
+      "marks": [
+        "e8"
+      ],
+      "text": "Quand une pièce attaque le roi, on dit que le roi est « en échec ». Ici, la tour blanche attaque le roi noir. C’est aux noirs de jouer et ils DOIVENT sauver leur roi tout de suite : c’est obligatoire, ils ne peuvent rien jouer d’autre."
     },
     {
-      "title": "Règles sur l’échiquier",
-      "text": "Le roi ne se capture jamais. En échec, prends l’attaquant, interpose une pièce ou déplace le roi. Sans aucune réponse légale, c’est mat.",
-      "audio": null
+      "step": "principe",
+      "title": "Le mat",
+      "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "a1a8",
+          "text": "La tour donne échec sur la dernière rangée. Le roi noir ne peut pas fuir (ses pions bloquent), personne ne peut prendre la tour ni se mettre devant. Échec et mat : les blancs gagnent."
+        }
+      ],
+      "text": "Si le roi est en échec et qu’aucun coup ne peut le sauver, c’est échec et mat. La partie s’arrête. On ne prend jamais vraiment le roi."
     },
     {
-      "title": "Règles sur l’échiquier",
-      "text": "Sans échec et sans coup légal : c’est pat. La partie est nulle. La répétition, la règle des cinquante coups, le matériel insuffisant ou un accord peuvent aussi donner la nulle.",
-      "audio": null
+      "step": "principe",
+      "title": "Le roque",
+      "fen": "4k3/8/8/8/8/8/5PPP/4K2R w K - 0 1",
+      "line": [
+        {
+          "uci": "e1g1",
+          "text": "Le roi va de deux cases vers la tour, et la tour saute de l’autre côté du roi. En un seul coup, ton roi est à l’abri dans le coin et ta tour est prête à jouer."
+        }
+      ],
+      "text": "Une fois par partie, tu peux faire un coup spécial qui bouge deux pièces : ton roi et une de tes tours. Ça s’appelle le « roque ». Il sert à mettre ton roi à l’abri. Dans l’app, déplace ton roi de deux cases vers la tour : la tour suit toute seule."
+    },
+    {
+      "step": "principe",
+      "title": "Quand on ne peut pas roquer",
+      "fen": "4k3/8/8/8/2b5/8/5PPP/4K2R w K - 0 1",
+      "arrows": [
+        [
+          "c4",
+          "f1"
+        ]
+      ],
+      "marks": [
+        "f1"
+      ],
+      "text": "Tu ne peux pas roquer si ton roi ou cette tour ont déjà bougé, s’il y a une pièce entre eux, si ton roi est en échec, ou s’il doit passer par une case attaquée. Ici, le fou noir attaque f1 : le roi passerait par là, donc le roque est interdit."
+    },
+    {
+      "step": "principe",
+      "title": "Petit et grand roque",
+      "fen": "r3k2r/pppppppp/8/8/8/8/PPPPPPPP/R3K2R w KQkq - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "g1"
+        ],
+        [
+          "e1",
+          "c1"
+        ]
+      ],
+      "text": "Tu peux roquer de deux côtés. Côté droit (vers la tour la plus proche), c’est le « petit roque », le plus fréquent. Côté gauche (vers la tour du côté de la dame), c’est le « grand roque ». Dans les deux cas, le roi bouge de deux cases."
+    },
+    {
+      "step": "principe",
+      "title": "La promotion",
+      "fen": "4k3/1P6/8/8/8/8/8/4K3 w - - 0 1",
+      "line": [
+        {
+          "uci": "b7b8q",
+          "text": "Le pion arrive sur la dernière rangée et devient une dame. En plus, cette nouvelle dame attaque déjà le roi noir sur la rangée : c’est échec."
+        }
+      ],
+      "text": "Quand un de tes pions arrive tout au bout de l’échiquier, il se transforme. Tu choisis : dame, tour, fou ou cavalier. Ça s’appelle la « promotion ». On choisit presque toujours une dame, la pièce la plus forte."
+    },
+    {
+      "step": "principe",
+      "title": "La prise en passant",
+      "fen": "4k3/3p4/8/4P3/8/8/8/4K3 b - - 0 1",
+      "line": [
+        {
+          "uci": "d7d5",
+          "text": "Le pion noir avance de deux cases d’un coup et arrive juste à côté de ton pion en e5."
+        },
+        {
+          "uci": "e5d6",
+          "text": "Ton pion le prend comme s’il n’avait avancé que d’une case : il va en d6 et le pion noir disparaît. C’est la prise en passant."
+        }
+      ],
+      "text": "Une règle rare mais réelle. Si un pion adverse avance de deux cases et se retrouve juste à côté de ton pion, ton pion peut le prendre « en passant ». Attention : seulement au coup juste après, sinon c’est trop tard."
+    },
+    {
+      "step": "piege",
+      "title": "Le piège du pat",
+      "fen": "k7/8/1Q6/8/8/8/8/7K b - - 0 1",
+      "marks": [
+        "a7",
+        "b7",
+        "b8"
+      ],
+      "text": "C’est aux noirs de jouer. Le roi noir n’est pas en échec, mais toutes ses cases sont attaquées par la dame blanche. Il ne peut faire aucun coup. C’est le « pat » : la partie est nulle, personne ne gagne, même si les blancs ont beaucoup plus de pièces."
+    },
+    {
+      "step": "retenir",
+      "title": "Les autres nulles",
+      "fen": "4k3/8/8/8/8/8/8/4K3 w - - 0 1",
+      "text": "Une partie « nulle », c’est une partie sans gagnant. Ça arrive aussi quand la même position revient trois fois, ou quand il ne reste pas assez de pièces pour faire mat, comme ici : un roi contre un roi."
     }
   ],
-  "examples": [
+  "exercises": [
     {
-      "fen": "4k3/4P3/4K3/8/8/8/8/8 b - - 0 1",
-      "outcome": "stalemate",
-      "source": "CURRICULUM.md"
+      "kind": "move",
+      "fen": "4k3/8/8/5n2/8/8/2B5/4K3 w - - 0 1",
+      "prompt": "Tu joues les blancs. Prends le cavalier noir avec ton fou.",
+      "solution": [
+        "c2f5"
+      ],
+      "check": "rule",
+      "success": "Oui : le fou a filé en diagonale jusqu’au cavalier.",
+      "hint": "Le fou va en biais. Suis la diagonale qui monte vers la droite.",
+      "accept": [
+        "c2f5"
+      ]
+    },
+    {
+      "kind": "move",
+      "fen": "4k3/8/2r5/8/3N4/8/8/4K3 w - - 0 1",
+      "prompt": "Prends la tour noire avec ton cavalier.",
+      "solution": [
+        "d4c6"
+      ],
+      "check": "rule",
+      "success": "Bien joué : deux cases vers le haut, une vers la gauche. Un L.",
+      "hint": "Compte deux cases vers le haut, puis une sur le côté.",
+      "accept": [
+        "d4c6"
+      ]
+    },
+    {
+      "kind": "move",
+      "fen": "4k3/8/8/8/8/8/5PPP/4K2R w K - 0 1",
+      "prompt": "Fais le petit roque : mets ton roi à l’abri.",
+      "solution": [
+        "e1g1"
+      ],
+      "check": "rule",
+      "success": "Ton roi est à l’abri derrière ses pions, et ta tour est sortie du coin.",
+      "hint": "Déplace ton roi de deux cases vers la droite.",
+      "accept": [
+        "e1g1"
+      ]
+    },
+    {
+      "kind": "move",
+      "fen": "4k3/1P6/8/8/8/8/8/4K3 w - - 0 1",
+      "prompt": "Ton pion est presque au bout. Avance-le et transforme-le en dame.",
+      "solution": [
+        "b7b8q"
+      ],
+      "check": "rule",
+      "success": "Une nouvelle dame, et en plus elle met le roi noir en échec.",
+      "hint": "Avance le pion d’une case, puis choisis la dame.",
+      "accept": [
+        "b7b8q"
+      ]
+    },
+    {
+      "kind": "move",
+      "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 2",
+      "prompt": "Le pion noir vient d’avancer de deux cases, de d7 à d5. Prends-le en passant.",
+      "solution": [
+        "e5d6"
+      ],
+      "check": "rule",
+      "success": "Exact : ton pion va en d6 et le pion noir disparaît.",
+      "hint": "Ton pion va en diagonale, derrière le pion noir, sur la case d6.",
+      "accept": [
+        "e5d6"
+      ]
     }
   ],
-  "drill": "rules",
-  "videos": []
+  "retenir": "Tour en ligne droite, fou en diagonale, dame les deux, cavalier en L, roi d’une case, pion tout droit mais il prend en biais. Et méfie-toi du pat.",
+  "contentVersion": 2,
+  "principle": "Tour en ligne droite, fou en diagonale, dame les deux, cavalier en L, roi d’une case, pion tout droit mais il prend en biais. Et méfie-toi du pat.",
+  "entryChallenge": {
+    "fen": "4k3/8/3p4/8/8/8/8/3RK3 w - - 0 1",
+    "prompt": "Tu joues les blancs, c’est à toi. Ta tour (la pièce en forme de petit château, en bas) peut prendre le pion noir. Essaie, ça ne compte pas si tu te trompes.",
+    "solution": [
+      "d1d6"
+    ],
+    "check": "rule",
+    "hint": "La tour avance tout droit. Le pion noir est sur la même colonne qu’elle.",
+    "accept": [
+      "d1d6"
+    ],
+    "kind": "move",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

@@ -1,52 +1,9 @@
 {
   "id": "proc-blunder-check",
-  "title": "La routine anti-gaffe : échecs, captures, menaces",
   "tier": 1,
   "priority": "S",
-  "domain": "réflexes",
   "prerequisites": [
     "vis-attacked-squares"
-  ],
-  "principle": "Avant de jouer, regarde les échecs, captures et menaces possibles. Pour l'adversaire d'abord, pour toi ensuite.",
-  "why": [
-    "C'est la routine qui supprime le plus de défaites. La plupart des parties perdues entre débutants le sont parce qu'un échec, une capture ou une menace évidente n'a pas été regardé."
-  ],
-  "signals": [
-    "à faire à chaque coup, sans exception. Plus le coup est « évident », plus il faut vérifier."
-  ],
-  "method": [
-    "Sa menace : après son dernier coup, que ferait-il si je passais mon tour ? (échecs, captures, menaces)",
-    "Mes coups forçants : ai-je un échec, une capture, une menace ? Lesquels gagnent quelque chose ?",
-    "Mon coup choisi : je le joue dans ma tête. Après, quels sont ses échecs, captures et menaces ? Ma pièce qui vient de bouger est-elle défendue ? Ai-je laissé une autre pièce sans défense ?",
-    "Si tout est sûr, je joue."
-  ],
-  "pitfall": {
-    "text": "Faire la routine seulement quand on se sent en danger. C'est quand on se sent en sécurité qu'on gaffe.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "r1bq1k1r/pppp2p1/8/2bBp1Q1/4Pp2/2PP3p/PP3PP1/nNBK3R w - - 2 16",
-    "solution": [
-      "g5d8"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/Scg2J",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "r1bq1k1r/pppp2p1/8/2bBp1Q1/4Pp2/2PP3p/PP3PP1/nNBK3R w - - 2 16",
-      "move": "g5d8",
-      "text": "",
-      "arrows": [
-        [
-          "g5",
-          "d8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "hangingPiece"
@@ -63,50 +20,175 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "réflexes",
+  "title": "La vérification avant chaque coup",
+  "introduces": [
+    "menace"
+  ],
+  "challenge": {
+    "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+    "prompt": "Tu joues les blancs. Le cavalier noir en a3 a l’air gratuit pour ta dame. Mais avant de le prendre, regarde ce que la tour noire en e8 pourrait faire juste après. Quel coup joues-tu ?",
+    "solution": [
+      "g2g3"
+    ],
+    "check": "engine",
+    "hint": "Si ta dame part en a3, qui surveille encore la case e1 ?",
+    "accept": [
+      "h2h3",
+      "g2g3",
+      "g1f1",
+      "f2f4",
+      "h2h4"
+    ],
+    "engine": {
+      "best": "h2h3",
+      "score": 345,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": []
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Avant de jouer, regarde les échecs, captures et menaces possibles. Pour l'adversaire d'abord, pour toi ensuite.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Le réflexe qui sauve le plus de parties",
+      "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+      "text": "La plupart des parties perdues entre débutants le sont à cause d’un seul coup : on a joué sans regarder ce que l’adversaire pouvait faire juste après. La bonne nouvelle : une petite vérification de quelques secondes suffit à éviter la plupart de ces erreurs."
     },
     {
-      "title": "Signaux",
-      "text": "À faire à chaque coup, sans exception. Plus le coup est « évident », plus il faut vérifier.",
-      "audio": null
+      "step": "exemple",
+      "title": "Ce qui arrive sans vérifier",
+      "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "c3a3",
+          "text": "La dame prend le cavalier. Tu as gagné 3 points... mais ta dame ne surveille plus la case e1."
+        },
+        {
+          "uci": "e8e1",
+          "text": "La tour noire descend en e1 : échec. Ton roi est coincé derrière ses pions, rien ne peut prendre la tour ni se mettre devant. Mat."
+        }
+      ],
+      "text": "Regarde ce qui se passe si on prend le cavalier tout de suite."
     },
     {
-      "title": "Méthode",
-      "text": "Sa menace : après son dernier coup, que ferait-il si je passais mon tour ? (échecs, captures, menaces)",
-      "audio": null
+      "step": "methode",
+      "title": "Question 1 : que menace-t-il ?",
+      "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "e8",
+          "e1"
+        ]
+      ],
+      "marks": [
+        "e1"
+      ],
+      "text": "Avant de penser à ton coup, demande-toi : « Si je ne faisais rien, que pourrait-il me faire ? » Regarde ses échecs possibles, ses prises possibles, ses attaques. Ici, sa tour menace (ce que l’adversaire pourrait faire de dangereux au prochain coup) de descendre en e1 et de faire mat. Ta dame est la seule à empêcher ça."
     },
     {
-      "title": "Méthode",
-      "text": "Mes coups forçants : ai-je un échec, une capture, une menace ? Lesquels gagnent quelque chose ?",
-      "audio": null
+      "step": "methode",
+      "title": "Question 2 : quels sont mes coups forts ?",
+      "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "c3",
+          "a3"
+        ]
+      ],
+      "text": "Ensuite seulement, cherche tes coups intéressants : tes échecs, tes prises, tes attaques. Ici, tu peux prendre le cavalier en a3. Note-le comme une idée, pas encore comme une décision."
     },
     {
-      "title": "Méthode",
-      "text": "Mon coup choisi : je le joue dans ma tête. Après, quels sont ses échecs, captures et menaces ? Ma pièce qui vient de bouger est-elle défendue ? Ai-je laissé une autre pièce sans défense ?",
-      "audio": null
+      "step": "methode",
+      "title": "Question 3 : et après mon coup ?",
+      "fen": "4r1k1/5ppp/8/8/8/Q7/5PPP/6K1 b - - 0 1",
+      "arrows": [
+        [
+          "e8",
+          "e1"
+        ]
+      ],
+      "marks": [
+        "e1"
+      ],
+      "text": "Imagine ton coup joué, comme sur cette image. Puis pose-toi la question 1 à nouveau, de son point de vue : quels sont ses échecs, ses prises, ses menaces ? Ici, la tour en e8 peut descendre en e1 et faire mat. Donc on ne prend pas le cavalier tout de suite.",
+      "line": [
+        {
+          "uci": "e8e1",
+          "text": "La tour noire descend de e8 en e1. Ton roi est attaqué et ne peut plus être sauvé : échec et mat."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Si tout est sûr, je joue.",
-      "audio": null
+      "step": "methode",
+      "title": "La bonne solution",
+      "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "g2g3",
+          "text": "Le pion avance et libère la case g2 pour ton roi. Maintenant, si la tour noire descend en e1, ton roi peut s’échapper : ce n’est plus mat. Le cavalier en a3 ne va pas s’envoler, tu pourras le prendre au prochain coup."
+        }
+      ],
+      "text": "On règle d’abord le danger, ensuite on prend."
     },
     {
-      "title": "Piège",
-      "text": "Faire la routine seulement quand on se sent en danger. C'est quand on se sent en sécurité qu'on gaffe.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "Entre débutants, une menace simple oubliée peut décider la partie. Vérifie les échecs et les captures avant ton projet.",
-      "audio": null
+      "step": "piege",
+      "title": "Le piège : vérifier seulement quand on a peur",
+      "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+      "text": "On fait souvent cette vérification quand on sent un danger. Mais les erreurs arrivent surtout quand tout semble calme et qu’un coup paraît évident, comme prendre un cavalier gratuit. Fais-la à chaque coup, même quand tu es sûre de toi."
     }
   ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+      "prompt": "Tu peux prendre la tour noire avec ta dame, ou la dame noire avec ton fou. Fais la vérification avant de choisir : après ta prise, qu’est-ce que l’adversaire peut reprendre ?",
+      "solution": [
+        "c2a4"
+      ],
+      "check": "engine",
+      "success": "Exact. Si ta dame avait pris la tour en d5, le pion en e6 aurait repris ta dame. Ici, personne ne peut reprendre ton fou.",
+      "hint": "Regarde le pion noir en e6 : quelle case surveille-t-il ?",
+      "accept": [
+        "c2a4"
+      ],
+      "engine": {
+        "best": "c2a4",
+        "score": -28,
+        "depth": 16
+      },
+      "alsoGood": []
+    }
+  ],
+  "retenir": "Avant chaque coup : 1. que menace-t-il ? 2. quels sont mes coups forts ? 3. après mon coup, que peut-il faire ?",
+  "contentVersion": 2,
+  "principle": "Avant chaque coup : 1. que menace-t-il ? 2. quels sont mes coups forts ? 3. après mon coup, que peut-il faire ?",
+  "entryChallenge": {
+    "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+    "prompt": "Tu joues les blancs. Le cavalier noir en a3 a l’air gratuit pour ta dame. Mais avant de le prendre, regarde ce que la tour noire en e8 pourrait faire juste après. Quel coup joues-tu ?",
+    "solution": [
+      "g2g3"
+    ],
+    "check": "engine",
+    "hint": "Si ta dame part en a3, qui surveille encore la case e1 ?",
+    "accept": [
+      "h2h3",
+      "g2g3",
+      "g1f1",
+      "f2f4",
+      "h2h4"
+    ],
+    "engine": {
+      "best": "h2h3",
+      "score": 345,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": [],
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

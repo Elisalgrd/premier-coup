@@ -1,47 +1,9 @@
 {
   "id": "ouv-gambits",
-  "title": "Gambits : accepter ou décliner ?",
   "tier": 3,
   "priority": "B",
-  "domain": "ouvertures",
   "prerequisites": [
     "ouv-principles"
-  ],
-  "principle": "Accepte un pion de gambit si tu peux continuer à développer. Si le garder te coûte plusieurs tempos ou ta sécurité, rends-le.",
-  "why": [],
-  "signals": [],
-  "method": [
-    "après avoir pris, compte tes pièces développées contre les siennes",
-    "si tu es en retard de 2 tempos ou plus, donne la priorité au développement et au roque.",
-    "--"
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-    "solution": [
-      "f2f4"
-    ],
-    "prompt": "Propose le gambit du roi : avance le pion f de deux cases.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-      "move": "f2f4",
-      "text": "",
-      "arrows": [
-        [
-          "f2",
-          "f4"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -56,28 +18,112 @@
   },
   "sources": [],
   "videoId": "queens-gambit",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Accepte un pion de gambit si tu peux continuer à développer. Si le garder te coûte plusieurs tempos ou ta sécurité, rends-le.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Après avoir pris, compte tes pièces développées contre les siennes. Si tu es en retard de 2 tempos ou plus, donne la priorité au développement et au roque.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "---",
-      "audio": null
-    }
-  ],
-  "examples": [],
-  "drill": "board-observation",
   "videos": [
     "queens-gambit"
-  ]
+  ],
+  "drill": "board-observation",
+  "domain": "ouvertures",
+  "title": "Un pion offert n’est pas toujours gratuit",
+  "introduces": [
+    "gambit"
+  ],
+  "challenge": {
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+    "kind": "square",
+    "solution": [
+      "f4"
+    ],
+    "check": "rule",
+    "prompt": "Tu joues les noirs. Touche le pion blanc que ton pion en e5 peut prendre.",
+    "accept": [
+      "f4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case f4.",
+    "success": "Si le pion noir prend en f4, les blancs ont perdu un pion mais libéré des lignes. Les noirs doivent continuer à sortir leurs pièces sans dépenser tous leurs coups à garder ce pion."
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Un pion offert n’est pas toujours gratuit",
+      "text": "Un gambit consiste à offrir un pion au début pour faire sortir ses pièces plus vite ou ouvrir une ligne. Ici, les blancs viennent de pousser f4 : ton pion noir en e5 peut le prendre.",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+      "marks": [
+        "f4"
+      ]
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Avant d’accepter un pion offert, regarde ton roi et tes pièces encore à leur place de départ. Un pion vaut un point. Perdre plusieurs coups à le protéger peut laisser l’adversaire attaquer.",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Si le pion noir prend en f4, les blancs ont perdu un pion mais libéré des lignes. Les noirs doivent continuer à sortir leurs pièces sans dépenser tous leurs coups à garder ce pion.",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Accepter ou refuser peut être raisonnable. Le but de cet exercice est de repérer le pion offert en f4, pas de promettre qu’une seule réponse gagne.",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2"
+    }
+  ],
+  "exercises": [
+    {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+      "kind": "square",
+      "solution": [
+        "f4"
+      ],
+      "check": "rule",
+      "prompt": "Tu joues les noirs. Touche le pion blanc que ton pion en e5 peut prendre.",
+      "accept": [
+        "f4"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case f4.",
+      "success": "Si le pion noir prend en f4, les blancs ont perdu un pion mais libéré des lignes. Les noirs doivent continuer à sortir leurs pièces sans dépenser tous leurs coups à garder ce pion."
+    }
+  ],
+  "retenir": "Un pion de plus ne sert pas si tu oublies de sortir tes pièces et de protéger ton roi.",
+  "review": {
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+    "kind": "square",
+    "solution": [
+      "f4"
+    ],
+    "check": "rule",
+    "prompt": "Tu joues les noirs. Touche le pion blanc que ton pion en e5 peut prendre.",
+    "accept": [
+      "f4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case f4.",
+    "success": "Si le pion noir prend en f4, les blancs ont perdu un pion mais libéré des lignes. Les noirs doivent continuer à sortir leurs pièces sans dépenser tous leurs coups à garder ce pion."
+  },
+  "contentVersion": 2,
+  "principle": "Un pion de plus ne sert pas si tu oublies de sortir tes pièces et de protéger ton roi.",
+  "entryChallenge": {
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+    "kind": "square",
+    "solution": [
+      "f4"
+    ],
+    "check": "rule",
+    "prompt": "Tu joues les noirs. Touche le pion blanc que ton pion en e5 peut prendre.",
+    "accept": [
+      "f4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case f4.",
+    "success": "Si le pion noir prend en f4, les blancs ont perdu un pion mais libéré des lignes. Les noirs doivent continuer à sortir leurs pièces sans dépenser tous leurs coups à garder ce pion.",
+    "mode": "square"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

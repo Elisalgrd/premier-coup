@@ -1,77 +1,9 @@
 {
   "id": "tac-attraction",
-  "title": "L'attraction (le leurre)",
   "tier": 2,
   "priority": "A",
-  "domain": "tactique",
   "prerequisites": [
     "tac-deflection"
-  ],
-  "principle": "Force une pièce adverse (souvent le roi) à venir sur une case où elle subira une tactique.",
-  "why": [
-    "On sacrifie pour amener le roi ou la dame sur une case de fourchette, de clouage ou de mat."
-  ],
-  "signals": [
-    "une case où une fourchette ou un mat marcherait « si le roi (ou la dame) y était »."
-  ],
-  "method": [
-    "trouve la case cible",
-    "cherche un sacrifice avec échec ou capture qui oblige la pièce à y aller",
-    "vérifie la suite."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
-    "solution": [
-      "a8f8",
-      "g8f8",
-      "a1a8"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/j28K9",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
-      "move": "a8f8",
-      "text": "",
-      "arrows": [
-        [
-          "a8",
-          "f8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "5Rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 b - - 0 29",
-      "move": "g8f8",
-      "text": "",
-      "arrows": [
-        [
-          "g8",
-          "f8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "5k2/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 30",
-      "move": "a1a8",
-      "text": "",
-      "arrows": [
-        [
-          "a1",
-          "a8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "attraction"
@@ -88,30 +20,138 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Attirer le roi sur une mauvaise case",
+  "introduces": [
+    "attraction"
+  ],
+  "challenge": {
+    "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
+    "solution": [
+      "a8f8",
+      "g8f8",
+      "a1a8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tes deux tours peuvent agir l’une après l’autre. Prends d’abord la tour noire avec échec.",
+    "accept": [
+      "a8f8"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde tes deux tours en a8 et a1. La première peut enlever la tour noire en f8. La deuxième utilise ensuite la rangée libérée pour terminer l’attaque.",
+    "success": "Après la prise en f8, le roi noir reprend ta tour. Ta deuxième tour monte de a1 à a8 : le roi est attaqué sur sa nouvelle case."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Force une pièce adverse (souvent le roi) à venir sur une case où elle subira une tactique.",
-      "audio": null
+      "step": "principe",
+      "title": "Attirer le roi sur une mauvaise case",
+      "text": "Une attraction, c’est amener une pièce adverse sur une case où tu peux l’attaquer plus fort. Ici, tu peux attirer le roi noir de g8 vers f8 en prenant sa tour.",
+      "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "On sacrifie pour amener le roi ou la dame sur une case de fourchette, de clouage ou de mat.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde tes deux tours en a8 et a1. La première peut enlever la tour noire en f8. La deuxième utilise ensuite la rangée libérée pour terminer l’attaque.",
+      "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
+      "arrows": [
+        [
+          "a8",
+          "f8"
+        ]
+      ]
     },
     {
-      "title": "Signaux",
-      "text": "Une case où une fourchette ou un mat marcherait « si le roi (ou la dame) y était ».",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour blanche en a8 prend la tour en f8 et attaque le roi.",
+      "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
+      "line": [
+        {
+          "uci": "a8f8",
+          "text": "La tour blanche en a8 prend la tour en f8 et attaque le roi."
+        },
+        {
+          "uci": "g8f8",
+          "text": "Le roi noir reprend en f8 : il arrive sur la case visée."
+        },
+        {
+          "uci": "a1a8",
+          "text": "La tour en a1 monte en a8 : échec et mat."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Trouve la case cible. Cherche un sacrifice avec échec ou capture qui oblige la pièce à y aller. Vérifie la suite.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Après la prise en f8, le roi noir reprend ta tour. Ta deuxième tour monte de a1 à a8 : le roi est attaqué sur sa nouvelle case.",
+      "fen": "R4k2/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/8 b - - 1 30"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Avant de donner une pièce, vérifie toutes les réponses. Si le roi peut refuser ton cadeau sans rien perdre, l’idée ne suffit pas. Ici, regarde pourquoi la prise en f8 impose une réponse.",
+      "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29"
     }
   ],
+  "exercises": [
+    {
+      "fen": "5k2/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 30",
+      "solution": [
+        "a1a8"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. La tour en a1 monte en a8 : échec et mat.",
+      "accept": [
+        "a1a8"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en a1.",
+      "success": "Après la prise en f8, le roi noir reprend ta tour. Ta deuxième tour monte de a1 à a8 : le roi est attaqué sur sa nouvelle case."
+    }
+  ],
+  "retenir": "Un cadeau peut attirer une pièce sur une mauvaise case. Calcule la suite avant de l’offrir.",
+  "review": {
+    "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
+    "solution": [
+      "a8f8",
+      "g8f8",
+      "a1a8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tes deux tours peuvent agir l’une après l’autre. Prends d’abord la tour noire avec échec.",
+    "accept": [
+      "a8f8"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde tes deux tours en a8 et a1. La première peut enlever la tour noire en f8. La deuxième utilise ensuite la rangée libérée pour terminer l’attaque.",
+    "success": "Après la prise en f8, le roi noir reprend ta tour. Ta deuxième tour monte de a1 à a8 : le roi est attaqué sur sa nouvelle case."
+  },
+  "contentVersion": 2,
+  "principle": "Un cadeau peut attirer une pièce sur une mauvaise case. Calcule la suite avant de l’offrir.",
+  "entryChallenge": {
+    "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
+    "solution": [
+      "a8f8",
+      "g8f8",
+      "a1a8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tes deux tours peuvent agir l’une après l’autre. Prends d’abord la tour noire avec échec.",
+    "accept": [
+      "a8f8"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde tes deux tours en a8 et a1. La première peut enlever la tour noire en f8. La deuxième utilise ensuite la rangée libérée pour terminer l’attaque.",
+    "success": "Après la prise en f8, le roi noir reprend ta tour. Ta deuxième tour monte de a1 à a8 : le roi est attaqué sur sa nouvelle case.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

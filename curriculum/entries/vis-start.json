@@ -1,0 +1,119 @@
+{
+  "id": "vis-start",
+  "tier": 0,
+  "priority": "S",
+  "prerequisites": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    800
+  ],
+  "mastery": {},
+  "domain": "vision",
+  "drill": "tutorial",
+  "title": "Avant de commencer",
+  "introduces": [
+    "échiquier",
+    "les blancs, les noirs",
+    "c’est aux blancs (aux noirs) de jouer",
+    "coup",
+    "échec et mat, mat",
+    "case, colonne, rangée",
+    "attaquer"
+  ],
+  "challenge": null,
+  "screens": [
+    {
+      "step": "intro",
+      "title": "L’échiquier",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "text": "Voici un échiquier : 64 cases (les petits carrés du plateau ; les colonnes sont verticales, les rangées horizontales), claires et foncées. Chaque joueur a 16 pièces. Un joueur a les pièces blanches, l’autre les pièces noires. On dit « les blancs » et « les noirs ». Ici, tu joues les blancs : tes pièces sont en bas, celles de ton adversaire en haut."
+    },
+    {
+      "step": "intro",
+      "title": "Chacun son tour",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "e2",
+        "d2"
+      ],
+      "text": "On joue chacun son tour, un seul déplacement à la fois. Ce déplacement s’appelle un « coup ». Les blancs jouent toujours le premier coup de la partie. Quand l’app écrit « C’est aux blancs de jouer », ça veut dire que c’est le tour des blancs. Si tu as les blancs, c’est à toi."
+    },
+    {
+      "step": "intro",
+      "title": "Bouger une pièce dans l’app",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "arrows": [
+        [
+          "e2",
+          "e4"
+        ]
+      ],
+      "text": "Pour jouer, touche une de tes pièces : des points apparaissent sur les cases où elle peut aller. Touche ensuite la case d’arrivée. Tu peux aussi faire glisser la pièce avec le doigt ou la souris."
+    },
+    {
+      "step": "intro",
+      "title": "Les flèches et les couleurs",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "arrows": [
+        [
+          "g1",
+          "f3"
+        ]
+      ],
+      "marks": [
+        "f3"
+      ],
+      "text": "Quand une flèche ou une case colorée apparaît, c’est moi qui te montre quelque chose, comme si je pointais du doigt. Les flèches ne bougent pas les pièces : elles montrent une idée. Ici, la flèche montre un coup possible de ton cavalier."
+    },
+    {
+      "step": "intro",
+      "title": "Le but du jeu",
+      "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "a1a8",
+          "text": "La tour blanche monte tout en haut et attaque le roi noir. Le roi noir ne peut aller nulle part : ses propres pions lui bloquent le chemin. C’est « échec et mat », ou simplement « mat ». La partie est finie, les blancs ont gagné."
+        }
+      ],
+      "text": "Le but du jeu, c’est d’attaquer (menacer une case que ta pièce surveille) le roi adverse de façon qu’il ne puisse plus s’échapper. On ne prend jamais le roi : la partie s’arrête juste avant. Regarde la démonstration."
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "prompt": "C’est à toi, tu joues les blancs. Avance de deux cases le pion qui est devant ton roi (le pion en e2).",
+      "solution": [
+        "e2e4"
+      ],
+      "check": "rule",
+      "success": "Parfait, tu sais jouer un coup. Maintenant ce serait aux noirs de jouer.",
+      "hint": "Ton roi est la pièce avec une petite croix, en bas au milieu. Le pion juste devant lui peut avancer de deux cases au premier coup.",
+      "accept": [
+        "e2e4"
+      ]
+    }
+  ],
+  "retenir": "Les blancs commencent. On joue chacun son tour. Le but : mettre le roi adverse échec et mat.",
+  "contentVersion": 2,
+  "principle": "Les blancs commencent. On joue chacun son tour. Le but : mettre le roi adverse échec et mat.",
+  "entryChallenge": {
+    "kind": "move",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "prompt": "C’est à toi, tu joues les blancs. Avance de deux cases le pion qui est devant ton roi (le pion en e2).",
+    "solution": [
+      "e2e4"
+    ],
+    "check": "rule",
+    "success": "Parfait, tu sais jouer un coup. Maintenant ce serait aux noirs de jouer.",
+    "hint": "Ton roi est la pièce avec une petite croix, en bas au milieu. Le pion juste devant lui peut avancer de deux cases au premier coup.",
+    "accept": [
+      "e2e4"
+    ],
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
+}

@@ -1,50 +1,9 @@
 {
   "id": "fin-convert",
-  "title": "Convertir un avantage matériel",
   "tier": 3,
   "priority": "S",
-  "domain": "finales",
   "prerequisites": [
     "proc-blunder-check"
-  ],
-  "principle": "Avec du matériel en plus : échange les pièces, pas les pions ; garde ton roi en sécurité ; supprime le contre-jeu avant d'attaquer.",
-  "why": [
-    "Chaque échange de pièces augmente proportionnellement ton avantage (5 contre 2 vaut mieux que 39 contre 36). Les pions sont ce qui te permettra de promouvoir."
-  ],
-  "signals": [],
-  "method": [
-    "Vérifie la sécurité de ton roi et les menaces adverses.",
-    "Propose des échanges de pièces, surtout de la pièce adverse la plus active.",
-    "Crée un pion passé et pousse-le avec l'aide du roi.",
-    "Pas de complications inutiles : le coup simple et sûr suffit."
-  ],
-  "pitfall": {
-    "text": "Pressé de gagner, on laisse une pièce en prise ou on autorise un échec perpétuel.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4r3/7p/p1pB2p1/P1P5/R5P1/3bk2P/4p1K1/8 w - - 2 47",
-    "solution": [
-      "d6f4"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/a018s",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "4r3/7p/p1pB2p1/P1P5/R5P1/3bk2P/4p1K1/8 w - - 2 47",
-      "move": "d6f4",
-      "text": "",
-      "arrows": [
-        [
-          "d6",
-          "f4"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "crushing",
@@ -62,47 +21,124 @@
   },
   "sources": [],
   "videoId": "convert-advantage",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Avec du matériel en plus : échange les pièces, pas les pions. Garde ton roi en sécurité. Supprime le contre-jeu avant d'attaquer.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "Chaque échange de pièces augmente proportionnellement ton avantage (5 contre 2 vaut mieux que 39 contre 36). Les pions sont ce qui te permettra de promouvoir.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Vérifie la sécurité de ton roi et les menaces adverses.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Propose des échanges de pièces, surtout de la pièce adverse la plus active.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Crée un pion passé et pousse-le avec l'aide du roi.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Pas de complications inutiles : le coup simple et sûr suffit.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Pressé de gagner, on laisse une pièce en prise ou on autorise un échec perpétuel.",
-      "audio": null
-    }
-  ],
-  "examples": [],
   "videos": [
     "convert-advantage"
-  ]
+  ],
+  "domain": "finales",
+  "title": "Transformer tes pièces en plus en victoire",
+  "introduces": [],
+  "challenge": {
+    "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+    "kind": "move",
+    "solution": [
+      "d1d8"
+    ],
+    "check": "engine",
+    "prompt": "Tu as une dame de plus. Enlève la tour noire en d8 avant qu’elle crée une attaque.",
+    "accept": [
+      "d1d8"
+    ],
+    "alsoGood": [],
+    "hint": "Compte d’abord les points : dame neuf, tour cinq. Puis cherche les prises qui enlèvent une pièce adverse sans perdre ton avance. Ici, la colonne d est libre entre les deux tours.",
+    "success": "La tour blanche prend la tour noire en d8. Tu enlèves une pièce dangereuse tout en gardant ta dame en e1. Les noirs ont moins de possibilités contre ton roi."
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Transformer tes pièces en plus en victoire",
+      "text": "Quand tu as plus de pièces, simplifie les dangers avant d’attaquer. Ici, les blancs ont une dame de plus. La tour noire en d8 est encore capable de donner des échecs.",
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Compte d’abord les points : dame neuf, tour cinq. Puis cherche les prises qui enlèvent une pièce adverse sans perdre ton avance. Ici, la colonne d est libre entre les deux tours.",
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "d8"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour blanche en d1 prend la tour noire en d8 avec échec. Tu gardes ta dame en plus.",
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "d1d8",
+          "text": "La tour blanche en d1 prend la tour noire en d8 avec échec. Tu gardes ta dame en plus."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La tour blanche prend la tour noire en d8. Tu enlèves une pièce dangereuse tout en gardant ta dame en e1. Les noirs ont moins de possibilités contre ton roi.",
+      "fen": "3R2k1/pp3ppp/8/8/8/8/PP3PPP/4Q1K1 b - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ne cherche pas seulement à échanger. Une prise qui ouvre ton roi ou enferme le roi adverse sans l’attaquer peut gâcher la partie. Vérifie toujours les réponses et les sorties des rois.",
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1"
+    }
+  ],
+  "exercises": [
+    {
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+      "kind": "move",
+      "solution": [
+        "d1d8"
+      ],
+      "check": "engine",
+      "prompt": "Tu as une dame de plus. Enlève la tour noire en d8 avant qu’elle crée une attaque.",
+      "accept": [
+        "d1d8"
+      ],
+      "alsoGood": [],
+      "hint": "Compte d’abord les points : dame neuf, tour cinq. Puis cherche les prises qui enlèvent une pièce adverse sans perdre ton avance. Ici, la colonne d est libre entre les deux tours.",
+      "success": "La tour blanche prend la tour noire en d8. Tu enlèves une pièce dangereuse tout en gardant ta dame en e1. Les noirs ont moins de possibilités contre ton roi."
+    }
+  ],
+  "retenir": "Avec des pièces en plus, enlève les dangers contre ton roi avant de chercher à terminer la partie.",
+  "review": {
+    "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+    "kind": "move",
+    "solution": [
+      "d1d8"
+    ],
+    "check": "engine",
+    "prompt": "Tu as une dame de plus. Enlève la tour noire en d8 avant qu’elle crée une attaque.",
+    "accept": [
+      "d1d8"
+    ],
+    "alsoGood": [],
+    "hint": "Compte d’abord les points : dame neuf, tour cinq. Puis cherche les prises qui enlèvent une pièce adverse sans perdre ton avance. Ici, la colonne d est libre entre les deux tours.",
+    "success": "La tour blanche prend la tour noire en d8. Tu enlèves une pièce dangereuse tout en gardant ta dame en e1. Les noirs ont moins de possibilités contre ton roi."
+  },
+  "contentVersion": 2,
+  "principle": "Avec des pièces en plus, enlève les dangers contre ton roi avant de chercher à terminer la partie.",
+  "entryChallenge": {
+    "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+    "kind": "move",
+    "solution": [
+      "d1d8"
+    ],
+    "check": "engine",
+    "prompt": "Tu as une dame de plus. Enlève la tour noire en d8 avant qu’elle crée une attaque.",
+    "accept": [
+      "d1d8"
+    ],
+    "alsoGood": [],
+    "hint": "Compte d’abord les points : dame neuf, tour cinq. Puis cherche les prises qui enlèvent une pièce adverse sans perdre ton avance. Ici, la colonne d est libre entre les deux tours.",
+    "success": "La tour blanche prend la tour noire en d8. Tu enlèves une pièce dangereuse tout en gardant ta dame en e1. Les noirs ont moins de possibilités contre ton roi.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

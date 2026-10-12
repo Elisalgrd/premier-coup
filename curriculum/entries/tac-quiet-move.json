@@ -1,71 +1,9 @@
 {
   "id": "tac-quiet-move",
-  "title": "Le coup calme décisif",
   "tier": 3,
   "priority": "B",
-  "domain": "tactique",
   "prerequisites": [
     "proc-candidates-calc"
-  ],
-  "principle": "Le coup gagnant ne donne pas toujours échec et ne capture pas toujours. Il peut créer une menace imparable ou supprimer une défense.",
-  "why": [
-    "Après avoir appris à chercher les coups forçants, il faut savoir que ce n'est pas toujours le cas."
-  ],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
-    "solution": [
-      "c3e5",
-      "b8a8",
-      "e5d6"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/Rd49A",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
-      "move": "c3e5",
-      "text": "",
-      "arrows": [
-        [
-          "c3",
-          "e5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "1k4r1/1p6/p1pq4/P3Bp2/1P2p2p/3rP2P/1Q3P1K/2R5 b - - 6 40",
-      "move": "b8a8",
-      "text": "",
-      "arrows": [
-        [
-          "b8",
-          "a8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "k5r1/1p6/p1pq4/P3Bp2/1P2p2p/3rP2P/1Q3P1K/2R5 w - - 7 41",
-      "move": "e5d6",
-      "text": "",
-      "arrows": [
-        [
-          "e5",
-          "d6"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "quietMove",
@@ -83,20 +21,138 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Un coup utile sans échec ni prise",
+  "introduces": [
+    "coup calme"
+  ],
+  "challenge": {
+    "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
+    "solution": [
+      "c3e5",
+      "b8a8",
+      "e5d6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton fou en c3 peut attaquer la dame en d6 sans donner échec. Trouve sa case.",
+    "accept": [
+      "c3e5"
+    ],
+    "alsoGood": [],
+    "hint": "Quand les échecs et les prises ne donnent rien, cherche une attaque de dame ou une menace contre le roi. Ici, commence par regarder les diagonales de ton fou en c3.",
+    "success": "En e5, ton fou attaque la dame noire en d6. Il agit sur une diagonale proche du roi noir en b8. Regarde pourquoi les noirs ne peuvent pas simplement ignorer l’attaque."
+  },
   "screens": [
     {
-      "title": "Pourquoi",
-      "text": "Après avoir appris à chercher les coups forçants, il faut savoir que ce n'est pas toujours le cas.",
-      "audio": null
+      "step": "principe",
+      "title": "Un coup utile sans échec ni prise",
+      "text": "Un coup calme ne donne pas échec et ne prend rien tout de suite. Il peut pourtant créer une attaque impossible à éviter. Ici, ton fou en c3 peut rejoindre e5.",
+      "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
+      "marks": []
     },
     {
-      "title": "Principe",
-      "text": "Le coup gagnant ne donne pas toujours échec et ne capture pas toujours. Il peut créer une menace imparable ou supprimer une défense.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Quand les échecs et les prises ne donnent rien, cherche une attaque de dame ou une menace contre le roi. Ici, commence par regarder les diagonales de ton fou en c3.",
+      "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
+      "arrows": [
+        [
+          "c3",
+          "e5"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le fou en c3 va en e5 : il attaque la dame en d6.",
+      "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
+      "line": [
+        {
+          "uci": "c3e5",
+          "text": "Le fou en c3 va en e5 : il attaque la dame en d6."
+        },
+        {
+          "uci": "b8a8",
+          "text": "Le roi noir va en a8."
+        },
+        {
+          "uci": "e5d6",
+          "text": "Le fou en e5 prend la dame en d6."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "En e5, ton fou attaque la dame noire en d6. Il agit sur une diagonale proche du roi noir en b8. Regarde pourquoi les noirs ne peuvent pas simplement ignorer l’attaque.",
+      "fen": "k5r1/1p6/p1pB4/P4p2/1P2p2p/3rP2P/1Q3P1K/2R5 b - - 0 41"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Un coup calme laisse à l’adversaire le temps de jouer. Vérifie donc ses échecs et ses prises avant de préparer ton attaque. Ton roi en h2 doit rester en sécurité.",
+      "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40"
     }
   ],
+  "exercises": [
+    {
+      "fen": "k5r1/1p6/p1pq4/P3Bp2/1P2p2p/3rP2P/1Q3P1K/2R5 w - - 7 41",
+      "solution": [
+        "e5d6"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. Le fou en e5 prend la dame en d6.",
+      "accept": [
+        "e5d6"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en e5.",
+      "success": "En e5, ton fou attaque la dame noire en d6. Il agit sur une diagonale proche du roi noir en b8. Regarde pourquoi les noirs ne peuvent pas simplement ignorer l’attaque."
+    }
+  ],
+  "retenir": "Si aucun échec ni aucune prise ne marche, cherche une attaque qui prépare un gain au coup suivant.",
+  "review": {
+    "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
+    "solution": [
+      "c3e5",
+      "b8a8",
+      "e5d6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton fou en c3 peut attaquer la dame en d6 sans donner échec. Trouve sa case.",
+    "accept": [
+      "c3e5"
+    ],
+    "alsoGood": [],
+    "hint": "Quand les échecs et les prises ne donnent rien, cherche une attaque de dame ou une menace contre le roi. Ici, commence par regarder les diagonales de ton fou en c3.",
+    "success": "En e5, ton fou attaque la dame noire en d6. Il agit sur une diagonale proche du roi noir en b8. Regarde pourquoi les noirs ne peuvent pas simplement ignorer l’attaque."
+  },
+  "contentVersion": 2,
+  "principle": "Si aucun échec ni aucune prise ne marche, cherche une attaque qui prépare un gain au coup suivant.",
+  "entryChallenge": {
+    "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
+    "solution": [
+      "c3e5",
+      "b8a8",
+      "e5d6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton fou en c3 peut attaquer la dame en d6 sans donner échec. Trouve sa case.",
+    "accept": [
+      "c3e5"
+    ],
+    "alsoGood": [],
+    "hint": "Quand les échecs et les prises ne donnent rien, cherche une attaque de dame ou une menace contre le roi. Ici, commence par regarder les diagonales de ton fou en c3.",
+    "success": "En e5, ton fou attaque la dame noire en d6. Il agit sur une diagonale proche du roi noir en b8. Regarde pourquoi les noirs ne peuvent pas simplement ignorer l’attaque.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

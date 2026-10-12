@@ -1,159 +1,9 @@
 {
   "id": "ouv-principles",
-  "title": "Les trois principes de l'ouverture",
   "tier": 1,
   "priority": "S",
-  "domain": "ouvertures",
   "prerequisites": [
     "vis-notation"
-  ],
-  "principle": "Dans les 10 premiers coups : prends le centre, sors tes pièces, mets ton roi à l'abri.",
-  "why": [
-    "Le centre donne de l'espace et des cases aux pièces. Chaque pièce sortie est une pièce qui joue. Un roi au centre se fait attaquer dès que les lignes s'ouvrent. Ces trois buts se soutiennent (idée reprise de Julien Song : comprendre le but des coups, pas les réciter)."
-  ],
-  "signals": [],
-  "method": [
-    "Premier coup : e4 ou d4 (avec les noirs : répondre e5 ou d5, ou contester le centre autrement).",
-    "Sors les cavaliers avant les fous, vers le centre (Cf3, Cc3 / ...Cf6, ...Cc6).",
-    "Ne bouge pas deux fois la même pièce sans raison (capture, menace à parer).",
-    "Ne sors pas ta dame trop tôt : elle se fait chasser avec gain de temps.",
-    "Roque tôt, en général avant le 10e coup.",
-    "Connecte tes tours (plus aucune pièce entre elles), puis place-les sur les colonnes ouvertes ou centrales.",
-    "Ne pousse pas les pions devant ton roi roqué sans raison.",
-    "Ne prends pas des pions éloignés (a, b, g, h) au prix de ton développement."
-  ],
-  "pitfall": {
-    "text": "une règle cède devant une tactique. Si la dame peut prendre une pièce gratuite, ce n'est pas « sortir la dame trop tôt ». Si l'adversaire menace quelque chose, on y répond avant de développer.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
-    "solution": [
-      "e2e4",
-      "e7e5",
-      "g1f3",
-      "b8c6",
-      "f1c4",
-      "f8c5",
-      "d2d3",
-      "g8f6",
-      "e1g1"
-    ],
-    "prompt": "Trait aux blancs. Développe tes pièces en contrôlant le centre.",
-    "outcome": null,
-    "mode": "opening",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
-      "move": "e2e4",
-      "text": "",
-      "arrows": [
-        [
-          "e2",
-          "e4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
-      "move": "e7e5",
-      "text": "",
-      "arrows": [
-        [
-          "e7",
-          "e5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-      "move": "g1f3",
-      "text": "",
-      "arrows": [
-        [
-          "g1",
-          "f3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
-      "move": "b8c6",
-      "text": "",
-      "arrows": [
-        [
-          "b8",
-          "c6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
-      "move": "f1c4",
-      "text": "",
-      "arrows": [
-        [
-          "f1",
-          "c4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
-      "move": "f8c5",
-      "text": "",
-      "arrows": [
-        [
-          "f8",
-          "c5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
-      "move": "d2d3",
-      "text": "",
-      "arrows": [
-        [
-          "d2",
-          "d3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4",
-      "move": "g8f6",
-      "text": "",
-      "arrows": [
-        [
-          "g8",
-          "f6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 1 5",
-      "move": "e1g1",
-      "text": "",
-      "arrows": [
-        [
-          "e1",
-          "g1"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "opening"
@@ -175,68 +25,280 @@
     }
   ],
   "videoId": "course-italian",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Dans les 10 premiers coups : prends le centre, sors tes pièces, mets ton roi à l'abri.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "Le centre donne de l'espace et des cases aux pièces. Chaque pièce sortie est une pièce qui joue. Un roi au centre se fait attaquer dès que les lignes s'ouvrent. Ces trois buts se soutiennent (idée reprise de Julien Song : comprendre le but des coups, pas les réciter).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Premier coup : e4 ou d4 (avec les noirs : répondre e5 ou d5, ou contester le centre autrement).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Sors les cavaliers avant les fous, vers le centre (Cf3, Cc3 / ...Cf6, ...Cc6).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Ne bouge pas deux fois la même pièce sans raison (capture, menace à parer).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Ne sors pas ta dame trop tôt : elle se fait chasser avec gain de temps.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Roque tôt, en général avant le 10e coup.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Connecte tes tours (plus aucune pièce entre elles), puis place-les sur les colonnes ouvertes ou centrales.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Ne pousse pas les pions devant ton roi roqué sans raison.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Ne prends pas des pions éloignés (a, b, g, h) au prix de ton développement.",
-      "audio": null
-    },
-    {
-      "title": "Piège / exceptions",
-      "text": "Une règle cède devant une tactique. Si la dame peut prendre une pièce gratuite, ce n'est pas « sortir la dame trop tôt ». Si l'adversaire menace quelque chose, on y répond avant de développer.",
-      "audio": null
-    }
-  ],
-  "examples": [],
   "videos": [
     "course-italian",
     "course-king-safety"
-  ]
+  ],
+  "domain": "ouvertures",
+  "title": "Bien commencer une partie",
+  "introduces": [
+    "développer",
+    "centre",
+    "ouverture",
+    "menace",
+    "défendre, protéger"
+  ],
+  "challenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "prompt": "C’est le tout premier coup de la partie et tu joues les blancs. Joue un coup qui prend de la place au milieu de l’échiquier.",
+    "solution": [
+      "e2e4"
+    ],
+    "check": "list",
+    "accept": [
+      "e2e4",
+      "d2d4",
+      "g1f3",
+      "c2c4"
+    ],
+    "hint": "Les 4 cases du milieu sont d4, e4, d5 et e5. Un de tes pions peut y aller.",
+    "engine": {
+      "best": "e2e4",
+      "score": 36,
+      "depth": 16
+    },
+    "alsoGood": [
+      "e2e3",
+      "g2g3",
+      "b1c3",
+      "c2c3",
+      "d2d3",
+      "a2a3"
+    ],
+    "kind": "move"
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Trois objectifs pour les 10 premiers coups",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "d4",
+        "e4",
+        "d5",
+        "e5"
+      ],
+      "text": "Au début de la partie, tu as trois objectifs. Un : prendre de la place au « centre », les 4 cases du milieu (d4, e4, d5, e5). Deux : sortir tes pièces de leur case de départ. Trois : mettre ton roi à l’abri en roquant. Ces trois idées marchent dans toutes les ouvertures."
+    },
+    {
+      "step": "pourquoi",
+      "title": "Pourquoi le centre",
+      "fen": "rnbqkbnr/pppppppp/8/8/3NP3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "c6"
+        ],
+        [
+          "d4",
+          "e6"
+        ],
+        [
+          "d4",
+          "f5"
+        ],
+        [
+          "d4",
+          "b5"
+        ],
+        [
+          "d4",
+          "f3"
+        ],
+        [
+          "d4",
+          "b3"
+        ],
+        [
+          "d4",
+          "c2"
+        ],
+        [
+          "d4",
+          "e2"
+        ]
+      ],
+      "text": "Une pièce au centre contrôle beaucoup plus de cases qu’une pièce au bord. Ce cavalier en d4 atteint 8 cases. Dans un coin, il n’en atteindrait que 2. Celui qui tient le centre a plus de place pour ses pièces."
+    },
+    {
+      "step": "principe",
+      "title": "Sortir ses pièces",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "arrows": [
+        [
+          "g1",
+          "f3"
+        ],
+        [
+          "b1",
+          "c3"
+        ],
+        [
+          "f1",
+          "c4"
+        ]
+      ],
+      "text": "« Développer » une pièce, c’est la sortir de sa case de départ pour qu’elle participe au jeu. Commence par les cavaliers et les fous, vers le centre. Chaque pièce qui reste chez elle, c’est un joueur de moins dans ton équipe."
+    },
+    {
+      "step": "principe",
+      "title": "Mettre son roi à l’abri",
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+      "arrows": [
+        [
+          "e1",
+          "g1"
+        ]
+      ],
+      "text": "Quand ton cavalier et ton fou côté roi sont sortis, la voie est libre pour roquer. Fais-le tôt, en général avant le 10e coup. Un roi qui reste au milieu se fait attaquer dès que des lignes s’ouvrent."
+    },
+    {
+      "step": "methode",
+      "title": "Les règles pratiques",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "text": "Quelques règles simples. Ne bouge pas deux fois la même pièce sans raison. Ne sors pas ta dame trop tôt. Ne va pas chercher un pion loin sur le côté si ça retarde tes autres pièces. Et quand toutes tes pièces sont sorties, tes deux tours doivent pouvoir se voir sur la rangée du fond."
+    },
+    {
+      "step": "piege",
+      "title": "La dame sortie trop tôt",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "line": [
+        {
+          "uci": "d1h5",
+          "text": "Les blancs sortent leur dame dès le 2e coup. Elle menace (ce que l’adversaire pourrait faire de dangereux au prochain coup) le pion en e5 et la case f7."
+        },
+        {
+          "uci": "b8c6",
+          "text": "Les noirs protègent leur pion en sortant un cavalier. Une pièce de plus dans le jeu."
+        },
+        {
+          "uci": "f1c4",
+          "text": "Les blancs menacent maintenant Dxf7, qui serait mat."
+        },
+        {
+          "uci": "g7g6",
+          "text": "Le pion chasse la dame. Les noirs gagnent du temps."
+        },
+        {
+          "uci": "h5f3",
+          "text": "La dame revient, et menace encore f7."
+        },
+        {
+          "uci": "g8f6",
+          "text": "Le cavalier bloque la ligne de la dame vers f7, en se développant. Les noirs ont sorti deux pièces ; la dame blanche a bougé trois fois."
+        }
+      ],
+      "text": "Sortir la dame très tôt semble agressif, mais l’adversaire la chasse en sortant ses pièces. Regarde."
+    },
+    {
+      "step": "piege",
+      "title": "Les règles cèdent devant les menaces",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+      "arrows": [
+        [
+          "h5",
+          "f7"
+        ],
+        [
+          "c4",
+          "f7"
+        ]
+      ],
+      "marks": [
+        "f7"
+      ],
+      "text": "Une règle d’ouverture ne passe jamais avant une menace. Ici, la dame et le fou blancs visent f7 : si les noirs continuent à sortir tranquillement leurs pièces, Dxf7 est mat. On répond d’abord à la menace, puis on reprend le développement."
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "prompt": "Après 1.e4 e5, sors une pièce vers le centre.",
+      "solution": [
+        "g1f3"
+      ],
+      "check": "list",
+      "accept": [
+        "g1f3",
+        "b1c3",
+        "f1c4"
+      ],
+      "success": "Une pièce de plus dans le jeu, vers le centre. Bien.",
+      "hint": "Tes cavaliers et ton fou en f1 peuvent sortir.",
+      "engine": {
+        "best": "g1f3",
+        "score": 33,
+        "depth": 16
+      },
+      "alsoGood": [
+        "d2d4",
+        "g1e2",
+        "d2d3",
+        "a2a3",
+        "f1e2",
+        "a2a4",
+        "c2c3"
+      ]
+    },
+    {
+      "kind": "move",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+      "prompt": "Tu joues les noirs. Les blancs menacent Dxf7, mat. Protège-toi.",
+      "solution": [
+        "g7g6"
+      ],
+      "check": "engine",
+      "success": "La menace est parée. Ensuite, tu pourras chasser cette dame en sortant tes pièces.",
+      "hint": "Tu peux chasser la dame, ou protéger (pouvoir reprendre si l’adversaire prend cette pièce) f7 avec ta dame.",
+      "accept": [
+        "g7g6",
+        "d8e7",
+        "d8f6",
+        "g8h6"
+      ],
+      "engine": {
+        "best": "g7g6",
+        "score": 25,
+        "depth": 16
+      },
+      "alsoGood": []
+    }
+  ],
+  "retenir": "Centre, pièces dehors, roi à l’abri. Mais une menace passe toujours avant.",
+  "contentVersion": 2,
+  "principle": "Centre, pièces dehors, roi à l’abri. Mais une menace passe toujours avant.",
+  "entryChallenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "prompt": "C’est le tout premier coup de la partie et tu joues les blancs. Joue un coup qui prend de la place au milieu de l’échiquier.",
+    "solution": [
+      "e2e4"
+    ],
+    "check": "list",
+    "accept": [
+      "e2e4",
+      "d2d4",
+      "g1f3",
+      "c2c4"
+    ],
+    "hint": "Les 4 cases du milieu sont d4, e4, d5 et e5. Un de tes pions peut y aller.",
+    "engine": {
+      "best": "e2e4",
+      "score": 36,
+      "depth": 16
+    },
+    "alsoGood": [
+      "e2e3",
+      "g2g3",
+      "b1c3",
+      "c2c3",
+      "d2d3",
+      "a2a3"
+    ],
+    "kind": "move",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

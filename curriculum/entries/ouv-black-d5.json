@@ -1,21 +1,228 @@
 {
   "id": "ouv-black-d5",
-  "title": "Avec les noirs contre 1.d4 : la structure d5-e6",
   "tier": 2,
   "priority": "A",
-  "domain": "ouvertures",
   "prerequisites": [
     "ouv-principles"
   ],
-  "principle": "d5, e6, Cf6, Fe7, O-O, puis ...c5 ou ...b6 et ...Fb7. Une base solide qui marche contre presque tous les systèmes avec d4.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
+  "lichessThemes": [
+    "opening"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "3 parties contre le moteur depuis 1.d4."
   },
+  "sources": [],
+  "videoId": "queens-gambit",
+  "videos": [
+    "queens-gambit"
+  ],
+  "domain": "ouvertures",
+  "title": "Avec les noirs, répondre au pion d4",
+  "introduces": [],
+  "challenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+    "solution": [
+      "d7d5",
+      "c2c4",
+      "e7e6",
+      "b1c3",
+      "g8f6",
+      "c1g5",
+      "f8e7",
+      "e2e3",
+      "e8g8",
+      "g1f3",
+      "h7h6",
+      "g5h4",
+      "b7b6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Le pion blanc vient d’arriver en d4. Réponds avec ton pion d7.",
+    "accept": [
+      "d7d5"
+    ],
+    "alsoGood": [
+      "g8f6",
+      "e7e6",
+      "c7c6",
+      "d7d6",
+      "g7g6",
+      "f7f5",
+      "c7c5",
+      "a7a6",
+      "h7h6"
+    ],
+    "hint": "Place d’abord d5, puis e6 quand cela convient. Sors le cavalier g8 en f6 et le fou f8 en e7. Une fois le chemin libre, mets ton roi à l’abri avec la tour h8.",
+    "success": "Les noirs ont protégé le pion d5 et leur roi a rejoint g8. Le pion b6 prépare la sortie du fou en c8 vers b7."
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Avec les noirs, répondre au pion d4",
+      "text": "Le pion blanc vient d’arriver en d4. Tu peux avancer ton pion d7 en d5 pour lui contester les cases du milieu. Ton pion e7 pourra ensuite le soutenir depuis e6.",
+      "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Place d’abord d5, puis e6 quand cela convient. Sors le cavalier g8 en f6 et le fou f8 en e7. Une fois le chemin libre, mets ton roi à l’abri avec la tour h8.",
+      "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "arrows": [
+        [
+          "d7",
+          "d5"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le pion noir avance en d5 et surveille c4 et e4.",
+      "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "line": [
+        {
+          "uci": "d7d5",
+          "text": "Le pion noir avance en d5 et surveille c4 et e4."
+        },
+        {
+          "uci": "c2c4",
+          "text": "Les blancs attaquent d5 avec leur pion c4."
+        },
+        {
+          "uci": "e7e6",
+          "text": "Le pion noir va en e6 pour soutenir d5."
+        },
+        {
+          "uci": "b1c3",
+          "text": "Le cavalier blanc sort en c3."
+        },
+        {
+          "uci": "g8f6",
+          "text": "Le cavalier noir sort en f6 et protège d5."
+        },
+        {
+          "uci": "c1g5",
+          "text": "Le fou blanc va en g5 et vise le cavalier."
+        },
+        {
+          "uci": "f8e7",
+          "text": "Le fou noir sort en e7 et libère le chemin du roi."
+        },
+        {
+          "uci": "e2e3",
+          "text": "Le pion blanc va en e3."
+        },
+        {
+          "uci": "e8g8",
+          "text": "Le roi noir va en g8 et la tour en f8 : le roi est à l’abri."
+        },
+        {
+          "uci": "g1f3",
+          "text": "Le cavalier blanc sort en f3."
+        },
+        {
+          "uci": "h7h6",
+          "text": "Le pion noir va en h6 et attaque le fou en g5."
+        },
+        {
+          "uci": "g5h4",
+          "text": "Le fou blanc recule en h4."
+        },
+        {
+          "uci": "b7b6",
+          "text": "Le pion noir va en b6 pour préparer la sortie du fou en c8."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Les noirs ont protégé le pion d5 et leur roi a rejoint g8. Le pion b6 prépare la sortie du fou en c8 vers b7.",
+      "fen": "rnbq1rk1/p1p1bpp1/1p2pn1p/3p4/2PP3B/2N1PN2/PP3PPP/R2QKB1R w KQ - 0 8"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Le pion e6 protège d5, mais il ferme aussi la diagonale du fou en c8. Pense à donner plus tard une sortie à ce fou. Ici, b6 prépare b7.",
+      "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1"
+    }
+  ],
+  "exercises": [
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "solution": [
+        "e7e6",
+        "b1c3",
+        "g8f6",
+        "c1g5",
+        "f8e7",
+        "e2e3",
+        "e8g8",
+        "g1f3",
+        "h7h6",
+        "g5h4",
+        "b7b6"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. Le pion noir va en e6 pour soutenir d5.",
+      "accept": [
+        "e7e6"
+      ],
+      "alsoGood": [
+        "c7c6",
+        "d5c4",
+        "b8c6",
+        "c7c5",
+        "g8f6",
+        "c8f5",
+        "g7g6",
+        "e7e5",
+        "b7b6"
+      ],
+      "hint": "Regarde la pièce en e7.",
+      "success": "Les noirs ont protégé le pion d5 et leur roi a rejoint g8. Le pion b6 prépare la sortie du fou en c8 vers b7."
+    }
+  ],
+  "retenir": "Contre d4, le duo d5 et e6 forme une base. N’oublie pas de faire sortir le fou en c8.",
+  "review": {
+    "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+    "solution": [
+      "d7d5",
+      "c2c4",
+      "e7e6",
+      "b1c3",
+      "g8f6",
+      "c1g5",
+      "f8e7",
+      "e2e3",
+      "e8g8",
+      "g1f3",
+      "h7h6",
+      "g5h4",
+      "b7b6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Le pion blanc vient d’arriver en d4. Réponds avec ton pion d7.",
+    "accept": [
+      "d7d5"
+    ],
+    "alsoGood": [],
+    "hint": "Place d’abord d5, puis e6 quand cela convient. Sors le cavalier g8 en f6 et le fou f8 en e7. Une fois le chemin libre, mets ton roi à l’abri avec la tour h8.",
+    "success": "Les noirs ont protégé le pion d5 et leur roi a rejoint g8. Le pion b6 prépare la sortie du fou en c8 vers b7."
+  },
+  "contentVersion": 2,
+  "principle": "Contre d4, le duo d5 et e6 forme une base. N’oublie pas de faire sortir le fou en c8.",
   "entryChallenge": {
     "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
     "solution": [
@@ -33,200 +240,28 @@
       "g5h4",
       "b7b6"
     ],
-    "prompt": "Trait aux noirs. Développe tes pièces et prépare la sécurité du roi.",
-    "outcome": null,
-    "mode": "opening",
-    "source": "CURRICULUM.md"
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Le pion blanc vient d’arriver en d4. Réponds avec ton pion d7.",
+    "accept": [
+      "d7d5"
+    ],
+    "alsoGood": [
+      "g8f6",
+      "e7e6",
+      "c7c6",
+      "d7d6",
+      "g7g6",
+      "f7f5",
+      "c7c5",
+      "a7a6",
+      "h7h6"
+    ],
+    "hint": "Place d’abord d5, puis e6 quand cela convient. Sors le cavalier g8 en f6 et le fou f8 en e7. Une fois le chemin libre, mets ton roi à l’abri avec la tour h8.",
+    "success": "Les noirs ont protégé le pion d5 et leur roi a rejoint g8. Le pion b6 prépare la sortie du fou en c8 vers b7.",
+    "mode": "move"
   },
-  "guided": [
-    {
-      "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
-      "move": "d7d5",
-      "text": "",
-      "arrows": [
-        [
-          "d7",
-          "d5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
-      "move": "c2c4",
-      "text": "",
-      "arrows": [
-        [
-          "c2",
-          "c4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
-      "move": "e7e6",
-      "text": "",
-      "arrows": [
-        [
-          "e7",
-          "e6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
-      "move": "b1c3",
-      "text": "",
-      "arrows": [
-        [
-          "b1",
-          "c3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3",
-      "move": "g8f6",
-      "text": "",
-      "arrows": [
-        [
-          "g8",
-          "f6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
-      "move": "c1g5",
-      "text": "",
-      "arrows": [
-        [
-          "c1",
-          "g5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4",
-      "move": "f8e7",
-      "text": "",
-      "arrows": [
-        [
-          "f8",
-          "e7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqk2r/ppp1bppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR w KQkq - 4 5",
-      "move": "e2e3",
-      "text": "",
-      "arrows": [
-        [
-          "e2",
-          "e3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqk2r/ppp1bppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/R2QKBNR b KQkq - 0 5",
-      "move": "e8g8",
-      "text": "",
-      "arrows": [
-        [
-          "e8",
-          "g8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/R2QKBNR w KQ - 1 6",
-      "move": "g1f3",
-      "text": "",
-      "arrows": [
-        [
-          "g1",
-          "f3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQ - 2 6",
-      "move": "h7h6",
-      "text": "",
-      "arrows": [
-        [
-          "h7",
-          "h6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbq1rk1/ppp1bpp1/4pn1p/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQ - 0 7",
-      "move": "g5h4",
-      "text": "",
-      "arrows": [
-        [
-          "g5",
-          "h4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbq1rk1/ppp1bpp1/4pn1p/3p4/2PP3B/2N1PN2/PP3PPP/R2QKB1R b KQ - 1 7",
-      "move": "b7b6",
-      "text": "",
-      "arrows": [
-        [
-          "b7",
-          "b6"
-        ]
-      ],
-      "marks": []
-    }
-  ],
-  "lichessThemes": [
-    "opening"
-  ],
-  "ratingBand": [
-    400,
-    2200
-  ],
-  "mastery": {
-    "attempts": 15,
-    "accuracy": 0.8,
-    "distinctDays": 2,
-    "description": "3 parties contre le moteur depuis 1.d4."
-  },
-  "sources": [],
-  "videoId": "queens-gambit",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "D5, e6, Cf6, Fe7, O-O, puis ...c5 ou ...b6 et ...Fb7. Une base solide qui marche contre presque tous les systèmes avec d4.",
-      "audio": null
-    },
-    {
-      "title": "Plans",
-      "text": "...c5 pour attaquer le centre blanc. Le fou c8 est la pièce difficile, le sortir par b7 (après ...b6) ou f5 (avant ...e6).",
-      "audio": null
-    }
-  ],
+  "guided": [],
   "examples": [],
-  "videos": [
-    "queens-gambit"
-  ]
+  "pitfall": {}
 }

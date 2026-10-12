@@ -1,74 +1,8 @@
 {
   "id": "meta-play-slow",
-  "title": "Jouer lentement pour apprendre",
   "tier": 1,
   "priority": "S",
-  "domain": "méthode",
   "prerequisites": [],
-  "principle": "Joue assez lentement pour appliquer ta routine à chaque coup. Vise au moins quinze minutes, avec dix secondes ajoutées par coup.",
-  "why": [
-    "En blitz (3 à 5 min), on répète ses mauvais réflexes. En partie lente, on installe les bons. Le blitz est un loisir, pas un entraînement à ce niveau."
-  ],
-  "signals": [],
-  "method": [
-    "3 à 5 parties lentes par semaine (Lichess 15+10 ou 30+0, ou contre le moteur de l'app).",
-    "Chaque partie perdue est analysée (voir meta-game-review).",
-    "Garde le blitz pour après, quand la routine est automatique."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
-    "solution": [
-      "e4d6",
-      "e8d7",
-      "d6b5"
-    ],
-    "prompt": "Prends le temps de vérifier les échecs, captures et menaces.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
-      "move": "e4d6",
-      "text": "",
-      "arrows": [
-        [
-          "e4",
-          "d6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4k3/8/3N4/1q6/8/8/8/4K3 b - - 1 1",
-      "move": "e8d7",
-      "text": "",
-      "arrows": [
-        [
-          "e8",
-          "d7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/3k4/3N4/1q6/8/8/8/4K3 w - - 2 2",
-      "move": "d6b5",
-      "text": "",
-      "arrows": [
-        [
-          "d6",
-          "b5"
-        ]
-      ],
-      "marks": []
-    }
-  ],
   "lichessThemes": [],
   "ratingBand": [
     400,
@@ -82,36 +16,108 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "game-review",
+  "domain": "méthode",
+  "title": "Prendre le temps de voir la réponse",
+  "introduces": [
+    "prendre, capturer",
+    "échec"
+  ],
+  "challenge": null,
   "screens": [
     {
-      "title": "Pourquoi",
-      "text": "En blitz (3 à 5 min), on répète ses mauvais réflexes. En partie lente, on installe les bons. Le blitz est un loisir, pas un entraînement à ce niveau.",
-      "audio": null
+      "step": "principe",
+      "title": "Prendre le temps de voir la réponse",
+      "text": "Jouer lentement te donne le temps de vérifier ce que l’adversaire peut répondre. Ici, ton cavalier en e4 peut attaquer le roi noir et la dame en même temps. Prendre (aller sur la case adverse et retirer sa pièce) quelques secondes aide à voir les deux cibles.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "marks": []
     },
     {
-      "title": "Méthode",
-      "text": "3 à 5 parties lentes par semaine (Lichess 15+10 ou 30+0, ou contre le moteur de l'app).",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Pour apprendre, choisis une partie de quinze minutes ou plus. Avant chaque coup, regarde ses attaques, ton idée et sa réponse. Dans cette position, commence par les coups du cavalier qui attaquent le roi.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "e4",
+          "d6"
+        ]
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Chaque partie perdue est analysée (voir meta-game-review).",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le cavalier va en d6 : il attaque le roi en e8 et la dame en b5.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "line": [
+        {
+          "uci": "e4d6",
+          "text": "Le cavalier va en d6 : il attaque le roi en e8 et la dame en b5."
+        },
+        {
+          "uci": "e8d7",
+          "text": "Le roi noir se déplace en d7 pour sortir de l’échec (une attaque contre le roi à laquelle il faut répondre)."
+        },
+        {
+          "uci": "d6b5",
+          "text": "Le cavalier prend la dame en b5."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Garde le blitz pour après, quand la routine est automatique.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Après le saut du cavalier en d6, le roi noir doit bouger. Le cavalier peut alors prendre la dame en b5. La suite compte plus que la vitesse du premier coup.",
+      "fen": "8/3k4/8/1N6/8/8/8/4K3 b - - 0 2"
     },
     {
-      "title": "Principe",
-      "text": "Joue assez lentement pour appliquer ta routine à chaque coup. Vise au moins quinze minutes, avec dix secondes ajoutées par coup.",
-      "audio": null
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ne passe pas tout ton temps à chercher le coup parfait. Quand tu as trouvé un coup sûr et compris sa réponse, joue-le. Garde du temps pour la suite.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1"
     }
   ],
+  "exercises": [],
+  "retenir": "Joue assez lentement pour imaginer la réponse adverse avant chaque coup.",
+  "review": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "solution": [
+      "e4d6",
+      "e8d7",
+      "d6b5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "",
+    "accept": [
+      "e4d6"
+    ],
+    "alsoGood": [],
+    "hint": "Pour apprendre, choisis une partie de quinze minutes ou plus. Avant chaque coup, regarde ses attaques, ton idée et sa réponse. Dans cette position, commence par les coups du cavalier qui attaquent le roi.",
+    "success": "Après le saut du cavalier en d6, le roi noir doit bouger. Le cavalier peut alors prendre la dame en b5. La suite compte plus que la vitesse du premier coup."
+  },
+  "contentVersion": 2,
+  "principle": "Joue assez lentement pour imaginer la réponse adverse avant chaque coup.",
+  "entryChallenge": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "solution": [
+      "e4d6",
+      "e8d7",
+      "d6b5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "",
+    "accept": [
+      "e4d6"
+    ],
+    "alsoGood": [],
+    "hint": "Pour apprendre, choisis une partie de quinze minutes ou plus. Avant chaque coup, regarde ses attaques, ton idée et sa réponse. Dans cette position, commence par les coups du cavalier qui attaquent le roi.",
+    "success": "Après le saut du cavalier en d6, le roi noir doit bouger. Le cavalier peut alors prendre la dame en b5. La suite compte plus que la vitesse du premier coup.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "game-review",
-  "videos": []
+  "pitfall": {}
 }

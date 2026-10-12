@@ -1,52 +1,9 @@
 {
   "id": "tac-promotion",
-  "title": "Les pions qui deviennent des dames",
   "tier": 2,
   "priority": "A",
-  "domain": "tactique",
   "prerequisites": [
     "proc-forcing-moves"
-  ],
-  "principle": "Un pion sur la 7e rangée (2e pour les noirs) vaut presque une dame. Tout sacrifice qui le fait promouvoir est à examiner.",
-  "why": [
-    "Le défenseur doit garder la case de promotion en permanence",
-    "cela crée surcharges et déviations."
-  ],
-  "signals": [
-    "pion passé avancé, une seule pièce adverse qui contrôle la case de promotion."
-  ],
-  "method": [
-    "contrôle la case de promotion une fois de plus que l'adversaire",
-    "dévie ou élimine son défenseur",
-    "pense à la sous-promotion en cavalier si elle donne échec ou fourchette, ou en tour si la dame fait pat."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45",
-    "solution": [
-      "d7d8q"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/Jzxqt",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45",
-      "move": "d7d8q",
-      "text": "",
-      "arrows": [
-        [
-          "d7",
-          "d8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "advancedPawn",
@@ -65,30 +22,122 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Transformer ton pion au bon moment",
+  "introduces": [],
+  "challenge": {
+    "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45",
+    "solution": [
+      "d7d8q"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton pion en d7 est tout près du bout. Fais-le devenir une dame avec échec.",
+    "accept": [
+      "d7d8q"
+    ],
+    "alsoGood": [],
+    "hint": "Compare avancer le pion et jouer un autre coup. Ici, d8 est libre et aucune pièce noire ne peut prendre directement la nouvelle dame. Choisis la dame dans le bouton de transformation.",
+    "success": "Le pion arrive en d8 et devient une dame. Elle attaque aussitôt le roi noir en f8. Les noirs doivent répondre à cette attaque avant de s’occuper d’autre chose."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Un pion sur la 7e rangée (2e pour les noirs) vaut presque une dame. Tout sacrifice qui le fait promouvoir est à examiner.",
-      "audio": null
+      "step": "principe",
+      "title": "Transformer ton pion au bon moment",
+      "text": "La promotion transforme un pion arrivé au bout du plateau en dame, tour, fou ou cavalier. Ici, ton pion en d7 est à une seule case de devenir une dame.",
+      "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Le défenseur doit garder la case de promotion en permanence. Cela crée surcharges et déviations.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Compare avancer le pion et jouer un autre coup. Ici, d8 est libre et aucune pièce noire ne peut prendre directement la nouvelle dame. Choisis la dame dans le bouton de transformation.",
+      "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45",
+      "arrows": [
+        [
+          "d7",
+          "d8"
+        ]
+      ]
     },
     {
-      "title": "Signaux",
-      "text": "Pion passé avancé, une seule pièce adverse qui contrôle la case de promotion.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le pion en d7 avance en d8 et devient une dame : elle attaque le roi noir en f8.",
+      "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45",
+      "line": [
+        {
+          "uci": "d7d8q",
+          "text": "Le pion en d7 avance en d8 et devient une dame : elle attaque le roi noir en f8."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Contrôle la case de promotion une fois de plus que l'adversaire. Dévie ou élimine son défenseur. Pense à la sous-promotion en cavalier si elle donne échec ou fourchette, ou en tour si la dame fait pat.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le pion arrive en d8 et devient une dame. Elle attaque aussitôt le roi noir en f8. Les noirs doivent répondre à cette attaque avant de s’occuper d’autre chose.",
+      "fen": "3Q1k2/1p4pp/3bP3/pP6/6P1/2p2K2/7P/3r4 b - - 0 45"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Choisir une dame est presque toujours utile, mais pas obligatoire. Une autre pièce peut parfois éviter une partie nulle ou créer une attaque spéciale. Regarde toujours la position après la transformation.",
+      "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45"
     }
   ],
+  "exercises": [
+    {
+      "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45",
+      "solution": [
+        "d7d8q"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Ton pion en d7 est tout près du bout. Fais-le devenir une dame avec échec.",
+      "accept": [
+        "d7d8q"
+      ],
+      "alsoGood": [],
+      "hint": "Compare avancer le pion et jouer un autre coup. Ici, d8 est libre et aucune pièce noire ne peut prendre directement la nouvelle dame. Choisis la dame dans le bouton de transformation.",
+      "success": "Le pion arrive en d8 et devient une dame. Elle attaque aussitôt le roi noir en f8. Les noirs doivent répondre à cette attaque avant de s’occuper d’autre chose."
+    }
+  ],
+  "retenir": "Un pion arrivé au bout peut devenir une dame. Vérifie ce que cette nouvelle pièce attaque.",
+  "review": {
+    "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45",
+    "solution": [
+      "d7d8q"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton pion en d7 est tout près du bout. Fais-le devenir une dame avec échec.",
+    "accept": [
+      "d7d8q"
+    ],
+    "alsoGood": [],
+    "hint": "Compare avancer le pion et jouer un autre coup. Ici, d8 est libre et aucune pièce noire ne peut prendre directement la nouvelle dame. Choisis la dame dans le bouton de transformation.",
+    "success": "Le pion arrive en d8 et devient une dame. Elle attaque aussitôt le roi noir en f8. Les noirs doivent répondre à cette attaque avant de s’occuper d’autre chose."
+  },
+  "contentVersion": 2,
+  "principle": "Un pion arrivé au bout peut devenir une dame. Vérifie ce que cette nouvelle pièce attaque.",
+  "entryChallenge": {
+    "fen": "5k2/1p1P2pp/3bP3/pP6/6P1/2p2K2/7P/3r4 w - - 3 45",
+    "solution": [
+      "d7d8q"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton pion en d7 est tout près du bout. Fais-le devenir une dame avec échec.",
+    "accept": [
+      "d7d8q"
+    ],
+    "alsoGood": [],
+    "hint": "Compare avancer le pion et jouer un autre coup. Ici, d8 est libre et aucune pièce noire ne peut prendre directement la nouvelle dame. Choisis la dame dans le bouton de transformation.",
+    "success": "Le pion arrive en d8 et devient une dame. Elle attaque aussitôt le roi noir en f8. Les noirs doivent répondre à cette attaque avant de s’occuper d’autre chose.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

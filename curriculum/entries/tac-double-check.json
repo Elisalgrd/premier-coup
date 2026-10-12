@@ -1,50 +1,9 @@
 {
   "id": "tac-double-check",
-  "title": "L'échec double",
   "tier": 2,
   "priority": "A",
-  "domain": "tactique",
   "prerequisites": [
     "tac-discovered"
-  ],
-  "principle": "Deux pièces donnent échec en même temps. Seul le roi peut répondre, en fuyant.",
-  "why": [
-    "On ne peut ni prendre deux attaquants ni s'interposer sur deux lignes. C'est l'échec le plus puissant",
-    "il mène souvent au mat."
-  ],
-  "signals": [
-    "une découverte vers le roi adverse où la pièce qui bouge peut, elle aussi, donner échec."
-  ],
-  "method": [
-    "cherche une découverte où la pièce qui bouge donne aussi échec, puis regarde les cases de fuite restantes."
-  ],
-  "pitfall": {
-    "text": "Si le roi a des cases de fuite sûres, l'échec double ne gagne pas forcément.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
-    "solution": [
-      "d4e2"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/d5NCt",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
-      "move": "d4e2",
-      "text": "",
-      "arrows": [
-        [
-          "d4",
-          "e2"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "doubleCheck"
@@ -61,35 +20,130 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Deux pièces attaquent le roi ensemble",
+  "introduces": [
+    "échec double"
+  ],
+  "challenge": {
+    "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
+    "solution": [
+      "d4e2"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Ton cavalier en d4 peut laisser passer ton fou en c5 tout en attaquant le roi blanc.",
+    "accept": [
+      "d4e2"
+    ],
+    "alsoGood": [
+      "d4f3"
+    ],
+    "hint": "Cherche une pièce qui masque ton fou, ta tour ou ta dame. Si elle peut partir en attaquant elle-même le roi, tu peux créer deux attaques en un seul coup.",
+    "success": "Le cavalier arrive en e2 et attaque g1. En quittant d4, il libère aussi le fou en c5. Le roi blanc reçoit deux attaques en même temps."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Deux pièces donnent échec en même temps. Seul le roi peut répondre, en fuyant.",
-      "audio": null
+      "step": "principe",
+      "title": "Deux pièces attaquent le roi ensemble",
+      "text": "Un échec double, c’est quand deux pièces attaquent le roi en même temps. Ici, ton cavalier noir en d4 cache la diagonale du fou noir en c5 vers le roi blanc en g1.",
+      "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "On ne peut ni prendre deux attaquants ni s'interposer sur deux lignes. C'est l'échec le plus puissant. Il mène souvent au mat.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Cherche une pièce qui masque ton fou, ta tour ou ta dame. Si elle peut partir en attaquant elle-même le roi, tu peux créer deux attaques en un seul coup.",
+      "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
+      "arrows": [
+        [
+          "d4",
+          "e2"
+        ]
+      ]
     },
     {
-      "title": "Signaux",
-      "text": "Une découverte vers le roi adverse où la pièce qui bouge peut, elle aussi, donner échec.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le cavalier noir va en e2 : il attaque le roi en g1, et le fou en c5 l’attaque aussi.",
+      "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
+      "line": [
+        {
+          "uci": "d4e2",
+          "text": "Le cavalier noir va en e2 : il attaque le roi en g1, et le fou en c5 l’attaque aussi."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Cherche une découverte où la pièce qui bouge donne aussi échec, puis regarde les cases de fuite restantes.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le cavalier arrive en e2 et attaque g1. En quittant d4, il libère aussi le fou en c5. Le roi blanc reçoit deux attaques en même temps.",
+      "fen": "2b4r/p2k2pp/1p3p2/2bN4/4n3/3N4/P3n1PP/1R3BKR w - - 5 22"
     },
     {
-      "title": "Piège",
-      "text": "Si le roi a des cases de fuite sûres, l'échec double ne gagne pas forcément.",
-      "audio": null
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Pour répondre à deux échecs, il faut déplacer le roi. Prendre un seul attaquant ou bloquer une seule ligne ne supprime pas l’autre attaque.",
+      "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21"
     }
   ],
+  "exercises": [
+    {
+      "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
+      "solution": [
+        "d4e2"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Tu joues les noirs. Ton cavalier en d4 peut laisser passer ton fou en c5 tout en attaquant le roi blanc.",
+      "accept": [
+        "d4e2"
+      ],
+      "alsoGood": [
+        "d4f3"
+      ],
+      "hint": "Cherche une pièce qui masque ton fou, ta tour ou ta dame. Si elle peut partir en attaquant elle-même le roi, tu peux créer deux attaques en un seul coup.",
+      "success": "Le cavalier arrive en e2 et attaque g1. En quittant d4, il libère aussi le fou en c5. Le roi blanc reçoit deux attaques en même temps."
+    }
+  ],
+  "retenir": "Deux pièces attaquent le roi ensemble : le roi doit bouger.",
+  "review": {
+    "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
+    "solution": [
+      "d4e2"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Ton cavalier en d4 peut laisser passer ton fou en c5 tout en attaquant le roi blanc.",
+    "accept": [
+      "d4e2"
+    ],
+    "alsoGood": [],
+    "hint": "Cherche une pièce qui masque ton fou, ta tour ou ta dame. Si elle peut partir en attaquant elle-même le roi, tu peux créer deux attaques en un seul coup.",
+    "success": "Le cavalier arrive en e2 et attaque g1. En quittant d4, il libère aussi le fou en c5. Le roi blanc reçoit deux attaques en même temps."
+  },
+  "contentVersion": 2,
+  "principle": "Deux pièces attaquent le roi ensemble : le roi doit bouger.",
+  "entryChallenge": {
+    "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
+    "solution": [
+      "d4e2"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Ton cavalier en d4 peut laisser passer ton fou en c5 tout en attaquant le roi blanc.",
+    "accept": [
+      "d4e2"
+    ],
+    "alsoGood": [
+      "d4f3"
+    ],
+    "hint": "Cherche une pièce qui masque ton fou, ta tour ou ta dame. Si elle peut partir en attaquant elle-même le roi, tu peux créer deux attaques en un seul coup.",
+    "success": "Le cavalier arrive en e2 et attaque g1. En quittant d4, il libère aussi le fou en c5. Le roi blanc reçoit deux attaques en même temps.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

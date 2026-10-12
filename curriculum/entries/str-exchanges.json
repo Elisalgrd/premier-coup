@@ -1,43 +1,9 @@
 {
   "id": "str-exchanges",
-  "title": "Quand échanger ?",
   "tier": 4,
   "priority": "A",
-  "domain": "stratégie",
   "prerequisites": [
     "fin-convert"
-  ],
-  "principle": "Échange quand tu es devant au matériel, quand tu manques de place, ou pour éliminer une pièce adverse très active ou un défenseur clé. Évite d'échanger quand tu attaques ou quand tu es derrière.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
-    "solution": [
-      "d1d8"
-    ],
-    "prompt": "Tu as une dame de plus. Échange les tours.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
-      "move": "d1d8",
-      "text": "",
-      "arrows": [
-        [
-          "d1",
-          "d8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -52,16 +18,125 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "plan-choice",
+  "domain": "stratégie",
+  "title": "Quand prendre aide vraiment",
+  "introduces": [
+    "échange"
+  ],
+  "challenge": {
+    "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+    "solution": [
+      "d1d8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu as une dame de plus. Ta tour peut enlever la dernière tour noire : trouve la prise.",
+    "accept": [
+      "d1d8"
+    ],
+    "alsoGood": [],
+    "hint": "Avant une prise, compte ce que chaque camp perd. Regarde aussi quelles lignes s’ouvrent. Ici, la colonne d est vide entre les tours, et aucune pièce noire ne peut reprendre en d8.",
+    "success": "La tour noire disparaît. Tu gardes ta dame en e1 et ta tour en d8. Tu as enlevé une pièce qui aurait pu attaquer ton roi."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Échange si tu es devant au matériel ou si tu manques de place. Tu peux aussi éliminer un défenseur clé. Évite d'échanger quand tu attaques ou quand tu es derrière.",
-      "audio": null
+      "step": "principe",
+      "title": "Quand prendre aide vraiment",
+      "text": "Un échange (une prise suivie d’une reprise), c’est prendre une pièce puis laisser l’adversaire reprendre la tienne. Mais commence par regarder si une prise est simplement gratuite. Ici, ta tour en d1 peut prendre celle en d8 sans être reprise.",
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Avant une prise, compte ce que chaque camp perd. Regarde aussi quelles lignes s’ouvrent. Ici, la colonne d est vide entre les tours, et aucune pièce noire ne peut reprendre en d8.",
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "d8"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour en d1 prend la tour en d8. Il n’y a pas de reprise noire : c’est une prise gratuite.",
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "d1d8",
+          "text": "La tour en d1 prend la tour en d8. Il n’y a pas de reprise noire : c’est une prise gratuite."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La tour noire disparaît. Tu gardes ta dame en e1 et ta tour en d8. Tu as enlevé une pièce qui aurait pu attaquer ton roi.",
+      "fen": "3R2k1/pp3ppp/8/8/8/8/PP3PPP/4Q1K1 b - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ne fais pas un échange uniquement parce que tu as plus de points. Tu peux encore perdre si ton roi est exposé ou si ton dernier pion disparaît.",
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+      "solution": [
+        "d1d8"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Tu as une dame de plus. Ta tour peut enlever la dernière tour noire : trouve la prise.",
+      "accept": [
+        "d1d8"
+      ],
+      "alsoGood": [],
+      "hint": "Avant une prise, compte ce que chaque camp perd. Regarde aussi quelles lignes s’ouvrent. Ici, la colonne d est vide entre les tours, et aucune pièce noire ne peut reprendre en d8.",
+      "success": "La tour noire disparaît. Tu gardes ta dame en e1 et ta tour en d8. Tu as enlevé une pièce qui aurait pu attaquer ton roi."
+    }
+  ],
+  "retenir": "Compare les pièces perdues et la sécurité des rois avant de prendre ou d’échanger.",
+  "review": {
+    "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+    "solution": [
+      "d1d8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu as une dame de plus. Ta tour peut enlever la dernière tour noire : trouve la prise.",
+    "accept": [
+      "d1d8"
+    ],
+    "alsoGood": [],
+    "hint": "Avant une prise, compte ce que chaque camp perd. Regarde aussi quelles lignes s’ouvrent. Ici, la colonne d est vide entre les tours, et aucune pièce noire ne peut reprendre en d8.",
+    "success": "La tour noire disparaît. Tu gardes ta dame en e1 et ta tour en d8. Tu as enlevé une pièce qui aurait pu attaquer ton roi."
+  },
+  "contentVersion": 2,
+  "principle": "Compare les pièces perdues et la sécurité des rois avant de prendre ou d’échanger.",
+  "entryChallenge": {
+    "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+    "solution": [
+      "d1d8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu as une dame de plus. Ta tour peut enlever la dernière tour noire : trouve la prise.",
+    "accept": [
+      "d1d8"
+    ],
+    "alsoGood": [],
+    "hint": "Avant une prise, compte ce que chaque camp perd. Regarde aussi quelles lignes s’ouvrent. Ici, la colonne d est vide entre les tours, et aucune pièce noire ne peut reprendre en d8.",
+    "success": "La tour noire disparaît. Tu gardes ta dame en e1 et ta tour en d8. Tu as enlevé une pièce qui aurait pu attaquer ton roi.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "plan-choice",
-  "videos": []
+  "pitfall": {}
 }

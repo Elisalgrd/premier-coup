@@ -1,53 +1,9 @@
 {
   "id": "tac-discovered",
-  "title": "L'attaque à la découverte",
   "tier": 2,
   "priority": "S",
-  "domain": "tactique",
   "prerequisites": [
     "tac-pin"
-  ],
-  "principle": "En déplaçant une pièce, tu ouvres la ligne d'une autre pièce qui attaque. Deux menaces d'un coup : celle de la pièce qui bouge et celle de la pièce qui est découverte.",
-  "why": [
-    "L'adversaire ne voit souvent que la pièce qui bouge. Si la découverte donne échec, la pièce qui bouge peut aller n'importe où, même prendre la dame."
-  ],
-  "signals": [
-    "une de tes pièces longues (T, F, D) vise une cible adverse (roi, dame), mais une de tes propres pièces est devant."
-  ],
-  "method": [
-    "Repère tes pièces longues « bloquées » par tes propres pièces.",
-    "Si derrière la ligne il y a le roi adverse : n'importe quel coup de la pièce de devant donne échec. Cherche le coup de cette pièce qui gagne le plus (capture, autre menace).",
-    "Sinon, cherche un coup de la pièce de devant qui crée une deuxième menace.",
-    "Défense : surveille les découvertes que l'adversaire prépare contre ton roi et ta dame."
-  ],
-  "pitfall": {
-    "text": "La pièce qui bouge doit faire quelque chose d'utile. Si elle se place en prise et que l'adversaire peut parer l'attaque découverte en la prenant, il n'y a rien.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
-    "solution": [
-      "e2h5"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": null,
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
-      "move": "e2h5",
-      "text": "",
-      "arrows": [
-        [
-          "e2",
-          "h5"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "discoveredAttack",
@@ -65,56 +21,165 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "L’attaque à la découverte",
+  "introduces": [
+    "attaque à la découverte",
+    "menace"
+  ],
+  "challenge": {
+    "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+    "prompt": "Ta tour en e1 vise le roi noir, mais ton propre fou en e2 la bloque. Si ton fou bouge, ta tour donne échec. Trouve le coup de fou qui gagne le plus.",
+    "solution": [
+      "e2h5"
+    ],
+    "check": "exact",
+    "hint": "Ton fou peut aller n’importe où, ce sera échec. Il peut même prendre quelque chose.",
+    "accept": [
+      "e2h5"
+    ],
+    "engine": {
+      "best": "e2h5",
+      "score": 466,
+      "depth": 16
+    },
+    "alsoGood": [
+      "e2g4",
+      "e2d1",
+      "e2f3"
+    ],
+    "kind": "move"
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "En déplaçant une pièce, tu ouvres la ligne d'une autre pièce qui attaque. Deux menaces d'un coup : celle de la pièce qui bouge et celle de la pièce qui est découverte.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "L'adversaire ne voit souvent que la pièce qui bouge. Si la découverte donne échec, la pièce qui bouge peut aller n'importe où, même prendre la dame.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Repère tes pièces longues « bloquées » par tes propres pièces.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Si la ligne vise le roi, déplacer la pièce peut découvrir un échec. Vérifie que ton coup libère bien la ligne. Cherche le coup de cette pièce qui gagne le plus (capture, autre menace).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Sinon, cherche un coup de la pièce de devant qui crée une deuxième menace.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Défense : surveille les découvertes que l'adversaire prépare contre ton roi et ta dame.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "La pièce qui bouge doit faire quelque chose d'utile. Si elle se place en prise et que l'adversaire peut parer l'attaque découverte en la prenant, il n'y a rien.",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Une tour, un fou ou une dame vise une cible adverse. Une de tes pièces bloque encore cette ligne.",
-      "audio": null
-    }
-  ],
-  "examples": [
-    {
+      "step": "principe",
+      "title": "Ouvrir une ligne",
       "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ],
+      "marks": [
+        "e2"
+      ],
+      "text": "Une « attaque à la découverte », c’est quand tu bouges une pièce et que tu ouvres la ligne d’une autre de tes pièces, qui se met à attaquer. Ici, ton fou en e2 cache ta tour. Dès que le fou bouge, la tour attaque le roi noir."
+    },
+    {
+      "step": "exemple",
+      "title": "Deux menaces en un coup",
+      "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "e2h5",
+          "text": "Le fou prend la dame en h5. En partant, il a découvert la tour : le roi noir est en échec. Les noirs doivent s’occuper de leur roi, ils ne peuvent pas reprendre le fou. Tu as gagné la dame."
+        }
+      ],
+      "text": "Regarde : la pièce qui bouge attaque d’un côté, la pièce découverte de l’autre."
+    },
+    {
+      "step": "pourquoi",
+      "title": "Pourquoi c’est si fort",
+      "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+      "text": "L’adversaire regarde la pièce qui bouge, et oublie celle qui était cachée derrière. Quand la pièce découverte donne échec, la pièce qui bouge est libre d’aller où elle veut, même sur une case protégée : l’adversaire n’a pas le temps de la prendre."
+    },
+    {
+      "step": "signaux",
+      "title": "Quand la chercher",
+      "fen": "7q/pp2k3/8/8/3N4/8/1B3PPP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "b2",
+          "h8"
+        ]
+      ],
+      "marks": [
+        "d4"
+      ],
+      "text": "Cherche-la quand une de tes pièces qui vont loin (tour, fou, dame) vise une pièce adverse importante, mais qu’une de tes propres pièces est devant. Ici, ton fou en b2 vise la dame noire en h8, et ton cavalier en d4 est sur le chemin."
+    },
+    {
+      "step": "methode",
+      "title": "Trouver le bon coup de la pièce de devant",
+      "fen": "7q/pp2k3/8/8/3N4/8/1B3PPP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "f5"
+        ],
+        [
+          "b2",
+          "h8"
+        ]
+      ],
+      "text": "Le cavalier doit partir. Mais où ? Choisis une case où il crée une deuxième menace (ce que l’adversaire pourrait faire de dangereux au prochain coup), idéalement un échec. Ici, en f5, il met le roi noir en échec : les noirs n’auront pas le temps de sauver leur dame."
+    },
+    {
+      "step": "piege",
+      "title": "Attention aux découvertes contre toi",
+      "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 b - - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ],
+      "text": "Ça marche aussi contre toi. Quand une pièce adverse se trouve entre une de ses pièces longues et ton roi ou ta dame, attends-toi à ce qu’elle bouge avec une menace. Ici, avec les noirs, il fallait mettre la dame à l’abri avant que le fou ne bouge."
     }
   ],
-  "videos": []
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "7q/pp2k3/8/8/3N4/8/1B3PPP/6K1 w - - 0 1",
+      "prompt": "Ton fou en b2 vise la dame noire en h8, mais ton cavalier en d4 le bloque. Bouge ton cavalier avec un échec pour gagner la dame.",
+      "solution": [
+        "d4f5"
+      ],
+      "check": "engine",
+      "success": "Échec au roi, et ton fou attaque maintenant la dame. Les noirs doivent sauver leur roi : la dame tombe.",
+      "hint": "Cherche une case d’où ton cavalier attaque le roi en e7.",
+      "accept": [
+        "d4c6",
+        "d4f5"
+      ],
+      "engine": {
+        "best": "d4c6",
+        "score": 570,
+        "depth": 16
+      },
+      "alsoGood": []
+    }
+  ],
+  "retenir": "Une pièce cachée derrière une autre attaque dès que la pièce de devant bouge. Fais bouger la pièce de devant avec une deuxième menace.",
+  "contentVersion": 2,
+  "principle": "Une pièce cachée derrière une autre attaque dès que la pièce de devant bouge. Fais bouger la pièce de devant avec une deuxième menace.",
+  "entryChallenge": {
+    "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+    "prompt": "Ta tour en e1 vise le roi noir, mais ton propre fou en e2 la bloque. Si ton fou bouge, ta tour donne échec. Trouve le coup de fou qui gagne le plus.",
+    "solution": [
+      "e2h5"
+    ],
+    "check": "exact",
+    "hint": "Ton fou peut aller n’importe où, ce sera échec. Il peut même prendre quelque chose.",
+    "accept": [
+      "e2h5"
+    ],
+    "engine": {
+      "best": "e2h5",
+      "score": 466,
+      "depth": 16
+    },
+    "alsoGood": [
+      "e2g4",
+      "e2d1",
+      "e2f3"
+    ],
+    "kind": "move",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

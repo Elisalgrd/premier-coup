@@ -1,58 +1,10 @@
 {
   "id": "proc-exchange-count",
-  "title": "Compter les échanges",
   "tier": 1,
   "priority": "S",
-  "domain": "réflexes",
   "prerequisites": [
     "vis-values",
     "vis-attacked-squares"
-  ],
-  "principle": "Avant de prendre, compte les attaquants et les défenseurs de la case, et joue l'échange dans ta tête jusqu'au bout.",
-  "why": [
-    "« Elle est défendue » ne veut pas dire « je ne peux pas la prendre ». Et « je peux la prendre » ne veut pas dire « je gagne »."
-  ],
-  "signals": [
-    "une pièce adverse attaquée par l'une des tiennes."
-  ],
-  "method": [
-    "Compte : combien de mes pièces attaquent la case ? Combien des siennes la défendent ?",
-    "Si je n'attaque pas plus de fois qu'il ne défend, je ne gagne pas la pièce (sauf si ma première pièce vaut moins que la cible).",
-    "Capture toujours avec la pièce la moins précieuse d'abord.",
-    "Joue la séquence complète : je prends, il reprend, je reprends... Additionne ce que chacun perd.",
-    "Il n'est jamais obligé de reprendre : vérifie aussi ce qui se passe s'il s'arrête en route."
-  ],
-  "pitfall": {
-    "text": "prendre une pièce défendue par un pion avec ta dame. Exemple dans l'app actuelle (cours 1) : Dxd5 exd5 perd la dame contre une tour.",
-    "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
-    "line": [
-      "d1d5",
-      "e6d5"
-    ]
-  },
-  "entryChallenge": {
-    "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
-    "solution": [
-      "c2a4"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": null,
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
-      "move": "c2a4",
-      "text": "",
-      "arrows": [
-        [
-          "c2",
-          "a4"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "hangingPiece",
@@ -70,63 +22,167 @@
   },
   "sources": [],
   "videoId": "course-captures",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Avant de prendre, compte les attaquants et les défenseurs de la case, et joue l'échange dans ta tête jusqu'au bout.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "« Elle est défendue » ne veut pas dire « je ne peux pas la prendre ». Et « je peux la prendre » ne veut pas dire « je gagne ».",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Une pièce adverse attaquée par l'une des tiennes.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Compte : combien de mes pièces attaquent la case ? Combien des siennes la défendent ?",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Compare le nombre d’attaquants et de défenseurs. Compare aussi leur valeur : une pièce peu chère peut prendre une cible coûteuse.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Capture toujours avec la pièce la moins précieuse d'abord.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Joue la séquence complète : je prends, il reprend, je reprends... Additionne ce que chacun perd.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Il n'est jamais obligé de reprendre : vérifie aussi ce qui se passe s'il s'arrête en route.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Prendre une pièce défendue par un pion avec ta dame. Exemple dans l'app actuelle (cours 1) : Dxd5 exd5 perd la dame contre une tour.",
-      "audio": null
-    }
-  ],
-  "examples": [
-    {
-      "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
-    }
-  ],
   "videos": [
     "course-captures"
-  ]
+  ],
+  "domain": "réflexes",
+  "title": "Compter avant de prendre",
+  "introduces": [
+    "échange",
+    "défenseur"
+  ],
+  "challenge": {
+    "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+    "prompt": "Le cavalier noir en e5 est attaqué par trois de tes pièces : ton pion, ton cavalier et ta dame. Il est protégé par le pion en d6. Avec quelle pièce le prends-tu ?",
+    "solution": [
+      "f4e5"
+    ],
+    "check": "engine",
+    "hint": "Le pion noir en d6 va reprendre. Qu’est-ce que tu préfères perdre : un pion, un cavalier ou ta dame ?",
+    "accept": [
+      "f4e5"
+    ],
+    "engine": {
+      "best": "f4e5",
+      "score": 240,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": []
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Ce qu’est un échange",
+      "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "f4",
+          "e5"
+        ],
+        [
+          "d6",
+          "e5"
+        ]
+      ],
+      "text": "Un « échange », c’est : je prends une pièce, il reprend la mienne. Pour savoir si c’est bon, on compare les points de ce que chacun a perdu. Une pièce protégée n’est pas interdite à prendre, il faut juste compter."
+    },
+    {
+      "step": "methode",
+      "title": "Compter attaquants et défenseurs",
+      "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "f4",
+          "e5"
+        ],
+        [
+          "f3",
+          "e5"
+        ],
+        [
+          "e2",
+          "e5"
+        ],
+        [
+          "d6",
+          "e5"
+        ]
+      ],
+      "marks": [
+        "e5"
+      ],
+      "text": "Compte les pièces qui attaquent la case : ici, trois blanches (pion f4, cavalier f3, dame e2). Puis les défenseurs, les pièces qui la protègent : une seule noire (le pion en d6). Si tu attaques plus de fois qu’il ne protège, tu peux souvent gagner la pièce."
+    },
+    {
+      "step": "methode",
+      "title": "Prends avec la pièce la moins chère",
+      "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "f4e5",
+          "text": "Ton pion (1 point) prend le cavalier (3 points)."
+        },
+        {
+          "uci": "d6e5",
+          "text": "Le pion noir reprend ton pion."
+        },
+        {
+          "uci": "e2e5",
+          "text": "Ta dame reprend en e5. Bilan : tu as gagné un cavalier et un pion, tu n’as perdu qu’un pion."
+        }
+      ],
+      "text": "Commence toujours par ta pièce la moins précieuse. Si l’adversaire reprend, tu perds peu. Regarde."
+    },
+    {
+      "step": "piege",
+      "title": "La prise trop rapide",
+      "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "e2e5",
+          "text": "Ta dame (9 points) prend le cavalier (3 points)."
+        },
+        {
+          "uci": "d6e5",
+          "text": "Le pion reprend ta dame. Tu as donné 9 points pour en gagner 3."
+        }
+      ],
+      "text": "Même cible, mauvaise pièce. Regarde ce qui arrive si ta dame prend la première."
+    },
+    {
+      "step": "methode",
+      "title": "Jouer l’échange jusqu’au bout",
+      "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+      "text": "Joue la suite dans ta tête : je prends, il reprend, je reprends... Additionne les points perdus de chaque côté. Et souviens-toi qu’il n’est jamais obligé de reprendre : regarde aussi ce qui se passe s’il fait autre chose à la place."
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+      "prompt": "Deux prises possibles : ta dame sur la tour en d5, ou ton fou sur la dame en a4. Compte ce que chacune te rapporte vraiment.",
+      "solution": [
+        "c2a4"
+      ],
+      "check": "engine",
+      "success": "Exact. La dame noire n’était protégée par personne : +9 points. La tour, elle, était protégée par le pion en e6.",
+      "hint": "Après chaque prise, qui peut reprendre ?",
+      "accept": [
+        "c2a4"
+      ],
+      "engine": {
+        "best": "c2a4",
+        "score": -28,
+        "depth": 16
+      },
+      "alsoGood": []
+    }
+  ],
+  "retenir": "Compte qui attaque et qui protège. Prends avec ta pièce la moins chère. Joue l’échange jusqu’au bout dans ta tête.",
+  "contentVersion": 2,
+  "principle": "Compte qui attaque et qui protège. Prends avec ta pièce la moins chère. Joue l’échange jusqu’au bout dans ta tête.",
+  "entryChallenge": {
+    "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+    "prompt": "Le cavalier noir en e5 est attaqué par trois de tes pièces : ton pion, ton cavalier et ta dame. Il est protégé par le pion en d6. Avec quelle pièce le prends-tu ?",
+    "solution": [
+      "f4e5"
+    ],
+    "check": "engine",
+    "hint": "Le pion noir en d6 va reprendre. Qu’est-ce que tu préfères perdre : un pion, un cavalier ou ta dame ?",
+    "accept": [
+      "f4e5"
+    ],
+    "engine": {
+      "best": "f4e5",
+      "score": 240,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": [],
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

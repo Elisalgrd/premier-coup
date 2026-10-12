@@ -1,69 +1,9 @@
 {
   "id": "tac-interference-clearance",
-  "title": "Interception et dégagement",
   "tier": 3,
   "priority": "B",
-  "domain": "tactique",
   "prerequisites": [
     "tac-deflection"
-  ],
-  "principle": "Interception : place une pièce entre un défenseur et ce qu'il défend. Dégagement : libère une case ou une ligne pour une autre de tes pièces, souvent avec gain de temps.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
-    "solution": [
-      "e4f6",
-      "d8f6",
-      "c2h7"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/D6WjW",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
-      "move": "e4f6",
-      "text": "",
-      "arrows": [
-        [
-          "e4",
-          "f6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bq1rk1/p1n2pp1/2p1pN1p/1p6/1PpP4/P3P3/2Q2PPP/1BR1K1NR b K - 0 15",
-      "move": "d8f6",
-      "text": "",
-      "arrows": [
-        [
-          "d8",
-          "f6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1b2rk1/p1n2pp1/2p1pq1p/1p6/1PpP4/P3P3/2Q2PPP/1BR1K1NR w K - 0 16",
-      "move": "c2h7",
-      "text": "",
-      "arrows": [
-        [
-          "c2",
-          "h7"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "interference",
@@ -81,15 +21,139 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Libérer une ligne pour une autre pièce",
+  "introduces": [
+    "dégagement",
+    "interception"
+  ],
+  "challenge": {
+    "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
+    "solution": [
+      "e4f6",
+      "d8f6",
+      "c2h7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en e4 bloque ta dame. Fais-le partir avec échec, puis utilise la diagonale libérée.",
+    "accept": [
+      "e4f6"
+    ],
+    "alsoGood": [],
+    "hint": "Repère ce que tes propres pièces empêchent. Si l’une peut partir avec échec ou une prise, elle libère une attaque tout en obligeant l’adversaire à répondre.",
+    "success": "Le cavalier prend en f6 avec échec. Après la reprise de la dame noire, ta dame rejoint h7 : la diagonale c2, d3, e4, f5, g6, h7 est libre."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Interception : place une pièce entre un défenseur et ce qu'il défend. Dégagement : libère une case ou une ligne pour une autre de tes pièces, souvent avec gain de temps.",
-      "audio": null
+      "step": "principe",
+      "title": "Libérer une ligne pour une autre pièce",
+      "text": "Un dégagement, c’est déplacer une pièce pour libérer une ligne ou une case. Ici, ton cavalier en e4 bloque la diagonale de ta dame en c2 vers h7.",
+      "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Repère ce que tes propres pièces empêchent. Si l’une peut partir avec échec ou une prise, elle libère une attaque tout en obligeant l’adversaire à répondre.",
+      "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
+      "arrows": [
+        [
+          "e4",
+          "f6"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le cavalier en e4 prend le fou en f6 avec échec et libère la diagonale de la dame.",
+      "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
+      "line": [
+        {
+          "uci": "e4f6",
+          "text": "Le cavalier en e4 prend le fou en f6 avec échec et libère la diagonale de la dame."
+        },
+        {
+          "uci": "d8f6",
+          "text": "La dame noire en d8 reprend le cavalier en f6."
+        },
+        {
+          "uci": "c2h7",
+          "text": "La dame blanche va de c2 à h7 : échec et mat."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le cavalier prend en f6 avec échec. Après la reprise de la dame noire, ta dame rejoint h7 : la diagonale c2, d3, e4, f5, g6, h7 est libre.",
+      "fen": "r1b2rk1/p1n2ppQ/2p1pq1p/1p6/1PpP4/P3P3/5PPP/1BR1K1NR b K - 1 16"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Une interception fait l’inverse : elle place une pièce au milieu d’une ligne adverse pour la couper. Dans cette position, c’est bien un dégagement : ton cavalier quitte le chemin de ta dame.",
+      "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15"
     }
   ],
+  "exercises": [
+    {
+      "fen": "r1b2rk1/p1n2pp1/2p1pq1p/1p6/1PpP4/P3P3/2Q2PPP/1BR1K1NR w K - 0 16",
+      "solution": [
+        "c2h7"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. La dame blanche va de c2 à h7 : échec et mat.",
+      "accept": [
+        "c2h7"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en c2.",
+      "success": "Le cavalier prend en f6 avec échec. Après la reprise de la dame noire, ta dame rejoint h7 : la diagonale c2, d3, e4, f5, g6, h7 est libre."
+    }
+  ],
+  "retenir": "Regarde les lignes bloquées par tes propres pièces. Les libérer avec échec peut gagner un coup utile.",
+  "review": {
+    "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
+    "solution": [
+      "e4f6",
+      "d8f6",
+      "c2h7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en e4 bloque ta dame. Fais-le partir avec échec, puis utilise la diagonale libérée.",
+    "accept": [
+      "e4f6"
+    ],
+    "alsoGood": [],
+    "hint": "Repère ce que tes propres pièces empêchent. Si l’une peut partir avec échec ou une prise, elle libère une attaque tout en obligeant l’adversaire à répondre.",
+    "success": "Le cavalier prend en f6 avec échec. Après la reprise de la dame noire, ta dame rejoint h7 : la diagonale c2, d3, e4, f5, g6, h7 est libre."
+  },
+  "contentVersion": 2,
+  "principle": "Regarde les lignes bloquées par tes propres pièces. Les libérer avec échec peut gagner un coup utile.",
+  "entryChallenge": {
+    "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
+    "solution": [
+      "e4f6",
+      "d8f6",
+      "c2h7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en e4 bloque ta dame. Fais-le partir avec échec, puis utilise la diagonale libérée.",
+    "accept": [
+      "e4f6"
+    ],
+    "alsoGood": [],
+    "hint": "Repère ce que tes propres pièces empêchent. Si l’une peut partir avec échec ou une prise, elle libère une attaque tout en obligeant l’adversaire à répondre.",
+    "success": "Le cavalier prend en f6 avec échec. Après la reprise de la dame noire, ta dame rejoint h7 : la diagonale c2, d3, e4, f5, g6, h7 est libre.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

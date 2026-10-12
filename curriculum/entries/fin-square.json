@@ -1,126 +1,9 @@
 {
   "id": "fin-square",
-  "title": "La règle du carré",
   "tier": 3,
   "priority": "A",
-  "domain": "finales",
   "prerequisites": [
     "fin-active-king"
-  ],
-  "principle": "Trace le carré entre le pion et sa case de promotion. Si le roi adverse peut y entrer, il rattrape le pion.",
-  "why": [
-    "Permet de savoir en une seconde si un pion passé file à dame, sans calculer."
-  ],
-  "signals": [],
-  "method": [
-    "côté du carré = distance du pion à la promotion (compter depuis la case actuelle, ou depuis la case d'arrivée du double pas si le pion n'a pas bougé). Si c'est au roi de jouer, il peut faire un pas pour y entrer."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
-    "solution": [
-      "f1e2",
-      "a5a4",
-      "e2d2",
-      "a4a3",
-      "d2c2",
-      "a3a2",
-      "c2b2"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": null,
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
-      "move": "f1e2",
-      "text": "",
-      "arrows": [
-        [
-          "f1",
-          "e2"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "7k/8/8/p7/8/8/4K3/8 b - - 1 1",
-      "move": "a5a4",
-      "text": "",
-      "arrows": [
-        [
-          "a5",
-          "a4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "7k/8/8/8/p7/8/4K3/8 w - - 0 2",
-      "move": "e2d2",
-      "text": "",
-      "arrows": [
-        [
-          "e2",
-          "d2"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "7k/8/8/8/p7/8/3K4/8 b - - 1 2",
-      "move": "a4a3",
-      "text": "",
-      "arrows": [
-        [
-          "a4",
-          "a3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "7k/8/8/8/8/p7/3K4/8 w - - 0 3",
-      "move": "d2c2",
-      "text": "",
-      "arrows": [
-        [
-          "d2",
-          "c2"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "7k/8/8/8/8/p7/2K5/8 b - - 1 3",
-      "move": "a3a2",
-      "text": "",
-      "arrows": [
-        [
-          "a3",
-          "a2"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "7k/8/8/8/8/8/p1K5/8 w - - 0 4",
-      "move": "c2b2",
-      "text": "",
-      "arrows": [
-        [
-          "c2",
-          "b2"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "pawnEndgame",
@@ -139,31 +22,177 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "finales",
+  "title": "Ton roi peut-il rattraper ce pion ?",
+  "introduces": [
+    "règle du carré"
+  ],
+  "challenge": {
+    "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
+    "solution": [
+      "f1e2",
+      "a5a4",
+      "e2d2",
+      "a4a3",
+      "d2c2",
+      "a3a2",
+      "c2b2"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le pion noir en a5 court vers a1. Fais entrer ton roi en f1 dans le carré pour le rattraper.",
+    "accept": [
+      "f1e2"
+    ],
+    "alsoGood": [
+      "f1e1"
+    ],
+    "hint": "Ton roi en f1 est juste hors du carré. C’est aux blancs de jouer : avance en e2 pour y entrer. Regarde ensuite la course, un déplacement de pion puis un déplacement de roi.",
+    "success": "Après être entré dans le carré, ton roi suit le pion. Il arrive en b2 quand le pion atteint a2 : il pourra prendre ce pion avant sa transformation."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Trace le carré entre le pion et sa case de promotion. Si le roi adverse peut y entrer, il rattrape le pion.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "Permet de savoir en une seconde si un pion passé file à dame, sans calculer.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Le côté du carré correspond à la distance du pion à sa promotion. S’il peut encore avancer de deux cases, compte depuis sa case d’arrivée.",
-      "audio": null
-    }
-  ],
-  "examples": [
-    {
+      "step": "principe",
+      "title": "Ton roi peut-il rattraper ce pion ?",
+      "text": "La règle du carré aide à voir si un roi peut rattraper un pion. Ici, le pion noir en a5 veut atteindre a1. Le carré va de a5 à e5, puis de e5 à e1 et de e1 à a1.",
       "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Ton roi en f1 est juste hors du carré. C’est aux blancs de jouer : avance en e2 pour y entrer. Regarde ensuite la course, un déplacement de pion puis un déplacement de roi.",
+      "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
+      "arrows": [
+        [
+          "f1",
+          "e2"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le roi blanc entre dans le carré en e2.",
+      "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
+      "line": [
+        {
+          "uci": "f1e2",
+          "text": "Le roi blanc entre dans le carré en e2."
+        },
+        {
+          "uci": "a5a4",
+          "text": "Le pion noir avance en a4."
+        },
+        {
+          "uci": "e2d2",
+          "text": "Le roi blanc va en d2 et se rapproche du pion."
+        },
+        {
+          "uci": "a4a3",
+          "text": "Le pion avance en a3."
+        },
+        {
+          "uci": "d2c2",
+          "text": "Le roi blanc va en c2."
+        },
+        {
+          "uci": "a3a2",
+          "text": "Le pion arrive en a2, tout près de sa transformation."
+        },
+        {
+          "uci": "c2b2",
+          "text": "Le roi blanc arrive en b2 : il surveille a1 et peut prendre le pion en a2."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Après être entré dans le carré, ton roi suit le pion. Il arrive en b2 quand le pion atteint a2 : il pourra prendre ce pion avant sa transformation.",
+      "fen": "7k/8/8/8/8/8/pK6/8 b - - 1 4"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Cette règle suppose un pion libre et aucun obstacle pour le roi. Un pion sur sa case de départ peut avancer de deux cases : il faut en tenir compte.",
+      "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1"
     }
   ],
-  "videos": []
+  "exercises": [
+    {
+      "fen": "7k/8/8/8/p7/8/4K3/8 w - - 0 2",
+      "solution": [
+        "e2d2",
+        "a4a3",
+        "d2c2",
+        "a3a2",
+        "c2b2"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. Le roi blanc va en d2 et se rapproche du pion.",
+      "accept": [
+        "e2d2"
+      ],
+      "alsoGood": [
+        "e2d3",
+        "e2d1"
+      ],
+      "hint": "Regarde la pièce en e2.",
+      "success": "Après être entré dans le carré, ton roi suit le pion. Il arrive en b2 quand le pion atteint a2 : il pourra prendre ce pion avant sa transformation."
+    }
+  ],
+  "retenir": "Compare le chemin du pion et celui du roi. Si le roi entre à temps dans le carré, il peut rattraper le pion.",
+  "review": {
+    "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
+    "solution": [
+      "f1e2",
+      "a5a4",
+      "e2d2",
+      "a4a3",
+      "d2c2",
+      "a3a2",
+      "c2b2"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le pion noir en a5 court vers a1. Fais entrer ton roi en f1 dans le carré pour le rattraper.",
+    "accept": [
+      "f1e2"
+    ],
+    "alsoGood": [],
+    "hint": "Ton roi en f1 est juste hors du carré. C’est aux blancs de jouer : avance en e2 pour y entrer. Regarde ensuite la course, un déplacement de pion puis un déplacement de roi.",
+    "success": "Après être entré dans le carré, ton roi suit le pion. Il arrive en b2 quand le pion atteint a2 : il pourra prendre ce pion avant sa transformation."
+  },
+  "contentVersion": 2,
+  "principle": "Compare le chemin du pion et celui du roi. Si le roi entre à temps dans le carré, il peut rattraper le pion.",
+  "entryChallenge": {
+    "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
+    "solution": [
+      "f1e2",
+      "a5a4",
+      "e2d2",
+      "a4a3",
+      "d2c2",
+      "a3a2",
+      "c2b2"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le pion noir en a5 court vers a1. Fais entrer ton roi en f1 dans le carré pour le rattraper.",
+    "accept": [
+      "f1e2"
+    ],
+    "alsoGood": [
+      "f1e1"
+    ],
+    "hint": "Ton roi en f1 est juste hors du carré. C’est aux blancs de jouer : avance en e2 pour y entrer. Regarde ensuite la course, un déplacement de pion puis un déplacement de roi.",
+    "success": "Après être entré dans le carré, ton roi suit le pion. Il arrive en b2 quand le pion atteint a2 : il pourra prendre ce pion avant sa transformation.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

@@ -1,79 +1,9 @@
 {
   "id": "proc-candidates-calc",
-  "title": "Coups candidats et calcul",
   "tier": 3,
   "priority": "S",
-  "domain": "réflexes",
   "prerequisites": [
     "proc-forcing-moves"
-  ],
-  "principle": "Choisis 2 ou 3 coups candidats, calcule pour chacun la meilleure réponse adverse, compare les positions finales.",
-  "why": [
-    "On perd souvent en calculant très loin une seule ligne en oubliant une réponse gênante dès le premier coup (idée de Julien Song : « vérifier les réponses, pas seulement la profondeur »)."
-  ],
-  "signals": [],
-  "method": [
-    "Liste les candidats : coups forçants d'abord, puis les coups qui améliorent ta pire pièce.",
-    "Pour chacun, liste toutes les réponses adverses forçantes (échecs, captures, menaces).",
-    "Calcule 3 demi-coups (moi, lui, moi) proprement avant d'aller plus loin.",
-    "Évalue la position finale : matériel, sécurité des rois, activité.",
-    "Arrête le calcul quand la position est calme",
-    "ne calcule pas sans but.",
-    "Avant de jouer, refais la routine anti-gaffe sur le coup choisi."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
-    "solution": [
-      "e1e8",
-      "g8h7",
-      "e8h8"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/PBa5R",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
-      "move": "e1e8",
-      "text": "",
-      "arrows": [
-        [
-          "e1",
-          "e8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4R1k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/7K b - - 7 47",
-      "move": "g8h7",
-      "text": "",
-      "arrows": [
-        [
-          "g8",
-          "h7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4R3/5p1k/6p1/1p5p/2b5/2Qr1PqP/6P1/7K w - - 8 48",
-      "move": "e8h8",
-      "text": "",
-      "arrows": [
-        [
-          "e8",
-          "h8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "short",
@@ -100,55 +30,140 @@
     }
   ],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "réflexes",
+  "title": "Comparer deux idées avant de jouer",
+  "introduces": [
+    "coup candidat"
+  ],
+  "challenge": {
+    "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
+    "solution": [
+      "e1e8",
+      "g8h7",
+      "e8h8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton roi en h1 est en danger. Cherche une suite d’échecs avec ta tour en e1.",
+    "accept": [
+      "e1e8"
+    ],
+    "alsoGood": [],
+    "hint": "Choisis deux idées précises. Pour chacune, imagine ton coup, sa meilleure réponse, puis ton coup suivant. Compare les positions obtenues, pas seulement la première prise.",
+    "success": "Après Te8+, qui signifie « la tour va en e8 avec échec », le roi noir va en h7. La tour peut ensuite aller en h8 : elle continue l’attaque avec l’aide de ta dame en c3."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Choisis 2 ou 3 coups candidats, calcule pour chacun la meilleure réponse adverse, compare les positions finales.",
-      "audio": null
+      "step": "principe",
+      "title": "Comparer deux idées avant de jouer",
+      "text": "Un coup candidat, c’est une idée que tu envisages avant de choisir. Ici, ta tour en e1 peut attaquer le roi noir en g8. Ne joue pas tout de suite : imagine sa réponse.",
+      "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
+      "marks": []
     },
     {
-      "title": "Méthode",
-      "text": "Liste les candidats : coups forçants d'abord, puis les coups qui améliorent ta pire pièce.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Choisis deux idées précises. Pour chacune, imagine ton coup, sa meilleure réponse, puis ton coup suivant. Compare les positions obtenues, pas seulement la première prise.",
+      "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Pour chacun, liste toutes les réponses adverses forçantes (échecs, captures, menaces).",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour en e1 va en e8 : le roi noir est attaqué.",
+      "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
+      "line": [
+        {
+          "uci": "e1e8",
+          "text": "La tour en e1 va en e8 : le roi noir est attaqué."
+        },
+        {
+          "uci": "g8h7",
+          "text": "Le roi noir se déplace en h7."
+        },
+        {
+          "uci": "e8h8",
+          "text": "La tour va en h8, protégée par la dame en c3 : échec et mat."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Calcule 3 demi-coups (moi, lui, moi) proprement avant d'aller plus loin.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Après Te8+, qui signifie « la tour va en e8 avec échec », le roi noir va en h7. La tour peut ensuite aller en h8 : elle continue l’attaque avec l’aide de ta dame en c3.",
+      "fen": "7R/5p1k/6p1/1p5p/2b5/2Qr1PqP/6P1/7K b - - 9 48"
     },
     {
-      "title": "Méthode",
-      "text": "Évalue la position finale : matériel, sécurité des rois, activité.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Arrête le calcul quand la position est calme. Ne calcule pas sans but.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Avant de jouer, refais la routine anti-gaffe sur le coup choisi.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "Calculer loin ne suffit pas si tu ignores une réponse gênante au premier coup. Compare d’abord les réponses adverses.",
-      "audio": null
-    },
-    {
-      "title": "Exercices spécifiques",
-      "text": "Sur les problèmes longs, imagine la suite avant de déplacer une pièce. Vérifie ensuite chaque réponse sur l’échiquier.",
-      "audio": null
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ne fais pas jouer à l’adversaire la réponse qui t’arrange. Ici, examine toutes les cases où son roi peut aller après l’échec de la tour.",
+      "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47"
     }
   ],
+  "exercises": [
+    {
+      "fen": "4R3/5p1k/6p1/1p5p/2b5/2Qr1PqP/6P1/7K w - - 8 48",
+      "solution": [
+        "e8h8"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. La tour va en h8, protégée par la dame en c3 : échec et mat.",
+      "accept": [
+        "e8h8"
+      ],
+      "alsoGood": [
+        "c3h8"
+      ],
+      "hint": "Regarde la pièce en e8.",
+      "success": "Après Te8+, qui signifie « la tour va en e8 avec échec », le roi noir va en h7. La tour peut ensuite aller en h8 : elle continue l’attaque avec l’aide de ta dame en c3."
+    }
+  ],
+  "retenir": "Imagine ta meilleure idée, sa meilleure réponse et ton coup suivant avant de choisir.",
+  "review": {
+    "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
+    "solution": [
+      "e1e8",
+      "g8h7",
+      "e8h8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton roi en h1 est en danger. Cherche une suite d’échecs avec ta tour en e1.",
+    "accept": [
+      "e1e8"
+    ],
+    "alsoGood": [],
+    "hint": "Choisis deux idées précises. Pour chacune, imagine ton coup, sa meilleure réponse, puis ton coup suivant. Compare les positions obtenues, pas seulement la première prise.",
+    "success": "Après Te8+, qui signifie « la tour va en e8 avec échec », le roi noir va en h7. La tour peut ensuite aller en h8 : elle continue l’attaque avec l’aide de ta dame en c3."
+  },
+  "contentVersion": 2,
+  "principle": "Imagine ta meilleure idée, sa meilleure réponse et ton coup suivant avant de choisir.",
+  "entryChallenge": {
+    "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
+    "solution": [
+      "e1e8",
+      "g8h7",
+      "e8h8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton roi en h1 est en danger. Cherche une suite d’échecs avec ta tour en e1.",
+    "accept": [
+      "e1e8"
+    ],
+    "alsoGood": [],
+    "hint": "Choisis deux idées précises. Pour chacune, imagine ton coup, sa meilleure réponse, puis ton coup suivant. Compare les positions obtenues, pas seulement la première prise.",
+    "success": "Après Te8+, qui signifie « la tour va en e8 avec échec », le roi noir va en h7. La tour peut ensuite aller en h8 : elle continue l’attaque avec l’aide de ta dame en c3.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

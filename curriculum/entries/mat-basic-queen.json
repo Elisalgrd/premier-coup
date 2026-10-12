@@ -1,50 +1,9 @@
 {
   "id": "mat-basic-queen",
-  "title": "Mat avec roi et dame contre roi",
   "tier": 0,
   "priority": "S",
-  "domain": "mats",
   "prerequisites": [
     "vis-rules"
-  ],
-  "principle": "La dame enferme le roi adverse dans une boîte de plus en plus petite. Ton roi vient l'aider pour le coup final.",
-  "why": [
-    "Sans cette technique, des parties gagnées finissent nulles par pat ou par la règle des 50 coups."
-  ],
-  "signals": [],
-  "method": [
-    "Place ta dame à un saut de cavalier du roi adverse : elle lui coupe une zone sans lui donner échec.",
-    "Chaque fois qu'il recule, recule la dame en gardant ce saut de cavalier. Le roi adverse est poussé vers un bord.",
-    "Quand il est sur le bord, arrête la dame et amène ton roi à côté (en face, à deux cases).",
-    "Mate avec la dame protégée par ton roi, ou sur la rangée du bord."
-  ],
-  "pitfall": {
-    "text": "Le roi n’est pas en échec et son camp ne peut jouer aucun coup légal. C’est pat : partie nulle.",
-    "fen": "k7/8/1Q6/8/8/8/8/7K b - - 0 1",
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
-    "solution": [
-      "g6g7"
-    ],
-    "prompt": "Fais mat en un coup.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
-      "move": "g6g7",
-      "text": "",
-      "arrows": [
-        [
-          "g6",
-          "g7"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -59,42 +18,169 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "endgame",
+  "domain": "mats",
+  "title": "Faire mat avec la dame et le roi",
+  "introduces": [
+    "défendre, protéger"
+  ],
+  "challenge": {
+    "fen": "k7/8/2K5/8/8/8/8/1Q6 w - - 0 1",
+    "prompt": "Tu as une dame et un roi, ton adversaire n’a plus que son roi, en a8. Fais mat en un coup. Attention, un coup ressemble au mat mais donne pat (partie nulle).",
+    "solution": [
+      "b1b7"
+    ],
+    "check": "mate",
+    "hint": "Ta dame peut se coller au roi noir si ton roi la protège.",
+    "accept": [
+      "b1b7"
+    ],
+    "kind": "move",
+    "alsoGood": [
+      "b1h7",
+      "b1b5",
+      "c6c7",
+      "b1b3",
+      "b1b2",
+      "b1b4",
+      "b1a2",
+      "b1d1",
+      "b1c2"
+    ]
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "La dame enferme le roi adverse dans une boîte de plus en plus petite. Ton roi vient l'aider pour le coup final.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Pourquoi le savoir",
+      "fen": "4k3/8/8/8/8/8/8/3QK3 w - - 0 1",
+      "text": "Il arrive souvent qu’on gagne toutes les pièces adverses et qu’il ne reste qu’un roi. Si tu ne sais pas faire mat, la partie peut finir nulle : par pat, ou parce que la règle des 50 coups (50 coups sans prise ni mouvement de pion) arrête la partie. Ce mat se fait en moins de 10 coups avec la bonne méthode."
     },
     {
-      "title": "Pourquoi",
-      "text": "Sans cette technique, des parties gagnées finissent nulles par pat ou par la règle des 50 coups.",
-      "audio": null
+      "step": "principe",
+      "title": "Le principe : la boîte",
+      "fen": "8/8/8/4k3/2Q5/8/8/4K3 b - - 0 1",
+      "arrows": [
+        [
+          "c4",
+          "c8"
+        ],
+        [
+          "c4",
+          "h4"
+        ]
+      ],
+      "marks": [
+        "e5"
+      ],
+      "text": "Ta dame enferme le roi adverse dans une boîte de plus en plus petite. Ici, la dame en c4 l’empêche de passer sur la colonne c et sur la rangée 4 : le roi noir est enfermé dans le coin en haut à droite. Elle est à un « saut de cavalier » du roi : assez près pour l’enfermer, sans lui donner échec."
     },
     {
-      "title": "Méthode",
-      "text": "Place ta dame à un saut de cavalier du roi adverse. Elle lui coupe une zone sans donner échec. Réduis progressivement son espace. Rapproche ton roi pour soutenir le mat au bord. Vérifie le pat avant chaque coup.",
-      "audio": null
+      "step": "methode",
+      "title": "Étape 1 : pousser vers le bord",
+      "fen": "8/8/8/4k3/2Q5/8/8/4K3 b - - 0 1",
+      "arrows": [
+        [
+          "c4",
+          "d3"
+        ]
+      ],
+      "text": "Chaque fois que le roi noir recule, ta dame le suit en restant à un saut de cavalier de lui. La boîte rétrécit à chaque coup, jusqu’à ce que le roi noir soit collé à un bord de l’échiquier."
     },
     {
-      "title": "Piège",
-      "text": "Au bord, ne retire pas la dernière case du roi adverse sans donner échec. Sans autre coup légal, ce serait pat.",
-      "audio": null
-    }
-  ],
-  "examples": [
+      "step": "methode",
+      "title": "Étape 2 : arrêter la dame, faire venir le roi",
+      "fen": "4k3/8/8/2Q5/8/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "e5"
+        ]
+      ],
+      "marks": [
+        "e8"
+      ],
+      "text": "Quand le roi noir est sur le bord, ARRÊTE de bouger ta dame. Fais monter ton roi. Ta dame seule ne peut pas faire mat : il lui faut l’aide de ton roi pour protéger (pouvoir reprendre si l’adversaire prend cette pièce) la case du mat."
+    },
     {
+      "step": "principe",
+      "title": "La position de mat",
       "fen": "k7/1Q6/2K5/8/8/8/8/8 b - - 0 1",
-      "outcome": "mate",
-      "source": "CURRICULUM.md"
+      "marks": [
+        "a8",
+        "b7",
+        "c6"
+      ],
+      "text": "Voici un mat. La dame en b7 se colle au roi noir. Le roi noir ne peut pas la prendre, car ton roi en c6 la protège. Et toutes les cases autour sont attaquées. C’est fini."
     },
     {
+      "step": "piege",
+      "title": "Attention au pat",
       "fen": "k7/8/1Q6/8/8/8/8/7K b - - 0 1",
-      "outcome": "stalemate",
-      "source": "CURRICULUM.md"
+      "marks": [
+        "a7",
+        "b7",
+        "b8"
+      ],
+      "text": "Voici le piège classique. C’est aux noirs de jouer, leur roi n’est pas en échec, mais toutes ses cases sont attaquées par la dame : il ne peut rien jouer. C’est pat, partie nulle. Avant chaque coup de dame près du bord, demande-toi : « Est-ce qu’il aura encore une case pour bouger ? »"
     }
   ],
-  "drill": "endgame",
-  "videos": []
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "prompt": "Fais mat en un coup.",
+      "solution": [
+        "f7g7"
+      ],
+      "check": "mate",
+      "success": "Mat. Ta dame est collée au roi et protégée par ton roi (ou elle l’enferme sur la dernière rangée).",
+      "hint": "Ta dame peut se coller au roi noir sur une case que ton roi protège.",
+      "accept": [
+        "f7e8",
+        "f7f8",
+        "f7g7",
+        "f7h7"
+      ],
+      "alsoGood": [
+        "f7c7",
+        "f7f6",
+        "f7b7",
+        "f7d7",
+        "f7f5",
+        "f7a7"
+      ]
+    }
+  ],
+  "retenir": "La dame enferme, le roi aide. Quand le roi adverse est au bord, arrête la dame et fais venir ton roi. Toujours vérifier : aura-t-il encore un coup ?",
+  "contentVersion": 2,
+  "principle": "La dame enferme, le roi aide. Quand le roi adverse est au bord, arrête la dame et fais venir ton roi. Toujours vérifier : aura-t-il encore un coup ?",
+  "entryChallenge": {
+    "fen": "k7/8/2K5/8/8/8/8/1Q6 w - - 0 1",
+    "prompt": "Tu as une dame et un roi, ton adversaire n’a plus que son roi, en a8. Fais mat en un coup. Attention, un coup ressemble au mat mais donne pat (partie nulle).",
+    "solution": [
+      "b1b7"
+    ],
+    "check": "mate",
+    "hint": "Ta dame peut se coller au roi noir si ton roi la protège.",
+    "accept": [
+      "b1b7"
+    ],
+    "kind": "move",
+    "alsoGood": [
+      "b1h7",
+      "b1b5",
+      "c6c7",
+      "b1b3",
+      "b1b2",
+      "b1b4",
+      "b1a2",
+      "b1d1",
+      "b1c2"
+    ],
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

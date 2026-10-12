@@ -1,31 +1,10 @@
 {
   "id": "str-pawn-structure",
-  "title": "Les structures de pions",
   "tier": 4,
   "priority": "A",
-  "domain": "stratégie",
   "prerequisites": [
     "vis-values"
   ],
-  "principle": "Les pions ne reculent pas : chaque poussée crée des forces et des faiblesses permanentes.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1",
-    "solution": [
-      "d4"
-    ],
-    "prompt": "Touche le pion isolé, sans pion ami sur les colonnes voisines.",
-    "mode": "square",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [],
   "lichessThemes": [],
   "ratingBand": [
     400,
@@ -39,48 +18,114 @@
   },
   "sources": [],
   "videoId": "pawn-break",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Les pions ne reculent pas : chaque poussée crée des forces et des faiblesses permanentes.",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "Pion isolé : aucun pion ami sur les colonnes voisines. Faible en finale, mais donne de l'activité en milieu de partie.",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "Pions doublés : deux pions sur la même colonne. Souvent faibles, mais ouvrent une colonne.",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "Pion arriéré : ne peut plus être soutenu par un pion voisin, sur une colonne semi-ouverte : cible.",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "Chaîne de pions : attaque la base de la chaîne adverse. Joue du côté où pointent tes pions.",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "Majorité : plus de pions sur une aile : peut créer un pion passé.",
-      "audio": null
-    },
-    {
-      "title": "Contenu",
-      "text": "Îlots de pions : moins d'îlots = structure plus saine.",
-      "audio": null
-    }
-  ],
-  "examples": [],
-  "drill": "plan-choice",
   "videos": [
     "pawn-break"
-  ]
+  ],
+  "drill": "plan-choice",
+  "domain": "stratégie",
+  "title": "Les pions qui peuvent s’aider",
+  "introduces": [
+    "pion isolé",
+    "pions doublés",
+    "défendre, protéger"
+  ],
+  "challenge": {
+    "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "d4"
+    ],
+    "kind": "square",
+    "check": "list",
+    "prompt": "Touche le pion blanc qui n’a aucun pion ami sur les deux colonnes voisines.",
+    "accept": [
+      "d4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case d4.",
+    "success": "Les pions en a2 et b2 peuvent se soutenir en avançant. Le pion en d4 n’a pas ce voisin. S’il est attaqué, une pièce blanche devra souvent rester pour le protéger (pouvoir reprendre si l’adversaire prend cette pièce)."
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Les pions qui peuvent s’aider",
+      "text": "Un pion isolé n’a aucun pion ami sur les colonnes voisines. Ici, le pion blanc en d4 n’a ni pion sur la colonne c, ni pion sur la colonne e. Tes pièces doivent donc l’aider.",
+      "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1",
+      "marks": [
+        "d4"
+      ]
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Pour chaque pion, regarde les deux colonnes voisines. Repère aussi les pions doublés : deux pions du même camp sur une seule colonne. Leurs chemins peuvent se gêner.",
+      "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Les pions en a2 et b2 peuvent se soutenir en avançant. Le pion en d4 n’a pas ce voisin. S’il est attaqué, une pièce blanche devra souvent rester pour le protéger.",
+      "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Un pion isolé n’est pas toujours mauvais. Il peut surveiller des cases importantes et laisser des lignes à tes pièces. Ici, d4 surveille c5 et e5.",
+      "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1"
+    }
+  ],
+  "exercises": [
+    {
+      "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1",
+      "solution": [
+        "d4"
+      ],
+      "kind": "square",
+      "check": "list",
+      "prompt": "Touche le pion blanc qui n’a aucun pion ami sur les deux colonnes voisines.",
+      "accept": [
+        "d4"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case d4.",
+      "success": "Les pions en a2 et b2 peuvent se soutenir en avançant. Le pion en d4 n’a pas ce voisin. S’il est attaqué, une pièce blanche devra souvent rester pour le protéger."
+    }
+  ],
+  "retenir": "Les pions ne reculent pas. Avant de les avancer, regarde ceux qu’ils aideront et ceux qu’ils laisseront seuls.",
+  "review": {
+    "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "d4"
+    ],
+    "kind": "square",
+    "check": "list",
+    "prompt": "Touche le pion blanc qui n’a aucun pion ami sur les deux colonnes voisines.",
+    "accept": [
+      "d4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case d4.",
+    "success": "Les pions en a2 et b2 peuvent se soutenir en avançant. Le pion en d4 n’a pas ce voisin. S’il est attaqué, une pièce blanche devra souvent rester pour le protéger."
+  },
+  "contentVersion": 2,
+  "principle": "Les pions ne reculent pas. Avant de les avancer, regarde ceux qu’ils aideront et ceux qu’ils laisseront seuls.",
+  "entryChallenge": {
+    "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "d4"
+    ],
+    "kind": "square",
+    "check": "list",
+    "prompt": "Touche le pion blanc qui n’a aucun pion ami sur les deux colonnes voisines.",
+    "accept": [
+      "d4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case d4.",
+    "success": "Les pions en a2 et b2 peuvent se soutenir en avançant. Le pion en d4 n’a pas ce voisin. S’il est attaqué, une pièce blanche devra souvent rester pour le protéger (pouvoir reprendre si l’adversaire prend cette pièce).",
+    "mode": "square"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

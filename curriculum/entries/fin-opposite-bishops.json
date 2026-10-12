@@ -1,46 +1,9 @@
 {
   "id": "fin-opposite-bishops",
-  "title": "Fous de couleurs opposées",
   "tier": 3,
   "priority": "B",
-  "domain": "finales",
   "prerequisites": [
     "fin-convert"
-  ],
-  "principle": "En finale pure, les fous de couleurs opposées font souvent nulle même avec un ou deux pions de moins. En milieu de partie, ils favorisent l'attaquant.",
-  "why": [
-    "Le défenseur bloque les pions sur les cases de la couleur de son fou",
-    "l'autre fou ne peut jamais les attaquer."
-  ],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "8/8/1pp3p1/p1k2p2/P1Pb1P1B/1P6/6K1/8 w - - 10 47",
-    "solution": [
-      "h4e7"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/BP6KZ",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "8/8/1pp3p1/p1k2p2/P1Pb1P1B/1P6/6K1/8 w - - 10 47",
-      "move": "h4e7",
-      "text": "",
-      "arrows": [
-        [
-          "h4",
-          "e7"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "bishopEndgame"
@@ -57,20 +20,109 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "finales",
+  "title": "Deux fous qui ne se rencontreront jamais",
+  "introduces": [
+    "fous de couleurs opposées"
+  ],
+  "challenge": {
+    "fen": "7k/8/8/3b4/8/8/8/2B3K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "d5"
+    ],
+    "check": "rule",
+    "prompt": "Touche le fou que ton fou en c1 ne pourra jamais prendre, car ils ne parcourent pas la même couleur.",
+    "accept": [
+      "d5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case d5.",
+    "success": "Ton fou ne pourra jamais prendre le fou noir : leurs chemins n’utilisent pas les mêmes cases. Avec peu de pièces, cela peut aider le camp qui a moins de pions à tenir la partie."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "En finale pure, les fous de couleurs opposées font souvent nulle même avec un ou deux pions de moins. En milieu de partie, ils favorisent l'attaquant.",
-      "audio": null
+      "step": "principe",
+      "title": "Deux fous qui ne se rencontreront jamais",
+      "text": "Des fous de couleurs opposées sont deux fous qui restent sur des couleurs de cases différentes. Ici, ton fou en c1 reste sur les cases foncées. Le fou noir en d5 reste sur les cases claires.",
+      "fen": "7k/8/8/3b4/8/8/8/2B3K1 w - - 0 1",
+      "marks": [
+        "d5"
+      ]
     },
     {
-      "title": "Pourquoi",
-      "text": "Le défenseur bloque les pions sur les cases de la couleur de son fou. L'autre fou ne peut jamais les attaquer.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde la couleur de c1, puis celle de d5. Pour arrêter un pion adverse, ton roi et ton fou doivent se répartir le travail. Le roi peut surveiller les cases que ton fou n’atteint pas.",
+      "fen": "7k/8/8/3b4/8/8/8/2B3K1 w - - 0 1",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Ton fou ne pourra jamais prendre le fou noir : leurs chemins n’utilisent pas les mêmes cases. Avec peu de pièces, cela peut aider le camp qui a moins de pions à tenir la partie.",
+      "fen": "7k/8/8/3b4/8/8/8/2B3K1 w - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Avec des dames et des tours encore présentes, les attaques contre le roi comptent beaucoup. Des fous de couleurs opposées ne garantissent donc jamais une partie nulle.",
+      "fen": "7k/8/8/3b4/8/8/8/2B3K1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "7k/8/8/3b4/8/8/8/2B3K1 w - - 0 1",
+      "kind": "square",
+      "solution": [
+        "d5"
+      ],
+      "check": "rule",
+      "prompt": "Touche le fou que ton fou en c1 ne pourra jamais prendre, car ils ne parcourent pas la même couleur.",
+      "accept": [
+        "d5"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case d5.",
+      "success": "Ton fou ne pourra jamais prendre le fou noir : leurs chemins n’utilisent pas les mêmes cases. Avec peu de pièces, cela peut aider le camp qui a moins de pions à tenir la partie."
+    }
+  ],
+  "retenir": "Deux fous sur des couleurs différentes ne peuvent pas se prendre. Le roi doit aider à surveiller les autres cases.",
+  "review": {
+    "fen": "7k/8/8/3b4/8/8/8/2B3K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "d5"
+    ],
+    "check": "rule",
+    "prompt": "Touche le fou que ton fou en c1 ne pourra jamais prendre, car ils ne parcourent pas la même couleur.",
+    "accept": [
+      "d5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case d5.",
+    "success": "Ton fou ne pourra jamais prendre le fou noir : leurs chemins n’utilisent pas les mêmes cases. Avec peu de pièces, cela peut aider le camp qui a moins de pions à tenir la partie."
+  },
+  "contentVersion": 2,
+  "principle": "Deux fous sur des couleurs différentes ne peuvent pas se prendre. Le roi doit aider à surveiller les autres cases.",
+  "entryChallenge": {
+    "fen": "7k/8/8/3b4/8/8/8/2B3K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "d5"
+    ],
+    "check": "rule",
+    "prompt": "Touche le fou que ton fou en c1 ne pourra jamais prendre, car ils ne parcourent pas la même couleur.",
+    "accept": [
+      "d5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case d5.",
+    "success": "Ton fou ne pourra jamais prendre le fou noir : leurs chemins n’utilisent pas les mêmes cases. Avec peu de pièces, cela peut aider le camp qui a moins de pions à tenir la partie.",
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

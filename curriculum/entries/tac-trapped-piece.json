@@ -1,77 +1,9 @@
 {
   "id": "tac-trapped-piece",
-  "title": "La pièce piégée",
   "tier": 2,
   "priority": "A",
-  "domain": "tactique",
   "prerequisites": [
     "vis-attacked-squares"
-  ],
-  "principle": "Une pièce qui n'a plus de case sûre peut être gagnée simplement en l'attaquant.",
-  "why": [
-    "Classique avec un fou en a7/h7 après avoir pris un pion (piégé par b6/g6), une dame qui va chercher le pion b2, un cavalier sur le bord."
-  ],
-  "signals": [
-    "une pièce adverse au bord ou dans ton camp, avec peu de cases de retraite."
-  ],
-  "method": [
-    "compte ses cases de fuite",
-    "contrôle-les",
-    "attaque-la (avec un pion si possible)."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
-    "solution": [
-      "g3g4",
-      "f5g4",
-      "f4g4"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/wttJj",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
-      "move": "g3g4",
-      "text": "",
-      "arrows": [
-        [
-          "g3",
-          "g4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/8/4p1k1/4Pb2/5KP1/3p4/8/4B3 b - - 0 73",
-      "move": "f5g4",
-      "text": "",
-      "arrows": [
-        [
-          "f5",
-          "g4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/8/4p1k1/4P3/5Kb1/3p4/8/4B3 w - - 0 74",
-      "move": "f4g4",
-      "text": "",
-      "arrows": [
-        [
-          "f4",
-          "g4"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "trappedPiece"
@@ -88,30 +20,139 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Une pièce sans case sûre",
+  "introduces": [
+    "pièce piégée",
+    "échange"
+  ],
+  "challenge": {
+    "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
+    "solution": [
+      "g3g4",
+      "f5g4",
+      "f4g4"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le fou noir en f5 a très peu de sorties. Attaque-le avec ton pion, puis reprends s’il capture.",
+    "accept": [
+      "g3g4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde chaque diagonale du fou noir avant de pousser g4. Une attaque gagne une pièce seulement si cette pièce ne peut ni fuir, ni prendre ton attaquant sans perte.",
+    "success": "Ton pion avance en g4 et attaque le fou en f5. Si le fou prend ce pion, ton roi le reprend en g4. Tu échanges (une prise suivie d’une reprise) un pion contre un fou."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Une pièce qui n'a plus de case sûre peut être gagnée simplement en l'attaquant.",
-      "audio": null
+      "step": "principe",
+      "title": "Une pièce sans case sûre",
+      "text": "Une pièce piégée ne peut plus fuir sans se faire prendre. Ici, le fou noir en f5 manque de place. Ton roi en f4, ton pion en e5 et ton fou en e1 limitent ses sorties.",
+      "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
+      "marks": []
     },
     {
-      "title": "Signaux",
-      "text": "Une pièce adverse au bord ou dans ton camp, avec peu de cases de retraite.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde chaque diagonale du fou noir avant de pousser g4. Une attaque gagne une pièce seulement si cette pièce ne peut ni fuir, ni prendre ton attaquant sans perte.",
+      "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
+      "arrows": [
+        [
+          "g3",
+          "g4"
+        ]
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Compte ses cases de fuite. Contrôle-les. Attaque-la (avec un pion si possible).",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le pion blanc avance en g4 et attaque le fou en f5.",
+      "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
+      "line": [
+        {
+          "uci": "g3g4",
+          "text": "Le pion blanc avance en g4 et attaque le fou en f5."
+        },
+        {
+          "uci": "f5g4",
+          "text": "Le fou prend le pion en g4."
+        },
+        {
+          "uci": "f4g4",
+          "text": "Le roi blanc reprend le fou en g4 : trois points gagnés contre un."
+        }
+      ]
     },
     {
-      "title": "Pourquoi",
-      "text": "Un fou qui prend en a7 ou h7 peut être enfermé par b6 ou g6. Une dame gourmande en b2 peut manquer de sorties. Un cavalier au bord peut aussi être piégé.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Ton pion avance en g4 et attaque le fou en f5. Si le fou prend ce pion, ton roi le reprend en g4. Tu échanges un pion contre un fou.",
+      "fen": "8/8/4p1k1/4P3/6K1/3p4/8/4B3 b - - 0 74"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ne pousse pas un pion uniquement pour chasser un fou. Ton pion ne peut pas reculer. Ici, le gain du fou justifie de modifier les cases surveillées par ton pion.",
+      "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73"
     }
   ],
+  "exercises": [
+    {
+      "fen": "8/8/4p1k1/4P3/5Kb1/3p4/8/4B3 w - - 0 74",
+      "solution": [
+        "f4g4"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. Le roi blanc reprend le fou en g4 : trois points gagnés contre un.",
+      "accept": [
+        "f4g4"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en f4.",
+      "success": "Ton pion avance en g4 et attaque le fou en f5. Si le fou prend ce pion, ton roi le reprend en g4. Tu échanges un pion contre un fou."
+    }
+  ],
+  "retenir": "Avant de chasser une pièce, regarde toutes ses sorties et toutes ses prises.",
+  "review": {
+    "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
+    "solution": [
+      "g3g4",
+      "f5g4",
+      "f4g4"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le fou noir en f5 a très peu de sorties. Attaque-le avec ton pion, puis reprends s’il capture.",
+    "accept": [
+      "g3g4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde chaque diagonale du fou noir avant de pousser g4. Une attaque gagne une pièce seulement si cette pièce ne peut ni fuir, ni prendre ton attaquant sans perte.",
+    "success": "Ton pion avance en g4 et attaque le fou en f5. Si le fou prend ce pion, ton roi le reprend en g4. Tu échanges un pion contre un fou."
+  },
+  "contentVersion": 2,
+  "principle": "Avant de chasser une pièce, regarde toutes ses sorties et toutes ses prises.",
+  "entryChallenge": {
+    "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
+    "solution": [
+      "g3g4",
+      "f5g4",
+      "f4g4"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le fou noir en f5 a très peu de sorties. Attaque-le avec ton pion, puis reprends s’il capture.",
+    "accept": [
+      "g3g4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde chaque diagonale du fou noir avant de pousser g4. Une attaque gagne une pièce seulement si cette pièce ne peut ni fuir, ni prendre ton attaquant sans perte.",
+    "success": "Ton pion avance en g4 et attaque le fou en f5. Si le fou prend ce pion, ton roi le reprend en g4. Tu échanges (une prise suivie d’une reprise) un pion contre un fou.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

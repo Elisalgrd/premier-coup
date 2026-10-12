@@ -1,21 +1,261 @@
 {
   "id": "ouv-white-italian",
-  "title": "Avec les blancs : l'Italienne tranquille",
   "tier": 2,
   "priority": "A",
-  "domain": "ouvertures",
   "prerequisites": [
     "ouv-principles"
   ],
-  "principle": "Développer vite, roquer, préparer d4 avec c3. Une structure simple qui marche contre presque tout après 1.e4 e5.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "jouer d4 trop tôt sans avoir calculé ...exd4 et la reprise.",
-    "fen": null,
-    "line": []
+  "lichessThemes": [
+    "opening"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "jouer la ligne de mémoire et 3 parties contre le moteur depuis la position du 9e coup."
   },
+  "sources": [],
+  "videoId": "course-italian",
+  "videos": [
+    "course-italian",
+    "scotch",
+    "london"
+  ],
+  "domain": "ouvertures",
+  "title": "Une façon simple de commencer avec les blancs",
+  "introduces": [
+    "ouverture",
+    "plan"
+  ],
+  "challenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "solution": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5",
+      "c2c3",
+      "g8f6",
+      "d2d3",
+      "d7d6",
+      "e1g1",
+      "e8g8",
+      "f1e1",
+      "a7a6",
+      "c4b3",
+      "c5a7",
+      "h2h3"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Commence par occuper le milieu avec ton pion e2. Les explications vont ensuite te montrer comment sortir tes pièces.",
+    "accept": [
+      "e2e4"
+    ],
+    "alsoGood": [
+      "d2d4",
+      "g1f3",
+      "g2g3",
+      "c2c4",
+      "e2e3",
+      "b1c3",
+      "c2c3",
+      "d2d3",
+      "a2a3"
+    ],
+    "hint": "Ne retiens pas seulement les coups. Le pion e occupe le milieu, le cavalier attaque e5, le fou vise f7. Puis tu protèges ton roi. La démonstration montre une réponse noire courante à chaque étape.",
+    "success": "Le roi blanc se met à l’abri en g1. Le pion en c3 pourra soutenir une future avance du pion d. Le fou garde une diagonale vers le camp noir."
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Une façon simple de commencer avec les blancs",
+      "text": "L’ouverture, c’est le début de la partie. L’Italienne commence par le pion e2 qui avance, le cavalier g1 qui sort en f3 et le fou f1 qui rejoint c4. Chaque coup aide une nouvelle pièce.",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Ne retiens pas seulement les coups. Le pion e occupe le milieu, le cavalier attaque e5, le fou vise f7. Puis tu protèges ton roi. La démonstration montre une réponse noire courante à chaque étape.",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "arrows": [
+        [
+          "e2",
+          "e4"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le pion blanc avance en e4 : il surveille d5 et f5.",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "line": [
+        {
+          "uci": "e2e4",
+          "text": "Le pion blanc avance en e4 : il surveille d5 et f5."
+        },
+        {
+          "uci": "e7e5",
+          "text": "Les noirs avancent aussi leur pion en e5."
+        },
+        {
+          "uci": "g1f3",
+          "text": "Le cavalier blanc sort en f3 et attaque e5."
+        },
+        {
+          "uci": "b8c6",
+          "text": "Le cavalier noir va en c6 pour protéger e5."
+        },
+        {
+          "uci": "f1c4",
+          "text": "Le fou blanc va en c4 et vise f7."
+        },
+        {
+          "uci": "f8c5",
+          "text": "Le fou noir va en c5 et vise f2."
+        },
+        {
+          "uci": "c2c3",
+          "text": "Le pion blanc va en c3 pour préparer d4."
+        },
+        {
+          "uci": "g8f6",
+          "text": "Le cavalier noir sort en f6 et attaque e4."
+        },
+        {
+          "uci": "d2d3",
+          "text": "Le pion blanc va en d3 pour protéger e4."
+        },
+        {
+          "uci": "d7d6",
+          "text": "Le pion noir va en d6 pour soutenir e5."
+        },
+        {
+          "uci": "e1g1",
+          "text": "Le roi blanc va en g1 et la tour en f1 : c’est le roque, qui protège le roi."
+        },
+        {
+          "uci": "e8g8",
+          "text": "Les noirs mettent aussi leur roi à l’abri en g8."
+        },
+        {
+          "uci": "f1e1",
+          "text": "La tour blanche va en e1 pour soutenir e4."
+        },
+        {
+          "uci": "a7a6",
+          "text": "Le pion noir avance en a6 pour donner une sortie au fou."
+        },
+        {
+          "uci": "c4b3",
+          "text": "Le fou blanc recule en b3 et garde la diagonale vers f7."
+        },
+        {
+          "uci": "c5a7",
+          "text": "Le fou noir recule en a7."
+        },
+        {
+          "uci": "h2h3",
+          "text": "Le pion blanc va en h3 pour empêcher une pièce noire de s’installer en g4."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le roi blanc se met à l’abri en g1. Le pion en c3 pourra soutenir une future avance du pion d. Le fou garde une diagonale vers le camp noir.",
+      "fen": "r1bq1rk1/bpp2ppp/p1np1n2/4p3/4P3/1BPP1N1P/PP3PP1/RNBQR1K1 b - - 0 9"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Cette suite suppose certaines réponses noires. Si l’adversaire attaque une pièce ou ton roi, réponds au danger avant de continuer le plan (une idée pour tes prochains coups) appris.",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    }
+  ],
+  "exercises": [
+    {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "solution": [
+        "g1f3",
+        "b8c6",
+        "f1c4",
+        "f8c5",
+        "c2c3",
+        "g8f6",
+        "d2d3",
+        "d7d6",
+        "e1g1",
+        "e8g8",
+        "f1e1",
+        "a7a6",
+        "c4b3",
+        "c5a7",
+        "h2h3"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. Le cavalier blanc sort en f3 et attaque e5.",
+      "accept": [
+        "g1f3"
+      ],
+      "alsoGood": [
+        "b1c3",
+        "g1e2",
+        "d2d4",
+        "f1c4",
+        "d2d3",
+        "a2a3",
+        "f1e2",
+        "a2a4",
+        "c2c3"
+      ],
+      "hint": "Regarde la pièce en g1.",
+      "success": "Le roi blanc se met à l’abri en g1. Le pion en c3 pourra soutenir une future avance du pion d. Le fou garde une diagonale vers le camp noir."
+    }
+  ],
+  "retenir": "Au début, fais participer tes cavaliers et tes fous, puis mets ton roi à l’abri.",
+  "review": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "solution": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5",
+      "c2c3",
+      "g8f6",
+      "d2d3",
+      "d7d6",
+      "e1g1",
+      "e8g8",
+      "f1e1",
+      "a7a6",
+      "c4b3",
+      "c5a7",
+      "h2h3"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Commence par occuper le milieu avec ton pion e2. Les explications vont ensuite te montrer comment sortir tes pièces.",
+    "accept": [
+      "e2e4"
+    ],
+    "alsoGood": [],
+    "hint": "Ne retiens pas seulement les coups. Le pion e occupe le milieu, le cavalier attaque e5, le fou vise f7. Puis tu protèges ton roi. La démonstration montre une réponse noire courante à chaque étape.",
+    "success": "Le roi blanc se met à l’abri en g1. Le pion en c3 pourra soutenir une future avance du pion d. Le fou garde une diagonale vers le camp noir."
+  },
+  "contentVersion": 2,
+  "principle": "Au début, fais participer tes cavaliers et tes fous, puis mets ton roi à l’abri.",
   "entryChallenge": {
     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
     "solution": [
@@ -37,260 +277,28 @@
       "c5a7",
       "h2h3"
     ],
-    "prompt": "Trait aux blancs. Développe tes pièces en contrôlant le centre.",
-    "outcome": null,
-    "mode": "opening",
-    "source": "CURRICULUM.md"
+    "kind": "move",
+    "check": "list",
+    "prompt": "Commence par occuper le milieu avec ton pion e2. Les explications vont ensuite te montrer comment sortir tes pièces.",
+    "accept": [
+      "e2e4"
+    ],
+    "alsoGood": [
+      "d2d4",
+      "g1f3",
+      "g2g3",
+      "c2c4",
+      "e2e3",
+      "b1c3",
+      "c2c3",
+      "d2d3",
+      "a2a3"
+    ],
+    "hint": "Ne retiens pas seulement les coups. Le pion e occupe le milieu, le cavalier attaque e5, le fou vise f7. Puis tu protèges ton roi. La démonstration montre une réponse noire courante à chaque étape.",
+    "success": "Le roi blanc se met à l’abri en g1. Le pion en c3 pourra soutenir une future avance du pion d. Le fou garde une diagonale vers le camp noir.",
+    "mode": "move"
   },
-  "guided": [
-    {
-      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
-      "move": "e2e4",
-      "text": "",
-      "arrows": [
-        [
-          "e2",
-          "e4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
-      "move": "e7e5",
-      "text": "",
-      "arrows": [
-        [
-          "e7",
-          "e5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-      "move": "g1f3",
-      "text": "",
-      "arrows": [
-        [
-          "g1",
-          "f3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
-      "move": "b8c6",
-      "text": "",
-      "arrows": [
-        [
-          "b8",
-          "c6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
-      "move": "f1c4",
-      "text": "",
-      "arrows": [
-        [
-          "f1",
-          "c4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
-      "move": "f8c5",
-      "text": "",
-      "arrows": [
-        [
-          "f8",
-          "c5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
-      "move": "c2c3",
-      "text": "",
-      "arrows": [
-        [
-          "c2",
-          "c3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 0 4",
-      "move": "g8f6",
-      "text": "",
-      "arrows": [
-        [
-          "g8",
-          "f6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5",
-      "move": "d2d3",
-      "text": "",
-      "arrows": [
-        [
-          "d2",
-          "d3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQK2R b KQkq - 0 5",
-      "move": "d7d6",
-      "text": "",
-      "arrows": [
-        [
-          "d7",
-          "d6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQK2R w KQkq - 0 6",
-      "move": "e1g1",
-      "text": "",
-      "arrows": [
-        [
-          "e1",
-          "g1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 b kq - 1 6",
-      "move": "e8g8",
-      "text": "",
-      "arrows": [
-        [
-          "e8",
-          "g8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w - - 2 7",
-      "move": "f1e1",
-      "text": "",
-      "arrows": [
-        [
-          "f1",
-          "e1"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQR1K1 b - - 3 7",
-      "move": "a7a6",
-      "text": "",
-      "arrows": [
-        [
-          "a7",
-          "a6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bq1rk1/1pp2ppp/p1np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQR1K1 w - - 0 8",
-      "move": "c4b3",
-      "text": "",
-      "arrows": [
-        [
-          "c4",
-          "b3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bq1rk1/1pp2ppp/p1np1n2/2b1p3/4P3/1BPP1N2/PP3PPP/RNBQR1K1 b - - 1 8",
-      "move": "c5a7",
-      "text": "",
-      "arrows": [
-        [
-          "c5",
-          "a7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1bq1rk1/bpp2ppp/p1np1n2/4p3/4P3/1BPP1N2/PP3PPP/RNBQR1K1 w - - 2 9",
-      "move": "h2h3",
-      "text": "",
-      "arrows": [
-        [
-          "h2",
-          "h3"
-        ]
-      ],
-      "marks": []
-    }
-  ],
-  "lichessThemes": [
-    "opening"
-  ],
-  "ratingBand": [
-    400,
-    2200
-  ],
-  "mastery": {
-    "attempts": 15,
-    "accuracy": 0.8,
-    "distinctDays": 2,
-    "description": "jouer la ligne de mémoire et 3 parties contre le moteur depuis la position du 9e coup."
-  },
-  "sources": [],
-  "videoId": "course-italian",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Développer vite, roquer, préparer d4 avec c3. Une structure simple qui marche contre presque tout après 1.e4 e5.",
-      "audio": null
-    },
-    {
-      "title": "Plans",
-      "text": "Cbd2-f1-g3 pour attaquer à l'aile roi. D4 au bon moment pour ouvrir le centre. A4 si les noirs jouent ...b5. H3 empêche ...Fg4 qui clouerait le Cf3.",
-      "audio": null
-    },
-    {
-      "title": "Ce que les noirs jouent souvent à petit niveau",
-      "text": "..Cf6 (défense des deux cavaliers, voir ouv-early-traps), 3...d6, 3...Fe7. Pour tous : même schéma c3, d3, O-O, Te1.",
-      "audio": null
-    },
-    {
-      "title": "Piège à éviter",
-      "text": "Jouer d4 trop tôt sans avoir calculé ...exd4 et la reprise.",
-      "audio": null
-    }
-  ],
+  "guided": [],
   "examples": [],
-  "videos": [
-    "course-italian",
-    "scotch",
-    "london"
-  ]
+  "pitfall": {}
 }

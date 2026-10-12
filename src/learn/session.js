@@ -40,14 +40,14 @@ export function sessionPlan(state, entries, today = dateKey()) {
   });
   tasks.push({
     kind: "targeted",
-    label: "Pratique ciblée",
+    label: "Exercices de la leçon",
     entryId: notion.id,
     count: minutes === 15 ? 8 : minutes === 25 ? 10 : 12,
     minutes: minutes * 0.28,
   });
   tasks.push({
     kind: "mixed",
-    label: "Retrouver les motifs",
+    label: "Résoudre des problèmes variés",
     count: minutes === 15 ? 5 : 8,
     minutes: minutes - reviews - v - minutes * 0.48 - 0.5,
   });

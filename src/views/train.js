@@ -5,7 +5,7 @@ export function trainView(entries) {
       "puzzles",
       "◇",
       "Problèmes mélangés",
-      "Repère le motif sans connaître son nom à l’avance.",
+      "Trouve une prise ou une attaque sans connaître le thème à l’avance.",
       "Résoudre",
     ],
     [
@@ -19,14 +19,14 @@ export function trainView(entries) {
       "reviews",
       "↻",
       "Mes révisions",
-      "Retrouve les positions et les principes à consolider.",
+      "Revois les idées que tu as déjà apprises.",
       "Réviser",
     ],
     [
       "vision",
       "◎",
       "Vision de l’échiquier",
-      "Cases, attaques, pièces en prise : entraîne ton regard.",
+      "Apprends à voir les cases et les pièces qui peuvent être prises.",
       "Observer",
     ],
     [
@@ -40,14 +40,14 @@ export function trainView(entries) {
       "import",
       "↥",
       "Analyser mes parties",
-      "Importe un PGN ou tes parties publiques.",
+      "Colle le texte d’une partie ou retrouve tes parties en ligne.",
       "Importer",
     ],
     [
       "woodpecker",
       "◷",
-      "Le pic-vert",
-      "Retrouve les mêmes motifs, plus vite à chaque cycle.",
+      "Refaire les mêmes problèmes",
+      "Rejoue les mêmes positions et compare tes réussites.",
       "Choisir un cycle",
     ],
   ]

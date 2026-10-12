@@ -1,45 +1,9 @@
 {
   "id": "str-outposts",
-  "title": "Les avant-postes",
   "tier": 4,
   "priority": "A",
-  "domain": "stratégie",
   "prerequisites": [
     "str-worst-piece"
-  ],
-  "principle": "Cherche une case avancée défendue par un de tes pions. Si aucun pion adverse ne peut l’attaquer, installe ton cavalier.",
-  "why": [
-    "Un cavalier installé sur un avant-poste (souvent d5, e5, c5, f5) ne peut être chassé que par un échange et domine la position."
-  ],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
-    "solution": [
-      "c3d5"
-    ],
-    "prompt": "Installe ton cavalier sur une case centrale soutenue par un pion.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
-      "move": "c3d5",
-      "text": "",
-      "arrows": [
-        [
-          "c3",
-          "d5"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -54,21 +18,155 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "plan-choice",
+  "domain": "stratégie",
+  "title": "Une case où ton cavalier peut rester",
+  "introduces": [
+    "avant-poste"
+  ],
+  "challenge": {
+    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "c3d5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le pion noir en d6 ne peut pas prendre devant lui. Installe ton cavalier en d5, protégé par tes pions.",
+    "accept": [
+      "c3d5"
+    ],
+    "alsoGood": [
+      "c3d1",
+      "g1f1",
+      "c4c5",
+      "f2f4",
+      "h2h4",
+      "f2f3",
+      "g2g4",
+      "a2a3",
+      "g2g3"
+    ],
+    "hint": "Regarde d’abord les pions noirs des colonnes c et e. Il n’y en a plus. Ils ne pourront donc pas chasser un cavalier installé en d5.",
+    "success": "En d5, le cavalier surveille des cases proches du camp noir. Le pion noir en d6 ne peut pas le prendre : un pion prend en diagonale, pas devant lui."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Cherche une case avancée défendue par un de tes pions. Si aucun pion adverse ne peut l’attaquer, installe ton cavalier.",
-      "audio": null
+      "step": "principe",
+      "title": "Une case où ton cavalier peut rester",
+      "text": "Un avant-poste est une case avancée protégée par un de tes pions, qu’aucun pion adverse ne peut attaquer. Ici, d5 convient à ton cavalier en c3 : tes pions c4 et e4 la protègent.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Un cavalier stable au centre contrôle beaucoup de cases. Sans attaque de pion possible, l’adversaire doit souvent l’échanger pour le chasser.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde d’abord les pions noirs des colonnes c et e. Il n’y en a plus. Ils ne pourront donc pas chasser un cavalier installé en d5.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "c3",
+          "d5"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le cavalier en c3 va en d5, protégé par les pions en c4 et e4.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "c3d5",
+          "text": "Le cavalier en c3 va en d5, protégé par les pions en c4 et e4."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "En d5, le cavalier surveille des cases proches du camp noir. Le pion noir en d6 ne peut pas le prendre : un pion prend en diagonale, pas devant lui.",
+      "fen": "6k1/pp3ppp/3p4/3N4/2P1P3/8/PP3PPP/6K1 b - - 1 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Une pièce adverse pourrait quand même prendre ton cavalier. Un avant-poste résiste aux pions, pas à toutes les attaques. Avant de t’y installer, regarde aussi les fous, cavaliers, tours et dame.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "solution": [
+        "c3d5"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Le pion noir en d6 ne peut pas prendre devant lui. Installe ton cavalier en d5, protégé par tes pions.",
+      "accept": [
+        "c3d5"
+      ],
+      "alsoGood": [
+        "c3d1",
+        "g1f1",
+        "c4c5",
+        "f2f4",
+        "h2h4",
+        "f2f3",
+        "g2g4",
+        "a2a3",
+        "g2g3"
+      ],
+      "hint": "Regarde d’abord les pions noirs des colonnes c et e. Il n’y en a plus. Ils ne pourront donc pas chasser un cavalier installé en d5.",
+      "success": "En d5, le cavalier surveille des cases proches du camp noir. Le pion noir en d6 ne peut pas le prendre : un pion prend en diagonale, pas devant lui."
+    }
+  ],
+  "retenir": "Une bonne case de cavalier est protégée par un pion et difficile à attaquer avec un pion adverse.",
+  "review": {
+    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "c3d5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le pion noir en d6 ne peut pas prendre devant lui. Installe ton cavalier en d5, protégé par tes pions.",
+    "accept": [
+      "c3d5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde d’abord les pions noirs des colonnes c et e. Il n’y en a plus. Ils ne pourront donc pas chasser un cavalier installé en d5.",
+    "success": "En d5, le cavalier surveille des cases proches du camp noir. Le pion noir en d6 ne peut pas le prendre : un pion prend en diagonale, pas devant lui."
+  },
+  "contentVersion": 2,
+  "principle": "Une bonne case de cavalier est protégée par un pion et difficile à attaquer avec un pion adverse.",
+  "entryChallenge": {
+    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "c3d5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le pion noir en d6 ne peut pas prendre devant lui. Installe ton cavalier en d5, protégé par tes pions.",
+    "accept": [
+      "c3d5"
+    ],
+    "alsoGood": [
+      "c3d1",
+      "g1f1",
+      "c4c5",
+      "f2f4",
+      "h2h4",
+      "f2f3",
+      "g2g4",
+      "a2a3",
+      "g2g3"
+    ],
+    "hint": "Regarde d’abord les pions noirs des colonnes c et e. Il n’y en a plus. Ils ne pourront donc pas chasser un cavalier installé en d5.",
+    "success": "En d5, le cavalier surveille des cases proches du camp noir. Le pion noir en d6 ne peut pas le prendre : un pion prend en diagonale, pas devant lui.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "plan-choice",
-  "videos": []
+  "pitfall": {}
 }

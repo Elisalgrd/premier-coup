@@ -1,8 +1,11 @@
 import { Chess } from "../chess/chess.js";
 import { uci } from "../chess/notation.js";
-export function parsePgn(pgn, { color = "w", source = "PGN", id = null } = {}) {
+export function parsePgn(
+  pgn,
+  { color = "w", source = "Partie collée", id = null } = {},
+) {
   if (typeof pgn !== "string" || pgn.length > 300000)
-    throw Error("PGN absent ou trop volumineux.");
+    throw Error("Le texte de la partie manque ou dépasse la taille autorisée.");
   const game = new Chess();
   game.loadPgn(pgn);
   const headers = game.getHeaders();
@@ -14,7 +17,7 @@ export function parsePgn(pgn, { color = "w", source = "PGN", id = null } = {}) {
       "Seules les parties d’échecs classiques sont prises en charge.",
     );
   const moves = game.history({ verbose: true });
-  if (!moves.length) throw Error("Ce PGN ne contient aucun coup.");
+  if (!moves.length) throw Error("Ce texte ne contient aucun coup reconnu.");
   return {
     id: id || crypto.randomUUID(),
     source,

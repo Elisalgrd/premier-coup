@@ -43,10 +43,10 @@ test("catalogue preserves source order and full text search is separate", () => 
     ].map((m) => m[1]);
   assert.deepEqual(
     index.map((e) => e.id),
-    order,
+    ["vis-start", ...order],
   );
   const search = JSON.parse(fs.readFileSync("curriculum/search.json"));
-  assert.equal(Object.keys(search).length, 71);
+  assert.equal(Object.keys(search).length, 72);
   assert.ok(search["vis-rules"].includes("passant"));
 });
 

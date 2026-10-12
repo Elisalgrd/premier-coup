@@ -6,7 +6,7 @@ import {
   endangeredPieces,
   knightPath,
 } from "../chess/vision.js";
-import { moveUci, sanFr, uci } from "../chess/notation.js";
+import { moveUci, sanFr, uci, describeMove } from "../chess/notation.js";
 import { loadPuzzles } from "../learn/puzzles.js";
 import { dateKey, esc, $ } from "../ui/helpers.js";
 const games = {
@@ -14,10 +14,13 @@ const games = {
     "Trouve la case",
     "Touche la case annoncée. Objectif : 30 réponses en 30 secondes.",
   ],
-  name: ["Nomme la case", "Une case est entourée. Choisis ses coordonnées."],
+  name: [
+    "Nomme la case",
+    "Une case est entourée. Choisis sa lettre et son chiffre.",
+  ],
   loose: [
     "Pièces en prise",
-    "Touche les pièces que l’adversaire peut prendre avec un gain de matériel.",
+    "Touche les pièces qu’on peut prendre en gagnant plus de points qu’on en perd.",
   ],
   count: [
     "Compte les attaquants",
@@ -28,13 +31,13 @@ const games = {
     "Rejoins la cible en sautant avec le cavalier. Évite les cases rouges.",
   ],
   checks: [
-    "Échecs disponibles",
-    "Joue chaque coup qui donne échec. Change de camp pour chercher les deux côtés.",
+    "Attaquer le roi",
+    "Joue les coups qui attaquent le roi adverse. Cherche ensuite avec l’autre camp.",
   ],
 };
 const pick = (a) => a[Math.floor(Math.random() * a.length)];
 export function visionMenu(state) {
-  return `<a href="#train" class="back-link">← S’entraîner</a><header class="page-intro"><span class="eyebrow">TON REGARD AVANT TES PLANS</span><h1>Une minute de vision.</h1><p>Des exercices courts pour voir les cases, les menaces et les coups forçants.</p></header><div class="training-grid">${Object.entries(
+  return `<a href="#train" class="back-link">← S’entraîner</a><header class="page-intro"><span class="eyebrow">TON REGARD AVANT TES PLANS</span><h1>Une minute de vision.</h1><p>Des exercices courts pour voir les cases, les menaces et les attaques et les prises.</p></header><div class="training-grid">${Object.entries(
     games,
   )
     .map(
@@ -235,7 +238,7 @@ export async function startVision(
             marks: [m.slice(2, 4)],
           });
           feedback(
-            sanFr(made.san) + " : " + found.size + " / " + expected.length,
+            describeMove(made) + " " + found.size + " / " + expected.length,
             true,
           );
           if (found.size === expected.length)
@@ -303,7 +306,7 @@ export async function startVision(
     }
     if (mode === "checks") {
       controls.innerHTML =
-        '<button class="button secondary" id="checks-side">Changer le camp au trait</button>';
+        '<button class="button secondary" id="checks-side">Changer le camp qui joue</button>';
       $("#checks-side", root).onclick = () => {
         const parts = game.fen().split(" ");
         parts[1] = game.turn() === "w" ? "b" : "w";
@@ -315,7 +318,8 @@ export async function startVision(
           arrows: [],
         });
         feedback(
-          "Trait aux " + (game.turn() === "w" ? "blancs." : "noirs."),
+          "C’est aux " +
+            (game.turn() === "w" ? "blancs de jouer." : "noirs de jouer."),
           true,
         );
       };

@@ -1,43 +1,9 @@
 {
   "id": "mat-patterns-misc",
-  "title": "Les autres motifs de mat à reconnaître",
   "tier": 2,
   "priority": "C",
-  "domain": "mats",
   "prerequisites": [
     "mat-queen-support"
-  ],
-  "principle": "Chaque motif est une « image » de mat. Plus tu en connais, plus vite tu les vois.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
-    "solution": [
-      "c8f8"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/OnQBo",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
-      "move": "c8f8",
-      "text": "",
-      "arrows": [
-        [
-          "c8",
-          "f8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "hookMate",
@@ -67,20 +33,124 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "mats",
+  "title": "Reconnaître les sorties fermées",
+  "introduces": [
+    "motif de mat"
+  ],
+  "challenge": {
+    "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+    "solution": [
+      "c8f8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "La tour en c8 peut donner un échec protégé par le fou en c5. Trouve-le.",
+    "accept": [
+      "c8f8"
+    ],
+    "alsoGood": [],
+    "hint": "Au lieu de retenir un nom, regarde trois choses : la pièce qui attaque le roi, celle qui protège cette pièce et celles qui ferment les sorties. Ici, commence par la tour en c8 et le fou en c5.",
+    "success": "La tour blanche arrive en f8. Le roi noir en f7 est attaqué sur sa colonne. Le fou en c5 surveille notamment e7 et f8 : la tour est protégée."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Chaque motif est une « image » de mat. Plus tu en connais, plus vite tu les vois.",
-      "audio": null
+      "step": "principe",
+      "title": "Reconnaître les sorties fermées",
+      "text": "Un motif de mat, c’est une disposition de pièces qui revient souvent quand un roi ne peut plus être sauvé. Ici, le fou blanc en c5 et les pions autour du roi noir limitent ses sorties.",
+      "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+      "marks": []
     },
     {
-      "title": "Contenu",
-      "text": "Apprends d’abord le mat du crochet, puis celui des deux fous. Continue avec l’épaulette, la queue d’aronde et l’opéra. Ajoute ensuite les mats de Morphy et de Pillsbury.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Au lieu de retenir un nom, regarde trois choses : la pièce qui attaque le roi, celle qui protège cette pièce et celles qui ferment les sorties. Ici, commence par la tour en c8 et le fou en c5.",
+      "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+      "arrows": [
+        [
+          "c8",
+          "f8"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour en c8 va en f8, protégée par le fou en c5 : le roi noir n’a plus de réponse.",
+      "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+      "line": [
+        {
+          "uci": "c8f8",
+          "text": "La tour en c8 va en f8, protégée par le fou en c5 : le roi noir n’a plus de réponse."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La tour blanche arrive en f8. Le roi noir en f7 est attaqué sur sa colonne. Le fou en c5 surveille notamment e7 et f8 : la tour est protégée.",
+      "fen": "5R2/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 b - - 3 45"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Une seule case libre peut changer le résultat. Avant d’annoncer le mat, regarde chaque case voisine du roi, les prises possibles et les pièces qui pourraient bloquer l’échec.",
+      "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45"
     }
   ],
+  "exercises": [
+    {
+      "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+      "solution": [
+        "c8f8"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La tour en c8 peut donner un échec protégé par le fou en c5. Trouve-le.",
+      "accept": [
+        "c8f8"
+      ],
+      "alsoGood": [],
+      "hint": "Au lieu de retenir un nom, regarde trois choses : la pièce qui attaque le roi, celle qui protège cette pièce et celles qui ferment les sorties. Ici, commence par la tour en c8 et le fou en c5.",
+      "success": "La tour blanche arrive en f8. Le roi noir en f7 est attaqué sur sa colonne. Le fou en c5 surveille notamment e7 et f8 : la tour est protégée."
+    }
+  ],
+  "retenir": "Pour reconnaître un mat, regarde l’attaquant, sa protection et les sorties du roi.",
+  "review": {
+    "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+    "solution": [
+      "c8f8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "La tour en c8 peut donner un échec protégé par le fou en c5. Trouve-le.",
+    "accept": [
+      "c8f8"
+    ],
+    "alsoGood": [],
+    "hint": "Au lieu de retenir un nom, regarde trois choses : la pièce qui attaque le roi, celle qui protège cette pièce et celles qui ferment les sorties. Ici, commence par la tour en c8 et le fou en c5.",
+    "success": "La tour blanche arrive en f8. Le roi noir en f7 est attaqué sur sa colonne. Le fou en c5 surveille notamment e7 et f8 : la tour est protégée."
+  },
+  "contentVersion": 2,
+  "principle": "Pour reconnaître un mat, regarde l’attaquant, sa protection et les sorties du roi.",
+  "entryChallenge": {
+    "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+    "solution": [
+      "c8f8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "La tour en c8 peut donner un échec protégé par le fou en c5. Trouve-le.",
+    "accept": [
+      "c8f8"
+    ],
+    "alsoGood": [],
+    "hint": "Au lieu de retenir un nom, regarde trois choses : la pièce qui attaque le roi, celle qui protège cette pièce et celles qui ferment les sorties. Ici, commence par la tour en c8 et le fou en c5.",
+    "success": "La tour blanche arrive en f8. Le roi noir en f7 est attaqué sur sa colonne. Le fou en c5 surveille notamment e7 et f8 : la tour est protégée.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

@@ -1,45 +1,9 @@
 {
   "id": "fin-rook-behind",
-  "title": "Les tours derrière les pions passés",
   "tier": 3,
   "priority": "A",
-  "domain": "finales",
   "prerequisites": [
     "fin-passed-pawn"
-  ],
-  "principle": "Place ta tour derrière les pions passés. Derrière les tiens, elle aide leur avance. Derrière ceux de l’adversaire, elle les freine.",
-  "why": [
-    "Derrière un pion, l'activité de la tour augmente à chaque pas du pion. Devant, elle diminue."
-  ],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "8/8/6pp/4Rp1k/7P/3rp1PK/8/8 w - - 0 57",
-    "solution": [
-      "g3g4"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/jb7UI",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "8/8/6pp/4Rp1k/7P/3rp1PK/8/8 w - - 0 57",
-      "move": "g3g4",
-      "text": "",
-      "arrows": [
-        [
-          "g3",
-          "g4"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "rookEndgame"
@@ -56,20 +20,134 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "finales",
+  "title": "Placer une tour derrière ton pion",
+  "introduces": [],
+  "challenge": {
+    "fen": "7k/8/8/4P3/8/8/8/R5K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "check": "rule",
+    "prompt": "Touche une case libre derrière ton pion en e5, sur la même colonne, où ta tour pourrait le soutenir.",
+    "accept": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case e1.",
+    "success": "Plus le pion avance, plus la tour a de cases libres devant elle. Elle n’a pas besoin de le dépasser pour le soutenir. Regarde les cases e1, e2, e3 et e4 derrière le pion."
+  },
   "screens": [
     {
-      "title": "Pourquoi",
-      "text": "Derrière un pion, l'activité de la tour augmente à chaque pas du pion. Devant, elle diminue.",
-      "audio": null
+      "step": "principe",
+      "title": "Placer une tour derrière ton pion",
+      "text": "Ta tour peut aider un pion en restant derrière lui. Ici, le pion blanc en e5 avance vers e8. Une tour sur la colonne e, derrière ce pion, pourrait continuer à le protéger à chaque pas.",
+      "fen": "7k/8/8/4P3/8/8/8/R5K1 w - - 0 1",
+      "marks": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ]
     },
     {
-      "title": "Principe",
-      "text": "Place ta tour derrière les pions passés. Derrière les tiens, elle aide leur avance. Derrière ceux de l’adversaire, elle les freine.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Trace la colonne du pion jusqu’à ton côté du plateau. Cherche une case pour la tour sur cette ligne. Ici, ta tour en a1 peut rejoindre e1.",
+      "fen": "7k/8/8/4P3/8/8/8/R5K1 w - - 0 1",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Plus le pion avance, plus la tour a de cases libres devant elle. Elle n’a pas besoin de le dépasser pour le soutenir. Regarde les cases e1, e2, e3 et e4 derrière le pion.",
+      "fen": "7k/8/8/4P3/8/8/8/R5K1 w - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ce conseil ne passe pas avant une attaque contre ton roi. Une tour devant le pion peut aussi être utile pour donner échec. Compare la position réelle avant de déplacer ta tour.",
+      "fen": "7k/8/8/4P3/8/8/8/R5K1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "7k/8/8/4P3/8/8/8/R5K1 w - - 0 1",
+      "kind": "square",
+      "solution": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "check": "rule",
+      "prompt": "Touche une case libre derrière ton pion en e5, sur la même colonne, où ta tour pourrait le soutenir.",
+      "accept": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case e1.",
+      "success": "Plus le pion avance, plus la tour a de cases libres devant elle. Elle n’a pas besoin de le dépasser pour le soutenir. Regarde les cases e1, e2, e3 et e4 derrière le pion."
+    }
+  ],
+  "retenir": "Derrière un pion, la tour peut continuer à le soutenir pendant qu’il avance.",
+  "review": {
+    "fen": "7k/8/8/4P3/8/8/8/R5K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "check": "rule",
+    "prompt": "Touche une case libre derrière ton pion en e5, sur la même colonne, où ta tour pourrait le soutenir.",
+    "accept": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case e1.",
+    "success": "Plus le pion avance, plus la tour a de cases libres devant elle. Elle n’a pas besoin de le dépasser pour le soutenir. Regarde les cases e1, e2, e3 et e4 derrière le pion."
+  },
+  "contentVersion": 2,
+  "principle": "Derrière un pion, la tour peut continuer à le soutenir pendant qu’il avance.",
+  "entryChallenge": {
+    "fen": "7k/8/8/4P3/8/8/8/R5K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "check": "rule",
+    "prompt": "Touche une case libre derrière ton pion en e5, sur la même colonne, où ta tour pourrait le soutenir.",
+    "accept": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case e1.",
+    "success": "Plus le pion avance, plus la tour a de cases libres devant elle. Elle n’a pas besoin de le dépasser pour le soutenir. Regarde les cases e1, e2, e3 et e4 derrière le pion.",
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

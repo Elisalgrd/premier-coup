@@ -1,79 +1,9 @@
 {
   "id": "proc-hanging-pieces",
-  "title": "Les pièces non défendues tombent",
   "tier": 1,
   "priority": "S",
-  "domain": "réflexes",
   "prerequisites": [
     "vis-attacked-squares"
-  ],
-  "principle": "Une pièce non défendue est une cible. Chez l'adversaire, prends-la. Chez toi, protège-la.",
-  "why": [
-    "Le grand maître John Nunn résume : les pièces non défendues tombent. Presque toutes les tactiques (fourchettes, enfilades, découvertes) visent au moins une pièce non défendue."
-  ],
-  "signals": [
-    "une pièce sans aucun défenseur",
-    "une pièce défendue seulement par le roi",
-    "une pièce défendue par une pièce qui a déjà un autre travail."
-  ],
-  "method": [
-    "Après chaque coup (le tien et le sien), compte tes pièces non défendues. Moins tu en as, moins l'adversaire a de tactiques.",
-    "Pendant le développement, connecte tes pièces : chacune protégée par une autre.",
-    "Chez l'adversaire, chaque pièce non défendue est une raison de chercher une double attaque."
-  ],
-  "pitfall": {
-    "text": "Une pièce non défendue mais impossible à attaquer n'est pas un problème immédiat. Mais elle le deviendra.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "3r2k1/r4ppp/4b3/1q2P3/2pQ4/8/1P1N1PPP/2R3K1 w - - 0 22",
-    "solution": [
-      "d4d8",
-      "b5e8",
-      "d8e8"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/sD6WA",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "3r2k1/r4ppp/4b3/1q2P3/2pQ4/8/1P1N1PPP/2R3K1 w - - 0 22",
-      "move": "d4d8",
-      "text": "",
-      "arrows": [
-        [
-          "d4",
-          "d8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "3Q2k1/r4ppp/4b3/1q2P3/2p5/8/1P1N1PPP/2R3K1 b - - 0 22",
-      "move": "b5e8",
-      "text": "",
-      "arrows": [
-        [
-          "b5",
-          "e8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "3Qq1k1/r4ppp/4b3/4P3/2p5/8/1P1N1PPP/2R3K1 w - - 1 23",
-      "move": "d8e8",
-      "text": "",
-      "arrows": [
-        [
-          "d8",
-          "e8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "hangingPiece"
@@ -90,45 +20,150 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "réflexes",
+  "title": "Les pièces que personne ne protège",
+  "introduces": [
+    "pièce en prise",
+    "échange"
+  ],
+  "challenge": {
+    "fen": "6k1/pp3ppp/3b4/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+    "prompt": "Tu joues les blancs. Une pièce noire n’est protégée par personne et ta tour peut l’atteindre. Prends-la.",
+    "solution": [
+      "d1d6"
+    ],
+    "check": "engine",
+    "hint": "Ta tour en d1 regarde toute la colonne d, vers le haut.",
+    "accept": [
+      "d1d6"
+    ],
+    "engine": {
+      "best": "d1d6",
+      "score": 663,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": []
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Une pièce non défendue est une cible. Chez l'adversaire, prends-la. Chez toi, protège-la.",
-      "audio": null
+      "step": "principe",
+      "title": "Une pièce en prise",
+      "fen": "6k1/pp3ppp/3b4/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "d6"
+        ]
+      ],
+      "marks": [
+        "d6"
+      ],
+      "text": "Une pièce « en prise », c’est une pièce que l’adversaire peut prendre sans rien perdre en échange (une prise suivie d’une reprise). Ici, le fou noir en d6 est attaqué par ta tour et aucune pièce noire ne le protège. C’est 3 points gratuits."
     },
     {
-      "title": "Pourquoi",
-      "text": "Le grand maître John Nunn résume : les pièces non défendues tombent. Presque toutes les tactiques (fourchettes, enfilades, découvertes) visent au moins une pièce non défendue.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Les pièces non protégées tombent",
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
+      "marks": [
+        "c4",
+        "c5"
+      ],
+      "text": "Un grand joueur, John Nunn, résume : « les pièces non protégées finissent par tomber ». Ici, en début de partie, ton fou en c4 et le fou noir en c5 ne sont protégés par personne. Ce n’est pas grave tant que personne ne peut les attaquer, mais ce sont les premières cibles."
     },
     {
-      "title": "Signaux",
-      "text": "Une pièce sans aucun défenseur. Une pièce défendue seulement par le roi. Une pièce défendue par une pièce qui a déjà un autre travail.",
-      "audio": null
+      "step": "methode",
+      "title": "Après chaque coup, compte",
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
+      "marks": [
+        "c4"
+      ],
+      "text": "Prends l’habitude, après chaque coup (le tien et le sien), de repérer tes pièces que personne ne protège. Moins tu en as, moins l’adversaire a d’occasions. Et chez lui, chaque pièce non protégée est une raison de chercher une attaque."
     },
     {
-      "title": "Méthode",
-      "text": "Après chaque coup (le tien et le sien), compte tes pièces non défendues. Moins tu en as, moins l'adversaire a de tactiques.",
-      "audio": null
+      "step": "methode",
+      "title": "Protéger ou déplacer",
+      "fen": "6k1/5ppp/5b2/8/8/2N5/P4PPP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "f6",
+          "c3"
+        ]
+      ],
+      "marks": [
+        "c3"
+      ],
+      "text": "Quand une de tes pièces non protégée est attaquée, tu as deux choix : la déplacer sur une case sûre, ou la protéger avec une autre pièce. Ici, le fou noir en f6 attaque ton cavalier en c3. Il faut réagir maintenant."
     },
     {
-      "title": "Méthode",
-      "text": "Pendant le développement, connecte tes pièces : chacune protégée par une autre.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Chez l'adversaire, chaque pièce non défendue est une raison de chercher une double attaque.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Une pièce non défendue mais impossible à attaquer n'est pas un problème immédiat. Mais elle le deviendra.",
-      "audio": null
+      "step": "piege",
+      "title": "Protégée ne veut pas dire sauvée",
+      "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+      "arrows": [
+        [
+          "e6",
+          "d5"
+        ]
+      ],
+      "marks": [
+        "d5"
+      ],
+      "text": "Attention : une pièce protégée peut quand même se perdre si on l’attaque avec une pièce moins chère qu’elle. La tour noire en d5 est protégée par le pion en e6. Si ta dame la prend, le pion reprend ta dame. On en parle dans la fiche sur les échanges."
     }
   ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "6k1/5ppp/5b2/8/8/2N5/P4PPP/6K1 w - - 0 1",
+      "prompt": "Le fou noir en f6 attaque ton cavalier en c3, que personne ne protège. Sauve ton cavalier.",
+      "solution": [
+        "c3d5"
+      ],
+      "check": "engine",
+      "success": "Ton cavalier est à l’abri. Et s’il attaque le fou en retour, c’est encore mieux.",
+      "hint": "Ton cavalier peut sauter sur une case où le fou ne l’atteint pas.",
+      "accept": [
+        "c3d5",
+        "c3b5",
+        "c3e4",
+        "c3d1",
+        "c3b1"
+      ],
+      "engine": {
+        "best": "c3d5",
+        "score": 244,
+        "depth": 16
+      },
+      "alsoGood": [
+        "c3e2"
+      ]
+    }
+  ],
+  "retenir": "Une pièce que personne ne protège est une cible. Prends celles de l’adversaire, protège les tiennes.",
+  "contentVersion": 2,
+  "principle": "Une pièce que personne ne protège est une cible. Prends celles de l’adversaire, protège les tiennes.",
+  "entryChallenge": {
+    "fen": "6k1/pp3ppp/3b4/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+    "prompt": "Tu joues les blancs. Une pièce noire n’est protégée par personne et ta tour peut l’atteindre. Prends-la.",
+    "solution": [
+      "d1d6"
+    ],
+    "check": "engine",
+    "hint": "Ta tour en d1 regarde toute la colonne d, vers le haut.",
+    "accept": [
+      "d1d6"
+    ],
+    "engine": {
+      "best": "d1d6",
+      "score": 663,
+      "depth": 16
+    },
+    "kind": "move",
+    "alsoGood": [],
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }
