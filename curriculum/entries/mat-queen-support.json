@@ -1,0 +1,78 @@
+{
+  "id": "mat-queen-support",
+  "title": "Le mat du baiser (dame soutenue)",
+  "tier": 2,
+  "priority": "S",
+  "domain": "mats",
+  "prerequisites": [
+    "mat-basic-queen"
+  ],
+  "principle": "La dame se colle au roi adverse, protégée par une autre pièce : le roi ne peut pas la prendre.",
+  "why": [
+    "C'est le mat le plus courant dans les attaques sur le roi roqué (dame en g7, h7, f7 soutenue par un fou, un cavalier ou un pion)."
+  ],
+  "signals": [
+    "ta dame peut atteindre une case collée au roi adverse",
+    "cette case est aussi attaquée par une autre de tes pièces",
+    "aucune pièce adverse ne la défend."
+  ],
+  "method": [
+    "compte attaquants contre défenseurs de la case collée au roi",
+    "si tu en as plus, la dame entre."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "mateIn1",
+    "mateIn2",
+    "kingsideAttack"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "20 problèmes mateIn1 à 95 % et 15 mateIn2 à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "La dame se colle au roi adverse, protégée par une autre pièce : le roi ne peut pas la prendre.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "C'est le mat le plus courant dans les attaques sur le roi roqué (dame en g7, h7, f7 soutenue par un fou, un cavalier ou un pion).",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "ta dame peut atteindre une case collée au roi adverse ; cette case est aussi attaquée par une autre de tes pièces ; aucune pièce adverse ne la défend.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "compte attaquants contre défenseurs de la case collée au roi ; si tu en as plus, la dame entre.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "6k1/5pQp/6pB/8/8/8/8/6K1 b - - 0 1",
+      "outcome": "mate",
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

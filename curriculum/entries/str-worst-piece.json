@@ -1,0 +1,70 @@
+{
+  "id": "str-worst-piece",
+  "title": "Améliore ta pire pièce",
+  "tier": 4,
+  "priority": "S",
+  "domain": "stratégie",
+  "prerequisites": [
+    "ouv-principles"
+  ],
+  "principle": "Sans tactique ni menace, trouve ta pièce la moins active et donne-lui une meilleure case.",
+  "why": [
+    "Une position se gagne souvent par accumulation de petits avantages. Une pièce passive est un joueur de moins."
+  ],
+  "signals": [
+    "un fou bloqué par ses propres pions, un cavalier au bord, une tour sur une colonne fermée, une dame qui ne fait rien."
+  ],
+  "method": [
+    "Vérifie la routine anti-gaffe : rien d'urgent ?",
+    "Pour chaque pièce, demande-toi : « Que fait-elle ? »",
+    "Choisis la pire",
+    "trouve une case où elle attaque quelque chose ou contrôle le centre.",
+    "Trouve le chemin (parfois 2 ou 3 coups)."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 positions plan-choice à 80 %."
+  },
+  "sources": [],
+  "videoId": "course-active-piece",
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Sans tactique ni menace, trouve ta pièce la moins active et donne-lui une meilleure case.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Une position se gagne souvent par accumulation de petits avantages. Une pièce passive est un joueur de moins.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "un fou bloqué par ses propres pions, un cavalier au bord, une tour sur une colonne fermée, une dame qui ne fait rien.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Vérifie la routine anti-gaffe : rien d'urgent ? Pour chaque pièce, demande-toi : « Que fait-elle ? » Choisis la pire ; trouve une case où elle attaque quelque chose ou contrôle le centre. Trouve le chemin (parfois 2 ou 3 coups).",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "plan-choice"
+}

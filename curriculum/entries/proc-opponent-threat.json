@@ -1,0 +1,79 @@
+{
+  "id": "proc-opponent-threat",
+  "title": "Que veut son dernier coup ?",
+  "tier": 1,
+  "priority": "S",
+  "domain": "réflexes",
+  "prerequisites": [
+    "proc-blunder-check"
+  ],
+  "principle": "Chaque coup adverse change quelque chose. Trouve quoi avant de penser à ton plan.",
+  "why": [
+    "On joue souvent « son » coup prévu sans voir que l'adversaire vient de créer une menace. Inspiré du principe de Julien Song « commencer par la menace adverse »."
+  ],
+  "signals": [
+    "une pièce adverse vient d'arriver près de ton roi",
+    "une ligne vient de s'ouvrir",
+    "une de tes pièces vient de perdre un défenseur",
+    "un pion adverse avance vers tes pièces."
+  ],
+  "method": [
+    "Qu'attaque maintenant la pièce qui a bougé ?",
+    "Qu'attaque la pièce qui était derrière elle (découverte) ?",
+    "Qu'est-ce que cette pièce ne défend plus ?",
+    "Si une menace existe, compare quatre réponses : défendre la cible, prendre l'attaquant, s'interposer, déplacer la cible avec gain de temps (en créant soi-même une menace)."
+  ],
+  "pitfall": {
+    "text": "répondre à une menace en en créant une plus grosse (contre-attaque) est parfois meilleur. Mais seulement si ta menace est vraiment plus forte et forcée (échec, mat, gain de dame).",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "defensiveMove",
+    "hangingPiece"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 positions « quelle est sa menace ? » (toucher la pièce visée) à 90 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Chaque coup adverse change quelque chose. Trouve quoi avant de penser à ton plan.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "On joue souvent « son » coup prévu sans voir que l'adversaire vient de créer une menace. Inspiré du principe de Julien Song « commencer par la menace adverse ».",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une pièce adverse vient d'arriver près de ton roi ; une ligne vient de s'ouvrir ; une de tes pièces vient de perdre un défenseur ; un pion adverse avance vers tes pièces.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Qu'attaque maintenant la pièce qui a bougé ? Qu'attaque la pièce qui était derrière elle (découverte) ? Qu'est-ce que cette pièce ne défend plus ? Si une menace existe, compare quatre réponses : défendre la cible, prendre l'attaquant, s'interposer, déplacer la cible avec gain de temps (en créant soi-même une menace).",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "répondre à une menace en en créant une plus grosse (contre-attaque) est parfois meilleur. Mais seulement si ta menace est vraiment plus forte et forcée (échec, mat, gain de dame).",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

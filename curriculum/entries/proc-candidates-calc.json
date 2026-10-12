@@ -1,0 +1,78 @@
+{
+  "id": "proc-candidates-calc",
+  "title": "Coups candidats et calcul",
+  "tier": 3,
+  "priority": "S",
+  "domain": "réflexes",
+  "prerequisites": [
+    "proc-forcing-moves"
+  ],
+  "principle": "Choisis 2 ou 3 coups candidats, calcule pour chacun la meilleure réponse adverse, compare les positions finales.",
+  "why": [
+    "On perd souvent en calculant très loin une seule ligne en oubliant une réponse gênante dès le premier coup (idée de Julien Song : « vérifier les réponses, pas seulement la profondeur »)."
+  ],
+  "signals": [],
+  "method": [
+    "Liste les candidats : coups forçants d'abord, puis les coups qui améliorent ta pire pièce.",
+    "Pour chacun, liste toutes les réponses adverses forçantes (échecs, captures, menaces).",
+    "Calcule 3 demi-coups (moi, lui, moi) proprement avant d'aller plus loin.",
+    "Évalue la position finale : matériel, sécurité des rois, activité.",
+    "Arrête le calcul quand la position est calme",
+    "ne calcule pas sans but.",
+    "Avant de jouer, refais la routine anti-gaffe sur le coup choisi."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "short",
+    "long",
+    "mateIn3"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 problèmes long à 70 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Choisis 2 ou 3 coups candidats, calcule pour chacun la meilleure réponse adverse, compare les positions finales.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "On perd souvent en calculant très loin une seule ligne en oubliant une réponse gênante dès le premier coup (idée de Julien Song : « vérifier les réponses, pas seulement la profondeur »).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Liste les candidats : coups forçants d'abord, puis les coups qui améliorent ta pire pièce. Pour chacun, liste toutes les réponses adverses forçantes (échecs, captures, menaces). Calcule 3 demi-coups (moi, lui, moi) proprement avant d'aller plus loin. Évalue la position finale : matériel, sécurité des rois, activité. Arrête le calcul quand la position est calme ; ne calcule pas sans",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "but. Avant de jouer, refais la routine anti-gaffe sur le coup choisi.",
+      "audio": null
+    },
+    {
+      "title": "Exercices spécifiques",
+      "text": "problèmes long (3 coups et plus) sans déplacer les pièces (option « calcul à l'aveugle » : l'échiquier se fige, l'élève saisit la ligne entière).",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

@@ -1,0 +1,160 @@
+{
+  "id": "fin-square",
+  "title": "La règle du carré",
+  "tier": 3,
+  "priority": "A",
+  "domain": "finales",
+  "prerequisites": [
+    "fin-active-king"
+  ],
+  "principle": "Trace le carré entre le pion et sa case de promotion. Si le roi adverse peut y entrer, il rattrape le pion.",
+  "why": [
+    "Permet de savoir en une seconde si un pion passé file à dame, sans calculer."
+  ],
+  "signals": [],
+  "method": [
+    "côté du carré = distance du pion à la promotion (compter depuis la case actuelle, ou depuis la case d'arrivée du double pas si le pion n'a pas bougé). Si c'est au roi de jouer, il peut faire un pas pour y entrer."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
+    "solution": [
+      "f1e2",
+      "a5a4",
+      "e2d2",
+      "a4a3",
+      "d2c2",
+      "a3a2",
+      "c2b2"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": null,
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "f1e2",
+      "text": "",
+      "arrows": [
+        [
+          "f1",
+          "e2"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "a5a4",
+      "text": "",
+      "arrows": [
+        [
+          "a5",
+          "a4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e2d2",
+      "text": "",
+      "arrows": [
+        [
+          "e2",
+          "d2"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "a4a3",
+      "text": "",
+      "arrows": [
+        [
+          "a4",
+          "a3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d2c2",
+      "text": "",
+      "arrows": [
+        [
+          "d2",
+          "c2"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "a3a2",
+      "text": "",
+      "arrows": [
+        [
+          "a3",
+          "a2"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c2b2",
+      "text": "",
+      "arrows": [
+        [
+          "c2",
+          "b2"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "pawnEndgame",
+    "advancedPawn"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 positions « rattrape ou pas ? » à 95 % en moins de 5 s."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Trace le carré entre le pion et sa case de promotion. Si le roi adverse peut y entrer, il rattrape le pion.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Permet de savoir en une seconde si un pion passé file à dame, sans calculer.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "côté du carré = distance du pion à la promotion (compter depuis la case actuelle, ou depuis la case d'arrivée du double pas si le pion n'a pas bougé). Si c'est au roi de jouer, il peut faire un pas pour y entrer.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

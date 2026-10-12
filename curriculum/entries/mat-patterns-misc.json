@@ -1,0 +1,64 @@
+{
+  "id": "mat-patterns-misc",
+  "title": "Les autres motifs de mat à reconnaître",
+  "tier": 2,
+  "priority": "C",
+  "domain": "mats",
+  "prerequisites": [
+    "mat-queen-support"
+  ],
+  "principle": "Chaque motif est une « image » de mat. Plus tu en connais, plus vite tu les vois.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "hookMate",
+    "doubleBishopMate",
+    "dovetailMate",
+    "epauletteMate",
+    "cornerMate",
+    "killBoxMate",
+    "operaMate",
+    "pillsburysMate",
+    "morphysMate",
+    "swallowstailMate",
+    "triangleMate",
+    "vukovicMate",
+    "balestraMate",
+    "blindSwineMate"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "reconnaissance de la position finale (« quel motif ? ») à 80 % sur 20 images.\n\n---"
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Chaque motif est une « image » de mat. Plus tu en connais, plus vite tu les vois.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "un écran par motif avec la position finale typique et 5 problèmes. Priorité dans l'ordre : mat du crochet (hookMate), mat des deux fous, mat de l'épaulette, mat en queue d'aronde, mat de l'opéra, mat de Morphy, mat de Pillsbury, les autres.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

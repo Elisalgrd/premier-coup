@@ -1,0 +1,79 @@
+{
+  "id": "mat-basic-rook",
+  "title": "Mat avec roi et tour contre roi",
+  "tier": 0,
+  "priority": "A",
+  "domain": "mats",
+  "prerequisites": [
+    "mat-basic-queen"
+  ],
+  "principle": "La tour coupe le roi adverse, ton roi le fait reculer, la tour donne le mat sur le bord.",
+  "why": [
+    "Fréquent en finale de tours simplifiée. Plus long que le mat avec la dame (jusqu'à 16 coups), il faut une méthode."
+  ],
+  "signals": [],
+  "method": [
+    "Avec la tour, coupe une colonne ou une rangée pour enfermer le roi adverse dans un rectangle.",
+    "Amène ton roi face au roi adverse (opposition : une case entre eux).",
+    "Quand les rois sont face à face, donne échec avec la tour : il doit reculer d'une ligne. La boîte rétrécit.",
+    "S'il n'est pas en face, joue un coup d'attente avec la tour (sur la même ligne) pour le forcer à se mettre en face.",
+    "Répète jusqu'au bord, puis mat."
+  ],
+  "pitfall": {
+    "text": "laisser la tour à portée du roi adverse sans protection. Garder la tour loin de lui.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "3 mats en moins de 20 coups depuis des positions aléatoires."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "La tour coupe le roi adverse, ton roi le fait reculer, la tour donne le mat sur le bord.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Fréquent en finale de tours simplifiée. Plus long que le mat avec la dame (jusqu'à 16 coups), il faut une méthode.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Avec la tour, coupe une colonne ou une rangée pour enfermer le roi adverse dans un rectangle. Amène ton roi face au roi adverse (opposition : une case entre eux). Quand les rois sont face à face, donne échec avec la tour : il doit reculer d'une ligne. La boîte rétrécit. S'il n'est pas en face, joue un coup d'attente",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "avec la tour (sur la même ligne) pour le forcer à se mettre en face. Répète jusqu'au bord, puis mat.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "laisser la tour à portée du roi adverse sans protection. Garder la tour loin de lui.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "k6R/8/1K6/8/8/8/8/8 b - - 0 1",
+      "outcome": "mate",
+      "source": "CURRICULUM.md"
+    }
+  ],
+  "drill": "endgame"
+}

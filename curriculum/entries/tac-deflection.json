@@ -1,0 +1,70 @@
+{
+  "id": "tac-deflection",
+  "title": "La déviation",
+  "tier": 2,
+  "priority": "A",
+  "domain": "tactique",
+  "prerequisites": [
+    "tac-overload"
+  ],
+  "principle": "Force une pièce adverse à quitter une case ou une ligne qu'elle doit garder.",
+  "why": [
+    "Le défenseur d'une case clé (case de mat, pièce, case de promotion) est souvent unique. L'attirer ailleurs avec un échec ou une offre impossible à refuser ouvre la porte."
+  ],
+  "signals": [
+    "une pièce adverse empêche un mat ou une promotion",
+    "on peut l'attaquer ou lui offrir quelque chose qu'elle doit prendre."
+  ],
+  "method": [
+    "identifie la mission du défenseur",
+    "trouve un coup forçant qui l'oblige à l'abandonner",
+    "vérifie le coup final."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "deflection"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 problèmes deflection à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Force une pièce adverse à quitter une case ou une ligne qu'elle doit garder.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Le défenseur d'une case clé (case de mat, pièce, case de promotion) est souvent unique. L'attirer ailleurs avec un échec ou une offre impossible à refuser ouvre la porte.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une pièce adverse empêche un mat ou une promotion ; on peut l'attaquer ou lui offrir quelque chose qu'elle doit prendre.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "identifie la mission du défenseur ; trouve un coup forçant qui l'oblige à l'abandonner ; vérifie le coup final.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

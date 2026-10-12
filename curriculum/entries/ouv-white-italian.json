@@ -1,0 +1,276 @@
+{
+  "id": "ouv-white-italian",
+  "title": "Avec les blancs : l'Italienne tranquille",
+  "tier": 2,
+  "priority": "A",
+  "domain": "ouvertures",
+  "prerequisites": [
+    "ouv-principles"
+  ],
+  "principle": "Développer vite, roquer, préparer d4 avec c3. Une structure simple qui marche contre presque tout après 1.e4 e5.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "jouer d4 trop tôt sans avoir calculé ...exd4 et la reprise.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "solution": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5",
+      "c2c3",
+      "g8f6",
+      "d2d3",
+      "d7d6",
+      "e1g1",
+      "e8g8",
+      "f1e1",
+      "a7a6",
+      "c4b3",
+      "c5a7",
+      "h2h3"
+    ],
+    "prompt": "Trait aux blancs. Développe tes pièces en contrôlant le centre.",
+    "outcome": null,
+    "mode": "opening",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "e2e4",
+      "text": "",
+      "arrows": [
+        [
+          "e2",
+          "e4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e7e5",
+      "text": "",
+      "arrows": [
+        [
+          "e7",
+          "e5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g1f3",
+      "text": "",
+      "arrows": [
+        [
+          "g1",
+          "f3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b8c6",
+      "text": "",
+      "arrows": [
+        [
+          "b8",
+          "c6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "f1c4",
+      "text": "",
+      "arrows": [
+        [
+          "f1",
+          "c4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "f8c5",
+      "text": "",
+      "arrows": [
+        [
+          "f8",
+          "c5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c2c3",
+      "text": "",
+      "arrows": [
+        [
+          "c2",
+          "c3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g8f6",
+      "text": "",
+      "arrows": [
+        [
+          "g8",
+          "f6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d2d3",
+      "text": "",
+      "arrows": [
+        [
+          "d2",
+          "d3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d7d6",
+      "text": "",
+      "arrows": [
+        [
+          "d7",
+          "d6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e1g1",
+      "text": "",
+      "arrows": [
+        [
+          "e1",
+          "g1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e8g8",
+      "text": "",
+      "arrows": [
+        [
+          "e8",
+          "g8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "f1e1",
+      "text": "",
+      "arrows": [
+        [
+          "f1",
+          "e1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "a7a6",
+      "text": "",
+      "arrows": [
+        [
+          "a7",
+          "a6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c4b3",
+      "text": "",
+      "arrows": [
+        [
+          "c4",
+          "b3"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "c5a7",
+      "text": "",
+      "arrows": [
+        [
+          "c5",
+          "a7"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "h2h3",
+      "text": "",
+      "arrows": [
+        [
+          "h2",
+          "h3"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "OpeningTags",
+    "Italian_Game",
+    "opening"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "jouer la ligne de mémoire et 3 parties contre le moteur depuis la position du 9e coup."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Développer vite, roquer, préparer d4 avec c3. Une structure simple qui marche contre presque tout après 1.e4 e5.",
+      "audio": null
+    },
+    {
+      "title": "Plans",
+      "text": "Cbd2-f1-g3 pour attaquer à l'aile roi ; d4 au bon moment pour ouvrir le centre ; a4 si les noirs jouent ...b5. h3 empêche ...Fg4 qui clouerait le Cf3.",
+      "audio": null
+    },
+    {
+      "title": "Ce que les noirs jouent souvent à petit niveau",
+      "text": "..Cf6 (défense des deux cavaliers, voir ouv-early-traps), 3...d6, 3...Fe7. Pour tous : même schéma c3, d3, O-O, Te1.",
+      "audio": null
+    },
+    {
+      "title": "Piège à éviter",
+      "text": "jouer d4 trop tôt sans avoir calculé ...exd4 et la reprise.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

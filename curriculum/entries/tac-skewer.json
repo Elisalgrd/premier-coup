@@ -1,0 +1,125 @@
+{
+  "id": "tac-skewer",
+  "title": "L'enfilade",
+  "tier": 2,
+  "priority": "A",
+  "domain": "tactique",
+  "prerequisites": [
+    "tac-pin"
+  ],
+  "principle": "Le clouage à l'envers. On attaque la pièce précieuse devant ; quand elle bouge, on prend celle de derrière.",
+  "why": [
+    "La pièce de devant (souvent le roi en échec) est obligée de partir et découvre celle de derrière."
+  ],
+  "signals": [
+    "roi et dame (ou roi et tour) adverses alignés sur une ligne qu'une de tes pièces longues peut atteindre, le roi devant."
+  ],
+  "method": [
+    "Repère un alignement avec la pièce la plus précieuse devant.",
+    "Attaque-la (avec échec de préférence).",
+    "Après qu'elle se déplace, prends la pièce de derrière."
+  ],
+  "pitfall": {
+    "text": "l'adversaire peut parfois s'interposer avec une pièce défendue, ou la pièce de derrière est défendue et l'échange ne gagne rien.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
+    "solution": [
+      "a1a5",
+      "d5c4",
+      "a5h5"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": null,
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "a1a5",
+      "text": "",
+      "arrows": [
+        [
+          "a1",
+          "a5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d5c4",
+      "text": "",
+      "arrows": [
+        [
+          "d5",
+          "c4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "a5h5",
+      "text": "",
+      "arrows": [
+        [
+          "a5",
+          "h5"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "skewer"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 problèmes skewer à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Le clouage à l'envers. On attaque la pièce précieuse devant ; quand elle bouge, on prend celle de derrière.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "La pièce de devant (souvent le roi en échec) est obligée de partir et découvre celle de derrière.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "roi et dame (ou roi et tour) adverses alignés sur une ligne qu'une de tes pièces longues peut atteindre, le roi devant.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Repère un alignement avec la pièce la plus précieuse devant. Attaque-la (avec échec de préférence). Après qu'elle se déplace, prends la pièce de derrière.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "l'adversaire peut parfois s'interposer avec une pièce défendue, ou la pièce de derrière est défendue et l'échange ne gagne rien.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

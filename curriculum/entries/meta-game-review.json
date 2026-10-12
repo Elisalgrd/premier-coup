@@ -1,0 +1,68 @@
+{
+  "id": "meta-game-review",
+  "title": "Transformer chaque partie en progrès",
+  "tier": 1,
+  "priority": "S",
+  "domain": "méthode",
+  "prerequisites": [
+    "vis-notation"
+  ],
+  "principle": "Analyse d'abord seule, ensuite avec le moteur. Retiens une seule leçon par partie.",
+  "why": [
+    "Tes propres erreurs sont les exercices les plus utiles pour toi : elles montrent exactement ce que tu ne vois pas encore (idée de Julien Song : « retravailler l'erreur qui revient »)."
+  ],
+  "signals": [],
+  "method": [
+    "Juste après la partie, sans moteur : où ai-je cru gagner ou perdre ? Note 1 à 3 moments.",
+    "Ensuite avec le moteur : trouve le premier gros changement d'évaluation.",
+    "Classe l'erreur : pièce en prise, menace pas vue, tactique ratée, finale mal jouée, plan absent.",
+    "Écris la leçon en une phrase (« Avant de jouer Fd3, je n'ai pas vu que mon cavalier en c3 n'était plus défendu »).",
+    "Ajoute la position aux révisions (fait automatiquement par l'app)."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 parties analysées avec une leçon écrite chacune.\n\n---"
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Analyse d'abord seule, ensuite avec le moteur. Retiens une seule leçon par partie.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Tes propres erreurs sont les exercices les plus utiles pour toi : elles montrent exactement ce que tu ne vois pas encore (idée de Julien Song : « retravailler l'erreur qui revient »).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Juste après la partie, sans moteur : où ai-je cru gagner ou perdre ? Note 1 à 3 moments. Ensuite avec le moteur : trouve le premier gros changement d'évaluation. Classe l'erreur : pièce en prise, menace pas vue, tactique ratée, finale mal jouée, plan absent. Écris la leçon en une phrase (« Avant de jouer Fd3, je n'ai pas",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "vu que mon cavalier en c3 n'était plus défendu »). Ajoute la position aux révisions (fait automatiquement par l'app).",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "game-review"
+}

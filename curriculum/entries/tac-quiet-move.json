@@ -1,0 +1,54 @@
+{
+  "id": "tac-quiet-move",
+  "title": "Le coup calme décisif",
+  "tier": 3,
+  "priority": "B",
+  "domain": "tactique",
+  "prerequisites": [
+    "proc-candidates-calc"
+  ],
+  "principle": "Parfois le coup gagnant n'est ni un échec ni une capture : il crée une menace imparable ou enlève la seule défense.",
+  "why": [
+    "Après avoir appris à chercher les coups forçants, il faut savoir que ce n'est pas toujours le cas."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "quietMove",
+    "defensiveMove"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes quietMove à 65 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Parfois le coup gagnant n'est ni un échec ni une capture : il crée une menace imparable ou enlève la seule défense.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Après avoir appris à chercher les coups forçants, il faut savoir que ce n'est pas toujours le cas.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

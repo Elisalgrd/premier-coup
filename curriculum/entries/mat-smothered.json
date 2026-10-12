@@ -1,0 +1,73 @@
+{
+  "id": "mat-smothered",
+  "title": "Le mat à l'étouffée",
+  "tier": 2,
+  "priority": "A",
+  "domain": "mats",
+  "prerequisites": [
+    "tac-fork"
+  ],
+  "principle": "Le roi est entouré de ses propres pièces ; un cavalier donne échec et le mate, car rien ne peut fuir ni s'interposer.",
+  "why": [
+    "Spectaculaire et fréquent quand le roi roqué est encombré (T en g8 / f8, pions g7 h7)."
+  ],
+  "signals": [
+    "roi adverse dans le coin, cases voisines occupées par ses pièces, ton cavalier peut atteindre f7 (ou f2), ta dame peut donner échec en g8."
+  ],
+  "method": [
+    "échec de cavalier qui chasse le roi dans le coin, sacrifice de dame en g8 qui oblige la tour à la prendre, mat de cavalier en f7."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "smotheredMate"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes smotheredMate à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Le roi est entouré de ses propres pièces ; un cavalier donne échec et le mate, car rien ne peut fuir ni s'interposer.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Spectaculaire et fréquent quand le roi roqué est encombré (T en g8 / f8, pions g7 h7).",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "roi adverse dans le coin, cases voisines occupées par ses pièces, ton cavalier peut atteindre f7 (ou f2), ta dame peut donner échec en g8.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "échec de cavalier qui chasse le roi dans le coin, sacrifice de dame en g8 qui oblige la tour à la prendre, mat de cavalier en f7.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "6rk/5Npp/8/8/8/8/8/6K1 b - - 0 1",
+      "outcome": "mate",
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

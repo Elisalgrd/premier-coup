@@ -1,0 +1,168 @@
+{
+  "id": "fin-opposition",
+  "title": "Roi et pion contre roi, l'opposition",
+  "tier": 3,
+  "priority": "S",
+  "domain": "finales",
+  "prerequisites": [
+    "fin-active-king"
+  ],
+  "principle": "Dans une finale de rois, celui qui n'a pas le trait quand les rois se font face (une case entre eux) « a l'opposition » et gagne le duel.",
+  "why": [
+    "C'est la finale la plus fréquente. Elle décide si une partie avec un pion de plus est gagnée ou nulle."
+  ],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "4k3/8/4K3/4P3/8/8/8/8 w - - 0 1",
+    "solution": [
+      "e6d6",
+      "e8d8",
+      "e5e6",
+      "d8e8",
+      "e6e7",
+      "e8f7",
+      "d6d7"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": null,
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "e6d6",
+      "text": "",
+      "arrows": [
+        [
+          "e6",
+          "d6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e8d8",
+      "text": "",
+      "arrows": [
+        [
+          "e8",
+          "d8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e5e6",
+      "text": "",
+      "arrows": [
+        [
+          "e5",
+          "e6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d8e8",
+      "text": "",
+      "arrows": [
+        [
+          "d8",
+          "e8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e6e7",
+      "text": "",
+      "arrows": [
+        [
+          "e6",
+          "e7"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "e8f7",
+      "text": "",
+      "arrows": [
+        [
+          "e8",
+          "f7"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "d6d7",
+      "text": "",
+      "arrows": [
+        [
+          "d6",
+          "d7"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "pawnEndgame",
+    "zugzwang"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "gagner R+P contre R contre le moteur depuis 5 positions et annuler en défense depuis 5 positions."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Dans une finale de rois, celui qui n'a pas le trait quand les rois se font face (une case entre eux) « a l'opposition » et gagne le duel.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "C'est la finale la plus fréquente. Elle décide si une partie avec un pion de plus est gagnée ou nulle.",
+      "audio": null
+    },
+    {
+      "title": "Règles à enseigner",
+      "text": "Opposition : rois face à face sur une même colonne ou rangée, une case entre eux. Le joueur qui n'a pas le trait a l'opposition. Cases clés : pour un pion sur la 2e, 3e ou 4e rangée, si ton roi atteint l'une des trois cases deux rangées devant le pion, tu gagnes (pion e4 : d6, e6, f6). Roi",
+      "audio": null
+    },
+    {
+      "title": "Règles à enseigner",
+      "text": "devant son pion sur la 6e rangée : gain quel que soit le trait (sauf pion de tour). Pion de tour (a ou h) : si le roi défenseur atteint le coin de promotion, c'est nulle. Défense : le roi défenseur se place devant le pion et prend l'opposition.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "4k3/8/4K3/4P3/8/8/8/8 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    },
+    {
+      "fen": "4k3/4P3/4K3/8/8/8/8/8 b - - 0 1",
+      "outcome": "stalemate",
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

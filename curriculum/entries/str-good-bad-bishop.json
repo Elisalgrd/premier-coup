@@ -1,0 +1,45 @@
+{
+  "id": "str-good-bad-bishop",
+  "title": "Bon et mauvais fou",
+  "tier": 4,
+  "priority": "B",
+  "domain": "stratégie",
+  "prerequisites": [
+    "str-pawn-structure"
+  ],
+  "principle": "Un fou est « mauvais » quand tes pions sont bloqués sur des cases de sa couleur. Place tes pions sur la couleur opposée à ton fou restant, ou échange ton mauvais fou.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "6 positions à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Un fou est « mauvais » quand tes pions sont bloqués sur des cases de sa couleur. Place tes pions sur la couleur opposée à ton fou restant, ou échange ton mauvais fou.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "plan-choice"
+}

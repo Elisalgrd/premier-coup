@@ -1,0 +1,108 @@
+{
+  "id": "tac-discovered",
+  "title": "L'attaque à la découverte",
+  "tier": 2,
+  "priority": "S",
+  "domain": "tactique",
+  "prerequisites": [
+    "tac-pin"
+  ],
+  "principle": "En déplaçant une pièce, tu ouvres la ligne d'une autre pièce qui attaque. Deux menaces d'un coup : celle de la pièce qui bouge et celle de la pièce qui est découverte.",
+  "why": [
+    "L'adversaire ne voit souvent que la pièce qui bouge. Si la découverte donne échec, la pièce qui bouge peut aller n'importe où, même prendre la dame."
+  ],
+  "signals": [
+    "une de tes pièces longues (T, F, D) vise une cible adverse (roi, dame), mais une de tes propres pièces est devant."
+  ],
+  "method": [
+    "Repère tes pièces longues « bloquées » par tes propres pièces.",
+    "Si derrière la ligne il y a le roi adverse : n'importe quel coup de la pièce de devant donne échec. Cherche le coup de cette pièce qui gagne le plus (capture, autre menace).",
+    "Sinon, cherche un coup de la pièce de devant qui crée une deuxième menace.",
+    "Défense : surveille les découvertes que l'adversaire prépare contre ton roi et ta dame."
+  ],
+  "pitfall": {
+    "text": "la pièce qui bouge doit faire quelque chose d'utile. Si elle se place en prise et que l'adversaire peut parer l'attaque découverte en la prenant, il n'y a rien.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+    "solution": [
+      "e2h5"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": null,
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "e2h5",
+      "text": "",
+      "arrows": [
+        [
+          "e2",
+          "h5"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "discoveredAttack",
+    "discoveredCheck"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 problèmes discoveredAttack à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "En déplaçant une pièce, tu ouvres la ligne d'une autre pièce qui attaque. Deux menaces d'un coup : celle de la pièce qui bouge et celle de la pièce qui est découverte.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "L'adversaire ne voit souvent que la pièce qui bouge. Si la découverte donne échec, la pièce qui bouge peut aller n'importe où, même prendre la dame.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une de tes pièces longues (T, F, D) vise une cible adverse (roi, dame), mais une de tes propres pièces est devant.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Repère tes pièces longues « bloquées » par tes propres pièces. Si derrière la ligne il y a le roi adverse : n'importe quel coup de la pièce de devant donne échec. Cherche le coup de cette pièce qui gagne le plus (capture, autre menace). Sinon, cherche un coup de la pièce de devant qui crée une deuxième menace. Défense",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": ": surveille les découvertes que l'adversaire prépare contre ton roi et ta dame.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "la pièce qui bouge doit faire quelque chose d'utile. Si elle se place en prise et que l'adversaire peut parer l'attaque découverte en la prenant, il n'y a rien.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

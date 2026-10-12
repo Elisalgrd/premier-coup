@@ -1,0 +1,55 @@
+{
+  "id": "str-open-files",
+  "title": "Colonnes ouvertes et 7e rangée",
+  "tier": 4,
+  "priority": "A",
+  "domain": "stratégie",
+  "prerequisites": [
+    "str-worst-piece"
+  ],
+  "principle": "Les tours veulent les colonnes ouvertes (aucun pion) ou semi-ouvertes (pas de pion à toi). Une tour sur la 7e rangée attaque les pions et enferme le roi.",
+  "why": [],
+  "signals": [],
+  "method": [
+    "repère la colonne qui va s'ouvrir",
+    "mets-y une tour (ou double tes tours)",
+    "entre sur la 7e quand c'est possible."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "rookEndgame"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 positions à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Les tours veulent les colonnes ouvertes (aucun pion) ou semi-ouvertes (pas de pion à toi). Une tour sur la 7e rangée attaque les pions et enferme le roi.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "repère la colonne qui va s'ouvrir ; mets-y une tour (ou double tes tours) ; entre sur la 7e quand c'est possible.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

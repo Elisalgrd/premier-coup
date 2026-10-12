@@ -1,0 +1,114 @@
+{
+  "id": "mat-two-rooks",
+  "title": "Le mat de l'escalier (deux tours ou dame + tour)",
+  "tier": 0,
+  "priority": "S",
+  "domain": "mats",
+  "prerequisites": [
+    "vis-rules"
+  ],
+  "principle": "Une tour coupe une rangée, l'autre donne échec sur la rangée suivante. On alterne jusqu'au bord.",
+  "why": [
+    "C'est le mat le plus simple, il n'a même pas besoin du roi. Il revient sans cesse en fin de partie."
+  ],
+  "signals": [],
+  "method": [
+    "Une tour contrôle la rangée (ou la colonne) devant le roi adverse.",
+    "L'autre donne échec sur la rangée où il se trouve : il doit reculer.",
+    "La première tour passe devant et donne échec à son tour.",
+    "Si le roi adverse s'approche d'une tour, éloigne-la sur l'autre côté de l'échiquier, puis reprends."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "6k1/8/8/8/8/8/R7/1R4K1 w - - 0 1",
+    "solution": [
+      "a2a7",
+      "g8f8",
+      "b1b8"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": "mate",
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "a2a7",
+      "text": "",
+      "arrows": [
+        [
+          "a2",
+          "a7"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "g8f8",
+      "text": "",
+      "arrows": [
+        [
+          "g8",
+          "f8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "move": "b1b8",
+      "text": "",
+      "arrows": [
+        [
+          "b1",
+          "b8"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "mateIn2"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "5 mats depuis le centre de l'échiquier en moins de 10 coups."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Une tour coupe une rangée, l'autre donne échec sur la rangée suivante. On alterne jusqu'au bord.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "C'est le mat le plus simple, il n'a même pas besoin du roi. Il revient sans cesse en fin de partie.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Une tour contrôle la rangée (ou la colonne) devant le roi adverse. L'autre donne échec sur la rangée où il se trouve : il doit reculer. La première tour passe devant et donne échec à son tour. Si le roi adverse s'approche d'une tour, éloigne-la sur l'autre côté de l'échiquier, puis reprends.",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "6k1/8/8/8/8/8/R7/1R4K1 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

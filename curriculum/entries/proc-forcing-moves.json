@@ -1,0 +1,74 @@
+{
+  "id": "proc-forcing-moves",
+  "title": "Les coups forçants d'abord",
+  "tier": 2,
+  "priority": "S",
+  "domain": "réflexes",
+  "prerequisites": [
+    "proc-blunder-check"
+  ],
+  "principle": "Cherche d'abord les échecs, puis les captures, puis les menaces. Pour toi et pour lui.",
+  "why": [
+    "Un coup forçant réduit les réponses de l'adversaire à quelques coups. C'est ce qui rend une combinaison calculable. Presque toutes les tactiques commencent par un coup forçant."
+  ],
+  "signals": [
+    "roi adverse mal protégé, pièces non défendues, pièces alignées, pièce surchargée."
+  ],
+  "method": [
+    "Liste tous tes échecs, même ceux qui semblent absurdes (un sacrifice de dame avec échec peut mater).",
+    "Liste toutes tes captures.",
+    "Liste tes menaces (attaques sur une pièce non défendue ou plus précieuse, menaces de mat).",
+    "Pour chacun, regarde sa meilleure réponse, pas celle que tu espères."
+  ],
+  "pitfall": {
+    "text": "un échec « pour donner échec » qui chasse le roi vers une meilleure case. Un échec n'est utile que s'il gagne quelque chose ou prépare le mat.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "30 problèmes mélangés au-dessus de ton classement actuel, 70 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Cherche d'abord les échecs, puis les captures, puis les menaces. Pour toi et pour lui.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Un coup forçant réduit les réponses de l'adversaire à quelques coups. C'est ce qui rend une combinaison calculable. Presque toutes les tactiques commencent par un coup forçant.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "roi adverse mal protégé, pièces non défendues, pièces alignées, pièce surchargée.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Liste tous tes échecs, même ceux qui semblent absurdes (un sacrifice de dame avec échec peut mater). Liste toutes tes captures. Liste tes menaces (attaques sur une pièce non défendue ou plus précieuse, menaces de mat). Pour chacun, regarde sa meilleure réponse, pas celle que tu espères.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "un échec « pour donner échec » qui chasse le roi vers une meilleure case. Un échec n'est utile que s'il gagne quelque chose ou prépare le mat.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "mixed"
+}

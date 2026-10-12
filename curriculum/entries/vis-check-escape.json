@@ -1,0 +1,67 @@
+{
+  "id": "vis-check-escape",
+  "title": "Sortir d'un échec",
+  "tier": 0,
+  "priority": "S",
+  "domain": "vision",
+  "prerequisites": [
+    "vis-attacked-squares"
+  ],
+  "principle": "Trois réponses à un échec : prendre la pièce qui attaque, s'interposer, fuir. Toujours examiner les trois.",
+  "why": [
+    "Le choix de la réponse change tout. Fuir vers la mauvaise case peut mener au mat ou à une fourchette."
+  ],
+  "signals": [],
+  "method": [
+    "Peut-on prendre l'attaquant sans danger ? (souvent le meilleur)",
+    "Peut-on interposer une pièce peu précieuse et défendue ?",
+    "Où fuir ? Préférer une case qui n'est pas sur la ligne d'une autre pièce adverse et pas à portée d'un cavalier."
+  ],
+  "pitfall": {
+    "text": "interposer une pièce non défendue revient à la donner. Contre un échec de cavalier, on ne peut pas s'interposer.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "defensiveMove"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 positions d'échec, meilleure réponse trouvée à 85 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Trois réponses à un échec : prendre la pièce qui attaque, s'interposer, fuir. Toujours examiner les trois.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Le choix de la réponse change tout. Fuir vers la mauvaise case peut mener au mat ou à une fourchette.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Peut-on prendre l'attaquant sans danger ? (souvent le meilleur) Peut-on interposer une pièce peu précieuse et défendue ? Où fuir ? Préférer une case qui n'est pas sur la ligne d'une autre pièce adverse et pas à portée d'un cavalier.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "interposer une pièce non défendue revient à la donner. Contre un échec de cavalier, on ne peut pas s'interposer.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

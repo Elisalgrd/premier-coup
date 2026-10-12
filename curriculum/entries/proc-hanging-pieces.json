@@ -1,0 +1,76 @@
+{
+  "id": "proc-hanging-pieces",
+  "title": "Les pièces non défendues tombent",
+  "tier": 1,
+  "priority": "S",
+  "domain": "réflexes",
+  "prerequisites": [
+    "vis-attacked-squares"
+  ],
+  "principle": "Une pièce non défendue est une cible. Chez l'adversaire, prends-la. Chez toi, protège-la.",
+  "why": [
+    "Le grand maître John Nunn résume : les pièces non défendues tombent. Presque toutes les tactiques (fourchettes, enfilades, découvertes) visent au moins une pièce non défendue."
+  ],
+  "signals": [
+    "une pièce sans aucun défenseur",
+    "une pièce défendue seulement par le roi",
+    "une pièce défendue par une pièce qui a déjà un autre travail."
+  ],
+  "method": [
+    "Après chaque coup (le tien et le sien), compte tes pièces non défendues. Moins tu en as, moins l'adversaire a de tactiques.",
+    "Pendant le développement, connecte tes pièces : chacune protégée par une autre.",
+    "Chez l'adversaire, chaque pièce non défendue est une raison de chercher une double attaque."
+  ],
+  "pitfall": {
+    "text": "une pièce non défendue mais impossible à attaquer n'est pas un problème immédiat. Mais elle le deviendra.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "hangingPiece"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "20 problèmes hangingPiece à 90 %, temps moyen < 15 s."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Une pièce non défendue est une cible. Chez l'adversaire, prends-la. Chez toi, protège-la.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Le grand maître John Nunn résume : les pièces non défendues tombent. Presque toutes les tactiques (fourchettes, enfilades, découvertes) visent au moins une pièce non défendue.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une pièce sans aucun défenseur ; une pièce défendue seulement par le roi ; une pièce défendue par une pièce qui a déjà un autre travail.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Après chaque coup (le tien et le sien), compte tes pièces non défendues. Moins tu en as, moins l'adversaire a de tactiques. Pendant le développement, connecte tes pièces : chacune protégée par une autre. Chez l'adversaire, chaque pièce non défendue est une raison de chercher une double attaque.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "une pièce non défendue mais impossible à attaquer n'est pas un problème immédiat. Mais elle le deviendra.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

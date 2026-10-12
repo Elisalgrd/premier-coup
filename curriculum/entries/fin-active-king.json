@@ -1,0 +1,68 @@
+{
+  "id": "fin-active-king",
+  "title": "En finale, le roi attaque",
+  "tier": 3,
+  "priority": "S",
+  "domain": "finales",
+  "prerequisites": [
+    "vis-values"
+  ],
+  "principle": "Quand les dames sont échangées, ton roi devient une pièce forte : amène-le au centre et vers les pions.",
+  "why": [
+    "En finale le mat n'est plus une menace sérieuse. Le roi vaut alors environ une pièce mineure en attaque et en défense."
+  ],
+  "signals": [],
+  "method": [
+    "dès l'échange des dames (et si aucun mat n'est possible), avance le roi vers le centre",
+    "vise les pions faibles adverses",
+    "place-le devant les pions passés adverses."
+  ],
+  "pitfall": {
+    "text": "tant qu'il reste des tours et dame, vérifie quand même les échecs et les attaques sur la dernière rangée.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "endgame",
+    "pawnEndgame"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes pawnEndgame à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Quand les dames sont échangées, ton roi devient une pièce forte : amène-le au centre et vers les pions.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "En finale le mat n'est plus une menace sérieuse. Le roi vaut alors environ une pièce mineure en attaque et en défense.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "dès l'échange des dames (et si aucun mat n'est possible), avance le roi vers le centre ; vise les pions faibles adverses ; place-le devant les pions passés adverses.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "tant qu'il reste des tours et dame, vérifie quand même les échecs et les attaques sur la dernière rangée.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

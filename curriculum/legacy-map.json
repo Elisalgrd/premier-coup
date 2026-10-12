@@ -1,0 +1,143 @@
+{
+  "pieces": [
+    "vis-rules",
+    "vis-check-escape"
+  ],
+  "special": [
+    "vis-rules",
+    "vis-check-escape"
+  ],
+  "check": [
+    "vis-rules",
+    "vis-check-escape"
+  ],
+  "value": [
+    "vis-values",
+    "proc-exchange-count",
+    "proc-blunder-check"
+  ],
+  "captures": [
+    "vis-values",
+    "proc-exchange-count",
+    "proc-blunder-check"
+  ],
+  "scan": [
+    "vis-values",
+    "proc-exchange-count",
+    "proc-blunder-check"
+  ],
+  "defense": [
+    "ouv-early-traps",
+    "proc-opponent-threat"
+  ],
+  "defend-scholar": [
+    "ouv-early-traps",
+    "proc-opponent-threat"
+  ],
+  "fork": [
+    "tac-fork"
+  ],
+  "forks": [
+    "tac-fork"
+  ],
+  "fork-finish": [
+    "tac-fork"
+  ],
+  "pin": [
+    "tac-pin"
+  ],
+  "pins": [
+    "tac-pin"
+  ],
+  "skewer": [
+    "tac-skewer"
+  ],
+  "exchange-chain": [
+    "proc-exchange-count"
+  ],
+  "mate": [
+    "mat-back-rank"
+  ],
+  "mates": [
+    "mat-back-rank"
+  ],
+  "backrank": [
+    "mat-back-rank"
+  ],
+  "ladder-two": [
+    "mat-two-rooks"
+  ],
+  "finish": [
+    "mat-basic-queen"
+  ],
+  "endings": [
+    "vis-draws",
+    "fin-opposition",
+    "tac-promotion"
+  ],
+  "endgame": [
+    "vis-draws",
+    "fin-opposition",
+    "tac-promotion"
+  ],
+  "king-endgame": [
+    "fin-active-king"
+  ],
+  "opening": [
+    "ouv-principles"
+  ],
+  "center": [
+    "ouv-principles"
+  ],
+  "development": [
+    "ouv-principles"
+  ],
+  "queen-time": [
+    "ouv-principles"
+  ],
+  "king-safety": [
+    "ouv-principles"
+  ],
+  "italian": [
+    "ouv-white-italian"
+  ],
+  "italian-plan": [
+    "ouv-white-italian"
+  ],
+  "black-plan": [
+    "ouv-black-e5",
+    "ouv-black-d5"
+  ],
+  "black-e4": [
+    "ouv-black-e5",
+    "ouv-black-d5"
+  ],
+  "black-d4": [
+    "ouv-black-e5",
+    "ouv-black-d5"
+  ],
+  "candidates": [
+    "proc-candidates-calc"
+  ],
+  "convert": [
+    "fin-convert"
+  ],
+  "convert-advantage": [
+    "fin-convert"
+  ],
+  "improve": [
+    "str-worst-piece"
+  ],
+  "active-piece": [
+    "str-worst-piece"
+  ],
+  "review-game": [
+    "meta-game-review"
+  ],
+  "coordinated-attack": [
+    "str-king-safety-middlegame"
+  ],
+  "pawn-break": [
+    "str-pawn-structure"
+  ]
+}

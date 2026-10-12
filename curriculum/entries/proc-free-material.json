@@ -1,0 +1,68 @@
+{
+  "id": "proc-free-material",
+  "title": "Prendre ce qui est offert",
+  "tier": 1,
+  "priority": "A",
+  "domain": "réflexes",
+  "prerequisites": [
+    "proc-exchange-count"
+  ],
+  "principle": "Si une pièce est gratuite et que la prendre ne te met pas en danger, prends-la.",
+  "why": [
+    "Les débutants laissent souvent passer du matériel gratuit par peur d'un piège. Entre débutants, 9 fois sur 10 ce n'est pas un piège, c'est une gaffe."
+  ],
+  "signals": [],
+  "method": [
+    "La pièce est-elle vraiment non défendue ? (compte)",
+    "Après ma prise, a-t-il un échec, une capture ou une menace grave (mat, gain de dame) ?",
+    "Si non : prends."
+  ],
+  "pitfall": {
+    "text": "le « pion empoisonné » : un pion gratuit qui éloigne ta dame de la défense ou ouvre une ligne vers ton roi.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "hangingPiece",
+    "crushing"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 problèmes à 90 %, temps moyen < 10 s."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Si une pièce est gratuite et que la prendre ne te met pas en danger, prends-la.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Les débutants laissent souvent passer du matériel gratuit par peur d'un piège. Entre débutants, 9 fois sur 10 ce n'est pas un piège, c'est une gaffe.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "La pièce est-elle vraiment non défendue ? (compte) Après ma prise, a-t-il un échec, une capture ou une menace grave (mat, gain de dame) ? Si non : prends.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "le « pion empoisonné » : un pion gratuit qui éloigne ta dame de la défense ou ouvre une ligne vers ton roi.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

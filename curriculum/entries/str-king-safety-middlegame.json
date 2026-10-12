@@ -1,0 +1,58 @@
+{
+  "id": "str-king-safety-middlegame",
+  "title": "Sécurité du roi en milieu de partie",
+  "tier": 4,
+  "priority": "A",
+  "domain": "stratégie",
+  "prerequisites": [
+    "ouv-principles",
+    "mat-queen-support"
+  ],
+  "principle": "Les pions devant ton roi roqué sont son toit : ne les pousse pas sans raison. Quand les roques sont opposés, la course commence : pousse tes pions vers le roi adverse.",
+  "why": [],
+  "signals": [],
+  "method": [
+    "compte attaquants contre défenseurs autour de chaque roi",
+    "ouvre des lignes vers le roi adverse le moins protégé",
+    "en roques opposés, chaque tempo compte, n'hésite pas à sacrifier un pion pour ouvrir une colonne."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "kingsideAttack",
+    "queensideAttack",
+    "exposedKing"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes kingsideAttack à 70 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Les pions devant ton roi roqué sont son toit : ne les pousse pas sans raison. Quand les roques sont opposés, la course commence : pousse tes pions vers le roi adverse.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "compte attaquants contre défenseurs autour de chaque roi ; ouvre des lignes vers le roi adverse le moins protégé ; en roques opposés, chaque tempo compte, n'hésite pas à sacrifier un pion pour ouvrir une colonne.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

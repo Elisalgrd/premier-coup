@@ -1,0 +1,45 @@
+{
+  "id": "str-weak-squares",
+  "title": "Cases faibles et trous",
+  "tier": 4,
+  "priority": "B",
+  "domain": "stratégie",
+  "prerequisites": [
+    "str-pawn-structure"
+  ],
+  "principle": "Une case qu'aucun pion ne peut plus défendre est une case faible ; si elle est près du roi ou au centre, installe-toi dessus.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "6 positions à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Une case qu'aucun pion ne peut plus défendre est une case faible ; si elle est près du roi ou au centre, installe-toi dessus.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "plan-choice"
+}

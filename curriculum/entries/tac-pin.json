@@ -1,0 +1,107 @@
+{
+  "id": "tac-pin",
+  "title": "Le clouage",
+  "tier": 2,
+  "priority": "S",
+  "domain": "tactique",
+  "prerequisites": [
+    "proc-hanging-pieces"
+  ],
+  "principle": "Une pièce ne peut pas (ou ne doit pas) bouger parce qu'elle protège une pièce plus précieuse derrière elle.",
+  "why": [
+    "Une pièce clouée ne défend plus vraiment, et on peut l'attaquer à nouveau (souvent avec un pion) sans qu'elle puisse fuir."
+  ],
+  "signals": [
+    "une pièce adverse sur la même ligne (colonne, rangée, diagonale) que son roi ou sa dame, avec une de tes pièces longues (F, T, D) qui peut atteindre cette ligne."
+  ],
+  "method": [
+    "Repère les alignements roi / dame / tour adverses avec une pièce entre eux et toi.",
+    "Cloue avec ta pièce longue (de préférence de moindre valeur que la pièce clouée ou défendue).",
+    "Attaque la pièce clouée une seconde fois, idéalement avec un pion : elle ne peut pas fuir.",
+    "Avant de compter un défenseur adverse, vérifie qu'il n'est pas cloué."
+  ],
+  "pitfall": {
+    "text": "une pièce clouée peut encore bouger le long de la ligne et parfois prendre ta pièce qui cloue. Un clouage relatif peut être rompu par un contre-coup plus fort (voir le mat de Légal).",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": {
+    "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+    "solution": [
+      "f2f3"
+    ],
+    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
+    "outcome": null,
+    "mode": "move",
+    "source": "CURRICULUM.md"
+  },
+  "guided": [
+    {
+      "move": "f2f3",
+      "text": "",
+      "arrows": [
+        [
+          "f2",
+          "f3"
+        ]
+      ],
+      "marks": []
+    }
+  ],
+  "lichessThemes": [
+    "pin"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 problèmes pin inédits à 80 %."
+  },
+  "sources": [],
+  "videoId": "course-pins",
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Une pièce ne peut pas (ou ne doit pas) bouger parce qu'elle protège une pièce plus précieuse derrière elle.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Une pièce clouée ne défend plus vraiment, et on peut l'attaquer à nouveau (souvent avec un pion) sans qu'elle puisse fuir.",
+      "audio": null
+    },
+    {
+      "title": "Deux types",
+      "text": "Clouage absolu : derrière, c'est le roi. Bouger la pièce clouée est illégal. Clouage relatif : derrière, c'est la dame ou une tour. Bouger est légal mais coûte cher.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une pièce adverse sur la même ligne (colonne, rangée, diagonale) que son roi ou sa dame, avec une de tes pièces longues (F, T, D) qui peut atteindre cette ligne.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Repère les alignements roi / dame / tour adverses avec une pièce entre eux et toi. Cloue avec ta pièce longue (de préférence de moindre valeur que la pièce clouée ou défendue). Attaque la pièce clouée une seconde fois, idéalement avec un pion : elle ne peut pas fuir. Avant de compter un défenseur adverse, vérifie qu'il n'est pas cloué.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "une pièce clouée peut encore bouger le long de la ligne et parfois prendre ta pièce qui cloue. Un clouage relatif peut être rompu par un contre-coup plus fort (voir le mat de Légal).",
+      "audio": null
+    }
+  ],
+  "examples": [
+    {
+      "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+      "outcome": null,
+      "source": "CURRICULUM.md"
+    }
+  ]
+}

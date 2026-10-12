@@ -1,0 +1,47 @@
+{
+  "id": "tac-interference-clearance",
+  "title": "Interception et dégagement",
+  "tier": 3,
+  "priority": "B",
+  "domain": "tactique",
+  "prerequisites": [
+    "tac-deflection"
+  ],
+  "principle": "Interception : place une pièce entre un défenseur et ce qu'il défend. Dégagement : libère une case ou une ligne pour une autre de tes pièces, souvent avec gain de temps.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "interference",
+    "clearance"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes de chaque à 70 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Interception : place une pièce entre un défenseur et ce qu'il défend. Dégagement : libère une case ou une ligne pour une autre de tes pièces, souvent avec gain de temps.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

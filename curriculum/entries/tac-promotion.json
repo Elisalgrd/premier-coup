@@ -1,0 +1,72 @@
+{
+  "id": "tac-promotion",
+  "title": "Les pions qui deviennent des dames",
+  "tier": 2,
+  "priority": "A",
+  "domain": "tactique",
+  "prerequisites": [
+    "proc-forcing-moves"
+  ],
+  "principle": "Un pion sur la 7e rangée (2e pour les noirs) vaut presque une dame. Tout sacrifice qui le fait promouvoir est à examiner.",
+  "why": [
+    "Le défenseur doit garder la case de promotion en permanence",
+    "cela crée surcharges et déviations."
+  ],
+  "signals": [
+    "pion passé avancé, une seule pièce adverse qui contrôle la case de promotion."
+  ],
+  "method": [
+    "contrôle la case de promotion une fois de plus que l'adversaire",
+    "dévie ou élimine son défenseur",
+    "pense à la sous-promotion en cavalier si elle donne échec ou fourchette, ou en tour si la dame fait pat."
+  ],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "advancedPawn",
+    "promotion",
+    "underPromotion"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes promotion/advancedPawn à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Un pion sur la 7e rangée (2e pour les noirs) vaut presque une dame. Tout sacrifice qui le fait promouvoir est à examiner.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Le défenseur doit garder la case de promotion en permanence ; cela crée surcharges et déviations.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "pion passé avancé, une seule pièce adverse qui contrôle la case de promotion.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "contrôle la case de promotion une fois de plus que l'adversaire ; dévie ou élimine son défenseur ; pense à la sous-promotion en cavalier si elle donne échec ou fourchette, ou en tour si la dame fait pat.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

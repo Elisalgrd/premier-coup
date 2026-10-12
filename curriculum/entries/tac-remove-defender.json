@@ -1,0 +1,76 @@
+{
+  "id": "tac-remove-defender",
+  "title": "Éliminer le défenseur",
+  "tier": 2,
+  "priority": "S",
+  "domain": "tactique",
+  "prerequisites": [
+    "proc-exchange-count"
+  ],
+  "principle": "Si une pièce adverse n'est défendue qu'une fois, prends ou chasse son défenseur. La pièce devient gratuite.",
+  "why": [
+    "Beaucoup de pièces « défendues » ne tiennent que par un seul fil. Couper ce fil, même en sacrifiant de la valeur, peut rapporter plus."
+  ],
+  "signals": [
+    "une cible attaquée par toi et défendue une seule fois",
+    "le défenseur peut être pris, échangé ou attaqué par un pion."
+  ],
+  "method": [
+    "Pour chaque pièce adverse intéressante, liste ses défenseurs.",
+    "S'il n'y en a qu'un, cherche à le prendre, l'échanger, le chasser ou le clouer.",
+    "Puis prends la cible.",
+    "Compte le bilan total de l'opération."
+  ],
+  "pitfall": {
+    "text": "le défenseur que tu prends est peut-être repris par une autre pièce qui défend aussi la cible.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "capturingDefender"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "15 problèmes capturingDefender à 80 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Si une pièce adverse n'est défendue qu'une fois, prends ou chasse son défenseur. La pièce devient gratuite.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Beaucoup de pièces « défendues » ne tiennent que par un seul fil. Couper ce fil, même en sacrifiant de la valeur, peut rapporter plus.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "une cible attaquée par toi et défendue une seule fois ; le défenseur peut être pris, échangé ou attaqué par un pion.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Pour chaque pièce adverse intéressante, liste ses défenseurs. S'il n'y en a qu'un, cherche à le prendre, l'échanger, le chasser ou le clouer. Puis prends la cible. Compte le bilan total de l'opération.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "le défenseur que tu prends est peut-être repris par une autre pièce qui défend aussi la cible.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

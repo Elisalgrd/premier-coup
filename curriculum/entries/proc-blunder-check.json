@@ -1,0 +1,80 @@
+{
+  "id": "proc-blunder-check",
+  "title": "La routine anti-gaffe : échecs, captures, menaces",
+  "tier": 1,
+  "priority": "S",
+  "domain": "réflexes",
+  "prerequisites": [
+    "vis-attacked-squares"
+  ],
+  "principle": "Avant de jouer, regarde les échecs, captures et menaces possibles. Pour l'adversaire d'abord, pour toi ensuite.",
+  "why": [
+    "C'est la routine qui supprime le plus de défaites. La plupart des parties perdues entre débutants le sont parce qu'un échec, une capture ou une menace évidente n'a pas été regardé."
+  ],
+  "signals": [
+    "à faire à chaque coup, sans exception. Plus le coup est « évident », plus il faut vérifier."
+  ],
+  "method": [
+    "Sa menace : après son dernier coup, que ferait-il si je passais mon tour ? (échecs, captures, menaces)",
+    "Mes coups forçants : ai-je un échec, une capture, une menace ? Lesquels gagnent quelque chose ?",
+    "Mon coup choisi : je le joue dans ma tête. Après, quels sont ses échecs, captures et menaces ? Ma pièce qui vient de bouger est-elle défendue ? Ai-je laissé une autre pièce sans défense ?",
+    "Si tout est sûr, je joue."
+  ],
+  "pitfall": {
+    "text": "faire la routine seulement quand on se sent en danger. C'est quand on se sent en sécurité qu'on gaffe.",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "hangingPiece"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "en partie contre le moteur (niveau adapté), moins d'une pièce perdue sans compensation par partie sur 10 parties."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Avant de jouer, regarde les échecs, captures et menaces possibles. Pour l'adversaire d'abord, pour toi ensuite.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "C'est la routine qui supprime le plus de défaites. La plupart des parties perdues entre débutants le sont parce qu'un échec, une capture ou une menace évidente n'a pas été regardé.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "à faire à chaque coup, sans exception. Plus le coup est « évident », plus il faut vérifier.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Sa menace : après son dernier coup, que ferait-il si je passais mon tour ? (échecs, captures, menaces) Mes coups forçants : ai-je un échec, une capture, une menace ? Lesquels gagnent quelque chose ? Mon coup choisi : je le joue dans ma tête. Après, quels sont ses échecs, captures et menaces ? Ma pièce qui vient de bouger",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "est-elle défendue ? Ai-je laissé une autre pièce sans défense ? Si tout est sûr, je joue.",
+      "audio": null
+    },
+    {
+      "title": "Piège",
+      "text": "faire la routine seulement quand on se sent en danger. C'est quand on se sent en sécurité qu'on gaffe.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

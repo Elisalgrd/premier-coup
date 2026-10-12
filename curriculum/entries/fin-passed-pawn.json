@@ -1,0 +1,52 @@
+{
+  "id": "fin-passed-pawn",
+  "title": "Le pion passé",
+  "tier": 3,
+  "priority": "A",
+  "domain": "finales",
+  "prerequisites": [
+    "fin-square"
+  ],
+  "principle": "Un pion qu'aucun pion adverse ne peut arrêter est un atout majeur : pousse-le, soutiens-le, et bloque ceux de l'adversaire.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [
+    "advancedPawn",
+    "endgame"
+  ],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "10 problèmes advancedPawn + endgame à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Un pion qu'aucun pion adverse ne peut arrêter est un atout majeur : pousse-le, soutiens-le, et bloque ceux de l'adversaire.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "pion passé protégé (défendu par un pion), pion passé éloigné (il attire le roi adverse loin du reste), bloquer un pion passé adverse avec une pièce (idéalement un cavalier), créer un pion passé par une majorité de pions.",
+      "audio": null
+    }
+  ],
+  "examples": []
+}

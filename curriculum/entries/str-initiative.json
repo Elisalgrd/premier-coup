@@ -1,0 +1,45 @@
+{
+  "id": "str-initiative",
+  "title": "Développement et initiative",
+  "tier": 4,
+  "priority": "B",
+  "domain": "stratégie",
+  "prerequisites": [
+    "ouv-principles"
+  ],
+  "principle": "Si tu as plus de pièces développées, ouvre le jeu (échanges de pions au centre) : l'avance se transforme en attaque. Si tu es en retard, garde le jeu fermé.",
+  "why": [],
+  "signals": [],
+  "method": [],
+  "pitfall": {
+    "text": "",
+    "fen": null,
+    "line": []
+  },
+  "entryChallenge": null,
+  "guided": [],
+  "lichessThemes": [],
+  "ratingBand": [
+    400,
+    2200
+  ],
+  "mastery": {
+    "attempts": 15,
+    "accuracy": 0.8,
+    "distinctDays": 2,
+    "description": "6 positions à 75 %."
+  },
+  "sources": [],
+  "videoId": null,
+  "glossary": [],
+  "audio": null,
+  "screens": [
+    {
+      "title": "Principe",
+      "text": "Si tu as plus de pièces développées, ouvre le jeu (échanges de pions au centre) : l'avance se transforme en attaque. Si tu es en retard, garde le jeu fermé.",
+      "audio": null
+    }
+  ],
+  "examples": [],
+  "drill": "plan-choice"
+}
