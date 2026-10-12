@@ -24,7 +24,7 @@
     "Si une menace existe, compare quatre réponses : défendre la cible, prendre l'attaquant, s'interposer, déplacer la cible avec gain de temps (en créant soi-même une menace)."
   ],
   "pitfall": {
-    "text": "répondre à une menace en en créant une plus grosse (contre-attaque) est parfois meilleur. Mais seulement si ta menace est vraiment plus forte et forcée (échec, mat, gain de dame).",
+    "text": "Répondre à une menace en en créant une plus grosse (contre-attaque) est parfois meilleur. Mais seulement si ta menace est vraiment plus forte et forcée (échec, mat, gain de dame).",
     "fen": null,
     "line": []
   },
@@ -65,7 +65,12 @@
     "distinctDays": 2,
     "description": "15 positions « quelle est sa menace ? » (toucher la pièce visée) à 90 %."
   },
-  "sources": [],
+  "sources": [
+    {
+      "label": "Julien Song : Identifier et parer les menaces",
+      "url": "https://fr.linkedin.com/posts/juliensong_cest-la-raison-num%C3%A9ro-1-qui-font-que-les-activity-7255837111466037248-kwv8"
+    }
+  ],
   "videoId": null,
   "glossary": [],
   "audio": null,
@@ -82,19 +87,35 @@
     },
     {
       "title": "Signaux",
-      "text": "une pièce adverse vient d'arriver près de ton roi ; une ligne vient de s'ouvrir ; une de tes pièces vient de perdre un défenseur ; un pion adverse avance vers tes pièces.",
+      "text": "Une pièce adverse vient d'arriver près de ton roi. Une ligne vient de s'ouvrir. Une de tes pièces vient de perdre un défenseur. Un pion adverse avance vers tes pièces.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Qu'attaque maintenant la pièce qui a bougé ? Qu'attaque la pièce qui était derrière elle (découverte) ? Qu'est-ce que cette pièce ne défend plus ? Si une menace existe, compare quatre réponses : défendre la cible, prendre l'attaquant, s'interposer, déplacer la cible avec gain de temps (en créant soi-même une menace).",
+      "text": "Qu'attaque maintenant la pièce qui a bougé ?",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Qu'attaque la pièce qui était derrière elle (découverte) ?",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Qu'est-ce que cette pièce ne défend plus ?",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Compare quatre réponses : défendre, prendre l’attaquant, s’interposer ou déplacer la cible. Cherche si ta réponse crée aussi une menace.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "répondre à une menace en en créant une plus grosse (contre-attaque) est parfois meilleur. Mais seulement si ta menace est vraiment plus forte et forcée (échec, mat, gain de dame).",
+      "text": "Répondre à une menace en en créant une plus grosse (contre-attaque) est parfois meilleur. Mais seulement si ta menace est vraiment plus forte et forcée (échec, mat, gain de dame).",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

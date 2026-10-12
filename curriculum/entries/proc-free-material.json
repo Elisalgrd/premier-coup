@@ -18,7 +18,7 @@
     "Si non : prends."
   ],
   "pitfall": {
-    "text": "le « pion empoisonné » : un pion gratuit qui éloigne ta dame de la défense ou ouvre une ligne vers ton roi.",
+    "text": "Un pion gratuit peut éloigner ta dame de la défense. Il peut aussi ouvrir une ligne vers ton roi. Vérifie ces conséquences avant de prendre.",
     "fen": null,
     "line": []
   },
@@ -103,14 +103,25 @@
     },
     {
       "title": "Méthode",
-      "text": "La pièce est-elle vraiment non défendue ? (compte) Après ma prise, a-t-il un échec, une capture ou une menace grave (mat, gain de dame) ? Si non : prends.",
+      "text": "La pièce est-elle vraiment non défendue ? (compte)",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Après ma prise, a-t-il un échec, une capture ou une menace grave (mat, gain de dame) ?",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Si non : prends.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "le « pion empoisonné » : un pion gratuit qui éloigne ta dame de la défense ou ouvre une ligne vers ton roi.",
+      "text": "Un pion gratuit peut éloigner ta dame de la défense. Il peut aussi ouvrir une ligne vers ton roi. Vérifie ces conséquences avant de prendre.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

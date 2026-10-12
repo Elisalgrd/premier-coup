@@ -7,7 +7,7 @@
   "prerequisites": [
     "fin-passed-pawn"
   ],
-  "principle": "Place ta tour derrière les pions passés : derrière les tiens pour les pousser, derrière ceux de l'adversaire pour les freiner (règle de Tarrasch).",
+  "principle": "Place ta tour derrière les pions passés. Derrière les tiens, elle aide leur avance. Derrière ceux de l’adversaire, elle les freine.",
   "why": [
     "Derrière un pion, l'activité de la tour augmente à chaque pas du pion. Devant, elle diminue."
   ],
@@ -60,15 +60,16 @@
   "audio": null,
   "screens": [
     {
-      "title": "Principe",
-      "text": "Place ta tour derrière les pions passés : derrière les tiens pour les pousser, derrière ceux de l'adversaire pour les freiner (règle de Tarrasch).",
-      "audio": null
-    },
-    {
       "title": "Pourquoi",
       "text": "Derrière un pion, l'activité de la tour augmente à chaque pas du pion. Devant, elle diminue.",
       "audio": null
+    },
+    {
+      "title": "Principe",
+      "text": "Place ta tour derrière les pions passés. Derrière les tiens, elle aide leur avance. Derrière ceux de l’adversaire, elle les freine.",
+      "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

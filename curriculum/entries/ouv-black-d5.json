@@ -17,9 +17,8 @@
     "line": []
   },
   "entryChallenge": {
-    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
     "solution": [
-      "d2d4",
       "d7d5",
       "c2c4",
       "e7e6",
@@ -34,24 +33,12 @@
       "g5h4",
       "b7b6"
     ],
-    "prompt": "Trait aux blancs. Développe tes pièces en contrôlant le centre.",
+    "prompt": "Trait aux noirs. Développe tes pièces et prépare la sécurité du roi.",
     "outcome": null,
     "mode": "opening",
     "source": "CURRICULUM.md"
   },
   "guided": [
-    {
-      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
-      "move": "d2d4",
-      "text": "",
-      "arrows": [
-        [
-          "d2",
-          "d4"
-        ]
-      ],
-      "marks": []
-    },
     {
       "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
       "move": "d7d5",
@@ -223,20 +210,23 @@
     "description": "3 parties contre le moteur depuis 1.d4."
   },
   "sources": [],
-  "videoId": null,
+  "videoId": "queens-gambit",
   "glossary": [],
   "audio": null,
   "screens": [
     {
       "title": "Principe",
-      "text": "d5, e6, Cf6, Fe7, O-O, puis ...c5 ou ...b6 et ...Fb7. Une base solide qui marche contre presque tous les systèmes avec d4.",
+      "text": "D5, e6, Cf6, Fe7, O-O, puis ...c5 ou ...b6 et ...Fb7. Une base solide qui marche contre presque tous les systèmes avec d4.",
       "audio": null
     },
     {
       "title": "Plans",
-      "text": "...c5 pour attaquer le centre blanc ; le fou c8 est la pièce difficile, le sortir par b7 (après ...b6) ou f5 (avant ...e6).",
+      "text": "...c5 pour attaquer le centre blanc. Le fou c8 est la pièce difficile, le sortir par b7 (après ...b6) ou f5 (avant ...e6).",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": [
+    "queens-gambit"
+  ]
 }

@@ -103,14 +103,15 @@
     },
     {
       "title": "Signaux",
-      "text": "une pièce adverse qui est l'unique défenseur de deux cibles (deux pièces, ou une pièce et une case de mat).",
+      "text": "Une pièce adverse qui est l'unique défenseur de deux cibles (deux pièces, ou une pièce et une case de mat).",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "repère les défenseurs à double emploi ; force-les à choisir avec une capture ou un échec.",
+      "text": "Repère les défenseurs à double emploi. Force-les à choisir avec une capture ou un échec.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

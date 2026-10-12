@@ -67,9 +67,10 @@
     },
     {
       "title": "Contenu",
-      "text": "pion passé protégé (défendu par un pion), pion passé éloigné (il attire le roi adverse loin du reste), bloquer un pion passé adverse avec une pièce (idéalement un cavalier), créer un pion passé par une majorité de pions.",
+      "text": "Un pion passé protégé est défendu par un pion. Un pion passé éloigné attire le roi loin des autres pions. Bloque le pion adverse avec une pièce, idéalement un cavalier. Une majorité de pions permet de créer un pion passé.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

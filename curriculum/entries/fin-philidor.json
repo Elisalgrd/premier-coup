@@ -7,7 +7,7 @@
   "prerequisites": [
     "fin-lucena"
   ],
-  "principle": "En défense, roi devant le pion, tour sur ta 3e rangée (6e pour les noirs) tant que le pion n'a pas avancé ; dès qu'il avance, ta tour descend sur la 1re rangée et donne des échecs par derrière.",
+  "principle": "En défense, garde le roi devant le pion et la tour sur ta troisième rangée. Dès que le pion avance, donne des échecs par derrière. Pour les noirs, la tour défend d’abord sur la sixième rangée.",
   "why": [
     "Le roi attaquant ne peut plus s'abriter derrière son pion une fois celui-ci avancé."
   ],
@@ -85,13 +85,13 @@
   "audio": null,
   "screens": [
     {
-      "title": "Principe",
-      "text": "En défense, roi devant le pion, tour sur ta 3e rangée (6e pour les noirs) tant que le pion n'a pas avancé ; dès qu'il avance, ta tour descend sur la 1re rangée et donne des échecs par derrière.",
+      "title": "Pourquoi",
+      "text": "Le roi attaquant ne peut plus s'abriter derrière son pion une fois celui-ci avancé.",
       "audio": null
     },
     {
-      "title": "Pourquoi",
-      "text": "Le roi attaquant ne peut plus s'abriter derrière son pion une fois celui-ci avancé.",
+      "title": "Principe",
+      "text": "En défense, garde le roi devant le pion et la tour sur ta troisième rangée. Dès que le pion avance, donne des échecs par derrière. Pour les noirs, la tour défend d’abord sur la sixième rangée.",
       "audio": null
     }
   ],
@@ -102,5 +102,6 @@
       "source": "CURRICULUM.md"
     }
   ],
-  "drill": "endgame"
+  "drill": "endgame",
+  "videos": []
 }

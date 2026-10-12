@@ -65,7 +65,7 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "Le roi est entouré de ses propres pièces ; un cavalier donne échec et le mate, car rien ne peut fuir ni s'interposer.",
+      "text": "Le roi est entouré de ses propres pièces. Un cavalier donne échec et le mate, car rien ne peut fuir ni s'interposer.",
       "audio": null
     },
     {
@@ -75,12 +75,12 @@
     },
     {
       "title": "Signaux",
-      "text": "roi adverse dans le coin, cases voisines occupées par ses pièces, ton cavalier peut atteindre f7 (ou f2), ta dame peut donner échec en g8.",
+      "text": "Le roi adverse est dans un coin, entouré de ses propres pièces. Ton cavalier peut atteindre f7 ou f2. Ta dame peut donner échec en g8.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "échec de cavalier qui chasse le roi dans le coin, sacrifice de dame en g8 qui oblige la tour à la prendre, mat de cavalier en f7.",
+      "text": "Un échec de cavalier chasse le roi dans le coin. Le sacrifice de dame en g8 oblige la tour à la prendre. Le cavalier mate ensuite en f7. Vérifie chaque réponse avant de sacrifier.",
       "audio": null
     }
   ],
@@ -90,5 +90,6 @@
       "outcome": "mate",
       "source": "CURRICULUM.md"
     }
-  ]
+  ],
+  "videos": []
 }

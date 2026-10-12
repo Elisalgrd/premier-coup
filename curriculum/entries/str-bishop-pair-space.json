@@ -57,10 +57,11 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "La paire de fous est forte dans les positions ouvertes ; ouvre le jeu si tu l'as. Avec plus d'espace, évite les échanges pour garder l'adversaire à l'étroit.",
+      "text": "La paire de fous est forte dans les positions ouvertes. Ouvre le jeu si tu l'as. Avec plus d'espace, évite les échanges pour garder l'adversaire à l'étroit.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "plan-choice"
+  "drill": "plan-choice",
+  "videos": []
 }

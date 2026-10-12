@@ -1,6 +1,66 @@
-import fs from 'node:fs';import assert from 'node:assert/strict';import {Chess,validateFen} from '../src/chess/chess.js';import {moveUci} from '../src/chess/notation.js';
-const index=JSON.parse(fs.readFileSync('curriculum/index.json','utf8')),all=index.map(e=>JSON.parse(fs.readFileSync(`curriculum/entries/${e.id}.json`,'utf8'))),ids=new Set(all.map(e=>e.id));let positions=0,moves=0;
-function replay(fen,line=[],outcome){assert.ok(validateFen(fen).ok,'FEN invalide '+fen);const g=new Chess(fen);for(const m of line){assert.match(m,/^[a-h][1-8][a-h][1-8][qrbn]?$/);moveUci(g,m);moves++;}if(outcome==='mate')assert.ok(g.isCheckmate(),'Mat incorrect '+fen);if(outcome==='stalemate')assert.ok(g.isStalemate(),'Pat incorrect '+fen);positions++;}
-function walk(id,path=[]){assert.ok(!path.includes(id),'Cycle '+[...path,id].join(' > '));const e=all.find(e=>e.id===id);for(const p of e.prerequisites){assert.ok(ids.has(p),'Prérequis inconnu '+p);walk(p,[...path,id]);}}
-for(const e of all){try{assert.match(e.id,/^(vis|proc|tac|mat|fin|ouv|str|meta)-[a-z0-9-]+$/);assert.ok(e.principle);walk(e.id);if(['S','A'].includes(e.priority))assert.ok(e.lichessThemes.length||e.drill,e.id+' sans pratique');for(const s of e.screens){assert.ok(s.text.split(/\s+/).length<=60,e.id+' écran trop long');assert.doesNotMatch(s.text,/[—–]/);}if(e.entryChallenge)replay(e.entryChallenge.fen,e.entryChallenge.mode==='square'?[]:e.entryChallenge.solution,e.entryChallenge.outcome);if(e.pitfall.fen)replay(e.pitfall.fen,e.pitfall.line);for(const example of e.examples)replay(example.fen,example.line,example.outcome);}catch(error){throw Error(e.id+': '+error.message);}}
-console.log(`${all.length} fiches, ${positions} positions et ${moves} demi-coups validés. Aucun cycle ni écran de plus de 60 mots.`);
+import fs from "node:fs";
+import assert from "node:assert/strict";
+import { Chess, validateFen } from "../src/chess/chess.js";
+import { moveUci } from "../src/chess/notation.js";
+const index = JSON.parse(fs.readFileSync("curriculum/index.json", "utf8")),
+  all = index.map((e) =>
+    JSON.parse(fs.readFileSync(`curriculum/entries/${e.id}.json`, "utf8")),
+  ),
+  ids = new Set(all.map((e) => e.id));
+let positions = 0,
+  moves = 0;
+function replay(fen, line = [], outcome) {
+  assert.ok(validateFen(fen).ok, "FEN invalide " + fen);
+  const g = new Chess(fen);
+  for (const m of line) {
+    assert.match(m, /^[a-h][1-8][a-h][1-8][qrbn]?$/);
+    moveUci(g, m);
+    moves++;
+  }
+  if (outcome === "mate") assert.ok(g.isCheckmate(), "Mat incorrect " + fen);
+  if (outcome === "stalemate")
+    assert.ok(g.isStalemate(), "Pat incorrect " + fen);
+  positions++;
+}
+function walk(id, path = []) {
+  assert.ok(!path.includes(id), "Cycle " + [...path, id].join(" > "));
+  const e = all.find((e) => e.id === id);
+  for (const p of e.prerequisites) {
+    assert.ok(ids.has(p), "Prérequis inconnu " + p);
+    walk(p, [...path, id]);
+  }
+}
+for (const e of all) {
+  try {
+    assert.match(e.id, /^(vis|proc|tac|mat|fin|ouv|str|meta)-[a-z0-9-]+$/);
+    assert.ok(e.principle);
+    walk(e.id);
+    if (["S", "A"].includes(e.priority))
+      assert.ok(e.lichessThemes.length || e.drill, e.id + " sans pratique");
+    for (const s of e.screens) {
+      assert.ok(s.text.split(/\s+/).length <= 60, e.id + " écran trop long");
+      assert.doesNotMatch(s.text, /[—–]/);
+      for (const sentence of s.text.split(/[.!?](?:\s|$)/))
+        assert.ok(
+          sentence.split(/\s+/).filter(Boolean).length <= 20,
+          e.id + " phrase trop longue",
+        );
+    }
+    if (e.entryChallenge)
+      replay(
+        e.entryChallenge.fen,
+        e.entryChallenge.mode === "square" ? [] : e.entryChallenge.solution,
+        e.entryChallenge.outcome,
+      );
+    if (e.pitfall.fen) replay(e.pitfall.fen, e.pitfall.line);
+    for (const frame of e.guided)
+      if (frame.fen) replay(frame.fen, frame.move ? [frame.move] : []);
+    for (const example of e.examples)
+      replay(example.fen, example.line, example.outcome);
+  } catch (error) {
+    throw Error(e.id + ": " + error.message);
+  }
+}
+console.log(
+  `${all.length} fiches, ${positions} positions et ${moves} demi-coups validés. Aucun cycle ni écran de plus de 60 mots.`,
+);

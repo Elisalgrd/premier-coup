@@ -85,22 +85,37 @@
     },
     {
       "title": "Signaux",
-      "text": "une pièce adverse attaquée par l'une des tiennes.",
+      "text": "Une pièce adverse attaquée par l'une des tiennes.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Compte : combien de mes pièces attaquent la case ? Combien des siennes la défendent ? Si je n'attaque pas plus de fois qu'il ne défend, je ne gagne pas la pièce (sauf si ma première pièce vaut moins que la cible). Capture toujours avec la pièce la moins précieuse d'abord. Joue la séquence complète : je prends, il reprend,",
+      "text": "Compte : combien de mes pièces attaquent la case ? Combien des siennes la défendent ?",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "je reprends... Additionne ce que chacun perd. Il n'est jamais obligé de reprendre : vérifie aussi ce qui se passe s'il s'arrête en route.",
+      "text": "Compare le nombre d’attaquants et de défenseurs. Compare aussi leur valeur : une pièce peu chère peut prendre une cible coûteuse.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Capture toujours avec la pièce la moins précieuse d'abord.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Joue la séquence complète : je prends, il reprend, je reprends... Additionne ce que chacun perd.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Il n'est jamais obligé de reprendre : vérifie aussi ce qui se passe s'il s'arrête en route.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "prendre une pièce défendue par un pion avec ta dame. Exemple dans l'app actuelle (cours 1) : Dxd5 exd5 perd la dame contre une tour.",
+      "text": "Prendre une pièce défendue par un pion avec ta dame. Exemple dans l'app actuelle (cours 1) : Dxd5 exd5 perd la dame contre une tour.",
       "audio": null
     }
   ],
@@ -110,5 +125,8 @@
       "outcome": null,
       "source": "CURRICULUM.md"
     }
+  ],
+  "videos": [
+    "course-captures"
   ]
 }

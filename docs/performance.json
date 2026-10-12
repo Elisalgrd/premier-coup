@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "lighthouse": "13.0.1",
+  "environment": "Headless Edge, localhost, mobile simulated 4G",
+  "scores": {
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 100
+  },
+  "metrics": {
+    "first-contentful-paint": {
+      "ms": 1016.1014,
+      "display": "1.0 s"
+    },
+    "largest-contentful-paint": {
+      "ms": 1999.47815,
+      "display": "2.0 s"
+    },
+    "speed-index": {
+      "ms": 1016.1014,
+      "display": "1.0 s"
+    },
+    "total-blocking-time": {
+      "ms": 20,
+      "display": "20 ms"
+    }
+  },
+  "physicalIphoneTested": false,
+  "pwaCategory": "removed from Lighthouse 12; https://github.com/GoogleChrome/lighthouse/issues/15535"
+}

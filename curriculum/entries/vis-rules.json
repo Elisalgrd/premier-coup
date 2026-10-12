@@ -12,8 +12,8 @@
   "signals": [],
   "method": [],
   "pitfall": {
-    "text": "",
-    "fen": null,
+    "text": "Le roi n’est pas en échec et son camp ne peut jouer aucun coup légal. C’est pat : partie nulle.",
+    "fen": "4k3/4P3/4K3/8/8/8/8/8 b - - 0 1",
     "line": []
   },
   "entryChallenge": {
@@ -62,27 +62,42 @@
     },
     {
       "title": "Pourquoi",
-      "text": "Sans les règles exactes (roque, prise en passant, promotion, pat), on perd des parties gagnées et on joue des coups illégaux en ligne.",
+      "text": "Le roque, la prise en passant, la promotion et le pat changent certaines positions. Les connaître évite des erreurs décisives.",
       "audio": null
     },
     {
-      "title": "Contenu à couvrir, un écran chacun",
-      "text": "Déplacements : T en ligne droite, F en diagonale, D les deux, C en L (seule pièce qui saute), R d'une case, pion d'une case vers l'avant (deux depuis sa case de départ), prend en diagonale. Échec : le roi est attaqué. On doit y répondre immédiatement. Roque : roi et tour bougent ensemble. Conditions : ni le roi ni",
+      "title": "Règles sur l’échiquier",
+      "text": "La tour se déplace en ligne droite. Le fou suit les diagonales. La dame combine les deux. Le cavalier saute en L. Le roi avance d’une case.",
       "audio": null
     },
     {
-      "title": "Contenu à couvrir, un écran chacun",
-      "text": "cette tour n'ont bougé, les cases entre eux sont vides, le roi n'est pas en échec, ne traverse pas et n'arrive pas sur une case attaquée. La tour, elle, peut traverser une case attaquée. Prise en passant : un pion qui avance de deux cases et arrive à côté d'un pion adverse peut être pris comme s'il n'avait avancé que",
+      "title": "Règles sur l’échiquier",
+      "text": "Le pion avance d’une case, ou de deux depuis sa case de départ. Il prend en diagonale. Il ne recule jamais.",
       "audio": null
     },
     {
-      "title": "Contenu à couvrir, un écran chacun",
-      "text": "d'une case. Uniquement au coup immédiatement suivant. Promotion : un pion arrivé sur la dernière rangée devient D, T, F ou C au choix. Presque toujours une dame, sauf si elle provoque un pat. Pat : le joueur au trait n'est pas en échec mais n'a aucun coup légal. C'est nulle. Autres nulles : répétition de la même position 3",
+      "title": "Règles sur l’échiquier",
+      "text": "Pour roquer, le roi et la tour concernée ne doivent jamais avoir bougé. Les cases entre eux doivent être vides. Le roi ne doit être ni en échec, ni traverser ou atteindre une case attaquée.",
       "audio": null
     },
     {
-      "title": "Contenu à couvrir, un écran chacun",
-      "text": "fois, 50 coups sans prise ni mouvement de pion, matériel insuffisant (R contre R, R+F contre R, R+C contre R), accord.",
+      "title": "Règles sur l’échiquier",
+      "text": "La prise en passant suit immédiatement une avance adverse de deux cases. Ton pion voisin capture comme si le pion adverse n’avait avancé que d’une case.",
+      "audio": null
+    },
+    {
+      "title": "Règles sur l’échiquier",
+      "text": "Sur la dernière rangée, le pion devient dame, tour, fou ou cavalier. La promotion n’est pas limitée aux pièces capturées.",
+      "audio": null
+    },
+    {
+      "title": "Règles sur l’échiquier",
+      "text": "Le roi ne se capture jamais. En échec, prends l’attaquant, interpose une pièce ou déplace le roi. Sans aucune réponse légale, c’est mat.",
+      "audio": null
+    },
+    {
+      "title": "Règles sur l’échiquier",
+      "text": "Sans échec et sans coup légal : c’est pat. La partie est nulle. La répétition, la règle des cinquante coups, le matériel insuffisant ou un accord peuvent aussi donner la nulle.",
       "audio": null
     }
   ],
@@ -93,5 +108,6 @@
       "source": "CURRICULUM.md"
     }
   ],
-  "drill": "rules"
+  "drill": "rules",
+  "videos": []
 }

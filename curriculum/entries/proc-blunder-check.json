@@ -21,7 +21,7 @@
     "Si tout est sûr, je joue."
   ],
   "pitfall": {
-    "text": "faire la routine seulement quand on se sent en danger. C'est quand on se sent en sécurité qu'on gaffe.",
+    "text": "Faire la routine seulement quand on se sent en danger. C'est quand on se sent en sécurité qu'on gaffe.",
     "fen": null,
     "line": []
   },
@@ -72,30 +72,41 @@
       "audio": null
     },
     {
-      "title": "Pourquoi",
-      "text": "C'est la routine qui supprime le plus de défaites. La plupart des parties perdues entre débutants le sont parce qu'un échec, une capture ou une menace évidente n'a pas été regardé.",
-      "audio": null
-    },
-    {
       "title": "Signaux",
-      "text": "à faire à chaque coup, sans exception. Plus le coup est « évident », plus il faut vérifier.",
+      "text": "À faire à chaque coup, sans exception. Plus le coup est « évident », plus il faut vérifier.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Sa menace : après son dernier coup, que ferait-il si je passais mon tour ? (échecs, captures, menaces) Mes coups forçants : ai-je un échec, une capture, une menace ? Lesquels gagnent quelque chose ? Mon coup choisi : je le joue dans ma tête. Après, quels sont ses échecs, captures et menaces ? Ma pièce qui vient de bouger",
+      "text": "Sa menace : après son dernier coup, que ferait-il si je passais mon tour ? (échecs, captures, menaces)",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "est-elle défendue ? Ai-je laissé une autre pièce sans défense ? Si tout est sûr, je joue.",
+      "text": "Mes coups forçants : ai-je un échec, une capture, une menace ? Lesquels gagnent quelque chose ?",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Mon coup choisi : je le joue dans ma tête. Après, quels sont ses échecs, captures et menaces ? Ma pièce qui vient de bouger est-elle défendue ? Ai-je laissé une autre pièce sans défense ?",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Si tout est sûr, je joue.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "faire la routine seulement quand on se sent en danger. C'est quand on se sent en sécurité qu'on gaffe.",
+      "text": "Faire la routine seulement quand on se sent en danger. C'est quand on se sent en sécurité qu'on gaffe.",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Entre débutants, une menace simple oubliée peut décider la partie. Vérifie les échecs et les captures avant ton projet.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

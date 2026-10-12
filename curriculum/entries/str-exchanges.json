@@ -57,10 +57,11 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "Échange quand tu es devant au matériel, quand tu manques de place, ou pour éliminer une pièce adverse très active ou un défenseur clé. Évite d'échanger quand tu attaques ou quand tu es derrière.",
+      "text": "Échange si tu es devant au matériel ou si tu manques de place. Tu peux aussi éliminer un défenseur clé. Évite d'échanger quand tu attaques ou quand tu es derrière.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "plan-choice"
+  "drill": "plan-choice",
+  "videos": []
 }

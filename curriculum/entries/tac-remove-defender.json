@@ -22,7 +22,7 @@
     "Compte le bilan total de l'opération."
   ],
   "pitfall": {
-    "text": "le défenseur que tu prends est peut-être repris par une autre pièce qui défend aussi la cible.",
+    "text": "Le défenseur que tu prends est peut-être repris par une autre pièce qui défend aussi la cible.",
     "fen": null,
     "line": []
   },
@@ -105,19 +105,35 @@
     },
     {
       "title": "Signaux",
-      "text": "une cible attaquée par toi et défendue une seule fois ; le défenseur peut être pris, échangé ou attaqué par un pion.",
+      "text": "Une cible attaquée par toi et défendue une seule fois. Le défenseur peut être pris, échangé ou attaqué par un pion.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Pour chaque pièce adverse intéressante, liste ses défenseurs. S'il n'y en a qu'un, cherche à le prendre, l'échanger, le chasser ou le clouer. Puis prends la cible. Compte le bilan total de l'opération.",
+      "text": "Pour chaque pièce adverse intéressante, liste ses défenseurs.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "S'il n'y en a qu'un, cherche à le prendre, l'échanger, le chasser ou le clouer.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Puis prends la cible.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Compte le bilan total de l'opération.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "le défenseur que tu prends est peut-être repris par une autre pièce qui défend aussi la cible.",
+      "text": "Le défenseur que tu prends est peut-être repris par une autre pièce qui défend aussi la cible.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

@@ -186,7 +186,7 @@
     "priority": "S",
     "domain": "méthode",
     "prerequisites": [],
-    "principle": "Pour progresser, joue des parties avec assez de temps pour faire ta routine à chaque coup : 15 min + 10 s par coup minimum.",
+    "principle": "Joue assez lentement pour appliquer ta routine à chaque coup. Vise au moins quinze minutes, avec dix secondes ajoutées par coup.",
     "drill": "game-review"
   },
   {
@@ -343,7 +343,7 @@
     "prerequisites": [
       "mat-two-rooks"
     ],
-    "principle": "Un roi roqué derrière ses pions non avancés peut être maté par une tour ou une dame sur la dernière rangée."
+    "principle": "Ses pions peuvent enfermer le roi roqué. Une tour ou une dame peut alors mater sur sa dernière rangée."
   },
   {
     "id": "mat-queen-support",
@@ -376,7 +376,7 @@
     "prerequisites": [
       "mat-back-rank"
     ],
-    "principle": "Tour et cavalier coopèrent : le cavalier protège la tour collée au roi dans le coin et contrôle une case de fuite."
+    "principle": "Le cavalier protège la tour collée au roi dans le coin. Il contrôle aussi une case de fuite."
   },
   {
     "id": "mat-anastasia",
@@ -387,7 +387,7 @@
     "prerequisites": [
       "mat-arabian"
     ],
-    "principle": "Un cavalier en e7 (ou e2) bloque les cases de fuite, une tour ou une dame mate sur la colonne h."
+    "principle": "Le cavalier en e7 bloque des cases de fuite. La tour ou la dame mate sur la colonne h."
   },
   {
     "id": "mat-boden",
@@ -464,7 +464,7 @@
     "prerequisites": [
       "proc-candidates-calc"
     ],
-    "principle": "Parfois le coup gagnant n'est ni un échec ni une capture : il crée une menace imparable ou enlève la seule défense."
+    "principle": "Le coup gagnant ne donne pas toujours échec et ne capture pas toujours. Il peut créer une menace imparable ou supprimer une défense."
   },
   {
     "id": "mat-greek-gift",
@@ -508,7 +508,7 @@
     "prerequisites": [
       "fin-active-king"
     ],
-    "principle": "Dans une finale de rois, celui qui n'a pas le trait quand les rois se font face (une case entre eux) « a l'opposition » et gagne le duel."
+    "principle": "Les rois se font face, séparés par une case. Celui qui n’a pas le trait possède l’opposition. Il peut souvent repousser l’autre roi."
   },
   {
     "id": "fin-passed-pawn",
@@ -531,7 +531,7 @@
       "fin-opposition",
       "tac-skewer"
     ],
-    "principle": "Roi devant son pion sur la 7e, roi adverse coupé : construis un « pont » avec ta tour sur la 4e rangée pour stopper les échecs latéraux.",
+    "principle": "Roi devant son pion sur la septième, roi adverse coupé : prépare un pont. La tour rejoint la quatrième rangée et bloque les échecs latéraux.",
     "drill": "endgame"
   },
   {
@@ -543,7 +543,7 @@
     "prerequisites": [
       "fin-lucena"
     ],
-    "principle": "En défense, roi devant le pion, tour sur ta 3e rangée (6e pour les noirs) tant que le pion n'a pas avancé ; dès qu'il avance, ta tour descend sur la 1re rangée et donne des échecs par derrière.",
+    "principle": "En défense, garde le roi devant le pion et la tour sur ta troisième rangée. Dès que le pion avance, donne des échecs par derrière. Pour les noirs, la tour défend d’abord sur la sixième rangée.",
     "drill": "endgame"
   },
   {
@@ -555,7 +555,7 @@
     "prerequisites": [
       "fin-passed-pawn"
     ],
-    "principle": "Place ta tour derrière les pions passés : derrière les tiens pour les pousser, derrière ceux de l'adversaire pour les freiner (règle de Tarrasch)."
+    "principle": "Place ta tour derrière les pions passés. Derrière les tiens, elle aide leur avance. Derrière ceux de l’adversaire, elle les freine."
   },
   {
     "id": "fin-convert",
@@ -588,7 +588,7 @@
     "prerequisites": [
       "mat-basic-queen"
     ],
-    "principle": "La dame gagne contre un pion central ou de cavalier sur la 7e (échecs puis rapprochement du roi), mais un pion de fou ou de tour fait souvent nulle si le roi attaquant est loin (ressource de pat)."
+    "principle": "Contre un pion central ou de cavalier sur la septième, combine les échecs avec le rapprochement du roi. Contre un pion de fou ou de tour, cherche les ressources de pat. Un roi attaquant éloigné laisse souvent la nulle."
   },
   {
     "id": "meta-time-management",
@@ -599,7 +599,7 @@
     "prerequisites": [
       "meta-play-slow"
     ],
-    "principle": "Joue vite les coups évidents et les ouvertures connues, réfléchis longtemps aux moments critiques (une capture, un sacrifice, la fin de l'ouverture, une décision d'échange).",
+    "principle": "Joue vite les coups évidents et les ouvertures connues. Garde ton temps pour les captures, sacrifices et décisions d’échange. La fin de l’ouverture mérite aussi une pause.",
     "drill": "game-review"
   },
   {
@@ -691,7 +691,7 @@
     "prerequisites": [
       "str-worst-piece"
     ],
-    "principle": "Une case dans le camp adverse qu'aucun pion adverse ne peut attaquer, défendue par un de tes pions, est idéale pour un cavalier.",
+    "principle": "Cherche une case avancée défendue par un de tes pions. Si aucun pion adverse ne peut l’attaquer, installe ton cavalier.",
     "drill": "plan-choice"
   },
   {
@@ -774,7 +774,7 @@
     "prerequisites": [
       "ouv-principles"
     ],
-    "principle": "Si tu as plus de pièces développées, ouvre le jeu (échanges de pions au centre) : l'avance se transforme en attaque. Si tu es en retard, garde le jeu fermé.",
+    "principle": "Avec davantage de pièces développées, ouvre le centre par des échanges de pions. Ton avance peut devenir une attaque. En retard, garde plutôt le jeu fermé.",
     "drill": "plan-choice"
   },
   {

@@ -84,7 +84,12 @@
     "distinctDays": 2,
     "description": "10 parties analysées avec une leçon écrite chacune.\n\n---"
   },
-  "sources": [],
+  "sources": [
+    {
+      "label": "Julien Song : Pourquoi tu plafonnes aux échecs",
+      "url": "https://juliensong.beehiiv.com/p/pourquoi-tu-plafonnes-aux-checs-et-comment-repartir"
+    }
+  ],
   "videoId": null,
   "glossary": [],
   "audio": null,
@@ -95,21 +100,37 @@
       "audio": null
     },
     {
+      "title": "Méthode",
+      "text": "Juste après la partie, sans moteur : où ai-je cru gagner ou perdre ? Note 1 à 3 moments.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Ensuite avec le moteur : trouve le premier gros changement d'évaluation.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Classe l'erreur : pièce en prise, menace pas vue, tactique ratée, finale mal jouée, plan absent.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Écris la leçon en une phrase. Exemple : « Avant Fd3, je n’ai pas vu mon cavalier c3 sans défenseur. »",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Ajoute la position aux révisions (fait automatiquement par l'app).",
+      "audio": null
+    },
+    {
       "title": "Pourquoi",
-      "text": "Tes propres erreurs sont les exercices les plus utiles pour toi : elles montrent exactement ce que tu ne vois pas encore (idée de Julien Song : « retravailler l'erreur qui revient »).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Juste après la partie, sans moteur : où ai-je cru gagner ou perdre ? Note 1 à 3 moments. Ensuite avec le moteur : trouve le premier gros changement d'évaluation. Classe l'erreur : pièce en prise, menace pas vue, tactique ratée, finale mal jouée, plan absent. Écris la leçon en une phrase (« Avant de jouer Fd3, je n'ai pas",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "vu que mon cavalier en c3 n'était plus défendu »). Ajoute la position aux révisions (fait automatiquement par l'app).",
+      "text": "Tes erreurs montrent ce que tu ne repères pas encore. Retravaille celles qui reviennent : elles indiquent ta priorité.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "game-review"
+  "drill": "game-review",
+  "videos": []
 }

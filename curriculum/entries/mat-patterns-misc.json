@@ -77,9 +77,10 @@
     },
     {
       "title": "Contenu",
-      "text": "un écran par motif avec la position finale typique et 5 problèmes. Priorité dans l'ordre : mat du crochet (hookMate), mat des deux fous, mat de l'épaulette, mat en queue d'aronde, mat de l'opéra, mat de Morphy, mat de Pillsbury, les autres.",
+      "text": "Apprends d’abord le mat du crochet, puis celui des deux fous. Continue avec l’épaulette, la queue d’aronde et l’opéra. Ajoute ensuite les mats de Morphy et de Pillsbury.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

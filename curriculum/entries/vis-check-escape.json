@@ -18,7 +18,7 @@
     "Où fuir ? Préférer une case qui n'est pas sur la ligne d'une autre pièce adverse et pas à portée d'un cavalier."
   ],
   "pitfall": {
-    "text": "interposer une pièce non défendue revient à la donner. Contre un échec de cavalier, on ne peut pas s'interposer.",
+    "text": "Interposer une pièce non défendue revient à la donner. Contre un échec de cavalier, on ne peut pas s'interposer.",
     "fen": null,
     "line": []
   },
@@ -101,14 +101,25 @@
     },
     {
       "title": "Méthode",
-      "text": "Peut-on prendre l'attaquant sans danger ? (souvent le meilleur) Peut-on interposer une pièce peu précieuse et défendue ? Où fuir ? Préférer une case qui n'est pas sur la ligne d'une autre pièce adverse et pas à portée d'un cavalier.",
+      "text": "Peut-on prendre l'attaquant sans danger ? (souvent le meilleur)",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Peut-on interposer une pièce peu précieuse et défendue ?",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Où fuir ? Préférer une case qui n'est pas sur la ligne d'une autre pièce adverse et pas à portée d'un cavalier.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "interposer une pièce non défendue revient à la donner. Contre un échec de cavalier, on ne peut pas s'interposer.",
+      "text": "Interposer une pièce non défendue revient à la donner. Contre un échec de cavalier, on ne peut pas s'interposer.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

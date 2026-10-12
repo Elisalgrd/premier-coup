@@ -67,9 +67,10 @@
     },
     {
       "title": "Conditions à vérifier",
-      "text": "fou sur la diagonale b1-h7 ; cavalier pouvant aller en g5 sans être pris utilement ; dame pouvant aller en h5 rapidement ; pas de cavalier noir en f6 (souvent chassé par e5) ; pas de défense rapide par ...Ff5 ou ...Dxg5.",
+      "text": "Fou sur la diagonale b1-h7. Cavalier pouvant aller en g5 sans être pris utilement. Dame pouvant aller en h5 rapidement. Pas de cavalier noir en f6 (souvent chassé par e5). Pas de défense rapide par ...Ff5 ou ...Dxg5.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

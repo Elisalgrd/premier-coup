@@ -1,8 +1,66 @@
-import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
-import {migrateLegacy} from '../src/state/migrate.js';import {emptyState,validateState,entryStatus} from '../src/state/schema.js';import {sanFr} from '../src/chess/notation.js';import {Chess} from '../src/chess/chess.js';import {boardHtml} from '../src/chess/board.js';
-const map=JSON.parse(fs.readFileSync('curriculum/legacy-map.json','utf8'));
-test('migration : deux séances terminées gardent acquis, notes, journées et sauvegarde originale',()=>{const old={version:1,narrator:'male',goal:25,lessons:[],days:{'2026-10-11':{complete:true}},deep:{lessons:{captures:{completed:true,note:'Compter les reprises'},italian:{phase:'done'}}}};const s=migrateLegacy(old,map);assert.equal(s.entries['proc-exchange-count'].viewedAt,'migration');assert.equal(s.entries['ouv-white-italian'].viewedAt,'migration');assert.equal(s.notes.captures,'Compter les reprises');assert.deepEqual(s.days,old.days);assert.deepEqual(s.legacy,old);assert.deepEqual(old.deep.lessons.captures,{completed:true,note:'Compter les reprises'});assert.equal(s.ratings.global.value,800);});
-test('les anciennes leçons vues ne deviennent pas automatiquement maîtrisées',()=>{const s=migrateLegacy({version:1,lessons:['fork'],days:{}},map);assert.equal(entryStatus(s,{id:'tac-fork',prerequisites:[]}), 'viewed');});
-test('SAN français : captures, désambiguïsation, échec, promotion et roque',()=>{assert.equal(sanFr('Nbd2'),'Cbd2');assert.equal(sanFr('Bxf7+'),'Fxf7+');assert.equal(sanFr('e8=Q#'),'e8=D#');assert.equal(sanFr('O-O'),'O-O');assert.equal(sanFr('Rae1'),'Tae1');});
-test('les coordonnées et couleurs survivent à l’inversion de l’échiquier',()=>{for(const flipped of [false,true]){const html=boardHtml(new Chess(),{flipped,interactive:true});assert.equal((html.match(/data-square=/g)||[]).length,64);assert.equal((html.match(/data-piece="wp"/g)||[]).length,8);assert.equal((html.match(/data-piece="bp"/g)||[]).length,8);assert.equal((html.match(/class="file"/g)||[]).length,8);assert.equal((html.match(/class="rank"/g)||[]).length,8);assert.ok(html.indexOf('data-square="'+(flipped?'h1':'a8')+'"')<html.indexOf('data-square="e4"'));}});
-test('import v2 : aucune réinitialisation silencieuse sur un format inconnu',()=>{assert.throws(()=>validateState({version:1}));const s=emptyState();s.entries['tac-fork']={viewedAt:'2026-10-12'};assert.deepEqual(validateState(s).entries,s.entries);});
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import { migrateLegacy } from "../src/state/migrate.js";
+import { emptyState, validateState, entryStatus } from "../src/state/schema.js";
+import { sanFr } from "../src/chess/notation.js";
+import { Chess } from "../src/chess/chess.js";
+import { boardHtml } from "../src/chess/board.js";
+const map = JSON.parse(fs.readFileSync("curriculum/legacy-map.json", "utf8"));
+test("migration : deux séances terminées gardent acquis, notes, journées et sauvegarde originale", () => {
+  const old = {
+    version: 1,
+    narrator: "male",
+    goal: 25,
+    lessons: [],
+    days: { "2026-10-11": { complete: true } },
+    deep: {
+      lessons: {
+        captures: { completed: true, note: "Compter les reprises" },
+        italian: { phase: "done" },
+      },
+    },
+  };
+  const s = migrateLegacy(old, map);
+  assert.equal(s.entries["proc-exchange-count"].viewedAt, "migration");
+  assert.equal(s.entries["ouv-white-italian"].viewedAt, "migration");
+  assert.equal(s.notes.captures, "Compter les reprises");
+  assert.deepEqual(s.days, old.days);
+  assert.deepEqual(s.legacy, old);
+  assert.deepEqual(old.deep.lessons.captures, {
+    completed: true,
+    note: "Compter les reprises",
+  });
+  assert.equal(s.ratings.global.value, 800);
+});
+test("les anciennes leçons vues ne deviennent pas automatiquement maîtrisées", () => {
+  const s = migrateLegacy({ version: 1, lessons: ["fork"], days: {} }, map);
+  assert.equal(entryStatus(s, { id: "tac-fork", prerequisites: [] }), "viewed");
+});
+test("SAN français : captures, désambiguïsation, échec, promotion et roque", () => {
+  assert.equal(sanFr("Nbd2"), "Cbd2");
+  assert.equal(sanFr("Bxf7+"), "Fxf7+");
+  assert.equal(sanFr("e8=Q#"), "e8=D#");
+  assert.equal(sanFr("O-O"), "O-O");
+  assert.equal(sanFr("Rae1"), "Tae1");
+});
+test("les coordonnées et couleurs survivent à l’inversion de l’échiquier", () => {
+  for (const flipped of [false, true]) {
+    const html = boardHtml(new Chess(), { flipped, interactive: true });
+    assert.equal((html.match(/data-square=/g) || []).length, 64);
+    assert.equal((html.match(/data-piece="wp"/g) || []).length, 8);
+    assert.equal((html.match(/data-piece="bp"/g) || []).length, 8);
+    assert.equal((html.match(/class="file"/g) || []).length, 8);
+    assert.equal((html.match(/class="rank"/g) || []).length, 8);
+    assert.ok(
+      html.indexOf('data-square="' + (flipped ? "h1" : "a8") + '"') <
+        html.indexOf('data-square="e4"'),
+    );
+  }
+});
+test("import v2 : aucune réinitialisation silencieuse sur un format inconnu", () => {
+  assert.throws(() => validateState({ version: 1 }));
+  const s = emptyState();
+  s.entries["tac-fork"] = { viewedAt: "2026-10-12" };
+  assert.deepEqual(validateState(s).entries, s.entries);
+});

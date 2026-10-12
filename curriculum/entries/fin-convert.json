@@ -19,7 +19,7 @@
     "Pas de complications inutiles : le coup simple et sûr suffit."
   ],
   "pitfall": {
-    "text": "pressé de gagner, on laisse une pièce en prise ou on autorise un échec perpétuel.",
+    "text": "Pressé de gagner, on laisse une pièce en prise ou on autorise un échec perpétuel.",
     "fen": null,
     "line": []
   },
@@ -61,13 +61,13 @@
     "description": "contre le moteur, depuis 10 positions avec une pièce d'avance, gagner 9 fois."
   },
   "sources": [],
-  "videoId": null,
+  "videoId": "convert-advantage",
   "glossary": [],
   "audio": null,
   "screens": [
     {
       "title": "Principe",
-      "text": "Avec du matériel en plus : échange les pièces, pas les pions ; garde ton roi en sécurité ; supprime le contre-jeu avant d'attaquer.",
+      "text": "Avec du matériel en plus : échange les pièces, pas les pions. Garde ton roi en sécurité. Supprime le contre-jeu avant d'attaquer.",
       "audio": null
     },
     {
@@ -77,14 +77,32 @@
     },
     {
       "title": "Méthode",
-      "text": "Vérifie la sécurité de ton roi et les menaces adverses. Propose des échanges de pièces, surtout de la pièce adverse la plus active. Crée un pion passé et pousse-le avec l'aide du roi. Pas de complications inutiles : le coup simple et sûr suffit.",
+      "text": "Vérifie la sécurité de ton roi et les menaces adverses.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Propose des échanges de pièces, surtout de la pièce adverse la plus active.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Crée un pion passé et pousse-le avec l'aide du roi.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Pas de complications inutiles : le coup simple et sûr suffit.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "pressé de gagner, on laisse une pièce en prise ou on autorise un échec perpétuel.",
+      "text": "Pressé de gagner, on laisse une pièce en prise ou on autorise un échec perpétuel.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": [
+    "convert-advantage"
+  ]
 }

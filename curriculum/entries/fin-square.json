@@ -154,7 +154,7 @@
     },
     {
       "title": "Méthode",
-      "text": "côté du carré = distance du pion à la promotion (compter depuis la case actuelle, ou depuis la case d'arrivée du double pas si le pion n'a pas bougé). Si c'est au roi de jouer, il peut faire un pas pour y entrer.",
+      "text": "Le côté du carré correspond à la distance du pion à sa promotion. S’il peut encore avancer de deux cases, compte depuis sa case d’arrivée.",
       "audio": null
     }
   ],
@@ -164,5 +164,6 @@
       "outcome": null,
       "source": "CURRICULUM.md"
     }
-  ]
+  ],
+  "videos": []
 }

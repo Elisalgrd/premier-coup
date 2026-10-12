@@ -8,7 +8,7 @@
     "fin-opposition",
     "tac-skewer"
   ],
-  "principle": "Roi devant son pion sur la 7e, roi adverse coupé : construis un « pont » avec ta tour sur la 4e rangée pour stopper les échecs latéraux.",
+  "principle": "Roi devant son pion sur la septième, roi adverse coupé : prépare un pont. La tour rejoint la quatrième rangée et bloque les échecs latéraux.",
   "why": [
     "C'est la position gagnante de référence des finales de tours, les plus fréquentes de toutes les finales."
   ],
@@ -190,13 +190,13 @@
   "audio": null,
   "screens": [
     {
-      "title": "Principe",
-      "text": "Roi devant son pion sur la 7e, roi adverse coupé : construis un « pont » avec ta tour sur la 4e rangée pour stopper les échecs latéraux.",
+      "title": "Pourquoi",
+      "text": "C'est la position gagnante de référence des finales de tours, les plus fréquentes de toutes les finales.",
       "audio": null
     },
     {
-      "title": "Pourquoi",
-      "text": "C'est la position gagnante de référence des finales de tours, les plus fréquentes de toutes les finales.",
+      "title": "Principe",
+      "text": "Roi devant son pion sur la septième, roi adverse coupé : prépare un pont. La tour rejoint la quatrième rangée et bloque les échecs latéraux.",
       "audio": null
     }
   ],
@@ -207,5 +207,6 @@
       "source": "CURRICULUM.md"
     }
   ],
-  "drill": "endgame"
+  "drill": "endgame",
+  "videos": []
 }

@@ -141,7 +141,7 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "f7 (et f2) est la case faible du début de partie : seul le roi la défend. Beaucoup de pièges la visent.",
+      "text": "F7 (et f2) est la case faible du début de partie : seul le roi la défend. Beaucoup de pièges la visent.",
       "audio": null
     },
     {
@@ -151,19 +151,25 @@
     },
     {
       "title": "Contenu",
-      "text": "Mat du berger et sa défense [validé] : 1.e4 e5 2.Dh5 Cc6 3.Fc4 Cf6?? 4.Dxf7#. Défense correcte : 1.e4 e5 2.Dh5 Cc6 3.Fc4 g6 4.Df3 Cf6 (le cavalier coupe la ligne de la dame vers f7). La dame blanche est sortie tôt : les noirs vont la chasser en développant. Mat de Légal [validé] : 1.e4 e5 2.Cf3 d6 3.Fc4",
+      "text": "Mat du berger et sa défense [validé] : 1.e4 e5 2.Dh5 Cc6 3.Fc4 Cf6?? 4.Dxf7#. Défense : 1.e4 e5 2.Dh5 Cc6 3.Fc4 g6 4.Df3 Cf6. Le cavalier coupe la ligne de la dame vers f7. La dame blanche est sortie tôt : les noirs vont la chasser en développant.",
       "audio": null
     },
     {
       "title": "Contenu",
-      "text": "Fg4 4.Cc3 g6? 5.Cxe5! Fxd1? 6.Fxf7+ Re7 7.Cd5#. Leçon : un clouage sur une dame n'est pas absolu (la dame peut être sacrifiée). Défense des deux cavaliers, attaque Cg5 sur f7 [validé] : 1.e4 e5 2.Cf3 Cc6 3.Fc4 Cf6 4.Cg5 d5 5.exd5 Ca5! (et non 5...Cxd5?! 6.Cxf7, dangereux pour les noirs). Avec les noirs, connaître 5...Ca5. Le piège du pion",
+      "text": "Mat de Légal [validé] : 1.e4 e5 2.Cf3 d6 3.Fc4 Fg4 4.Cc3 g6? 5.Cxe5! Fxd1? 6.Fxf7+ Re7 7.Cd5#. Leçon : un clouage sur une dame n'est pas absolu (la dame peut être sacrifiée).",
       "audio": null
     },
     {
       "title": "Contenu",
-      "text": "« gratuit » : les débutants prennent un pion avec leur dame en b2/b7 et se font enfermer la dame ou la tour en a1/a8.",
+      "text": "Défense des deux cavaliers, attaque Cg5 sur f7 [validé] : 1.e4 e5 2.Cf3 Cc6 3.Fc4 Cf6 4.Cg5 d5 5.exd5 Ca5! (et non 5...Cxd5?! 6.Cxf7, dangereux pour les noirs). Avec les noirs, connaître 5...Ca5.",
+      "audio": null
+    },
+    {
+      "title": "Contenu",
+      "text": "Une dame qui prend le pion b2 ou b7 peut être enfermée. Vérifie ses sorties et la sécurité des tours.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

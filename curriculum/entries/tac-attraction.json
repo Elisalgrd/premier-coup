@@ -103,14 +103,15 @@
     },
     {
       "title": "Signaux",
-      "text": "une case où une fourchette ou un mat marcherait « si le roi (ou la dame) y était ».",
+      "text": "Une case où une fourchette ou un mat marcherait « si le roi (ou la dame) y était ».",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "trouve la case cible ; cherche un sacrifice avec échec ou capture qui oblige la pièce à y aller ; vérifie la suite.",
+      "text": "Trouve la case cible. Cherche un sacrifice avec échec ou capture qui oblige la pièce à y aller. Vérifie la suite.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

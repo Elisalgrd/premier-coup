@@ -92,10 +92,11 @@
     },
     {
       "title": "Méthode",
-      "text": "set de 100 à 300 problèmes de ton niveau ; premier cycle lent et juste ; puis refaire le set entier en moitié moins de temps, plusieurs fois.",
+      "text": "Set de 100 à 300 problèmes de ton niveau. Premier cycle lent et juste. Puis refaire le set entier en moitié moins de temps, plusieurs fois.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "game-review"
+  "drill": "game-review",
+  "videos": []
 }

@@ -21,9 +21,12 @@
     "Avant de compter un défenseur adverse, vérifie qu'il n'est pas cloué."
   ],
   "pitfall": {
-    "text": "une pièce clouée peut encore bouger le long de la ligne et parfois prendre ta pièce qui cloue. Un clouage relatif peut être rompu par un contre-coup plus fort (voir le mat de Légal).",
-    "fen": null,
-    "line": []
+    "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+    "line": [
+      "e1d1",
+      "e4f6"
+    ],
+    "text": "Si ta tour quitte la colonne e, elle ne vise plus le roi. Le cavalier peut à nouveau bouger."
   },
   "entryChallenge": {
     "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
@@ -73,28 +76,48 @@
       "audio": null
     },
     {
-      "title": "Pourquoi",
-      "text": "Une pièce clouée ne défend plus vraiment, et on peut l'attaquer à nouveau (souvent avec un pion) sans qu'elle puisse fuir.",
+      "title": "Deux types",
+      "text": "Clouage absolu : derrière, c'est le roi. Bouger la pièce clouée est illégal.",
       "audio": null
     },
     {
       "title": "Deux types",
-      "text": "Clouage absolu : derrière, c'est le roi. Bouger la pièce clouée est illégal. Clouage relatif : derrière, c'est la dame ou une tour. Bouger est légal mais coûte cher.",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "une pièce adverse sur la même ligne (colonne, rangée, diagonale) que son roi ou sa dame, avec une de tes pièces longues (F, T, D) qui peut atteindre cette ligne.",
+      "text": "Clouage relatif : derrière, c'est la dame ou une tour. Bouger est légal mais coûte cher.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Repère les alignements roi / dame / tour adverses avec une pièce entre eux et toi. Cloue avec ta pièce longue (de préférence de moindre valeur que la pièce clouée ou défendue). Attaque la pièce clouée une seconde fois, idéalement avec un pion : elle ne peut pas fuir. Avant de compter un défenseur adverse, vérifie qu'il n'est pas cloué.",
+      "text": "Repère les alignements roi / dame / tour adverses avec une pièce entre eux et toi.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Cloue avec ta pièce longue (de préférence de moindre valeur que la pièce clouée ou défendue).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Attaque la pièce clouée une seconde fois, idéalement avec un pion : elle ne peut pas fuir.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Avant de compter un défenseur adverse, vérifie qu'il n'est pas cloué.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "une pièce clouée peut encore bouger le long de la ligne et parfois prendre ta pièce qui cloue. Un clouage relatif peut être rompu par un contre-coup plus fort (voir le mat de Légal).",
+      "text": "Une pièce clouée peut encore bouger le long de la ligne et parfois prendre ta pièce qui cloue. Un clouage relatif peut être rompu par un contre-coup plus fort (voir le mat de Légal).",
+      "audio": null
+    },
+    {
+      "title": "Pourquoi",
+      "text": "Une pièce clouée au roi ne peut pas découvrir son roi. Attaque-la à nouveau, souvent avec un pion.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "Cherche une pièce alignée avec son roi ou sa dame. Ta tour, ton fou ou ta dame doit pouvoir viser cet alignement.",
       "audio": null
     }
   ],
@@ -104,5 +127,8 @@
       "outcome": null,
       "source": "CURRICULUM.md"
     }
+  ],
+  "videos": [
+    "course-pins"
   ]
 }

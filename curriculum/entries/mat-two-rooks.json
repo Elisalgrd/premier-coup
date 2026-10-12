@@ -104,7 +104,22 @@
     },
     {
       "title": "Méthode",
-      "text": "Une tour contrôle la rangée (ou la colonne) devant le roi adverse. L'autre donne échec sur la rangée où il se trouve : il doit reculer. La première tour passe devant et donne échec à son tour. Si le roi adverse s'approche d'une tour, éloigne-la sur l'autre côté de l'échiquier, puis reprends.",
+      "text": "Une tour contrôle la rangée (ou la colonne) devant le roi adverse.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "L'autre donne échec sur la rangée où il se trouve : il doit reculer.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "La première tour passe devant et donne échec à son tour.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Si le roi adverse s'approche d'une tour, éloigne-la sur l'autre côté de l'échiquier, puis reprends.",
       "audio": null
     }
   ],
@@ -114,5 +129,6 @@
       "outcome": null,
       "source": "CURRICULUM.md"
     }
-  ]
+  ],
+  "videos": []
 }

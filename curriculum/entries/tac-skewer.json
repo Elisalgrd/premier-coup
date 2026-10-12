@@ -20,7 +20,7 @@
     "Après qu'elle se déplace, prends la pièce de derrière."
   ],
   "pitfall": {
-    "text": "l'adversaire peut parfois s'interposer avec une pièce défendue, ou la pièce de derrière est défendue et l'échange ne gagne rien.",
+    "text": "L'adversaire peut parfois s'interposer avec une pièce défendue, ou la pièce de derrière est défendue et l'échange ne gagne rien.",
     "fen": null,
     "line": []
   },
@@ -94,7 +94,7 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "Le clouage à l'envers. On attaque la pièce précieuse devant ; quand elle bouge, on prend celle de derrière.",
+      "text": "Le clouage à l'envers. On attaque la pièce précieuse devant. Quand elle bouge, on prend celle de derrière.",
       "audio": null
     },
     {
@@ -103,18 +103,28 @@
       "audio": null
     },
     {
-      "title": "Signaux",
-      "text": "roi et dame (ou roi et tour) adverses alignés sur une ligne qu'une de tes pièces longues peut atteindre, le roi devant.",
+      "title": "Méthode",
+      "text": "Repère un alignement avec la pièce la plus précieuse devant.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Repère un alignement avec la pièce la plus précieuse devant. Attaque-la (avec échec de préférence). Après qu'elle se déplace, prends la pièce de derrière.",
+      "text": "Attaque-la (avec échec de préférence).",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Après qu'elle se déplace, prends la pièce de derrière.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "l'adversaire peut parfois s'interposer avec une pièce défendue, ou la pièce de derrière est défendue et l'échange ne gagne rien.",
+      "text": "L'adversaire peut parfois s'interposer avec une pièce défendue, ou la pièce de derrière est défendue et l'échange ne gagne rien.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "Cherche un roi devant une dame ou une tour, sur la même ligne. Une de tes pièces longues doit atteindre cette ligne.",
       "audio": null
     }
   ],
@@ -124,5 +134,6 @@
       "outcome": null,
       "source": "CURRICULUM.md"
     }
-  ]
+  ],
+  "videos": []
 }

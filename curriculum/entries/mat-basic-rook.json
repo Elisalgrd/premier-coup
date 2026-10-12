@@ -20,7 +20,7 @@
     "Répète jusqu'au bord, puis mat."
   ],
   "pitfall": {
-    "text": "laisser la tour à portée du roi adverse sans protection. Garder la tour loin de lui.",
+    "text": "Laisser la tour à portée du roi adverse sans protection. Garder la tour loin de lui.",
     "fen": null,
     "line": []
   },
@@ -74,18 +74,13 @@
       "audio": null
     },
     {
-      "title": "Méthode",
-      "text": "Avec la tour, coupe une colonne ou une rangée pour enfermer le roi adverse dans un rectangle. Amène ton roi face au roi adverse (opposition : une case entre eux). Quand les rois sont face à face, donne échec avec la tour : il doit reculer d'une ligne. La boîte rétrécit. S'il n'est pas en face, joue un coup d'attente",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "avec la tour (sur la même ligne) pour le forcer à se mettre en face. Répète jusqu'au bord, puis mat.",
-      "audio": null
-    },
-    {
       "title": "Piège",
-      "text": "laisser la tour à portée du roi adverse sans protection. Garder la tour loin de lui.",
+      "text": "Laisser la tour à portée du roi adverse sans protection. Garder la tour loin de lui.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Coupe le roi adverse avec la tour. Approche ton roi pour soutenir la tour. Si les rois ne se font pas face, joue un coup d’attente avec la tour. Donne échec quand les rois se font face, pour repousser le roi adverse.",
       "audio": null
     }
   ],
@@ -96,5 +91,6 @@
       "source": "CURRICULUM.md"
     }
   ],
-  "drill": "endgame"
+  "drill": "endgame",
+  "videos": []
 }

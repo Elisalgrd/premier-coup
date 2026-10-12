@@ -7,7 +7,7 @@
   "prerequisites": [
     "str-worst-piece"
   ],
-  "principle": "Une case dans le camp adverse qu'aucun pion adverse ne peut attaquer, défendue par un de tes pions, est idéale pour un cavalier.",
+  "principle": "Cherche une case avancée défendue par un de tes pions. Si aucun pion adverse ne peut l’attaquer, installe ton cavalier.",
   "why": [
     "Un cavalier installé sur un avant-poste (souvent d5, e5, c5, f5) ne peut être chassé que par un échange et domine la position."
   ],
@@ -59,15 +59,16 @@
   "screens": [
     {
       "title": "Principe",
-      "text": "Une case dans le camp adverse qu'aucun pion adverse ne peut attaquer, défendue par un de tes pions, est idéale pour un cavalier.",
+      "text": "Cherche une case avancée défendue par un de tes pions. Si aucun pion adverse ne peut l’attaquer, installe ton cavalier.",
       "audio": null
     },
     {
       "title": "Pourquoi",
-      "text": "Un cavalier installé sur un avant-poste (souvent d5, e5, c5, f5) ne peut être chassé que par un échange et domine la position.",
+      "text": "Un cavalier stable au centre contrôle beaucoup de cases. Sans attaque de pion possible, l’adversaire doit souvent l’échanger pour le chasser.",
       "audio": null
     }
   ],
   "examples": [],
-  "drill": "plan-choice"
+  "drill": "plan-choice",
+  "videos": []
 }

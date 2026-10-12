@@ -75,9 +75,10 @@
     },
     {
       "title": "Méthode",
-      "text": "Quand tu es largement devant : avant chaque coup, vérifie que l'adversaire aura encore un coup légal. Quand tu es largement derrière : cherche à n'avoir plus aucun coup légal sauf de roi (sacrifier ses dernières pièces peut créer le pat), ou un échec perpétuel avec ta dame. Répétition : si l'adversaire répète, change de plan si tu es devant.",
+      "text": "Si tu es largement derrière, cherche une ressource de pat. Sacrifier tes dernières pièces peut supprimer tes coups légaux. Cherche aussi un échec perpétuel avec ta dame.",
       "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

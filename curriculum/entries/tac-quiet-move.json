@@ -7,7 +7,7 @@
   "prerequisites": [
     "proc-candidates-calc"
   ],
-  "principle": "Parfois le coup gagnant n'est ni un échec ni une capture : il crée une menace imparable ou enlève la seule défense.",
+  "principle": "Le coup gagnant ne donne pas toujours échec et ne capture pas toujours. Il peut créer une menace imparable ou supprimer une défense.",
   "why": [
     "Après avoir appris à chercher les coups forçants, il faut savoir que ce n'est pas toujours le cas."
   ],
@@ -87,15 +87,16 @@
   "audio": null,
   "screens": [
     {
-      "title": "Principe",
-      "text": "Parfois le coup gagnant n'est ni un échec ni une capture : il crée une menace imparable ou enlève la seule défense.",
-      "audio": null
-    },
-    {
       "title": "Pourquoi",
       "text": "Après avoir appris à chercher les coups forçants, il faut savoir que ce n'est pas toujours le cas.",
       "audio": null
+    },
+    {
+      "title": "Principe",
+      "text": "Le coup gagnant ne donne pas toujours échec et ne capture pas toujours. Il peut créer une menace imparable ou supprimer une défense.",
+      "audio": null
     }
   ],
-  "examples": []
+  "examples": [],
+  "videos": []
 }

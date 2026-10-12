@@ -21,7 +21,7 @@
     "Défense : surveille les découvertes que l'adversaire prépare contre ton roi et ta dame."
   ],
   "pitfall": {
-    "text": "la pièce qui bouge doit faire quelque chose d'utile. Si elle se place en prise et que l'adversaire peut parer l'attaque découverte en la prenant, il n'y a rien.",
+    "text": "La pièce qui bouge doit faire quelque chose d'utile. Si elle se place en prise et que l'adversaire peut parer l'attaque découverte en la prenant, il n'y a rien.",
     "fen": null,
     "line": []
   },
@@ -79,23 +79,33 @@
       "audio": null
     },
     {
-      "title": "Signaux",
-      "text": "une de tes pièces longues (T, F, D) vise une cible adverse (roi, dame), mais une de tes propres pièces est devant.",
+      "title": "Méthode",
+      "text": "Repère tes pièces longues « bloquées » par tes propres pièces.",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": "Repère tes pièces longues « bloquées » par tes propres pièces. Si derrière la ligne il y a le roi adverse : n'importe quel coup de la pièce de devant donne échec. Cherche le coup de cette pièce qui gagne le plus (capture, autre menace). Sinon, cherche un coup de la pièce de devant qui crée une deuxième menace. Défense",
+      "text": "Si la ligne vise le roi, déplacer la pièce peut découvrir un échec. Vérifie que ton coup libère bien la ligne. Cherche le coup de cette pièce qui gagne le plus (capture, autre menace).",
       "audio": null
     },
     {
       "title": "Méthode",
-      "text": ": surveille les découvertes que l'adversaire prépare contre ton roi et ta dame.",
+      "text": "Sinon, cherche un coup de la pièce de devant qui crée une deuxième menace.",
+      "audio": null
+    },
+    {
+      "title": "Méthode",
+      "text": "Défense : surveille les découvertes que l'adversaire prépare contre ton roi et ta dame.",
       "audio": null
     },
     {
       "title": "Piège",
-      "text": "la pièce qui bouge doit faire quelque chose d'utile. Si elle se place en prise et que l'adversaire peut parer l'attaque découverte en la prenant, il n'y a rien.",
+      "text": "La pièce qui bouge doit faire quelque chose d'utile. Si elle se place en prise et que l'adversaire peut parer l'attaque découverte en la prenant, il n'y a rien.",
+      "audio": null
+    },
+    {
+      "title": "Signaux",
+      "text": "Une tour, un fou ou une dame vise une cible adverse. Une de tes pièces bloque encore cette ligne.",
       "audio": null
     }
   ],
@@ -105,5 +115,6 @@
       "outcome": null,
       "source": "CURRICULUM.md"
     }
-  ]
+  ],
+  "videos": []
 }
