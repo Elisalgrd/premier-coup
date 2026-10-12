@@ -1,3 +1,4 @@
+import { lessonReceipt, saveSeries } from "./mastery.js";
 import { Engine } from "../chess/engine.js";
 import { centipawns } from "../chess/analysis.js";
 import { rememberPuzzle } from "./srs.js";
@@ -39,8 +40,12 @@ export class PuzzlePlayer {
     this.disposed = false;
     this.seconds = 0;
     this.cleanCount = 0;
+    this.batchId = crypto.randomUUID();
+    this.ratingBefore = ctx.state.ratings.global.value;
     const saved = ctx.state.exercise;
     if (resume && saved?.scope === this.scope && saved.batch) {
+      this.batchId = saved.batch.id || this.batchId;
+      this.ratingBefore = saved.batch.ratingBefore ?? null;
       this.rows = saved.batch.rows;
       this.position = saved.batch.position;
       this.cleanCount = saved.batch.cleanCount || 0;
@@ -136,6 +141,8 @@ export class PuzzlePlayer {
     this.ctx.state.exercise = {
       scope: this.scope,
       batch: {
+        id: this.batchId,
+        ratingBefore: this.ratingBefore,
         rows: this.rows,
         position: this.position,
         cleanCount: this.cleanCount,
@@ -336,12 +343,18 @@ export class PuzzlePlayer {
     $("#puzzle-feedback", this.root).innerHTML =
       `<strong>${this.run.clean ? "Réussi sans aide." : "Position travaillée."}</strong><p>${this.run.clean ? "Tu as trouvé la suite au premier essai." : "Elle reviendra dans tes révisions."}</p>`;
   }
-  finish() {
+  async finish() {
     this.finished = true;
     clearInterval(this.clock);
     this.ctx.state.exercise = null;
-    this.ctx.save();
-    this.root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>Une idée mieux reconnue.</h1><p>${this.rows.length} positions travaillées · ${this.cleanCount} sans aide.</p><button id="exercise-done" class="button primary">${this.onDone ? "Continuer ma séance" : "Revenir à l’entraînement"} →</button><a href="#progress" class="text-link">Voir mes progrès ↗</a></section>`;
+    const entry = this.ctx.entries.find((e) => e.id === this.theme);
+    if (entry && !this.review) await saveSeries(this.ctx, entry.id, {
+      id: this.batchId, total: this.rows.length, clean: this.cleanCount,
+      ratingBefore: this.ratingBefore, ratingAfter: this.ctx.state.ratings.global.value,
+    });
+    else await this.ctx.save();
+    if (this.disposed) return;
+    this.root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>Une idée mieux reconnue.</h1><p>${this.rows.length} positions travaillées · ${this.cleanCount} sans aide.</p>${this.ctx.store?.error ? `<p class="feedback wrong">${esc(this.ctx.store.error)}</p>` : entry && !this.review ? lessonReceipt(this.ctx.state, entry) : ""}<button id="exercise-done" class="button primary">${this.onDone ? "Continuer ma séance" : "Revenir à l’entraînement"} →</button><a href="#progress" class="text-link">Voir mes progrès ↗</a></section>`;
     $("#exercise-done", this.root).onclick = () =>
       this.onDone ? this.onDone() : this.ctx.navigate("train");
   }

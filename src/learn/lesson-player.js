@@ -1,5 +1,6 @@
 import { videoResources, sourceResources } from "./media.js";
 import { loadDrillChallenges } from "./drills.js";
+import { lessonReceipt } from "./mastery.js";
 import { startDrill } from "./drill-player.js";
 import { rememberPrinciple } from "./srs.js";
 import { Board } from "../chess/board.js";
@@ -159,6 +160,7 @@ export class LessonPlayer {
       $("#lesson-practice", this.root).onclick = () => this.practice();
     if (stage.kind === "retain") {
       markViewed(this.ctx.state, this.e.id);
+      $(".lesson-controls", this.root).insertAdjacentHTML("afterbegin", lessonReceipt(this.ctx.state, this.e));
       rememberPrinciple(this.ctx.state, this.e);
       this.ctx.save();
     }
