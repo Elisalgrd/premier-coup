@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.2
+
+- Les mises à jour rechargent les fichiers de l’interface pour éviter de mélanger un nouvel écran et un ancien module conservé dans le cache HTTP. La progression reste intacte.
+
 ## 2.1.1
 
 - Le glossaire distingue « jouer aux échecs » d’un roi en échec, et ne transforme plus « nulle part » en définition de partie nulle.
