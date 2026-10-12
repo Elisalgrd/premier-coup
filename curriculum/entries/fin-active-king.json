@@ -22,11 +22,33 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "5r2/8/4Q1pk/p5b1/2P1B3/1P4P1/P4P1q/4RK2 b - - 13 35",
+    "solution": [
+      "h2f2"
+    ],
+    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/UmW1T",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "5r2/8/4Q1pk/p5b1/2P1B3/1P4P1/P4P1q/4RK2 b - - 13 35",
+      "move": "h2f2",
+      "text": "",
+      "arrows": [
+        [
+          "h2",
+          "f2"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "endgame",
-    "pawnEndgame"
+    "pawnEndgame",
+    "zugzwang"
   ],
   "ratingBand": [
     400,

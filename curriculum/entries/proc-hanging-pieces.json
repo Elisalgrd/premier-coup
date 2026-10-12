@@ -26,8 +26,55 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "3r2k1/r4ppp/4b3/1q2P3/2pQ4/8/1P1N1PPP/2R3K1 w - - 0 22",
+    "solution": [
+      "d4d8",
+      "b5e8",
+      "d8e8"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/sD6WA",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "3r2k1/r4ppp/4b3/1q2P3/2pQ4/8/1P1N1PPP/2R3K1 w - - 0 22",
+      "move": "d4d8",
+      "text": "",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "3Q2k1/r4ppp/4b3/1q2P3/2p5/8/1P1N1PPP/2R3K1 b - - 0 22",
+      "move": "b5e8",
+      "text": "",
+      "arrows": [
+        [
+          "b5",
+          "e8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "3Qq1k1/r4ppp/4b3/4P3/2p5/8/1P1N1PPP/2R3K1 w - - 1 23",
+      "move": "d8e8",
+      "text": "",
+      "arrows": [
+        [
+          "d8",
+          "e8"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "hangingPiece"
   ],

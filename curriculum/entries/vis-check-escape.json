@@ -22,8 +22,55 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "8/5k2/3B4/5R1p/p2P4/Pb3p1P/5PPK/r7 b - - 1 43",
+    "solution": [
+      "f7e6",
+      "f5h5",
+      "e6d6"
+    ],
+    "prompt": "Trait aux noirs. Sors de l’échec.",
+    "source": "https://lichess.org/training/JPIFO",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "8/5k2/3B4/5R1p/p2P4/Pb3p1P/5PPK/r7 b - - 1 43",
+      "move": "f7e6",
+      "text": "",
+      "arrows": [
+        [
+          "f7",
+          "e6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "8/8/3Bk3/5R1p/p2P4/Pb3p1P/5PPK/r7 w - - 2 44",
+      "move": "f5h5",
+      "text": "",
+      "arrows": [
+        [
+          "f5",
+          "h5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "8/8/3Bk3/7R/p2P4/Pb3p1P/5PPK/r7 b - - 0 44",
+      "move": "e6d6",
+      "text": "",
+      "arrows": [
+        [
+          "e6",
+          "d6"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "defensiveMove"
   ],

@@ -24,8 +24,55 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
+    "solution": [
+      "g3g4",
+      "f5g4",
+      "f4g4"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/wttJj",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
+      "move": "g3g4",
+      "text": "",
+      "arrows": [
+        [
+          "g3",
+          "g4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "8/8/4p1k1/4Pb2/5KP1/3p4/8/4B3 b - - 0 73",
+      "move": "f5g4",
+      "text": "",
+      "arrows": [
+        [
+          "f5",
+          "g4"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "8/8/4p1k1/4P3/5Kb1/3p4/8/4B3 w - - 0 74",
+      "move": "f4g4",
+      "text": "",
+      "arrows": [
+        [
+          "f4",
+          "g4"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "trappedPiece"
   ],

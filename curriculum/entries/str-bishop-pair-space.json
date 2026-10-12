@@ -16,8 +16,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+    "solution": [
+      "d3d4"
+    ],
+    "prompt": "Ouvre une diagonale en échangeant les pions centraux.",
+    "mode": "move",
+    "source": "Exemple pédagogique validé"
+  },
+  "guided": [
+    {
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+      "move": "d3d4",
+      "text": "",
+      "arrows": [
+        [
+          "d3",
+          "d4"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [],
   "ratingBand": [
     400,

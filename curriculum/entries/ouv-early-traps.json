@@ -36,6 +36,7 @@
   },
   "guided": [
     {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
       "move": "e2e4",
       "text": "",
       "arrows": [
@@ -47,6 +48,7 @@
       "marks": []
     },
     {
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
       "move": "e7e5",
       "text": "",
       "arrows": [
@@ -58,6 +60,7 @@
       "marks": []
     },
     {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
       "move": "d1h5",
       "text": "",
       "arrows": [
@@ -69,6 +72,7 @@
       "marks": []
     },
     {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2",
       "move": "b8c6",
       "text": "",
       "arrows": [
@@ -80,6 +84,7 @@
       "marks": []
     },
     {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR w KQkq - 2 3",
       "move": "f1c4",
       "text": "",
       "arrows": [
@@ -91,6 +96,7 @@
       "marks": []
     },
     {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
       "move": "g8f6",
       "text": "",
       "arrows": [
@@ -102,6 +108,7 @@
       "marks": []
     },
     {
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
       "move": "h5f7",
       "text": "",
       "arrows": [

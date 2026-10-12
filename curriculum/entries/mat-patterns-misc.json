@@ -16,8 +16,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+    "solution": [
+      "c8f8"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/OnQBo",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+      "move": "c8f8",
+      "text": "",
+      "arrows": [
+        [
+          "c8",
+          "f8"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "hookMate",
     "doubleBishopMate",

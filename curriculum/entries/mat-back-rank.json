@@ -39,6 +39,7 @@
   },
   "guided": [
     {
+      "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
       "move": "a1a8",
       "text": "",
       "arrows": [

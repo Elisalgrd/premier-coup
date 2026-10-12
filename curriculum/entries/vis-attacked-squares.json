@@ -28,8 +28,55 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "2r4k/p5pp/5p2/8/2rR4/8/Q5PP/2R4K b - - 0 33",
+    "solution": [
+      "c4c1",
+      "d4d1",
+      "c1d1"
+    ],
+    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/MQifq",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "2r4k/p5pp/5p2/8/2rR4/8/Q5PP/2R4K b - - 0 33",
+      "move": "c4c1",
+      "text": "",
+      "arrows": [
+        [
+          "c4",
+          "c1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "2r4k/p5pp/5p2/8/3R4/8/Q5PP/2r4K w - - 0 34",
+      "move": "d4d1",
+      "text": "",
+      "arrows": [
+        [
+          "d4",
+          "d1"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "2r4k/p5pp/5p2/8/8/8/Q5PP/2rR3K b - - 1 34",
+      "move": "c1d1",
+      "text": "",
+      "arrows": [
+        [
+          "c1",
+          "d1"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "hangingPiece"
   ],

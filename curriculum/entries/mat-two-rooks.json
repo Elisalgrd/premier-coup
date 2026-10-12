@@ -37,6 +37,7 @@
   },
   "guided": [
     {
+      "fen": "6k1/8/8/8/8/8/R7/1R4K1 w - - 0 1",
       "move": "a2a7",
       "text": "",
       "arrows": [
@@ -48,6 +49,7 @@
       "marks": []
     },
     {
+      "fen": "6k1/R7/8/8/8/8/8/1R4K1 b - - 1 1",
       "move": "g8f8",
       "text": "",
       "arrows": [
@@ -59,6 +61,7 @@
       "marks": []
     },
     {
+      "fen": "5k2/R7/8/8/8/8/8/1R4K1 w - - 2 2",
       "move": "b1b8",
       "text": "",
       "arrows": [
@@ -71,7 +74,8 @@
     }
   ],
   "lichessThemes": [
-    "mateIn2"
+    "mateIn2",
+    "mateIn1"
   ],
   "ratingBand": [
     400,

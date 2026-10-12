@@ -16,8 +16,55 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
+    "solution": [
+      "e4f6",
+      "d8f6",
+      "c2h7"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/D6WjW",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
+      "move": "e4f6",
+      "text": "",
+      "arrows": [
+        [
+          "e4",
+          "f6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "r1bq1rk1/p1n2pp1/2p1pN1p/1p6/1PpP4/P3P3/2Q2PPP/1BR1K1NR b K - 0 15",
+      "move": "d8f6",
+      "text": "",
+      "arrows": [
+        [
+          "d8",
+          "f6"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "r1b2rk1/p1n2pp1/2p1pq1p/1p6/1PpP4/P3P3/2Q2PPP/1BR1K1NR w K - 0 16",
+      "move": "c2h7",
+      "text": "",
+      "arrows": [
+        [
+          "c2",
+          "h7"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "interference",
     "clearance"

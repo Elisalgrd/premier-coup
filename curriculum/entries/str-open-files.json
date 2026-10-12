@@ -20,8 +20,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "8/8/1p3k1p/p1p2pP1/P1P2KP1/3r4/1PR5/8 b - - 0 39",
+    "solution": [
+      "h6g5"
+    ],
+    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/hfGsT",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "8/8/1p3k1p/p1p2pP1/P1P2KP1/3r4/1PR5/8 b - - 0 39",
+      "move": "h6g5",
+      "text": "",
+      "arrows": [
+        [
+          "h6",
+          "g5"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "rookEndgame"
   ],

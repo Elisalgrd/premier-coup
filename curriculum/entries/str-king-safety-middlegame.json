@@ -21,12 +21,34 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
+    "solution": [
+      "e4g2"
+    ],
+    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/PIMeN",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "3r1rk1/p3Bppp/2b1p3/2R5/3Pq3/Q7/PP3PP1/R5K1 b - - 4 23",
+      "move": "e4g2",
+      "text": "",
+      "arrows": [
+        [
+          "e4",
+          "g2"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "kingsideAttack",
     "queensideAttack",
-    "exposedKing"
+    "exposedKing",
+    "sacrifice"
   ],
   "ratingBand": [
     400,

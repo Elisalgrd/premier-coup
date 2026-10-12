@@ -23,8 +23,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "4r3/7p/p1pB2p1/P1P5/R5P1/3bk2P/4p1K1/8 w - - 2 47",
+    "solution": [
+      "d6f4"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/a018s",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "4r3/7p/p1pB2p1/P1P5/R5P1/3bk2P/4p1K1/8 w - - 2 47",
+      "move": "d6f4",
+      "text": "",
+      "arrows": [
+        [
+          "d6",
+          "f4"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "crushing",
     "endgame"

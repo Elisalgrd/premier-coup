@@ -38,6 +38,7 @@
   },
   "guided": [
     {
+      "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
       "move": "a1a5",
       "text": "",
       "arrows": [
@@ -49,6 +50,7 @@
       "marks": []
     },
     {
+      "fen": "8/8/8/R2k3q/8/8/8/6K1 b - - 1 1",
       "move": "d5c4",
       "text": "",
       "arrows": [
@@ -60,6 +62,7 @@
       "marks": []
     },
     {
+      "fen": "8/8/8/R6q/2k5/8/8/6K1 w - - 2 2",
       "move": "a5h5",
       "text": "",
       "arrows": [

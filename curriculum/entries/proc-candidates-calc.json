@@ -26,12 +26,62 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
+    "solution": [
+      "e1e8",
+      "g8h7",
+      "e8h8"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/PBa5R",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
+      "move": "e1e8",
+      "text": "",
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "4R1k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/7K b - - 7 47",
+      "move": "g8h7",
+      "text": "",
+      "arrows": [
+        [
+          "g8",
+          "h7"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "4R3/5p1k/6p1/1p5p/2b5/2Qr1PqP/6P1/7K w - - 8 48",
+      "move": "e8h8",
+      "text": "",
+      "arrows": [
+        [
+          "e8",
+          "h8"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "short",
     "long",
-    "mateIn3"
+    "mateIn3",
+    "mateIn4",
+    "mateIn5",
+    "veryLong"
   ],
   "ratingBand": [
     400,

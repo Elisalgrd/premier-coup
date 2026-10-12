@@ -22,8 +22,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+    "solution": [
+      "d6f7"
+    ],
+    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/QcuUV",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+      "move": "d6f7",
+      "text": "",
+      "arrows": [
+        [
+          "d6",
+          "f7"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "smotheredMate"
   ],

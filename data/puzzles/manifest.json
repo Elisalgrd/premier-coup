@@ -1,0 +1,1836 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-12T07:54:34.532Z",
+  "source": {
+    "url": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+    "transport": "curl",
+    "sha256": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    "license": "CC0-1.0",
+    "documentation": "https://database.lichess.org/#puzzles",
+    "themesDocumentation": "https://github.com/lichess-org/lila/blob/master/translation/source/puzzleTheme.xml"
+  },
+  "quality": {
+    "minPopularity": 85,
+    "minPlays": 500,
+    "maxRatingDeviation": 90,
+    "rating": [
+      400,
+      2200
+    ]
+  },
+  "format": [
+    "id",
+    "fenBeforeOpponentMove",
+    "uciMovesSpaceSeparated",
+    "rating",
+    "themesHexBitmask"
+  ],
+  "themeEncoding": "BigInt hex string; bit index follows themes[]; avoids loss above 53 bits",
+  "themes": [
+    "advancedPawn",
+    "advantage",
+    "anastasiaMate",
+    "arabianMate",
+    "attackingF2F7",
+    "attraction",
+    "backRankMate",
+    "balestraMate",
+    "bishopEndgame",
+    "blindSwineMate",
+    "bodenMate",
+    "capturingDefender",
+    "castling",
+    "clearance",
+    "collinearMove",
+    "cornerMate",
+    "crushing",
+    "defensiveMove",
+    "deflection",
+    "discoveredAttack",
+    "discoveredCheck",
+    "doubleBishopMate",
+    "doubleCheck",
+    "dovetailMate",
+    "enPassant",
+    "endgame",
+    "epauletteMate",
+    "equality",
+    "exposedKing",
+    "fork",
+    "hangingPiece",
+    "hookMate",
+    "interference",
+    "intermezzo",
+    "killBoxMate",
+    "kingsideAttack",
+    "knightEndgame",
+    "long",
+    "master",
+    "masterVsMaster",
+    "mate",
+    "mateIn1",
+    "mateIn2",
+    "mateIn3",
+    "mateIn4",
+    "mateIn5",
+    "middlegame",
+    "morphysMate",
+    "oneMove",
+    "opening",
+    "operaMate",
+    "pawnEndgame",
+    "pillsburysMate",
+    "pin",
+    "promotion",
+    "queenEndgame",
+    "queenRookEndgame",
+    "queensideAttack",
+    "quietMove",
+    "rookEndgame",
+    "sacrifice",
+    "short",
+    "skewer",
+    "smotheredMate",
+    "superGM",
+    "swallowstailMate",
+    "trappedPiece",
+    "triangleMate",
+    "underPromotion",
+    "veryLong",
+    "vukovicMate",
+    "xRayAttack",
+    "zugzwang"
+  ],
+  "bands": [
+    [
+      400,
+      700
+    ],
+    [
+      700,
+      1000
+    ],
+    [
+      1000,
+      1200
+    ],
+    [
+      1200,
+      1400
+    ],
+    [
+      1400,
+      1700
+    ],
+    [
+      1700,
+      2200
+    ]
+  ],
+  "sampling": {
+    "method": "seeded reservoir per rating band, balanced round robin filling sparse bands",
+    "seed": "0x20802026",
+    "mixedExcludes": [
+      "equality"
+    ]
+  },
+  "counts": {
+    "rows": 6157341,
+    "qualified": 2170222,
+    "rejectedQuality": 3987119,
+    "invalidCsv": 0,
+    "bytes": 307234795
+  },
+  "bytes": 1959187,
+  "shards": {
+    "vis-attacked-squares": {
+      "file": "vis-attacked-squares.json",
+      "count": 300,
+      "bytes": 34399,
+      "sha256": "fe0fd8976d33e962cea7f83fe9b8dfa981449543e471d92718921b7209477744",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        1128,
+        7131,
+        11084,
+        12185,
+        21111,
+        22325
+      ],
+      "tags": [
+        "hangingPiece"
+      ],
+      "priority": "S",
+      "palier": 0
+    },
+    "vis-check-escape": {
+      "file": "vis-check-escape.json",
+      "count": 300,
+      "bytes": 33542,
+      "sha256": "9b800533a126add1be0e7e74cd592467348f6cb02e087c48c09dd3e105c292fc",
+      "bands": [
+        13,
+        58,
+        58,
+        57,
+        57,
+        57
+      ],
+      "availableByBand": [
+        13,
+        1657,
+        7462,
+        12201,
+        28211,
+        60922
+      ],
+      "tags": [
+        "defensiveMove"
+      ],
+      "priority": "S",
+      "palier": 0
+    },
+    "mat-two-rooks": {
+      "file": "mat-two-rooks.json",
+      "count": 300,
+      "bytes": 32690,
+      "sha256": "e33eb3f3420fb36302ae20232941a7b26b02b8586e3d80a90308115c720ae1be",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        7060,
+        85155,
+        120640,
+        89847,
+        93258,
+        39537
+      ],
+      "tags": [
+        "mateIn2",
+        "mateIn1"
+      ],
+      "priority": "S",
+      "palier": 0
+    },
+    "vis-draws": {
+      "file": "vis-draws.json",
+      "count": 300,
+      "bytes": 32881,
+      "sha256": "1e8c1d10d54ed61841cf75637209edf9a5d896083507df5ab76e5b8f4239f57a",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        5065,
+        86136,
+        175580,
+        181663,
+        280714,
+        301139
+      ],
+      "tags": [
+        "endgame"
+      ],
+      "priority": "A",
+      "palier": 0
+    },
+    "proc-blunder-check": {
+      "file": "proc-blunder-check.json",
+      "count": 300,
+      "bytes": 34407,
+      "sha256": "3a8882b9e7015e53b1517910b0a7c1e69f2b583f6dc3d5df6ac9e5aff793b09f",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        1128,
+        7131,
+        11084,
+        12185,
+        21111,
+        22325
+      ],
+      "tags": [
+        "hangingPiece"
+      ],
+      "priority": "S",
+      "palier": 1
+    },
+    "proc-opponent-threat": {
+      "file": "proc-opponent-threat.json",
+      "count": 300,
+      "bytes": 33806,
+      "sha256": "e292e2c352c104ed35e9b95ced35310bda71e58bb797e68925c9fefd2156f881",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        1141,
+        8675,
+        17904,
+        23315,
+        47066,
+        79376
+      ],
+      "tags": [
+        "defensiveMove",
+        "hangingPiece"
+      ],
+      "priority": "S",
+      "palier": 1
+    },
+    "proc-hanging-pieces": {
+      "file": "proc-hanging-pieces.json",
+      "count": 300,
+      "bytes": 34681,
+      "sha256": "0a6568496bc25b14274ae5e0f877f1fe08f609b000451546700e1cac0ecb7ed5",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        1128,
+        7131,
+        11084,
+        12185,
+        21111,
+        22325
+      ],
+      "tags": [
+        "hangingPiece"
+      ],
+      "priority": "S",
+      "palier": 1
+    },
+    "proc-exchange-count": {
+      "file": "proc-exchange-count.json",
+      "count": 300,
+      "bytes": 34641,
+      "sha256": "7a4de0c7413ab3b0c93cbbf2723807788623ecbf2dd75b48568b7d06d6a979e2",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        1129,
+        7686,
+        13369,
+        16425,
+        28864,
+        28734
+      ],
+      "tags": [
+        "hangingPiece",
+        "capturingDefender"
+      ],
+      "priority": "S",
+      "palier": 1
+    },
+    "proc-free-material": {
+      "file": "proc-free-material.json",
+      "count": 300,
+      "bytes": 33774,
+      "sha256": "0e965df11bf44db5a32fbf026e436157116bca8c0cab122fd0fa2ae67ac85059",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        5837,
+        104677,
+        222745,
+        239039,
+        393258,
+        437904
+      ],
+      "tags": [
+        "hangingPiece",
+        "crushing",
+        "endgame"
+      ],
+      "priority": "A",
+      "palier": 1
+    },
+    "ouv-principles": {
+      "file": "ouv-principles.json",
+      "count": 300,
+      "bytes": 36637,
+      "sha256": "5b280f8df5ea79817d4de839bae0fed6ab7912483bf8661bdff57df9f3b62c99",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        655,
+        11636,
+        20559,
+        22784,
+        34857,
+        30531
+      ],
+      "tags": [
+        "opening"
+      ],
+      "priority": "S",
+      "palier": 1
+    },
+    "ouv-early-traps": {
+      "file": "ouv-early-traps.json",
+      "count": 300,
+      "bytes": 36398,
+      "sha256": "2970e7dda76f92dcb0877827437c9ccccb7d4d50055a25afa024153b531af32b",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        826,
+        12525,
+        21982,
+        23962,
+        36421,
+        32212
+      ],
+      "tags": [
+        "attackingF2F7",
+        "opening"
+      ],
+      "priority": "A",
+      "palier": 1
+    },
+    "proc-forcing-moves": {
+      "file": "proc-forcing-moves.json",
+      "count": 300,
+      "bytes": 34482,
+      "sha256": "ff796eaf91a966dce4ef36ae3ea0c92a2276b86d6c5c898e8f5e7e21e8c89465",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        9687,
+        167972,
+        344237,
+        372519,
+        617560,
+        658212
+      ],
+      "tags": [
+        "mix"
+      ],
+      "priority": "S",
+      "palier": 2
+    },
+    "tac-fork": {
+      "file": "tac-fork.json",
+      "count": 300,
+      "bytes": 35149,
+      "sha256": "ba1d8efcc30b33d0425676fd6672c5d34854edba7082e685eec918aab6a51184",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        1239,
+        31159,
+        58591,
+        57011,
+        89470,
+        77782
+      ],
+      "tags": [
+        "fork"
+      ],
+      "priority": "S",
+      "palier": 2
+    },
+    "tac-pin": {
+      "file": "tac-pin.json",
+      "count": 300,
+      "bytes": 34887,
+      "sha256": "4cf388f2b514c6f9a47f4b05613c8212527c03e12f82b6e199e24adc35757c49",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        63,
+        6950,
+        21542,
+        29353,
+        50890,
+        54290
+      ],
+      "tags": [
+        "pin"
+      ],
+      "priority": "S",
+      "palier": 2
+    },
+    "tac-skewer": {
+      "file": "tac-skewer.json",
+      "count": 300,
+      "bytes": 34399,
+      "sha256": "1f11180e0fdc8b9978d48e14929e6d24cfe8955d8e2e4f0c78297afbbf046b44",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        427,
+        5692,
+        10293,
+        9886,
+        14898,
+        12800
+      ],
+      "tags": [
+        "skewer"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "tac-discovered": {
+      "file": "tac-discovered.json",
+      "count": 300,
+      "bytes": 35890,
+      "sha256": "11051bafd9069fd7853c053d368570187428c1695d57a35bc0a0881017bf1804",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        197,
+        11031,
+        26219,
+        28382,
+        43636,
+        44654
+      ],
+      "tags": [
+        "discoveredAttack",
+        "discoveredCheck"
+      ],
+      "priority": "S",
+      "palier": 2
+    },
+    "tac-double-check": {
+      "file": "tac-double-check.json",
+      "count": 300,
+      "bytes": 35159,
+      "sha256": "e8f2946c0b2c6a42239f93a0fc96a112de5ccfa0be8ab24f67b92e2ed809eb13",
+      "bands": [
+        29,
+        55,
+        54,
+        54,
+        54,
+        54
+      ],
+      "availableByBand": [
+        29,
+        1059,
+        2210,
+        2493,
+        4229,
+        5976
+      ],
+      "tags": [
+        "doubleCheck"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "tac-remove-defender": {
+      "file": "tac-remove-defender.json",
+      "count": 300,
+      "bytes": 36762,
+      "sha256": "15001cf20ce3616725a43a7e9976de1e302371a0f6eb88bd24f5d4e6926d9dc2",
+      "bands": [
+        1,
+        60,
+        60,
+        60,
+        60,
+        59
+      ],
+      "availableByBand": [
+        1,
+        561,
+        2310,
+        4283,
+        7843,
+        6499
+      ],
+      "tags": [
+        "capturingDefender"
+      ],
+      "priority": "S",
+      "palier": 2
+    },
+    "tac-overload": {
+      "file": "tac-overload.json",
+      "count": 300,
+      "bytes": 35008,
+      "sha256": "1d6c98183a26ad20ae7b1db7872f3d52876528124917e3ceaa7d3af50a7983ed",
+      "bands": [
+        36,
+        53,
+        53,
+        53,
+        53,
+        52
+      ],
+      "availableByBand": [
+        36,
+        6045,
+        23446,
+        27385,
+        41953,
+        41971
+      ],
+      "tags": [
+        "deflection",
+        "capturingDefender"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "tac-deflection": {
+      "file": "tac-deflection.json",
+      "count": 300,
+      "bytes": 34877,
+      "sha256": "febfdfda115abbb7e1a805537a281eb261710718c0513821f0a898bf85fc20a4",
+      "bands": [
+        35,
+        53,
+        53,
+        53,
+        53,
+        53
+      ],
+      "availableByBand": [
+        35,
+        5487,
+        21185,
+        23227,
+        34620,
+        35997
+      ],
+      "tags": [
+        "deflection"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "tac-attraction": {
+      "file": "tac-attraction.json",
+      "count": 300,
+      "bytes": 36437,
+      "sha256": "9976fc50a0b4fd487a3682f398aebe70da57bd3ce517196041c577209ebf5ddc",
+      "bands": [
+        20,
+        56,
+        56,
+        56,
+        56,
+        56
+      ],
+      "availableByBand": [
+        20,
+        1258,
+        9616,
+        20715,
+        40571,
+        40631
+      ],
+      "tags": [
+        "attraction"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "tac-trapped-piece": {
+      "file": "tac-trapped-piece.json",
+      "count": 300,
+      "bytes": 36907,
+      "sha256": "bd5c950f1420177037a97fdf1f6dc0866c278cf715f37adc46bf1fab198dcfe4",
+      "bands": [
+        3,
+        60,
+        60,
+        59,
+        59,
+        59
+      ],
+      "availableByBand": [
+        3,
+        308,
+        2031,
+        5296,
+        13916,
+        13499
+      ],
+      "tags": [
+        "trappedPiece"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "tac-promotion": {
+      "file": "tac-promotion.json",
+      "count": 300,
+      "bytes": 33705,
+      "sha256": "6cc260b91c6cf27f2c8a31a653c301ea371efe9d083d538a2b683f3f1fb25b8a",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        296,
+        6514,
+        18510,
+        23974,
+        41862,
+        54050
+      ],
+      "tags": [
+        "advancedPawn",
+        "promotion",
+        "underPromotion"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "mat-back-rank": {
+      "file": "mat-back-rank.json",
+      "count": 300,
+      "bytes": 35572,
+      "sha256": "77ea6419c5355b8ddbda78c53d248c33c0a68d1ac2d48bf12a1846ff590342d5",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        922,
+        7473,
+        9911,
+        4786,
+        4290,
+        1777
+      ],
+      "tags": [
+        "backRankMate"
+      ],
+      "priority": "S",
+      "palier": 2
+    },
+    "mat-queen-support": {
+      "file": "mat-queen-support.json",
+      "count": 300,
+      "bytes": 34015,
+      "sha256": "957e2dc0ea1e628704a54ca7642e631359305d08ff0ace8eb69659d887c516fa",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        7159,
+        89978,
+        134404,
+        106453,
+        122834,
+        76851
+      ],
+      "tags": [
+        "mateIn1",
+        "mateIn2",
+        "kingsideAttack"
+      ],
+      "priority": "S",
+      "palier": 2
+    },
+    "mat-smothered": {
+      "file": "mat-smothered.json",
+      "count": 300,
+      "bytes": 34999,
+      "sha256": "cd36da092785e84e7318616f5f9dd0eabf4edf5c45b77761c069c3b1957c24aa",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        84,
+        2154,
+        1379,
+        1774,
+        832,
+        229
+      ],
+      "tags": [
+        "smotheredMate"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "mat-arabian": {
+      "file": "mat-arabian.json",
+      "count": 300,
+      "bytes": 33323,
+      "sha256": "0da17ade50a6d8da82cdd67c86d6c813e931c8cf0336347627c03556030c099b",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        163,
+        692,
+        781,
+        526,
+        616,
+        368
+      ],
+      "tags": [
+        "arabianMate"
+      ],
+      "priority": "B",
+      "palier": 2
+    },
+    "mat-anastasia": {
+      "file": "mat-anastasia.json",
+      "count": 300,
+      "bytes": 34678,
+      "sha256": "0e939bfdfdb115c95ecd29e8fd5fd9169f38e2e4c20ea8e473d0f924db5a9b90",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        178,
+        686,
+        424,
+        827,
+        1316,
+        209
+      ],
+      "tags": [
+        "anastasiaMate"
+      ],
+      "priority": "B",
+      "palier": 2
+    },
+    "mat-boden": {
+      "file": "mat-boden.json",
+      "count": 300,
+      "bytes": 35328,
+      "sha256": "546c410c2a4a8c27ded66fba92d63636712ae127a5c781bb0e0af6ffca5c1df5",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        70,
+        450,
+        240,
+        175,
+        151,
+        100
+      ],
+      "tags": [
+        "bodenMate"
+      ],
+      "priority": "B",
+      "palier": 2
+    },
+    "mat-patterns-misc": {
+      "file": "mat-patterns-misc.json",
+      "count": 300,
+      "bytes": 33433,
+      "sha256": "66701a9d825790fa982962d3ff1d10f142f4e7148ab63e93312acc10fb970144",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        820,
+        10324,
+        16091,
+        13094,
+        17426,
+        12162
+      ],
+      "tags": [
+        "hookMate",
+        "doubleBishopMate",
+        "dovetailMate",
+        "epauletteMate",
+        "cornerMate",
+        "killBoxMate",
+        "operaMate",
+        "pillsburysMate",
+        "morphysMate",
+        "swallowstailMate",
+        "triangleMate",
+        "vukovicMate",
+        "balestraMate",
+        "blindSwineMate"
+      ],
+      "priority": "C",
+      "palier": 2
+    },
+    "proc-candidates-calc": {
+      "file": "proc-candidates-calc.json",
+      "count": 300,
+      "bytes": 34660,
+      "sha256": "fce7a7d989d996d7989bce885512b430288c6e46fb7a020886b4c94ccc8b26f1",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        4375,
+        120654,
+        293879,
+        339364,
+        585020,
+        648214
+      ],
+      "tags": [
+        "short",
+        "long",
+        "mateIn3",
+        "mateIn4",
+        "mateIn5",
+        "veryLong"
+      ],
+      "priority": "S",
+      "palier": 3
+    },
+    "tac-intermezzo": {
+      "file": "tac-intermezzo.json",
+      "count": 300,
+      "bytes": 36225,
+      "sha256": "65203e3760070d9420788c19f409b6efcc8419cdbacb9de6eeb9b9d78bf11c45",
+      "bands": [
+        0,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "availableByBand": [
+        0,
+        605,
+        3217,
+        5316,
+        12048,
+        12348
+      ],
+      "tags": [
+        "intermezzo"
+      ],
+      "priority": "A",
+      "palier": 3
+    },
+    "tac-xray": {
+      "file": "tac-xray.json",
+      "count": 300,
+      "bytes": 36270,
+      "sha256": "da494182aa2d32d8045b3e87bdfd55f1c4c830c7b168b35bcdb1d69d5680f347",
+      "bands": [
+        27,
+        55,
+        55,
+        55,
+        54,
+        54
+      ],
+      "availableByBand": [
+        27,
+        1016,
+        1681,
+        2116,
+        3462,
+        2413
+      ],
+      "tags": [
+        "xRayAttack"
+      ],
+      "priority": "B",
+      "palier": 3
+    },
+    "tac-interference-clearance": {
+      "file": "tac-interference-clearance.json",
+      "count": 300,
+      "bytes": 36431,
+      "sha256": "cbeee6fd529cd10a2367c3f184071f3094d059e26bb71c9891d688345099cfc7",
+      "bands": [
+        8,
+        59,
+        59,
+        58,
+        58,
+        58
+      ],
+      "availableByBand": [
+        8,
+        1274,
+        4149,
+        5683,
+        12606,
+        17778
+      ],
+      "tags": [
+        "interference",
+        "clearance"
+      ],
+      "priority": "B",
+      "palier": 3
+    },
+    "tac-quiet-move": {
+      "file": "tac-quiet-move.json",
+      "count": 300,
+      "bytes": 33968,
+      "sha256": "cd536654913a9491c8a8272c68829649e75f5c865b3f6cee5c72acc8527b3259",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        76,
+        2399,
+        9874,
+        17224,
+        44103,
+        94646
+      ],
+      "tags": [
+        "quietMove",
+        "defensiveMove"
+      ],
+      "priority": "B",
+      "palier": 3
+    },
+    "mat-greek-gift": {
+      "file": "mat-greek-gift.json",
+      "count": 300,
+      "bytes": 35932,
+      "sha256": "da415068d21aa168d53aa05eee0c263a5e3934932994e03893bc35bf3652a01a",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        2366,
+        27327,
+        60116,
+        67459,
+        119657,
+        135720
+      ],
+      "tags": [
+        "kingsideAttack",
+        "sacrifice",
+        "queensideAttack",
+        "exposedKing"
+      ],
+      "priority": "B",
+      "palier": 3
+    },
+    "fin-active-king": {
+      "file": "fin-active-king.json",
+      "count": 300,
+      "bytes": 33042,
+      "sha256": "acf40508a9c73166726709539caab3bdb7de13afb78b6125902f44b90e449cb0",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        5065,
+        86136,
+        175580,
+        181663,
+        280714,
+        301139
+      ],
+      "tags": [
+        "endgame",
+        "pawnEndgame",
+        "zugzwang"
+      ],
+      "priority": "S",
+      "palier": 3
+    },
+    "fin-square": {
+      "file": "fin-square.json",
+      "count": 300,
+      "bytes": 33183,
+      "sha256": "1ec86ad87a821f4c0d0ea76d19231af61eaa815f0eeb0cb21e54ef95978064dc",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        338,
+        8385,
+        24918,
+        32212,
+        57904,
+        85717
+      ],
+      "tags": [
+        "pawnEndgame",
+        "advancedPawn",
+        "zugzwang"
+      ],
+      "priority": "A",
+      "palier": 3
+    },
+    "fin-opposition": {
+      "file": "fin-opposition.json",
+      "count": 300,
+      "bytes": 33146,
+      "sha256": "6f212ca54b05976ad35838c01263fb08d1286aa523428f226d4d9a102493d616",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        131,
+        2662,
+        8022,
+        10197,
+        19864,
+        36032
+      ],
+      "tags": [
+        "pawnEndgame",
+        "zugzwang"
+      ],
+      "priority": "S",
+      "palier": 3
+    },
+    "fin-passed-pawn": {
+      "file": "fin-passed-pawn.json",
+      "count": 300,
+      "bytes": 33282,
+      "sha256": "9a41fe7bcd15525c31a41bed5c8f9888db706fcafd044e7c507f133cdf0b8a53",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        5074,
+        86817,
+        178107,
+        185375,
+        287584,
+        310056
+      ],
+      "tags": [
+        "advancedPawn",
+        "endgame",
+        "promotion",
+        "underPromotion"
+      ],
+      "priority": "A",
+      "palier": 3
+    },
+    "fin-rook-behind": {
+      "file": "fin-rook-behind.json",
+      "count": 300,
+      "bytes": 31891,
+      "sha256": "92789bdd9842f2ac0b347be976c6b6633bc8b443fd7c97db7b6caaa8ce48acc0",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        557,
+        8445,
+        17110,
+        19132,
+        28381,
+        33779
+      ],
+      "tags": [
+        "rookEndgame"
+      ],
+      "priority": "A",
+      "palier": 3
+    },
+    "fin-convert": {
+      "file": "fin-convert.json",
+      "count": 300,
+      "bytes": 33834,
+      "sha256": "eb0e2acdee8fb4e7a63957e3fa641aab03626f4e2246184a9dca5b64a14e667f",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        5192,
+        101202,
+        218131,
+        233619,
+        383663,
+        427971
+      ],
+      "tags": [
+        "crushing",
+        "endgame"
+      ],
+      "priority": "S",
+      "palier": 3
+    },
+    "fin-opposite-bishops": {
+      "file": "fin-opposite-bishops.json",
+      "count": 300,
+      "bytes": 32172,
+      "sha256": "933e2994c420b3d480cc8308a699e3d6e825078308e4caa82fdd410cb5ae5b77",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        68,
+        1374,
+        3092,
+        4308,
+        8075,
+        12061
+      ],
+      "tags": [
+        "bishopEndgame"
+      ],
+      "priority": "B",
+      "palier": 3
+    },
+    "fin-queen-vs-pawn": {
+      "file": "fin-queen-vs-pawn.json",
+      "count": 300,
+      "bytes": 32133,
+      "sha256": "c19d41df6b1ccba3d72be9634d2bf6c3c38fea64855612ecb476999228a575e9",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        284,
+        3611,
+        6858,
+        6695,
+        10566,
+        10265
+      ],
+      "tags": [
+        "queenEndgame",
+        "queenRookEndgame"
+      ],
+      "priority": "C",
+      "palier": 3
+    },
+    "ouv-white-italian": {
+      "file": "ouv-white-italian.json",
+      "count": 300,
+      "bytes": 36667,
+      "sha256": "9f1268d0bf344dcce0952bd133253260d668c4518a6729580fad65f7a90fde08",
+      "bands": [
+        32,
+        54,
+        54,
+        54,
+        53,
+        53
+      ],
+      "availableByBand": [
+        32,
+        631,
+        996,
+        986,
+        1740,
+        1710
+      ],
+      "tags": [
+        "opening"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "ouv-black-e5": {
+      "file": "ouv-black-e5.json",
+      "count": 300,
+      "bytes": 36203,
+      "sha256": "ce53104b78cf8cefa682293c1e5c872f9efbe39f2a21ec7573a982b120bad48e",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        140,
+        2372,
+        4029,
+        4434,
+        7004,
+        6646
+      ],
+      "tags": [
+        "opening"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "ouv-black-d5": {
+      "file": "ouv-black-d5.json",
+      "count": 300,
+      "bytes": 36897,
+      "sha256": "554c2fbc16f8a285e709b9e0e4e287ba4d0b54d371661ff4069e7ab93eace427",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        70,
+        1070,
+        2158,
+        2581,
+        3762,
+        3077
+      ],
+      "tags": [
+        "opening"
+      ],
+      "priority": "A",
+      "palier": 2
+    },
+    "str-open-files": {
+      "file": "str-open-files.json",
+      "count": 300,
+      "bytes": 31881,
+      "sha256": "d4773af5b20c2167ae7a417c995291f6568666dfd5d2c083b730cc00abbbaddd",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        557,
+        8445,
+        17110,
+        19132,
+        28381,
+        33779
+      ],
+      "tags": [
+        "rookEndgame"
+      ],
+      "priority": "A",
+      "palier": 4
+    },
+    "str-king-safety-middlegame": {
+      "file": "str-king-safety-middlegame.json",
+      "count": 300,
+      "bytes": 36221,
+      "sha256": "8fad4c8806a0199bee67692e3e7c4727fac0ce67ab74a3acebab1e3038d6b12f",
+      "bands": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "availableByBand": [
+        2366,
+        27327,
+        60116,
+        67459,
+        119657,
+        135720
+      ],
+      "tags": [
+        "kingsideAttack",
+        "queensideAttack",
+        "exposedKing",
+        "sacrifice"
+      ],
+      "priority": "A",
+      "palier": 4
+    },
+    "str-prophylaxis": {
+      "file": "str-prophylaxis.json",
+      "count": 300,
+      "bytes": 33600,
+      "sha256": "4701c7cf39ac3d42b7251b8e9afcce4e101f9b19e27f8f50765e4ad8fb591c11",
+      "bands": [
+        13,
+        58,
+        58,
+        57,
+        57,
+        57
+      ],
+      "availableByBand": [
+        13,
+        1657,
+        7462,
+        12201,
+        28211,
+        60922
+      ],
+      "tags": [
+        "defensiveMove"
+      ],
+      "priority": "A",
+      "palier": 4
+    },
+    "mixed": {
+      "file": "mixed.json",
+      "count": 2000,
+      "bytes": 228683,
+      "sha256": "ecab20c8d37884b54eb3bb789a59ef19c23d79aca15aa75d80d01ab38ab95575",
+      "bands": [
+        334,
+        334,
+        333,
+        333,
+        333,
+        333
+      ],
+      "availableByBand": [
+        9687,
+        167972,
+        344237,
+        372519,
+        617560,
+        658212
+      ],
+      "tags": [
+        "mix"
+      ],
+      "priority": null,
+      "palier": null
+    }
+  },
+  "withoutPuzzleTags": [
+    {
+      "id": "vis-rules",
+      "priority": "S",
+      "palier": 0
+    },
+    {
+      "id": "vis-notation",
+      "priority": "S",
+      "palier": 0
+    },
+    {
+      "id": "vis-values",
+      "priority": "S",
+      "palier": 0
+    },
+    {
+      "id": "mat-basic-queen",
+      "priority": "S",
+      "palier": 0
+    },
+    {
+      "id": "mat-basic-rook",
+      "priority": "A",
+      "palier": 0
+    },
+    {
+      "id": "meta-play-slow",
+      "priority": "S",
+      "palier": 1
+    },
+    {
+      "id": "meta-game-review",
+      "priority": "S",
+      "palier": 1
+    },
+    {
+      "id": "fin-lucena",
+      "priority": "A",
+      "palier": 3
+    },
+    {
+      "id": "fin-philidor",
+      "priority": "A",
+      "palier": 3
+    },
+    {
+      "id": "meta-time-management",
+      "priority": "A",
+      "palier": 3
+    },
+    {
+      "id": "meta-woodpecker",
+      "priority": "B",
+      "palier": 3
+    },
+    {
+      "id": "ouv-gambits",
+      "priority": "B",
+      "palier": 3
+    },
+    {
+      "id": "str-worst-piece",
+      "priority": "S",
+      "palier": 4
+    },
+    {
+      "id": "str-outposts",
+      "priority": "A",
+      "palier": 4
+    },
+    {
+      "id": "str-good-bad-bishop",
+      "priority": "B",
+      "palier": 4
+    },
+    {
+      "id": "str-pawn-structure",
+      "priority": "A",
+      "palier": 4
+    },
+    {
+      "id": "str-weak-squares",
+      "priority": "B",
+      "palier": 4
+    },
+    {
+      "id": "str-exchanges",
+      "priority": "A",
+      "palier": 4
+    },
+    {
+      "id": "str-initiative",
+      "priority": "B",
+      "palier": 4
+    },
+    {
+      "id": "str-bishop-pair-space",
+      "priority": "C",
+      "palier": 4
+    },
+    {
+      "id": "str-plan-making",
+      "priority": "A",
+      "palier": 4
+    }
+  ],
+  "below150": [
+    {
+      "id": "vis-rules",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "vis-notation",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "vis-values",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "mat-basic-queen",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "mat-basic-rook",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "meta-play-slow",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "meta-game-review",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "fin-lucena",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "fin-philidor",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "meta-time-management",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "str-worst-piece",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "str-outposts",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "str-pawn-structure",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "str-exchanges",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    },
+    {
+      "id": "str-plan-making",
+      "count": 0,
+      "reason": "Requires a dedicated drill, plan-choice, game or analysis; no mapped tactical tag"
+    }
+  ],
+  "tagCounts": {
+    "crushing": 892617,
+    "hangingPiece": 74964,
+    "long": 674489,
+    "middlegame": 1018903,
+    "advantage": 714502,
+    "endgame": 1030297,
+    "short": 1167086,
+    "rookEndgame": 107404,
+    "fork": 315252,
+    "mate": 550045,
+    "mateIn2": 270133,
+    "operaMate": 17373,
+    "exposedKing": 77858,
+    "skewer": 53996,
+    "kingsideAttack": 170234,
+    "mateIn1": 165364,
+    "oneMove": 165687,
+    "opening": 121022,
+    "veryLong": 149934,
+    "discoveredAttack": 139768,
+    "master": 311580,
+    "sacrifice": 198083,
+    "quietMove": 66464,
+    "bishopEndgame": 28978,
+    "deflection": 120551,
+    "pin": 163088,
+    "mateIn3": 94857,
+    "masterVsMaster": 30245,
+    "superGM": 1763,
+    "interference": 10315,
+    "defensiveMove": 110466,
+    "queenEndgame": 25645,
+    "advancedPawn": 145200,
+    "cornerMate": 4607,
+    "promotion": 55619,
+    "clearance": 31267,
+    "enPassant": 2942,
+    "pawnEndgame": 72397,
+    "queensideAttack": 32522,
+    "attraction": 112811,
+    "attackingF2F7": 13335,
+    "trappedPiece": 35053,
+    "hookMate": 4608,
+    "intermezzo": 33534,
+    "discoveredCheck": 50187,
+    "smotheredMate": 6452,
+    "capturingDefender": 21497,
+    "swallowstailMate": 3163,
+    "knightEndgame": 17128,
+    "doubleCheck": 15996,
+    "zugzwang": 20533,
+    "epauletteMate": 7837,
+    "backRankMate": 29159,
+    "mateIn4": 16629,
+    "vukovicMate": 1568,
+    "morphysMate": 3098,
+    "pillsburysMate": 16819,
+    "queenRookEndgame": 12634,
+    "dovetailMate": 2238,
+    "triangleMate": 3902,
+    "balestraMate": 886,
+    "killBoxMate": 2824,
+    "xRayAttack": 10715,
+    "arabianMate": 3146,
+    "anastasiaMate": 3640,
+    "collinearMove": 2905,
+    "bodenMate": 1186,
+    "doubleBishopMate": 797,
+    "mateIn5": 3062,
+    "castling": 601,
+    "blindSwineMate": 2999,
+    "underPromotion": 466,
+    "equality": 35
+  },
+  "validation": {
+    "uniquePuzzles": 16469,
+    "legalLines": 16469,
+    "rejected": []
+  }
+}

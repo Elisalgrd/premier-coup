@@ -26,8 +26,55 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "r4rk1/1pq2pbp/p3b1p1/P1Q1p3/2B1P3/4B2P/1PP2PP1/R4RK1 b - - 0 17",
+    "solution": [
+      "c7c5",
+      "e3c5",
+      "e6c4"
+    ],
+    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
+    "source": "https://lichess.org/training/edvJN",
+    "mode": "move"
+  },
+  "guided": [
+    {
+      "fen": "r4rk1/1pq2pbp/p3b1p1/P1Q1p3/2B1P3/4B2P/1PP2PP1/R4RK1 b - - 0 17",
+      "move": "c7c5",
+      "text": "",
+      "arrows": [
+        [
+          "c7",
+          "c5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "r4rk1/1p3pbp/p3b1p1/P1q1p3/2B1P3/4B2P/1PP2PP1/R4RK1 w - - 0 18",
+      "move": "e3c5",
+      "text": "",
+      "arrows": [
+        [
+          "e3",
+          "c5"
+        ]
+      ],
+      "marks": []
+    },
+    {
+      "fen": "r4rk1/1p3pbp/p3b1p1/P1B1p3/2B1P3/7P/1PP2PP1/R4RK1 b - - 0 18",
+      "move": "e6c4",
+      "text": "",
+      "arrows": [
+        [
+          "e6",
+          "c4"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [
     "capturingDefender"
   ],

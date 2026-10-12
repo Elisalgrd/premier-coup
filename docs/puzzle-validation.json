@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "shards": 51,
+  "rows": 17000,
+  "uniquePuzzles": 16469,
+  "bytes": 1959187,
+  "sourceSha256": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+  "validatedWith": "chess.js 1.4.0",
+  "notes": [
+    "All retained full UCI lines legal",
+    "All mate tags finish in checkmate",
+    "All shard SHA256 hashes independently verified",
+    "All mapped entries have 300 puzzles; mixed has 2000",
+    "15 S/A entries without tactical tags require dedicated exercise types"
+  ]
+}

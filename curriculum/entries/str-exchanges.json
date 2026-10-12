@@ -16,8 +16,29 @@
     "fen": null,
     "line": []
   },
-  "entryChallenge": null,
-  "guided": [],
+  "entryChallenge": {
+    "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+    "solution": [
+      "d1d8"
+    ],
+    "prompt": "Tu as une dame de plus. Échange les tours.",
+    "mode": "move",
+    "source": "Exemple pédagogique validé"
+  },
+  "guided": [
+    {
+      "fen": "3r2k1/pp3ppp/8/8/8/8/PP3PPP/3RQ1K1 w - - 0 1",
+      "move": "d1d8",
+      "text": "",
+      "arrows": [
+        [
+          "d1",
+          "d8"
+        ]
+      ],
+      "marks": []
+    }
+  ],
   "lichessThemes": [],
   "ratingBand": [
     400,
