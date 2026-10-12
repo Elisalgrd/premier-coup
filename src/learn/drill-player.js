@@ -1,6 +1,6 @@
 import { Board } from "../chess/board.js";
 import { Chess } from "../chess/chess.js";
-import { moveUci, sanFr } from "../chess/notation.js";
+import { moveUci, describeMove } from "../chess/notation.js";
 import { drillChallenges } from "./drills.js";
 import { dateKey, esc, $ } from "../ui/helpers.js";
 export function startDrill(
@@ -88,14 +88,16 @@ export function startDrill(
         board.options.interactive = false;
         board.render();
         $("#drill-feedback", root).textContent =
-          (made ? sanFr(made.san) + ". " : "") + entry.principle;
+          (made ? describeMove(made) + " " : "") + entry.principle;
         $("#drill-next", root).hidden = false;
         $("#drill-hint", root).hidden = true;
       } else {
         clean = false;
         persist();
         $("#drill-feedback", root).textContent =
-          "Compare ce choix au principe et réessaie.";
+          "Pas tout à fait. " +
+          entry.principle +
+          " Touche « Un indice » pour voir où regarder.";
       }
     };
     board = new Board($("#drill-board", root), {

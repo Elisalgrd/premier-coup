@@ -1,43 +1,9 @@
 {
   "id": "fin-passed-pawn",
-  "title": "Le pion passé",
   "tier": 3,
   "priority": "A",
-  "domain": "finales",
   "prerequisites": [
     "fin-square"
-  ],
-  "principle": "Un pion qu'aucun pion adverse ne peut arrêter est un atout majeur : pousse-le, soutiens-le, et bloque ceux de l'adversaire.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4nk2/1pr1qp2/pR4p1/P1pPQ3/4PP2/8/6Bp/4K3 w - - 0 26",
-    "solution": [
-      "e5h8"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/Njruu",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "4nk2/1pr1qp2/pR4p1/P1pPQ3/4PP2/8/6Bp/4K3 w - - 0 26",
-      "move": "e5h8",
-      "text": "",
-      "arrows": [
-        [
-          "e5",
-          "h8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "advancedPawn",
@@ -57,20 +23,138 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "finales",
+  "title": "Le pion que les autres pions ne peuvent plus arrêter",
+  "introduces": [
+    "pion passé"
+  ],
+  "challenge": {
+    "fen": "7k/8/4P3/8/8/8/8/K7 w - - 0 1",
+    "kind": "move",
+    "solution": [
+      "e6e7",
+      "h8g7",
+      "e7e8q"
+    ],
+    "check": "engine",
+    "prompt": "Ton pion en e6 n’a plus de pion adverse devant lui. Fais-le avancer jusqu’à devenir une dame.",
+    "accept": [
+      "e6e7"
+    ],
+    "alsoGood": [],
+    "hint": "Avant de pousser, regarde si une pièce ou le roi adverse peut arrêter ton pion. Ici, le roi noir en h8 est trop loin : e7 puis e8 suffisent.",
+    "success": "Le pion arrive en e8 et devient une dame. Le roi noir ne l’a pas rattrapé. Tu disposes maintenant d’une pièce beaucoup plus forte."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Un pion qu'aucun pion adverse ne peut arrêter est un atout majeur : pousse-le, soutiens-le, et bloque ceux de l'adversaire.",
-      "audio": null
+      "step": "principe",
+      "title": "Le pion que les autres pions ne peuvent plus arrêter",
+      "text": "Un pion passé n’a aucun pion adverse devant lui sur sa colonne ou les deux colonnes voisines. Ici, ton pion en e6 n’a plus de pion noir à craindre. Il peut courir vers e8.",
+      "fen": "7k/8/4P3/8/8/8/8/K7 w - - 0 1",
+      "marks": []
     },
     {
-      "title": "Contenu",
-      "text": "Un pion passé protégé est défendu par un pion. Un pion passé éloigné attire le roi loin des autres pions. Bloque le pion adverse avec une pièce, idéalement un cavalier. Une majorité de pions permet de créer un pion passé.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Avant de pousser, regarde si une pièce ou le roi adverse peut arrêter ton pion. Ici, le roi noir en h8 est trop loin : e7 puis e8 suffisent.",
+      "fen": "7k/8/4P3/8/8/8/8/K7 w - - 0 1",
+      "arrows": [
+        [
+          "e6",
+          "e7"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le pion blanc avance en e7. Il est à une case de devenir une dame.",
+      "fen": "7k/8/4P3/8/8/8/8/K7 w - - 0 1",
+      "line": [
+        {
+          "uci": "e6e7",
+          "text": "Le pion blanc avance en e7. Il est à une case de devenir une dame."
+        },
+        {
+          "uci": "h8g7",
+          "text": "Le roi noir va en g7, mais il est encore trop loin."
+        },
+        {
+          "uci": "e7e8q",
+          "text": "Le pion arrive en e8 et devient une dame."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le pion arrive en e8 et devient une dame. Le roi noir ne l’a pas rattrapé. Tu disposes maintenant d’une pièce beaucoup plus forte.",
+      "fen": "4Q3/6k1/8/8/8/8/8/K7 b - - 0 2"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Un pion passé n’est pas invisible : une tour, un fou, un cavalier ou le roi peuvent encore le bloquer. Son nom indique seulement qu’aucun pion adverse ne peut lui barrer la route.",
+      "fen": "7k/8/4P3/8/8/8/8/K7 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "8/4P1k1/8/8/8/8/8/K7 w - - 1 2",
+      "kind": "move",
+      "solution": [
+        "e7e8q"
+      ],
+      "check": "engine",
+      "prompt": "La première réponse est jouée. Le pion arrive en e8 et devient une dame.",
+      "accept": [
+        "e7e8q"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en e7.",
+      "success": "Le pion arrive en e8 et devient une dame. Le roi noir ne l’a pas rattrapé. Tu disposes maintenant d’une pièce beaucoup plus forte."
+    }
+  ],
+  "retenir": "Un pion passé n’a plus de pion adverse pour l’arrêter. Vérifie quand même les pièces et le roi.",
+  "review": {
+    "fen": "7k/8/4P3/8/8/8/8/K7 w - - 0 1",
+    "kind": "move",
+    "solution": [
+      "e6e7",
+      "h8g7",
+      "e7e8q"
+    ],
+    "check": "engine",
+    "prompt": "Ton pion en e6 n’a plus de pion adverse devant lui. Fais-le avancer jusqu’à devenir une dame.",
+    "accept": [
+      "e6e7"
+    ],
+    "alsoGood": [],
+    "hint": "Avant de pousser, regarde si une pièce ou le roi adverse peut arrêter ton pion. Ici, le roi noir en h8 est trop loin : e7 puis e8 suffisent.",
+    "success": "Le pion arrive en e8 et devient une dame. Le roi noir ne l’a pas rattrapé. Tu disposes maintenant d’une pièce beaucoup plus forte."
+  },
+  "contentVersion": 2,
+  "principle": "Un pion passé n’a plus de pion adverse pour l’arrêter. Vérifie quand même les pièces et le roi.",
+  "entryChallenge": {
+    "fen": "7k/8/4P3/8/8/8/8/K7 w - - 0 1",
+    "kind": "move",
+    "solution": [
+      "e6e7",
+      "h8g7",
+      "e7e8q"
+    ],
+    "check": "engine",
+    "prompt": "Ton pion en e6 n’a plus de pion adverse devant lui. Fais-le avancer jusqu’à devenir une dame.",
+    "accept": [
+      "e6e7"
+    ],
+    "alsoGood": [],
+    "hint": "Avant de pousser, regarde si une pièce ou le roi adverse peut arrêter ton pion. Ici, le roi noir en h8 est trop loin : e7 puis e8 suffisent.",
+    "success": "Le pion arrive en e8 et devient une dame. Le roi noir ne l’a pas rattrapé. Tu disposes maintenant d’une pièce beaucoup plus forte.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

@@ -1,0 +1,127 @@
+[
+  {
+    "id": "vis-start",
+    "term": "case, colonne, rangée",
+    "field": "text"
+  },
+  {
+    "id": "vis-start",
+    "term": "attaquer",
+    "field": "text"
+  },
+  {
+    "id": "vis-values",
+    "term": "échange",
+    "field": "text"
+  },
+  {
+    "id": "mat-basic-queen",
+    "term": "défendre, protéger",
+    "field": "text"
+  },
+  {
+    "id": "proc-blunder-check",
+    "term": "menace",
+    "field": "text"
+  },
+  {
+    "id": "proc-opponent-threat",
+    "term": "plan",
+    "field": "text"
+  },
+  {
+    "id": "proc-hanging-pieces",
+    "term": "échange",
+    "field": "text"
+  },
+  {
+    "id": "ouv-principles",
+    "term": "menace",
+    "field": "text"
+  },
+  {
+    "id": "ouv-principles",
+    "term": "défendre, protéger",
+    "field": "hint"
+  },
+  {
+    "id": "meta-play-slow",
+    "term": "prendre, capturer",
+    "field": "text"
+  },
+  {
+    "id": "meta-play-slow",
+    "term": "échec",
+    "field": "text"
+  },
+  {
+    "id": "tac-fork",
+    "term": "menace",
+    "field": "text"
+  },
+  {
+    "id": "tac-pin",
+    "term": "défenseur",
+    "field": "text"
+  },
+  {
+    "id": "tac-discovered",
+    "term": "menace",
+    "field": "text"
+  },
+  {
+    "id": "tac-remove-defender",
+    "term": "case de fuite",
+    "field": "text"
+  },
+  {
+    "id": "tac-trapped-piece",
+    "term": "échange",
+    "field": "success"
+  },
+  {
+    "id": "mat-back-rank",
+    "term": "défendre, protéger",
+    "field": "text"
+  },
+  {
+    "id": "fin-active-king",
+    "term": "finale",
+    "field": "text"
+  },
+  {
+    "id": "fin-active-king",
+    "term": "défendre, protéger",
+    "field": "text"
+  },
+  {
+    "id": "fin-opposition",
+    "term": "centre",
+    "field": "hint"
+  },
+  {
+    "id": "ouv-white-italian",
+    "term": "plan",
+    "field": "text"
+  },
+  {
+    "id": "str-good-bad-bishop",
+    "term": "défendre, protéger",
+    "field": "text"
+  },
+  {
+    "id": "str-pawn-structure",
+    "term": "défendre, protéger",
+    "field": "success"
+  },
+  {
+    "id": "str-exchanges",
+    "term": "échange",
+    "field": "text"
+  },
+  {
+    "id": "str-initiative",
+    "term": "échange",
+    "field": "text"
+  }
+]

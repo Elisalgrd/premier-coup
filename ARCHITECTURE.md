@@ -6,11 +6,15 @@ ES modules natifs, sans framework, transpilation ou backend. `npm run build` cop
 
 ## Catalogue
 
-`CURRICULUM.md` est conservé intégralement. La chaîne `npm run curriculum` extrait ses 71 fiches, ajoute les exemples légaux, les références média et découpe les textes. L’ordre du programme est conservé et testé. L’index est léger ; le texte de recherche est chargé seulement dans Catalogue. Toutes les fiches sont consultables même si leurs prérequis ne sont pas vus.
+`CURRICULUM.md` et les trois fichiers V2 fournis sont conservés intacts. `npm run curriculum` assemble les 20 fiches de `curriculum-v2.json` et les 52 fiches réécrites dans `scripts/remaining-content.mjs`. Les métadonnées d’origine sont conservées dans `curriculum-metadata.json`. L’ordre d’origine est précédé de `vis-start`. Les corrections vérifiables sont documentées dans `docs/TON_CORRECTIONS.md`.
 
-Le lecteur comporte dix étapes. Il enregistre étape et sous-page. Le défi d’entrée est sans pénalité ; le modèle guidé utilise des indices. La pratique utilise des problèmes Lichess ou des exercices spécialisés. La validation distingue « vue », « en pratique » et « maîtrisée ». Les exceptions illustrées explicitement sont dans `pitfall.fen`; ailleurs, le repère textuel accompagne le modèle principal.
+Le lecteur suit les étapes réellement présentes : défi facultatif, écrans, exercices, pratique, carte à retenir. Chaque écran possède sa position et ses annotations. Les démonstrations sont commentées coup par coup, animées en 500 ms et contrôlées par l’élève. Le camp de l’élève reste stable pendant les explications ; le tour effectif est lu dans la position affichée. Les exercices utilisent leur propre camp.
 
-Le validateur contrôle FEN, lignes UCI, mats, pats, prérequis et cycles. Il vérifie aussi les écrans de 60 mots, phrases de 20 mots et l’absence de tirets interdits. Les ajustements éditoriaux restent courts et ne modifient pas le programme source. Quelques formulations trop absolues, notamment l’opposition et l’attaque à la découverte, sont précisées.
+`LessonRun` conserve l’index dans la solution, les erreurs et l’aide reçue. Les autres bons coups ne sont pas des erreurs. Après un mauvais coup, Stockfish cherche à profondeur 10 et montre sa réponse en rouge. Les indices arrivent après deux erreurs et la solution après trois. La progression de lecture, les parties et les révisions restent distinctes.
+
+Le validateur vérifie les positions (y compris le roi du camp qui ne joue pas), les lignes légales et commentées, les annonces de mat/pat, les prérequis, les termes introduits et la limite de 70 mots. L’audit moteur vérifie 107 défis/exercices à profondeur 16, MultiPV 10 ; une recherche ciblée traite une réponse absente des dix premières variantes. Son rapport est lié à chaque FEN et contrôlé par les tests. Les questions de case et les exercices de règle ne prétendent pas demander le meilleur coup.
+
+`curriculum/glossary.json` contient les définitions fournies et les termes supplémentaires du programme. Les termes sont accessibles dans les textes par un bouton souligné ; le dialogue affiche la définition et une position. `retenir` devient le texte de la carte de révision sans réinitialiser sa date ni ses réussites. Le tutoriel apparaît uniquement au premier lancement et reste accessible dans Réglages.
 
 ## Banque et classement
 

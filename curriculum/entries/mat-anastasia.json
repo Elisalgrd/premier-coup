@@ -1,44 +1,9 @@
 {
   "id": "mat-anastasia",
-  "title": "Le mat d'Anastasia",
   "tier": 2,
   "priority": "B",
-  "domain": "mats",
   "prerequisites": [
     "mat-arabian"
-  ],
-  "principle": "Le cavalier en e7 bloque des cases de fuite. La tour ou la dame mate sur la colonne h.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
-    "solution": [
-      "a3h3"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": "mate",
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
-      "move": "a3h3",
-      "text": "",
-      "arrows": [
-        [
-          "a3",
-          "h3"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "anastasiaMate"
@@ -55,21 +20,154 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "mats",
+  "title": "Le cavalier qui ferme les sorties du roi",
+  "introduces": [
+    "mat d’Anastasia"
+  ],
+  "challenge": {
+    "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
+    "solution": [
+      "a3h3"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en e7 ferme g6 et g8. Place ta tour sur la colonne du roi noir en h7.",
+    "accept": [
+      "a3h3"
+    ],
+    "alsoGood": [
+      "a3f3",
+      "a3g3",
+      "g1g2",
+      "g1f2",
+      "a3a6",
+      "g1h2",
+      "a3a8",
+      "a3b3",
+      "a3a4"
+    ],
+    "hint": "Suis la colonne h avec ta tour. Puis regarde g6, g7 et g8 une par une. Le cavalier surveille les deux cases libres ; le pion noir occupe celle du milieu.",
+    "success": "Ta tour arrive en h3. Elle attaque le roi noir en h7 sur toute la colonne h. Les cases voisines sur la colonne g sont occupées ou surveillées : le roi ne peut plus fuir."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Le cavalier en e7 bloque des cases de fuite. La tour ou la dame mate sur la colonne h.",
-      "audio": null
+      "step": "principe",
+      "title": "Le cavalier qui ferme les sorties du roi",
+      "text": "Le mat d’Anastasia utilise un cavalier pour fermer deux sorties d’un roi près du bord. Ici, ton cavalier en e7 surveille g6 et g8. Le pion noir en g7 bloque la troisième sortie.",
+      "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Suis la colonne h avec ta tour. Puis regarde g6, g7 et g8 une par une. Le cavalier surveille les deux cases libres ; le pion noir occupe celle du milieu.",
+      "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "a3",
+          "h3"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour en a3 va en h3 : le roi noir est attaqué sur la colonne h, sans aucune sortie.",
+      "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "a3h3",
+          "text": "La tour en a3 va en h3 : le roi noir est attaqué sur la colonne h, sans aucune sortie."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Ta tour arrive en h3. Elle attaque le roi noir en h7 sur toute la colonne h. Les cases voisines sur la colonne g sont occupées ou surveillées : le roi ne peut plus fuir.",
+      "fen": "8/4N1pk/8/8/8/7R/8/6K1 b - - 1 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Si le pion en g7 avait quitté sa case, le roi aurait peut-être une sortie. Ce dessin fonctionne grâce à toutes les pièces présentes, y compris le pion adverse.",
+      "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1"
     }
   ],
-  "examples": [
+  "exercises": [
     {
       "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
+      "solution": [
+        "a3h3"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Ton cavalier en e7 ferme g6 et g8. Place ta tour sur la colonne du roi noir en h7.",
+      "accept": [
+        "a3h3"
+      ],
+      "alsoGood": [
+        "a3f3",
+        "a3g3",
+        "g1g2",
+        "g1f2",
+        "a3a6",
+        "g1h2",
+        "a3a8",
+        "a3b3",
+        "a3a4"
+      ],
+      "hint": "Suis la colonne h avec ta tour. Puis regarde g6, g7 et g8 une par une. Le cavalier surveille les deux cases libres ; le pion noir occupe celle du milieu.",
+      "success": "Ta tour arrive en h3. Elle attaque le roi noir en h7 sur toute la colonne h. Les cases voisines sur la colonne g sont occupées ou surveillées : le roi ne peut plus fuir."
     }
   ],
-  "videos": []
+  "retenir": "Une tour attaque sur le bord pendant que le cavalier ferme les sorties vers l’intérieur.",
+  "review": {
+    "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
+    "solution": [
+      "a3h3"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en e7 ferme g6 et g8. Place ta tour sur la colonne du roi noir en h7.",
+    "accept": [
+      "a3h3"
+    ],
+    "alsoGood": [],
+    "hint": "Suis la colonne h avec ta tour. Puis regarde g6, g7 et g8 une par une. Le cavalier surveille les deux cases libres ; le pion noir occupe celle du milieu.",
+    "success": "Ta tour arrive en h3. Elle attaque le roi noir en h7 sur toute la colonne h. Les cases voisines sur la colonne g sont occupées ou surveillées : le roi ne peut plus fuir."
+  },
+  "contentVersion": 2,
+  "principle": "Une tour attaque sur le bord pendant que le cavalier ferme les sorties vers l’intérieur.",
+  "entryChallenge": {
+    "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
+    "solution": [
+      "a3h3"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en e7 ferme g6 et g8. Place ta tour sur la colonne du roi noir en h7.",
+    "accept": [
+      "a3h3"
+    ],
+    "alsoGood": [
+      "a3f3",
+      "a3g3",
+      "g1g2",
+      "g1f2",
+      "a3a6",
+      "g1h2",
+      "a3a8",
+      "a3b3",
+      "a3a4"
+    ],
+    "hint": "Suis la colonne h avec ta tour. Puis regarde g6, g7 et g8 une par une. Le cavalier surveille les deux cases libres ; le pion noir occupe celle du milieu.",
+    "success": "Ta tour arrive en h3. Elle attaque le roi noir en h7 sur toute la colonne h. Les cases voisines sur la colonne g sont occupées ou surveillées : le roi ne peut plus fuir.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

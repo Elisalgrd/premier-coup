@@ -1,44 +1,9 @@
 {
   "id": "mat-boden",
-  "title": "Le mat de Boden",
   "tier": 2,
   "priority": "B",
-  "domain": "mats",
   "prerequisites": [
     "tac-pin"
-  ],
-  "principle": "Deux fous sur des diagonales qui se croisent matent un roi roqué côté dame, bloqué par ses propres pièces.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
-    "solution": [
-      "e2a6"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": "mate",
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
-      "move": "e2a6",
-      "text": "",
-      "arrows": [
-        [
-          "e2",
-          "a6"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "bodenMate"
@@ -55,21 +20,124 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "mats",
+  "title": "Deux fous qui croisent leurs attaques",
+  "introduces": [
+    "mat de Boden"
+  ],
+  "challenge": {
+    "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
+    "solution": [
+      "e2a6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le fou en f4 surveille déjà plusieurs sorties. Avec ton fou en e2, attaque le roi en c8.",
+    "accept": [
+      "e2a6"
+    ],
+    "alsoGood": [],
+    "hint": "Suis d’abord la diagonale a6, b7, c8. Puis regarde les sorties b8, c7 et d7. Les deux fous se complètent sans attaquer les mêmes cases.",
+    "success": "Le fou arrive en a6 et attaque c8 par b7. Le fou en f4 ferme les sorties de l’autre côté. La tour noire en d8 et le pion en d7 gênent aussi leur propre roi."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Deux fous sur des diagonales qui se croisent matent un roi roqué côté dame, bloqué par ses propres pièces.",
-      "audio": null
+      "step": "principe",
+      "title": "Deux fous qui croisent leurs attaques",
+      "text": "Le mat de Boden utilise deux fous sur des diagonales différentes. Ici, ton fou en f4 surveille b8, c7 et d6. L’autre fou, en e2, peut attaquer le roi noir en c8.",
+      "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Suis d’abord la diagonale a6, b7, c8. Puis regarde les sorties b8, c7 et d7. Les deux fous se complètent sans attaquer les mêmes cases.",
+      "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "e2",
+          "a6"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le fou en e2 va en a6 : échec au roi en c8. L’autre fou et les pièces noires ferment les sorties.",
+      "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "e2a6",
+          "text": "Le fou en e2 va en a6 : échec au roi en c8. L’autre fou et les pièces noires ferment les sorties."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le fou arrive en a6 et attaque c8 par b7. Le fou en f4 ferme les sorties de l’autre côté. La tour noire en d8 et le pion en d7 gênent aussi leur propre roi.",
+      "fen": "2kr4/3p4/B7/8/5B2/8/8/6K1 b - - 1 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Un seul fou ne surveille qu’une couleur de cases. Pour enfermer le roi, il faut aussi fermer les cases de l’autre couleur. Ici, le deuxième fou et les pièces noires s’en chargent.",
+      "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1"
     }
   ],
-  "examples": [
+  "exercises": [
     {
       "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
+      "solution": [
+        "e2a6"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Le fou en f4 surveille déjà plusieurs sorties. Avec ton fou en e2, attaque le roi en c8.",
+      "accept": [
+        "e2a6"
+      ],
+      "alsoGood": [],
+      "hint": "Suis d’abord la diagonale a6, b7, c8. Puis regarde les sorties b8, c7 et d7. Les deux fous se complètent sans attaquer les mêmes cases.",
+      "success": "Le fou arrive en a6 et attaque c8 par b7. Le fou en f4 ferme les sorties de l’autre côté. La tour noire en d8 et le pion en d7 gênent aussi leur propre roi."
     }
   ],
-  "videos": []
+  "retenir": "Deux fous peuvent enfermer un roi en attaquant sur deux diagonales qui se complètent.",
+  "review": {
+    "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
+    "solution": [
+      "e2a6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le fou en f4 surveille déjà plusieurs sorties. Avec ton fou en e2, attaque le roi en c8.",
+    "accept": [
+      "e2a6"
+    ],
+    "alsoGood": [],
+    "hint": "Suis d’abord la diagonale a6, b7, c8. Puis regarde les sorties b8, c7 et d7. Les deux fous se complètent sans attaquer les mêmes cases.",
+    "success": "Le fou arrive en a6 et attaque c8 par b7. Le fou en f4 ferme les sorties de l’autre côté. La tour noire en d8 et le pion en d7 gênent aussi leur propre roi."
+  },
+  "contentVersion": 2,
+  "principle": "Deux fous peuvent enfermer un roi en attaquant sur deux diagonales qui se complètent.",
+  "entryChallenge": {
+    "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
+    "solution": [
+      "e2a6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le fou en f4 surveille déjà plusieurs sorties. Avec ton fou en e2, attaque le roi en c8.",
+    "accept": [
+      "e2a6"
+    ],
+    "alsoGood": [],
+    "hint": "Suis d’abord la diagonale a6, b7, c8. Puis regarde les sorties b8, c7 et d7. Les deux fous se complètent sans attaquer les mêmes cases.",
+    "success": "Le fou arrive en a6 et attaque c8 par b7. Le fou en f4 ferme les sorties de l’autre côté. La tour noire en d8 et le pion en d7 gênent aussi leur propre roi.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

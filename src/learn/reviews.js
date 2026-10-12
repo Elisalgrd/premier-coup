@@ -1,7 +1,7 @@
 import { dueCards, gradeCard } from "./srs.js";
 import { Board } from "../chess/board.js";
 import { Chess } from "../chess/chess.js";
-import { moveUci, sanFr } from "../chess/notation.js";
+import { moveUci, describeMove } from "../chess/notation.js";
 import { PuzzlePlayer } from "./puzzle-player.js";
 import { puzzleManifest } from "./puzzles.js";
 import { esc, $ } from "../ui/helpers.js";
@@ -58,16 +58,18 @@ export async function startReviews(
       g = new Chess(challenge.fen);
     let clean = true,
       done = false;
-    root.innerHTML = `<a href="#train" class="back-link">← S’entraîner</a><header class="activity-header"><div><span class="eyebrow">RÉVISION ${index + 1} / ${cards.length}</span><h1>Retrouve le repère.</h1></div></header><div class="play-layout"><div id="review-board"></div><section class="play-coach"><p>${esc(challenge.prompt || "Trouve le meilleur coup.")}</p><div id="review-feedback" role="status"></div><button id="review-help" class="button secondary">Revoir le principe</button><button id="review-next" class="button primary" hidden>Suivante →</button></section></div>`;
+    root.innerHTML = `<a href="#train" class="back-link">← S’entraîner</a><header class="activity-header"><div><span class="eyebrow">RÉVISION ${index + 1} / ${cards.length}</span><h1>Retrouve l’idée que tu as apprise.</h1></div></header><div class="play-layout"><div id="review-board"></div><section class="play-coach"><p>${esc(challenge.prompt || "Trouve le meilleur coup.")}</p><div id="review-feedback" role="status"></div><button id="review-help" class="button secondary">Revoir le principe</button><button id="review-next" class="button primary" hidden>Suivante →</button></section></div>`;
     const answer = (m) => {
       if (done) return;
-      let ok = challenge.solution.includes(m),
+      let ok = (challenge.accept || challenge.solution).includes(m),
         made;
       if (challenge.mode !== "square") {
         const test = new Chess(g.fen());
         try {
           made = moveUci(test, m);
-          ok = m === challenge.solution[0] || test.isCheckmate();
+          ok =
+            (challenge.accept || [challenge.solution[0]]).includes(m) ||
+            test.isCheckmate();
           if (ok) board.animate(test.fen(), m);
         } catch {
           return;
@@ -82,11 +84,14 @@ export async function startReviews(
         $("#review-next", root).hidden = false;
         $("#review-help", root).hidden = true;
         $("#review-feedback", root).innerHTML =
-          `<p class="feedback correct">${made ? sanFr(made.san) + ". " : ""}${esc(c.principle || "Tu as retrouvé le coup.")}</p>`;
+          `<p class="feedback correct">${made ? describeMove(made) + " " : ""}${esc(c.principle || "Tu as retrouvé le coup.")}</p>`;
+      } else if (challenge.alsoGood?.includes(m)) {
+        $("#review-feedback", root).textContent =
+          "Bon coup. Essaie maintenant de retrouver l’idée de cette fiche.";
       } else {
         clean = false;
         $("#review-feedback", root).innerHTML =
-          '<p class="feedback wrong">Ce coup ne retrouve pas le repère. Vérifie la réponse adverse, puis essaie encore.</p>';
+          '<p class="feedback wrong">Pas tout à fait. Regarde quelles pièces peuvent être prises après ton coup.</p>';
       }
     };
     board = new Board($("#review-board", root), {

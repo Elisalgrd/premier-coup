@@ -1,49 +1,9 @@
 {
   "id": "vis-draws",
-  "title": "Les nulles qui sauvent et celles qui gâchent",
   "tier": 0,
   "priority": "A",
-  "domain": "vision",
   "prerequisites": [
     "vis-rules"
-  ],
-  "principle": "Devant au matériel, évite le pat et la répétition. Derrière, cherche-les.",
-  "why": [
-    "Un pat dans une position gagnée est la défaite la plus frustrante. Un pat ou un échec perpétuel peut sauver une position perdue."
-  ],
-  "signals": [],
-  "method": [
-    "Quand tu es largement devant : avant chaque coup, vérifie que l'adversaire aura encore un coup légal.",
-    "Quand tu es largement derrière : cherche à n'avoir plus aucun coup légal sauf de roi (sacrifier ses dernières pièces peut créer le pat), ou un échec perpétuel avec ta dame.",
-    "Répétition : si l'adversaire répète, change de plan si tu es devant."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4Q3/1p4R1/3k1r2/3P2p1/1P4P1/6K1/5r2/8 b - - 3 58",
-    "solution": [
-      "f6f3"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/4jWb7",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "4Q3/1p4R1/3k1r2/3P2p1/1P4P1/6K1/5r2/8 b - - 3 58",
-      "move": "f6f3",
-      "text": "",
-      "arrows": [
-        [
-          "f6",
-          "f3"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "endgame"
@@ -60,25 +20,107 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "vision",
+  "title": "Les parties sans gagnant",
+  "introduces": [],
+  "challenge": {
+    "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+    "kind": "square",
+    "solution": [
+      "h8"
+    ],
+    "check": "rule",
+    "prompt": "Touche le roi qui ne peut plus jouer, alors qu’aucune pièce ne l’attaque.",
+    "accept": [
+      "h8"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case h8.",
+    "success": "La dame blanche en f7 surveille g8 et h7. Le roi blanc en g6 surveille g7. Les noirs ne peuvent rien jouer, mais leur roi n’est pas attaqué. Les blancs ne gagnent donc pas."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Devant au matériel, évite le pat et la répétition. Derrière, cherche-les.",
-      "audio": null
+      "step": "principe",
+      "title": "Les parties sans gagnant",
+      "text": "Une partie nulle, c’est une partie sans gagnant. Ici, le roi noir en h8 n’est pas attaqué, mais il ne peut aller nulle part. Ce blocage s’appelle le pat.",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+      "marks": [
+        "h8"
+      ]
     },
     {
-      "title": "Pourquoi",
-      "text": "Un pat dans une position gagnée est la défaite la plus frustrante. Un pat ou un échec perpétuel peut sauver une position perdue.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Avant un coup de dame près du roi adverse, regarde ses sorties. S’il ne pourra plus jouer, ton coup doit attaquer son roi. Sinon, tu risques de transformer une victoire en partie nulle.",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+      "arrows": []
     },
     {
-      "title": "Méthode",
-      "text": "Si tu es largement derrière, cherche une ressource de pat. Sacrifier tes dernières pièces peut supprimer tes coups légaux. Cherche aussi un échec perpétuel avec ta dame.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La dame blanche en f7 surveille g8 et h7. Le roi blanc en g6 surveille g7. Les noirs ne peuvent rien jouer, mais leur roi n’est pas attaqué. Les blancs ne gagnent donc pas.",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "On peut aussi réclamer une partie nulle si une même position revient trois fois avec le même camp à jouer. Rejouer trois fois le même coup ne suffit pas si le reste de la position change.",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+      "kind": "square",
+      "solution": [
+        "h8"
+      ],
+      "check": "rule",
+      "prompt": "Touche le roi qui ne peut plus jouer, alors qu’aucune pièce ne l’attaque.",
+      "accept": [
+        "h8"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case h8.",
+      "success": "La dame blanche en f7 surveille g8 et h7. Le roi blanc en g6 surveille g7. Les noirs ne peuvent rien jouer, mais leur roi n’est pas attaqué. Les blancs ne gagnent donc pas."
+    }
+  ],
+  "retenir": "Un roi sans coup possible n’est pas forcément battu. S’il n’est pas attaqué, la partie est nulle.",
+  "review": {
+    "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+    "kind": "square",
+    "solution": [
+      "h8"
+    ],
+    "check": "rule",
+    "prompt": "Touche le roi qui ne peut plus jouer, alors qu’aucune pièce ne l’attaque.",
+    "accept": [
+      "h8"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case h8.",
+    "success": "La dame blanche en f7 surveille g8 et h7. Le roi blanc en g6 surveille g7. Les noirs ne peuvent rien jouer, mais leur roi n’est pas attaqué. Les blancs ne gagnent donc pas."
+  },
+  "contentVersion": 2,
+  "principle": "Un roi sans coup possible n’est pas forcément battu. S’il n’est pas attaqué, la partie est nulle.",
+  "entryChallenge": {
+    "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+    "kind": "square",
+    "solution": [
+      "h8"
+    ],
+    "check": "rule",
+    "prompt": "Touche le roi qui ne peut plus jouer, alors qu’aucune pièce ne l’attaque.",
+    "accept": [
+      "h8"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case h8.",
+    "success": "La dame blanche en f7 surveille g8 et h7. Le roi blanc en g6 surveille g7. Les noirs ne peuvent rien jouer, mais leur roi n’est pas attaqué. Les blancs ne gagnent donc pas.",
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

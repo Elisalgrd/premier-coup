@@ -31,7 +31,7 @@ export async function startPuzzles(ctx, root, theme = "mixed", options = {}) {
         );
       if (!rows.length) {
         root.innerHTML =
-          '<h1>Ce thème est à jour.</h1><p>Tu as déjà vu ces positions récemment. Change de thème ou retrouve tes révisions.</p><a class="button primary" href="#train/reviews">Mes révisions →</a>';
+          '<h1>Tu as déjà vu ces positions récemment.</h1><p>Tu as déjà vu ces positions récemment. Change de thème ou retrouve tes révisions.</p><a class="button primary" href="#train/reviews">Mes révisions →</a>';
         return;
       }
       player = new PuzzlePlayer(ctx, rows, data.manifest, {

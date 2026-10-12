@@ -1,5 +1,12 @@
 import { Chess } from "../chess/chess.js";
-import { moveUci, sanFr, uci, material, pieceName } from "../chess/notation.js";
+import {
+  moveUci,
+  sanFr,
+  uci,
+  material,
+  pieceName,
+  describeMove,
+} from "../chess/notation.js";
 let manifestPromise;
 const shardCache = new Map();
 export const puzzleManifest = () =>
@@ -73,6 +80,7 @@ export class PuzzleRun {
           reply = {
             move: uci(candidate),
             san: sanFr(candidate.san),
+            description: describeMove(candidate),
             fen: g.fen(),
             mate: g.isCheckmate(),
           };
@@ -81,9 +89,9 @@ export class PuzzleRun {
       }
       return {
         ok: false,
-        played: sanFr(made.san),
+        played: describeMove(made),
         fen: after.fen(),
-        expected: sanFr(best.san),
+        expected: describeMove(best),
         arrow: [best.from, best.to],
         reply,
         loss: gain,
@@ -97,6 +105,7 @@ export class PuzzleRun {
       move,
       fen: after.fen(),
       san: sanFr(made.san),
+      description: describeMove(made),
       finished: this.finished,
     };
   }
@@ -105,7 +114,12 @@ export class PuzzleRun {
     const move = this.line[this.index++],
       made = moveUci(this.game, move);
     this.finished = this.index >= this.line.length;
-    return { move, fen: this.game.fen(), san: sanFr(made.san) };
+    return {
+      move,
+      fen: this.game.fen(),
+      san: sanFr(made.san),
+      description: describeMove(made),
+    };
   }
   snapshot() {
     return {

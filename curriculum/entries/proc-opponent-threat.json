@@ -1,55 +1,9 @@
 {
   "id": "proc-opponent-threat",
-  "title": "Que veut son dernier coup ?",
   "tier": 1,
   "priority": "S",
-  "domain": "réflexes",
   "prerequisites": [
     "proc-blunder-check"
-  ],
-  "principle": "Chaque coup adverse change quelque chose. Trouve quoi avant de penser à ton plan.",
-  "why": [
-    "On joue souvent « son » coup prévu sans voir que l'adversaire vient de créer une menace. Inspiré du principe de Julien Song « commencer par la menace adverse »."
-  ],
-  "signals": [
-    "une pièce adverse vient d'arriver près de ton roi",
-    "une ligne vient de s'ouvrir",
-    "une de tes pièces vient de perdre un défenseur",
-    "un pion adverse avance vers tes pièces."
-  ],
-  "method": [
-    "Qu'attaque maintenant la pièce qui a bougé ?",
-    "Qu'attaque la pièce qui était derrière elle (découverte) ?",
-    "Qu'est-ce que cette pièce ne défend plus ?",
-    "Si une menace existe, compare quatre réponses : défendre la cible, prendre l'attaquant, s'interposer, déplacer la cible avec gain de temps (en créant soi-même une menace)."
-  ],
-  "pitfall": {
-    "text": "Répondre à une menace en en créant une plus grosse (contre-attaque) est parfois meilleur. Mais seulement si ta menace est vraiment plus forte et forcée (échec, mat, gain de dame).",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "5r1k/p5pp/8/2b5/1p6/1Q3PqR/PPP5/5R1K b - - 0 35",
-    "solution": [
-      "g3h3"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/pO2rt",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "5r1k/p5pp/8/2b5/1p6/1Q3PqR/PPP5/5R1K b - - 0 35",
-      "move": "g3h3",
-      "text": "",
-      "arrows": [
-        [
-          "g3",
-          "h3"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "defensiveMove",
@@ -72,50 +26,149 @@
     }
   ],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "réflexes",
+  "title": "Que veut son dernier coup ?",
+  "introduces": [
+    "menace",
+    "plan"
+  ],
+  "challenge": {
+    "kind": "square",
+    "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+    "arrows": [
+      [
+        "c6",
+        "a5"
+      ]
+    ],
+    "prompt": "Les noirs viennent de jouer leur cavalier de c6 en a5 (la flèche). Une de tes pièces est maintenant attaquée. Touche-la.",
+    "solution": [
+      "c4"
+    ],
+    "check": "exact",
+    "hint": "Regarde les cases que le cavalier en a5 peut atteindre en L.",
+    "accept": [
+      "c4"
+    ]
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Chaque coup adverse change quelque chose. Trouve quoi avant de penser à ton plan.",
-      "audio": null
+      "step": "principe",
+      "title": "Chaque coup adverse a une raison",
+      "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+      "arrows": [
+        [
+          "a5",
+          "c4"
+        ]
+      ],
+      "marks": [
+        "c4"
+      ],
+      "text": "Une « menace », c’est ce que l’adversaire pourrait faire de dangereux au prochain coup si tu ne réagis pas. Après chaque coup adverse, avant de penser à ton plan (une idée pour tes prochains coups), demande-toi : « Pourquoi il a joué ça ? » Ici, son cavalier attaque ton fou en c4, que personne ne protège."
     },
     {
-      "title": "Pourquoi",
-      "text": "On joue souvent « son » coup prévu sans voir que l'adversaire vient de créer une menace. Inspiré du principe de Julien Song « commencer par la menace adverse ».",
-      "audio": null
+      "step": "methode",
+      "title": "Trois questions à poser",
+      "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+      "arrows": [
+        [
+          "a5",
+          "c4"
+        ]
+      ],
+      "text": "Un : qu’attaque la pièce qui vient de bouger ? Deux : la pièce a-t-elle libéré une ligne pour une autre pièce derrière elle ? Trois : qu’est-ce que cette pièce ne protège plus, maintenant qu’elle est partie ?"
     },
     {
-      "title": "Signaux",
-      "text": "Une pièce adverse vient d'arriver près de ton roi. Une ligne vient de s'ouvrir. Une de tes pièces vient de perdre un défenseur. Un pion adverse avance vers tes pièces.",
-      "audio": null
+      "step": "methode",
+      "title": "Quatre façons de répondre",
+      "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+      "arrows": [
+        [
+          "c4",
+          "d5"
+        ],
+        [
+          "e1",
+          "e4"
+        ]
+      ],
+      "text": "Face à une menace, tu peux : déplacer la pièce attaquée (ton fou peut aller en d5), la protéger (ta dame peut aller en e4 pour la protéger), prendre la pièce qui attaque si c’est sans danger, ou créer une menace plus grosse encore. Compare avant de choisir."
     },
     {
-      "title": "Méthode",
-      "text": "Qu'attaque maintenant la pièce qui a bougé ?",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Qu'attaque la pièce qui était derrière elle (découverte) ?",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Qu'est-ce que cette pièce ne défend plus ?",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Compare quatre réponses : défendre, prendre l’attaquant, s’interposer ou déplacer la cible. Cherche si ta réponse crée aussi une menace.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Répondre à une menace en en créant une plus grosse (contre-attaque) est parfois meilleur. Mais seulement si ta menace est vraiment plus forte et forcée (échec, mat, gain de dame).",
-      "audio": null
+      "step": "piege",
+      "title": "Prendre l’attaquant ? Vérifie d’abord",
+      "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+      "line": [
+        {
+          "uci": "e1a5",
+          "text": "Ta dame prend le cavalier en a5. Ça a l’air malin..."
+        },
+        {
+          "uci": "d8a5",
+          "text": "...mais la dame noire en d8 surveillait a5 par la diagonale. Elle reprend : tu as perdu ta dame (9 points) contre un cavalier (3)."
+        }
+      ],
+      "text": "Prendre la pièce qui attaque est souvent une bonne idée, mais seulement si personne ne la protège. Regarde."
     }
   ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+      "prompt": "Ton fou en c4 est attaqué par le cavalier. Mets-le à l’abri ou protège-le, sans rien perdre.",
+      "solution": [
+        "c4d5"
+      ],
+      "check": "list",
+      "accept": [
+        "c4d5",
+        "c4a2",
+        "c4b5",
+        "e1e4",
+        "e1e2"
+      ],
+      "success": "Ton fou n’est plus perdu. C’était exactement ce que la question « que veut son dernier coup ? » devait te faire voir.",
+      "hint": "Ton fou peut reculer sur une case où rien ne l’attaque, ou ta dame peut venir le protéger.",
+      "engine": {
+        "best": "e1c3",
+        "score": 625,
+        "depth": 16
+      },
+      "alsoGood": [
+        "e1d1",
+        "e1c3",
+        "e1c1",
+        "c4e2",
+        "e1b4"
+      ]
+    }
+  ],
+  "retenir": "Après chaque coup adverse : qu’attaque-t-il, qu’a-t-il libéré, que ne protège-t-il plus ?",
+  "contentVersion": 2,
+  "principle": "Après chaque coup adverse : qu’attaque-t-il, qu’a-t-il libéré, que ne protège-t-il plus ?",
+  "entryChallenge": {
+    "kind": "square",
+    "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+    "arrows": [
+      [
+        "c6",
+        "a5"
+      ]
+    ],
+    "prompt": "Les noirs viennent de jouer leur cavalier de c6 en a5 (la flèche). Une de tes pièces est maintenant attaquée. Touche-la.",
+    "solution": [
+      "c4"
+    ],
+    "check": "exact",
+    "hint": "Regarde les cases que le cavalier en a5 peut atteindre en L.",
+    "accept": [
+      "c4"
+    ],
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

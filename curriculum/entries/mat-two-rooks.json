@@ -1,77 +1,9 @@
 {
   "id": "mat-two-rooks",
-  "title": "Le mat de l'escalier (deux tours ou dame + tour)",
   "tier": 0,
   "priority": "S",
-  "domain": "mats",
   "prerequisites": [
     "vis-rules"
-  ],
-  "principle": "Une tour coupe une rangée, l'autre donne échec sur la rangée suivante. On alterne jusqu'au bord.",
-  "why": [
-    "C'est le mat le plus simple, il n'a même pas besoin du roi. Il revient sans cesse en fin de partie."
-  ],
-  "signals": [],
-  "method": [
-    "Une tour contrôle la rangée (ou la colonne) devant le roi adverse.",
-    "L'autre donne échec sur la rangée où il se trouve : il doit reculer.",
-    "La première tour passe devant et donne échec à son tour.",
-    "Si le roi adverse s'approche d'une tour, éloigne-la sur l'autre côté de l'échiquier, puis reprends."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/8/8/8/8/8/R7/1R4K1 w - - 0 1",
-    "solution": [
-      "a2a7",
-      "g8f8",
-      "b1b8"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": "mate",
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "6k1/8/8/8/8/8/R7/1R4K1 w - - 0 1",
-      "move": "a2a7",
-      "text": "",
-      "arrows": [
-        [
-          "a2",
-          "a7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "6k1/R7/8/8/8/8/8/1R4K1 b - - 1 1",
-      "move": "g8f8",
-      "text": "",
-      "arrows": [
-        [
-          "g8",
-          "f8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "5k2/R7/8/8/8/8/8/1R4K1 w - - 2 2",
-      "move": "b1b8",
-      "text": "",
-      "arrows": [
-        [
-          "b1",
-          "b8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "mateIn2",
@@ -89,46 +21,107 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "mats",
+  "title": "Le mat de l’escalier",
+  "introduces": [],
+  "challenge": {
+    "fen": "6k1/R7/8/8/8/8/8/1R4K1 w - - 0 1",
+    "prompt": "Tu as deux tours. Ta tour en a7 empêche déjà le roi noir de descendre. Fais mat en un coup avec l’autre tour.",
+    "solution": [
+      "b1b8"
+    ],
+    "check": "mate",
+    "hint": "Ta tour en b1 peut monter tout en haut.",
+    "accept": [
+      "b1b8"
+    ],
+    "kind": "move",
+    "alsoGood": [
+      "b1b5",
+      "b1b2",
+      "b1f1",
+      "b1b4",
+      "b1b7",
+      "b1d1",
+      "b1b3",
+      "b1b6",
+      "a7c7"
+    ]
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Une tour coupe une rangée, l'autre donne échec sur la rangée suivante. On alterne jusqu'au bord.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "C'est le mat le plus simple, il n'a même pas besoin du roi. Il revient sans cesse en fin de partie.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Une tour contrôle la rangée (ou la colonne) devant le roi adverse.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "L'autre donne échec sur la rangée où il se trouve : il doit reculer.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "La première tour passe devant et donne échec à son tour.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Si le roi adverse s'approche d'une tour, éloigne-la sur l'autre côté de l'échiquier, puis reprends.",
-      "audio": null
-    }
-  ],
-  "examples": [
-    {
+      "step": "principe",
+      "title": "Deux tours qui montent un escalier",
       "fen": "6k1/8/8/8/8/8/R7/1R4K1 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
+      "text": "Avec deux tours, pas besoin de ton roi. Une tour coupe la route au roi adverse (il ne peut pas traverser sa ligne), l’autre lui donne échec sur la ligne d’après. Elles avancent à tour de rôle, comme si elles montaient un escalier."
+    },
+    {
+      "step": "exemple",
+      "title": "La démonstration",
+      "fen": "6k1/8/8/8/8/8/R7/1R4K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "a2a7",
+          "text": "La tour monte en a7 : le roi noir ne peut plus descendre sur la 7e rangée."
+        },
+        {
+          "uci": "g8f8",
+          "text": "Le roi noir ne peut que se déplacer le long de la dernière rangée."
+        },
+        {
+          "uci": "b1b8",
+          "text": "L’autre tour monte en b8 : échec sur la dernière rangée, et la 7e rangée est déjà fermée. Échec et mat."
+        }
+      ],
+      "text": "Regarde les tours travailler ensemble."
+    },
+    {
+      "step": "piege",
+      "title": "Garde tes tours loin du roi",
+      "fen": "8/8/8/8/8/2k5/1R6/R5K1 b - - 0 1",
+      "arrows": [
+        [
+          "c3",
+          "b2"
+        ]
+      ],
+      "marks": [
+        "b2"
+      ],
+      "text": "Si le roi adverse s’approche d’une de tes tours, il peut la prendre quand elle n’est pas protégée. Ici, le roi noir en c3 attaque la tour en b2. Dans ce cas, éloigne la tour à l’autre bout de sa ligne, puis reprends l’escalier."
     }
   ],
-  "videos": []
+  "exercises": [],
+  "retenir": "Une tour ferme une ligne, l’autre donne échec sur la suivante. Garde-les loin du roi adverse.",
+  "contentVersion": 2,
+  "principle": "Une tour ferme une ligne, l’autre donne échec sur la suivante. Garde-les loin du roi adverse.",
+  "entryChallenge": {
+    "fen": "6k1/R7/8/8/8/8/8/1R4K1 w - - 0 1",
+    "prompt": "Tu as deux tours. Ta tour en a7 empêche déjà le roi noir de descendre. Fais mat en un coup avec l’autre tour.",
+    "solution": [
+      "b1b8"
+    ],
+    "check": "mate",
+    "hint": "Ta tour en b1 peut monter tout en haut.",
+    "accept": [
+      "b1b8"
+    ],
+    "kind": "move",
+    "alsoGood": [
+      "b1b5",
+      "b1b2",
+      "b1f1",
+      "b1b4",
+      "b1b7",
+      "b1d1",
+      "b1b3",
+      "b1b6",
+      "a7c7"
+    ],
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

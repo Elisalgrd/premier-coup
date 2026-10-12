@@ -1,31 +1,10 @@
 {
   "id": "str-weak-squares",
-  "title": "Cases faibles et trous",
   "tier": 4,
   "priority": "B",
-  "domain": "stratégie",
   "prerequisites": [
     "str-pawn-structure"
   ],
-  "principle": "Une case qu'aucun pion ne peut plus défendre est une case faible ; si elle est près du roi ou au centre, installe-toi dessus.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
-    "solution": [
-      "d5"
-    ],
-    "prompt": "Touche la case centrale qu’aucun pion noir ne pourra attaquer.",
-    "mode": "square",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [],
   "lichessThemes": [],
   "ratingBand": [
     400,
@@ -39,16 +18,110 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "plan-choice",
+  "domain": "stratégie",
+  "title": "Une case que les pions ne peuvent plus protéger",
+  "introduces": [
+    "case faible"
+  ],
+  "challenge": {
+    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "d5"
+    ],
+    "kind": "square",
+    "check": "list",
+    "prompt": "Touche la case d5 : vérifie pourquoi aucun pion noir ne pourra y prendre ton cavalier.",
+    "accept": [
+      "d5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case d5.",
+    "success": "Ton cavalier peut utiliser d5. Les pions blancs en c4 et e4 protègent cette case, tandis que le pion noir en d6 ne peut pas attaquer devant lui."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Une case qu'aucun pion ne peut plus défendre est une case faible. Si elle est près du roi ou au centre, installe-toi dessus.",
-      "audio": null
+      "step": "principe",
+      "title": "Une case que les pions ne peuvent plus protéger",
+      "text": "Une case faible est une case qu’aucun pion du camp concerné ne peut plus défendre. Ici, d5 est faible pour les noirs : leurs pions c et e ont disparu.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "marks": [
+        "d5"
+      ]
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde les colonnes voisines de d5. Un pion noir devrait venir de c6 ou e6 pour la prendre. Sans pions sur ces colonnes, cette attaque ne pourra pas arriver.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Ton cavalier peut utiliser d5. Les pions blancs en c4 et e4 protègent cette case, tandis que le pion noir en d6 ne peut pas attaquer devant lui.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "« Faible » ne veut pas dire sans aucune protection. Un fou, un cavalier ou une tour peuvent surveiller la case. Le mot parle ici des pions seulement.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "solution": [
+        "d5"
+      ],
+      "kind": "square",
+      "check": "list",
+      "prompt": "Touche la case d5 : vérifie pourquoi aucun pion noir ne pourra y prendre ton cavalier.",
+      "accept": [
+        "d5"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case d5.",
+      "success": "Ton cavalier peut utiliser d5. Les pions blancs en c4 et e4 protègent cette case, tandis que le pion noir en d6 ne peut pas attaquer devant lui."
+    }
+  ],
+  "retenir": "Avant d’installer une pièce, regarde si les pions adverses pourront encore la chasser.",
+  "review": {
+    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "d5"
+    ],
+    "kind": "square",
+    "check": "list",
+    "prompt": "Touche la case d5 : vérifie pourquoi aucun pion noir ne pourra y prendre ton cavalier.",
+    "accept": [
+      "d5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case d5.",
+    "success": "Ton cavalier peut utiliser d5. Les pions blancs en c4 et e4 protègent cette case, tandis que le pion noir en d6 ne peut pas attaquer devant lui."
+  },
+  "contentVersion": 2,
+  "principle": "Avant d’installer une pièce, regarde si les pions adverses pourront encore la chasser.",
+  "entryChallenge": {
+    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "d5"
+    ],
+    "kind": "square",
+    "check": "list",
+    "prompt": "Touche la case d5 : vérifie pourquoi aucun pion noir ne pourra y prendre ton cavalier.",
+    "accept": [
+      "d5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case d5.",
+    "success": "Ton cavalier peut utiliser d5. Les pions blancs en c4 et e4 protègent cette case, tandis que le pion noir en d6 ne peut pas attaquer devant lui.",
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "plan-choice",
-  "videos": []
+  "pitfall": {}
 }

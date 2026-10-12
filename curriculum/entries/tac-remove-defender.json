@@ -1,79 +1,9 @@
 {
   "id": "tac-remove-defender",
-  "title": "Éliminer le défenseur",
   "tier": 2,
   "priority": "S",
-  "domain": "tactique",
   "prerequisites": [
     "proc-exchange-count"
-  ],
-  "principle": "Si une pièce adverse n'est défendue qu'une fois, prends ou chasse son défenseur. La pièce devient gratuite.",
-  "why": [
-    "Beaucoup de pièces « défendues » ne tiennent que par un seul fil. Couper ce fil, même en sacrifiant de la valeur, peut rapporter plus."
-  ],
-  "signals": [
-    "une cible attaquée par toi et défendue une seule fois",
-    "le défenseur peut être pris, échangé ou attaqué par un pion."
-  ],
-  "method": [
-    "Pour chaque pièce adverse intéressante, liste ses défenseurs.",
-    "S'il n'y en a qu'un, cherche à le prendre, l'échanger, le chasser ou le clouer.",
-    "Puis prends la cible.",
-    "Compte le bilan total de l'opération."
-  ],
-  "pitfall": {
-    "text": "Le défenseur que tu prends est peut-être repris par une autre pièce qui défend aussi la cible.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "r4rk1/1pq2pbp/p3b1p1/P1Q1p3/2B1P3/4B2P/1PP2PP1/R4RK1 b - - 0 17",
-    "solution": [
-      "c7c5",
-      "e3c5",
-      "e6c4"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/edvJN",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "r4rk1/1pq2pbp/p3b1p1/P1Q1p3/2B1P3/4B2P/1PP2PP1/R4RK1 b - - 0 17",
-      "move": "c7c5",
-      "text": "",
-      "arrows": [
-        [
-          "c7",
-          "c5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r4rk1/1p3pbp/p3b1p1/P1q1p3/2B1P3/4B2P/1PP2PP1/R4RK1 w - - 0 18",
-      "move": "e3c5",
-      "text": "",
-      "arrows": [
-        [
-          "e3",
-          "c5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r4rk1/1p3pbp/p3b1p1/P1B1p3/2B1P3/7P/1PP2PP1/R4RK1 b - - 0 18",
-      "move": "e6c4",
-      "text": "",
-      "arrows": [
-        [
-          "e6",
-          "c4"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "capturingDefender"
@@ -90,50 +20,140 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Éliminer le défenseur",
+  "introduces": [
+    "défenseur",
+    "case de fuite"
+  ],
+  "challenge": {
+    "fen": "6k1/3r1pp1/5n1p/6B1/Q7/7P/5PP1/R5K1 w - - 0 1",
+    "prompt": "La tour noire en d7 est attaquée par ta dame, mais le cavalier en f6 la protège. Trouve comment la gagner.",
+    "solution": [
+      "g5f6"
+    ],
+    "check": "list",
+    "accept": [
+      "g5f6"
+    ],
+    "hint": "Et si le cavalier n’était plus là ?",
+    "engine": {
+      "best": "a1a8",
+      "score": 99997,
+      "depth": 16
+    },
+    "alsoGood": [
+      "a4a8"
+    ],
+    "kind": "move"
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Si une pièce adverse n'est défendue qu'une fois, prends ou chasse son défenseur. La pièce devient gratuite.",
-      "audio": null
+      "step": "principe",
+      "title": "Une seule pièce tient tout",
+      "fen": "6k1/3r1pp1/5n1p/6B1/Q7/7P/5PP1/R5K1 w - - 0 1",
+      "arrows": [
+        [
+          "a4",
+          "d7"
+        ],
+        [
+          "f6",
+          "d7"
+        ]
+      ],
+      "marks": [
+        "f6"
+      ],
+      "text": "Le « défenseur », c’est la pièce qui protège une autre pièce. Quand une pièce adverse n’est protégée qu’une seule fois, il suffit de faire disparaître ce défenseur pour qu’elle devienne gratuite. Ici, la tour en d7 ne tient que grâce au cavalier en f6. Ta tour en a1 garde ta dernière rangée."
     },
     {
-      "title": "Pourquoi",
-      "text": "Beaucoup de pièces « défendues » ne tiennent que par un seul fil. Couper ce fil, même en sacrifiant de la valeur, peut rapporter plus.",
-      "audio": null
+      "step": "exemple",
+      "title": "On prend le défenseur",
+      "fen": "6k1/3r1pp1/5n1p/6B1/Q7/7P/5PP1/R5K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "g5f6",
+          "text": "Ton fou prend le cavalier qui protégeait la tour."
+        },
+        {
+          "uci": "g7f6",
+          "text": "Le pion noir reprend ton fou. Fou contre cavalier : pour l’instant, c’est égal."
+        },
+        {
+          "uci": "a4d7",
+          "text": "Mais la tour n’a plus de défenseur : ta dame la prend. Tu as gagné 5 points."
+        }
+      ],
+      "text": "Regarde comment on fait tomber la tour."
     },
     {
-      "title": "Signaux",
-      "text": "Une cible attaquée par toi et défendue une seule fois. Le défenseur peut être pris, échangé ou attaqué par un pion.",
-      "audio": null
+      "step": "methode",
+      "title": "La méthode",
+      "fen": "6k1/3r1pp1/5n1p/6B1/Q7/7P/5PP1/R5K1 w - - 0 1",
+      "text": "Un : pour chaque pièce adverse intéressante, cherche qui la protège. Deux : s’il n’y a qu’un défenseur, cherche à le prendre, à l’échanger ou à le chasser. Trois : prends la cible. Quatre : fais le compte des points de toute l’opération."
     },
     {
-      "title": "Méthode",
-      "text": "Pour chaque pièce adverse intéressante, liste ses défenseurs.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "S'il n'y en a qu'un, cherche à le prendre, l'échanger, le chasser ou le clouer.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Puis prends la cible.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Compte le bilan total de l'opération.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Le défenseur que tu prends est peut-être repris par une autre pièce qui défend aussi la cible.",
-      "audio": null
+      "step": "piege",
+      "title": "Vérifie ta propre sécurité",
+      "fen": "6k1/3r1ppp/5n2/1Q4B1/8/8/5PPP/6K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "g5f6",
+          "text": "Même idée, mais ici ton roi n’a pas de case de fuite (une case où le roi peut s’échapper) et aucune tour ne garde ta dernière rangée."
+        },
+        {
+          "uci": "d7d1",
+          "text": "La tour noire s’échappe en descendant en d1 : échec sur ta dernière rangée."
+        },
+        {
+          "uci": "b5f1",
+          "text": "Ta dame doit revenir se mettre devant pour éviter le mat..."
+        },
+        {
+          "uci": "d1f1",
+          "text": "...et la tour la prend, avec échec."
+        },
+        {
+          "uci": "g1f1",
+          "text": "Ton roi reprend la tour."
+        },
+        {
+          "uci": "g7f6",
+          "text": "Et le pion reprend ton fou. Bilan : tu as perdu ta dame et ton fou contre une tour et un cavalier."
+        }
+      ],
+      "text": "Avant de lancer l’opération, fais toujours la vérification : après mon coup, qu’est-ce qu’il peut faire ? Regarde la même idée dans une position un peu différente."
     }
   ],
+  "exercises": [],
+  "retenir": "Si une pièce adverse n’est protégée qu’une fois, fais disparaître son défenseur. Mais vérifie d’abord ta propre sécurité.",
+  "contentVersion": 2,
+  "principle": "Si une pièce adverse n’est protégée qu’une fois, fais disparaître son défenseur. Mais vérifie d’abord ta propre sécurité.",
+  "entryChallenge": {
+    "fen": "6k1/3r1pp1/5n1p/6B1/Q7/7P/5PP1/R5K1 w - - 0 1",
+    "prompt": "La tour noire en d7 est attaquée par ta dame, mais le cavalier en f6 la protège. Trouve comment la gagner.",
+    "solution": [
+      "g5f6"
+    ],
+    "check": "list",
+    "accept": [
+      "g5f6"
+    ],
+    "hint": "Et si le cavalier n’était plus là ?",
+    "engine": {
+      "best": "a1a8",
+      "score": 99997,
+      "depth": 16
+    },
+    "alsoGood": [
+      "a4a8"
+    ],
+    "kind": "move",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

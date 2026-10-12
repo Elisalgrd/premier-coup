@@ -1,71 +1,9 @@
 {
   "id": "str-prophylaxis",
-  "title": "La prophylaxie",
   "tier": 4,
   "priority": "A",
-  "domain": "stratégie",
   "prerequisites": [
     "proc-opponent-threat"
-  ],
-  "principle": "Avant ton plan, demande-toi quel est le sien. Le meilleur coup est parfois celui qui l'empêche.",
-  "why": [
-    "C'est l'extension stratégique de « que veut son dernier coup ? »."
-  ],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16",
-    "solution": [
-      "g2g3",
-      "f4f3",
-      "d1f3"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/QWH6R",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16",
-      "move": "g2g3",
-      "text": "",
-      "arrows": [
-        [
-          "g2",
-          "g3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1NPP/1P3P1K/R2Q1R2 b - - 0 16",
-      "move": "f4f3",
-      "text": "",
-      "arrows": [
-        [
-          "f4",
-          "f3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1P3/2PP1qPP/1P3P1K/R2Q1R2 w - - 0 17",
-      "move": "d1f3",
-      "text": "",
-      "arrows": [
-        [
-          "d1",
-          "f3"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "defensiveMove"
@@ -82,20 +20,138 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "stratégie",
+  "title": "Empêcher son idée avant qu’elle arrive",
+  "introduces": [
+    "prophylaxie"
+  ],
+  "challenge": {
+    "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16",
+    "solution": [
+      "g2g3",
+      "f4f3",
+      "d1f3"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "La dame noire en f4 menace ton roi. Chasse-la avec un pion, puis regarde sa réponse.",
+    "accept": [
+      "g2g3"
+    ],
+    "alsoGood": [],
+    "hint": "Avant ton propre projet, regarde la pièce adverse la plus proche de ton roi. Demande-toi où elle pourrait aller. Ici, g3 fait reculer la dame et gagne un coup utile.",
+    "success": "Le pion arrive en g3 et attaque la dame en f4. Les noirs doivent s’occuper de leur dame. S’ils vont en f3, ta dame en d1 peut la prendre."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Avant ton plan, demande-toi quel est le sien. Le meilleur coup est parfois celui qui l'empêche.",
-      "audio": null
+      "step": "principe",
+      "title": "Empêcher son idée avant qu’elle arrive",
+      "text": "La prophylaxie consiste à empêcher le plan adverse avant qu’il fonctionne. Ici, la dame noire en f4 est très proche de ton roi en h2. Ton pion en g2 peut la chasser.",
+      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "C'est l'extension stratégique de « que veut son dernier coup ? ».",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Avant ton propre projet, regarde la pièce adverse la plus proche de ton roi. Demande-toi où elle pourrait aller. Ici, g3 fait reculer la dame et gagne un coup utile.",
+      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16",
+      "arrows": [
+        [
+          "g2",
+          "g3"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le pion blanc en g2 avance en g3 et attaque la dame en f4.",
+      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16",
+      "line": [
+        {
+          "uci": "g2g3",
+          "text": "Le pion blanc en g2 avance en g3 et attaque la dame en f4."
+        },
+        {
+          "uci": "f4f3",
+          "text": "La dame noire va en f3."
+        },
+        {
+          "uci": "d1f3",
+          "text": "La dame blanche en d1 prend la dame en f3."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le pion arrive en g3 et attaque la dame en f4. Les noirs doivent s’occuper de leur dame. S’ils vont en f3, ta dame en d1 peut la prendre.",
+      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1P3/2PP1QPP/1P3P1K/R4R2 b - - 0 17"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Un pion qui chasse la dame peut aussi ouvrir ton roi. Vérifie donc les prises possibles sur g3 et les échecs adverses avant de pousser.",
+      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16"
     }
   ],
+  "exercises": [
+    {
+      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1P3/2PP1qPP/1P3P1K/R2Q1R2 w - - 0 17",
+      "solution": [
+        "d1f3"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. La dame blanche en d1 prend la dame en f3.",
+      "accept": [
+        "d1f3"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en d1.",
+      "success": "Le pion arrive en g3 et attaque la dame en f4. Les noirs doivent s’occuper de leur dame. S’ils vont en f3, ta dame en d1 peut la prendre."
+    }
+  ],
+  "retenir": "Avant de commencer ton plan, cherche ce que l’adversaire veut faire et comment l’en empêcher.",
+  "review": {
+    "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16",
+    "solution": [
+      "g2g3",
+      "f4f3",
+      "d1f3"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "La dame noire en f4 menace ton roi. Chasse-la avec un pion, puis regarde sa réponse.",
+    "accept": [
+      "g2g3"
+    ],
+    "alsoGood": [],
+    "hint": "Avant ton propre projet, regarde la pièce adverse la plus proche de ton roi. Demande-toi où elle pourrait aller. Ici, g3 fait reculer la dame et gagne un coup utile.",
+    "success": "Le pion arrive en g3 et attaque la dame en f4. Les noirs doivent s’occuper de leur dame. S’ils vont en f3, ta dame en d1 peut la prendre."
+  },
+  "contentVersion": 2,
+  "principle": "Avant de commencer ton plan, cherche ce que l’adversaire veut faire et comment l’en empêcher.",
+  "entryChallenge": {
+    "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16",
+    "solution": [
+      "g2g3",
+      "f4f3",
+      "d1f3"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "La dame noire en f4 menace ton roi. Chasse-la avec un pion, puis regarde sa réponse.",
+    "accept": [
+      "g2g3"
+    ],
+    "alsoGood": [],
+    "hint": "Avant ton propre projet, regarde la pièce adverse la plus proche de ton roi. Demande-toi où elle pourrait aller. Ici, g3 fait reculer la dame et gagne un coup utile.",
+    "success": "Le pion arrive en g3 et attaque la dame en f4. Les noirs doivent s’occuper de leur dame. S’ils vont en f3, ta dame en d1 peut la prendre.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

@@ -1,3 +1,4 @@
+import { startGlossary } from "./ui/glossary.js";
 import { Store } from "./state/store.js";
 import { loadIndex, loadEntry, loadSearch } from "./learn/catalogue.js";
 import { catalogueView } from "./views/catalogue.js";
@@ -165,6 +166,18 @@ async function start() {
   const mapping = loaded[1];
   await store.load(mapping);
   applyPreferences(store.state);
+  if (
+    !store.state.legacy &&
+    !Object.keys(store.state.entries).length &&
+    !store.state.history.length &&
+    !store.state.preferences.tutorialShown &&
+    !location.hash
+  ) {
+    store.state.preferences.tutorialShown = true;
+    await store.save();
+    history.replaceState(null, "", "#lesson/vis-start");
+  }
+  await startGlossary();
   await render();
   window.addEventListener("hashchange", () => {
     render();

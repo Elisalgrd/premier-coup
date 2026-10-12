@@ -1,71 +1,9 @@
 {
   "id": "tac-xray",
-  "title": "Le rayon X",
   "tier": 3,
   "priority": "B",
-  "domain": "tactique",
   "prerequisites": [
     "tac-skewer"
-  ],
-  "principle": "Une pièce longue agit à travers une autre pièce (amie ou ennemie) sur la même ligne.",
-  "why": [
-    "Deux tours doublées, ou une dame derrière un fou, contrôlent une case même si la pièce de devant est échangée."
-  ],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26",
-    "solution": [
-      "b5e8",
-      "e4e8",
-      "e1e8"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/H3c8s",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26",
-      "move": "b5e8",
-      "text": "",
-      "arrows": [
-        [
-          "b5",
-          "e8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4Q1k1/p4ppp/8/3p1q2/4rP2/1P4P1/7P/2R1R1K1 b - - 0 26",
-      "move": "e4e8",
-      "text": "",
-      "arrows": [
-        [
-          "e4",
-          "e8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4r1k1/p4ppp/8/3p1q2/5P2/1P4P1/7P/2R1R1K1 w - - 0 27",
-      "move": "e1e8",
-      "text": "",
-      "arrows": [
-        [
-          "e1",
-          "e8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "xRayAttack"
@@ -82,20 +20,138 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Une pièce derrière une autre",
+  "introduces": [
+    "rayon X"
+  ],
+  "challenge": {
+    "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26",
+    "solution": [
+      "b5e8",
+      "e4e8",
+      "e1e8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ta tour en e1 attend derrière la tour noire en e4. Commence par la prise de dame avec échec.",
+    "accept": [
+      "b5e8"
+    ],
+    "alsoGood": [],
+    "hint": "Suis toute la colonne e, même au-delà du premier obstacle. Imagine ensuite les échanges : chaque pièce qui part peut ouvrir le passage à celle qui attend derrière.",
+    "success": "Ta dame prend la tour en e8. La tour noire en e4 reprend la dame, quittant sa case. La colonne e se libère pour ta tour en e1, qui reprend en e8."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Une pièce longue agit à travers une autre pièce (amie ou ennemie) sur la même ligne.",
-      "audio": null
+      "step": "principe",
+      "title": "Une pièce derrière une autre",
+      "text": "Une attaque en rayon X se prépare derrière une pièce qui bloque la ligne. Ici, ta tour en e1 vise la tour noire en e8, mais une deuxième tour noire en e4 coupe cette ligne.",
+      "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Deux tours doublées, ou une dame derrière un fou, contrôlent une case même si la pièce de devant est échangée.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Suis toute la colonne e, même au-delà du premier obstacle. Imagine ensuite les échanges : chaque pièce qui part peut ouvrir le passage à celle qui attend derrière.",
+      "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26",
+      "arrows": [
+        [
+          "b5",
+          "e8"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La dame en b5 prend la tour en e8 avec échec.",
+      "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26",
+      "line": [
+        {
+          "uci": "b5e8",
+          "text": "La dame en b5 prend la tour en e8 avec échec."
+        },
+        {
+          "uci": "e4e8",
+          "text": "La tour noire en e4 reprend ta dame en e8."
+        },
+        {
+          "uci": "e1e8",
+          "text": "La tour blanche en e1 remonte la colonne libérée et prend en e8."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Ta dame prend la tour en e8. La tour noire en e4 reprend la dame, quittant sa case. La colonne e se libère pour ta tour en e1, qui reprend en e8.",
+      "fen": "4R1k1/p4ppp/8/3p1q2/5P2/1P4P1/7P/2R3K1 b - - 0 27"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ta tour n’attaque pas réellement à travers un obstacle. La pièce qui bloque doit bouger ou disparaître avant que l’attaque existe. Vérifie l’ordre des prises.",
+      "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26"
     }
   ],
+  "exercises": [
+    {
+      "fen": "4r1k1/p4ppp/8/3p1q2/5P2/1P4P1/7P/2R1R1K1 w - - 0 27",
+      "solution": [
+        "e1e8"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. La tour blanche en e1 remonte la colonne libérée et prend en e8.",
+      "accept": [
+        "e1e8"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en e1.",
+      "success": "Ta dame prend la tour en e8. La tour noire en e4 reprend la dame, quittant sa case. La colonne e se libère pour ta tour en e1, qui reprend en e8."
+    }
+  ],
+  "retenir": "Après un échange, regarde la pièce cachée derrière : sa ligne vient peut-être de s’ouvrir.",
+  "review": {
+    "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26",
+    "solution": [
+      "b5e8",
+      "e4e8",
+      "e1e8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ta tour en e1 attend derrière la tour noire en e4. Commence par la prise de dame avec échec.",
+    "accept": [
+      "b5e8"
+    ],
+    "alsoGood": [],
+    "hint": "Suis toute la colonne e, même au-delà du premier obstacle. Imagine ensuite les échanges : chaque pièce qui part peut ouvrir le passage à celle qui attend derrière.",
+    "success": "Ta dame prend la tour en e8. La tour noire en e4 reprend la dame, quittant sa case. La colonne e se libère pour ta tour en e1, qui reprend en e8."
+  },
+  "contentVersion": 2,
+  "principle": "Après un échange, regarde la pièce cachée derrière : sa ligne vient peut-être de s’ouvrir.",
+  "entryChallenge": {
+    "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26",
+    "solution": [
+      "b5e8",
+      "e4e8",
+      "e1e8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ta tour en e1 attend derrière la tour noire en e4. Commence par la prise de dame avec échec.",
+    "accept": [
+      "b5e8"
+    ],
+    "alsoGood": [],
+    "hint": "Suis toute la colonne e, même au-delà du premier obstacle. Imagine ensuite les échanges : chaque pièce qui part peut ouvrir le passage à celle qui attend derrière.",
+    "success": "Ta dame prend la tour en e8. La tour noire en e4 reprend la dame, quittant sa case. La colonne e se libère pour ta tour en e1, qui reprend en e8.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

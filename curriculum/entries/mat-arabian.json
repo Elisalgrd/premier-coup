@@ -1,43 +1,9 @@
 {
   "id": "mat-arabian",
-  "title": "Le mat arabe",
   "tier": 2,
   "priority": "B",
-  "domain": "mats",
   "prerequisites": [
     "mat-back-rank"
-  ],
-  "principle": "Le cavalier protège la tour collée au roi dans le coin. Il contrôle aussi une case de fuite.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
-    "solution": [
-      "c7a7"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/MnWJt",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
-      "move": "c7a7",
-      "text": "",
-      "arrows": [
-        [
-          "c7",
-          "a7"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "arabianMate"
@@ -54,21 +20,124 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "mats",
+  "title": "La tour et le cavalier dans le coin",
+  "introduces": [
+    "mat arabe"
+  ],
+  "challenge": {
+    "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+    "solution": [
+      "c7a7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en c6 protège a7. Utilise cette case avec ta tour pour enfermer le roi en a8.",
+    "accept": [
+      "c7a7"
+    ],
+    "alsoGood": [],
+    "hint": "Repère les deux tâches du cavalier : protéger la tour en a7 et fermer b8. La tour attaque le roi et surveille aussi b7. Chaque pièce a un travail différent.",
+    "success": "La tour arrive en a7, juste à côté du roi noir en a8. Le cavalier en c6 protège la tour. Le roi ne peut pas la prendre et ne peut pas fuir par b8."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Le cavalier protège la tour collée au roi dans le coin. Il contrôle aussi une case de fuite.",
-      "audio": null
-    }
-  ],
-  "examples": [
+      "step": "principe",
+      "title": "La tour et le cavalier dans le coin",
+      "text": "Le mat arabe associe une tour et un cavalier près du coin. Ici, ton cavalier en c6 protège a7 et surveille b8. Ta tour en c7 peut utiliser ce soutien.",
+      "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+      "marks": []
+    },
     {
-      "fen": "7k/7R/5N2/8/8/8/8/6K1 b - - 0 1",
-      "outcome": "mate",
-      "source": "CURRICULUM.md"
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Repère les deux tâches du cavalier : protéger la tour en a7 et fermer b8. La tour attaque le roi et surveille aussi b7. Chaque pièce a un travail différent.",
+      "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+      "arrows": [
+        [
+          "c7",
+          "a7"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour en c7 va en a7. Le cavalier en c6 la protège et ferme b8 : échec et mat.",
+      "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+      "line": [
+        {
+          "uci": "c7a7",
+          "text": "La tour en c7 va en a7. Le cavalier en c6 la protège et ferme b8 : échec et mat."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La tour arrive en a7, juste à côté du roi noir en a8. Le cavalier en c6 protège la tour. Le roi ne peut pas la prendre et ne peut pas fuir par b8.",
+      "fen": "k3r3/R7/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 b - - 1 32"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "La tour ne fait pas tout toute seule. Sans le cavalier en c6, le roi pourrait parfois prendre la tour ou s’échapper. Vérifie la position exacte des deux pièces.",
+      "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32"
     }
   ],
-  "videos": []
+  "exercises": [
+    {
+      "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+      "solution": [
+        "c7a7"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Ton cavalier en c6 protège a7. Utilise cette case avec ta tour pour enfermer le roi en a8.",
+      "accept": [
+        "c7a7"
+      ],
+      "alsoGood": [],
+      "hint": "Repère les deux tâches du cavalier : protéger la tour en a7 et fermer b8. La tour attaque le roi et surveille aussi b7. Chaque pièce a un travail différent.",
+      "success": "La tour arrive en a7, juste à côté du roi noir en a8. Le cavalier en c6 protège la tour. Le roi ne peut pas la prendre et ne peut pas fuir par b8."
+    }
+  ],
+  "retenir": "Le cavalier protège la tour et ferme une sortie. La tour donne l’échec près du coin.",
+  "review": {
+    "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+    "solution": [
+      "c7a7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en c6 protège a7. Utilise cette case avec ta tour pour enfermer le roi en a8.",
+    "accept": [
+      "c7a7"
+    ],
+    "alsoGood": [],
+    "hint": "Repère les deux tâches du cavalier : protéger la tour en a7 et fermer b8. La tour attaque le roi et surveille aussi b7. Chaque pièce a un travail différent.",
+    "success": "La tour arrive en a7, juste à côté du roi noir en a8. Le cavalier en c6 protège la tour. Le roi ne peut pas la prendre et ne peut pas fuir par b8."
+  },
+  "contentVersion": 2,
+  "principle": "Le cavalier protège la tour et ferme une sortie. La tour donne l’échec près du coin.",
+  "entryChallenge": {
+    "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+    "solution": [
+      "c7a7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en c6 protège a7. Utilise cette case avec ta tour pour enfermer le roi en a8.",
+    "accept": [
+      "c7a7"
+    ],
+    "alsoGood": [],
+    "hint": "Repère les deux tâches du cavalier : protéger la tour en a7 et fermer b8. La tour attaque le roi et surveille aussi b7. Chaque pièce a un travail différent.",
+    "success": "La tour arrive en a7, juste à côté du roi noir en a8. Le cavalier en c6 protège la tour. Le roi ne peut pas la prendre et ne peut pas fuir par b8.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

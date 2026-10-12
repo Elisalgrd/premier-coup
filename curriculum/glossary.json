@@ -1,0 +1,1303 @@
+[
+  {
+    "term": "échiquier",
+    "definition": "Le plateau de 64 cases, claires et foncées.",
+    "firstIn": "vis-start",
+    "aliases": [
+      "échiquier"
+    ],
+    "id": "echiquier",
+    "autoLink": true,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    }
+  },
+  {
+    "term": "les blancs, les noirs",
+    "definition": "Les deux camps. Les blancs jouent toujours le premier coup.",
+    "firstIn": "vis-start",
+    "aliases": [
+      "les blancs",
+      "les noirs"
+    ],
+    "id": "les-blancs-les-noirs",
+    "autoLink": false,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    }
+  },
+  {
+    "term": "c’est aux blancs (aux noirs) de jouer",
+    "definition": "C’est le tour de ce camp. Si tu as les blancs et que c’est aux blancs, c’est à toi.",
+    "firstIn": "vis-start",
+    "aliases": [],
+    "id": "cest-aux-blancs-aux-noirs-de-jouer",
+    "autoLink": false,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    }
+  },
+  {
+    "term": "coup",
+    "definition": "Le déplacement d’une pièce. Chaque joueur joue un coup, puis c’est à l’autre.",
+    "firstIn": "vis-start",
+    "aliases": [
+      "coup"
+    ],
+    "id": "coup",
+    "autoLink": false,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "e2",
+        "d2"
+      ]
+    }
+  },
+  {
+    "term": "prendre, capturer",
+    "definition": "Aller sur la case d’une pièce adverse : elle sort de l’échiquier.",
+    "firstIn": "vis-rules",
+    "aliases": [
+      "prendre",
+      "capturer"
+    ],
+    "id": "prendre-capturer",
+    "autoLink": false,
+    "example": {
+      "fen": "4k3/8/8/8/3R4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ],
+        [
+          "d4",
+          "d1"
+        ],
+        [
+          "d4",
+          "a4"
+        ],
+        [
+          "d4",
+          "h4"
+        ]
+      ]
+    }
+  },
+  {
+    "term": "échec",
+    "definition": "Le roi est attaqué. Le joueur doit s’en occuper tout de suite, c’est obligatoire.",
+    "firstIn": "vis-rules",
+    "aliases": [
+      "échec"
+    ],
+    "id": "echec",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/8/8/8/8/8/4RK2 b - - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ],
+      "marks": [
+        "e8"
+      ]
+    }
+  },
+  {
+    "term": "échec et mat, mat",
+    "definition": "Le roi est attaqué et aucun coup ne peut le sauver. La partie est finie.",
+    "firstIn": "vis-start",
+    "aliases": [
+      "échec et mat",
+      "mat"
+    ],
+    "id": "echec-et-mat-mat",
+    "autoLink": true,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    }
+  },
+  {
+    "term": "roque",
+    "definition": "Un coup spécial, une fois par partie : ton roi et une tour bougent en même temps pour mettre le roi à l’abri.",
+    "firstIn": "vis-rules",
+    "aliases": [
+      "roque"
+    ],
+    "id": "roque",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/8/8/8/8/5PPP/4K2R w K - 0 1"
+    }
+  },
+  {
+    "term": "petit roque, grand roque",
+    "definition": "Le roque côté droit (avec la tour la plus proche du roi) ou côté gauche (avec la tour côté dame).",
+    "firstIn": "vis-rules",
+    "aliases": [
+      "petit roque",
+      "grand roque"
+    ],
+    "id": "petit-roque-grand-roque",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/8/8/3R4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ],
+        [
+          "d4",
+          "d1"
+        ],
+        [
+          "d4",
+          "a4"
+        ],
+        [
+          "d4",
+          "h4"
+        ]
+      ]
+    }
+  },
+  {
+    "term": "promotion",
+    "definition": "Quand un pion arrive au bout de l’échiquier, il se transforme en dame, tour, fou ou cavalier.",
+    "firstIn": "vis-rules",
+    "aliases": [
+      "promotion"
+    ],
+    "id": "promotion",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/1P6/8/8/8/8/8/4K3 w - - 0 1"
+    }
+  },
+  {
+    "term": "prise en passant",
+    "definition": "Une prise spéciale de pion contre pion, possible seulement juste après un pas de deux cases.",
+    "firstIn": "vis-rules",
+    "aliases": [
+      "prise en passant"
+    ],
+    "id": "prise-en-passant",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/8/8/3R4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ],
+        [
+          "d4",
+          "d1"
+        ],
+        [
+          "d4",
+          "a4"
+        ],
+        [
+          "d4",
+          "h4"
+        ]
+      ]
+    }
+  },
+  {
+    "term": "pat",
+    "definition": "Le joueur dont c’est le tour n’est pas en échec mais ne peut faire aucun coup. La partie est nulle.",
+    "firstIn": "vis-rules",
+    "aliases": [
+      "pat"
+    ],
+    "id": "pat",
+    "autoLink": true,
+    "example": {
+      "fen": "k7/8/1Q6/8/8/8/8/7K b - - 0 1",
+      "marks": [
+        "a7",
+        "b7",
+        "b8"
+      ]
+    }
+  },
+  {
+    "term": "nulle",
+    "definition": "Une partie sans gagnant ni perdant.",
+    "firstIn": "vis-rules",
+    "aliases": [
+      "nulle"
+    ],
+    "id": "nulle",
+    "autoLink": true,
+    "example": {
+      "fen": "k7/8/1Q6/8/8/8/8/7K b - - 0 1",
+      "marks": [
+        "a7",
+        "b7",
+        "b8"
+      ]
+    }
+  },
+  {
+    "term": "case, colonne, rangée",
+    "definition": "Une case a un nom : une lettre (sa colonne, de a à h) et un chiffre (sa rangée, de 1 à 8).",
+    "firstIn": "vis-notation",
+    "aliases": [
+      "case",
+      "colonne",
+      "rangée"
+    ],
+    "id": "case-colonne-rangee",
+    "autoLink": false,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "e4"
+      ]
+    }
+  },
+  {
+    "term": "notation",
+    "definition": "La façon d’écrire les coups : la lettre de la pièce puis sa case d’arrivée. Cf3 = le cavalier va en f3.",
+    "firstIn": "vis-notation",
+    "aliases": [
+      "notation"
+    ],
+    "id": "notation",
+    "autoLink": true,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "e4"
+      ]
+    }
+  },
+  {
+    "term": "R, D, T, F, C",
+    "definition": "Roi, dame, tour, fou, cavalier. Les pions n’ont pas de lettre.",
+    "firstIn": "vis-notation",
+    "aliases": [],
+    "id": "r-d-t-f-c",
+    "autoLink": false,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "e4"
+      ]
+    }
+  },
+  {
+    "term": "x, +, #",
+    "definition": "x = prend. + = échec. # = mat.",
+    "firstIn": "vis-notation",
+    "aliases": [],
+    "id": "x",
+    "autoLink": false,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "e4"
+      ]
+    }
+  },
+  {
+    "term": "valeur des pièces",
+    "definition": "Des points pour comparer : pion 1, cavalier 3, fou 3, tour 5, dame 9.",
+    "firstIn": "vis-values",
+    "aliases": [
+      "valeur des pièces"
+    ],
+    "id": "valeur-des-pieces",
+    "autoLink": true,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    }
+  },
+  {
+    "term": "matériel",
+    "definition": "L’ensemble de tes pièces, compté en points. « Gagner du matériel » = gagner des points.",
+    "firstIn": "vis-values",
+    "aliases": [
+      "matériel"
+    ],
+    "id": "materiel",
+    "autoLink": true,
+    "example": {
+      "fen": "7k/8/8/8/8/8/5PPP/3R2K1 w - - 0 1"
+    }
+  },
+  {
+    "term": "attaquer",
+    "definition": "Une pièce attaque une case si elle pourrait y aller au prochain coup.",
+    "firstIn": "vis-attacked-squares",
+    "aliases": [
+      "attaquer"
+    ],
+    "id": "attaquer",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/8/8/3Q4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ],
+        [
+          "d4",
+          "h8"
+        ],
+        [
+          "d4",
+          "a7"
+        ],
+        [
+          "d4",
+          "h4"
+        ],
+        [
+          "d4",
+          "a4"
+        ],
+        [
+          "d4",
+          "a1"
+        ],
+        [
+          "d4",
+          "g1"
+        ],
+        [
+          "d4",
+          "d1"
+        ]
+      ]
+    }
+  },
+  {
+    "term": "défendre, protéger",
+    "definition": "Une pièce protège une autre pièce si elle pourrait reprendre sur sa case.",
+    "firstIn": "vis-attacked-squares",
+    "aliases": [
+      "défendre",
+      "protéger"
+    ],
+    "id": "defendre-proteger",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/8/8/3Q4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "d8"
+        ],
+        [
+          "d4",
+          "h8"
+        ],
+        [
+          "d4",
+          "a7"
+        ],
+        [
+          "d4",
+          "h4"
+        ],
+        [
+          "d4",
+          "a4"
+        ],
+        [
+          "d4",
+          "a1"
+        ],
+        [
+          "d4",
+          "g1"
+        ],
+        [
+          "d4",
+          "d1"
+        ]
+      ]
+    }
+  },
+  {
+    "term": "pièce en prise",
+    "definition": "Une pièce que l’adversaire peut prendre sans rien perdre en échange.",
+    "firstIn": "proc-hanging-pieces",
+    "aliases": [
+      "pièce en prise"
+    ],
+    "id": "piece-en-prise",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/pp3ppp/3b4/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "d6"
+        ]
+      ],
+      "marks": [
+        "d6"
+      ]
+    }
+  },
+  {
+    "term": "menace",
+    "definition": "Ce que l’adversaire pourrait faire de dangereux au prochain coup si tu ne réagis pas.",
+    "firstIn": "proc-opponent-threat",
+    "aliases": [
+      "menace"
+    ],
+    "id": "menace",
+    "autoLink": true,
+    "example": {
+      "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+      "arrows": [
+        [
+          "a5",
+          "c4"
+        ]
+      ],
+      "marks": [
+        "c4"
+      ]
+    }
+  },
+  {
+    "term": "échange",
+    "definition": "Je prends une pièce, il reprend la mienne. On compare ce que chacun a perdu.",
+    "firstIn": "proc-exchange-count",
+    "aliases": [
+      "échange"
+    ],
+    "id": "echange",
+    "autoLink": true,
+    "example": {
+      "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "f4",
+          "e5"
+        ],
+        [
+          "d6",
+          "e5"
+        ]
+      ]
+    }
+  },
+  {
+    "term": "développer",
+    "definition": "Sortir une pièce de sa case de départ pour qu’elle participe au jeu.",
+    "firstIn": "ouv-principles",
+    "aliases": [
+      "développer"
+    ],
+    "id": "developper",
+    "autoLink": true,
+    "example": {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "arrows": [
+        [
+          "g1",
+          "f3"
+        ],
+        [
+          "b1",
+          "c3"
+        ],
+        [
+          "f1",
+          "c4"
+        ]
+      ]
+    }
+  },
+  {
+    "term": "centre",
+    "definition": "Les 4 cases du milieu : d4, e4, d5, e5.",
+    "firstIn": "ouv-principles",
+    "aliases": [
+      "centre"
+    ],
+    "id": "centre",
+    "autoLink": true,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "d4",
+        "e4",
+        "d5",
+        "e5"
+      ]
+    }
+  },
+  {
+    "term": "fourchette",
+    "definition": "Une seule pièce attaque deux pièces adverses en même temps.",
+    "firstIn": "tac-fork",
+    "aliases": [
+      "fourchette"
+    ],
+    "id": "fourchette",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/3N4/1q6/8/8/8/4K3 b - - 1 1",
+      "arrows": [
+        [
+          "d6",
+          "e8"
+        ],
+        [
+          "d6",
+          "b5"
+        ]
+      ],
+      "marks": [
+        "e8",
+        "b5"
+      ]
+    }
+  },
+  {
+    "term": "clouage",
+    "definition": "Une pièce ne peut pas bouger sans exposer une pièce plus importante derrière elle.",
+    "firstIn": "tac-pin",
+    "aliases": [
+      "clouage"
+    ],
+    "id": "clouage",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ],
+      "marks": [
+        "e4",
+        "e8"
+      ]
+    }
+  },
+  {
+    "term": "attaque à la découverte",
+    "definition": "Tu bouges une pièce et tu « ouvres » la ligne d’une autre pièce à toi, qui attaque à son tour.",
+    "firstIn": "tac-discovered",
+    "aliases": [
+      "attaque à la découverte"
+    ],
+    "id": "attaque-a-la-decouverte",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ],
+      "marks": [
+        "e2"
+      ]
+    }
+  },
+  {
+    "term": "mat du couloir",
+    "definition": "Un mat sur la dernière rangée, quand le roi est coincé derrière ses propres pions.",
+    "firstIn": "mat-back-rank",
+    "aliases": [
+      "mat du couloir"
+    ],
+    "id": "mat-du-couloir",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+      "marks": [
+        "f7",
+        "g7",
+        "h7"
+      ]
+    }
+  },
+  {
+    "term": "case de fuite",
+    "definition": "Une case libre où ton roi peut s’échapper en cas d’échec.",
+    "firstIn": "mat-back-rank",
+    "aliases": [
+      "case de fuite"
+    ],
+    "id": "case-de-fuite",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/5ppp/8/8/8/7P/5PP1/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "g1",
+          "h2"
+        ]
+      ],
+      "marks": [
+        "h2"
+      ]
+    }
+  },
+  {
+    "term": "défenseur",
+    "definition": "La pièce qui protège une autre pièce ou une case.",
+    "firstIn": "tac-remove-defender",
+    "aliases": [
+      "défenseur"
+    ],
+    "id": "defenseur",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/3r1pp1/5n1p/6B1/Q7/7P/5PP1/R5K1 w - - 0 1",
+      "arrows": [
+        [
+          "b5",
+          "d7"
+        ],
+        [
+          "f6",
+          "d7"
+        ]
+      ],
+      "marks": [
+        "f6"
+      ]
+    }
+  },
+  {
+    "term": "finale",
+    "definition": "La fin de partie, quand il reste peu de pièces.",
+    "firstIn": "fin-opposition",
+    "aliases": [
+      "finale"
+    ],
+    "id": "finale",
+    "autoLink": true,
+    "example": {
+      "fen": "8/4k3/8/2K5/8/4P3/8/8 w - - 0 1"
+    }
+  },
+  {
+    "term": "opposition",
+    "definition": "Les deux rois face à face, avec une case vide entre eux. Celui qui ne doit PAS jouer gagne ce duel.",
+    "firstIn": "fin-opposition",
+    "aliases": [
+      "opposition"
+    ],
+    "id": "opposition",
+    "autoLink": true,
+    "example": {
+      "fen": "8/8/8/4k3/8/4K3/4P3/8 b - - 0 1",
+      "marks": [
+        "e3",
+        "e5"
+      ]
+    }
+  },
+  {
+    "term": "pion passé",
+    "definition": "Un pion qu’aucun pion adverse ne peut plus arrêter sur son chemin.",
+    "firstIn": "fin-passed-pawn",
+    "aliases": [
+      "pion passé"
+    ],
+    "id": "pion-passe",
+    "autoLink": true,
+    "example": {
+      "fen": "7k/8/4P3/8/8/8/8/K7 w - - 0 1",
+      "marks": []
+    }
+  },
+  {
+    "term": "plan",
+    "definition": "Une idée pour les prochains coups, quand il n’y a rien à prendre ni à attaquer tout de suite.",
+    "firstIn": "str-worst-piece",
+    "aliases": [
+      "plan"
+    ],
+    "id": "plan",
+    "autoLink": true,
+    "example": {
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8"
+    }
+  },
+  {
+    "term": "enfilade",
+    "definition": "Tu attaques une pièce importante devant une autre. Quand elle part, tu prends celle de derrière.",
+    "firstIn": "tac-skewer",
+    "aliases": [
+      "enfilade"
+    ],
+    "id": "enfilade",
+    "autoLink": true,
+    "example": {
+      "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
+      "marks": []
+    }
+  },
+  {
+    "term": "échec double",
+    "definition": "Deux pièces attaquent le roi en même temps. Le roi doit se déplacer.",
+    "firstIn": "tac-double-check",
+    "aliases": [
+      "échec double"
+    ],
+    "id": "echec-double",
+    "autoLink": true,
+    "example": {
+      "fen": "2b4r/p2k2pp/1p3p2/2bN4/3nn3/3N4/P5PP/1R3BKR b - - 4 21",
+      "marks": []
+    }
+  },
+  {
+    "term": "surcharge",
+    "definition": "Une pièce protège deux cibles. En s’occupant de l’une, elle abandonne l’autre.",
+    "firstIn": "tac-overload",
+    "aliases": [
+      "surcharge"
+    ],
+    "id": "surcharge",
+    "autoLink": true,
+    "example": {
+      "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
+      "marks": []
+    }
+  },
+  {
+    "term": "déviation",
+    "definition": "Tu obliges une pièce adverse à quitter ce qu’elle protège.",
+    "firstIn": "tac-deflection",
+    "aliases": [
+      "déviation"
+    ],
+    "id": "deviation",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46",
+      "marks": []
+    }
+  },
+  {
+    "term": "attraction",
+    "definition": "Tu attires une pièce adverse sur une case où tu peux l’attaquer plus fort.",
+    "firstIn": "tac-attraction",
+    "aliases": [
+      "attraction"
+    ],
+    "id": "attraction",
+    "autoLink": true,
+    "example": {
+      "fen": "R4rk1/5ppp/2pPp3/8/2P5/2q2P2/4KP1P/R7 w - - 0 29",
+      "marks": []
+    }
+  },
+  {
+    "term": "pièce piégée",
+    "definition": "Une pièce qui ne peut plus fuir sans se faire prendre.",
+    "firstIn": "tac-trapped-piece",
+    "aliases": [
+      "pièce piégée"
+    ],
+    "id": "piece-piegee",
+    "autoLink": true,
+    "example": {
+      "fen": "8/8/4p1k1/4Pb2/5K2/3p2P1/8/4B3 w - - 3 73",
+      "marks": []
+    }
+  },
+  {
+    "term": "mat à l’étouffée",
+    "definition": "Un cavalier attaque un roi enfermé par ses propres pièces.",
+    "firstIn": "mat-smothered",
+    "aliases": [
+      "mat à l’étouffée"
+    ],
+    "id": "mat-a-letouffee",
+    "autoLink": true,
+    "example": {
+      "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+      "marks": []
+    }
+  },
+  {
+    "term": "mat arabe",
+    "definition": "Une tour attaque le roi dans un coin. Un cavalier protège la tour et ferme une sortie.",
+    "firstIn": "mat-arabian",
+    "aliases": [
+      "mat arabe"
+    ],
+    "id": "mat-arabe",
+    "autoLink": true,
+    "example": {
+      "fen": "k3r3/2R5/p1Np2pp/3Pbp2/8/7P/KPr5/3R4 w - - 0 32",
+      "marks": []
+    }
+  },
+  {
+    "term": "mat d’Anastasia",
+    "definition": "Une tour attaque le roi au bord. Un cavalier ferme ses sorties vers l’intérieur.",
+    "firstIn": "mat-anastasia",
+    "aliases": [
+      "mat d’Anastasia"
+    ],
+    "id": "mat-danastasia",
+    "autoLink": true,
+    "example": {
+      "fen": "8/4N1pk/8/8/8/R7/8/6K1 w - - 0 1",
+      "marks": []
+    }
+  },
+  {
+    "term": "mat de Boden",
+    "definition": "Deux fous attaquent sur des diagonales différentes et enferment le roi adverse.",
+    "firstIn": "mat-boden",
+    "aliases": [
+      "mat de Boden"
+    ],
+    "id": "mat-de-boden",
+    "autoLink": true,
+    "example": {
+      "fen": "2kr4/3p4/8/8/5B2/8/4B3/6K1 w - - 0 1",
+      "marks": []
+    }
+  },
+  {
+    "term": "motif de mat",
+    "definition": "Une disposition de pièces qui revient souvent quand un roi ne peut plus être sauvé.",
+    "firstIn": "mat-patterns-misc",
+    "aliases": [
+      "motif de mat"
+    ],
+    "id": "motif-de-mat",
+    "autoLink": true,
+    "example": {
+      "fen": "2R5/p4kpp/P3pp2/1pBb2rP/8/7K/8/8 w - - 2 45",
+      "marks": []
+    }
+  },
+  {
+    "term": "coup candidat",
+    "definition": "Un coup que tu envisages avant de le comparer à d’autres idées.",
+    "firstIn": "proc-candidates-calc",
+    "aliases": [
+      "coup candidat"
+    ],
+    "id": "coup-candidat",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/5p2/6p1/1p5p/2b5/2Qr1PqP/6P1/4R2K w - - 6 47",
+      "marks": []
+    }
+  },
+  {
+    "term": "coup intermédiaire",
+    "definition": "Un coup utile joué avant une reprise qui semble automatique.",
+    "firstIn": "tac-intermezzo",
+    "aliases": [
+      "coup intermédiaire"
+    ],
+    "id": "coup-intermediaire",
+    "autoLink": true,
+    "example": {
+      "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13",
+      "marks": []
+    }
+  },
+  {
+    "term": "rayon X",
+    "definition": "Une attaque qui apparaîtra quand la pièce au milieu de la ligne aura bougé.",
+    "firstIn": "tac-xray",
+    "aliases": [
+      "rayon X"
+    ],
+    "id": "rayon-x",
+    "autoLink": true,
+    "example": {
+      "fen": "4r1k1/p4ppp/8/1Q1p1q2/4rP2/1P4P1/7P/2R1R1K1 w - - 0 26",
+      "marks": []
+    }
+  },
+  {
+    "term": "dégagement",
+    "definition": "Tu déplaces une pièce pour libérer une ligne ou une case pour une autre pièce.",
+    "firstIn": "tac-interference-clearance",
+    "aliases": [
+      "dégagement"
+    ],
+    "id": "degagement",
+    "autoLink": true,
+    "example": {
+      "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15",
+      "marks": []
+    }
+  },
+  {
+    "term": "interception",
+    "definition": "Tu places une pièce au milieu d’une ligne adverse pour la couper.",
+    "firstIn": "tac-interference-clearance",
+    "aliases": [
+      "interception"
+    ],
+    "id": "interception",
+    "autoLink": true,
+    "example": {
+      "fen": "r1bq1rk1/p1n2pp1/2p1pb1p/1p6/1PpPN3/P3P3/2Q2PPP/1BR1K1NR w K - 2 15"
+    }
+  },
+  {
+    "term": "coup calme",
+    "definition": "Un coup qui ne donne pas échec et ne prend aucune pièce immédiatement.",
+    "firstIn": "tac-quiet-move",
+    "aliases": [
+      "coup calme"
+    ],
+    "id": "coup-calme",
+    "autoLink": true,
+    "example": {
+      "fen": "1k4r1/1p6/p1pq4/P4p2/1P2p2p/2BrP2P/1Q3P1K/2R5 w - - 5 40",
+      "marks": []
+    }
+  },
+  {
+    "term": "sacrifice",
+    "definition": "Tu donnes volontairement une pièce ou un pion pour obtenir autre chose.",
+    "firstIn": "mat-greek-gift",
+    "aliases": [
+      "sacrifice"
+    ],
+    "id": "sacrifice",
+    "autoLink": true,
+    "example": {
+      "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/3P4/3B1N2/PPP2PPP/RNBQ1RK1 w - - 0 1",
+      "marks": [
+        "h7"
+      ]
+    }
+  },
+  {
+    "term": "règle du carré",
+    "definition": "Un repère pour savoir si un roi peut rattraper un pion avant sa transformation.",
+    "firstIn": "fin-square",
+    "aliases": [
+      "règle du carré"
+    ],
+    "id": "regle-du-carre",
+    "autoLink": true,
+    "example": {
+      "fen": "7k/8/8/p7/8/8/8/5K2 w - - 0 1",
+      "marks": []
+    }
+  },
+  {
+    "term": "position de Lucena",
+    "definition": "Une méthode où ta tour protège ton roi des échecs pour laisser avancer ton pion.",
+    "firstIn": "fin-lucena",
+    "aliases": [
+      "position de Lucena"
+    ],
+    "id": "position-de-lucena",
+    "autoLink": true,
+    "example": {
+      "fen": "1K6/1P2k3/8/8/8/8/2r5/3R4 w - - 0 1",
+      "marks": []
+    }
+  },
+  {
+    "term": "position de Philidor",
+    "definition": "Une méthode pour défendre avec une tour contre un pion de plus.",
+    "firstIn": "fin-philidor",
+    "aliases": [
+      "position de Philidor"
+    ],
+    "id": "position-de-philidor",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/7R/1r6/3KP3/8/8/8/8 b - - 0 1",
+      "marks": []
+    }
+  },
+  {
+    "term": "fous de couleurs opposées",
+    "definition": "Un fou reste sur les cases claires, l’autre sur les cases foncées. Ils ne peuvent pas se prendre.",
+    "firstIn": "fin-opposite-bishops",
+    "aliases": [
+      "fous de couleurs opposées"
+    ],
+    "id": "fous-de-couleurs-opposees",
+    "autoLink": true,
+    "example": {
+      "fen": "7k/8/8/3b4/8/8/8/2B3K1 w - - 0 1",
+      "marks": [
+        "d5"
+      ]
+    }
+  },
+  {
+    "term": "ouverture",
+    "definition": "Le début de la partie, quand tu fais sortir tes pièces et protèges ton roi.",
+    "firstIn": "ouv-principles",
+    "aliases": [
+      "ouverture"
+    ],
+    "id": "ouverture",
+    "autoLink": true,
+    "example": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "marks": [
+        "d4",
+        "e4",
+        "d5",
+        "e5"
+      ]
+    }
+  },
+  {
+    "term": "gambit",
+    "definition": "Un pion offert au début pour faire sortir ses pièces plus vite ou ouvrir une ligne.",
+    "firstIn": "ouv-gambits",
+    "aliases": [
+      "gambit"
+    ],
+    "id": "gambit",
+    "autoLink": true,
+    "example": {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+      "marks": [
+        "f4"
+      ]
+    }
+  },
+  {
+    "term": "colonne ouverte",
+    "definition": "Une colonne qui ne contient aucun pion.",
+    "firstIn": "str-open-files",
+    "aliases": [
+      "colonne ouverte"
+    ],
+    "id": "colonne-ouverte",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/R5K1 w - - 0 1",
+      "marks": [
+        "c1",
+        "d1",
+        "e1"
+      ]
+    }
+  },
+  {
+    "term": "avant-poste",
+    "definition": "Une case avancée protégée par un de tes pions, qu’aucun pion adverse ne peut attaquer.",
+    "firstIn": "str-outposts",
+    "aliases": [
+      "avant-poste"
+    ],
+    "id": "avant-poste",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "marks": []
+    }
+  },
+  {
+    "term": "mauvais fou",
+    "definition": "Un fou gêné par ses propres pions bloqués sur sa couleur.",
+    "firstIn": "str-good-bad-bishop",
+    "aliases": [
+      "mauvais fou"
+    ],
+    "id": "mauvais-fou",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/8/3p4/2pPp3/2P1P3/8/8/2B3K1 w - - 0 1",
+      "marks": [
+        "c1"
+      ]
+    }
+  },
+  {
+    "term": "pion isolé",
+    "definition": "Un pion sans pion ami sur les deux colonnes voisines.",
+    "firstIn": "str-pawn-structure",
+    "aliases": [
+      "pion isolé"
+    ],
+    "id": "pion-isole",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1",
+      "marks": [
+        "d4"
+      ]
+    }
+  },
+  {
+    "term": "pions doublés",
+    "definition": "Deux pions du même camp sur la même colonne.",
+    "firstIn": "str-pawn-structure",
+    "aliases": [
+      "pions doublés"
+    ],
+    "id": "pions-doubles",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/pp3ppp/8/8/3P4/8/PP3PPP/6K1 w - - 0 1",
+      "arrows": []
+    }
+  },
+  {
+    "term": "case faible",
+    "definition": "Une case qu’aucun pion du camp concerné ne peut plus protéger.",
+    "firstIn": "str-weak-squares",
+    "aliases": [
+      "case faible"
+    ],
+    "id": "case-faible",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "marks": [
+        "d5"
+      ]
+    }
+  },
+  {
+    "term": "prophylaxie",
+    "definition": "Empêcher le plan adverse avant qu’il fonctionne.",
+    "firstIn": "str-prophylaxis",
+    "aliases": [
+      "prophylaxie"
+    ],
+    "id": "prophylaxie",
+    "autoLink": true,
+    "example": {
+      "fen": "r1b2rk1/1pp3p1/p2p3p/2b1pp2/P1N1Pq2/2PP1N1P/1P3PPK/R2Q1R2 w - - 4 16",
+      "marks": []
+    }
+  },
+  {
+    "term": "initiative",
+    "definition": "Créer des dangers auxquels l’adversaire doit répondre.",
+    "firstIn": "str-initiative",
+    "aliases": [
+      "initiative"
+    ],
+    "id": "initiative",
+    "autoLink": true,
+    "example": {
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+      "marks": []
+    }
+  },
+  {
+    "term": "paire de fous",
+    "definition": "Tes deux fous encore présents : un sur chaque couleur.",
+    "firstIn": "str-bishop-pair-space",
+    "aliases": [
+      "paire de fous"
+    ],
+    "id": "paire-de-fous",
+    "autoLink": true,
+    "example": {
+      "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1",
+      "marks": [
+        "c1",
+        "c4"
+      ]
+    }
+  },
+  {
+    "term": "espace",
+    "definition": "Les cases disponibles pour faire jouer tes pièces.",
+    "firstIn": "str-bishop-pair-space",
+    "aliases": [
+      "espace"
+    ],
+    "id": "espace",
+    "autoLink": false,
+    "example": {
+      "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1"
+    }
+  },
+  {
+    "term": "coup forçant",
+    "definition": "Un coup qui oblige l’adversaire à répondre à un danger immédiat.",
+    "firstIn": "proc-forcing-moves",
+    "aliases": [
+      "coup forçant"
+    ],
+    "id": "coup-forcant",
+    "autoLink": true,
+    "example": {
+      "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
+      "marks": []
+    }
+  },
+  {
+    "term": "qualité",
+    "definition": "La différence entre une tour, cinq points, et un fou ou un cavalier, trois points.",
+    "firstIn": "vis-values",
+    "aliases": [
+      "qualité"
+    ],
+    "id": "qualite",
+    "autoLink": true,
+    "example": {
+      "fen": "7k/8/8/3n4/8/8/8/3R2K1 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "d5"
+        ]
+      ]
+    }
+  },
+  {
+    "term": "diagonale",
+    "definition": "Une ligne de cases en biais, toutes de la même couleur.",
+    "firstIn": "vis-rules",
+    "aliases": [
+      "diagonale"
+    ],
+    "id": "diagonale",
+    "autoLink": true,
+    "example": {
+      "fen": "4k3/8/8/8/3B4/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "h8"
+        ],
+        [
+          "d4",
+          "a1"
+        ],
+        [
+          "d4",
+          "a7"
+        ],
+        [
+          "d4",
+          "g1"
+        ]
+      ]
+    }
+  }
+]

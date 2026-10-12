@@ -1,49 +1,9 @@
 {
   "id": "mat-smothered",
-  "title": "Le mat à l'étouffée",
   "tier": 2,
   "priority": "A",
-  "domain": "mats",
   "prerequisites": [
     "tac-fork"
-  ],
-  "principle": "Le roi est entouré de ses propres pièces ; un cavalier donne échec et le mate, car rien ne peut fuir ni s'interposer.",
-  "why": [
-    "Spectaculaire et fréquent quand le roi roqué est encombré (T en g8 / f8, pions g7 h7)."
-  ],
-  "signals": [
-    "roi adverse dans le coin, cases voisines occupées par ses pièces, ton cavalier peut atteindre f7 (ou f2), ta dame peut donner échec en g8."
-  ],
-  "method": [
-    "échec de cavalier qui chasse le roi dans le coin, sacrifice de dame en g8 qui oblige la tour à la prendre, mat de cavalier en f7."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
-    "solution": [
-      "d6f7"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/QcuUV",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
-      "move": "d6f7",
-      "text": "",
-      "arrows": [
-        [
-          "d6",
-          "f7"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "smotheredMate"
@@ -60,36 +20,124 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "mats",
+  "title": "Le roi bloqué par ses propres pièces",
+  "introduces": [
+    "mat à l’étouffée"
+  ],
+  "challenge": {
+    "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+    "solution": [
+      "d6f7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi noir en h8 est enfermé par ses pièces. Ton cavalier en d6 peut terminer la partie.",
+    "accept": [
+      "d6f7"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde d’abord les voisins du roi noir : g8, g7 et h7. Ils sont occupés par son propre camp. Un cavalier peut profiter de cette prison, car il n’a pas besoin d’une ligne libre.",
+    "success": "Le cavalier blanc arrive en f7. Il attaque h8 en sautant au-dessus des autres pièces. Le roi noir n’a aucune sortie et personne ne peut prendre le cavalier."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Le roi est entouré de ses propres pièces. Un cavalier donne échec et le mate, car rien ne peut fuir ni s'interposer.",
-      "audio": null
+      "step": "principe",
+      "title": "Le roi bloqué par ses propres pièces",
+      "text": "Le mat à l’étouffée arrive quand un cavalier attaque un roi enfermé par ses propres pièces. Ici, le roi noir en h8 est coincé par sa tour en g8 et ses pions en g7 et h7.",
+      "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Spectaculaire et fréquent quand le roi roqué est encombré (T en g8 / f8, pions g7 h7).",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde d’abord les voisins du roi noir : g8, g7 et h7. Ils sont occupés par son propre camp. Un cavalier peut profiter de cette prison, car il n’a pas besoin d’une ligne libre.",
+      "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+      "arrows": [
+        [
+          "d6",
+          "f7"
+        ]
+      ]
     },
     {
-      "title": "Signaux",
-      "text": "Le roi adverse est dans un coin, entouré de ses propres pièces. Ton cavalier peut atteindre f7 ou f2. Ta dame peut donner échec en g8.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le cavalier en d6 saute en f7 : il attaque le roi enfermé en h8. Échec et mat.",
+      "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+      "line": [
+        {
+          "uci": "d6f7",
+          "text": "Le cavalier en d6 saute en f7 : il attaque le roi enfermé en h8. Échec et mat."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Un échec de cavalier chasse le roi dans le coin. Le sacrifice de dame en g8 oblige la tour à la prendre. Le cavalier mate ensuite en f7. Vérifie chaque réponse avant de sacrifier.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le cavalier blanc arrive en f7. Il attaque h8 en sautant au-dessus des autres pièces. Le roi noir n’a aucune sortie et personne ne peut prendre le cavalier.",
+      "fen": "6rk/5Npp/8/3B4/8/6P1/1p3P1P/2q2RK1 b - - 1 36"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Contre un cavalier, on ne peut pas bloquer l’attaque avec une pièce entre lui et le roi. Mais on peut parfois prendre le cavalier. Vérifie donc les prises adverses avant d’annoncer la victoire.",
+      "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36"
     }
   ],
-  "examples": [
+  "exercises": [
     {
-      "fen": "6rk/5Npp/8/8/8/8/8/6K1 b - - 0 1",
-      "outcome": "mate",
-      "source": "CURRICULUM.md"
+      "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+      "solution": [
+        "d6f7"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Le roi noir en h8 est enfermé par ses pièces. Ton cavalier en d6 peut terminer la partie.",
+      "accept": [
+        "d6f7"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde d’abord les voisins du roi noir : g8, g7 et h7. Ils sont occupés par son propre camp. Un cavalier peut profiter de cette prison, car il n’a pas besoin d’une ligne libre.",
+      "success": "Le cavalier blanc arrive en f7. Il attaque h8 en sautant au-dessus des autres pièces. Le roi noir n’a aucune sortie et personne ne peut prendre le cavalier."
     }
   ],
-  "videos": []
+  "retenir": "Un roi enfermé par son propre camp peut perdre contre un seul échec de cavalier.",
+  "review": {
+    "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+    "solution": [
+      "d6f7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi noir en h8 est enfermé par ses pièces. Ton cavalier en d6 peut terminer la partie.",
+    "accept": [
+      "d6f7"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde d’abord les voisins du roi noir : g8, g7 et h7. Ils sont occupés par son propre camp. Un cavalier peut profiter de cette prison, car il n’a pas besoin d’une ligne libre.",
+    "success": "Le cavalier blanc arrive en f7. Il attaque h8 en sautant au-dessus des autres pièces. Le roi noir n’a aucune sortie et personne ne peut prendre le cavalier."
+  },
+  "contentVersion": 2,
+  "principle": "Un roi enfermé par son propre camp peut perdre contre un seul échec de cavalier.",
+  "entryChallenge": {
+    "fen": "6rk/6pp/3N4/3B4/8/6P1/1p3P1P/2q2RK1 w - - 0 36",
+    "solution": [
+      "d6f7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi noir en h8 est enfermé par ses pièces. Ton cavalier en d6 peut terminer la partie.",
+    "accept": [
+      "d6f7"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde d’abord les voisins du roi noir : g8, g7 et h7. Ils sont occupés par son propre camp. Un cavalier peut profiter de cette prison, car il n’a pas besoin d’une ligne libre.",
+    "success": "Le cavalier blanc arrive en f7. Il attaque h8 en sautant au-dessus des autres pièces. Le roi noir n’a aucune sortie et personne ne peut prendre le cavalier.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

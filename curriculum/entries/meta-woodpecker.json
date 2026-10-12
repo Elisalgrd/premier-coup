@@ -1,73 +1,9 @@
 {
   "id": "meta-woodpecker",
-  "title": "La méthode pic-vert",
   "tier": 3,
   "priority": "B",
-  "domain": "méthode",
   "prerequisites": [
     "proc-forcing-moves"
-  ],
-  "principle": "Résoudre le même set de problèmes en cycles de plus en plus rapides grave les motifs dans la reconnaissance automatique.",
-  "why": [],
-  "signals": [],
-  "method": [
-    "set de 100 à 300 problèmes de ton niveau",
-    "premier cycle lent et juste",
-    "puis refaire le set entier en moitié moins de temps, plusieurs fois."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
-    "solution": [
-      "e4d6",
-      "e8d7",
-      "d6b5"
-    ],
-    "prompt": "Prends le temps de vérifier les échecs, captures et menaces.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
-      "move": "e4d6",
-      "text": "",
-      "arrows": [
-        [
-          "e4",
-          "d6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4k3/8/3N4/1q6/8/8/8/4K3 b - - 1 1",
-      "move": "e8d7",
-      "text": "",
-      "arrows": [
-        [
-          "e8",
-          "d7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/3k4/3N4/1q6/8/8/8/4K3 w - - 2 2",
-      "move": "d6b5",
-      "text": "",
-      "arrows": [
-        [
-          "d6",
-          "b5"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -82,21 +18,105 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "game-review",
+  "domain": "méthode",
+  "title": "Refaire les mêmes problèmes pour mieux les voir",
+  "introduces": [],
+  "challenge": null,
   "screens": [
     {
-      "title": "Principe",
-      "text": "Résoudre le même set de problèmes en cycles de plus en plus rapides grave les motifs dans la reconnaissance automatique.",
-      "audio": null
+      "step": "principe",
+      "title": "Refaire les mêmes problèmes pour mieux les voir",
+      "text": "Refaire un même groupe de problèmes aide à reconnaître les attaques plus vite. Ici, le cavalier peut attaquer le roi et la dame ensemble. La première fois, tu calcules ; plus tard, tu reconnais le dessin.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "marks": []
     },
     {
-      "title": "Méthode",
-      "text": "Set de 100 à 300 problèmes de ton niveau. Premier cycle lent et juste. Puis refaire le set entier en moitié moins de temps, plusieurs fois.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Dans S’entraîner, choisis Refaire les mêmes problèmes. Termine le groupe sans chercher la vitesse. Recommence ensuite les mêmes positions en essayant de rester aussi précise. Compare le temps et les réussites.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "e4",
+          "d6"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le cavalier va en d6 : il attaque le roi en e8 et la dame en b5.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "line": [
+        {
+          "uci": "e4d6",
+          "text": "Le cavalier va en d6 : il attaque le roi en e8 et la dame en b5."
+        },
+        {
+          "uci": "e8d7",
+          "text": "Le roi noir se déplace en d7 pour sortir de l’échec."
+        },
+        {
+          "uci": "d6b5",
+          "text": "Le cavalier prend la dame en b5."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La dame tombe parce que le roi doit répondre à l’échec. Ce n’est pas seulement la case d6 qu’il faut retenir : c’est le lien entre le cavalier, le roi et la dame.",
+      "fen": "8/3k4/8/1N6/8/8/8/4K3 b - - 0 2"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Si tu retiens seulement les noms des cases, tu peux échouer quand l’image change. Avant chaque réponse, explique quelles sont les deux cibles et pourquoi l’adversaire ne peut pas les sauver ensemble.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1"
     }
   ],
+  "exercises": [],
+  "retenir": "Répète les problèmes en comprenant les attaques. La vitesse vient après la précision.",
+  "review": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "solution": [
+      "e4d6",
+      "e8d7",
+      "d6b5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "",
+    "accept": [
+      "e4d6"
+    ],
+    "alsoGood": [],
+    "hint": "Dans S’entraîner, choisis Refaire les mêmes problèmes. Termine le groupe sans chercher la vitesse. Recommence ensuite les mêmes positions en essayant de rester aussi précise. Compare le temps et les réussites.",
+    "success": "La dame tombe parce que le roi doit répondre à l’échec. Ce n’est pas seulement la case d6 qu’il faut retenir : c’est le lien entre le cavalier, le roi et la dame."
+  },
+  "contentVersion": 2,
+  "principle": "Répète les problèmes en comprenant les attaques. La vitesse vient après la précision.",
+  "entryChallenge": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "solution": [
+      "e4d6",
+      "e8d7",
+      "d6b5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "",
+    "accept": [
+      "e4d6"
+    ],
+    "alsoGood": [],
+    "hint": "Dans S’entraîner, choisis Refaire les mêmes problèmes. Termine le groupe sans chercher la vitesse. Recommence ensuite les mêmes positions en essayant de rester aussi précise. Compare le temps et les réussites.",
+    "success": "La dame tombe parce que le roi doit répondre à l’échec. Ce n’est pas seulement la case d6 qu’il faut retenir : c’est le lien entre le cavalier, le roi et la dame.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "game-review",
-  "videos": []
+  "pitfall": {}
 }

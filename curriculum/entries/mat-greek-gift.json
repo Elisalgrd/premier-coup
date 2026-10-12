@@ -1,43 +1,9 @@
 {
   "id": "mat-greek-gift",
-  "title": "Le sacrifice grec (Fxh7+)",
   "tier": 3,
   "priority": "B",
-  "domain": "mats",
   "prerequisites": [
     "mat-queen-support"
-  ],
-  "principle": "Sacrifier le fou en h7 avec échec pour exposer le roi roqué, puis Cg5+ et Dh5 menacent le mat.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "2r3k1/p4pp1/2r4p/3p4/P2P1P2/1PPQR1qb/6P1/1NR3K1 b - - 0 33",
-    "solution": [
-      "g3g2"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/KKeZK",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "2r3k1/p4pp1/2r4p/3p4/P2P1P2/1PPQR1qb/6P1/1NR3K1 b - - 0 33",
-      "move": "g3g2",
-      "text": "",
-      "arrows": [
-        [
-          "g3",
-          "g2"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "kingsideAttack",
@@ -57,20 +23,109 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "mats",
+  "title": "Le fou qui attaque l’abri du roi",
+  "introduces": [
+    "sacrifice"
+  ],
+  "challenge": {
+    "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/3P4/3B1N2/PPP2PPP/RNBQ1RK1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "h7"
+    ],
+    "check": "rule",
+    "prompt": "Touche le pion de l’abri noir que ton fou en d3 attaque. On repère la cible avant de calculer.",
+    "accept": [
+      "h7"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case h7.",
+    "success": "Prendre h7 peut attirer le roi noir hors de son abri. Mais donner un fou pour un pion coûte deux points. Il faut une suite précise pour justifier ce cadeau."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Sacrifier le fou en h7 avec échec pour exposer le roi roqué, puis Cg5+ et Dh5 menacent le mat.",
-      "audio": null
+      "step": "principe",
+      "title": "Le fou qui attaque l’abri du roi",
+      "text": "Un sacrifice consiste à donner une pièce pour obtenir autre chose. Le sacrifice grec commence souvent par un fou qui prend le pion h7 avec échec. Ici, ton fou en d3 vise ce pion devant le roi noir en g8.",
+      "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/3P4/3B1N2/PPP2PPP/RNBQ1RK1 w - - 0 1",
+      "marks": [
+        "h7"
+      ]
     },
     {
-      "title": "Conditions à vérifier",
-      "text": "Fou sur la diagonale b1-h7. Cavalier pouvant aller en g5 sans être pris utilement. Dame pouvant aller en h5 rapidement. Pas de cavalier noir en f6 (souvent chassé par e5). Pas de défense rapide par ...Ff5 ou ...Dxg5.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Avant de jouer, regarde ton cavalier en f3 et ta dame en d1. Peuvent-ils rejoindre rapidement l’attaque ? Vérifie aussi le cavalier noir en f6 : il protège h7 et peut changer toute la suite.",
+      "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/3P4/3B1N2/PPP2PPP/RNBQ1RK1 w - - 0 1",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Prendre h7 peut attirer le roi noir hors de son abri. Mais donner un fou pour un pion coûte deux points. Il faut une suite précise pour justifier ce cadeau.",
+      "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/3P4/3B1N2/PPP2PPP/RNBQ1RK1 w - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ne joue pas cette prise parce que tu reconnais le dessin. Dans cette position, la question demande seulement de repérer h7. Elle ne te dit pas de sacrifier ton fou sans calculer.",
+      "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/3P4/3B1N2/PPP2PPP/RNBQ1RK1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/3P4/3B1N2/PPP2PPP/RNBQ1RK1 w - - 0 1",
+      "kind": "square",
+      "solution": [
+        "h7"
+      ],
+      "check": "rule",
+      "prompt": "Touche le pion de l’abri noir que ton fou en d3 attaque. On repère la cible avant de calculer.",
+      "accept": [
+        "h7"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case h7.",
+      "success": "Prendre h7 peut attirer le roi noir hors de son abri. Mais donner un fou pour un pion coûte deux points. Il faut une suite précise pour justifier ce cadeau."
+    }
+  ],
+  "retenir": "Avant de donner ton fou en h7, vérifie les réponses du roi et l’arrivée de ta dame et de ton cavalier.",
+  "review": {
+    "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/3P4/3B1N2/PPP2PPP/RNBQ1RK1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "h7"
+    ],
+    "check": "rule",
+    "prompt": "Touche le pion de l’abri noir que ton fou en d3 attaque. On repère la cible avant de calculer.",
+    "accept": [
+      "h7"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case h7.",
+    "success": "Prendre h7 peut attirer le roi noir hors de son abri. Mais donner un fou pour un pion coûte deux points. Il faut une suite précise pour justifier ce cadeau."
+  },
+  "contentVersion": 2,
+  "principle": "Avant de donner ton fou en h7, vérifie les réponses du roi et l’arrivée de ta dame et de ton cavalier.",
+  "entryChallenge": {
+    "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/3P4/3B1N2/PPP2PPP/RNBQ1RK1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "h7"
+    ],
+    "check": "rule",
+    "prompt": "Touche le pion de l’abri noir que ton fou en d3 attaque. On repère la cible avant de calculer.",
+    "accept": [
+      "h7"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case h7.",
+    "success": "Prendre h7 peut attirer le roi noir hors de son abri. Mais donner un fou pour un pion coûte deux points. Il faut une suite précise pour justifier ce cadeau.",
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

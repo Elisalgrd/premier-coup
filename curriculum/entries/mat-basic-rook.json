@@ -1,51 +1,9 @@
 {
   "id": "mat-basic-rook",
-  "title": "Mat avec roi et tour contre roi",
   "tier": 0,
   "priority": "A",
-  "domain": "mats",
   "prerequisites": [
     "mat-basic-queen"
-  ],
-  "principle": "La tour coupe le roi adverse, ton roi le fait reculer, la tour donne le mat sur le bord.",
-  "why": [
-    "Fréquent en finale de tours simplifiée. Plus long que le mat avec la dame (jusqu'à 16 coups), il faut une méthode."
-  ],
-  "signals": [],
-  "method": [
-    "Avec la tour, coupe une colonne ou une rangée pour enfermer le roi adverse dans un rectangle.",
-    "Amène ton roi face au roi adverse (opposition : une case entre eux).",
-    "Quand les rois sont face à face, donne échec avec la tour : il doit reculer d'une ligne. La boîte rétrécit.",
-    "S'il n'est pas en face, joue un coup d'attente avec la tour (sur la même ligne) pour le forcer à se mettre en face.",
-    "Répète jusqu'au bord, puis mat."
-  ],
-  "pitfall": {
-    "text": "Laisser la tour à portée du roi adverse sans protection. Garder la tour loin de lui.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
-    "solution": [
-      "a1a8"
-    ],
-    "prompt": "Fais mat en un coup.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
-      "move": "a1a8",
-      "text": "",
-      "arrows": [
-        [
-          "a1",
-          "a8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -60,37 +18,153 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "endgame",
+  "domain": "mats",
+  "title": "Faire mat avec une tour et ton roi",
+  "introduces": [],
+  "challenge": {
+    "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+    "solution": [
+      "a1a8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ta tour en a1 et ton roi en g6 peuvent enfermer le roi noir en h8. Termine la partie en un coup.",
+    "accept": [
+      "a1a8"
+    ],
+    "alsoGood": [
+      "a1d1",
+      "a1a2",
+      "a1b1",
+      "a1c1",
+      "a1a7",
+      "a1a4",
+      "a1a3",
+      "a1a5",
+      "a1a6"
+    ],
+    "hint": "Commence par réduire la place du roi adverse avec ta tour. Approche ensuite ton roi. Quand le roi adverse atteint un bord, ta tour peut donner le dernier échec, comme ici de a1 vers a8.",
+    "success": "La tour arrive en a8 : elle attaque le roi noir sur toute la dernière rangée. Ton roi surveille g7 et h7. Le roi noir ne peut plus fuir : la partie est gagnée."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "La tour coupe le roi adverse, ton roi le fait reculer, la tour donne le mat sur le bord.",
-      "audio": null
+      "step": "principe",
+      "title": "Faire mat avec une tour et ton roi",
+      "text": "Ta tour en a1 empêche le roi noir de traverser une ligne entière. Ton roi en g6 ferme ses sorties vers la sixième rangée. Ensemble, ils peuvent coincer le roi noir en h8.",
+      "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Fréquent en finale de tours simplifiée. Plus long que le mat avec la dame (jusqu'à 16 coups), il faut une méthode.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Commence par réduire la place du roi adverse avec ta tour. Approche ensuite ton roi. Quand le roi adverse atteint un bord, ta tour peut donner le dernier échec, comme ici de a1 vers a8.",
+      "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+      "arrows": [
+        [
+          "a1",
+          "a8"
+        ]
+      ]
     },
     {
-      "title": "Piège",
-      "text": "Laisser la tour à portée du roi adverse sans protection. Garder la tour loin de lui.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour en a1 monte en a8. Le roi noir est attaqué et toutes ses sorties sont fermées : échec et mat.",
+      "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+      "line": [
+        {
+          "uci": "a1a8",
+          "text": "La tour en a1 monte en a8. Le roi noir est attaqué et toutes ses sorties sont fermées : échec et mat."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Coupe le roi adverse avec la tour. Approche ton roi pour soutenir la tour. Si les rois ne se font pas face, joue un coup d’attente avec la tour. Donne échec quand les rois se font face, pour repousser le roi adverse.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La tour arrive en a8 : elle attaque le roi noir sur toute la dernière rangée. Ton roi surveille g7 et h7. Le roi noir ne peut plus fuir : la partie est gagnée.",
+      "fen": "R6k/8/6K1/8/8/8/8/8 b - - 1 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Garde ta tour loin du roi adverse. Une tour non protégée placée juste à côté de lui peut être prise. Ici, a8 reste loin du roi en h8.",
+      "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1"
     }
   ],
-  "examples": [
+  "exercises": [
     {
-      "fen": "k6R/8/1K6/8/8/8/8/8 b - - 0 1",
-      "outcome": "mate",
-      "source": "CURRICULUM.md"
+      "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+      "solution": [
+        "a1a8"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Ta tour en a1 et ton roi en g6 peuvent enfermer le roi noir en h8. Termine la partie en un coup.",
+      "accept": [
+        "a1a8"
+      ],
+      "alsoGood": [
+        "a1d1",
+        "a1a2",
+        "a1b1",
+        "a1c1",
+        "a1a7",
+        "a1a4",
+        "a1a3",
+        "a1a5",
+        "a1a6"
+      ],
+      "hint": "Commence par réduire la place du roi adverse avec ta tour. Approche ensuite ton roi. Quand le roi adverse atteint un bord, ta tour peut donner le dernier échec, comme ici de a1 vers a8.",
+      "success": "La tour arrive en a8 : elle attaque le roi noir sur toute la dernière rangée. Ton roi surveille g7 et h7. Le roi noir ne peut plus fuir : la partie est gagnée."
     }
   ],
-  "drill": "endgame",
-  "videos": []
+  "retenir": "La tour ferme une ligne ; ton roi ferme les sorties. Garde la tour loin du roi adverse.",
+  "review": {
+    "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+    "solution": [
+      "a1a8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ta tour en a1 et ton roi en g6 peuvent enfermer le roi noir en h8. Termine la partie en un coup.",
+    "accept": [
+      "a1a8"
+    ],
+    "alsoGood": [],
+    "hint": "Commence par réduire la place du roi adverse avec ta tour. Approche ensuite ton roi. Quand le roi adverse atteint un bord, ta tour peut donner le dernier échec, comme ici de a1 vers a8.",
+    "success": "La tour arrive en a8 : elle attaque le roi noir sur toute la dernière rangée. Ton roi surveille g7 et h7. Le roi noir ne peut plus fuir : la partie est gagnée."
+  },
+  "contentVersion": 2,
+  "principle": "La tour ferme une ligne ; ton roi ferme les sorties. Garde la tour loin du roi adverse.",
+  "entryChallenge": {
+    "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+    "solution": [
+      "a1a8"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ta tour en a1 et ton roi en g6 peuvent enfermer le roi noir en h8. Termine la partie en un coup.",
+    "accept": [
+      "a1a8"
+    ],
+    "alsoGood": [
+      "a1d1",
+      "a1a2",
+      "a1b1",
+      "a1c1",
+      "a1a7",
+      "a1a4",
+      "a1a3",
+      "a1a5",
+      "a1a6"
+    ],
+    "hint": "Commence par réduire la place du roi adverse avec ta tour. Approche ensuite ton roi. Quand le roi adverse atteint un bord, ta tour peut donner le dernier échec, comme ici de a1 vers a8.",
+    "success": "La tour arrive en a8 : elle attaque le roi noir sur toute la dernière rangée. Ton roi surveille g7 et h7. Le roi noir ne peut plus fuir : la partie est gagnée.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

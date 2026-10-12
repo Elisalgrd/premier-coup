@@ -14,6 +14,7 @@ export function boardHtml(
     arrows = [],
     interactive = false,
     last = [],
+    arrowColor = null,
   } = {},
 ) {
   const files = flipped ? "hgfedcba" : "abcdefgh",
@@ -31,12 +32,12 @@ export function boardHtml(
         const sq = file + rank,
           p = game.get(sq),
           light = ("abcdefgh".indexOf(file) + Number(rank)) % 2 === 0;
-        return `<button type="button" class="square ${light ? "light" : "dark"} ${selected === sq ? "selected" : ""} ${marks.includes(sq) ? "marked" : ""} ${last.includes(sq) ? "last" : ""}" data-square="${sq}" aria-label="${sq}${p ? ", " + pieceName[p.type] + " " + (p.color === "w" ? "blanc" : "noir") : ", vide"}" ${!interactive ? "disabled" : ""}>${p ? pieceHtml(p) : ""}${targets.includes(sq) ? '<i class="move-dot"></i>' : ""}${col === 0 ? `<span class="rank">${rank}</span>` : ""}${row === 7 ? `<span class="file">${file}</span>` : ""}</button>`;
+        return `<button type="button" class="square ${light ? "light" : "dark"} ${selected === sq ? "selected" : ""} ${marks.includes(sq) ? "marked" : ""} ${last.includes(sq) ? "last" : ""}" data-square="${sq}" aria-label="${sq}${p ? ", " + pieceName[p.type] + " " + (p.color === "w" ? (["q", "r"].includes(p.type) ? "blanche" : "blanc") : ["q", "r"].includes(p.type) ? "noire" : "noir") : ", vide"}" ${!interactive ? "disabled" : ""}>${p ? pieceHtml(p) : ""}${targets.includes(sq) ? '<i class="move-dot"></i>' : ""}${col === 0 ? `<span class="rank">${rank}</span>` : ""}${row === 7 ? `<span class="file">${file}</span>` : ""}</button>`;
       }),
     )
     .join(
       "",
-    )}</div><svg class="board-arrows" viewBox="0 0 800 800" aria-hidden="true"><defs><marker id="${id}" markerWidth="3" markerHeight="3" refX="1.5" refY="1.5" orient="auto"><path d="M0 0L3 1.5L0 3Z" fill="currentColor"/></marker></defs>${arrows
+    )}</div><svg class="board-arrows ${arrowColor === "danger" ? "danger-arrows" : ""}" viewBox="0 0 800 800" aria-hidden="true"><defs><marker id="${id}" markerWidth="3" markerHeight="3" refX="1.5" refY="1.5" orient="auto"><path d="M0 0L3 1.5L0 3Z" fill="currentColor"/></marker></defs>${arrows
     .map(([a, b]) => {
       const [x1, y1] = xy(a),
         [x2, y2] = xy(b);
@@ -149,9 +150,9 @@ export class Board {
       const el = document.createElement("div");
       el.className = "promotion-panel";
       el.setAttribute("role", "group");
-      el.setAttribute("aria-label", "Choisir la promotion");
+      el.setAttribute("aria-label", "Choisir la nouvelle pièce du pion");
       el.innerHTML =
-        "<strong>Promouvoir en :</strong>" +
+        "<strong>Ton pion devient :</strong>" +
         ["q", "r", "b", "n"]
           .map(
             (t) =>
@@ -170,7 +171,7 @@ export class Board {
     }
     this.onMove(from + to);
   }
-  animate(fen, move) {
+  animate(fen, move, duration = 400) {
     moveSound();
     this.set(fen, {
       last: [move.slice(0, 2), move.slice(2, 4)],
@@ -190,7 +191,7 @@ export class Board {
           { transform: `translate(${a.x - b.x}px,${a.y - b.y}px)` },
           { transform: "translate(0,0)" },
         ],
-        { duration: 400, easing: "ease-out" },
+        { duration, easing: "ease-out" },
       );
     }
   }

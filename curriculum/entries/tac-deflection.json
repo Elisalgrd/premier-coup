@@ -1,78 +1,9 @@
 {
   "id": "tac-deflection",
-  "title": "La déviation",
   "tier": 2,
   "priority": "A",
-  "domain": "tactique",
   "prerequisites": [
     "tac-overload"
-  ],
-  "principle": "Force une pièce adverse à quitter une case ou une ligne qu'elle doit garder.",
-  "why": [
-    "Le défenseur d'une case clé (case de mat, pièce, case de promotion) est souvent unique. L'attirer ailleurs avec un échec ou une offre impossible à refuser ouvre la porte."
-  ],
-  "signals": [
-    "une pièce adverse empêche un mat ou une promotion",
-    "on peut l'attaquer ou lui offrir quelque chose qu'elle doit prendre."
-  ],
-  "method": [
-    "identifie la mission du défenseur",
-    "trouve un coup forçant qui l'oblige à l'abandonner",
-    "vérifie le coup final."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46",
-    "solution": [
-      "e4e8",
-      "g8h7",
-      "e8f7"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/v7Btn",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46",
-      "move": "e4e8",
-      "text": "",
-      "arrows": [
-        [
-          "e4",
-          "e8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4Q1k1/1p3p2/p4P1p/8/8/1P2p1q1/P5P1/6K1 b - - 3 46",
-      "move": "g8h7",
-      "text": "",
-      "arrows": [
-        [
-          "g8",
-          "h7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4Q3/1p3p1k/p4P1p/8/8/1P2p1q1/P5P1/6K1 w - - 4 47",
-      "move": "e8f7",
-      "text": "",
-      "arrows": [
-        [
-          "e8",
-          "f7"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "deflection"
@@ -89,30 +20,138 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Chasser une pièce de son travail",
+  "introduces": [
+    "déviation"
+  ],
+  "challenge": {
+    "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46",
+    "solution": [
+      "e4e8",
+      "g8h7",
+      "e8f7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi noir protège f7. Chasse-le avec ta dame en donnant échec, puis prends ce pion.",
+    "accept": [
+      "e4e8"
+    ],
+    "alsoGood": [],
+    "hint": "Cherche qui protège ta cible. Puis regarde si tu peux attaquer ce protecteur avec échec. Tu gagnes du temps, car l’adversaire doit d’abord sauver son roi.",
+    "success": "La dame va en e8. Après le déplacement du roi en h7, elle prend le pion en f7 avec échec. Le roi ne peut plus protéger f7 depuis h7."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Force une pièce adverse à quitter une case ou une ligne qu'elle doit garder.",
-      "audio": null
+      "step": "principe",
+      "title": "Chasser une pièce de son travail",
+      "text": "Une déviation, c’est obliger une pièce adverse à quitter ce qu’elle protège. Ici, le roi noir en g8 protège le pion en f7. Ta dame en e4 peut le chasser avec échec.",
+      "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Le défenseur d'une case clé (case de mat, pièce, case de promotion) est souvent unique. L'attirer ailleurs avec un échec ou une offre impossible à refuser ouvre la porte.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Cherche qui protège ta cible. Puis regarde si tu peux attaquer ce protecteur avec échec. Tu gagnes du temps, car l’adversaire doit d’abord sauver son roi.",
+      "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46",
+      "arrows": [
+        [
+          "e4",
+          "e8"
+        ]
+      ]
     },
     {
-      "title": "Signaux",
-      "text": "Une pièce adverse empêche un mat ou une promotion. On peut l'attaquer ou lui offrir quelque chose qu'elle doit prendre.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La dame va en e8 : elle attaque le roi noir sur la dernière rangée.",
+      "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46",
+      "line": [
+        {
+          "uci": "e4e8",
+          "text": "La dame va en e8 : elle attaque le roi noir sur la dernière rangée."
+        },
+        {
+          "uci": "g8h7",
+          "text": "Le roi noir va en h7 et ne protège plus f7."
+        },
+        {
+          "uci": "e8f7",
+          "text": "La dame prend le pion en f7 avec échec."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Identifie la mission du défenseur. Trouve un coup forçant qui l'oblige à l'abandonner. Vérifie le coup final.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La dame va en e8. Après le déplacement du roi en h7, elle prend le pion en f7 avec échec. Le roi ne peut plus protéger f7 depuis h7.",
+      "fen": "8/1p3Q1k/p4P1p/8/8/1P2p1q1/P5P1/6K1 b - - 0 47"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Chasser une pièce ne suffit pas : il faut encore pouvoir prendre la cible. Ici, la dame en e8 atteint f7 en diagonale. Vérifie toujours la distance et les obstacles.",
+      "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46"
     }
   ],
+  "exercises": [
+    {
+      "fen": "4Q3/1p3p1k/p4P1p/8/8/1P2p1q1/P5P1/6K1 w - - 4 47",
+      "solution": [
+        "e8f7"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. La dame prend le pion en f7 avec échec.",
+      "accept": [
+        "e8f7"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en e8.",
+      "success": "La dame va en e8. Après le déplacement du roi en h7, elle prend le pion en f7 avec échec. Le roi ne peut plus protéger f7 depuis h7."
+    }
+  ],
+  "retenir": "Repère qui protège la cible. Oblige cette pièce à partir, puis prends ce qu’elle gardait.",
+  "review": {
+    "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46",
+    "solution": [
+      "e4e8",
+      "g8h7",
+      "e8f7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi noir protège f7. Chasse-le avec ta dame en donnant échec, puis prends ce pion.",
+    "accept": [
+      "e4e8"
+    ],
+    "alsoGood": [],
+    "hint": "Cherche qui protège ta cible. Puis regarde si tu peux attaquer ce protecteur avec échec. Tu gagnes du temps, car l’adversaire doit d’abord sauver son roi.",
+    "success": "La dame va en e8. Après le déplacement du roi en h7, elle prend le pion en f7 avec échec. Le roi ne peut plus protéger f7 depuis h7."
+  },
+  "contentVersion": 2,
+  "principle": "Repère qui protège la cible. Oblige cette pièce à partir, puis prends ce qu’elle gardait.",
+  "entryChallenge": {
+    "fen": "6k1/1p3p2/p4P1p/8/4Q3/1P2p1q1/P5P1/6K1 w - - 2 46",
+    "solution": [
+      "e4e8",
+      "g8h7",
+      "e8f7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi noir protège f7. Chasse-le avec ta dame en donnant échec, puis prends ce pion.",
+    "accept": [
+      "e4e8"
+    ],
+    "alsoGood": [],
+    "hint": "Cherche qui protège ta cible. Puis regarde si tu peux attaquer ce protecteur avec échec. Tu gagnes du temps, car l’adversaire doit d’abord sauver son roi.",
+    "success": "La dame va en e8. Après le déplacement du roi en h7, elle prend le pion en f7 avec échec. Le roi ne peut plus protéger f7 depuis h7.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

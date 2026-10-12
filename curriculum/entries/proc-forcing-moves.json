@@ -1,52 +1,9 @@
 {
   "id": "proc-forcing-moves",
-  "title": "Les coups forçants d'abord",
   "tier": 2,
   "priority": "S",
-  "domain": "réflexes",
   "prerequisites": [
     "proc-blunder-check"
-  ],
-  "principle": "Cherche d'abord les échecs, puis les captures, puis les menaces. Pour toi et pour lui.",
-  "why": [
-    "Un coup forçant réduit les réponses de l'adversaire à quelques coups. C'est ce qui rend une combinaison calculable. Presque toutes les tactiques commencent par un coup forçant."
-  ],
-  "signals": [
-    "roi adverse mal protégé, pièces non défendues, pièces alignées, pièce surchargée."
-  ],
-  "method": [
-    "Liste tous tes échecs, même ceux qui semblent absurdes (un sacrifice de dame avec échec peut mater).",
-    "Liste toutes tes captures.",
-    "Liste tes menaces (attaques sur une pièce non défendue ou plus précieuse, menaces de mat).",
-    "Pour chacun, regarde sa meilleure réponse, pas celle que tu espères."
-  ],
-  "pitfall": {
-    "text": "Un échec « pour donner échec » qui chasse le roi vers une meilleure case. Un échec n'est utile que s'il gagne quelque chose ou prépare le mat.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
-    "solution": [
-      "g4g7"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/y8Bhd",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
-      "move": "g4g7",
-      "text": "",
-      "arrows": [
-        [
-          "g4",
-          "g7"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "mix"
@@ -68,51 +25,125 @@
     }
   ],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "mixed",
+  "domain": "réflexes",
+  "title": "Les coups qui obligent à répondre",
+  "introduces": [
+    "coup forçant"
+  ],
+  "challenge": {
+    "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
+    "solution": [
+      "g4g7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ta dame en g4 peut terminer la partie. Cherche d’abord les coups qui attaquent le roi en g8.",
+    "accept": [
+      "g4g7"
+    ],
+    "alsoGood": [],
+    "hint": "Cherche d’abord les coups qui attaquent le roi. Puis regarde les prises, enfin les attaques de pièces. Essaie cette recherche pour les deux camps : une belle prise ne sert à rien si ton roi perd la partie.",
+    "success": "La dame arrive en g7, protégée par ton fou en b2. Le roi noir en g8 ne peut pas la prendre. Les autres pièces noires ne peuvent pas non plus supprimer cet échec."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Cherche d'abord les échecs, puis les captures, puis les menaces. Pour toi et pour lui.",
-      "audio": null
+      "step": "principe",
+      "title": "Les coups qui obligent à répondre",
+      "text": "Un coup forçant oblige l’adversaire à répondre à un danger immédiat. L’échec, qui attaque le roi, est le plus contraignant. Ici, ta dame en g4 peut attaquer directement le roi noir en g8.",
+      "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Un coup forçant réduit les réponses de l'adversaire à quelques coups. C'est ce qui rend une combinaison calculable. Presque toutes les tactiques commencent par un coup forçant.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Cherche d’abord les coups qui attaquent le roi. Puis regarde les prises, enfin les attaques de pièces. Essaie cette recherche pour les deux camps : une belle prise ne sert à rien si ton roi perd la partie.",
+      "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
+      "arrows": [
+        [
+          "g4",
+          "g7"
+        ]
+      ]
     },
     {
-      "title": "Signaux",
-      "text": "Roi adverse mal protégé, pièces non défendues, pièces alignées, pièce surchargée.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La dame en g4 prend le pion en g7 : échec. Le roi noir ne peut plus échapper à l’attaque.",
+      "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
+      "line": [
+        {
+          "uci": "g4g7",
+          "text": "La dame en g4 prend le pion en g7 : échec. Le roi noir ne peut plus échapper à l’attaque."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Liste tous tes échecs, même ceux qui semblent absurdes (un sacrifice de dame avec échec peut mater).",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La dame arrive en g7, protégée par ton fou en b2. Le roi noir en g8 ne peut pas la prendre. Les autres pièces noires ne peuvent pas non plus supprimer cet échec.",
+      "fen": "3r2k1/pp3pQ1/2n1q2p/3p4/4n3/PP1Nb3/1BP2PPP/4R1K1 b - - 0 24"
     },
     {
-      "title": "Méthode",
-      "text": "Liste toutes tes captures.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Liste tes menaces (attaques sur une pièce non défendue ou plus précieuse, menaces de mat).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Pour chacun, regarde sa meilleure réponse, pas celle que tu espères.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Un échec « pour donner échec » qui chasse le roi vers une meilleure case. Un échec n'est utile que s'il gagne quelque chose ou prépare le mat.",
-      "audio": null
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Une prise n’oblige pas toujours l’adversaire à reprendre. Il peut avoir un échec plus fort. Après chaque idée, regarde sa meilleure réponse avant de décider.",
+      "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24"
     }
   ],
+  "exercises": [
+    {
+      "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
+      "solution": [
+        "g4g7"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Ta dame en g4 peut terminer la partie. Cherche d’abord les coups qui attaquent le roi en g8.",
+      "accept": [
+        "g4g7"
+      ],
+      "alsoGood": [],
+      "hint": "Cherche d’abord les coups qui attaquent le roi. Puis regarde les prises, enfin les attaques de pièces. Essaie cette recherche pour les deux camps : une belle prise ne sert à rien si ton roi perd la partie.",
+      "success": "La dame arrive en g7, protégée par ton fou en b2. Le roi noir en g8 ne peut pas la prendre. Les autres pièces noires ne peuvent pas non plus supprimer cet échec."
+    }
+  ],
+  "retenir": "Avant de chercher un coup tranquille, regarde les échecs, les prises et les attaques immédiates.",
+  "review": {
+    "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
+    "solution": [
+      "g4g7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ta dame en g4 peut terminer la partie. Cherche d’abord les coups qui attaquent le roi en g8.",
+    "accept": [
+      "g4g7"
+    ],
+    "alsoGood": [],
+    "hint": "Cherche d’abord les coups qui attaquent le roi. Puis regarde les prises, enfin les attaques de pièces. Essaie cette recherche pour les deux camps : une belle prise ne sert à rien si ton roi perd la partie.",
+    "success": "La dame arrive en g7, protégée par ton fou en b2. Le roi noir en g8 ne peut pas la prendre. Les autres pièces noires ne peuvent pas non plus supprimer cet échec."
+  },
+  "contentVersion": 2,
+  "principle": "Avant de chercher un coup tranquille, regarde les échecs, les prises et les attaques immédiates.",
+  "entryChallenge": {
+    "fen": "3r2k1/pp3pp1/2n1q2p/3p4/4n1Q1/PP1Nb3/1BP2PPP/4R1K1 w - - 0 24",
+    "solution": [
+      "g4g7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ta dame en g4 peut terminer la partie. Cherche d’abord les coups qui attaquent le roi en g8.",
+    "accept": [
+      "g4g7"
+    ],
+    "alsoGood": [],
+    "hint": "Cherche d’abord les coups qui attaquent le roi. Puis regarde les prises, enfin les attaques de pièces. Essaie cette recherche pour les deux camps : une belle prise ne sert à rien si ton roi perd la partie.",
+    "success": "La dame arrive en g7, protégée par ton fou en b2. Le roi noir en g8 ne peut pas la prendre. Les autres pièces noires ne peuvent pas non plus supprimer cet échec.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "mixed",
-  "videos": []
+  "pitfall": {}
 }

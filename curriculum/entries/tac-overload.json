@@ -1,76 +1,9 @@
 {
   "id": "tac-overload",
-  "title": "La surcharge",
   "tier": 2,
   "priority": "A",
-  "domain": "tactique",
   "prerequisites": [
     "tac-remove-defender"
-  ],
-  "principle": "Une pièce adverse défend deux choses à la fois. Attaque l'une : en la défendant, elle abandonne l'autre.",
-  "why": [
-    "Une pièce ne peut être qu'à un endroit. Si elle a deux missions, elle en rate forcément une."
-  ],
-  "signals": [
-    "une pièce adverse qui est l'unique défenseur de deux cibles (deux pièces, ou une pièce et une case de mat)."
-  ],
-  "method": [
-    "repère les défenseurs à double emploi",
-    "force-les à choisir avec une capture ou un échec."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
-    "solution": [
-      "e5e4",
-      "f5e4",
-      "a5g5"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/XAua5",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
-      "move": "e5e4",
-      "text": "",
-      "arrows": [
-        [
-          "e5",
-          "e4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/5k2/8/r4KR1/4p3/7P/6P1/8 w - - 0 49",
-      "move": "f5e4",
-      "text": "",
-      "arrows": [
-        [
-          "f5",
-          "e4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/5k2/8/r5R1/4K3/7P/6P1/8 b - - 0 49",
-      "move": "a5g5",
-      "text": "",
-      "arrows": [
-        [
-          "a5",
-          "g5"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "deflection",
@@ -88,30 +21,138 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Une pièce qui protège trop de choses",
+  "introduces": [
+    "surcharge"
+  ],
+  "challenge": {
+    "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
+    "solution": [
+      "e5e4",
+      "f5e4",
+      "a5g5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi blanc en f5 protège g5. Pousse ton pion pour lui donner un deuxième problème.",
+    "accept": [
+      "e5e4"
+    ],
+    "alsoGood": [],
+    "hint": "Repère ce que protège chaque pièce adverse. Ici, imagine le roi blanc sur e4 : g5 n’est plus une case voisine de son roi. La tour blanche perd sa protection.",
+    "success": "Le pion noir avance en e4. Si le roi blanc le prend, il quitte la protection de la tour en g5. Ta tour en a5 peut alors la prendre."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Une pièce adverse défend deux choses à la fois. Attaque l'une : en la défendant, elle abandonne l'autre.",
-      "audio": null
+      "step": "principe",
+      "title": "Une pièce qui protège trop de choses",
+      "text": "Une surcharge, c’est quand une pièce doit protéger deux choses et ne peut pas tout garder. Ici, le roi blanc en f5 protège sa tour en g5 et bloque ton pion en e5.",
+      "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Une pièce ne peut être qu'à un endroit. Si elle a deux missions, elle en rate forcément une.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Repère ce que protège chaque pièce adverse. Ici, imagine le roi blanc sur e4 : g5 n’est plus une case voisine de son roi. La tour blanche perd sa protection.",
+      "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
+      "arrows": [
+        [
+          "e5",
+          "e4"
+        ]
+      ]
     },
     {
-      "title": "Signaux",
-      "text": "Une pièce adverse qui est l'unique défenseur de deux cibles (deux pièces, ou une pièce et une case de mat).",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le pion noir avance en e4 : il attire l’attention du roi blanc.",
+      "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
+      "line": [
+        {
+          "uci": "e5e4",
+          "text": "Le pion noir avance en e4 : il attire l’attention du roi blanc."
+        },
+        {
+          "uci": "f5e4",
+          "text": "Le roi blanc prend le pion en e4 et ne protège plus g5."
+        },
+        {
+          "uci": "a5g5",
+          "text": "La tour noire en a5 prend la tour blanche en g5."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Repère les défenseurs à double emploi. Force-les à choisir avec une capture ou un échec.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le pion noir avance en e4. Si le roi blanc le prend, il quitte la protection de la tour en g5. Ta tour en a5 peut alors la prendre.",
+      "fen": "8/5k2/8/6r1/4K3/7P/6P1/8 w - - 0 50"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "L’adversaire n’est jamais obligé de prendre ton pion. Vérifie aussi ses autres réponses. La démonstration montre ce qui arrive s’il choisit de le prendre.",
+      "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48"
     }
   ],
+  "exercises": [
+    {
+      "fen": "8/5k2/8/r5R1/4K3/7P/6P1/8 b - - 0 49",
+      "solution": [
+        "a5g5"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. La tour noire en a5 prend la tour blanche en g5.",
+      "accept": [
+        "a5g5"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en a5.",
+      "success": "Le pion noir avance en e4. Si le roi blanc le prend, il quitte la protection de la tour en g5. Ta tour en a5 peut alors la prendre."
+    }
+  ],
+  "retenir": "Une pièce qui protège deux cibles peut en abandonner une quand tu attaques l’autre.",
+  "review": {
+    "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
+    "solution": [
+      "e5e4",
+      "f5e4",
+      "a5g5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi blanc en f5 protège g5. Pousse ton pion pour lui donner un deuxième problème.",
+    "accept": [
+      "e5e4"
+    ],
+    "alsoGood": [],
+    "hint": "Repère ce que protège chaque pièce adverse. Ici, imagine le roi blanc sur e4 : g5 n’est plus une case voisine de son roi. La tour blanche perd sa protection.",
+    "success": "Le pion noir avance en e4. Si le roi blanc le prend, il quitte la protection de la tour en g5. Ta tour en a5 peut alors la prendre."
+  },
+  "contentVersion": 2,
+  "principle": "Une pièce qui protège deux cibles peut en abandonner une quand tu attaques l’autre.",
+  "entryChallenge": {
+    "fen": "8/5k2/8/r3pKR1/8/7P/6P1/8 b - - 0 48",
+    "solution": [
+      "e5e4",
+      "f5e4",
+      "a5g5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi blanc en f5 protège g5. Pousse ton pion pour lui donner un deuxième problème.",
+    "accept": [
+      "e5e4"
+    ],
+    "alsoGood": [],
+    "hint": "Repère ce que protège chaque pièce adverse. Ici, imagine le roi blanc sur e4 : g5 n’est plus une case voisine de son roi. La tour blanche perd sa protection.",
+    "success": "Le pion noir avance en e4. Si le roi blanc le prend, il quitte la protection de la tour en g5. Ta tour en a5 peut alors la prendre.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

@@ -1,33 +1,10 @@
 {
   "id": "vis-values",
-  "title": "La valeur des pièces",
   "tier": 0,
   "priority": "S",
-  "domain": "vision",
   "prerequisites": [
     "vis-rules"
   ],
-  "principle": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Le roi n'a pas de prix.",
-  "why": [
-    "C'est l'unité de mesure pour décider si une capture ou un échange est bon. Gagner 3 points sans contrepartie suffit à gagner une partie entre débutants."
-  ],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "« gagner la qualité » n'est pas un gain si l'adversaire obtient une attaque de mat.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4k3/8/8/8/2q5/8/8/R3K3 w - - 0 1",
-    "solution": [
-      "c4"
-    ],
-    "prompt": "Touche la pièce qui vaut neuf points.",
-    "mode": "square",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [],
   "lichessThemes": [],
   "ratingBand": [
     400,
@@ -41,56 +18,148 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "material",
+  "domain": "vision",
+  "title": "Combien vaut chaque pièce",
+  "introduces": [
+    "valeur des pièces",
+    "matériel",
+    "qualité",
+    "échange"
+  ],
+  "challenge": {
+    "fen": "7k/8/8/3n4/p7/8/8/3Q2K1 w - - 0 1",
+    "prompt": "Tu joues les blancs. Ta dame en d1 peut prendre deux choses : le pion en a4 ou le cavalier en d5. Aucun des deux n’est protégé. Lequel prends-tu ?",
+    "solution": [
+      "d1d5"
+    ],
+    "check": "exact",
+    "hint": "Un cavalier vaut plus qu’un pion. Lequel est le plus précieux ?",
+    "accept": [
+      "d1d5"
+    ],
+    "engine": {
+      "best": "d1f3",
+      "score": 8115,
+      "depth": 16
+    },
+    "alsoGood": [
+      "d1h5",
+      "d1d4",
+      "d1f3",
+      "d1a1"
+    ],
+    "kind": "move"
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Le roi n'a pas de prix.",
-      "audio": null
+      "step": "principe",
+      "title": "Les points de chaque pièce",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "text": "Pour savoir si un échange (une prise suivie d’une reprise) est bon, on donne des points aux pièces. Pion : 1. Cavalier : 3. Fou : 3. Tour : 5. Dame : 9. Le roi n’a pas de prix : s’il est mat, la partie est perdue, peu importe le reste."
     },
     {
-      "title": "Pourquoi",
-      "text": "C'est l'unité de mesure pour décider si une capture ou un échange est bon. Gagner 3 points sans contrepartie suffit à gagner une partie entre débutants.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "À quoi ça sert",
+      "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+      "arrows": [
+        [
+          "c2",
+          "a4"
+        ],
+        [
+          "d1",
+          "d5"
+        ]
+      ],
+      "text": "Ces points servent à comparer. Ici, ta dame peut prendre la tour noire (5 points), et ton fou peut prendre la dame noire (9 points). Avant de choisir, on regarde aussi ce que l’adversaire pourra reprendre. C’est le sujet d’une prochaine fiche."
     },
     {
-      "title": "Nuances à donner",
-      "text": "Ce sont des repères, pas des lois. Une pièce active vaut plus qu'une pièce enfermée.",
-      "audio": null
+      "step": "principe",
+      "title": "Le matériel",
+      "fen": "7k/8/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+      "text": "On appelle « matériel » l’ensemble de tes pièces, compté en points. « Gagner du matériel », c’est gagner des points sur l’adversaire. Entre débutants, gagner 3 points (un cavalier ou un fou) sans rien perdre suffit souvent pour gagner la partie."
     },
     {
-      "title": "Nuances à donner",
-      "text": "La paire de fous vaut un peu plus que fou + cavalier dans les positions ouvertes (environ un demi-pion).",
-      "audio": null
+      "step": "principe",
+      "title": "L’échange de la qualité",
+      "fen": "7k/8/8/3n4/8/8/8/3R2K1 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "d5"
+        ]
+      ],
+      "text": "Quand on donne une tour (5) contre un cavalier ou un fou (3), on perd environ 2 points. Les joueurs appellent ça « perdre la qualité ». Évite-le, sauf si tu vois que ça te rapporte vite quelque chose de mieux, comme un mat."
     },
     {
-      "title": "Nuances à donner",
-      "text": "Tour contre fou ou cavalier = « la qualité » (environ 2 points).",
-      "audio": null
-    },
-    {
-      "title": "Nuances à donner",
-      "text": "Trois pièces mineures valent environ une dame. Deux tours valent un peu plus qu'une dame.",
-      "audio": null
-    },
-    {
-      "title": "Nuances à donner",
-      "text": "Un pion proche de la promotion peut valoir bien plus que 1.",
-      "audio": null
-    },
-    {
-      "title": "Nuances à donner",
-      "text": "Le mat compte plus que tout le matériel.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "« gagner la qualité » n'est pas un gain si l'adversaire obtient une attaque de mat.",
-      "audio": null
+      "step": "piege",
+      "title": "Les points ne font pas tout",
+      "fen": "6k1/5ppp/8/8/8/8/q4PPP/4R1K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "e1e8",
+          "text": "La tour blanche arrive sur la dernière rangée. Le roi noir est coincé par ses pions : mat. La dame noire n’a servi à rien."
+        }
+      ],
+      "text": "Les points sont des repères, pas une loi. Une pièce coincée vaut moins qu’une pièce active. Et un mat vaut plus que tout : ici, les noirs ont une dame (9) contre une tour (5), mais regarde ce qui arrive à leur roi."
     }
   ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "4k3/8/8/1b4r1/8/8/3Q4/1R2K3 w - - 0 1",
+      "prompt": "Tu peux prendre le fou en b5 avec ta tour, ou la tour en g5 avec ta dame. Rien n’est protégé. Choisis la prise qui rapporte le plus de points.",
+      "solution": [
+        "d2g5"
+      ],
+      "check": "exact",
+      "success": "Exact : une tour vaut 5, un fou 3.",
+      "hint": "Compare : un fou vaut 3, une tour vaut 5.",
+      "accept": [
+        "d2g5"
+      ],
+      "engine": {
+        "best": "d2g5",
+        "score": 1300,
+        "depth": 16
+      },
+      "alsoGood": [
+        "d2e3",
+        "b1b5"
+      ]
+    }
+  ],
+  "retenir": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Compare toujours ce que tu gagnes et ce que tu perds.",
+  "contentVersion": 2,
+  "principle": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Compare toujours ce que tu gagnes et ce que tu perds.",
+  "entryChallenge": {
+    "fen": "7k/8/8/3n4/p7/8/8/3Q2K1 w - - 0 1",
+    "prompt": "Tu joues les blancs. Ta dame en d1 peut prendre deux choses : le pion en a4 ou le cavalier en d5. Aucun des deux n’est protégé. Lequel prends-tu ?",
+    "solution": [
+      "d1d5"
+    ],
+    "check": "exact",
+    "hint": "Un cavalier vaut plus qu’un pion. Lequel est le plus précieux ?",
+    "accept": [
+      "d1d5"
+    ],
+    "engine": {
+      "best": "d1f3",
+      "score": 8115,
+      "depth": 16
+    },
+    "alsoGood": [
+      "d1h5",
+      "d1d4",
+      "d1f3",
+      "d1a1"
+    ],
+    "kind": "move",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "material",
-  "videos": []
+  "pitfall": {}
 }

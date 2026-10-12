@@ -1,74 +1,9 @@
 {
   "id": "tac-intermezzo",
-  "title": "Le coup intermédiaire",
   "tier": 3,
   "priority": "A",
-  "domain": "tactique",
   "prerequisites": [
     "proc-candidates-calc"
-  ],
-  "principle": "Avant de reprendre « automatiquement », regarde s'il existe un coup plus fort (échec, menace plus grosse), puis reprends ensuite.",
-  "why": [
-    "Dans un échange, tout le monde suppose la reprise. Un coup intercalé forçant change le bilan."
-  ],
-  "signals": [
-    "un échange en cours",
-    "tu as un échec ou une menace sur une pièce plus précieuse."
-  ],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13",
-    "solution": [
-      "e5f3",
-      "g2f3",
-      "f6d7"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/SrlhX",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13",
-      "move": "e5f3",
-      "text": "",
-      "arrows": [
-        [
-          "e5",
-          "f3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r4rk1/1ppRppbp/p4np1/8/2B5/2N1Bn1P/PPP2PP1/5RK1 w - - 0 14",
-      "move": "g2f3",
-      "text": "",
-      "arrows": [
-        [
-          "g2",
-          "f3"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "r4rk1/1ppRppbp/p4np1/8/2B5/2N1BP1P/PPP2P2/5RK1 b - - 0 14",
-      "move": "f6d7",
-      "text": "",
-      "arrows": [
-        [
-          "f6",
-          "d7"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "intermezzo"
@@ -85,25 +20,138 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "Un coup plus urgent avant de reprendre",
+  "introduces": [
+    "coup intermédiaire"
+  ],
+  "challenge": {
+    "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13",
+    "solution": [
+      "e5f3",
+      "g2f3",
+      "f6d7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Avant de prendre la tour en d7, ton cavalier en e5 peut gagner plus gros avec échec.",
+    "accept": [
+      "e5f3"
+    ],
+    "alsoGood": [],
+    "hint": "Quand on vient de te prendre quelque chose, ne reprends pas par réflexe. Regarde d’abord tes échecs et tes prises plus importantes. Ici, la dame blanche en f3 est une cible prioritaire.",
+    "success": "Le cavalier prend en f3 avec échec. Les blancs répondent en reprenant avec leur pion g2. Ton autre cavalier, en f6, peut alors prendre la tour en d7."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Avant de reprendre « automatiquement », regarde s'il existe un coup plus fort (échec, menace plus grosse), puis reprends ensuite.",
-      "audio": null
+      "step": "principe",
+      "title": "Un coup plus urgent avant de reprendre",
+      "text": "Un coup intermédiaire, c’est un coup utile joué avant une reprise qui semble automatique. Ici, avec les noirs, tu peux attaquer le roi blanc avec ton cavalier en e5 avant de prendre la tour en d7.",
+      "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Dans un échange, tout le monde suppose la reprise. Un coup intercalé forçant change le bilan.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Quand on vient de te prendre quelque chose, ne reprends pas par réflexe. Regarde d’abord tes échecs et tes prises plus importantes. Ici, la dame blanche en f3 est une cible prioritaire.",
+      "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13",
+      "arrows": [
+        [
+          "e5",
+          "f3"
+        ]
+      ]
     },
     {
-      "title": "Signaux",
-      "text": "Un échange en cours. Tu as un échec ou une menace sur une pièce plus précieuse.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le cavalier noir en e5 prend la dame en f3 avec échec.",
+      "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13",
+      "line": [
+        {
+          "uci": "e5f3",
+          "text": "Le cavalier noir en e5 prend la dame en f3 avec échec."
+        },
+        {
+          "uci": "g2f3",
+          "text": "Le pion blanc en g2 reprend le cavalier : le roi n’est plus attaqué."
+        },
+        {
+          "uci": "f6d7",
+          "text": "Le cavalier noir en f6 prend la tour en d7."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le cavalier prend en f3 avec échec. Les blancs répondent en reprenant avec leur pion g2. Ton autre cavalier, en f6, peut alors prendre la tour en d7.",
+      "fen": "r4rk1/1ppnppbp/p5p1/8/2B5/2N1BP1P/PPP2P2/5RK1 w - - 0 15"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Un coup intermédiaire doit vraiment imposer une réponse. Si tu joues un coup lent, l’adversaire peut sauver la pièce que tu voulais reprendre ensuite.",
+      "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13"
     }
   ],
+  "exercises": [
+    {
+      "fen": "r4rk1/1ppRppbp/p4np1/8/2B5/2N1BP1P/PPP2P2/5RK1 b - - 0 14",
+      "solution": [
+        "f6d7"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. Le cavalier noir en f6 prend la tour en d7.",
+      "accept": [
+        "f6d7"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en f6.",
+      "success": "Le cavalier prend en f3 avec échec. Les blancs répondent en reprenant avec leur pion g2. Ton autre cavalier, en f6, peut alors prendre la tour en d7."
+    }
+  ],
+  "retenir": "Avant une reprise automatique, cherche un échec ou une prise plus importante.",
+  "review": {
+    "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13",
+    "solution": [
+      "e5f3",
+      "g2f3",
+      "f6d7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Avant de prendre la tour en d7, ton cavalier en e5 peut gagner plus gros avec échec.",
+    "accept": [
+      "e5f3"
+    ],
+    "alsoGood": [],
+    "hint": "Quand on vient de te prendre quelque chose, ne reprends pas par réflexe. Regarde d’abord tes échecs et tes prises plus importantes. Ici, la dame blanche en f3 est une cible prioritaire.",
+    "success": "Le cavalier prend en f3 avec échec. Les blancs répondent en reprenant avec leur pion g2. Ton autre cavalier, en f6, peut alors prendre la tour en d7."
+  },
+  "contentVersion": 2,
+  "principle": "Avant une reprise automatique, cherche un échec ou une prise plus importante.",
+  "entryChallenge": {
+    "fen": "r4rk1/1ppRppbp/p4np1/4n3/2B5/2N1BQ1P/PPP2PP1/5RK1 b - - 0 13",
+    "solution": [
+      "e5f3",
+      "g2f3",
+      "f6d7"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Tu joues les noirs. Avant de prendre la tour en d7, ton cavalier en e5 peut gagner plus gros avec échec.",
+    "accept": [
+      "e5f3"
+    ],
+    "alsoGood": [],
+    "hint": "Quand on vient de te prendre quelque chose, ne reprends pas par réflexe. Regarde d’abord tes échecs et tes prises plus importantes. Ici, la dame blanche en f3 est une cible prioritaire.",
+    "success": "Le cavalier prend en f3 avec échec. Les blancs répondent en reprenant avec leur pion g2. Ton autre cavalier, en f6, peut alors prendre la tour en d7.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

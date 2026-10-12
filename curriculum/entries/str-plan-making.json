@@ -1,9 +1,7 @@
 {
   "id": "str-plan-making",
-  "title": "Construire un plan",
   "tier": 4,
   "priority": "A",
-  "domain": "stratégie",
   "prerequisites": [
     "str-open-files",
     "str-outposts",
@@ -11,43 +9,6 @@
     "str-king-safety-middlegame",
     "str-exchanges",
     "str-prophylaxis"
-  ],
-  "principle": "Un plan naît des déséquilibres : matériel, structure de pions, pièces bonnes et mauvaises, colonnes, espace, sécurité des rois, développement.",
-  "why": [],
-  "signals": [],
-  "method": [
-    "Liste les déséquilibres (qui a quoi de mieux).",
-    "Choisis l'aile ou la cible où tu es plus fort.",
-    "Formule le plan en une phrase (« J'installe mon cavalier en d5 puis je double mes tours sur la colonne c »).",
-    "Trouve le premier coup qui sert ce plan sans rien laisser en prise."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
-    "solution": [
-      "c3d5"
-    ],
-    "prompt": "Ton plan : occuper l’avant-poste central. Joue le premier coup.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
-      "move": "c3d5",
-      "text": "",
-      "arrows": [
-        [
-          "c3",
-          "d5"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -62,36 +23,153 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "plan-choice",
+  "domain": "stratégie",
+  "title": "Choisir une idée pour les prochains coups",
+  "introduces": [],
+  "challenge": {
+    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "c3d5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en c3 peut occuper une case protégée au milieu. Installe-le en d5.",
+    "accept": [
+      "c3d5"
+    ],
+    "alsoGood": [
+      "c3d1",
+      "g1f1",
+      "c4c5",
+      "f2f4",
+      "h2h4",
+      "f2f3",
+      "g2g4",
+      "a2a3",
+      "g2g3"
+    ],
+    "hint": "Commence par les dangers immédiats. S’il n’y en a pas, cherche ta pièce la moins utile ou une cible adverse. Ici, la bonne case d5 donne une direction simple au cavalier.",
+    "success": "Le cavalier s’installe en d5. Depuis cette case, il surveille davantage le camp noir. Tu as amélioré sa place sans donner une pièce."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Un plan naît des déséquilibres : matériel, structure de pions, pièces bonnes et mauvaises, colonnes, espace, sécurité des rois, développement.",
-      "audio": null
+      "step": "principe",
+      "title": "Choisir une idée pour les prochains coups",
+      "text": "Un plan est une idée pour plusieurs coups. Ici, ton cavalier en c3 peut rejoindre d5, une case protégée par tes pions et que les pions noirs ne peuvent pas attaquer.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "marks": []
     },
     {
-      "title": "Méthode",
-      "text": "Liste les déséquilibres (qui a quoi de mieux).",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Commence par les dangers immédiats. S’il n’y en a pas, cherche ta pièce la moins utile ou une cible adverse. Ici, la bonne case d5 donne une direction simple au cavalier.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "arrows": [
+        [
+          "c3",
+          "d5"
+        ]
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Choisis l'aile ou la cible où tu es plus fort.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le cavalier blanc va de c3 à d5, soutenu par les pions en c4 et e4.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "c3d5",
+          "text": "Le cavalier blanc va de c3 à d5, soutenu par les pions en c4 et e4."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Formule ton plan. Exemple : « Cavalier en d5, puis mes deux tours sur la colonne c. »",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le cavalier s’installe en d5. Depuis cette case, il surveille davantage le camp noir. Tu as amélioré sa place sans donner une pièce.",
+      "fen": "6k1/pp3ppp/3p4/3N4/2P1P3/8/PP3PPP/6K1 b - - 1 1"
     },
     {
-      "title": "Méthode",
-      "text": "Trouve le premier coup qui sert ce plan sans rien laisser en prise.",
-      "audio": null
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Un plan doit changer si l’adversaire crée une menace. Ne joue pas ton deuxième coup prévu sans regarder son dernier coup. Les prochains déplacements dépendent toujours de sa réponse.",
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+      "solution": [
+        "c3d5"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "Ton cavalier en c3 peut occuper une case protégée au milieu. Installe-le en d5.",
+      "accept": [
+        "c3d5"
+      ],
+      "alsoGood": [
+        "c3d1",
+        "g1f1",
+        "c4c5",
+        "f2f4",
+        "h2h4",
+        "f2f3",
+        "g2g4",
+        "a2a3",
+        "g2g3"
+      ],
+      "hint": "Commence par les dangers immédiats. S’il n’y en a pas, cherche ta pièce la moins utile ou une cible adverse. Ici, la bonne case d5 donne une direction simple au cavalier.",
+      "success": "Le cavalier s’installe en d5. Depuis cette case, il surveille davantage le camp noir. Tu as amélioré sa place sans donner une pièce."
+    }
+  ],
+  "retenir": "Choisis une cible ou une meilleure case pour ta pièce, puis adapte ton idée à chaque réponse adverse.",
+  "review": {
+    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "c3d5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en c3 peut occuper une case protégée au milieu. Installe-le en d5.",
+    "accept": [
+      "c3d5"
+    ],
+    "alsoGood": [],
+    "hint": "Commence par les dangers immédiats. S’il n’y en a pas, cherche ta pièce la moins utile ou une cible adverse. Ici, la bonne case d5 donne une direction simple au cavalier.",
+    "success": "Le cavalier s’installe en d5. Depuis cette case, il surveille davantage le camp noir. Tu as amélioré sa place sans donner une pièce."
+  },
+  "contentVersion": 2,
+  "principle": "Choisis une cible ou une meilleure case pour ta pièce, puis adapte ton idée à chaque réponse adverse.",
+  "entryChallenge": {
+    "fen": "6k1/pp3ppp/3p4/8/2P1P3/2N5/PP3PPP/6K1 w - - 0 1",
+    "solution": [
+      "c3d5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton cavalier en c3 peut occuper une case protégée au milieu. Installe-le en d5.",
+    "accept": [
+      "c3d5"
+    ],
+    "alsoGood": [
+      "c3d1",
+      "g1f1",
+      "c4c5",
+      "f2f4",
+      "h2h4",
+      "f2f3",
+      "g2g4",
+      "a2a3",
+      "g2g3"
+    ],
+    "hint": "Commence par les dangers immédiats. S’il n’y en a pas, cherche ta pièce la moins utile ou une cible adverse. Ici, la bonne case d5 donne une direction simple au cavalier.",
+    "success": "Le cavalier s’installe en d5. Depuis cette case, il surveille davantage le camp noir. Tu as amélioré sa place sans donner une pièce.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "plan-choice",
-  "videos": []
+  "pitfall": {}
 }

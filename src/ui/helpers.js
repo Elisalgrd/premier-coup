@@ -28,3 +28,15 @@ export const icon = (name) =>
   ({ today: "◉", catalogue: "▤", train: "◇", progress: "↗", settings: "⚙" })[
     name
   ] || "◆";
+
+export const friendlyMistake = (label) =>
+  ({
+    "Mat raté": "Tu pouvais gagner en attaquant le roi",
+    "Mat du couloir": "Ton roi reste coincé derrière ses pions",
+    "Pièce laissée en prise":
+      "L’adversaire peut prendre une pièce gratuitement",
+    "Fourchette subie": "Une pièce adverse attaque deux de tes pièces",
+    "Clouage subi": "Bouger une pièce expose ton roi",
+    "Capture gratuite ratée": "Tu pouvais prendre une pièce sans rien perdre",
+    "Menace adverse ignorée": "Un danger adverse reste sans réponse",
+  })[label] || label;

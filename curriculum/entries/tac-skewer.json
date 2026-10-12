@@ -1,78 +1,9 @@
 {
   "id": "tac-skewer",
-  "title": "L'enfilade",
   "tier": 2,
   "priority": "A",
-  "domain": "tactique",
   "prerequisites": [
     "tac-pin"
-  ],
-  "principle": "Le clouage à l'envers. On attaque la pièce précieuse devant ; quand elle bouge, on prend celle de derrière.",
-  "why": [
-    "La pièce de devant (souvent le roi en échec) est obligée de partir et découvre celle de derrière."
-  ],
-  "signals": [
-    "roi et dame (ou roi et tour) adverses alignés sur une ligne qu'une de tes pièces longues peut atteindre, le roi devant."
-  ],
-  "method": [
-    "Repère un alignement avec la pièce la plus précieuse devant.",
-    "Attaque-la (avec échec de préférence).",
-    "Après qu'elle se déplace, prends la pièce de derrière."
-  ],
-  "pitfall": {
-    "text": "L'adversaire peut parfois s'interposer avec une pièce défendue, ou la pièce de derrière est défendue et l'échange ne gagne rien.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
-    "solution": [
-      "a1a5",
-      "d5c4",
-      "a5h5"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": null,
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
-      "move": "a1a5",
-      "text": "",
-      "arrows": [
-        [
-          "a1",
-          "a5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/8/8/R2k3q/8/8/8/6K1 b - - 1 1",
-      "move": "d5c4",
-      "text": "",
-      "arrows": [
-        [
-          "d5",
-          "c4"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/8/8/R6q/2k5/8/8/6K1 w - - 2 2",
-      "move": "a5h5",
-      "text": "",
-      "arrows": [
-        [
-          "a5",
-          "h5"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "skewer"
@@ -89,51 +20,138 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "tactique",
+  "title": "L’enfilade : une cible en cache une autre",
+  "introduces": [
+    "enfilade"
+  ],
+  "challenge": {
+    "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
+    "solution": [
+      "a1a5",
+      "d5c4",
+      "a5h5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi en d5 et la dame en h5 sont alignés. Donne échec avec ta tour, puis prends la dame.",
+    "accept": [
+      "a1a5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la rangée 5 : a5, d5 et h5 sont alignées. Cherche un échec qui place ta tour au bout de cette ligne. Après la réponse du roi, prends la dame.",
+    "success": "La tour arrive en a5 et attaque le roi noir. Le roi doit quitter la rangée. La tour peut alors prendre la dame en h5 : neuf points gagnés."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Le clouage à l'envers. On attaque la pièce précieuse devant. Quand elle bouge, on prend celle de derrière.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "La pièce de devant (souvent le roi en échec) est obligée de partir et découvre celle de derrière.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Repère un alignement avec la pièce la plus précieuse devant.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Attaque-la (avec échec de préférence).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Après qu'elle se déplace, prends la pièce de derrière.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "L'adversaire peut parfois s'interposer avec une pièce défendue, ou la pièce de derrière est défendue et l'échange ne gagne rien.",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Cherche un roi devant une dame ou une tour, sur la même ligne. Une de tes pièces longues doit atteindre cette ligne.",
-      "audio": null
-    }
-  ],
-  "examples": [
-    {
+      "step": "principe",
+      "title": "L’enfilade : une cible en cache une autre",
+      "text": "Une enfilade, c’est une attaque sur deux pièces alignées : celle de devant doit partir, puis tu prends celle de derrière. Ici, le roi noir en d5 cache sa dame en h5 à ta tour.",
       "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
+      "marks": []
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde la rangée 5 : a5, d5 et h5 sont alignées. Cherche un échec qui place ta tour au bout de cette ligne. Après la réponse du roi, prends la dame.",
+      "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
+      "arrows": [
+        [
+          "a1",
+          "a5"
+        ]
+      ]
+    },
+    {
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "La tour va en a5 : le roi noir est attaqué.",
+      "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "a1a5",
+          "text": "La tour va en a5 : le roi noir est attaqué."
+        },
+        {
+          "uci": "d5c4",
+          "text": "Le roi noir quitte la rangée en allant en c4."
+        },
+        {
+          "uci": "a5h5",
+          "text": "La tour prend la dame en h5."
+        }
+      ]
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La tour arrive en a5 et attaque le roi noir. Le roi doit quitter la rangée. La tour peut alors prendre la dame en h5 : neuf points gagnés.",
+      "fen": "8/8/8/7R/2k5/8/8/6K1 b - - 0 2"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Vérifie que la pièce de devant ne peut pas prendre ton attaquant. Ici, le roi en d5 est trop loin de la tour en a5 pour la prendre.",
+      "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1"
     }
   ],
-  "videos": []
+  "exercises": [
+    {
+      "fen": "8/8/8/R6q/2k5/8/8/6K1 w - - 2 2",
+      "solution": [
+        "a5h5"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. La tour prend la dame en h5.",
+      "accept": [
+        "a5h5"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en a5.",
+      "success": "La tour arrive en a5 et attaque le roi noir. Le roi doit quitter la rangée. La tour peut alors prendre la dame en h5 : neuf points gagnés."
+    }
+  ],
+  "retenir": "Attaque la pièce importante devant. Quand elle part, prends celle qui se cachait derrière.",
+  "review": {
+    "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
+    "solution": [
+      "a1a5",
+      "d5c4",
+      "a5h5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi en d5 et la dame en h5 sont alignés. Donne échec avec ta tour, puis prends la dame.",
+    "accept": [
+      "a1a5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la rangée 5 : a5, d5 et h5 sont alignées. Cherche un échec qui place ta tour au bout de cette ligne. Après la réponse du roi, prends la dame.",
+    "success": "La tour arrive en a5 et attaque le roi noir. Le roi doit quitter la rangée. La tour peut alors prendre la dame en h5 : neuf points gagnés."
+  },
+  "contentVersion": 2,
+  "principle": "Attaque la pièce importante devant. Quand elle part, prends celle qui se cachait derrière.",
+  "entryChallenge": {
+    "fen": "8/8/8/3k3q/8/8/8/R5K1 w - - 0 1",
+    "solution": [
+      "a1a5",
+      "d5c4",
+      "a5h5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Le roi en d5 et la dame en h5 sont alignés. Donne échec avec ta tour, puis prends la dame.",
+    "accept": [
+      "a1a5"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la rangée 5 : a5, d5 et h5 sont alignées. Cherche un échec qui place ta tour au bout de cette ligne. Après la réponse du roi, prends la dame.",
+    "success": "La tour arrive en a5 et attaque le roi noir. Le roi doit quitter la rangée. La tour peut alors prendre la dame en h5 : neuf points gagnés.",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

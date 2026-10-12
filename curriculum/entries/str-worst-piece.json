@@ -1,41 +1,10 @@
 {
   "id": "str-worst-piece",
-  "title": "Améliore ta pire pièce",
   "tier": 4,
   "priority": "S",
-  "domain": "stratégie",
   "prerequisites": [
     "ouv-principles"
   ],
-  "principle": "Sans tactique ni menace, trouve ta pièce la moins active et donne-lui une meilleure case.",
-  "why": [
-    "Une position se gagne souvent par accumulation de petits avantages. Une pièce passive est un joueur de moins."
-  ],
-  "signals": [
-    "un fou bloqué par ses propres pions, un cavalier au bord, une tour sur une colonne fermée, une dame qui ne fait rien."
-  ],
-  "method": [
-    "Vérifie la routine anti-gaffe : rien d'urgent ?",
-    "Pour chaque pièce, demande-toi : « Que fait-elle ? »",
-    "Choisis la pire",
-    "trouve une case où elle attaque quelque chose ou contrôle le centre.",
-    "Trouve le chemin (parfois 2 ou 3 coups)."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/ppp2ppp/8/8/8/3P1N2/PPP2PPP/RNB1R1K1 w - - 0 1",
-    "solution": [
-      "b1"
-    ],
-    "prompt": "Touche la pièce encore enfermée sur sa case de départ.",
-    "mode": "square",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [],
   "lichessThemes": [],
   "ratingBand": [
     400,
@@ -49,48 +18,115 @@
   },
   "sources": [],
   "videoId": "course-active-piece",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Sans tactique ni menace, trouve ta pièce la moins active et donne-lui une meilleure case.",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "Une position se gagne souvent par accumulation de petits avantages. Une pièce passive est un joueur de moins.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Vérifie la routine anti-gaffe : rien d'urgent ?",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Pour chaque pièce, demande-toi : « Que fait-elle ? »",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Choisis la pire. Trouve une case où elle attaque quelque chose ou contrôle le centre.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Trouve le chemin (parfois 2 ou 3 coups).",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Repère le fou bloqué par tes pions. Cherche aussi un cavalier au bord, une tour enfermée ou une dame inactive.",
-      "audio": null
-    }
-  ],
-  "examples": [],
-  "drill": "plan-choice",
   "videos": [
     "course-active-piece"
-  ]
+  ],
+  "drill": "plan-choice",
+  "domain": "stratégie",
+  "title": "Quand il n’y a rien à faire : améliore ta pire pièce",
+  "introduces": [
+    "plan"
+  ],
+  "challenge": {
+    "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+    "prompt": "Aucune menace, rien à prendre. Ton cavalier en b1 n’est jamais sorti. Fais-le entrer dans le jeu.",
+    "solution": [
+      "b1d2"
+    ],
+    "check": "list",
+    "accept": [
+      "b1d2"
+    ],
+    "hint": "Le cavalier en b1 peut aller en d2, puis plus tard vers f1, g3 ou e5.",
+    "engine": {
+      "best": "f1e1",
+      "score": 53,
+      "depth": 16
+    },
+    "alsoGood": [
+      "f1e1",
+      "d1e2",
+      "f3e5",
+      "b2b4",
+      "c1f4",
+      "h2h3",
+      "d1c2",
+      "d1e1",
+      "c1g5"
+    ],
+    "kind": "move"
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Le cas le plus fréquent",
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+      "text": "Souvent, il n’y a rien à prendre et aucune attaque possible. Que jouer ? Un « plan », c’est une idée pour les prochains coups. Le plan le plus simple et le plus utile : trouve ta pièce qui joue le moins bien, et donne-lui une meilleure case."
+    },
+    {
+      "step": "methode",
+      "title": "Que fait chaque pièce ?",
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+      "marks": [
+        "b1",
+        "c1"
+      ],
+      "text": "Pour chacune de tes pièces, demande-toi : « Que fait-elle ? » Ton cavalier en b1 et ton fou en c1 n’ont jamais bougé : ils ne font rien. Ce sont tes pires pièces. Toutes les autres sont déjà sorties."
+    },
+    {
+      "step": "methode",
+      "title": "Trouve la meilleure case",
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+      "arrows": [
+        [
+          "b1",
+          "d2"
+        ]
+      ],
+      "text": "Cherche une case où la pièce surveille le centre ou s’approche du roi adverse. Parfois il faut plusieurs coups pour l’y amener. Ici, le cavalier va d’abord en d2. Plus tard, quand ta tour aura quitté f1, il pourra continuer vers f1 puis g3, près du roi noir."
+    },
+    {
+      "step": "piege",
+      "title": "D’abord la vérification",
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+      "text": "Améliorer une pièce, c’est ce qu’on fait quand il n’y a RIEN d’urgent. Avant, fais toujours la vérification : a-t-il une menace ? Ai-je une prise ou une attaque qui gagne quelque chose ? Si la réponse est non aux deux, alors seulement, améliore ta pire pièce."
+    }
+  ],
+  "exercises": [],
+  "retenir": "Rien à prendre, rien à craindre ? Trouve ta pièce qui ne fait rien et donne-lui une meilleure case.",
+  "contentVersion": 2,
+  "principle": "Rien à prendre, rien à craindre ? Trouve ta pièce qui ne fait rien et donne-lui une meilleure case.",
+  "entryChallenge": {
+    "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+    "prompt": "Aucune menace, rien à prendre. Ton cavalier en b1 n’est jamais sorti. Fais-le entrer dans le jeu.",
+    "solution": [
+      "b1d2"
+    ],
+    "check": "list",
+    "accept": [
+      "b1d2"
+    ],
+    "hint": "Le cavalier en b1 peut aller en d2, puis plus tard vers f1, g3 ou e5.",
+    "engine": {
+      "best": "f1e1",
+      "score": 53,
+      "depth": 16
+    },
+    "alsoGood": [
+      "f1e1",
+      "d1e2",
+      "f3e5",
+      "b2b4",
+      "c1f4",
+      "h2h3",
+      "d1c2",
+      "d1e1",
+      "c1g5"
+    ],
+    "kind": "move",
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

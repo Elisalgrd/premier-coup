@@ -1,58 +1,9 @@
 {
   "id": "mat-back-rank",
-  "title": "Le mat du couloir",
   "tier": 2,
   "priority": "S",
-  "domain": "mats",
   "prerequisites": [
     "mat-two-rooks"
-  ],
-  "principle": "Ses pions peuvent enfermer le roi roqué. Une tour ou une dame peut alors mater sur sa dernière rangée.",
-  "why": [
-    "C'est le mat le plus fréquent en partie réelle, à tous les niveaux jusqu'à 1800."
-  ],
-  "signals": [
-    "roi adverse en g8 (ou g1) avec pions f7, g7, h7 intacts",
-    "dernière rangée défendue par une seule pièce (ou aucune)",
-    "tu as une tour ou dame qui peut y arriver."
-  ],
-  "method": [
-    "Compte les défenseurs de la dernière rangée adverse.",
-    "Si un seul : dévie-le ou surcharge-le (tac-deflection, tac-overload).",
-    "Entre avec ta tour ou dame, vérifie qu'il n'y a ni interposition ni capture.",
-    "Pour ton roi : au bon moment (souvent après le roque et quand rien ne presse), crée une « case de fuite » avec h3 ou g3 (h6 ou g6 avec les noirs)."
-  ],
-  "pitfall": {
-    "fen": "6k1/5pp1/7p/8/8/8/8/R5K1 w - - 0 1",
-    "line": [
-      "a1a8",
-      "g8h7"
-    ],
-    "text": "Ta8+ donne échec. Mais le roi noir peut sortir en h7 : ce n’est pas mat."
-  },
-  "entryChallenge": {
-    "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
-    "solution": [
-      "a1a8"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": "mate",
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
-      "move": "a1a8",
-      "text": "",
-      "arrows": [
-        [
-          "a1",
-          "a8"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "backRankMate"
@@ -69,43 +20,142 @@
   },
   "sources": [],
   "videoId": "course-mates",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Pourquoi",
-      "text": "C'est le mat le plus fréquent en partie réelle, à tous les niveaux jusqu'à 1800.",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Roi adverse en g8 (ou g1) avec pions f7, g7, h7 intacts. Dernière rangée défendue par une seule pièce (ou aucune). Tu as une tour ou dame qui peut y arriver.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Créer la case de fuite trop tôt, quand l'adversaire attaque déjà ce côté, peut affaiblir le roi.",
-      "audio": null
-    },
-    {
-      "title": "Principe",
-      "text": "Ses pions peuvent enfermer le roi roqué. Une tour ou une dame peut alors mater sur sa dernière rangée.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Vérifie les cases de fuite du roi adverse. Vérifie les défenseurs de sa dernière rangée. Fais entrer ta tour ou ta dame. Pour ton roi, prépare une case de fuite avec h3 ou g3 quand aucune menace urgente ne l’interdit.",
-      "audio": null
-    }
-  ],
-  "examples": [
-    {
-      "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
-    }
-  ],
   "videos": [
     "course-mates"
-  ]
+  ],
+  "domain": "mats",
+  "title": "Le mat du couloir",
+  "introduces": [
+    "mat du couloir",
+    "case de fuite",
+    "défendre, protéger"
+  ],
+  "challenge": {
+    "fen": "3r2k1/5ppp/8/8/8/8/5PPP/3RR1K1 w - - 0 1",
+    "prompt": "Le roi noir est coincé derrière ses trois pions. Fais mat en un coup.",
+    "solution": [
+      "d1d8"
+    ],
+    "check": "mate",
+    "hint": "La seule pièce qui protège la dernière rangée noire est la tour en d8.",
+    "accept": [
+      "d1d8"
+    ],
+    "kind": "move",
+    "alsoGood": []
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "Le roi coincé par ses propres pions",
+      "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+      "marks": [
+        "f7",
+        "g7",
+        "h7"
+      ],
+      "text": "Après le roque, le roi est souvent derrière trois pions. C’est un bon abri... sauf qu’il ne peut plus s’échapper vers l’avant. Une tour ou une dame qui arrive sur la dernière rangée le met en échec, et il n’a aucune case pour fuir : c’est le « mat du couloir »."
+    },
+    {
+      "step": "exemple",
+      "title": "Le mat",
+      "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "a1a8",
+          "text": "La tour arrive sur la dernière rangée : échec. Le roi ne peut ni avancer (ses pions), ni bouger sur la rangée (la tour la surveille). Mat."
+        }
+      ],
+      "text": "C’est le mat le plus fréquent dans les vraies parties, à presque tous les niveaux."
+    },
+    {
+      "step": "signaux",
+      "title": "Quand le chercher",
+      "fen": "3r2k1/5ppp/8/8/8/8/5PPP/3RR1K1 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "d8"
+        ]
+      ],
+      "marks": [
+        "d8"
+      ],
+      "text": "Cherche-le quand le roi adverse est derrière ses pions intacts et que sa dernière rangée n’est protégée que par une seule pièce, ou aucune. Ici, seule la tour en d8 protège la rangée noire. Si tu la prends avec échec, plus personne ne protège."
+    },
+    {
+      "step": "methode",
+      "title": "Protège-toi : la case de fuite",
+      "fen": "6k1/5ppp/8/8/8/7P/5PP1/6K1 w - - 0 1",
+      "marks": [
+        "h2"
+      ],
+      "arrows": [
+        [
+          "g1",
+          "h2"
+        ]
+      ],
+      "text": "Le même danger existe pour ton roi. Pour t’en protéger (pouvoir reprendre si l’adversaire prend cette pièce), avance un des pions devant lui (souvent le pion h) au bon moment. Ça crée une « case de fuite » : une case libre où ton roi peut s’échapper en cas d’échec sur la dernière rangée."
+    },
+    {
+      "step": "piege",
+      "title": "Ce n’est mat que s’il ne peut pas fuir",
+      "fen": "6k1/5pp1/7p/8/8/8/8/R5K1 w - - 0 1",
+      "line": [
+        {
+          "uci": "a1a8",
+          "text": "La tour donne échec sur la dernière rangée..."
+        },
+        {
+          "uci": "g8h7",
+          "text": "...mais le pion h a déjà avancé : le roi s’échappe en h7. Ce n’était qu’un échec."
+        }
+      ],
+      "text": "Avant de jouer un échec sur la dernière rangée, vérifie que le roi n’a pas de case de fuite."
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/r1R3K1 w - - 0 1",
+      "prompt": "La tour noire en a1 attaque ta tour en c1. Attention : ta tour est la seule à protéger ta dernière rangée. Trouve le meilleur coup.",
+      "solution": [
+        "c1a1"
+      ],
+      "check": "engine",
+      "success": "Tu prends sa tour. Si ta tour avait quitté ta dernière rangée, la sienne pouvait y descendre et faire mat.",
+      "hint": "Que se passe-t-il si ta tour s’en va ailleurs ?",
+      "accept": [
+        "c1a1"
+      ],
+      "engine": {
+        "best": "c1a1",
+        "score": 612,
+        "depth": 16
+      },
+      "alsoGood": []
+    }
+  ],
+  "retenir": "Un roi derrière trois pions intacts craint le mat sur la dernière rangée. Attaque-la chez lui, crée une case de fuite chez toi.",
+  "contentVersion": 2,
+  "principle": "Un roi derrière trois pions intacts craint le mat sur la dernière rangée. Attaque-la chez lui, crée une case de fuite chez toi.",
+  "entryChallenge": {
+    "fen": "3r2k1/5ppp/8/8/8/8/5PPP/3RR1K1 w - - 0 1",
+    "prompt": "Le roi noir est coincé derrière ses trois pions. Fais mat en un coup.",
+    "solution": [
+      "d1d8"
+    ],
+    "check": "mate",
+    "hint": "La seule pièce qui protège la dernière rangée noire est la tour en d8.",
+    "accept": [
+      "d1d8"
+    ],
+    "kind": "move",
+    "alsoGood": [],
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

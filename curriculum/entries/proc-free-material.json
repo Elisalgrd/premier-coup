@@ -1,75 +1,9 @@
 {
   "id": "proc-free-material",
-  "title": "Prendre ce qui est offert",
   "tier": 1,
   "priority": "A",
-  "domain": "réflexes",
   "prerequisites": [
     "proc-exchange-count"
-  ],
-  "principle": "Si une pièce est gratuite et que la prendre ne te met pas en danger, prends-la.",
-  "why": [
-    "Les débutants laissent souvent passer du matériel gratuit par peur d'un piège. Entre débutants, 9 fois sur 10 ce n'est pas un piège, c'est une gaffe."
-  ],
-  "signals": [],
-  "method": [
-    "La pièce est-elle vraiment non défendue ? (compte)",
-    "Après ma prise, a-t-il un échec, une capture ou une menace grave (mat, gain de dame) ?",
-    "Si non : prends."
-  ],
-  "pitfall": {
-    "text": "Un pion gratuit peut éloigner ta dame de la défense. Il peut aussi ouvrir une ligne vers ton roi. Vérifie ces conséquences avant de prendre.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
-    "solution": [
-      "g2d5",
-      "g8f8",
-      "d5c6"
-    ],
-    "prompt": "Trait aux blancs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/LoN6J",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
-      "move": "g2d5",
-      "text": "",
-      "arrows": [
-        [
-          "g2",
-          "d5"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "6k1/p1p3p1/1pn4p/3Bp3/8/4P1PP/PP3P2/6K1 b - - 0 24",
-      "move": "g8f8",
-      "text": "",
-      "arrows": [
-        [
-          "g8",
-          "f8"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "5k2/p1p3p1/1pn4p/3Bp3/8/4P1PP/PP3P2/6K1 w - - 1 25",
-      "move": "d5c6",
-      "text": "",
-      "arrows": [
-        [
-          "d5",
-          "c6"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "hangingPiece",
@@ -88,40 +22,136 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "réflexes",
+  "title": "Prendre une pièce sans rien perdre",
+  "introduces": [],
+  "challenge": {
+    "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
+    "solution": [
+      "g2d5",
+      "g8f8",
+      "d5c6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton fou en g2 peut gagner une tour. Trouve la prise, puis continue après la réponse noire.",
+    "accept": [
+      "g2d5"
+    ],
+    "alsoGood": [],
+    "hint": "Suis la diagonale de ton fou : g2, f3, e4, d5. Après la prise, demande-toi quelle pièce noire pourrait reprendre en d5. Puis vérifie les attaques contre ton roi en g1.",
+    "success": "Après avoir pris la tour en d5, ton fou peut encore viser le cavalier en c6. Regarde toute la suite : une pièce gratuite peut en cacher une autre."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Si une pièce est gratuite et que la prendre ne te met pas en danger, prends-la.",
-      "audio": null
+      "step": "principe",
+      "title": "Prendre une pièce sans rien perdre",
+      "text": "Ton fou en g2 voit la tour noire en d5. Aucune pièce noire ne protège cette tour. La prendre rapporte cinq points, à condition que ton roi reste en sécurité.",
+      "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "Les débutants laissent souvent passer du matériel gratuit par peur d'un piège. Entre débutants, 9 fois sur 10 ce n'est pas un piège, c'est une gaffe.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Suis la diagonale de ton fou : g2, f3, e4, d5. Après la prise, demande-toi quelle pièce noire pourrait reprendre en d5. Puis vérifie les attaques contre ton roi en g1.",
+      "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
+      "arrows": [
+        [
+          "g2",
+          "d5"
+        ]
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "La pièce est-elle vraiment non défendue ? (compte)",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Ton fou en g2 prend la tour noire en d5 : cinq points gagnés.",
+      "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
+      "line": [
+        {
+          "uci": "g2d5",
+          "text": "Ton fou en g2 prend la tour noire en d5 : cinq points gagnés."
+        },
+        {
+          "uci": "g8f8",
+          "text": "Le roi noir va en f8. Il ne peut pas reprendre ton fou."
+        },
+        {
+          "uci": "d5c6",
+          "text": "Ton fou en d5 prend aussi le cavalier en c6."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Après ma prise, a-t-il un échec, une capture ou une menace grave (mat, gain de dame) ?",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Après avoir pris la tour en d5, ton fou peut encore viser le cavalier en c6. Regarde toute la suite : une pièce gratuite peut en cacher une autre.",
+      "fen": "5k2/p1p3p1/1pB4p/4p3/8/4P1PP/PP3P2/6K1 b - - 0 25"
     },
     {
-      "title": "Méthode",
-      "text": "Si non : prends.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Un pion gratuit peut éloigner ta dame de la défense. Il peut aussi ouvrir une ligne vers ton roi. Vérifie ces conséquences avant de prendre.",
-      "audio": null
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Ne confonds pas une pièce sans protection avec une prise sans danger. Un adversaire peut parfois abandonner sa tour pour attaquer ton roi. Ici, vérifie ses réponses avant de prendre.",
+      "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24"
     }
   ],
+  "exercises": [
+    {
+      "fen": "5k2/p1p3p1/1pn4p/3Bp3/8/4P1PP/PP3P2/6K1 w - - 1 25",
+      "solution": [
+        "d5c6"
+      ],
+      "kind": "move",
+      "check": "list",
+      "prompt": "La première réponse est jouée. Ton fou en d5 prend aussi le cavalier en c6.",
+      "accept": [
+        "d5c6"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la pièce en d5.",
+      "success": "Après avoir pris la tour en d5, ton fou peut encore viser le cavalier en c6. Regarde toute la suite : une pièce gratuite peut en cacher une autre."
+    }
+  ],
+  "retenir": "Avant de prendre une pièce gratuite, vérifie la reprise adverse et la sécurité de ton roi.",
+  "review": {
+    "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
+    "solution": [
+      "g2d5",
+      "g8f8",
+      "d5c6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton fou en g2 peut gagner une tour. Trouve la prise, puis continue après la réponse noire.",
+    "accept": [
+      "g2d5"
+    ],
+    "alsoGood": [],
+    "hint": "Suis la diagonale de ton fou : g2, f3, e4, d5. Après la prise, demande-toi quelle pièce noire pourrait reprendre en d5. Puis vérifie les attaques contre ton roi en g1.",
+    "success": "Après avoir pris la tour en d5, ton fou peut encore viser le cavalier en c6. Regarde toute la suite : une pièce gratuite peut en cacher une autre."
+  },
+  "contentVersion": 2,
+  "principle": "Avant de prendre une pièce gratuite, vérifie la reprise adverse et la sécurité de ton roi.",
+  "entryChallenge": {
+    "fen": "6k1/p1p3p1/1pn4p/3rp3/8/4P1PP/PP3PB1/6K1 w - - 0 24",
+    "solution": [
+      "g2d5",
+      "g8f8",
+      "d5c6"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "Ton fou en g2 peut gagner une tour. Trouve la prise, puis continue après la réponse noire.",
+    "accept": [
+      "g2d5"
+    ],
+    "alsoGood": [],
+    "hint": "Suis la diagonale de ton fou : g2, f3, e4, d5. Après la prise, demande-toi quelle pièce noire pourrait reprendre en d5. Puis vérifie les attaques contre ton roi en g1.",
+    "success": "Après avoir pris la tour en d5, ton fou peut encore viser le cavalier en c6. Regarde toute la suite : une pièce gratuite peut en cacher une autre.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

@@ -1,56 +1,9 @@
 {
   "id": "tac-pin",
-  "title": "Le clouage",
   "tier": 2,
   "priority": "S",
-  "domain": "tactique",
   "prerequisites": [
     "proc-hanging-pieces"
-  ],
-  "principle": "Une pièce ne peut pas (ou ne doit pas) bouger parce qu'elle protège une pièce plus précieuse derrière elle.",
-  "why": [
-    "Une pièce clouée ne défend plus vraiment, et on peut l'attaquer à nouveau (souvent avec un pion) sans qu'elle puisse fuir."
-  ],
-  "signals": [
-    "une pièce adverse sur la même ligne (colonne, rangée, diagonale) que son roi ou sa dame, avec une de tes pièces longues (F, T, D) qui peut atteindre cette ligne."
-  ],
-  "method": [
-    "Repère les alignements roi / dame / tour adverses avec une pièce entre eux et toi.",
-    "Cloue avec ta pièce longue (de préférence de moindre valeur que la pièce clouée ou défendue).",
-    "Attaque la pièce clouée une seconde fois, idéalement avec un pion : elle ne peut pas fuir.",
-    "Avant de compter un défenseur adverse, vérifie qu'il n'est pas cloué."
-  ],
-  "pitfall": {
-    "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
-    "line": [
-      "e1d1",
-      "e4f6"
-    ],
-    "text": "Si ta tour quitte la colonne e, elle ne vise plus le roi. Le cavalier peut à nouveau bouger."
-  },
-  "entryChallenge": {
-    "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
-    "solution": [
-      "f2f3"
-    ],
-    "prompt": "Trait aux blancs. Trouve le coup qui applique ce principe.",
-    "outcome": null,
-    "mode": "move",
-    "source": "CURRICULUM.md"
-  },
-  "guided": [
-    {
-      "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
-      "move": "f2f3",
-      "text": "",
-      "arrows": [
-        [
-          "f2",
-          "f3"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "pin"
@@ -67,68 +20,181 @@
   },
   "sources": [],
   "videoId": "course-pins",
-  "glossary": [],
-  "audio": null,
-  "screens": [
-    {
-      "title": "Principe",
-      "text": "Une pièce ne peut pas (ou ne doit pas) bouger parce qu'elle protège une pièce plus précieuse derrière elle.",
-      "audio": null
-    },
-    {
-      "title": "Deux types",
-      "text": "Clouage absolu : derrière, c'est le roi. Bouger la pièce clouée est illégal.",
-      "audio": null
-    },
-    {
-      "title": "Deux types",
-      "text": "Clouage relatif : derrière, c'est la dame ou une tour. Bouger est légal mais coûte cher.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Repère les alignements roi / dame / tour adverses avec une pièce entre eux et toi.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Cloue avec ta pièce longue (de préférence de moindre valeur que la pièce clouée ou défendue).",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Attaque la pièce clouée une seconde fois, idéalement avec un pion : elle ne peut pas fuir.",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Avant de compter un défenseur adverse, vérifie qu'il n'est pas cloué.",
-      "audio": null
-    },
-    {
-      "title": "Piège",
-      "text": "Une pièce clouée peut encore bouger le long de la ligne et parfois prendre ta pièce qui cloue. Un clouage relatif peut être rompu par un contre-coup plus fort (voir le mat de Légal).",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "Une pièce clouée au roi ne peut pas découvrir son roi. Attaque-la à nouveau, souvent avec un pion.",
-      "audio": null
-    },
-    {
-      "title": "Signaux",
-      "text": "Cherche une pièce alignée avec son roi ou sa dame. Ta tour, ton fou ou ta dame doit pouvoir viser cet alignement.",
-      "audio": null
-    }
-  ],
-  "examples": [
-    {
-      "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
-      "outcome": null,
-      "source": "CURRICULUM.md"
-    }
-  ],
   "videos": [
     "course-pins"
-  ]
+  ],
+  "domain": "tactique",
+  "title": "Le clouage",
+  "introduces": [
+    "clouage",
+    "défenseur"
+  ],
+  "challenge": {
+    "kind": "move",
+    "fen": "3k4/8/3p4/4n3/8/8/4Q3/3R2K1 w - - 0 1",
+    "prompt": "Ta dame en e2 peut prendre le cavalier en e5. Le pion noir en d6 protège-t-il vraiment ce cavalier ?",
+    "solution": [
+      "e2e5"
+    ],
+    "check": "exact",
+    "success": "Le pion ne peut pas reprendre : il est cloué sur son roi par ta tour. Cavalier gratuit.",
+    "hint": "Ta dame descend la colonne e jusqu’au cavalier.",
+    "accept": [
+      "e2e5"
+    ],
+    "engine": {
+      "best": "e2e5",
+      "score": 99996,
+      "depth": 16
+    },
+    "alsoGood": [
+      "d1d6"
+    ]
+  },
+  "screens": [
+    {
+      "step": "principe",
+      "title": "La pièce qui ne peut plus bouger",
+      "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ],
+      "marks": [
+        "e4",
+        "e8"
+      ],
+      "text": "Un « clouage », c’est quand une pièce adverse ne peut pas bouger parce qu’elle protège une pièce plus importante derrière elle. Ici, ta tour en e1, le cavalier noir en e4 et le roi noir en e8 sont sur la même colonne. Si le cavalier bouge, le roi est en échec : c’est interdit."
+    },
+    {
+      "step": "exemple",
+      "title": "On l’attaque encore",
+      "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+      "line": [
+        {
+          "uci": "f2f3",
+          "text": "Ton pion attaque le cavalier. Le cavalier ne peut pas fuir, il est cloué. Au prochain coup, tu le prends."
+        }
+      ],
+      "text": "Une pièce clouée est une cible parfaite : attaque-la une deuxième fois, de préférence avec un pion."
+    },
+    {
+      "step": "principe",
+      "title": "Le clouage sur la dame",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4",
+      "arrows": [
+        [
+          "g5",
+          "d8"
+        ]
+      ],
+      "marks": [
+        "f6",
+        "d8"
+      ],
+      "text": "Quand la pièce de derrière est le roi, la pièce clouée n’a pas le droit de bouger. Quand c’est la dame (comme ici : fou blanc en g5, cavalier noir en f6, dame noire en d8), elle a le droit, mais si elle bouge, le fou prend la dame."
+    },
+    {
+      "step": "signaux",
+      "title": "Quand chercher un clouage",
+      "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+      "arrows": [
+        [
+          "e1",
+          "e8"
+        ]
+      ],
+      "text": "Cherche un clouage quand une pièce adverse se trouve sur la même ligne que son roi ou sa dame, et qu’une de tes pièces qui vont loin (tour, fou, dame) peut atteindre cette ligne."
+    },
+    {
+      "step": "methode",
+      "title": "Le faux défenseur",
+      "fen": "3k4/8/3p4/4n3/8/8/4Q3/3R2K1 w - - 0 1",
+      "arrows": [
+        [
+          "d1",
+          "d8"
+        ],
+        [
+          "d6",
+          "e5"
+        ]
+      ],
+      "marks": [
+        "d6"
+      ],
+      "text": "Le clouage sert aussi à repérer les faux défenseurs (la pièce qui protège une autre pièce ou une case). Le pion noir en d6 a l’air de protéger le cavalier en e5. Mais il est cloué par ta tour sur son roi : s’il quittait la colonne d pour reprendre, son roi serait en échec. Il ne protège donc rien."
+    },
+    {
+      "step": "piege",
+      "title": "Une pièce clouée peut parfois prendre",
+      "fen": "4k3/4r3/8/8/8/8/8/4RK2 b - - 0 1",
+      "line": [
+        {
+          "uci": "e7e1",
+          "text": "La tour noire est clouée sur son roi, mais elle a le droit de bouger le long de la ligne. Elle prend ta tour : échec."
+        },
+        {
+          "uci": "f1e1",
+          "text": "Ton roi reprend. Échange de tours, rien de gagné."
+        }
+      ],
+      "text": "Attention : une pièce clouée peut avancer le long de la ligne du clouage, et parfois prendre la pièce qui la cloue."
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "move",
+      "fen": "3k4/8/3p4/4n3/8/8/4Q3/3R2K1 w - - 0 1",
+      "prompt": "Prends le cavalier en e5 avec ta dame. Le pion en d6 peut-il vraiment reprendre ?",
+      "solution": [
+        "e2e5"
+      ],
+      "check": "exact",
+      "success": "Le pion ne peut pas reprendre : il est cloué sur son roi par ta tour. Cavalier gratuit.",
+      "hint": "Ta dame descend la colonne e jusqu’au cavalier.",
+      "accept": [
+        "e2e5"
+      ],
+      "engine": {
+        "best": "e2e5",
+        "score": 99996,
+        "depth": 16
+      },
+      "alsoGood": [
+        "d1d6"
+      ]
+    }
+  ],
+  "retenir": "Une pièce clouée ne peut pas bouger (ou pas sans perte). Attaque-la encore. Et vérifie toujours qu’un défenseur n’est pas cloué.",
+  "contentVersion": 2,
+  "principle": "Une pièce clouée ne peut pas bouger (ou pas sans perte). Attaque-la encore. Et vérifie toujours qu’un défenseur n’est pas cloué.",
+  "entryChallenge": {
+    "kind": "move",
+    "fen": "3k4/8/3p4/4n3/8/8/4Q3/3R2K1 w - - 0 1",
+    "prompt": "Ta dame en e2 peut prendre le cavalier en e5. Le pion noir en d6 protège-t-il vraiment ce cavalier ?",
+    "solution": [
+      "e2e5"
+    ],
+    "check": "exact",
+    "success": "Le pion ne peut pas reprendre : il est cloué sur son roi par ta tour. Cavalier gratuit.",
+    "hint": "Ta dame descend la colonne e jusqu’au cavalier.",
+    "accept": [
+      "e2e5"
+    ],
+    "engine": {
+      "best": "e2e5",
+      "score": 99996,
+      "depth": 16
+    },
+    "alsoGood": [
+      "d1d6"
+    ],
+    "mode": "move"
+  },
+  "guided": [],
+  "examples": [],
+  "pitfall": {}
 }

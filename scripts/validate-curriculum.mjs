@@ -1,66 +1,47 @@
 import fs from "node:fs";
-import assert from "node:assert/strict";
-import { Chess, validateFen } from "../src/chess/chess.js";
-import { moveUci } from "../src/chess/notation.js";
-const index = JSON.parse(fs.readFileSync("curriculum/index.json", "utf8")),
-  all = index.map((e) =>
-    JSON.parse(fs.readFileSync(`curriculum/entries/${e.id}.json`, "utf8")),
-  ),
-  ids = new Set(all.map((e) => e.id));
-let positions = 0,
+import { validateEntry } from "./curriculum-rules.mjs";
+const read = (p) =>
+    JSON.parse(fs.readFileSync(p, "utf8").replace(/^\uFEFF/, "")),
+  index = read("curriculum/index.json"),
+  all = index.map((e) => read("curriculum/entries/" + e.id + ".json")),
+  glossary = read("curriculum/glossary.json");
+let errors = [],
+  positions = 0,
   moves = 0;
-function replay(fen, line = [], outcome) {
-  assert.ok(validateFen(fen).ok, "FEN invalide " + fen);
-  const g = new Chess(fen);
-  for (const m of line) {
-    assert.match(m, /^[a-h][1-8][a-h][1-8][qrbn]?$/);
-    moveUci(g, m);
-    moves++;
-  }
-  if (outcome === "mate") assert.ok(g.isCheckmate(), "Mat incorrect " + fen);
-  if (outcome === "stalemate")
-    assert.ok(g.isStalemate(), "Pat incorrect " + fen);
-  positions++;
-}
 function walk(id, path = []) {
-  assert.ok(!path.includes(id), "Cycle " + [...path, id].join(" > "));
-  const e = all.find((e) => e.id === id);
-  for (const p of e.prerequisites) {
-    assert.ok(ids.has(p), "Prérequis inconnu " + p);
-    walk(p, [...path, id]);
-  }
+  if (path.includes(id)) throw Error("Cycle : " + [...path, id].join(" > "));
+  const e = all.find((x) => x.id === id);
+  if (!e) throw Error("Prérequis inconnu " + id);
+  for (const p of e.prerequisites) walk(p, [...path, id]);
 }
 for (const e of all) {
   try {
-    assert.match(e.id, /^(vis|proc|tac|mat|fin|ouv|str|meta)-[a-z0-9-]+$/);
-    assert.ok(e.principle);
     walk(e.id);
-    if (["S", "A"].includes(e.priority))
-      assert.ok(e.lichessThemes.length || e.drill, e.id + " sans pratique");
-    for (const s of e.screens) {
-      assert.ok(s.text.split(/\s+/).length <= 60, e.id + " écran trop long");
-      assert.doesNotMatch(s.text, /[—–]/);
-      for (const sentence of s.text.split(/[.!?](?:\s|$)/))
-        assert.ok(
-          sentence.split(/\s+/).filter(Boolean).length <= 20,
-          e.id + " phrase trop longue",
-        );
-    }
-    if (e.entryChallenge)
-      replay(
-        e.entryChallenge.fen,
-        e.entryChallenge.mode === "square" ? [] : e.entryChallenge.solution,
-        e.entryChallenge.outcome,
-      );
-    if (e.pitfall.fen) replay(e.pitfall.fen, e.pitfall.line);
-    for (const frame of e.guided)
-      if (frame.fen) replay(frame.fen, frame.move ? [frame.move] : []);
-    for (const example of e.examples)
-      replay(example.fen, example.line, example.outcome);
-  } catch (error) {
-    throw Error(e.id + ": " + error.message);
+    const r = validateEntry(e, all, glossary);
+    errors.push(...r.errors);
+    positions += r.positions;
+    moves += r.moves;
+  } catch (err) {
+    errors.push(e.id + ": " + err.message);
   }
 }
-console.log(
-  `${all.length} fiches, ${positions} positions et ${moves} demi-coups validés. Aucun cycle ni écran de plus de 60 mots.`,
-);
+if (new Set(all.map((e) => e.id)).size !== 72 || all[0].id !== "vis-start")
+  errors.push("72 fiches requises, avec vis-start en premier");
+// Les noms techniques de variables ne sont pas des textes d’interface.
+const forbiddenUi=/trait aux|\bpalier\s+[0-9]|Types à couvrir|Nuances à donner|Règles à enseigner|Exercices spécifiques|changent certaines positions|erreurs décisives|avantage significatif|gérer la position|améliorer sa structure/iu;
+for(const dir of ['src/views','src/learn','src/play','src/vision'])for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.js'))){const source=fs.readFileSync(dir+'/'+file,'utf8');const found=source.match(forbiddenUi);if(found)errors.push(dir+'/'+file+' : formule interdite '+found[0]);}
+if (errors.length) {
+  fs.mkdirSync(".cache", { recursive: true });
+  fs.writeFileSync(
+    ".cache/ton-validation-errors.json",
+    JSON.stringify(errors, null, 2),
+  );
+  console.error(errors.slice(0, 25).join("\n"));
+  console.error(
+    errors.length + " erreurs, détail dans .cache/ton-validation-errors.json",
+  );
+  process.exitCode = 1;
+} else
+  console.log(
+    `${all.length} fiches, ${positions} positions, ${moves} demi-coups. Textes courts, jargon introduit, démonstrations commentées.`,
+  );

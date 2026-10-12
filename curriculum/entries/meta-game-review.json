@@ -1,77 +1,9 @@
 {
   "id": "meta-game-review",
-  "title": "Transformer chaque partie en progrès",
   "tier": 1,
   "priority": "S",
-  "domain": "méthode",
   "prerequisites": [
     "vis-notation"
-  ],
-  "principle": "Analyse d'abord seule, ensuite avec le moteur. Retiens une seule leçon par partie.",
-  "why": [
-    "Tes propres erreurs sont les exercices les plus utiles pour toi : elles montrent exactement ce que tu ne vois pas encore (idée de Julien Song : « retravailler l'erreur qui revient »)."
-  ],
-  "signals": [],
-  "method": [
-    "Juste après la partie, sans moteur : où ai-je cru gagner ou perdre ? Note 1 à 3 moments.",
-    "Ensuite avec le moteur : trouve le premier gros changement d'évaluation.",
-    "Classe l'erreur : pièce en prise, menace pas vue, tactique ratée, finale mal jouée, plan absent.",
-    "Écris la leçon en une phrase (« Avant de jouer Fd3, je n'ai pas vu que mon cavalier en c3 n'était plus défendu »).",
-    "Ajoute la position aux révisions (fait automatiquement par l'app)."
-  ],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
-    "solution": [
-      "e4d6",
-      "e8d7",
-      "d6b5"
-    ],
-    "prompt": "Prends le temps de vérifier les échecs, captures et menaces.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
-      "move": "e4d6",
-      "text": "",
-      "arrows": [
-        [
-          "e4",
-          "d6"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "4k3/8/3N4/1q6/8/8/8/4K3 b - - 1 1",
-      "move": "e8d7",
-      "text": "",
-      "arrows": [
-        [
-          "e8",
-          "d7"
-        ]
-      ],
-      "marks": []
-    },
-    {
-      "fen": "8/3k4/3N4/1q6/8/8/8/4K3 w - - 2 2",
-      "move": "d6b5",
-      "text": "",
-      "arrows": [
-        [
-          "d6",
-          "b5"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -91,46 +23,105 @@
     }
   ],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "game-review",
+  "domain": "méthode",
+  "title": "Comprendre une erreur après la partie",
+  "introduces": [],
+  "challenge": null,
   "screens": [
     {
-      "title": "Principe",
-      "text": "Analyse d'abord seule, ensuite avec le moteur. Retiens une seule leçon par partie.",
-      "audio": null
+      "step": "principe",
+      "title": "Comprendre une erreur après la partie",
+      "text": "Revoir une partie consiste à retrouver les moments où une décision a changé la suite. Ici, imagine que tu n’as pas vu le saut du cavalier en d6. Cherche d’abord ce que tu aurais pu regarder.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "marks": []
     },
     {
-      "title": "Méthode",
-      "text": "Juste après la partie, sans moteur : où ai-je cru gagner ou perdre ? Note 1 à 3 moments.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Choisis un moment où tu as perdu une pièce ou raté une prise. Sans aide, écris ce que tu pensais. Compare ensuite avec l’analyse de l’app. Retiens une seule action à essayer dans la prochaine partie.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "arrows": [
+        [
+          "e4",
+          "d6"
+        ]
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Ensuite avec le moteur : trouve le premier gros changement d'évaluation.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le cavalier va en d6 : il attaque le roi en e8 et la dame en b5.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+      "line": [
+        {
+          "uci": "e4d6",
+          "text": "Le cavalier va en d6 : il attaque le roi en e8 et la dame en b5."
+        },
+        {
+          "uci": "e8d7",
+          "text": "Le roi noir se déplace en d7 pour sortir de l’échec."
+        },
+        {
+          "uci": "d6b5",
+          "text": "Le cavalier prend la dame en b5."
+        }
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Classe l'erreur : pièce en prise, menace pas vue, tactique ratée, finale mal jouée, plan absent.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "La suite montre le cavalier qui attaque deux cibles. La leçon à garder peut être très précise : quand le roi et la dame sont proches, regarde les sauts du cavalier.",
+      "fen": "8/3k4/8/1N6/8/8/8/4K3 b - - 0 2"
     },
     {
-      "title": "Méthode",
-      "text": "Écris la leçon en une phrase. Exemple : « Avant Fd3, je n’ai pas vu mon cavalier c3 sans défenseur. »",
-      "audio": null
-    },
-    {
-      "title": "Méthode",
-      "text": "Ajoute la position aux révisions (fait automatiquement par l'app).",
-      "audio": null
-    },
-    {
-      "title": "Pourquoi",
-      "text": "Tes erreurs montrent ce que tu ne repères pas encore. Retravaille celles qui reviennent : elles indiquent ta priorité.",
-      "audio": null
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Le score du logiciel ne remplace pas une explication. Si tu ne comprends pas pourquoi un coup marche, joue sa réponse sur l’échiquier. Ici, observe où le roi doit aller après Cd6+, le cavalier en d6 avec échec.",
+      "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1"
     }
   ],
+  "exercises": [],
+  "retenir": "Après une partie, retrouve une erreur et transforme-la en une question simple pour la prochaine.",
+  "review": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "solution": [
+      "e4d6",
+      "e8d7",
+      "d6b5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "",
+    "accept": [
+      "e4d6"
+    ],
+    "alsoGood": [],
+    "hint": "Choisis un moment où tu as perdu une pièce ou raté une prise. Sans aide, écris ce que tu pensais. Compare ensuite avec l’analyse de l’app. Retiens une seule action à essayer dans la prochaine partie.",
+    "success": "La suite montre le cavalier qui attaque deux cibles. La leçon à garder peut être très précise : quand le roi et la dame sont proches, regarde les sauts du cavalier."
+  },
+  "contentVersion": 2,
+  "principle": "Après une partie, retrouve une erreur et transforme-la en une question simple pour la prochaine.",
+  "entryChallenge": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "solution": [
+      "e4d6",
+      "e8d7",
+      "d6b5"
+    ],
+    "kind": "move",
+    "check": "list",
+    "prompt": "",
+    "accept": [
+      "e4d6"
+    ],
+    "alsoGood": [],
+    "hint": "Choisis un moment où tu as perdu une pièce ou raté une prise. Sans aide, écris ce que tu pensais. Compare ensuite avec l’analyse de l’app. Retiens une seule action à essayer dans la prochaine partie.",
+    "success": "La suite montre le cavalier qui attaque deux cibles. La leçon à garder peut être très précise : quand le roi et la dame sont proches, regarde les sauts du cavalier.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "game-review",
-  "videos": []
+  "pitfall": {}
 }

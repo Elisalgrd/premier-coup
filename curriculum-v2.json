@@ -1,0 +1,2808 @@
+{
+ "schema": 2,
+ "generatedAt": "2026-10-12",
+ "validatedWith": "chess.js + Stockfish 18 lite, depth 16, MultiPV 10",
+ "fiches": [
+  {
+   "id": "vis-start",
+   "title": "Avant de commencer",
+   "introduces": [
+    "échiquier",
+    "les blancs, les noirs",
+    "c'est aux blancs (aux noirs) de jouer",
+    "coup",
+    "échec et mat, mat"
+   ],
+   "challenge": null,
+   "screens": [
+    {
+     "step": "intro",
+     "title": "L'échiquier",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "text": "Voici un échiquier : 64 cases, claires et foncées. Chaque joueur a 16 pièces. Un joueur a les pièces blanches, l'autre les pièces noires. On dit « les blancs » et « les noirs ». Ici, tu joues les blancs : tes pièces sont en bas, celles de ton adversaire en haut."
+    },
+    {
+     "step": "intro",
+     "title": "Chacun son tour",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "marks": [
+      "e2",
+      "d2"
+     ],
+     "text": "On joue chacun son tour, un seul déplacement à la fois. Ce déplacement s'appelle un « coup ». Les blancs jouent toujours le premier coup de la partie. Quand l'app écrit « C'est aux blancs de jouer », ça veut dire que c'est le tour des blancs. Si tu as les blancs, c'est à toi."
+    },
+    {
+     "step": "intro",
+     "title": "Bouger une pièce dans l'app",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "arrows": [
+      [
+       "e2",
+       "e4"
+      ]
+     ],
+     "text": "Pour jouer, touche une de tes pièces : des points apparaissent sur les cases où elle peut aller. Touche ensuite la case d'arrivée. Tu peux aussi faire glisser la pièce avec le doigt ou la souris."
+    },
+    {
+     "step": "intro",
+     "title": "Les flèches et les couleurs",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "arrows": [
+      [
+       "g1",
+       "f3"
+      ]
+     ],
+     "marks": [
+      "f3"
+     ],
+     "text": "Quand une flèche ou une case colorée apparaît, c'est moi qui te montre quelque chose, comme si je pointais du doigt. Les flèches ne bougent pas les pièces : elles montrent une idée. Ici, la flèche montre un coup possible de ton cavalier."
+    },
+    {
+     "step": "intro",
+     "title": "Le but du jeu",
+     "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "a1a8",
+       "text": "La tour blanche monte tout en haut et attaque le roi noir. Le roi noir ne peut aller nulle part : ses propres pions lui bloquent le chemin. C'est « échec et mat », ou simplement « mat ». La partie est finie, les blancs ont gagné."
+      }
+     ],
+     "text": "Le but du jeu, c'est d'attaquer le roi adverse de façon qu'il ne puisse plus s'échapper. On ne prend jamais le roi : la partie s'arrête juste avant. Regarde la démonstration."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "prompt": "C'est à toi, tu joues les blancs. Avance de deux cases le pion qui est devant ton roi (le pion en e2).",
+     "solution": [
+      "e2e4"
+     ],
+     "check": "rule",
+     "success": "Parfait, tu sais jouer un coup. Maintenant ce serait aux noirs de jouer.",
+     "hint": "Ton roi est la pièce avec une petite croix, en bas au milieu. Le pion juste devant lui peut avancer de deux cases au premier coup.",
+     "accept": [
+      "e2e4"
+     ]
+    }
+   ],
+   "retenir": "Les blancs commencent. On joue chacun son tour. Le but : mettre le roi adverse échec et mat."
+  },
+  {
+   "id": "vis-rules",
+   "title": "Comment bougent les pièces",
+   "introduces": [
+    "prendre, capturer",
+    "échec",
+    "roque",
+    "petit roque, grand roque",
+    "promotion",
+    "prise en passant",
+    "pat",
+    "nulle"
+   ],
+   "challenge": {
+    "fen": "4k3/8/3p4/8/8/8/8/3RK3 w - - 0 1",
+    "prompt": "Tu joues les blancs, c'est à toi. Ta tour (la pièce en forme de petit château, en bas) peut prendre le pion noir. Essaie, ça ne compte pas si tu te trompes.",
+    "solution": [
+     "d1d6"
+    ],
+    "check": "rule",
+    "hint": "La tour avance tout droit. Le pion noir est sur la même colonne qu'elle.",
+    "accept": [
+     "d1d6"
+    ]
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "La tour",
+     "fen": "4k3/8/8/8/3R4/8/8/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "d4",
+       "d8"
+      ],
+      [
+       "d4",
+       "d1"
+      ],
+      [
+       "d4",
+       "a4"
+      ],
+      [
+       "d4",
+       "h4"
+      ]
+     ],
+     "text": "La tour avance en ligne droite : vers le haut, le bas, la gauche ou la droite, d'autant de cases qu'elle veut. Elle ne peut pas sauter par-dessus une pièce. Prendre une pièce adverse, c'est aller sur sa case : la pièce prise sort du jeu."
+    },
+    {
+     "step": "principe",
+     "title": "Le fou",
+     "fen": "4k3/8/8/8/3B4/8/8/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "d4",
+       "h8"
+      ],
+      [
+       "d4",
+       "a1"
+      ],
+      [
+       "d4",
+       "a7"
+      ],
+      [
+       "d4",
+       "g1"
+      ]
+     ],
+     "text": "Le fou avance en diagonale, en biais, d'autant de cases qu'il veut. Un fou qui commence sur une case claire reste sur les cases claires toute la partie. C'est pour ça que chaque joueur a deux fous : un pour les cases claires, un pour les foncées."
+    },
+    {
+     "step": "principe",
+     "title": "La dame",
+     "fen": "4k3/8/8/8/3Q4/8/8/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "d4",
+       "d7"
+      ],
+      [
+       "d4",
+       "h4"
+      ],
+      [
+       "d4",
+       "g7"
+      ],
+      [
+       "d4",
+       "a1"
+      ],
+      [
+       "d4",
+       "a7"
+      ],
+      [
+       "d4",
+       "d1"
+      ]
+     ],
+     "text": "La dame (la pièce avec une couronne) combine la tour et le fou : elle va en ligne droite ET en diagonale, aussi loin qu'elle veut. C'est ta pièce la plus forte. Fais très attention à ne pas la perdre."
+    },
+    {
+     "step": "principe",
+     "title": "Le cavalier",
+     "fen": "4k3/8/8/8/3N4/8/8/4K3 w - - 0 1",
+     "marks": [
+      "b3",
+      "b5",
+      "c2",
+      "c6",
+      "e2",
+      "e6",
+      "f3",
+      "f5"
+     ],
+     "arrows": [
+      [
+       "d4",
+       "e6"
+      ]
+     ],
+     "text": "Le cavalier (la tête de cheval) se déplace en L : deux cases tout droit, puis une case sur le côté. C'est la seule pièce qui peut sauter par-dessus les autres. Les cases colorées montrent toutes les cases qu'il peut atteindre depuis d4."
+    },
+    {
+     "step": "principe",
+     "title": "Le roi",
+     "fen": "4k3/8/8/8/3K4/8/8/8 w - - 0 1",
+     "marks": [
+      "c3",
+      "c4",
+      "c5",
+      "d3",
+      "d5",
+      "e3",
+      "e4",
+      "e5"
+     ],
+     "text": "Le roi avance d'une seule case, dans n'importe quelle direction. Il n'a jamais le droit d'aller sur une case attaquée par une pièce adverse. C'est aussi pour ça que les deux rois ne peuvent jamais être collés l'un à l'autre."
+    },
+    {
+     "step": "principe",
+     "title": "Le pion",
+     "fen": "4k3/8/8/3p4/4P3/8/2P5/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "c2",
+       "c4"
+      ],
+      [
+       "e4",
+       "d5"
+      ]
+     ],
+     "text": "Le pion avance tout droit d'une case. Depuis sa case de départ, il peut avancer de deux cases d'un coup (le pion en c2). Mais il prend en diagonale, vers l'avant (le pion en e4 peut prendre le pion noir en d5). Il ne recule jamais."
+    },
+    {
+     "step": "principe",
+     "title": "L'échec",
+     "fen": "4k3/8/8/8/8/8/8/4RK2 b - - 0 1",
+     "arrows": [
+      [
+       "e1",
+       "e8"
+      ]
+     ],
+     "marks": [
+      "e8"
+     ],
+     "text": "Quand une pièce attaque le roi, on dit que le roi est « en échec ». Ici, la tour blanche attaque le roi noir. C'est aux noirs de jouer et ils DOIVENT sauver leur roi tout de suite : c'est obligatoire, ils ne peuvent rien jouer d'autre."
+    },
+    {
+     "step": "principe",
+     "title": "Le mat",
+     "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "a1a8",
+       "text": "La tour donne échec sur la dernière rangée. Le roi noir ne peut pas fuir (ses pions bloquent), personne ne peut prendre la tour ni se mettre devant. Échec et mat : les blancs gagnent."
+      }
+     ],
+     "text": "Si le roi est en échec et qu'aucun coup ne peut le sauver, c'est échec et mat. La partie s'arrête. On ne prend jamais vraiment le roi."
+    },
+    {
+     "step": "principe",
+     "title": "Le roque",
+     "fen": "4k3/8/8/8/8/8/5PPP/4K2R w K - 0 1",
+     "line": [
+      {
+       "uci": "e1g1",
+       "text": "Le roi va de deux cases vers la tour, et la tour saute de l'autre côté du roi. En un seul coup, ton roi est à l'abri dans le coin et ta tour est prête à jouer."
+      }
+     ],
+     "text": "Une fois par partie, tu peux faire un coup spécial qui bouge deux pièces : ton roi et une de tes tours. Ça s'appelle le « roque ». Il sert à mettre ton roi à l'abri. Dans l'app, déplace ton roi de deux cases vers la tour : la tour suit toute seule."
+    },
+    {
+     "step": "principe",
+     "title": "Quand on ne peut pas roquer",
+     "fen": "4k3/8/8/8/2b5/8/5PPP/4K2R w K - 0 1",
+     "arrows": [
+      [
+       "c4",
+       "f1"
+      ]
+     ],
+     "marks": [
+      "f1"
+     ],
+     "text": "Tu ne peux pas roquer si ton roi ou cette tour ont déjà bougé, s'il y a une pièce entre eux, si ton roi est en échec, ou s'il doit passer par une case attaquée. Ici, le fou noir attaque f1 : le roi passerait par là, donc le roque est interdit."
+    },
+    {
+     "step": "principe",
+     "title": "Petit et grand roque",
+     "fen": "r3k2r/pppppppp/8/8/8/8/PPPPPPPP/R3K2R w KQkq - 0 1",
+     "arrows": [
+      [
+       "e1",
+       "g1"
+      ],
+      [
+       "e1",
+       "c1"
+      ]
+     ],
+     "text": "Tu peux roquer de deux côtés. Côté droit (vers la tour la plus proche), c'est le « petit roque », le plus fréquent. Côté gauche (vers la tour du côté de la dame), c'est le « grand roque ». Dans les deux cas, le roi bouge de deux cases."
+    },
+    {
+     "step": "principe",
+     "title": "La promotion",
+     "fen": "4k3/1P6/8/8/8/8/8/4K3 w - - 0 1",
+     "line": [
+      {
+       "uci": "b7b8q",
+       "text": "Le pion arrive sur la dernière rangée et devient une dame. En plus, cette nouvelle dame attaque déjà le roi noir sur la rangée : c'est échec."
+      }
+     ],
+     "text": "Quand un de tes pions arrive tout au bout de l'échiquier, il se transforme. Tu choisis : dame, tour, fou ou cavalier. Ça s'appelle la « promotion ». On choisit presque toujours une dame, la pièce la plus forte."
+    },
+    {
+     "step": "principe",
+     "title": "La prise en passant",
+     "fen": "4k3/3p4/8/4P3/8/8/8/4K3 b - - 0 1",
+     "line": [
+      {
+       "uci": "d7d5",
+       "text": "Le pion noir avance de deux cases d'un coup et arrive juste à côté de ton pion en e5."
+      },
+      {
+       "uci": "e5d6",
+       "text": "Ton pion le prend comme s'il n'avait avancé que d'une case : il va en d6 et le pion noir disparaît. C'est la prise en passant."
+      }
+     ],
+     "text": "Une règle rare mais réelle. Si un pion adverse avance de deux cases et se retrouve juste à côté de ton pion, ton pion peut le prendre « en passant ». Attention : seulement au coup juste après, sinon c'est trop tard."
+    },
+    {
+     "step": "piege",
+     "title": "Le piège du pat",
+     "fen": "k7/8/1Q6/8/8/8/8/7K b - - 0 1",
+     "marks": [
+      "a7",
+      "b7",
+      "b8"
+     ],
+     "text": "C'est aux noirs de jouer. Le roi noir n'est pas en échec, mais toutes ses cases sont attaquées par la dame blanche. Il ne peut faire aucun coup. C'est le « pat » : la partie est nulle, personne ne gagne, même si les blancs ont beaucoup plus de pièces."
+    },
+    {
+     "step": "retenir",
+     "title": "Les autres nulles",
+     "fen": "4k3/8/8/8/8/8/8/4K3 w - - 0 1",
+     "text": "Une partie « nulle », c'est une partie sans gagnant. Ça arrive aussi quand la même position revient trois fois, ou quand il ne reste pas assez de pièces pour faire mat, comme ici : un roi contre un roi."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "4k3/8/8/5n2/8/8/2B5/4K3 w - - 0 1",
+     "prompt": "Tu joues les blancs. Prends le cavalier noir avec ton fou.",
+     "solution": [
+      "c2f5"
+     ],
+     "check": "rule",
+     "success": "Oui : le fou a filé en diagonale jusqu'au cavalier.",
+     "hint": "Le fou va en biais. Suis la diagonale qui monte vers la droite.",
+     "accept": [
+      "c2f5"
+     ]
+    },
+    {
+     "kind": "move",
+     "fen": "4k3/8/2r5/8/3N4/8/8/4K3 w - - 0 1",
+     "prompt": "Prends la tour noire avec ton cavalier.",
+     "solution": [
+      "d4c6"
+     ],
+     "check": "rule",
+     "success": "Bien joué : deux cases vers le haut, une vers la gauche. Un L.",
+     "hint": "Compte deux cases vers le haut, puis une sur le côté.",
+     "accept": [
+      "d4c6"
+     ]
+    },
+    {
+     "kind": "move",
+     "fen": "4k3/8/8/8/8/8/5PPP/4K2R w K - 0 1",
+     "prompt": "Fais le petit roque : mets ton roi à l'abri.",
+     "solution": [
+      "e1g1"
+     ],
+     "check": "rule",
+     "success": "Ton roi est à l'abri derrière ses pions, et ta tour est sortie du coin.",
+     "hint": "Déplace ton roi de deux cases vers la droite.",
+     "accept": [
+      "e1g1"
+     ]
+    },
+    {
+     "kind": "move",
+     "fen": "4k3/1P6/8/8/8/8/8/4K3 w - - 0 1",
+     "prompt": "Ton pion est presque au bout. Avance-le et transforme-le en dame.",
+     "solution": [
+      "b7b8q"
+     ],
+     "check": "rule",
+     "success": "Une nouvelle dame, et en plus elle met le roi noir en échec.",
+     "hint": "Avance le pion d'une case, puis choisis la dame.",
+     "accept": [
+      "b7b8q"
+     ]
+    },
+    {
+     "kind": "move",
+     "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 2",
+     "prompt": "Le pion noir vient d'avancer de deux cases, de d7 à d5. Prends-le en passant.",
+     "solution": [
+      "e5d6"
+     ],
+     "check": "rule",
+     "success": "Exact : ton pion va en d6 et le pion noir disparaît.",
+     "hint": "Ton pion va en diagonale, derrière le pion noir, sur la case d6.",
+     "accept": [
+      "e5d6"
+     ]
+    }
+   ],
+   "retenir": "Tour en ligne droite, fou en diagonale, dame les deux, cavalier en L, roi d'une case, pion tout droit mais il prend en biais. Et méfie-toi du pat."
+  },
+  {
+   "id": "vis-notation",
+   "title": "Le nom des cases et des coups",
+   "introduces": [
+    "case, colonne, rangée",
+    "notation",
+    "R, D, T, F, C",
+    "x, +, #"
+   ],
+   "challenge": {
+    "kind": "square",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "prompt": "Chaque case a un nom. Devine où est la case e4 et touche-la. Indice : les lettres sont en bas de l'échiquier, les chiffres sur le côté.",
+    "solution": [
+     "e4"
+    ],
+    "check": "rule",
+    "hint": "Trouve la lettre e en bas, puis monte jusqu'au chiffre 4.",
+    "accept": [
+     "e4"
+    ]
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Une lettre et un chiffre",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "marks": [
+      "e4"
+     ],
+     "text": "Chaque case a un nom, comme à la bataille navale. La lettre (de a à h) indique la colonne, de gauche à droite. Le chiffre (de 1 à 8) indique la rangée, de bas en haut quand tu as les blancs. La case colorée, c'est e4 : colonne e, rangée 4."
+    },
+    {
+     "step": "pourquoi",
+     "title": "Pourquoi apprendre ça",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "marks": [
+      "g1",
+      "f3"
+     ],
+     "arrows": [
+      [
+       "g1",
+       "f3"
+      ]
+     ],
+     "text": "Parce que tout ce que tu liras ou regarderas sur les échecs utilise ces noms : les livres, les vidéos, les analyses sur Lichess. Et dans l'app, je te dirai « ton cavalier en g1 peut aller en f3 ». C'est beaucoup plus précis que « le cavalier en bas à droite »."
+    },
+    {
+     "step": "principe",
+     "title": "Écrire un coup",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "arrows": [
+      [
+       "g1",
+       "f3"
+      ]
+     ],
+     "text": "Pour écrire un coup, on met la lettre de la pièce puis sa case d'arrivée. R = roi, D = dame, T = tour, F = fou, C = cavalier. Ici, le cavalier va en f3 : on écrit Cf3."
+    },
+    {
+     "step": "principe",
+     "title": "Les pions",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "arrows": [
+      [
+       "e2",
+       "e4"
+      ]
+     ],
+     "text": "Les pions n'ont pas de lettre. Pour un pion, on écrit seulement la case d'arrivée. Le pion qui avance de e2 à e4 s'écrit simplement e4."
+    },
+    {
+     "step": "principe",
+     "title": "Prendre, échec, mat",
+     "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3",
+     "arrows": [
+      [
+       "c4",
+       "f7"
+      ]
+     ],
+     "text": "Trois petits signes à connaître. Le x veut dire « prend » : Fxf7 = le fou prend ce qui est en f7. Le + veut dire échec : Fxf7+ = le fou prend en f7 et met le roi en échec. Le # veut dire mat."
+    },
+    {
+     "step": "principe",
+     "title": "Le roque",
+     "fen": "r3k2r/pppppppp/8/8/8/8/PPPPPPPP/R3K2R w KQkq - 0 1",
+     "arrows": [
+      [
+       "e1",
+       "g1"
+      ],
+      [
+       "e1",
+       "c1"
+      ]
+     ],
+     "text": "Le roque a son écriture spéciale : O-O pour le petit roque (côté droit), O-O-O pour le grand roque (côté gauche). Retiens : plus il y a de O, plus la tour vient de loin."
+    },
+    {
+     "step": "methode",
+     "title": "Quand tu as les noirs",
+     "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+     "marks": [
+      "a1",
+      "h8"
+     ],
+     "text": "Quand tu joues les noirs, l'échiquier est retourné : tes pièces sont en bas, et la case a1 se retrouve en haut à droite. Les noms des cases ne changent pas, seule ta façon de regarder change. Les lettres et chiffres sur les bords t'aident toujours."
+    },
+    {
+     "step": "methode",
+     "title": "Comment t'entraîner",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "marks": [
+      "d4",
+      "e4",
+      "d5",
+      "e5"
+     ],
+     "text": "Fais 2 minutes du jeu « Trouve la case » chaque jour, jusqu'à en trouver 30 en 30 secondes, côté blancs puis côté noirs. Commence par les 4 cases du milieu : d4, e4, d5, e5. Ce sont les plus importantes."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "square",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "prompt": "Touche la case d5.",
+     "solution": [
+      "d5"
+     ],
+     "check": "rule",
+     "success": "Oui, d5 : colonne d, rangée 5.",
+     "hint": "Colonne d (juste à gauche de e), rangée 5.",
+     "accept": [
+      "d5"
+     ]
+    },
+    {
+     "kind": "square",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "prompt": "Touche la case où se trouve ta dame au début de la partie.",
+     "solution": [
+      "d1"
+     ],
+     "check": "rule",
+     "success": "La dame blanche commence en d1. Petit truc : la dame se place sur une case de sa couleur.",
+     "hint": "C'est la pièce avec une couronne, en bas.",
+     "accept": [
+      "d1"
+     ]
+    },
+    {
+     "kind": "square",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "prompt": "Touche la case f7. Elle est célèbre : au début de la partie, seul le roi noir la protège.",
+     "solution": [
+      "f7"
+     ],
+     "check": "rule",
+     "success": "f7, juste à côté du roi noir. On en reparlera.",
+     "hint": "Colonne f, rangée 7 : c'est un pion noir.",
+     "accept": [
+      "f7"
+     ]
+    },
+    {
+     "kind": "square",
+     "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+     "prompt": "Maintenant tu joues les noirs : l'échiquier est retourné. Touche la case f6.",
+     "solution": [
+      "f6"
+     ],
+     "check": "rule",
+     "success": "Bravo. Tu sais te repérer même échiquier retourné.",
+     "hint": "Regarde les lettres sur le bord : elles vont maintenant de h à a.",
+     "accept": [
+      "f6"
+     ]
+    }
+   ],
+   "retenir": "Une case = une lettre (colonne) + un chiffre (rangée). Un coup = la lettre de la pièce + la case d'arrivée. x prend, + échec, # mat."
+  },
+  {
+   "id": "vis-values",
+   "title": "Combien vaut chaque pièce",
+   "introduces": [
+    "valeur des pièces",
+    "matériel"
+   ],
+   "challenge": {
+    "fen": "7k/8/8/3n4/p7/8/8/3Q2K1 w - - 0 1",
+    "prompt": "Tu joues les blancs. Ta dame en d1 peut prendre deux choses : le pion en a4 ou le cavalier en d5. Aucun des deux n'est protégé. Lequel prends-tu ?",
+    "solution": [
+     "d1d5"
+    ],
+    "check": "exact",
+    "hint": "Un cavalier vaut plus qu'un pion. Lequel est le plus précieux ?",
+    "accept": [
+     "d1d5"
+    ],
+    "engine": {
+     "best": "d1f3",
+     "score": 8115,
+     "depth": 16
+    },
+    "alsoGood": []
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Les points de chaque pièce",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "text": "Pour savoir si un échange est bon, on donne des points aux pièces. Pion : 1. Cavalier : 3. Fou : 3. Tour : 5. Dame : 9. Le roi n'a pas de prix : s'il est mat, la partie est perdue, peu importe le reste."
+    },
+    {
+     "step": "pourquoi",
+     "title": "À quoi ça sert",
+     "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+     "arrows": [
+      [
+       "c2",
+       "a4"
+      ],
+      [
+       "d1",
+       "d5"
+      ]
+     ],
+     "text": "Ces points servent à comparer. Ici, ta dame peut prendre la tour noire (5 points), et ton fou peut prendre la dame noire (9 points). Avant de choisir, on regarde aussi ce que l'adversaire pourra reprendre. C'est le sujet d'une prochaine fiche."
+    },
+    {
+     "step": "principe",
+     "title": "Le matériel",
+     "fen": "7k/8/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+     "text": "On appelle « matériel » l'ensemble de tes pièces, compté en points. « Gagner du matériel », c'est gagner des points sur l'adversaire. Entre débutants, gagner 3 points (un cavalier ou un fou) sans rien perdre suffit souvent pour gagner la partie."
+    },
+    {
+     "step": "principe",
+     "title": "L'échange de la qualité",
+     "fen": "7k/8/8/3n4/8/8/8/3R2K1 w - - 0 1",
+     "arrows": [
+      [
+       "d1",
+       "d5"
+      ]
+     ],
+     "text": "Quand on donne une tour (5) contre un cavalier ou un fou (3), on perd environ 2 points. Les joueurs appellent ça « perdre la qualité ». Évite-le, sauf si tu vois que ça te rapporte vite quelque chose de mieux, comme un mat."
+    },
+    {
+     "step": "piege",
+     "title": "Les points ne font pas tout",
+     "fen": "6k1/5ppp/8/8/8/8/q4PPP/4R1K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "e1e8",
+       "text": "La tour blanche arrive sur la dernière rangée. Le roi noir est coincé par ses pions : mat. La dame noire n'a servi à rien."
+      }
+     ],
+     "text": "Les points sont des repères, pas une loi. Une pièce coincée vaut moins qu'une pièce active. Et un mat vaut plus que tout : ici, les noirs ont une dame (9) contre une tour (5), mais regarde ce qui arrive à leur roi."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "4k3/8/8/1b4r1/8/8/3Q4/1R2K3 w - - 0 1",
+     "prompt": "Tu peux prendre le fou en b5 avec ta tour, ou la tour en g5 avec ta dame. Rien n'est protégé. Choisis la prise qui rapporte le plus de points.",
+     "solution": [
+      "d2g5"
+     ],
+     "check": "exact",
+     "success": "Exact : une tour vaut 5, un fou 3.",
+     "hint": "Compare : un fou vaut 3, une tour vaut 5.",
+     "accept": [
+      "d2g5"
+     ],
+     "engine": {
+      "best": "d2g5",
+      "score": 1300,
+      "depth": 16
+     },
+     "alsoGood": []
+    }
+   ],
+   "retenir": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Compare toujours ce que tu gagnes et ce que tu perds."
+  },
+  {
+   "id": "vis-attacked-squares",
+   "title": "Voir qui attaque quoi",
+   "introduces": [
+    "attaquer",
+    "défendre, protéger"
+   ],
+   "challenge": {
+    "fen": "r3k3/1p6/8/3n4/8/8/6B1/4K3 w - - 0 1",
+    "prompt": "Tu joues les blancs. Une pièce noire est attaquée par ton fou et personne ne la protège. Prends-la.",
+    "solution": [
+     "g2d5"
+    ],
+    "check": "engine",
+    "hint": "Suis la grande diagonale de ton fou, de g2 vers le haut à gauche.",
+    "accept": [
+     "g2d5"
+    ],
+    "engine": {
+     "best": "g2d5",
+     "score": -437,
+     "depth": 16
+    }
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Attaquer une case",
+     "fen": "4k3/8/8/8/3Q4/8/8/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "d4",
+       "d8"
+      ],
+      [
+       "d4",
+       "h8"
+      ],
+      [
+       "d4",
+       "a7"
+      ],
+      [
+       "d4",
+       "h4"
+      ],
+      [
+       "d4",
+       "a4"
+      ],
+      [
+       "d4",
+       "a1"
+      ],
+      [
+       "d4",
+       "g1"
+      ],
+      [
+       "d4",
+       "d1"
+      ]
+     ],
+     "text": "Une pièce « attaque » une case si elle pourrait y aller au prochain coup. Ta dame en d4 attaque toutes les cases sur ses lignes droites et ses diagonales, jusqu'à ce qu'une pièce lui bloque le chemin. Si une pièce adverse est sur l'une de ces cases, elle est attaquée."
+    },
+    {
+     "step": "principe",
+     "title": "Protéger une pièce",
+     "fen": "4k3/8/8/3n4/4p3/8/6B1/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "e4",
+       "d5"
+      ]
+     ],
+     "marks": [
+      "d5"
+     ],
+     "text": "Une pièce en « protège » une autre si elle pourrait reprendre sur sa case. Ici, le pion noir en e4 protège le cavalier en d5 : si ton fou prenait le cavalier, le pion reprendrait ton fou. Et attention, le pion bloque aussi la diagonale de ton fou."
+    },
+    {
+     "step": "pourquoi",
+     "title": "Pourquoi c'est la base",
+     "fen": "r3k3/1p6/8/3n4/8/8/6B1/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "g2",
+       "d5"
+      ]
+     ],
+     "marks": [
+      "d5"
+     ],
+     "text": "Presque toutes les erreurs de débutant viennent d'une attaque qu'on n'a pas vue : une pièce à soi qui se fait prendre, ou une pièce adverse gratuite qu'on oublie de prendre. Ici, ton fou attaque le cavalier en d5 et rien ne le protège : c'est un cadeau."
+    },
+    {
+     "step": "methode",
+     "title": "La méthode",
+     "fen": "r3k3/1p6/8/3n4/8/8/6B1/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "g2",
+       "d5"
+      ],
+      [
+       "a8",
+       "a1"
+      ]
+     ],
+     "text": "Pour chaque pièce, suis ses lignes avec les yeux. Commence par les pièces qui vont loin : dame, tours, fous. Ce sont elles qu'on oublie le plus, surtout quand elles sont de l'autre côté de l'échiquier, comme la tour noire en a8 qui surveille toute la colonne a."
+    },
+    {
+     "step": "piege",
+     "title": "Les cavaliers sont sournois",
+     "fen": "4k3/8/8/8/3n4/8/2Q5/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "d4",
+       "c2"
+      ],
+      [
+       "d4",
+       "e2"
+      ]
+     ],
+     "marks": [
+      "c2"
+     ],
+     "text": "Le cavalier attaque en L, et c'est la pièce qu'on voit le moins venir. Ici, le cavalier noir en d4 attaque ta dame en c2. Prends l'habitude de regarder les 8 cases de chaque cavalier adverse."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "6k1/p4ppp/1p6/2b1n3/3Q4/8/5PPP/6K1 w - - 0 1",
+     "prompt": "Ta dame en d4 attaque deux pièces noires : le fou en c5 et le cavalier en e5. Une seule n'est protégée par personne. Prends-la.",
+     "solution": [
+      "d4e5"
+     ],
+     "check": "engine",
+     "success": "Oui. Le fou en c5, lui, était protégé par le pion en b6 : ta dame se serait fait prendre.",
+     "hint": "Regarde les pions noirs : lequel pourrait reprendre ?",
+     "accept": [
+      "d4e5"
+     ],
+     "engine": {
+      "best": "d4e5",
+      "score": 431,
+      "depth": 16
+     }
+    }
+   ],
+   "retenir": "Avant chaque coup, suis les lignes des pièces : qui attaque quoi, qui protège quoi."
+  },
+  {
+   "id": "vis-check-escape",
+   "title": "Sortir d'un échec",
+   "introduces": [],
+   "challenge": {
+    "fen": "6k1/5ppp/8/8/8/8/4r1PP/R3K3 w - - 0 1",
+    "prompt": "Ton roi est en échec : la tour noire en e2 l'attaque. Trouve la meilleure façon de t'en sortir.",
+    "solution": [
+     "e1e2"
+    ],
+    "check": "engine",
+    "hint": "Personne ne protège la tour noire. Et ton roi est juste à côté d'elle.",
+    "accept": [
+     "e1e2"
+    ],
+    "engine": {
+     "best": "e1e2",
+     "score": 529,
+     "depth": 16
+    }
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Trois façons de répondre",
+     "fen": "6k1/5ppp/8/8/8/8/4r1PP/R3K3 w - - 0 1",
+     "arrows": [
+      [
+       "e2",
+       "e1"
+      ]
+     ],
+     "marks": [
+      "e1"
+     ],
+     "text": "Quand ton roi est en échec, tu as trois façons de t'en sortir. Un : prendre la pièce qui attaque. Deux : mettre une pièce entre ton roi et l'attaquant. Trois : déplacer ton roi sur une case sûre. Regarde toujours les trois avant de choisir."
+    },
+    {
+     "step": "pourquoi",
+     "title": "Pourquoi ça compte",
+     "fen": "6k1/5ppp/8/8/8/8/4r1PP/R3K3 w - - 0 1",
+     "line": [
+      {
+       "uci": "e1e2",
+       "text": "Ton roi prend la tour : elle n'était protégée par aucune pièce noire. Tu gagnes 5 points en te sortant de l'échec."
+      }
+     ],
+     "text": "Le choix de la réponse change tout. Ici, fuir serait une erreur : prendre la tour te la fait gagner gratuitement."
+    },
+    {
+     "step": "methode",
+     "title": "Se mettre devant",
+     "fen": "6k1/8/8/8/8/8/3N1PPP/r5K1 w - - 0 1",
+     "arrows": [
+      [
+       "a1",
+       "g1"
+      ],
+      [
+       "d2",
+       "f1"
+      ]
+     ],
+     "text": "Ici, la tour noire attaque ton roi sur toute la rangée du bas. Ton roi ne peut pas fuir : ses pions le bloquent. Tu peux mettre ton cavalier entre les deux, en f1. Là, ton roi protège le cavalier : si la tour le prend, ton roi la reprend."
+    },
+    {
+     "step": "piege",
+     "title": "Se mettre devant, mais protégé",
+     "fen": "6k1/8/8/8/8/8/3N1PPP/r5K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "d2b1",
+       "text": "Le cavalier se met en b1. Mais en b1, personne ne le protège."
+      },
+      {
+       "uci": "a1b1",
+       "text": "La tour le prend, et c'est échec et mat : ton roi est toujours coincé."
+      }
+     ],
+     "text": "Attention : une pièce que tu mets devant ton roi doit être protégée, sinon l'adversaire la prend et l'échec recommence. Regarde ce qui arrive si le cavalier va en b1."
+    },
+    {
+     "step": "methode",
+     "title": "Fuir au bon endroit",
+     "fen": "6k1/8/8/8/8/8/8/r3K3 w - - 0 1",
+     "marks": [
+      "d2",
+      "e2",
+      "f2"
+     ],
+     "arrows": [
+      [
+       "a1",
+       "e1"
+      ]
+     ],
+     "text": "Si tu dois fuir, choisis une case qui n'est attaquée par aucune pièce adverse, et si possible pas sur la ligne d'une autre pièce dangereuse. Contre un échec de cavalier, on ne peut pas se mettre devant : le cavalier saute. Il faut le prendre ou fuir."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "6k1/8/8/8/8/8/3N1PPP/r5K1 w - - 0 1",
+     "prompt": "Ton roi est en échec et ne peut pas bouger. Mets une pièce devant lui, à un endroit où elle est protégée.",
+     "solution": [
+      "d2f1"
+     ],
+     "check": "engine",
+     "success": "Ton cavalier en f1 bloque l'échec, et ton roi le protège.",
+     "hint": "Ton cavalier peut aller sur une case juste à côté de ton roi.",
+     "accept": [
+      "d2f1"
+     ],
+     "engine": {
+      "best": "d2f1",
+      "score": 75,
+      "depth": 16
+     }
+    }
+   ],
+   "retenir": "En échec : prendre l'attaquant, se mettre devant avec une pièce protégée, ou fuir sur une case sûre. Regarde les trois."
+  },
+  {
+   "id": "mat-basic-queen",
+   "title": "Faire mat avec la dame et le roi",
+   "introduces": [],
+   "challenge": {
+    "fen": "k7/8/2K5/8/8/8/8/1Q6 w - - 0 1",
+    "prompt": "Tu as une dame et un roi, ton adversaire n'a plus que son roi, en a8. Fais mat en un coup. Attention, un coup ressemble au mat mais donne pat (partie nulle).",
+    "solution": [
+     "b1b7"
+    ],
+    "check": "mate",
+    "hint": "Ta dame peut se coller au roi noir si ton roi la protège.",
+    "accept": [
+     "b1b7"
+    ]
+   },
+   "screens": [
+    {
+     "step": "pourquoi",
+     "title": "Pourquoi le savoir",
+     "fen": "4k3/8/8/8/8/8/8/3QK3 w - - 0 1",
+     "text": "Il arrive souvent qu'on gagne toutes les pièces adverses et qu'il ne reste qu'un roi. Si tu ne sais pas faire mat, la partie peut finir nulle : par pat, ou parce que la règle des 50 coups (50 coups sans prise ni mouvement de pion) arrête la partie. Ce mat se fait en moins de 10 coups avec la bonne méthode."
+    },
+    {
+     "step": "principe",
+     "title": "Le principe : la boîte",
+     "fen": "8/8/8/4k3/2Q5/8/8/4K3 b - - 0 1",
+     "arrows": [
+      [
+       "c4",
+       "c8"
+      ],
+      [
+       "c4",
+       "h4"
+      ]
+     ],
+     "marks": [
+      "e5"
+     ],
+     "text": "Ta dame enferme le roi adverse dans une boîte de plus en plus petite. Ici, la dame en c4 l'empêche de passer sur la colonne c et sur la rangée 4 : le roi noir est enfermé dans le coin en haut à droite. Elle est à un « saut de cavalier » du roi : assez près pour l'enfermer, sans lui donner échec."
+    },
+    {
+     "step": "methode",
+     "title": "Étape 1 : pousser vers le bord",
+     "fen": "8/8/8/4k3/2Q5/8/8/4K3 b - - 0 1",
+     "arrows": [
+      [
+       "c4",
+       "d3"
+      ]
+     ],
+     "text": "Chaque fois que le roi noir recule, ta dame le suit en restant à un saut de cavalier de lui. La boîte rétrécit à chaque coup, jusqu'à ce que le roi noir soit collé à un bord de l'échiquier."
+    },
+    {
+     "step": "methode",
+     "title": "Étape 2 : arrêter la dame, faire venir le roi",
+     "fen": "4k3/8/8/2Q5/8/8/8/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "e1",
+       "e5"
+      ]
+     ],
+     "marks": [
+      "e8"
+     ],
+     "text": "Quand le roi noir est sur le bord, ARRÊTE de bouger ta dame. Fais monter ton roi. Ta dame seule ne peut pas faire mat : il lui faut l'aide de ton roi pour protéger la case du mat."
+    },
+    {
+     "step": "principe",
+     "title": "La position de mat",
+     "fen": "k7/1Q6/2K5/8/8/8/8/8 b - - 0 1",
+     "marks": [
+      "a8",
+      "b7",
+      "c6"
+     ],
+     "text": "Voici un mat. La dame en b7 se colle au roi noir. Le roi noir ne peut pas la prendre, car ton roi en c6 la protège. Et toutes les cases autour sont attaquées. C'est fini."
+    },
+    {
+     "step": "piege",
+     "title": "Attention au pat",
+     "fen": "k7/8/1Q6/8/8/8/8/7K b - - 0 1",
+     "marks": [
+      "a7",
+      "b7",
+      "b8"
+     ],
+     "text": "Voici le piège classique. C'est aux noirs de jouer, leur roi n'est pas en échec, mais toutes ses cases sont attaquées par la dame : il ne peut rien jouer. C'est pat, partie nulle. Avant chaque coup de dame près du bord, demande-toi : « Est-ce qu'il aura encore une case pour bouger ? »"
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+     "prompt": "Fais mat en un coup.",
+     "solution": [
+      "f7g7"
+     ],
+     "check": "mate",
+     "success": "Mat. Ta dame est collée au roi et protégée par ton roi (ou elle l'enferme sur la dernière rangée).",
+     "hint": "Ta dame peut se coller au roi noir sur une case que ton roi protège.",
+     "accept": [
+      "f7e8",
+      "f7f8",
+      "f7g7",
+      "f7h7"
+     ]
+    }
+   ],
+   "retenir": "La dame enferme, le roi aide. Quand le roi adverse est au bord, arrête la dame et fais venir ton roi. Toujours vérifier : aura-t-il encore un coup ?"
+  },
+  {
+   "id": "mat-two-rooks",
+   "title": "Le mat de l'escalier",
+   "introduces": [],
+   "challenge": {
+    "fen": "6k1/R7/8/8/8/8/8/1R4K1 w - - 0 1",
+    "prompt": "Tu as deux tours. Ta tour en a7 empêche déjà le roi noir de descendre. Fais mat en un coup avec l'autre tour.",
+    "solution": [
+     "b1b8"
+    ],
+    "check": "mate",
+    "hint": "Ta tour en b1 peut monter tout en haut.",
+    "accept": [
+     "b1b8"
+    ]
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Deux tours qui montent un escalier",
+     "fen": "6k1/8/8/8/8/8/R7/1R4K1 w - - 0 1",
+     "text": "Avec deux tours, pas besoin de ton roi. Une tour coupe la route au roi adverse (il ne peut pas traverser sa ligne), l'autre lui donne échec sur la ligne d'après. Elles avancent à tour de rôle, comme si elles montaient un escalier."
+    },
+    {
+     "step": "exemple",
+     "title": "La démonstration",
+     "fen": "6k1/8/8/8/8/8/R7/1R4K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "a2a7",
+       "text": "La tour monte en a7 : le roi noir ne peut plus descendre sur la 7e rangée."
+      },
+      {
+       "uci": "g8f8",
+       "text": "Le roi noir ne peut que se déplacer le long de la dernière rangée."
+      },
+      {
+       "uci": "b1b8",
+       "text": "L'autre tour monte en b8 : échec sur la dernière rangée, et la 7e rangée est déjà fermée. Échec et mat."
+      }
+     ],
+     "text": "Regarde les tours travailler ensemble."
+    },
+    {
+     "step": "piege",
+     "title": "Garde tes tours loin du roi",
+     "fen": "8/8/8/8/8/2k5/1R6/R5K1 b - - 0 1",
+     "arrows": [
+      [
+       "c3",
+       "b2"
+      ]
+     ],
+     "marks": [
+      "b2"
+     ],
+     "text": "Si le roi adverse s'approche d'une de tes tours, il peut la prendre quand elle n'est pas protégée. Ici, le roi noir en c3 attaque la tour en b2. Dans ce cas, éloigne la tour à l'autre bout de sa ligne, puis reprends l'escalier."
+    }
+   ],
+   "exercises": [],
+   "retenir": "Une tour ferme une ligne, l'autre donne échec sur la suivante. Garde-les loin du roi adverse."
+  },
+  {
+   "id": "proc-blunder-check",
+   "title": "La vérification avant chaque coup",
+   "introduces": [],
+   "challenge": {
+    "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+    "prompt": "Tu joues les blancs. Le cavalier noir en a3 a l'air gratuit pour ta dame. Mais avant de le prendre, regarde ce que la tour noire en e8 pourrait faire juste après. Quel coup joues-tu ?",
+    "solution": [
+     "g2g3"
+    ],
+    "check": "engine",
+    "hint": "Si ta dame part en a3, qui surveille encore la case e1 ?",
+    "accept": [
+     "h2h3",
+     "g2g3",
+     "g1f1",
+     "f2f4",
+     "h2h4"
+    ],
+    "engine": {
+     "best": "h2h3",
+     "score": 345,
+     "depth": 16
+    }
+   },
+   "screens": [
+    {
+     "step": "pourquoi",
+     "title": "Le réflexe qui sauve le plus de parties",
+     "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+     "text": "La plupart des parties perdues entre débutants le sont à cause d'un seul coup : on a joué sans regarder ce que l'adversaire pouvait faire juste après. La bonne nouvelle : une petite vérification de quelques secondes suffit à éviter la plupart de ces erreurs."
+    },
+    {
+     "step": "exemple",
+     "title": "Ce qui arrive sans vérifier",
+     "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "c3a3",
+       "text": "La dame prend le cavalier. Tu as gagné 3 points... mais ta dame ne surveille plus la case e1."
+      },
+      {
+       "uci": "e8e1",
+       "text": "La tour noire descend en e1 : échec. Ton roi est coincé derrière ses pions, rien ne peut prendre la tour ni se mettre devant. Mat."
+      }
+     ],
+     "text": "Regarde ce qui se passe si on prend le cavalier tout de suite."
+    },
+    {
+     "step": "methode",
+     "title": "Question 1 : que menace-t-il ?",
+     "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+     "arrows": [
+      [
+       "e8",
+       "e1"
+      ]
+     ],
+     "marks": [
+      "e1"
+     ],
+     "text": "Avant de penser à ton coup, demande-toi : « Si je ne faisais rien, que pourrait-il me faire ? » Regarde ses échecs possibles, ses prises possibles, ses attaques. Ici, sa tour menace de descendre en e1 et de faire mat. Ta dame est la seule à empêcher ça."
+    },
+    {
+     "step": "methode",
+     "title": "Question 2 : quels sont mes coups forts ?",
+     "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+     "arrows": [
+      [
+       "c3",
+       "a3"
+      ]
+     ],
+     "text": "Ensuite seulement, cherche tes coups intéressants : tes échecs, tes prises, tes attaques. Ici, tu peux prendre le cavalier en a3. Note-le comme une idée, pas encore comme une décision."
+    },
+    {
+     "step": "methode",
+     "title": "Question 3 : et après mon coup ?",
+     "fen": "4r1k1/5ppp/8/8/8/Q7/5PPP/6K1 b - - 0 1",
+     "arrows": [
+      [
+       "e8",
+       "e1"
+      ]
+     ],
+     "marks": [
+      "e1"
+     ],
+     "text": "Imagine ton coup joué, comme sur cette image. Puis pose-toi la question 1 à nouveau, de son point de vue : quels sont ses échecs, ses prises, ses menaces ? Ici, la tour en e1 fait mat. Donc on ne prend pas le cavalier tout de suite."
+    },
+    {
+     "step": "methode",
+     "title": "La bonne solution",
+     "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "g2g3",
+       "text": "Le pion avance et libère la case g2 pour ton roi. Maintenant, si la tour noire descend en e1, ton roi peut s'échapper : ce n'est plus mat. Le cavalier en a3 ne va pas s'envoler, tu pourras le prendre au prochain coup."
+      }
+     ],
+     "text": "On règle d'abord le danger, ensuite on prend."
+    },
+    {
+     "step": "piege",
+     "title": "Le piège : vérifier seulement quand on a peur",
+     "fen": "4r1k1/5ppp/8/8/8/n1Q5/5PPP/6K1 w - - 0 1",
+     "text": "On fait souvent cette vérification quand on sent un danger. Mais les erreurs arrivent surtout quand tout semble calme et qu'un coup paraît évident, comme prendre un cavalier gratuit. Fais-la à chaque coup, même quand tu es sûre de toi."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+     "prompt": "Tu peux prendre la tour noire avec ta dame, ou la dame noire avec ton fou. Fais la vérification avant de choisir : après ta prise, qu'est-ce que l'adversaire peut reprendre ?",
+     "solution": [
+      "c2a4"
+     ],
+     "check": "engine",
+     "success": "Exact. Si ta dame avait pris la tour en d5, le pion en e6 aurait repris ta dame. Ici, personne ne peut reprendre ton fou.",
+     "hint": "Regarde le pion noir en e6 : quelle case surveille-t-il ?",
+     "accept": [
+      "c2a4"
+     ],
+     "engine": {
+      "best": "c2a4",
+      "score": -28,
+      "depth": 16
+     }
+    }
+   ],
+   "retenir": "Avant chaque coup : 1. que menace-t-il ? 2. quels sont mes coups forts ? 3. après mon coup, que peut-il faire ?"
+  },
+  {
+   "id": "proc-opponent-threat",
+   "title": "Que veut son dernier coup ?",
+   "introduces": [
+    "menace"
+   ],
+   "challenge": {
+    "kind": "square",
+    "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+    "arrows": [
+     [
+      "c6",
+      "a5"
+     ]
+    ],
+    "prompt": "Les noirs viennent de jouer leur cavalier de c6 en a5 (la flèche). Une de tes pièces est maintenant attaquée. Touche-la.",
+    "solution": [
+     "c4"
+    ],
+    "check": "exact",
+    "hint": "Regarde les cases que le cavalier en a5 peut atteindre en L.",
+    "accept": [
+     "c4"
+    ]
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Chaque coup adverse a une raison",
+     "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+     "arrows": [
+      [
+       "a5",
+       "c4"
+      ]
+     ],
+     "marks": [
+      "c4"
+     ],
+     "text": "Une « menace », c'est ce que l'adversaire pourrait faire de dangereux au prochain coup si tu ne réagis pas. Après chaque coup adverse, avant de penser à ton plan, demande-toi : « Pourquoi il a joué ça ? » Ici, son cavalier attaque ton fou en c4, que personne ne protège."
+    },
+    {
+     "step": "methode",
+     "title": "Trois questions à poser",
+     "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+     "arrows": [
+      [
+       "a5",
+       "c4"
+      ]
+     ],
+     "text": "Un : qu'attaque la pièce qui vient de bouger ? Deux : la pièce a-t-elle libéré une ligne pour une autre pièce derrière elle ? Trois : qu'est-ce que cette pièce ne protège plus, maintenant qu'elle est partie ?"
+    },
+    {
+     "step": "methode",
+     "title": "Quatre façons de répondre",
+     "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+     "arrows": [
+      [
+       "c4",
+       "d5"
+      ],
+      [
+       "e1",
+       "e4"
+      ]
+     ],
+     "text": "Face à une menace, tu peux : déplacer la pièce attaquée (ton fou peut aller en d5), la protéger (ta dame peut aller en e4 pour la protéger), prendre la pièce qui attaque si c'est sans danger, ou créer une menace plus grosse encore. Compare avant de choisir."
+    },
+    {
+     "step": "piege",
+     "title": "Prendre l'attaquant ? Vérifie d'abord",
+     "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+     "line": [
+      {
+       "uci": "e1a5",
+       "text": "Ta dame prend le cavalier en a5. Ça a l'air malin..."
+      },
+      {
+       "uci": "d8a5",
+       "text": "...mais la dame noire en d8 surveillait a5 par la diagonale. Elle reprend : tu as perdu ta dame (9 points) contre un cavalier (3)."
+      }
+     ],
+     "text": "Prendre la pièce qui attaque est souvent une bonne idée, mais seulement si personne ne la protège. Regarde."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "3q2k1/5ppp/8/n7/2B5/8/5PPP/4QRK1 w - - 1 2",
+     "prompt": "Ton fou en c4 est attaqué par le cavalier. Mets-le à l'abri ou protège-le, sans rien perdre.",
+     "solution": [
+      "c4d5"
+     ],
+     "check": "list",
+     "accept": [
+      "c4d5",
+      "c4a2",
+      "c4b5",
+      "e1e4",
+      "e1e2"
+     ],
+     "success": "Ton fou n'est plus perdu. C'était exactement ce que la question « que veut son dernier coup ? » devait te faire voir.",
+     "hint": "Ton fou peut reculer sur une case où rien ne l'attaque, ou ta dame peut venir le protéger.",
+     "engine": {
+      "best": "e1c3",
+      "score": 625,
+      "depth": 16
+     },
+     "alsoGood": []
+    }
+   ],
+   "retenir": "Après chaque coup adverse : qu'attaque-t-il, qu'a-t-il libéré, que ne protège-t-il plus ?"
+  },
+  {
+   "id": "proc-hanging-pieces",
+   "title": "Les pièces que personne ne protège",
+   "introduces": [
+    "pièce en prise"
+   ],
+   "challenge": {
+    "fen": "6k1/pp3ppp/3b4/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+    "prompt": "Tu joues les blancs. Une pièce noire n'est protégée par personne et ta tour peut l'atteindre. Prends-la.",
+    "solution": [
+     "d1d6"
+    ],
+    "check": "engine",
+    "hint": "Ta tour en d1 regarde toute la colonne d, vers le haut.",
+    "accept": [
+     "d1d6"
+    ],
+    "engine": {
+     "best": "d1d6",
+     "score": 663,
+     "depth": 16
+    }
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Une pièce en prise",
+     "fen": "6k1/pp3ppp/3b4/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+     "arrows": [
+      [
+       "d1",
+       "d6"
+      ]
+     ],
+     "marks": [
+      "d6"
+     ],
+     "text": "Une pièce « en prise », c'est une pièce que l'adversaire peut prendre sans rien perdre en échange. Ici, le fou noir en d6 est attaqué par ta tour et aucune pièce noire ne le protège. C'est 3 points gratuits."
+    },
+    {
+     "step": "pourquoi",
+     "title": "Les pièces non protégées tombent",
+     "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
+     "marks": [
+      "c4",
+      "c5"
+     ],
+     "text": "Un grand joueur, John Nunn, résume : « les pièces non protégées finissent par tomber ». Ici, en début de partie, ton fou en c4 et le fou noir en c5 ne sont protégés par personne. Ce n'est pas grave tant que personne ne peut les attaquer, mais ce sont les premières cibles."
+    },
+    {
+     "step": "methode",
+     "title": "Après chaque coup, compte",
+     "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
+     "marks": [
+      "c4"
+     ],
+     "text": "Prends l'habitude, après chaque coup (le tien et le sien), de repérer tes pièces que personne ne protège. Moins tu en as, moins l'adversaire a d'occasions. Et chez lui, chaque pièce non protégée est une raison de chercher une attaque."
+    },
+    {
+     "step": "methode",
+     "title": "Protéger ou déplacer",
+     "fen": "6k1/5ppp/5b2/8/8/2N5/P4PPP/6K1 w - - 0 1",
+     "arrows": [
+      [
+       "f6",
+       "c3"
+      ]
+     ],
+     "marks": [
+      "c3"
+     ],
+     "text": "Quand une de tes pièces non protégée est attaquée, tu as deux choix : la déplacer sur une case sûre, ou la protéger avec une autre pièce. Ici, le fou noir en f6 attaque ton cavalier en c3. Il faut réagir maintenant."
+    },
+    {
+     "step": "piege",
+     "title": "Protégée ne veut pas dire sauvée",
+     "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+     "arrows": [
+      [
+       "e6",
+       "d5"
+      ]
+     ],
+     "marks": [
+      "d5"
+     ],
+     "text": "Attention : une pièce protégée peut quand même se perdre si on l'attaque avec une pièce moins chère qu'elle. La tour noire en d5 est protégée par le pion en e6. Si ta dame la prend, le pion reprend ta dame. On en parle dans la fiche sur les échanges."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "6k1/5ppp/5b2/8/8/2N5/P4PPP/6K1 w - - 0 1",
+     "prompt": "Le fou noir en f6 attaque ton cavalier en c3, que personne ne protège. Sauve ton cavalier.",
+     "solution": [
+      "c3d5"
+     ],
+     "check": "engine",
+     "success": "Ton cavalier est à l'abri. Et s'il attaque le fou en retour, c'est encore mieux.",
+     "hint": "Ton cavalier peut sauter sur une case où le fou ne l'atteint pas.",
+     "accept": [
+      "c3d5",
+      "c3b5",
+      "c3e4",
+      "c3d1",
+      "c3b1"
+     ],
+     "engine": {
+      "best": "c3d5",
+      "score": 244,
+      "depth": 16
+     }
+    }
+   ],
+   "retenir": "Une pièce que personne ne protège est une cible. Prends celles de l'adversaire, protège les tiennes."
+  },
+  {
+   "id": "proc-exchange-count",
+   "title": "Compter avant de prendre",
+   "introduces": [
+    "échange"
+   ],
+   "challenge": {
+    "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+    "prompt": "Le cavalier noir en e5 est attaqué par trois de tes pièces : ton pion, ton cavalier et ta dame. Il est protégé par le pion en d6. Avec quelle pièce le prends-tu ?",
+    "solution": [
+     "f4e5"
+    ],
+    "check": "engine",
+    "hint": "Le pion noir en d6 va reprendre. Qu'est-ce que tu préfères perdre : un pion, un cavalier ou ta dame ?",
+    "accept": [
+     "f4e5"
+    ],
+    "engine": {
+     "best": "f4e5",
+     "score": 240,
+     "depth": 16
+    }
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Ce qu'est un échange",
+     "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+     "arrows": [
+      [
+       "f4",
+       "e5"
+      ],
+      [
+       "d6",
+       "e5"
+      ]
+     ],
+     "text": "Un « échange », c'est : je prends une pièce, il reprend la mienne. Pour savoir si c'est bon, on compare les points de ce que chacun a perdu. Une pièce protégée n'est pas interdite à prendre, il faut juste compter."
+    },
+    {
+     "step": "methode",
+     "title": "Compter attaquants et défenseurs",
+     "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+     "arrows": [
+      [
+       "f4",
+       "e5"
+      ],
+      [
+       "f3",
+       "e5"
+      ],
+      [
+       "e2",
+       "e5"
+      ],
+      [
+       "d6",
+       "e5"
+      ]
+     ],
+     "marks": [
+      "e5"
+     ],
+     "text": "Compte les pièces qui attaquent la case : ici, trois blanches (pion f4, cavalier f3, dame e2). Puis celles qui la protègent : une seule noire (le pion en d6). Si tu attaques plus de fois qu'il ne protège, tu peux souvent gagner la pièce."
+    },
+    {
+     "step": "methode",
+     "title": "Prends avec la pièce la moins chère",
+     "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "f4e5",
+       "text": "Ton pion (1 point) prend le cavalier (3 points)."
+      },
+      {
+       "uci": "d6e5",
+       "text": "Le pion noir reprend ton pion."
+      },
+      {
+       "uci": "e2e5",
+       "text": "Ta dame reprend en e5. Bilan : tu as gagné un cavalier et un pion, tu n'as perdu qu'un pion."
+      }
+     ],
+     "text": "Commence toujours par ta pièce la moins précieuse. Si l'adversaire reprend, tu perds peu. Regarde."
+    },
+    {
+     "step": "piege",
+     "title": "La prise trop rapide",
+     "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "e2e5",
+       "text": "Ta dame (9 points) prend le cavalier (3 points)."
+      },
+      {
+       "uci": "d6e5",
+       "text": "Le pion reprend ta dame. Tu as donné 9 points pour en gagner 3."
+      }
+     ],
+     "text": "Même cible, mauvaise pièce. Regarde ce qui arrive si ta dame prend la première."
+    },
+    {
+     "step": "methode",
+     "title": "Jouer l'échange jusqu'au bout",
+     "fen": "3q2k1/5ppp/3p4/4n3/5P2/5N2/4Q1PP/6K1 w - - 0 1",
+     "text": "Joue la suite dans ta tête : je prends, il reprend, je reprends... Additionne les points perdus de chaque côté. Et souviens-toi qu'il n'est jamais obligé de reprendre : regarde aussi ce qui se passe s'il fait autre chose à la place."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "7k/8/4p3/3r4/q7/8/2B5/3Q2K1 w - - 0 1",
+     "prompt": "Deux prises possibles : ta dame sur la tour en d5, ou ton fou sur la dame en a4. Compte ce que chacune te rapporte vraiment.",
+     "solution": [
+      "c2a4"
+     ],
+     "check": "engine",
+     "success": "Exact. La dame noire n'était protégée par personne : +9 points. La tour, elle, était protégée par le pion en e6.",
+     "hint": "Après chaque prise, qui peut reprendre ?",
+     "accept": [
+      "c2a4"
+     ],
+     "engine": {
+      "best": "c2a4",
+      "score": -28,
+      "depth": 16
+     }
+    }
+   ],
+   "retenir": "Compte qui attaque et qui protège. Prends avec ta pièce la moins chère. Joue l'échange jusqu'au bout dans ta tête."
+  },
+  {
+   "id": "ouv-principles",
+   "title": "Bien commencer une partie",
+   "introduces": [
+    "développer",
+    "centre"
+   ],
+   "challenge": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "prompt": "C'est le tout premier coup de la partie et tu joues les blancs. Joue un coup qui prend de la place au milieu de l'échiquier.",
+    "solution": [
+     "e2e4"
+    ],
+    "check": "list",
+    "accept": [
+     "e2e4",
+     "d2d4",
+     "g1f3",
+     "c2c4"
+    ],
+    "hint": "Les 4 cases du milieu sont d4, e4, d5 et e5. Un de tes pions peut y aller.",
+    "engine": {
+     "best": "e2e4",
+     "score": 36,
+     "depth": 16
+    },
+    "alsoGood": [
+     "e2e3",
+     "g2g3",
+     "b1c3"
+    ]
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Trois objectifs pour les 10 premiers coups",
+     "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+     "marks": [
+      "d4",
+      "e4",
+      "d5",
+      "e5"
+     ],
+     "text": "Au début de la partie, tu as trois objectifs. Un : prendre de la place au « centre », les 4 cases du milieu (d4, e4, d5, e5). Deux : sortir tes pièces de leur case de départ. Trois : mettre ton roi à l'abri en roquant. Ces trois idées marchent dans toutes les ouvertures."
+    },
+    {
+     "step": "pourquoi",
+     "title": "Pourquoi le centre",
+     "fen": "rnbqkbnr/pppppppp/8/8/3NP3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 1",
+     "arrows": [
+      [
+       "d4",
+       "c6"
+      ],
+      [
+       "d4",
+       "e6"
+      ],
+      [
+       "d4",
+       "f5"
+      ],
+      [
+       "d4",
+       "b5"
+      ],
+      [
+       "d4",
+       "f3"
+      ],
+      [
+       "d4",
+       "b3"
+      ],
+      [
+       "d4",
+       "c2"
+      ],
+      [
+       "d4",
+       "e2"
+      ]
+     ],
+     "text": "Une pièce au centre contrôle beaucoup plus de cases qu'une pièce au bord. Ce cavalier en d4 atteint 8 cases. Dans un coin, il n'en atteindrait que 2. Celui qui tient le centre a plus de place pour ses pièces."
+    },
+    {
+     "step": "principe",
+     "title": "Sortir ses pièces",
+     "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+     "arrows": [
+      [
+       "g1",
+       "f3"
+      ],
+      [
+       "b1",
+       "c3"
+      ],
+      [
+       "f1",
+       "c4"
+      ]
+     ],
+     "text": "« Développer » une pièce, c'est la sortir de sa case de départ pour qu'elle participe au jeu. Commence par les cavaliers et les fous, vers le centre. Chaque pièce qui reste chez elle, c'est un joueur de moins dans ton équipe."
+    },
+    {
+     "step": "principe",
+     "title": "Mettre son roi à l'abri",
+     "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+     "arrows": [
+      [
+       "e1",
+       "g1"
+      ]
+     ],
+     "text": "Quand ton cavalier et ton fou côté roi sont sortis, la voie est libre pour roquer. Fais-le tôt, en général avant le 10e coup. Un roi qui reste au milieu se fait attaquer dès que des lignes s'ouvrent."
+    },
+    {
+     "step": "methode",
+     "title": "Les règles pratiques",
+     "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+     "text": "Quelques règles simples. Ne bouge pas deux fois la même pièce sans raison. Ne sors pas ta dame trop tôt. Ne va pas chercher un pion loin sur le côté si ça retarde tes autres pièces. Et quand toutes tes pièces sont sorties, tes deux tours doivent pouvoir se voir sur la rangée du fond."
+    },
+    {
+     "step": "piege",
+     "title": "La dame sortie trop tôt",
+     "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+     "line": [
+      {
+       "uci": "d1h5",
+       "text": "Les blancs sortent leur dame dès le 2e coup. Elle menace le pion en e5 et la case f7."
+      },
+      {
+       "uci": "b8c6",
+       "text": "Les noirs protègent leur pion en sortant un cavalier. Une pièce de plus dans le jeu."
+      },
+      {
+       "uci": "f1c4",
+       "text": "Les blancs menacent maintenant Dxf7, qui serait mat."
+      },
+      {
+       "uci": "g7g6",
+       "text": "Le pion chasse la dame. Les noirs gagnent du temps."
+      },
+      {
+       "uci": "h5f3",
+       "text": "La dame revient, et menace encore f7."
+      },
+      {
+       "uci": "g8f6",
+       "text": "Le cavalier bloque la ligne de la dame vers f7, en se développant. Les noirs ont sorti deux pièces ; la dame blanche a bougé trois fois."
+      }
+     ],
+     "text": "Sortir la dame très tôt semble agressif, mais l'adversaire la chasse en sortant ses pièces. Regarde."
+    },
+    {
+     "step": "piege",
+     "title": "Les règles cèdent devant les menaces",
+     "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+     "arrows": [
+      [
+       "h5",
+       "f7"
+      ],
+      [
+       "c4",
+       "f7"
+      ]
+     ],
+     "marks": [
+      "f7"
+     ],
+     "text": "Une règle d'ouverture ne passe jamais avant une menace. Ici, la dame et le fou blancs visent f7 : si les noirs continuent à sortir tranquillement leurs pièces, Dxf7 est mat. On répond d'abord à la menace, puis on reprend le développement."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+     "prompt": "Après 1.e4 e5, sors une pièce vers le centre.",
+     "solution": [
+      "g1f3"
+     ],
+     "check": "list",
+     "accept": [
+      "g1f3",
+      "b1c3",
+      "f1c4"
+     ],
+     "success": "Une pièce de plus dans le jeu, vers le centre. Bien.",
+     "hint": "Tes cavaliers et ton fou en f1 peuvent sortir.",
+     "engine": {
+      "best": "g1f3",
+      "score": 33,
+      "depth": 16
+     },
+     "alsoGood": [
+      "d2d4",
+      "g1e2"
+     ]
+    },
+    {
+     "kind": "move",
+     "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+     "prompt": "Tu joues les noirs. Les blancs menacent Dxf7, mat. Protège-toi.",
+     "solution": [
+      "g7g6"
+     ],
+     "check": "engine",
+     "success": "La menace est parée. Ensuite, tu pourras chasser cette dame en sortant tes pièces.",
+     "hint": "Tu peux chasser la dame, ou protéger f7 avec ta dame.",
+     "accept": [
+      "g7g6",
+      "d8e7",
+      "d8f6",
+      "g8h6"
+     ],
+     "engine": {
+      "best": "g7g6",
+      "score": 25,
+      "depth": 16
+     }
+    }
+   ],
+   "retenir": "Centre, pièces dehors, roi à l'abri. Mais une menace passe toujours avant."
+  },
+  {
+   "id": "tac-fork",
+   "title": "La fourchette",
+   "introduces": [
+    "fourchette"
+   ],
+   "challenge": {
+    "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+    "prompt": "Tu joues les blancs. Ton cavalier en e4 peut attaquer deux pièces noires en même temps. Trouve le coup. Ça ne compte pas si tu te trompes.",
+    "solution": [
+     "e4d6",
+     "e8d7",
+     "d6b5"
+    ],
+    "check": "engine",
+    "hint": "Cherche une case d'où ton cavalier attaque à la fois le roi et la dame.",
+    "accept": [
+     "e4d6"
+    ],
+    "engine": {
+     "best": "e4d6",
+     "score": -10,
+     "depth": 16
+    }
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Deux attaques d'un coup",
+     "fen": "4k3/8/3N4/1q6/8/8/8/4K3 b - - 1 1",
+     "arrows": [
+      [
+       "d6",
+       "e8"
+      ],
+      [
+       "d6",
+       "b5"
+      ]
+     ],
+     "marks": [
+      "e8",
+      "b5"
+     ],
+     "text": "Une « fourchette », c'est une seule pièce qui attaque deux pièces adverses en même temps. Ici, le cavalier en d6 attaque le roi noir (c'est échec) et la dame noire. L'adversaire ne joue qu'un coup : il doit sauver son roi, et il perd sa dame."
+    },
+    {
+     "step": "exemple",
+     "title": "La suite",
+     "fen": "4k3/8/8/1q6/4N3/8/8/4K3 w - - 0 1",
+     "line": [
+      {
+       "uci": "e4d6",
+       "text": "Le cavalier saute en d6 : échec au roi en e8, et attaque de la dame en b5."
+      },
+      {
+       "uci": "e8d7",
+       "text": "Le roi noir est obligé de bouger, il n'a pas le temps de sauver sa dame."
+      },
+      {
+       "uci": "d6b5",
+       "text": "Le cavalier prend la dame. 9 points gagnés en un coup."
+      }
+     ],
+     "text": "Regarde la fourchette en entier."
+    },
+    {
+     "step": "pourquoi",
+     "title": "Pourquoi ça marche",
+     "fen": "4k3/8/3N4/1q6/8/8/8/4K3 b - - 1 1",
+     "text": "On ne joue qu'un coup à la fois. Face à deux problèmes, l'adversaire ne peut en régler qu'un. Et quand l'une des deux cibles est le roi, il n'a même pas le choix : il doit d'abord sortir de l'échec."
+    },
+    {
+     "step": "signaux",
+     "title": "Quand chercher une fourchette",
+     "fen": "r3k3/6pp/8/3N4/8/8/6PP/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "d5",
+       "c7"
+      ]
+     ],
+     "marks": [
+      "e8",
+      "a8"
+     ],
+     "text": "Cherche une fourchette quand deux pièces adverses importantes (le roi, la dame, une tour) ou deux pièces non protégées sont à portée d'une même case. Le cavalier est le roi des fourchettes, parce que son L est difficile à voir venir. Ici, la case c7 touche le roi et la tour."
+    },
+    {
+     "step": "signaux",
+     "title": "La fourchette de pion",
+     "fen": "4k3/p5pp/8/2n1n3/8/3P4/P5PP/1R2K3 w - - 0 1",
+     "arrows": [
+      [
+       "d3",
+       "d4"
+      ]
+     ],
+     "marks": [
+      "c5",
+      "e5"
+     ],
+     "text": "Un simple pion peut faire une fourchette. Quand deux pièces adverses sont côte à côte avec une case vide entre elles, un pion qui avance sur cette case les attaque toutes les deux. Ici, d4 attaque les deux cavaliers, et aucun ne peut prendre le pion."
+    },
+    {
+     "step": "signaux",
+     "title": "La fourchette de dame",
+     "fen": "4k3/6pp/8/8/7b/8/6PP/3Q2K1 w - - 0 1",
+     "arrows": [
+      [
+       "d1",
+       "h5"
+      ],
+      [
+       "h5",
+       "e8"
+      ],
+      [
+       "h5",
+       "h4"
+      ]
+     ],
+     "text": "La dame fait souvent des fourchettes en donnant échec et en attaquant en même temps une pièce non protégée. Ici, Dh5 met le roi en échec et attaque le fou en h4."
+    },
+    {
+     "step": "methode",
+     "title": "La méthode",
+     "fen": "r3k3/6pp/8/3N4/8/8/6PP/4K3 w - - 0 1",
+     "arrows": [
+      [
+       "d5",
+       "c7"
+      ]
+     ],
+     "text": "Un : repère les cibles (roi, dame, tours, pièces non protégées). Deux : cherche une case d'où une de tes pièces les touche toutes les deux. Trois : vérifie que ta pièce ne se fait pas prendre gratuitement sur cette case. Quatre : après sa réponse, prends la deuxième cible."
+    },
+    {
+     "step": "piege",
+     "title": "La fourchette qui ne marche pas",
+     "fen": "4k3/4p3/8/1q6/4N3/8/8/4K3 w - - 0 1",
+     "line": [
+      {
+       "uci": "e4d6",
+       "text": "Le cavalier fait la même fourchette en d6..."
+      },
+      {
+       "uci": "e7d6",
+       "text": "...mais cette fois, le pion noir en e7 le prend. Plus de fourchette, et tu as perdu ton cavalier."
+      }
+     ],
+     "text": "Attention : si l'adversaire peut prendre la pièce qui fait la fourchette, les deux menaces disparaissent d'un coup. Vérifie toujours la case d'arrivée."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "r3k3/6pp/8/3N4/8/8/6PP/4K3 w - - 0 1",
+     "prompt": "Trouve la fourchette de cavalier.",
+     "solution": [
+      "d5c7",
+      "e8d7",
+      "c7a8"
+     ],
+     "check": "engine",
+     "success": "Le cavalier en c7 attaque le roi et la tour. Le roi doit bouger, et tu prends la tour.",
+     "hint": "Cherche une case qui touche à la fois e8 et a8.",
+     "accept": [
+      "d5c7"
+     ],
+     "engine": {
+      "best": "d5c7",
+      "score": 397,
+      "depth": 16
+     }
+    },
+    {
+     "kind": "move",
+     "fen": "4k3/p5pp/8/2n1n3/8/3P4/P5PP/1R2K3 w - - 0 1",
+     "prompt": "Les deux cavaliers noirs sont côte à côte. Un de tes pions peut les attaquer tous les deux.",
+     "solution": [
+      "d3d4"
+     ],
+     "check": "engine",
+     "success": "Le pion attaque les deux cavaliers. Un seul pourra s'enfuir.",
+     "hint": "Quel pion peut avancer juste entre les deux ?",
+     "accept": [
+      "d3d4"
+     ],
+     "engine": {
+      "best": "d3d4",
+      "score": 466,
+      "depth": 16
+     }
+    },
+    {
+     "kind": "move",
+     "fen": "4k3/6pp/8/8/7b/8/6PP/3Q2K1 w - - 0 1",
+     "prompt": "Le fou noir en h4 n'est protégé par personne. Trouve un échec de ta dame qui l'attaque en même temps.",
+     "solution": [
+      "d1h5"
+     ],
+     "check": "list",
+     "accept": [
+      "d1h5",
+      "d1a4"
+     ],
+     "success": "Échec au roi, et le fou est attaqué. Au prochain coup, tu le prends.",
+     "hint": "Cherche une case d'où ta dame voit le roi en e8 et le fou en h4.",
+     "engine": {
+      "best": "d1h5",
+      "score": 793,
+      "depth": 16
+     },
+     "alsoGood": []
+    }
+   ],
+   "retenir": "Une pièce, deux cibles. Vérifie que ta pièce ne peut pas être prise sur sa case d'arrivée."
+  },
+  {
+   "id": "tac-pin",
+   "title": "Le clouage",
+   "introduces": [
+    "clouage"
+   ],
+   "challenge": {
+    "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+    "prompt": "Le cavalier noir en e4 est devant son roi, sur la même colonne que ta tour. Il ne peut pas bouger. Attaque-le avec un pion pour le gagner.",
+    "solution": [
+     "f2f3"
+    ],
+    "check": "list",
+    "accept": [
+     "f2f3"
+    ],
+    "hint": "Ton pion en f2 peut avancer et attaquer e4 en diagonale.",
+    "engine": {
+     "best": "e1e2",
+     "score": 1754,
+     "depth": 16
+    },
+    "alsoGood": []
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "La pièce qui ne peut plus bouger",
+     "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+     "arrows": [
+      [
+       "e1",
+       "e8"
+      ]
+     ],
+     "marks": [
+      "e4",
+      "e8"
+     ],
+     "text": "Un « clouage », c'est quand une pièce adverse ne peut pas bouger parce qu'elle protège une pièce plus importante derrière elle. Ici, ta tour en e1, le cavalier noir en e4 et le roi noir en e8 sont sur la même colonne. Si le cavalier bouge, le roi est en échec : c'est interdit."
+    },
+    {
+     "step": "exemple",
+     "title": "On l'attaque encore",
+     "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+     "line": [
+      {
+       "uci": "f2f3",
+       "text": "Ton pion attaque le cavalier. Le cavalier ne peut pas fuir, il est cloué. Au prochain coup, tu le prends."
+      }
+     ],
+     "text": "Une pièce clouée est une cible parfaite : attaque-la une deuxième fois, de préférence avec un pion."
+    },
+    {
+     "step": "principe",
+     "title": "Le clouage sur la dame",
+     "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4",
+     "arrows": [
+      [
+       "g5",
+       "d8"
+      ]
+     ],
+     "marks": [
+      "f6",
+      "d8"
+     ],
+     "text": "Quand la pièce de derrière est le roi, la pièce clouée n'a pas le droit de bouger. Quand c'est la dame (comme ici : fou blanc en g5, cavalier noir en f6, dame noire en d8), elle a le droit, mais si elle bouge, le fou prend la dame."
+    },
+    {
+     "step": "signaux",
+     "title": "Quand chercher un clouage",
+     "fen": "4k3/8/8/8/4n3/8/5P2/4RK2 w - - 0 1",
+     "arrows": [
+      [
+       "e1",
+       "e8"
+      ]
+     ],
+     "text": "Cherche un clouage quand une pièce adverse se trouve sur la même ligne que son roi ou sa dame, et qu'une de tes pièces qui vont loin (tour, fou, dame) peut atteindre cette ligne."
+    },
+    {
+     "step": "methode",
+     "title": "Le faux défenseur",
+     "fen": "3k4/8/3p4/4n3/8/8/4Q3/3R2K1 w - - 0 1",
+     "arrows": [
+      [
+       "d1",
+       "d8"
+      ],
+      [
+       "d6",
+       "e5"
+      ]
+     ],
+     "marks": [
+      "d6"
+     ],
+     "text": "Le clouage sert aussi à repérer les faux défenseurs. Le pion noir en d6 a l'air de protéger le cavalier en e5. Mais il est cloué par ta tour sur son roi : s'il quittait la colonne d pour reprendre, son roi serait en échec. Il ne protège donc rien."
+    },
+    {
+     "step": "piege",
+     "title": "Une pièce clouée peut parfois prendre",
+     "fen": "4k3/4r3/8/8/8/8/8/4RK2 b - - 0 1",
+     "line": [
+      {
+       "uci": "e7e1",
+       "text": "La tour noire est clouée sur son roi, mais elle a le droit de bouger le long de la ligne. Elle prend ta tour : échec."
+      },
+      {
+       "uci": "f1e1",
+       "text": "Ton roi reprend. Échange de tours, rien de gagné."
+      }
+     ],
+     "text": "Attention : une pièce clouée peut avancer le long de la ligne du clouage, et parfois prendre la pièce qui la cloue."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "3k4/8/3p4/4n3/8/8/4Q3/3R2K1 w - - 0 1",
+     "prompt": "Prends le cavalier en e5 avec ta dame. Le pion en d6 peut-il vraiment reprendre ?",
+     "solution": [
+      "e2e5"
+     ],
+     "check": "exact",
+     "success": "Le pion ne peut pas reprendre : il est cloué sur son roi par ta tour. Cavalier gratuit.",
+     "hint": "Ta dame descend la colonne e jusqu'au cavalier.",
+     "accept": [
+      "e2e5"
+     ],
+     "engine": {
+      "best": "e2e5",
+      "score": 99996,
+      "depth": 16
+     },
+     "alsoGood": []
+    }
+   ],
+   "retenir": "Une pièce clouée ne peut pas bouger (ou pas sans perte). Attaque-la encore. Et vérifie toujours qu'un défenseur n'est pas cloué."
+  },
+  {
+   "id": "tac-discovered",
+   "title": "L'attaque à la découverte",
+   "introduces": [
+    "attaque à la découverte"
+   ],
+   "challenge": {
+    "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+    "prompt": "Ta tour en e1 vise le roi noir, mais ton propre fou en e2 la bloque. Si ton fou bouge, ta tour donne échec. Trouve le coup de fou qui gagne le plus.",
+    "solution": [
+     "e2h5"
+    ],
+    "check": "exact",
+    "hint": "Ton fou peut aller n'importe où, ce sera échec. Il peut même prendre quelque chose.",
+    "accept": [
+     "e2h5"
+    ],
+    "engine": {
+     "best": "e2h5",
+     "score": 466,
+     "depth": 16
+    },
+    "alsoGood": []
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Ouvrir une ligne",
+     "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+     "arrows": [
+      [
+       "e1",
+       "e8"
+      ]
+     ],
+     "marks": [
+      "e2"
+     ],
+     "text": "Une « attaque à la découverte », c'est quand tu bouges une pièce et que tu ouvres la ligne d'une autre de tes pièces, qui se met à attaquer. Ici, ton fou en e2 cache ta tour. Dès que le fou bouge, la tour attaque le roi noir."
+    },
+    {
+     "step": "exemple",
+     "title": "Deux menaces en un coup",
+     "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "e2h5",
+       "text": "Le fou prend la dame en h5. En partant, il a découvert la tour : le roi noir est en échec. Les noirs doivent s'occuper de leur roi, ils ne peuvent pas reprendre le fou. Tu as gagné la dame."
+      }
+     ],
+     "text": "Regarde : la pièce qui bouge attaque d'un côté, la pièce découverte de l'autre."
+    },
+    {
+     "step": "pourquoi",
+     "title": "Pourquoi c'est si fort",
+     "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 w - - 0 1",
+     "text": "L'adversaire regarde la pièce qui bouge, et oublie celle qui était cachée derrière. Quand la pièce découverte donne échec, la pièce qui bouge est libre d'aller où elle veut, même sur une case protégée : l'adversaire n'a pas le temps de la prendre."
+    },
+    {
+     "step": "signaux",
+     "title": "Quand la chercher",
+     "fen": "7q/pp2k3/8/8/3N4/8/1B3PPP/6K1 w - - 0 1",
+     "arrows": [
+      [
+       "b2",
+       "h8"
+      ]
+     ],
+     "marks": [
+      "d4"
+     ],
+     "text": "Cherche-la quand une de tes pièces qui vont loin (tour, fou, dame) vise une pièce adverse importante, mais qu'une de tes propres pièces est devant. Ici, ton fou en b2 vise la dame noire en h8, et ton cavalier en d4 est sur le chemin."
+    },
+    {
+     "step": "methode",
+     "title": "Trouver le bon coup de la pièce de devant",
+     "fen": "7q/pp2k3/8/8/3N4/8/1B3PPP/6K1 w - - 0 1",
+     "arrows": [
+      [
+       "d4",
+       "f5"
+      ],
+      [
+       "b2",
+       "h8"
+      ]
+     ],
+     "text": "Le cavalier doit partir. Mais où ? Choisis une case où il crée une deuxième menace, idéalement un échec. Ici, en f5, il met le roi noir en échec : les noirs n'auront pas le temps de sauver leur dame."
+    },
+    {
+     "step": "piege",
+     "title": "Attention aux découvertes contre toi",
+     "fen": "4k3/8/8/7q/8/8/4B3/4R1K1 b - - 0 1",
+     "arrows": [
+      [
+       "e1",
+       "e8"
+      ]
+     ],
+     "text": "Ça marche aussi contre toi. Quand une pièce adverse se trouve entre une de ses pièces longues et ton roi ou ta dame, attends-toi à ce qu'elle bouge avec une menace. Ici, avec les noirs, il fallait mettre la dame à l'abri avant que le fou ne bouge."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "7q/pp2k3/8/8/3N4/8/1B3PPP/6K1 w - - 0 1",
+     "prompt": "Ton fou en b2 vise la dame noire en h8, mais ton cavalier en d4 le bloque. Bouge ton cavalier avec un échec pour gagner la dame.",
+     "solution": [
+      "d4f5"
+     ],
+     "check": "engine",
+     "success": "Échec au roi, et ton fou attaque maintenant la dame. Les noirs doivent sauver leur roi : la dame tombe.",
+     "hint": "Cherche une case d'où ton cavalier attaque le roi en e7.",
+     "accept": [
+      "d4c6",
+      "d4f5"
+     ],
+     "engine": {
+      "best": "d4c6",
+      "score": 570,
+      "depth": 16
+     }
+    }
+   ],
+   "retenir": "Une pièce cachée derrière une autre attaque dès que la pièce de devant bouge. Fais bouger la pièce de devant avec une deuxième menace."
+  },
+  {
+   "id": "mat-back-rank",
+   "title": "Le mat du couloir",
+   "introduces": [
+    "mat du couloir",
+    "case de fuite"
+   ],
+   "challenge": {
+    "fen": "3r2k1/5ppp/8/8/8/8/5PPP/3RR1K1 w - - 0 1",
+    "prompt": "Le roi noir est coincé derrière ses trois pions. Fais mat en un coup.",
+    "solution": [
+     "d1d8"
+    ],
+    "check": "mate",
+    "hint": "La seule pièce qui protège la dernière rangée noire est la tour en d8.",
+    "accept": [
+     "d1d8"
+    ]
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Le roi coincé par ses propres pions",
+     "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+     "marks": [
+      "f7",
+      "g7",
+      "h7"
+     ],
+     "text": "Après le roque, le roi est souvent derrière trois pions. C'est un bon abri... sauf qu'il ne peut plus s'échapper vers l'avant. Une tour ou une dame qui arrive sur la dernière rangée le met en échec, et il n'a aucune case pour fuir : c'est le « mat du couloir »."
+    },
+    {
+     "step": "exemple",
+     "title": "Le mat",
+     "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "a1a8",
+       "text": "La tour arrive sur la dernière rangée : échec. Le roi ne peut ni avancer (ses pions), ni bouger sur la rangée (la tour la surveille). Mat."
+      }
+     ],
+     "text": "C'est le mat le plus fréquent dans les vraies parties, à presque tous les niveaux."
+    },
+    {
+     "step": "signaux",
+     "title": "Quand le chercher",
+     "fen": "3r2k1/5ppp/8/8/8/8/5PPP/3RR1K1 w - - 0 1",
+     "arrows": [
+      [
+       "d1",
+       "d8"
+      ]
+     ],
+     "marks": [
+      "d8"
+     ],
+     "text": "Cherche-le quand le roi adverse est derrière ses pions intacts et que sa dernière rangée n'est protégée que par une seule pièce, ou aucune. Ici, seule la tour en d8 protège la rangée noire. Si tu la prends avec échec, plus personne ne protège."
+    },
+    {
+     "step": "methode",
+     "title": "Protège-toi : la case de fuite",
+     "fen": "6k1/5ppp/8/8/8/7P/5PP1/6K1 w - - 0 1",
+     "marks": [
+      "h2"
+     ],
+     "arrows": [
+      [
+       "g1",
+       "h2"
+      ]
+     ],
+     "text": "Le même danger existe pour ton roi. Pour t'en protéger, avance un des pions devant lui (souvent le pion h) au bon moment. Ça crée une « case de fuite » : une case libre où ton roi peut s'échapper en cas d'échec sur la dernière rangée."
+    },
+    {
+     "step": "piege",
+     "title": "Ce n'est mat que s'il ne peut pas fuir",
+     "fen": "6k1/5pp1/7p/8/8/8/8/R5K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "a1a8",
+       "text": "La tour donne échec sur la dernière rangée..."
+      },
+      {
+       "uci": "g8h7",
+       "text": "...mais le pion h a déjà avancé : le roi s'échappe en h7. Ce n'était qu'un échec."
+      }
+     ],
+     "text": "Avant de jouer un échec sur la dernière rangée, vérifie que le roi n'a pas de case de fuite."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "6k1/5ppp/8/8/8/8/5PPP/r1R3K1 w - - 0 1",
+     "prompt": "La tour noire en a1 attaque ta tour en c1. Attention : ta tour est la seule à protéger ta dernière rangée. Trouve le meilleur coup.",
+     "solution": [
+      "c1a1"
+     ],
+     "check": "engine",
+     "success": "Tu prends sa tour. Si ta tour avait quitté ta dernière rangée, la sienne pouvait y descendre et faire mat.",
+     "hint": "Que se passe-t-il si ta tour s'en va ailleurs ?",
+     "accept": [
+      "c1a1"
+     ],
+     "engine": {
+      "best": "c1a1",
+      "score": 612,
+      "depth": 16
+     }
+    }
+   ],
+   "retenir": "Un roi derrière trois pions intacts craint le mat sur la dernière rangée. Attaque-la chez lui, crée une case de fuite chez toi."
+  },
+  {
+   "id": "tac-remove-defender",
+   "title": "Éliminer le défenseur",
+   "introduces": [
+    "défenseur"
+   ],
+   "challenge": {
+    "fen": "6k1/3r1ppp/5n2/1Q4B1/8/7P/5PP1/R5K1 w - - 0 1",
+    "prompt": "La tour noire en d7 est attaquée par ta dame, mais le cavalier en f6 la protège. Trouve comment la gagner.",
+    "solution": [
+     "g5f6"
+    ],
+    "check": "list",
+    "accept": [
+     "g5f6"
+    ],
+    "hint": "Et si le cavalier n'était plus là ?",
+    "engine": {
+     "best": "a1a8",
+     "score": 99997,
+     "depth": 16
+    },
+    "alsoGood": []
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Une seule pièce tient tout",
+     "fen": "6k1/3r1ppp/5n2/1Q4B1/8/7P/5PP1/R5K1 w - - 0 1",
+     "arrows": [
+      [
+       "b5",
+       "d7"
+      ],
+      [
+       "f6",
+       "d7"
+      ]
+     ],
+     "marks": [
+      "f6"
+     ],
+     "text": "Le « défenseur », c'est la pièce qui protège une autre pièce. Quand une pièce adverse n'est protégée qu'une seule fois, il suffit de faire disparaître ce défenseur pour qu'elle devienne gratuite. Ici, la tour en d7 ne tient que grâce au cavalier en f6. Ta tour en a1 garde ta dernière rangée."
+    },
+    {
+     "step": "exemple",
+     "title": "On prend le défenseur",
+     "fen": "6k1/3r1ppp/5n2/1Q4B1/8/7P/5PP1/R5K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "g5f6",
+       "text": "Ton fou prend le cavalier qui protégeait la tour."
+      },
+      {
+       "uci": "g7f6",
+       "text": "Le pion noir reprend ton fou. Fou contre cavalier : pour l'instant, c'est égal."
+      },
+      {
+       "uci": "b5d7",
+       "text": "Mais la tour n'a plus de défenseur : ta dame la prend. Tu as gagné 5 points."
+      }
+     ],
+     "text": "Regarde comment on fait tomber la tour."
+    },
+    {
+     "step": "methode",
+     "title": "La méthode",
+     "fen": "6k1/3r1ppp/5n2/1Q4B1/8/7P/5PP1/R5K1 w - - 0 1",
+     "text": "Un : pour chaque pièce adverse intéressante, cherche qui la protège. Deux : s'il n'y a qu'un défenseur, cherche à le prendre, à l'échanger ou à le chasser. Trois : prends la cible. Quatre : fais le compte des points de toute l'opération."
+    },
+    {
+     "step": "piege",
+     "title": "Vérifie ta propre sécurité",
+     "fen": "6k1/3r1ppp/5n2/1Q4B1/8/8/5PPP/6K1 w - - 0 1",
+     "line": [
+      {
+       "uci": "g5f6",
+       "text": "Même idée, mais ici ton roi n'a pas de case de fuite et aucune tour ne garde ta dernière rangée."
+      },
+      {
+       "uci": "d7d1",
+       "text": "La tour noire s'échappe en descendant en d1 : échec sur ta dernière rangée."
+      },
+      {
+       "uci": "b5f1",
+       "text": "Ta dame doit revenir se mettre devant pour éviter le mat..."
+      },
+      {
+       "uci": "d1f1",
+       "text": "...et la tour la prend, avec échec."
+      },
+      {
+       "uci": "g1f1",
+       "text": "Ton roi reprend la tour."
+      },
+      {
+       "uci": "g7f6",
+       "text": "Et le pion reprend ton fou. Bilan : tu as perdu ta dame et ton fou contre une tour et un cavalier."
+      }
+     ],
+     "text": "Avant de lancer l'opération, fais toujours la vérification : après mon coup, qu'est-ce qu'il peut faire ? Regarde la même idée dans une position un peu différente."
+    }
+   ],
+   "exercises": [],
+   "retenir": "Si une pièce adverse n'est protégée qu'une fois, fais disparaître son défenseur. Mais vérifie d'abord ta propre sécurité."
+  },
+  {
+   "id": "fin-opposition",
+   "title": "Roi et pion contre roi",
+   "introduces": [
+    "finale",
+    "opposition"
+   ],
+   "challenge": {
+    "fen": "8/4k3/8/2K5/8/4P3/8/8 w - - 0 1",
+    "prompt": "Fin de partie : il ne reste que les rois et ton pion en e3. Un seul coup gagne. Lequel ? Indice : ton roi doit passer devant ton pion.",
+    "solution": [
+     "c5d5"
+    ],
+    "check": "engine",
+    "hint": "Ton roi doit aller vers le haut, juste devant le pion, avant le roi noir.",
+    "accept": [
+     "c5d5"
+    ],
+    "engine": {
+     "best": "c5d5",
+     "score": 648,
+     "depth": 16
+    }
+   },
+   "screens": [
+    {
+     "step": "pourquoi",
+     "title": "La finale la plus fréquente",
+     "fen": "8/4k3/8/2K5/8/4P3/8/8 w - - 0 1",
+     "text": "La « finale », c'est la fin de partie, quand il reste peu de pièces. La plus fréquente : un roi et un pion contre un roi. Si tu la connais, ton pion devient une dame. Sinon, c'est souvent nulle. Le secret : c'est ton roi qui fait le travail, pas le pion."
+    },
+    {
+     "step": "principe",
+     "title": "Le roi passe devant",
+     "fen": "8/4k3/8/2K5/8/4P3/8/8 w - - 0 1",
+     "marks": [
+      "d5",
+      "e5",
+      "f5"
+     ],
+     "text": "Pour un pion encore sur sa moitié d'échiquier, il existe trois cases magiques : celles qui sont deux rangées devant lui. Pour ton pion en e3, ce sont d5, e5 et f5. Si ton roi atteint l'une d'elles, tu gagnes à coup sûr, quoi que fasse l'adversaire."
+    },
+    {
+     "step": "principe",
+     "title": "L'opposition",
+     "fen": "8/8/8/4k3/8/4K3/4P3/8 b - - 0 1",
+     "marks": [
+      "e3",
+      "e5"
+     ],
+     "text": "Quand les deux rois sont face à face avec une case vide entre eux, on parle d'« opposition ». Aucun ne peut avancer vers l'autre. Celui qui DOIT jouer est obligé de s'écarter et laisse passer l'autre. Ici, c'est aux noirs de jouer : leur roi doit céder la place, et les blancs gagnent."
+    },
+    {
+     "step": "exemple",
+     "title": "Roi sur la 6e rangée, devant son pion",
+     "fen": "4k3/8/4K3/4P3/8/8/8/8 w - - 0 1",
+     "line": [
+      {
+       "uci": "e6d6",
+       "text": "Le roi blanc se décale pour laisser avancer le pion."
+      },
+      {
+       "uci": "e8d8",
+       "text": "Le roi noir reste en face."
+      },
+      {
+       "uci": "e5e6",
+       "text": "Le pion avance, protégé par le roi."
+      },
+      {
+       "uci": "d8e8",
+       "text": "Le roi noir revient devant le pion."
+      },
+      {
+       "uci": "e6e7",
+       "text": "Le pion avance encore, avec échec."
+      },
+      {
+       "uci": "e8f7",
+       "text": "Le roi noir doit s'écarter."
+      },
+      {
+       "uci": "d6d7",
+       "text": "Le roi blanc protège la case e8 : au prochain coup, le pion devient une dame."
+      }
+     ],
+     "text": "Une règle à retenir : si ton roi est devant ton pion sur la 6e rangée, tu gagnes toujours (sauf avec un pion sur le bord, a ou h)."
+    },
+    {
+     "step": "piege",
+     "title": "Le piège du pat",
+     "fen": "4k3/4P3/4K3/8/8/8/8/8 b - - 0 1",
+     "marks": [
+      "d7",
+      "f7",
+      "d8",
+      "f8"
+     ],
+     "text": "Attention en poussant le pion. Ici, c'est aux noirs de jouer : leur roi n'est pas en échec mais il n'a aucune case libre. C'est pat, nulle. Pour l'éviter, garde ton roi à côté du pion, pas derrière."
+    },
+    {
+     "step": "piege",
+     "title": "Le pion du bord",
+     "fen": "7k/8/6K1/7P/8/8/8/8 w - - 0 1",
+     "marks": [
+      "h8"
+     ],
+     "text": "Exception importante : avec un pion sur le bord (colonne a ou h), si le roi adverse arrive dans le coin devant le pion, c'est nulle. Ton roi ne peut jamais le chasser du coin sans faire pat."
+    }
+   ],
+   "exercises": [
+    {
+     "kind": "move",
+     "fen": "8/8/3k4/8/8/2K1P3/8/8 w - - 0 1",
+     "prompt": "Un seul coup gagne. Fais avancer ton roi devant ton pion, face au roi noir.",
+     "solution": [
+      "c3d4"
+     ],
+     "check": "engine",
+     "success": "Ton roi passe devant le pion. Le roi noir ne pourra plus l'arrêter.",
+     "hint": "Ton roi doit monter vers le centre, devant le pion.",
+     "accept": [
+      "c3d4"
+     ],
+     "engine": {
+      "best": "c3d4",
+      "score": 788,
+      "depth": 16
+     }
+    }
+   ],
+   "retenir": "En finale, le roi passe devant le pion. Vise les cases deux rangées devant ton pion. Méfie-toi du pat et du pion du bord."
+  },
+  {
+   "id": "str-worst-piece",
+   "title": "Quand il n'y a rien à faire : améliore ta pire pièce",
+   "introduces": [
+    "plan"
+   ],
+   "challenge": {
+    "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+    "prompt": "Aucune menace, rien à prendre. Ton cavalier en b1 n'est jamais sorti. Fais-le entrer dans le jeu.",
+    "solution": [
+     "b1d2"
+    ],
+    "check": "list",
+    "accept": [
+     "b1d2"
+    ],
+    "hint": "Le cavalier en b1 peut aller en d2, puis plus tard vers f1, g3 ou e5.",
+    "engine": {
+     "best": "f1e1",
+     "score": 53,
+     "depth": 16
+    },
+    "alsoGood": [
+     "f1e1",
+     "d1e2",
+     "f3e5",
+     "b2b4",
+     "c1f4",
+     "h2h3"
+    ]
+   },
+   "screens": [
+    {
+     "step": "principe",
+     "title": "Le cas le plus fréquent",
+     "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+     "text": "Souvent, il n'y a rien à prendre et aucune attaque possible. Que jouer ? Un « plan », c'est une idée pour les prochains coups. Le plan le plus simple et le plus utile : trouve ta pièce qui joue le moins bien, et donne-lui une meilleure case."
+    },
+    {
+     "step": "methode",
+     "title": "Que fait chaque pièce ?",
+     "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+     "marks": [
+      "b1",
+      "c1"
+     ],
+     "text": "Pour chacune de tes pièces, demande-toi : « Que fait-elle ? » Ton cavalier en b1 et ton fou en c1 n'ont jamais bougé : ils ne font rien. Ce sont tes pires pièces. Toutes les autres sont déjà sorties."
+    },
+    {
+     "step": "methode",
+     "title": "Trouve la meilleure case",
+     "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+     "arrows": [
+      [
+       "b1",
+       "d2"
+      ]
+     ],
+     "text": "Cherche une case où la pièce surveille le centre ou s'approche du roi adverse. Parfois il faut plusieurs coups pour l'y amener. Ici, le cavalier va d'abord en d2. Plus tard, quand ta tour aura quitté f1, il pourra continuer vers f1 puis g3, près du roi noir."
+    },
+    {
+     "step": "piege",
+     "title": "D'abord la vérification",
+     "fen": "r1bq1rk1/pp2bppp/2n1pn2/3p4/3P4/2PB1N2/PP3PPP/RNBQ1RK1 w - - 0 8",
+     "text": "Améliorer une pièce, c'est ce qu'on fait quand il n'y a RIEN d'urgent. Avant, fais toujours la vérification : a-t-il une menace ? Ai-je une prise ou une attaque qui gagne quelque chose ? Si la réponse est non aux deux, alors seulement, améliore ta pire pièce."
+    }
+   ],
+   "exercises": [],
+   "retenir": "Rien à prendre, rien à craindre ? Trouve ta pièce qui ne fait rien et donne-lui une meilleure case."
+  }
+ ]
+}

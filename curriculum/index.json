@@ -1,800 +1,2000 @@
 [
   {
-    "id": "vis-rules",
-    "title": "Les règles complètes",
+    "id": "vis-start",
     "tier": 0,
     "priority": "S",
-    "domain": "vision",
     "prerequisites": [],
-    "principle": "Le but est de mater le roi adverse : il est attaqué et aucun coup ne le sauve.",
-    "drill": "rules"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      800
+    ],
+    "mastery": {},
+    "domain": "vision",
+    "drill": "tutorial",
+    "title": "Avant de commencer",
+    "principle": "Les blancs commencent. On joue chacun son tour. Le but : mettre le roi adverse échec et mat."
+  },
+  {
+    "id": "vis-rules",
+    "tier": 0,
+    "priority": "S",
+    "prerequisites": [
+      "vis-start"
+    ],
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "20 questions sur l'échiquier (« ce coup est-il légal ? », « peut-on roquer ? ») à 95 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "rules",
+    "domain": "vision",
+    "title": "Comment bougent les pièces",
+    "principle": "Tour en ligne droite, fou en diagonale, dame les deux, cavalier en L, roi d’une case, pion tout droit mais il prend en biais. Et méfie-toi du pat."
   },
   {
     "id": "vis-notation",
-    "title": "Les coordonnées et la notation",
     "tier": 0,
     "priority": "S",
-    "domain": "vision",
     "prerequisites": [
       "vis-rules"
     ],
-    "principle": "Chaque case a un nom (colonne a à h, rangée 1 à 8). Chaque coup s'écrit.",
-    "drill": "coordinates"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "30/30 s côté blancs ET côté noirs, et 10 coups lus à voix haute sans erreur."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "coordinates",
+    "domain": "vision",
+    "title": "Le nom des cases et des coups",
+    "principle": "Une case = une lettre (colonne) + un chiffre (rangée). Un coup = la lettre de la pièce + la case d’arrivée. x prend, + échec, # mat."
   },
   {
     "id": "vis-values",
-    "title": "La valeur des pièces",
     "tier": 0,
     "priority": "S",
-    "domain": "vision",
     "prerequisites": [
       "vis-rules"
     ],
-    "principle": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Le roi n'a pas de prix.",
-    "drill": "material"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 positions « qui est devant et de combien ? » à 90 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "material",
+    "domain": "vision",
+    "title": "Combien vaut chaque pièce",
+    "principle": "Pion 1, cavalier 3, fou 3, tour 5, dame 9. Compare toujours ce que tu gagnes et ce que tu perds."
   },
   {
     "id": "vis-attacked-squares",
-    "title": "Voir qui attaque quoi",
     "tier": 0,
     "priority": "S",
-    "domain": "vision",
     "prerequisites": [
       "vis-notation"
     ],
-    "principle": "Avant de penser à un plan, sache quelles cases et quelles pièces chaque camp attaque."
+    "lichessThemes": [
+      "hangingPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "jeu « Pièces en prise » : 10 positions de vraies parties, toutes les pièces non défendues trouvées en moins de 20 s chacune."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "vision",
+    "title": "Voir qui attaque quoi",
+    "principle": "Avant chaque coup, suis les lignes des pièces : qui attaque quoi, qui protège quoi."
   },
   {
     "id": "vis-check-escape",
-    "title": "Sortir d'un échec",
     "tier": 0,
     "priority": "S",
-    "domain": "vision",
     "prerequisites": [
       "vis-attacked-squares"
     ],
-    "principle": "Trois réponses à un échec : prendre la pièce qui attaque, s'interposer, fuir. Toujours examiner les trois."
+    "lichessThemes": [
+      "defensiveMove"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 positions d'échec, meilleure réponse trouvée à 85 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "vision",
+    "title": "Sortir d’un échec",
+    "principle": "En échec : prendre l’attaquant, se mettre devant avec une pièce protégée, ou fuir sur une case sûre. Regarde les trois."
   },
   {
     "id": "mat-basic-queen",
-    "title": "Mat avec roi et dame contre roi",
     "tier": 0,
     "priority": "S",
-    "domain": "mats",
     "prerequisites": [
       "vis-rules"
     ],
-    "principle": "La dame enferme le roi adverse dans une boîte de plus en plus petite. Ton roi vient l'aider pour le coup final.",
-    "drill": "endgame"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "5 mats en moins de 15 coups chacun, sans aucun pat, depuis des positions aléatoires."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "endgame",
+    "domain": "mats",
+    "title": "Faire mat avec la dame et le roi",
+    "principle": "La dame enferme, le roi aide. Quand le roi adverse est au bord, arrête la dame et fais venir ton roi. Toujours vérifier : aura-t-il encore un coup ?"
   },
   {
     "id": "mat-two-rooks",
-    "title": "Le mat de l'escalier (deux tours ou dame + tour)",
     "tier": 0,
     "priority": "S",
-    "domain": "mats",
     "prerequisites": [
       "vis-rules"
     ],
-    "principle": "Une tour coupe une rangée, l'autre donne échec sur la rangée suivante. On alterne jusqu'au bord."
+    "lichessThemes": [
+      "mateIn2",
+      "mateIn1"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "5 mats depuis le centre de l'échiquier en moins de 10 coups."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats",
+    "title": "Le mat de l’escalier",
+    "principle": "Une tour ferme une ligne, l’autre donne échec sur la suivante. Garde-les loin du roi adverse."
   },
   {
     "id": "mat-basic-rook",
-    "title": "Mat avec roi et tour contre roi",
     "tier": 0,
     "priority": "A",
-    "domain": "mats",
     "prerequisites": [
       "mat-basic-queen"
     ],
-    "principle": "La tour coupe le roi adverse, ton roi le fait reculer, la tour donne le mat sur le bord.",
-    "drill": "endgame"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "3 mats en moins de 20 coups depuis des positions aléatoires."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "endgame",
+    "domain": "mats",
+    "title": "Faire mat avec une tour et ton roi",
+    "principle": "La tour ferme une ligne ; ton roi ferme les sorties. Garde la tour loin du roi adverse."
   },
   {
     "id": "vis-draws",
-    "title": "Les nulles qui sauvent et celles qui gâchent",
     "tier": 0,
     "priority": "A",
-    "domain": "vision",
     "prerequisites": [
       "vis-rules"
     ],
-    "principle": "Devant au matériel, évite le pat et la répétition. Derrière, cherche-les."
+    "lichessThemes": [
+      "endgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions « trouve le coup gagnant qui ne fait pas pat » à 90 %.\n\n---"
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "vision",
+    "title": "Les parties sans gagnant",
+    "principle": "Un roi sans coup possible n’est pas forcément battu. S’il n’est pas attaqué, la partie est nulle."
   },
   {
     "id": "proc-blunder-check",
-    "title": "La routine anti-gaffe : échecs, captures, menaces",
     "tier": 1,
     "priority": "S",
-    "domain": "réflexes",
     "prerequisites": [
       "vis-attacked-squares"
     ],
-    "principle": "Avant de jouer, regarde les échecs, captures et menaces possibles. Pour l'adversaire d'abord, pour toi ensuite."
+    "lichessThemes": [
+      "hangingPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "en partie contre le moteur (niveau adapté), moins d'une pièce perdue sans compensation par partie sur 10 parties."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes",
+    "title": "La vérification avant chaque coup",
+    "principle": "Avant chaque coup : 1. que menace-t-il ? 2. quels sont mes coups forts ? 3. après mon coup, que peut-il faire ?"
   },
   {
     "id": "proc-opponent-threat",
-    "title": "Que veut son dernier coup ?",
     "tier": 1,
     "priority": "S",
-    "domain": "réflexes",
     "prerequisites": [
       "proc-blunder-check"
     ],
-    "principle": "Chaque coup adverse change quelque chose. Trouve quoi avant de penser à ton plan."
+    "lichessThemes": [
+      "defensiveMove",
+      "hangingPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 positions « quelle est sa menace ? » (toucher la pièce visée) à 90 %."
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Identifier et parer les menaces",
+        "url": "https://fr.linkedin.com/posts/juliensong_cest-la-raison-num%C3%A9ro-1-qui-font-que-les-activity-7255837111466037248-kwv8"
+      }
+    ],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes",
+    "title": "Que veut son dernier coup ?",
+    "principle": "Après chaque coup adverse : qu’attaque-t-il, qu’a-t-il libéré, que ne protège-t-il plus ?"
   },
   {
     "id": "proc-hanging-pieces",
-    "title": "Les pièces non défendues tombent",
     "tier": 1,
     "priority": "S",
-    "domain": "réflexes",
     "prerequisites": [
       "vis-attacked-squares"
     ],
-    "principle": "Une pièce non défendue est une cible. Chez l'adversaire, prends-la. Chez toi, protège-la."
+    "lichessThemes": [
+      "hangingPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "20 problèmes hangingPiece à 90 %, temps moyen < 15 s."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes",
+    "title": "Les pièces que personne ne protège",
+    "principle": "Une pièce que personne ne protège est une cible. Prends celles de l’adversaire, protège les tiennes."
   },
   {
     "id": "proc-exchange-count",
-    "title": "Compter les échanges",
     "tier": 1,
     "priority": "S",
-    "domain": "réflexes",
     "prerequisites": [
       "vis-values",
       "vis-attacked-squares"
     ],
-    "principle": "Avant de prendre, compte les attaquants et les défenseurs de la case, et joue l'échange dans ta tête jusqu'au bout."
+    "lichessThemes": [
+      "hangingPiece",
+      "capturingDefender"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "20 problèmes « Captures et reprises » à 85 %."
+    },
+    "sources": [],
+    "videoId": "course-captures",
+    "videos": [
+      "course-captures"
+    ],
+    "domain": "réflexes",
+    "title": "Compter avant de prendre",
+    "principle": "Compte qui attaque et qui protège. Prends avec ta pièce la moins chère. Joue l’échange jusqu’au bout dans ta tête."
   },
   {
     "id": "proc-free-material",
-    "title": "Prendre ce qui est offert",
     "tier": 1,
     "priority": "A",
-    "domain": "réflexes",
     "prerequisites": [
       "proc-exchange-count"
     ],
-    "principle": "Si une pièce est gratuite et que la prendre ne te met pas en danger, prends-la."
+    "lichessThemes": [
+      "hangingPiece",
+      "crushing",
+      "endgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes à 90 %, temps moyen < 10 s."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes",
+    "title": "Prendre une pièce sans rien perdre",
+    "principle": "Avant de prendre une pièce gratuite, vérifie la reprise adverse et la sécurité de ton roi."
   },
   {
     "id": "ouv-principles",
-    "title": "Les trois principes de l'ouverture",
     "tier": 1,
     "priority": "S",
-    "domain": "ouvertures",
     "prerequisites": [
       "vis-notation"
     ],
-    "principle": "Dans les 10 premiers coups : prends le centre, sors tes pièces, mets ton roi à l'abri."
+    "lichessThemes": [
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "5 parties contre le moteur où, au coup 10, le roi est roqué et au moins 3 pièces mineures sont développées."
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Ce que cachent les trois principes de l’ouverture",
+        "url": "https://juliensong.beehiiv.com/p/ce-que-cachent-3-grands-principes-ouverture-echecs"
+      }
+    ],
+    "videoId": "course-italian",
+    "videos": [
+      "course-italian",
+      "course-king-safety"
+    ],
+    "domain": "ouvertures",
+    "title": "Bien commencer une partie",
+    "principle": "Centre, pièces dehors, roi à l’abri. Mais une menace passe toujours avant."
   },
   {
     "id": "ouv-early-traps",
-    "title": "Les pièges d'ouverture à connaître",
     "tier": 1,
     "priority": "A",
-    "domain": "ouvertures",
     "prerequisites": [
       "ouv-principles"
     ],
-    "principle": "f7 (et f2) est la case faible du début de partie : seul le roi la défend. Beaucoup de pièges la visent."
+    "lichessThemes": [
+      "attackingF2F7",
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "rejouer chaque ligne de mémoire des deux côtés (cartes SRS opening)."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "ouvertures",
+    "title": "Reconnaître le piège sur f7",
+    "principle": "Dame et fou qui visent f7 ou f2 ensemble : vérifie le danger avant tout autre coup."
   },
   {
     "id": "meta-play-slow",
-    "title": "Jouer lentement pour apprendre",
     "tier": 1,
     "priority": "S",
-    "domain": "méthode",
     "prerequisites": [],
-    "principle": "Joue assez lentement pour appliquer ta routine à chaque coup. Vise au moins quinze minutes, avec dix secondes ajoutées par coup.",
-    "drill": "game-review"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 parties lentes jouées et analysées."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "game-review",
+    "domain": "méthode",
+    "title": "Prendre le temps de voir la réponse",
+    "principle": "Joue assez lentement pour imaginer la réponse adverse avant chaque coup."
   },
   {
     "id": "meta-game-review",
-    "title": "Transformer chaque partie en progrès",
     "tier": 1,
     "priority": "S",
-    "domain": "méthode",
     "prerequisites": [
       "vis-notation"
     ],
-    "principle": "Analyse d'abord seule, ensuite avec le moteur. Retiens une seule leçon par partie.",
-    "drill": "game-review"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 parties analysées avec une leçon écrite chacune.\n\n---"
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Pourquoi tu plafonnes aux échecs",
+        "url": "https://juliensong.beehiiv.com/p/pourquoi-tu-plafonnes-aux-checs-et-comment-repartir"
+      }
+    ],
+    "videoId": null,
+    "videos": [],
+    "drill": "game-review",
+    "domain": "méthode",
+    "title": "Comprendre une erreur après la partie",
+    "principle": "Après une partie, retrouve une erreur et transforme-la en une question simple pour la prochaine."
   },
   {
     "id": "proc-forcing-moves",
-    "title": "Les coups forçants d'abord",
     "tier": 2,
     "priority": "S",
-    "domain": "réflexes",
     "prerequisites": [
       "proc-blunder-check"
     ],
-    "principle": "Cherche d'abord les échecs, puis les captures, puis les menaces. Pour toi et pour lui.",
-    "drill": "mixed"
+    "lichessThemes": [
+      "mix"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "30 problèmes mélangés au-dessus de ton classement actuel, 70 %."
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Les coups gagnants que tu rates sans le savoir",
+        "url": "https://juliensong.beehiiv.com/p/les-coups-gagnants-que-tu-rates-sans-le-savoir"
+      }
+    ],
+    "videoId": null,
+    "videos": [],
+    "drill": "mixed",
+    "domain": "réflexes",
+    "title": "Les coups qui obligent à répondre",
+    "principle": "Avant de chercher un coup tranquille, regarde les échecs, les prises et les attaques immédiates."
   },
   {
     "id": "tac-fork",
-    "title": "La fourchette (double attaque)",
     "tier": 2,
     "priority": "S",
-    "domain": "tactique",
     "prerequisites": [
       "proc-hanging-pieces"
     ],
-    "principle": "Une seule pièce attaque deux cibles en même temps. L'adversaire ne peut en sauver qu'une."
+    "lichessThemes": [
+      "fork"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes fork inédits à 80 %, sur 2 jours."
+    },
+    "sources": [],
+    "videoId": "course-forks",
+    "videos": [
+      "course-forks"
+    ],
+    "domain": "tactique",
+    "title": "La fourchette",
+    "principle": "Une pièce, deux cibles. Vérifie que ta pièce ne peut pas être prise sur sa case d’arrivée."
   },
   {
     "id": "tac-pin",
-    "title": "Le clouage",
     "tier": 2,
     "priority": "S",
-    "domain": "tactique",
     "prerequisites": [
       "proc-hanging-pieces"
     ],
-    "principle": "Une pièce ne peut pas (ou ne doit pas) bouger parce qu'elle protège une pièce plus précieuse derrière elle."
+    "lichessThemes": [
+      "pin"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes pin inédits à 80 %."
+    },
+    "sources": [],
+    "videoId": "course-pins",
+    "videos": [
+      "course-pins"
+    ],
+    "domain": "tactique",
+    "title": "Le clouage",
+    "principle": "Une pièce clouée ne peut pas bouger (ou pas sans perte). Attaque-la encore. Et vérifie toujours qu’un défenseur n’est pas cloué."
   },
   {
     "id": "tac-skewer",
-    "title": "L'enfilade",
     "tier": 2,
     "priority": "A",
-    "domain": "tactique",
     "prerequisites": [
       "tac-pin"
     ],
-    "principle": "Le clouage à l'envers. On attaque la pièce précieuse devant ; quand elle bouge, on prend celle de derrière."
+    "lichessThemes": [
+      "skewer"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes skewer à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "L’enfilade : une cible en cache une autre",
+    "principle": "Attaque la pièce importante devant. Quand elle part, prends celle qui se cachait derrière."
   },
   {
     "id": "tac-discovered",
-    "title": "L'attaque à la découverte",
     "tier": 2,
     "priority": "S",
-    "domain": "tactique",
     "prerequisites": [
       "tac-pin"
     ],
-    "principle": "En déplaçant une pièce, tu ouvres la ligne d'une autre pièce qui attaque. Deux menaces d'un coup : celle de la pièce qui bouge et celle de la pièce qui est découverte."
+    "lichessThemes": [
+      "discoveredAttack",
+      "discoveredCheck"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes discoveredAttack à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "L’attaque à la découverte",
+    "principle": "Une pièce cachée derrière une autre attaque dès que la pièce de devant bouge. Fais bouger la pièce de devant avec une deuxième menace."
   },
   {
     "id": "tac-double-check",
-    "title": "L'échec double",
     "tier": 2,
     "priority": "A",
-    "domain": "tactique",
     "prerequisites": [
       "tac-discovered"
     ],
-    "principle": "Deux pièces donnent échec en même temps. Seul le roi peut répondre, en fuyant."
+    "lichessThemes": [
+      "doubleCheck"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes doubleCheck à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Deux pièces attaquent le roi ensemble",
+    "principle": "Deux pièces attaquent le roi ensemble : le roi doit bouger."
   },
   {
     "id": "tac-remove-defender",
-    "title": "Éliminer le défenseur",
     "tier": 2,
     "priority": "S",
-    "domain": "tactique",
     "prerequisites": [
       "proc-exchange-count"
     ],
-    "principle": "Si une pièce adverse n'est défendue qu'une fois, prends ou chasse son défenseur. La pièce devient gratuite."
+    "lichessThemes": [
+      "capturingDefender"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes capturingDefender à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Éliminer le défenseur",
+    "principle": "Si une pièce adverse n’est protégée qu’une fois, fais disparaître son défenseur. Mais vérifie d’abord ta propre sécurité."
   },
   {
     "id": "tac-overload",
-    "title": "La surcharge",
     "tier": 2,
     "priority": "A",
-    "domain": "tactique",
     "prerequisites": [
       "tac-remove-defender"
     ],
-    "principle": "Une pièce adverse défend deux choses à la fois. Attaque l'une : en la défendant, elle abandonne l'autre."
+    "lichessThemes": [
+      "deflection",
+      "capturingDefender"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Une pièce qui protège trop de choses",
+    "principle": "Une pièce qui protège deux cibles peut en abandonner une quand tu attaques l’autre."
   },
   {
     "id": "tac-deflection",
-    "title": "La déviation",
     "tier": 2,
     "priority": "A",
-    "domain": "tactique",
     "prerequisites": [
       "tac-overload"
     ],
-    "principle": "Force une pièce adverse à quitter une case ou une ligne qu'elle doit garder."
+    "lichessThemes": [
+      "deflection"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes deflection à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Chasser une pièce de son travail",
+    "principle": "Repère qui protège la cible. Oblige cette pièce à partir, puis prends ce qu’elle gardait."
   },
   {
     "id": "tac-attraction",
-    "title": "L'attraction (le leurre)",
     "tier": 2,
     "priority": "A",
-    "domain": "tactique",
     "prerequisites": [
       "tac-deflection"
     ],
-    "principle": "Force une pièce adverse (souvent le roi) à venir sur une case où elle subira une tactique."
+    "lichessThemes": [
+      "attraction"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes attraction à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Attirer le roi sur une mauvaise case",
+    "principle": "Un cadeau peut attirer une pièce sur une mauvaise case. Calcule la suite avant de l’offrir."
   },
   {
     "id": "tac-trapped-piece",
-    "title": "La pièce piégée",
     "tier": 2,
     "priority": "A",
-    "domain": "tactique",
     "prerequisites": [
       "vis-attacked-squares"
     ],
-    "principle": "Une pièce qui n'a plus de case sûre peut être gagnée simplement en l'attaquant."
+    "lichessThemes": [
+      "trappedPiece"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes trappedPiece à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Une pièce sans case sûre",
+    "principle": "Avant de chasser une pièce, regarde toutes ses sorties et toutes ses prises."
   },
   {
     "id": "tac-promotion",
-    "title": "Les pions qui deviennent des dames",
     "tier": 2,
     "priority": "A",
-    "domain": "tactique",
     "prerequisites": [
       "proc-forcing-moves"
     ],
-    "principle": "Un pion sur la 7e rangée (2e pour les noirs) vaut presque une dame. Tout sacrifice qui le fait promouvoir est à examiner."
+    "lichessThemes": [
+      "advancedPawn",
+      "promotion",
+      "underPromotion"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes promotion/advancedPawn à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Transformer ton pion au bon moment",
+    "principle": "Un pion arrivé au bout peut devenir une dame. Vérifie ce que cette nouvelle pièce attaque."
   },
   {
     "id": "mat-back-rank",
-    "title": "Le mat du couloir",
     "tier": 2,
     "priority": "S",
-    "domain": "mats",
     "prerequisites": [
       "mat-two-rooks"
     ],
-    "principle": "Ses pions peuvent enfermer le roi roqué. Une tour ou une dame peut alors mater sur sa dernière rangée."
+    "lichessThemes": [
+      "backRankMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes backRankMate à 85 %."
+    },
+    "sources": [],
+    "videoId": "course-mates",
+    "videos": [
+      "course-mates"
+    ],
+    "domain": "mats",
+    "title": "Le mat du couloir",
+    "principle": "Un roi derrière trois pions intacts craint le mat sur la dernière rangée. Attaque-la chez lui, crée une case de fuite chez toi."
   },
   {
     "id": "mat-queen-support",
-    "title": "Le mat du baiser (dame soutenue)",
     "tier": 2,
     "priority": "S",
-    "domain": "mats",
     "prerequisites": [
       "mat-basic-queen"
     ],
-    "principle": "La dame se colle au roi adverse, protégée par une autre pièce : le roi ne peut pas la prendre."
+    "lichessThemes": [
+      "mateIn1",
+      "mateIn2",
+      "kingsideAttack"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "20 problèmes mateIn1 à 95 % et 15 mateIn2 à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats",
+    "title": "La dame aidée par une autre pièce",
+    "principle": "Avant un coup de dame près du roi adverse, vérifie sa protection et toutes les sorties du roi."
   },
   {
     "id": "mat-smothered",
-    "title": "Le mat à l'étouffée",
     "tier": 2,
     "priority": "A",
-    "domain": "mats",
     "prerequisites": [
       "tac-fork"
     ],
-    "principle": "Le roi est entouré de ses propres pièces ; un cavalier donne échec et le mate, car rien ne peut fuir ni s'interposer."
+    "lichessThemes": [
+      "smotheredMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes smotheredMate à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats",
+    "title": "Le roi bloqué par ses propres pièces",
+    "principle": "Un roi enfermé par son propre camp peut perdre contre un seul échec de cavalier."
   },
   {
     "id": "mat-arabian",
-    "title": "Le mat arabe",
     "tier": 2,
     "priority": "B",
-    "domain": "mats",
     "prerequisites": [
       "mat-back-rank"
     ],
-    "principle": "Le cavalier protège la tour collée au roi dans le coin. Il contrôle aussi une case de fuite."
+    "lichessThemes": [
+      "arabianMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes arabianMate à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats",
+    "title": "La tour et le cavalier dans le coin",
+    "principle": "Le cavalier protège la tour et ferme une sortie. La tour donne l’échec près du coin."
   },
   {
     "id": "mat-anastasia",
-    "title": "Le mat d'Anastasia",
     "tier": 2,
     "priority": "B",
-    "domain": "mats",
     "prerequisites": [
       "mat-arabian"
     ],
-    "principle": "Le cavalier en e7 bloque des cases de fuite. La tour ou la dame mate sur la colonne h."
+    "lichessThemes": [
+      "anastasiaMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes anastasiaMate à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats",
+    "title": "Le cavalier qui ferme les sorties du roi",
+    "principle": "Une tour attaque sur le bord pendant que le cavalier ferme les sorties vers l’intérieur."
   },
   {
     "id": "mat-boden",
-    "title": "Le mat de Boden",
     "tier": 2,
     "priority": "B",
-    "domain": "mats",
     "prerequisites": [
       "tac-pin"
     ],
-    "principle": "Deux fous sur des diagonales qui se croisent matent un roi roqué côté dame, bloqué par ses propres pièces."
+    "lichessThemes": [
+      "bodenMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes bodenMate à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats",
+    "title": "Deux fous qui croisent leurs attaques",
+    "principle": "Deux fous peuvent enfermer un roi en attaquant sur deux diagonales qui se complètent."
   },
   {
     "id": "mat-patterns-misc",
-    "title": "Les autres motifs de mat à reconnaître",
     "tier": 2,
     "priority": "C",
-    "domain": "mats",
     "prerequisites": [
       "mat-queen-support"
     ],
-    "principle": "Chaque motif est une « image » de mat. Plus tu en connais, plus vite tu les vois."
+    "lichessThemes": [
+      "hookMate",
+      "doubleBishopMate",
+      "dovetailMate",
+      "epauletteMate",
+      "cornerMate",
+      "killBoxMate",
+      "operaMate",
+      "pillsburysMate",
+      "morphysMate",
+      "swallowstailMate",
+      "triangleMate",
+      "vukovicMate",
+      "balestraMate",
+      "blindSwineMate"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "reconnaissance de la position finale (« quel motif ? ») à 80 % sur 20 images.\n\n---"
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats",
+    "title": "Reconnaître les sorties fermées",
+    "principle": "Pour reconnaître un mat, regarde l’attaquant, sa protection et les sorties du roi."
   },
   {
     "id": "proc-candidates-calc",
-    "title": "Coups candidats et calcul",
     "tier": 3,
     "priority": "S",
-    "domain": "réflexes",
     "prerequisites": [
       "proc-forcing-moves"
     ],
-    "principle": "Choisis 2 ou 3 coups candidats, calcule pour chacun la meilleure réponse adverse, compare les positions finales."
+    "lichessThemes": [
+      "short",
+      "long",
+      "mateIn3",
+      "mateIn4",
+      "mateIn5",
+      "veryLong"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 problèmes long à 70 %."
+    },
+    "sources": [
+      {
+        "label": "Julien Song : Le temps que tu perds à calculer pour rien",
+        "url": "https://juliensong.beehiiv.com/p/le-temps-que-tu-perds-calculer-pour-rien"
+      }
+    ],
+    "videoId": null,
+    "videos": [],
+    "domain": "réflexes",
+    "title": "Comparer deux idées avant de jouer",
+    "principle": "Imagine ta meilleure idée, sa meilleure réponse et ton coup suivant avant de choisir."
   },
   {
     "id": "tac-intermezzo",
-    "title": "Le coup intermédiaire",
     "tier": 3,
     "priority": "A",
-    "domain": "tactique",
     "prerequisites": [
       "proc-candidates-calc"
     ],
-    "principle": "Avant de reprendre « automatiquement », regarde s'il existe un coup plus fort (échec, menace plus grosse), puis reprends ensuite."
+    "lichessThemes": [
+      "intermezzo"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes intermezzo à 70 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Un coup plus urgent avant de reprendre",
+    "principle": "Avant une reprise automatique, cherche un échec ou une prise plus importante."
   },
   {
     "id": "tac-xray",
-    "title": "Le rayon X",
     "tier": 3,
     "priority": "B",
-    "domain": "tactique",
     "prerequisites": [
       "tac-skewer"
     ],
-    "principle": "Une pièce longue agit à travers une autre pièce (amie ou ennemie) sur la même ligne."
+    "lichessThemes": [
+      "xRayAttack"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes xRayAttack à 70 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Une pièce derrière une autre",
+    "principle": "Après un échange, regarde la pièce cachée derrière : sa ligne vient peut-être de s’ouvrir."
   },
   {
     "id": "tac-interference-clearance",
-    "title": "Interception et dégagement",
     "tier": 3,
     "priority": "B",
-    "domain": "tactique",
     "prerequisites": [
       "tac-deflection"
     ],
-    "principle": "Interception : place une pièce entre un défenseur et ce qu'il défend. Dégagement : libère une case ou une ligne pour une autre de tes pièces, souvent avec gain de temps."
+    "lichessThemes": [
+      "interference",
+      "clearance"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes de chaque à 70 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Libérer une ligne pour une autre pièce",
+    "principle": "Regarde les lignes bloquées par tes propres pièces. Les libérer avec échec peut gagner un coup utile."
   },
   {
     "id": "tac-quiet-move",
-    "title": "Le coup calme décisif",
     "tier": 3,
     "priority": "B",
-    "domain": "tactique",
     "prerequisites": [
       "proc-candidates-calc"
     ],
-    "principle": "Le coup gagnant ne donne pas toujours échec et ne capture pas toujours. Il peut créer une menace imparable ou supprimer une défense."
+    "lichessThemes": [
+      "quietMove",
+      "defensiveMove"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes quietMove à 65 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "tactique",
+    "title": "Un coup utile sans échec ni prise",
+    "principle": "Si aucun échec ni aucune prise ne marche, cherche une attaque qui prépare un gain au coup suivant."
   },
   {
     "id": "mat-greek-gift",
-    "title": "Le sacrifice grec (Fxh7+)",
     "tier": 3,
     "priority": "B",
-    "domain": "mats",
     "prerequisites": [
       "mat-queen-support"
     ],
-    "principle": "Sacrifier le fou en h7 avec échec pour exposer le roi roqué, puis Cg5+ et Dh5 menacent le mat."
+    "lichessThemes": [
+      "kingsideAttack",
+      "sacrifice",
+      "queensideAttack",
+      "exposedKing"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "8 positions « le sacrifice marche-t-il ? » (oui / non + coup) à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "mats",
+    "title": "Le fou qui attaque l’abri du roi",
+    "principle": "Avant de donner ton fou en h7, vérifie les réponses du roi et l’arrivée de ta dame et de ton cavalier."
   },
   {
     "id": "fin-active-king",
-    "title": "En finale, le roi attaque",
     "tier": 3,
     "priority": "S",
-    "domain": "finales",
     "prerequisites": [
       "vis-values"
     ],
-    "principle": "Quand les dames sont échangées, ton roi devient une pièce forte : amène-le au centre et vers les pions."
+    "lichessThemes": [
+      "endgame",
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes pawnEndgame à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales",
+    "title": "Quand ton roi peut aller prendre des pions",
+    "principle": "Quand il reste peu de pièces, utilise ton roi pour prendre les pions sans entrer sur une case attaquée."
   },
   {
     "id": "fin-square",
-    "title": "La règle du carré",
     "tier": 3,
     "priority": "A",
-    "domain": "finales",
     "prerequisites": [
       "fin-active-king"
     ],
-    "principle": "Trace le carré entre le pion et sa case de promotion. Si le roi adverse peut y entrer, il rattrape le pion."
+    "lichessThemes": [
+      "pawnEndgame",
+      "advancedPawn",
+      "zugzwang"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "15 positions « rattrape ou pas ? » à 95 % en moins de 5 s."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales",
+    "title": "Ton roi peut-il rattraper ce pion ?",
+    "principle": "Compare le chemin du pion et celui du roi. Si le roi entre à temps dans le carré, il peut rattraper le pion."
   },
   {
     "id": "fin-opposition",
-    "title": "Roi et pion contre roi, l'opposition",
     "tier": 3,
     "priority": "S",
-    "domain": "finales",
     "prerequisites": [
       "fin-active-king"
     ],
-    "principle": "Les rois se font face, séparés par une case. Celui qui n’a pas le trait possède l’opposition. Il peut souvent repousser l’autre roi."
+    "lichessThemes": [
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "gagner R+P contre R contre le moteur depuis 5 positions et annuler en défense depuis 5 positions."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales",
+    "title": "Roi et pion contre roi",
+    "principle": "En finale, le roi passe devant le pion. Vise les cases deux rangées devant ton pion. Méfie-toi du pat et du pion du bord."
   },
   {
     "id": "fin-passed-pawn",
-    "title": "Le pion passé",
     "tier": 3,
     "priority": "A",
-    "domain": "finales",
     "prerequisites": [
       "fin-square"
     ],
-    "principle": "Un pion qu'aucun pion adverse ne peut arrêter est un atout majeur : pousse-le, soutiens-le, et bloque ceux de l'adversaire."
+    "lichessThemes": [
+      "advancedPawn",
+      "endgame",
+      "promotion",
+      "underPromotion"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes advancedPawn + endgame à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales",
+    "title": "Le pion que les autres pions ne peuvent plus arrêter",
+    "principle": "Un pion passé n’a plus de pion adverse pour l’arrêter. Vérifie quand même les pièces et le roi."
   },
   {
     "id": "fin-lucena",
-    "title": "La position de Lucena (gagner une finale de tours)",
     "tier": 3,
     "priority": "A",
-    "domain": "finales",
     "prerequisites": [
       "fin-opposition",
       "tac-skewer"
     ],
-    "principle": "Roi devant son pion sur la septième, roi adverse coupé : prépare un pont. La tour rejoint la quatrième rangée et bloque les échecs latéraux.",
-    "drill": "endgame"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "gagner la position 3 fois sur 3 contre le moteur."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "endgame",
+    "domain": "finales",
+    "title": "Mettre ta tour entre ton roi et les échecs",
+    "principle": "Prépare ta tour avant de sortir ton roi. Elle pourra se mettre entre lui et la tour adverse."
   },
   {
     "id": "fin-philidor",
-    "title": "La position de Philidor (sauver une finale de tours)",
     "tier": 3,
     "priority": "A",
-    "domain": "finales",
     "prerequisites": [
       "fin-lucena"
     ],
-    "principle": "En défense, garde le roi devant le pion et la tour sur ta troisième rangée. Dès que le pion avance, donne des échecs par derrière. Pour les noirs, la tour défend d’abord sur la sixième rangée.",
-    "drill": "endgame"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "annuler la position 3 fois sur 3 contre le moteur."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "endgame",
+    "domain": "finales",
+    "title": "Sauver la partie contre un pion de plus",
+    "principle": "Bloque d’abord le roi adverse avec ta tour. Quand le pion avance, prépare les échecs par derrière."
   },
   {
     "id": "fin-rook-behind",
-    "title": "Les tours derrière les pions passés",
     "tier": 3,
     "priority": "A",
-    "domain": "finales",
     "prerequisites": [
       "fin-passed-pawn"
     ],
-    "principle": "Place ta tour derrière les pions passés. Derrière les tiens, elle aide leur avance. Derrière ceux de l’adversaire, elle les freine."
+    "lichessThemes": [
+      "rookEndgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes rookEndgame à 70 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales",
+    "title": "Placer une tour derrière ton pion",
+    "principle": "Derrière un pion, la tour peut continuer à le soutenir pendant qu’il avance."
   },
   {
     "id": "fin-convert",
-    "title": "Convertir un avantage matériel",
     "tier": 3,
     "priority": "S",
-    "domain": "finales",
     "prerequisites": [
       "proc-blunder-check"
     ],
-    "principle": "Avec du matériel en plus : échange les pièces, pas les pions ; garde ton roi en sécurité ; supprime le contre-jeu avant d'attaquer."
+    "lichessThemes": [
+      "crushing",
+      "endgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "contre le moteur, depuis 10 positions avec une pièce d'avance, gagner 9 fois."
+    },
+    "sources": [],
+    "videoId": "convert-advantage",
+    "videos": [
+      "convert-advantage"
+    ],
+    "domain": "finales",
+    "title": "Transformer tes pièces en plus en victoire",
+    "principle": "Avec des pièces en plus, enlève les dangers contre ton roi avant de chercher à terminer la partie."
   },
   {
     "id": "fin-opposite-bishops",
-    "title": "Fous de couleurs opposées",
     "tier": 3,
     "priority": "B",
-    "domain": "finales",
     "prerequisites": [
       "fin-convert"
     ],
-    "principle": "En finale pure, les fous de couleurs opposées font souvent nulle même avec un ou deux pions de moins. En milieu de partie, ils favorisent l'attaquant."
+    "lichessThemes": [
+      "bishopEndgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "6 positions « gagné ou nulle ? » à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales",
+    "title": "Deux fous qui ne se rencontreront jamais",
+    "principle": "Deux fous sur des couleurs différentes ne peuvent pas se prendre. Le roi doit aider à surveiller les autres cases."
   },
   {
     "id": "fin-queen-vs-pawn",
-    "title": "Dame contre pion sur la 7e",
     "tier": 3,
     "priority": "C",
-    "domain": "finales",
     "prerequisites": [
       "mat-basic-queen"
     ],
-    "principle": "Contre un pion central ou de cavalier sur la septième, combine les échecs avec le rapprochement du roi. Contre un pion de fou ou de tour, cherche les ressources de pat. Un roi attaquant éloigné laisse souvent la nulle."
+    "lichessThemes": [
+      "queenEndgame",
+      "queenRookEndgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "4 positions contre le moteur."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "finales",
+    "title": "Ta dame contre un pion presque arrivé",
+    "principle": "Force le roi adverse devant son pion pour gagner le temps de rapprocher ton propre roi."
   },
   {
     "id": "meta-time-management",
-    "title": "Gérer son temps",
     "tier": 3,
     "priority": "A",
-    "domain": "méthode",
     "prerequisites": [
       "meta-play-slow"
     ],
-    "principle": "Joue vite les coups évidents et les ouvertures connues. Garde ton temps pour les captures, sacrifices et décisions d’échange. La fin de l’ouverture mérite aussi une pause.",
-    "drill": "game-review"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "sur 10 parties, aucune perdue au temps dans une position gagnante ou égale."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "game-review",
+    "domain": "méthode",
+    "title": "Garder du temps pour les moments difficiles",
+    "principle": "Garde ton temps pour les prises et les attaques. Vérifie quand même les coups qui paraissent évidents."
   },
   {
     "id": "meta-woodpecker",
-    "title": "La méthode pic-vert",
     "tier": 3,
     "priority": "B",
-    "domain": "méthode",
     "prerequisites": [
       "proc-forcing-moves"
     ],
-    "principle": "Résoudre le même set de problèmes en cycles de plus en plus rapides grave les motifs dans la reconnaissance automatique.",
-    "drill": "game-review"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "3 cycles terminés avec ≥ 90 % de réussite au dernier.\n\n---"
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "game-review",
+    "domain": "méthode",
+    "title": "Refaire les mêmes problèmes pour mieux les voir",
+    "principle": "Répète les problèmes en comprenant les attaques. La vitesse vient après la précision."
   },
   {
     "id": "ouv-white-italian",
-    "title": "Avec les blancs : l'Italienne tranquille",
     "tier": 2,
     "priority": "A",
-    "domain": "ouvertures",
     "prerequisites": [
       "ouv-principles"
     ],
-    "principle": "Développer vite, roquer, préparer d4 avec c3. Une structure simple qui marche contre presque tout après 1.e4 e5."
+    "lichessThemes": [
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "jouer la ligne de mémoire et 3 parties contre le moteur depuis la position du 9e coup."
+    },
+    "sources": [],
+    "videoId": "course-italian",
+    "videos": [
+      "course-italian",
+      "scotch",
+      "london"
+    ],
+    "domain": "ouvertures",
+    "title": "Une façon simple de commencer avec les blancs",
+    "principle": "Au début, fais participer tes cavaliers et tes fous, puis mets ton roi à l’abri."
   },
   {
     "id": "ouv-black-e5",
-    "title": "Avec les noirs contre 1.e4 : 1...e5",
     "tier": 2,
     "priority": "A",
-    "domain": "ouvertures",
     "prerequisites": [
       "ouv-principles"
     ],
-    "principle": "Répondre symétriquement au centre, développer Cc6, Cf6, Fc5 ou Fe7, roquer."
+    "lichessThemes": [
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "3 parties contre le moteur avec un roque avant le 10e coup."
+    },
+    "sources": [],
+    "videoId": "sicilian",
+    "videos": [
+      "sicilian",
+      "caro-kann",
+      "french"
+    ],
+    "domain": "ouvertures",
+    "title": "Avec les noirs, répondre au pion e4",
+    "principle": "Contre e4, e5 occupe le milieu. Protège ce pion, sors tes pièces et mets ton roi à l’abri."
   },
   {
     "id": "ouv-black-d5",
-    "title": "Avec les noirs contre 1.d4 : la structure d5-e6",
     "tier": 2,
     "priority": "A",
-    "domain": "ouvertures",
     "prerequisites": [
       "ouv-principles"
     ],
-    "principle": "d5, e6, Cf6, Fe7, O-O, puis ...c5 ou ...b6 et ...Fb7. Une base solide qui marche contre presque tous les systèmes avec d4."
+    "lichessThemes": [
+      "opening"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "3 parties contre le moteur depuis 1.d4."
+    },
+    "sources": [],
+    "videoId": "queens-gambit",
+    "videos": [
+      "queens-gambit"
+    ],
+    "domain": "ouvertures",
+    "title": "Avec les noirs, répondre au pion d4",
+    "principle": "Contre d4, le duo d5 et e6 forme une base. N’oublie pas de faire sortir le fou en c8."
   },
   {
     "id": "ouv-gambits",
-    "title": "Gambits : accepter ou décliner ?",
     "tier": 3,
     "priority": "B",
-    "domain": "ouvertures",
     "prerequisites": [
       "ouv-principles"
     ],
-    "principle": "Accepte un pion de gambit si tu peux continuer à développer. Si le garder te coûte plusieurs tempos ou ta sécurité, rends-le.",
-    "drill": "board-observation"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "80 % sur 15 problèmes inédits, sur deux jours différents."
+    },
+    "sources": [],
+    "videoId": "queens-gambit",
+    "videos": [
+      "queens-gambit"
+    ],
+    "drill": "board-observation",
+    "domain": "ouvertures",
+    "title": "Un pion offert n’est pas toujours gratuit",
+    "principle": "Un pion de plus ne sert pas si tu oublies de sortir tes pièces et de protéger ton roi."
   },
   {
     "id": "str-worst-piece",
-    "title": "Améliore ta pire pièce",
     "tier": 4,
     "priority": "S",
-    "domain": "stratégie",
     "prerequisites": [
       "ouv-principles"
     ],
-    "principle": "Sans tactique ni menace, trouve ta pièce la moins active et donne-lui une meilleure case.",
-    "drill": "plan-choice"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions plan-choice à 80 %."
+    },
+    "sources": [],
+    "videoId": "course-active-piece",
+    "videos": [
+      "course-active-piece"
+    ],
+    "drill": "plan-choice",
+    "domain": "stratégie",
+    "title": "Quand il n’y a rien à faire : améliore ta pire pièce",
+    "principle": "Rien à prendre, rien à craindre ? Trouve ta pièce qui ne fait rien et donne-lui une meilleure case."
   },
   {
     "id": "str-open-files",
-    "title": "Colonnes ouvertes et 7e rangée",
     "tier": 4,
     "priority": "A",
-    "domain": "stratégie",
     "prerequisites": [
       "str-worst-piece"
     ],
-    "principle": "Les tours veulent les colonnes ouvertes (aucun pion) ou semi-ouvertes (pas de pion à toi). Une tour sur la 7e rangée attaque les pions et enferme le roi."
+    "lichessThemes": [
+      "rookEndgame"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "stratégie",
+    "title": "Donner une route libre à ta tour",
+    "principle": "Cherche une colonne sans pion pour ta tour, puis vérifie que l’adversaire ne peut pas l’y prendre."
   },
   {
     "id": "str-outposts",
-    "title": "Les avant-postes",
     "tier": 4,
     "priority": "A",
-    "domain": "stratégie",
     "prerequisites": [
       "str-worst-piece"
     ],
-    "principle": "Cherche une case avancée défendue par un de tes pions. Si aucun pion adverse ne peut l’attaquer, installe ton cavalier.",
-    "drill": "plan-choice"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions « trouve l'avant-poste » à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie",
+    "title": "Une case où ton cavalier peut rester",
+    "principle": "Une bonne case de cavalier est protégée par un pion et difficile à attaquer avec un pion adverse."
   },
   {
     "id": "str-good-bad-bishop",
-    "title": "Bon et mauvais fou",
     "tier": 4,
     "priority": "B",
-    "domain": "stratégie",
     "prerequisites": [
       "str-pawn-structure"
     ],
-    "principle": "Un fou est « mauvais » quand tes pions sont bloqués sur des cases de sa couleur. Place tes pions sur la couleur opposée à ton fou restant, ou échange ton mauvais fou.",
-    "drill": "plan-choice"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "6 positions à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie",
+    "title": "Le fou gêné par ses propres pions",
+    "principle": "Regarde si tes pions bloqués occupent la couleur de ton fou. Cherche comment lui ouvrir un chemin."
   },
   {
     "id": "str-pawn-structure",
-    "title": "Les structures de pions",
     "tier": 4,
     "priority": "A",
-    "domain": "stratégie",
     "prerequisites": [
       "vis-values"
     ],
-    "principle": "Les pions ne reculent pas : chaque poussée crée des forces et des faiblesses permanentes.",
-    "drill": "plan-choice"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "12 positions « nomme la faiblesse et la cible » à 80 %."
+    },
+    "sources": [],
+    "videoId": "pawn-break",
+    "videos": [
+      "pawn-break"
+    ],
+    "drill": "plan-choice",
+    "domain": "stratégie",
+    "title": "Les pions qui peuvent s’aider",
+    "principle": "Les pions ne reculent pas. Avant de les avancer, regarde ceux qu’ils aideront et ceux qu’ils laisseront seuls."
   },
   {
     "id": "str-weak-squares",
-    "title": "Cases faibles et trous",
     "tier": 4,
     "priority": "B",
-    "domain": "stratégie",
     "prerequisites": [
       "str-pawn-structure"
     ],
-    "principle": "Une case qu'aucun pion ne peut plus défendre est une case faible ; si elle est près du roi ou au centre, installe-toi dessus.",
-    "drill": "plan-choice"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "6 positions à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie",
+    "title": "Une case que les pions ne peuvent plus protéger",
+    "principle": "Avant d’installer une pièce, regarde si les pions adverses pourront encore la chasser."
   },
   {
     "id": "str-king-safety-middlegame",
-    "title": "Sécurité du roi en milieu de partie",
     "tier": 4,
     "priority": "A",
-    "domain": "stratégie",
     "prerequisites": [
       "ouv-principles",
       "mat-queen-support"
     ],
-    "principle": "Les pions devant ton roi roqué sont son toit : ne les pousse pas sans raison. Quand les roques sont opposés, la course commence : pousse tes pions vers le roi adverse."
+    "lichessThemes": [
+      "kingsideAttack",
+      "queensideAttack",
+      "exposedKing",
+      "sacrifice"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 problèmes kingsideAttack à 70 %."
+    },
+    "sources": [],
+    "videoId": "coordinated-attack",
+    "videos": [
+      "coordinated-attack"
+    ],
+    "domain": "stratégie",
+    "title": "Garder un abri devant ton roi",
+    "principle": "Avant de pousser un pion devant ton roi, regarde les lignes que tu ouvres à l’adversaire."
   },
   {
     "id": "str-exchanges",
-    "title": "Quand échanger ?",
     "tier": 4,
     "priority": "A",
-    "domain": "stratégie",
     "prerequisites": [
       "fin-convert"
     ],
-    "principle": "Échange quand tu es devant au matériel, quand tu manques de place, ou pour éliminer une pièce adverse très active ou un défenseur clé. Évite d'échanger quand tu attaques ou quand tu es derrière.",
-    "drill": "plan-choice"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions « échanger ou pas ? » à 80 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie",
+    "title": "Quand prendre aide vraiment",
+    "principle": "Compare les pièces perdues et la sécurité des rois avant de prendre ou d’échanger."
   },
   {
     "id": "str-prophylaxis",
-    "title": "La prophylaxie",
     "tier": 4,
     "priority": "A",
-    "domain": "stratégie",
     "prerequisites": [
       "proc-opponent-threat"
     ],
-    "principle": "Avant ton plan, demande-toi quel est le sien. Le meilleur coup est parfois celui qui l'empêche."
+    "lichessThemes": [
+      "defensiveMove"
+    ],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "8 positions plan-choice à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "domain": "stratégie",
+    "title": "Empêcher son idée avant qu’elle arrive",
+    "principle": "Avant de commencer ton plan, cherche ce que l’adversaire veut faire et comment l’en empêcher."
   },
   {
     "id": "str-initiative",
-    "title": "Développement et initiative",
     "tier": 4,
     "priority": "B",
-    "domain": "stratégie",
     "prerequisites": [
       "ouv-principles"
     ],
-    "principle": "Avec davantage de pièces développées, ouvre le centre par des échanges de pions. Ton avance peut devenir une attaque. En retard, garde plutôt le jeu fermé.",
-    "drill": "plan-choice"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "6 positions à 75 %."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie",
+    "title": "Faire jouer tes pièces avant les siennes",
+    "principle": "Ouvre des lignes quand tes pièces sont prêtes à les utiliser, puis vérifie la réponse adverse."
   },
   {
     "id": "str-bishop-pair-space",
-    "title": "Paire de fous et espace",
     "tier": 4,
     "priority": "C",
-    "domain": "stratégie",
     "prerequisites": [
       "str-good-bad-bishop"
     ],
-    "principle": "La paire de fous est forte dans les positions ouvertes ; ouvre le jeu si tu l'as. Avec plus d'espace, évite les échanges pour garder l'adversaire à l'étroit.",
-    "drill": "plan-choice"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "80 % sur 15 problèmes inédits, sur deux jours différents."
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie",
+    "title": "Deux fous qui couvrent les deux couleurs",
+    "principle": "Deux fous se complètent sur les deux couleurs. Donne-leur des diagonales libres sans abandonner tes protections."
   },
   {
     "id": "str-plan-making",
-    "title": "Construire un plan",
     "tier": 4,
     "priority": "A",
-    "domain": "stratégie",
     "prerequisites": [
       "str-open-files",
       "str-outposts",
@@ -803,7 +2003,23 @@
       "str-exchanges",
       "str-prophylaxis"
     ],
-    "principle": "Un plan naît des déséquilibres : matériel, structure de pions, pièces bonnes et mauvaises, colonnes, espace, sécurité des rois, développement.",
-    "drill": "plan-choice"
+    "lichessThemes": [],
+    "ratingBand": [
+      400,
+      2200
+    ],
+    "mastery": {
+      "attempts": 15,
+      "accuracy": 0.8,
+      "distinctDays": 2,
+      "description": "10 positions où la phrase du plan est jugée correcte (QCM de 3 plans illustrés) à 80 %.\n\n---"
+    },
+    "sources": [],
+    "videoId": null,
+    "videos": [],
+    "drill": "plan-choice",
+    "domain": "stratégie",
+    "title": "Choisir une idée pour les prochains coups",
+    "principle": "Choisis une cible ou une meilleure case pour ta pièce, puis adapte ton idée à chaque réponse adverse."
   }
 ]

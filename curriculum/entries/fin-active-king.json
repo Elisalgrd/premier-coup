@@ -1,49 +1,9 @@
 {
   "id": "fin-active-king",
-  "title": "En finale, le roi attaque",
   "tier": 3,
   "priority": "S",
-  "domain": "finales",
   "prerequisites": [
     "vis-values"
-  ],
-  "principle": "Quand les dames sont échangées, ton roi devient une pièce forte : amène-le au centre et vers les pions.",
-  "why": [
-    "En finale le mat n'est plus une menace sérieuse. Le roi vaut alors environ une pièce mineure en attaque et en défense."
-  ],
-  "signals": [],
-  "method": [
-    "dès l'échange des dames (et si aucun mat n'est possible), avance le roi vers le centre",
-    "vise les pions faibles adverses",
-    "place-le devant les pions passés adverses."
-  ],
-  "pitfall": {
-    "text": "Tant qu'il reste des tours et dame, vérifie quand même les échecs et les attaques sur la dernière rangée.",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "5r2/8/4Q1pk/p5b1/2P1B3/1P4P1/P4P1q/4RK2 b - - 13 35",
-    "solution": [
-      "h2f2"
-    ],
-    "prompt": "Trait aux noirs. Cherche la meilleure suite.",
-    "source": "https://lichess.org/training/UmW1T",
-    "mode": "move"
-  },
-  "guided": [
-    {
-      "fen": "5r2/8/4Q1pk/p5b1/2P1B3/1P4P1/P4P1q/4RK2 b - - 13 35",
-      "move": "h2f2",
-      "text": "",
-      "arrows": [
-        [
-          "h2",
-          "f2"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [
     "endgame",
@@ -62,30 +22,143 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "domain": "finales",
+  "title": "Quand ton roi peut aller prendre des pions",
+  "introduces": [
+    "finale",
+    "défendre, protéger"
+  ],
+  "challenge": {
+    "fen": "8/7k/8/3p4/3K4/8/8/8 w - - 0 1",
+    "kind": "move",
+    "solution": [
+      "d4d5"
+    ],
+    "check": "engine",
+    "prompt": "Ton roi en d4 peut enlever le dernier pion noir. Prends-le sans approcher le roi en h7.",
+    "accept": [
+      "d4d5"
+    ],
+    "alsoGood": [
+      "d4c3",
+      "d4e3",
+      "d4e5",
+      "d4d3",
+      "d4c5"
+    ],
+    "hint": "Avance ton roi vers les pions que personne ne protège. Vérifie chaque case comme pour n’importe quelle pièce. Ici, d5 est loin du roi noir en h7.",
+    "success": "Le roi prend le dernier pion. Il ne reste que deux rois : aucun camp ne peut faire échec et mat. La partie se termine sans gagnant."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "Quand les dames sont échangées, ton roi devient une pièce forte : amène-le au centre et vers les pions.",
-      "audio": null
+      "step": "principe",
+      "title": "Quand ton roi peut aller prendre des pions",
+      "text": "En finale (la fin de partie avec peu de pièces), c’est-à-dire en fin de partie avec peu de pièces, ton roi peut participer à l’attaque. Ici, le roi blanc en d4 peut prendre le pion noir en d5 : le roi noir est trop loin pour le protéger (pouvoir reprendre si l’adversaire prend cette pièce).",
+      "fen": "8/7k/8/3p4/3K4/8/8/8 w - - 0 1",
+      "marks": []
     },
     {
-      "title": "Pourquoi",
-      "text": "En finale le mat n'est plus une menace sérieuse. Le roi vaut alors environ une pièce mineure en attaque et en défense.",
-      "audio": null
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Avance ton roi vers les pions que personne ne protège. Vérifie chaque case comme pour n’importe quelle pièce. Ici, d5 est loin du roi noir en h7.",
+      "fen": "8/7k/8/3p4/3K4/8/8/8 w - - 0 1",
+      "arrows": [
+        [
+          "d4",
+          "d5"
+        ]
+      ]
     },
     {
-      "title": "Méthode",
-      "text": "Dès l'échange des dames (et si aucun mat n'est possible), avance le roi vers le centre. Vise les pions faibles adverses. Place-le devant les pions passés adverses.",
-      "audio": null
+      "step": "exemple",
+      "title": "Regarde chaque coup",
+      "text": "Le roi blanc prend le pion en d5. Aucun des deux rois ne peut faire mat tout seul : partie nulle.",
+      "fen": "8/7k/8/3p4/3K4/8/8/8 w - - 0 1",
+      "line": [
+        {
+          "uci": "d4d5",
+          "text": "Le roi blanc prend le pion en d5. Aucun des deux rois ne peut faire mat tout seul : partie nulle."
+        }
+      ]
     },
     {
-      "title": "Piège",
-      "text": "Tant qu'il reste des tours et dame, vérifie quand même les échecs et les attaques sur la dernière rangée.",
-      "audio": null
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le roi prend le dernier pion. Il ne reste que deux rois : aucun camp ne peut faire échec et mat. La partie se termine sans gagnant.",
+      "fen": "8/7k/8/3K4/8/8/8/8 b - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "« Peu de pièces » ne veut pas dire « aucun danger ». Si une dame ou une tour adverse reste, elle peut encore donner des échecs. Ton roi ne doit jamais aller sur une case attaquée.",
+      "fen": "8/7k/8/3p4/3K4/8/8/8 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "8/7k/8/3p4/3K4/8/8/8 w - - 0 1",
+      "kind": "move",
+      "solution": [
+        "d4d5"
+      ],
+      "check": "engine",
+      "prompt": "Ton roi en d4 peut enlever le dernier pion noir. Prends-le sans approcher le roi en h7.",
+      "accept": [
+        "d4d5"
+      ],
+      "alsoGood": [
+        "d4c3",
+        "d4e3",
+        "d4e5",
+        "d4d3",
+        "d4c5"
+      ],
+      "hint": "Avance ton roi vers les pions que personne ne protège. Vérifie chaque case comme pour n’importe quelle pièce. Ici, d5 est loin du roi noir en h7.",
+      "success": "Le roi prend le dernier pion. Il ne reste que deux rois : aucun camp ne peut faire échec et mat. La partie se termine sans gagnant."
+    }
+  ],
+  "retenir": "Quand il reste peu de pièces, utilise ton roi pour prendre les pions sans entrer sur une case attaquée.",
+  "review": {
+    "fen": "8/7k/8/3p4/3K4/8/8/8 w - - 0 1",
+    "kind": "move",
+    "solution": [
+      "d4d5"
+    ],
+    "check": "engine",
+    "prompt": "Ton roi en d4 peut enlever le dernier pion noir. Prends-le sans approcher le roi en h7.",
+    "accept": [
+      "d4d5"
+    ],
+    "alsoGood": [],
+    "hint": "Avance ton roi vers les pions que personne ne protège. Vérifie chaque case comme pour n’importe quelle pièce. Ici, d5 est loin du roi noir en h7.",
+    "success": "Le roi prend le dernier pion. Il ne reste que deux rois : aucun camp ne peut faire échec et mat. La partie se termine sans gagnant."
+  },
+  "contentVersion": 2,
+  "principle": "Quand il reste peu de pièces, utilise ton roi pour prendre les pions sans entrer sur une case attaquée.",
+  "entryChallenge": {
+    "fen": "8/7k/8/3p4/3K4/8/8/8 w - - 0 1",
+    "kind": "move",
+    "solution": [
+      "d4d5"
+    ],
+    "check": "engine",
+    "prompt": "Ton roi en d4 peut enlever le dernier pion noir. Prends-le sans approcher le roi en h7.",
+    "accept": [
+      "d4d5"
+    ],
+    "alsoGood": [
+      "d4c3",
+      "d4e3",
+      "d4e5",
+      "d4d3",
+      "d4c5"
+    ],
+    "hint": "Avance ton roi vers les pions que personne ne protège. Vérifie chaque case comme pour n’importe quelle pièce. Ici, d5 est loin du roi noir en h7.",
+    "success": "Le roi prend le dernier pion. Il ne reste que deux rois : aucun camp ne peut faire échec et mat. La partie se termine sans gagnant.",
+    "mode": "move"
+  },
+  "guided": [],
   "examples": [],
-  "videos": []
+  "pitfall": {}
 }

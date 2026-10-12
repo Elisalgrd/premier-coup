@@ -1,43 +1,9 @@
 {
   "id": "str-bishop-pair-space",
-  "title": "Paire de fous et espace",
   "tier": 4,
   "priority": "C",
-  "domain": "stratégie",
   "prerequisites": [
     "str-good-bad-bishop"
-  ],
-  "principle": "La paire de fous est forte dans les positions ouvertes ; ouvre le jeu si tu l'as. Avec plus d'espace, évite les échanges pour garder l'adversaire à l'étroit.",
-  "why": [],
-  "signals": [],
-  "method": [],
-  "pitfall": {
-    "text": "",
-    "fen": null,
-    "line": []
-  },
-  "entryChallenge": {
-    "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
-    "solution": [
-      "d3d4"
-    ],
-    "prompt": "Ouvre une diagonale en échangeant les pions centraux.",
-    "mode": "move",
-    "source": "Exemple pédagogique validé"
-  },
-  "guided": [
-    {
-      "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 1",
-      "move": "d3d4",
-      "text": "",
-      "arrows": [
-        [
-          "d3",
-          "d4"
-        ]
-      ],
-      "marks": []
-    }
   ],
   "lichessThemes": [],
   "ratingBand": [
@@ -52,16 +18,120 @@
   },
   "sources": [],
   "videoId": null,
-  "glossary": [],
-  "audio": null,
+  "videos": [],
+  "drill": "plan-choice",
+  "domain": "stratégie",
+  "title": "Deux fous qui couvrent les deux couleurs",
+  "introduces": [
+    "paire de fous",
+    "espace"
+  ],
+  "challenge": {
+    "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "c1",
+      "c4"
+    ],
+    "check": "rule",
+    "prompt": "Touche un de tes deux fous. Observe ensuite l’autre : il reste sur une couleur différente.",
+    "accept": [
+      "c1",
+      "c4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case c1.",
+    "success": "Le pion blanc en d5 bloque certaines diagonales, mais les deux fous trouvent encore des chemins différents. Des échanges de pions peuvent leur ouvrir davantage de lignes."
+  },
   "screens": [
     {
-      "title": "Principe",
-      "text": "La paire de fous est forte dans les positions ouvertes. Ouvre le jeu si tu l'as. Avec plus d'espace, évite les échanges pour garder l'adversaire à l'étroit.",
-      "audio": null
+      "step": "principe",
+      "title": "Deux fous qui couvrent les deux couleurs",
+      "text": "La paire de fous, c’est avoir encore tes deux fous : un sur chaque couleur. Ici, celui en c1 parcourt les cases foncées, celui en c4 les cases claires. Ensemble, ils peuvent viser les deux couleurs.",
+      "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1",
+      "marks": [
+        "c1",
+        "c4"
+      ]
+    },
+    {
+      "step": "methode",
+      "title": "Comment le voir ici",
+      "text": "Regarde chaque fou séparément. Quelles cases peut-il atteindre ? Quels pions le bloquent ? Ne bouge pas tes pions au hasard : cherche la diagonale que tu veux libérer.",
+      "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1",
+      "arrows": []
+    },
+    {
+      "step": "pourquoi",
+      "title": "Ce que cela change",
+      "text": "Le pion blanc en d5 bloque certaines diagonales, mais les deux fous trouvent encore des chemins différents. Des échanges de pions peuvent leur ouvrir davantage de lignes.",
+      "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1"
+    },
+    {
+      "step": "piege",
+      "title": "Ce qu’il faut vérifier",
+      "text": "Plus d’espace signifie plus de cases disponibles pour tes pièces. Mais avancer trop de pions peut laisser des cases sans protection derrière eux. Regarde aussi les cavaliers adverses.",
+      "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1"
     }
   ],
+  "exercises": [
+    {
+      "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1",
+      "kind": "square",
+      "solution": [
+        "c1",
+        "c4"
+      ],
+      "check": "rule",
+      "prompt": "Touche un de tes deux fous. Observe ensuite l’autre : il reste sur une couleur différente.",
+      "accept": [
+        "c1",
+        "c4"
+      ],
+      "alsoGood": [],
+      "hint": "Regarde la case c1.",
+      "success": "Le pion blanc en d5 bloque certaines diagonales, mais les deux fous trouvent encore des chemins différents. Des échanges de pions peuvent leur ouvrir davantage de lignes."
+    }
+  ],
+  "retenir": "Deux fous se complètent sur les deux couleurs. Donne-leur des diagonales libres sans abandonner tes protections.",
+  "review": {
+    "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "c1",
+      "c4"
+    ],
+    "check": "rule",
+    "prompt": "Touche un de tes deux fous. Observe ensuite l’autre : il reste sur une couleur différente.",
+    "accept": [
+      "c1",
+      "c4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case c1.",
+    "success": "Le pion blanc en d5 bloque certaines diagonales, mais les deux fous trouvent encore des chemins différents. Des échanges de pions peuvent leur ouvrir davantage de lignes."
+  },
+  "contentVersion": 2,
+  "principle": "Deux fous se complètent sur les deux couleurs. Donne-leur des diagonales libres sans abandonner tes protections.",
+  "entryChallenge": {
+    "fen": "6k1/5ppp/8/3P4/2B5/8/5PPP/2B3K1 w - - 0 1",
+    "kind": "square",
+    "solution": [
+      "c1",
+      "c4"
+    ],
+    "check": "rule",
+    "prompt": "Touche un de tes deux fous. Observe ensuite l’autre : il reste sur une couleur différente.",
+    "accept": [
+      "c1",
+      "c4"
+    ],
+    "alsoGood": [],
+    "hint": "Regarde la case c1.",
+    "success": "Le pion blanc en d5 bloque certaines diagonales, mais les deux fous trouvent encore des chemins différents. Des échanges de pions peuvent leur ouvrir davantage de lignes.",
+    "mode": "square"
+  },
+  "guided": [],
   "examples": [],
-  "drill": "plan-choice",
-  "videos": []
+  "pitfall": {}
 }

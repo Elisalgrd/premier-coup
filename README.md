@@ -7,8 +7,8 @@ Application d’échecs en français, pensée pour l’iPhone et utilisable sur 
 Sur iPhone, ouvre le site dans Safari, puis **Partager → Sur l’écran d’accueil**. Aucun ordinateur allumé n’est nécessaire. La progression reste sur l’appareil ; utilise Réglages pour exporter une sauvegarde avant de changer d’appareil ou de navigateur.
 
 - **Aujourd’hui** : séance de 15, 25 ou 45 minutes, révisions prioritaires et reprise de l’étape en cours.
-- **Catalogue** : 71 fiches, recherche dans tout le texte, filtres et prérequis. Une fiche vue reste distincte d’une notion maîtrisée.
-- **S’entraîner** : problèmes directs, révisions, erreurs de partie, six jeux de vision, pic-vert, partie et import.
+- **Catalogue** : 72 fiches, recherche dans tout le texte, filtres et prérequis. Une fiche vue reste distincte d’une notion maîtrisée.
+- **S’entraîner** : problèmes directs, révisions, erreurs de partie, six jeux de vision, séries à répéter, partie et import.
 - **Progrès** : classement de problèmes, thèmes, série, temps de pratique et erreurs récurrentes.
 
 16 vidéos existantes sont conservées comme compléments des fiches, avec narration masculine et sous-titres. Les nouveaux écrans courts n’utilisent pas les anciens audios désynchronisés. Premier coup est indépendant de Julien Song ; ses conseils publics sont cités dans les fiches concernées.
@@ -27,7 +27,8 @@ npm start
 Le serveur local est sur `http://127.0.0.1:4180`. `dist/` est le site déployable. GitHub Actions valide puis publie ce dossier sur Pages depuis `main`.
 
 ```sh
-npm run curriculum        # Extraction, exemples, médias et édition courte
+npm run curriculum        # Reconstruit les 20 fiches fournies + les 52 fiches réécrites
+npm run validate:engine   # Stockfish 18, profondeur 16, 10 variantes
 npm run validate:puzzles  # Vérifie tous les shards présents
 node scripts/build-puzzles.mjs --help
 node scripts/benchmark-engine.mjs
@@ -37,7 +38,7 @@ L’extraction Lichess télécharge la base publique en streaming. Elle est rés
 
 ## Vérification et limites mesurées
 
-Voir `docs/VALIDATION.md`, `docs/performance.json` et `docs/engine-benchmark.json`. Les tests de navigateur utilisent des largeurs de 390 et 1280 pixels. Le benchmark moteur est réalisé sur cet ordinateur, pas sur un iPhone physique.
+Voir `docs/TON_VALIDATION.md` et `docs/TON_CORRECTIONS.md` pour la version 2.1.0, puis `docs/VALIDATION.md`, `docs/performance.json` et `docs/engine-benchmark.json`. Les tests de navigateur utilisent des largeurs de 390 et 1280 pixels. Le benchmark moteur est réalisé sur cet ordinateur, pas sur un iPhone physique.
 
 L’application n’attribue pas un Elo de compétition : ses estimations servent à adapter les problèmes. Les trois premiers adversaires ont des niveaux indicatifs. La classification des motifs d’erreur reste heuristique ; le moteur fournit l’évaluation et la variante.
 
