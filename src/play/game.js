@@ -1,3 +1,4 @@
+import { playerStrip } from "../ui/player-strip.js";
 import { Chess } from "../chess/chess.js";
 import { Board } from "../chess/board.js";
 import { Engine } from "../chess/engine.js";
@@ -68,8 +69,8 @@ export async function startGame(ctx, root, entryId = null) {
     $("#game-coach", root).textContent =
       "Vérifier ma position (" + tokens + " / 5)";
     $("#game-coach", root).disabled = tokens === 0 || busy;
-    for (const c of ["w", "b"])
-      $("#clock-" + c, root).textContent = duration(time[c]);
+    for (const [id, color] of [["player-above", side === "w" ? "b" : "w"], ["player-below", side]])
+      $("#" + id, root).innerHTML = playerStrip(game, color, { name: color === side ? "Toi" : "Adversaire", seconds: time[color], clockId: "clock-" + color });
     persist();
   };
   const terminal = () => {
@@ -145,7 +146,7 @@ export async function startGame(ctx, root, entryId = null) {
       game.setHeader("White", side === "w" ? "Toi" : "Coach");
       game.setHeader("Black", side === "b" ? "Toi" : "Coach");
     }
-    root.innerHTML = `<a class="back-link" href="#train">← S’entraîner (partie conservée)</a><header class="activity-header"><div><span class="eyebrow">NIVEAU ${level}</span><h1 id="game-turn">À toi de jouer.</h1></div></header><div class="play-layout"><section><div class="board-top"><span>Noirs <strong id="clock-b"></strong></span><span>Blancs <strong id="clock-w"></strong></span></div><div id="game-board"></div></section><section class="play-coach"><div id="game-feedback" role="status"></div><button id="game-coach" class="button secondary">Vérifier ma position</button><p id="game-moves" class="notation"></p><button id="game-stop" class="text-link">Terminer et analyser cette partie</button><small>Le chrono se suspend quand tu quittes cet écran.</small></section></div>`;
+    root.innerHTML = `<a class="back-link" href="#train">← S’entraîner (partie conservée)</a><header class="activity-header"><div><span class="eyebrow">NIVEAU ${level}</span><h1 id="game-turn">À toi de jouer.</h1></div></header><div class="play-layout"><section><div id="player-above"></div><div id="game-board"></div><div id="player-below"></div></section><section class="play-coach"><div id="game-feedback" role="status"></div><button id="game-coach" class="button secondary">Vérifier ma position</button><p id="game-moves" class="notation"></p><button id="game-stop" class="text-link">Terminer et analyser cette partie</button><small>Le chrono se suspend quand tu quittes cet écran.</small></section></div>`;
     board = new Board($("#game-board", root), {
       fen: game.fen(),
       flipped: side === "b",

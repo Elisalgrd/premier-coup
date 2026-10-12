@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.3.0
+
+- Deux bandeaux joueur montrent les horloges, les pièces prises et l’avance en matériel. Ton camp reste en bas.
+- Les prises sont calculées depuis les coups réels, y compris les prises en passant et les pièces promues.
+- Les mêmes bandeaux accompagnent les moments analysés et la nouvelle relecture coup par coup des parties importées.
+
 ## 2.2.0
 
 - Bilan sauvegardé à la fin des séries : réussites au premier essai, évolution du classement et statut de la leçon.
