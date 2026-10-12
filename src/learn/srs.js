@@ -42,6 +42,19 @@ export function rememberPuzzle(state, row, theme) {
     entryId: theme,
   });
 }
+export function rememberMistake(state, gameId, m) {
+  return addCard(state, {
+    id: "mistake:" + gameId + ":" + m.ply,
+    type: "mistake",
+    entryId: m.entryId,
+    gameId,
+    challenge: {
+      fen: m.fen, solution: m.line, mode: "move",
+      prompt: "Trouve une meilleure réponse dans ta partie.",
+    },
+    principle: m.label,
+  });
+}
 export function rememberPrinciple(state, e) {
   addCard(state, {
     id: "principle:" + e.id,

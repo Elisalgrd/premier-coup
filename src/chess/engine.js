@@ -69,6 +69,7 @@ export class Engine {
     {
       depth = 12,
       movetime = null,
+      maxTime = null,
       skill = 20,
       multiPV = 1,
       searchmoves = [],
@@ -105,7 +106,7 @@ export class Engine {
         );
         this.worker.postMessage(
           "go " +
-            (movetime ? "movetime " + movetime : "depth " + depth) +
+            (movetime ? "movetime " + movetime : "depth " + depth + (maxTime ? " movetime " + maxTime : "")) +
             (searchmoves.length ? " searchmoves " + searchmoves.join(" ") : ""),
         );
         const best = await finished;

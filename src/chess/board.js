@@ -37,11 +37,11 @@ export function boardHtml(
     )
     .join(
       "",
-    )}</div><svg class="board-arrows ${arrowColor === "danger" ? "danger-arrows" : ""}" viewBox="0 0 800 800" aria-hidden="true"><defs><marker id="${id}" markerWidth="3" markerHeight="3" refX="1.5" refY="1.5" orient="auto"><path d="M0 0L3 1.5L0 3Z" fill="currentColor"/></marker></defs>${arrows
-    .map(([a, b]) => {
+    )}</div><svg class="board-arrows ${arrowColor === "danger" ? "danger-arrows" : ""}" viewBox="0 0 800 800" aria-hidden="true"><defs><marker id="${id}" markerWidth="3" markerHeight="3" refX="1.5" refY="1.5" orient="auto"><path d="M0 0L3 1.5L0 3Z" fill="currentColor"/></marker>${["danger", "good"].map((color) => `<marker id="${id}-${color}" class="${color}-arrow" markerWidth="3" markerHeight="3" refX="1.5" refY="1.5" orient="auto"><path d="M0 0L3 1.5L0 3Z" fill="currentColor"/></marker>`).join("")}</defs>${arrows
+    .map(([a, b, color]) => {
       const [x1, y1] = xy(a),
         [x2, y2] = xy(b);
-      return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" marker-end="url(#${id})"/>`;
+      return `<line ${color ? `class="${color === "danger" ? "danger-arrow" : "good-arrow"}" style="marker-end:url(#${id}-${color === "danger" ? "danger" : "good"})"` : ""} x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" marker-end="url(#${id})"/>`;
     })
     .join("")}</svg></div>`;
 }
