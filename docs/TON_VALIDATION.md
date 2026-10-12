@@ -10,7 +10,7 @@
 
 ## Non-régression
 
-34 tests automatisés : sauvegarde/migration, catalogue, banques, classement, révisions, parties, lecteur V2, alternatives, reprise au milieu d’une ligne, vocabulaire et couverture de l’audit moteur. Les 16 vidéos existantes et leurs sous-titres sont présents.
+35 tests automatisés : sauvegarde/migration, catalogue, banques, classement, révisions, parties, lecteur V2, alternatives, reprise au milieu d’une ligne, vocabulaire et couverture de l’audit moteur. Les 16 vidéos existantes et leurs sous-titres sont présents.
 
 Commandes : `npm test`, `npm run validate`, `npm run validate:engine`, `npm run build`. `npm run curriculum` reconstruit les fichiers puis contrôle que l’audit correspond encore aux positions.
 

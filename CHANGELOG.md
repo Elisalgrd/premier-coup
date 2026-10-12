@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+
+- Le glossaire distingue « jouer aux échecs » d’un roi en échec, et ne transforme plus « nulle part » en définition de partie nulle.
+
 ## 2.1.0
 
 - Intégré les 20 fiches V2 fournies et réécrit les 52 autres en langage simple.
