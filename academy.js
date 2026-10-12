@@ -1,17 +1,17 @@
-import {pieceHtml} from './pieces.js?v=19';
-import {priorityCourseIds,skillById,skillTheme} from './essential-skills.js?v=19';
-import {applyNarration} from './narration.js?v=19';
-import {addReasoning} from './reasoning.js?v=19';
-import {foundationCourses} from './foundations.js?v=19';
-import {mistakeReview,renderCorrection} from './correction.js?v=19';
-import {renderVocabulary} from './glossary.js?v=19';
+import {pieceHtml} from './pieces.js?v=20';
+import {priorityCourseIds,skillById,skillTheme} from './essential-skills.js?v=20';
+import {applyNarration} from './narration.js?v=20';
+import {addReasoning} from './reasoning.js?v=20';
+import {foundationCourses} from './foundations.js?v=20';
+import {mistakeReview,renderCorrection} from './correction.js?v=20';
+import {renderVocabulary} from './glossary.js?v=20';
 import {Chess} from './chess.js';
-import {puzzles} from './content.js?v=19';
-import {explainMistake} from './coaching.js?v=19';
+import {puzzles} from './content.js?v=20';
+import {explainMistake} from './coaching.js?v=20';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const names={p:'pion',n:'cavalier',b:'fou',r:'tour',q:'dame',k:'roi'};
 const fr=s=>s.replace(/[KQRBN]/g,c=>({K:'R',Q:'D',R:'T',B:'F',N:'C'}[c]));
-import {transferPuzzles} from './academy-positions.js?v=19';
+import {transferPuzzles} from './academy-positions.js?v=20';
 export {transferPuzzles};
 export function findPuzzle(id){return transferPuzzles.find(p=>p.id===id)||puzzles.find(p=>p.id===id);}
 export function position(p){const g=p.fen?new Chess(p.fen):new Chess();for(const m of p.moves||[])g.move(m);return g;}

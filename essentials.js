@@ -1,7 +1,7 @@
-import {renderSongReference} from './song-method.js?v=19';
-import {essentialSkills,skillById,skillTheme} from './essential-skills.js?v=19';
-import {courses,frameGame,boardHtml,findPuzzle} from './academy.js?v=19';
-import {drillThemes} from './drills.js?v=19';
+import {renderSongReference} from './song-method.js?v=20';
+import {essentialSkills,skillById,skillTheme} from './essential-skills.js?v=20';
+import {courses,frameGame,boardHtml,findPuzzle} from './academy.js?v=20';
+import {drillThemes} from './drills.js?v=20';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function skillProgress(state,id){
  const pool=drillThemes[skillTheme(id)].ids;

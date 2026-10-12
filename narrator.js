@@ -1,5 +1,5 @@
-import {mediaLessons} from './media-library.js?v=19';
-import {maleMediaLessons} from './media-male-library.js?v=19';
+import {mediaLessons} from './media-library.js?v=20';
+import {maleMediaLessons} from './media-male-library.js?v=20';
 
 export const validNarrator=value=>value==='female'?'female':'male';
 export const narratorFor=state=>validNarrator(state.narrator);

@@ -1,7 +1,7 @@
-import {observationCases,methodIntro,songPrinciples} from './song-method.js?v=19';
-import {findPuzzle,gameAt,boardHtml,tryMove} from './academy.js?v=19';
-import {renderCorrection} from './correction.js?v=19';
-import {narratorFor,narratorPicker} from './narrator.js?v=19';
+import {observationCases,methodIntro,songPrinciples} from './song-method.js?v=20';
+import {findPuzzle,gameAt,boardHtml,tryMove} from './academy.js?v=20';
+import {renderCorrection} from './correction.js?v=20';
+import {narratorFor,narratorPicker} from './narrator.js?v=20';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const newObservation=(caseId=observationCases[0].id,completed={})=>({caseId,phase:'lesson',answer:null,stage:'solo',moveIndex:0,assisted:false,solved:false,completed});
 export function validateObservation(raw){

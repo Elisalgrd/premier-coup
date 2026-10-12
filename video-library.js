@@ -1,4 +1,4 @@
-import {videoManifest} from './video-manifest.js?v=19';
+import {videoManifest} from './video-manifest.js?v=20';
 export {videoManifest};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const videoTime=t=>Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0');

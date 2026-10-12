@@ -26,3 +26,5 @@
  .deep-conversation .deep-buttons{margin-top:18px}
  .deep-conversation .deep-quiet{display:block}
 }
+
+.deep-progress-count{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}.deep-progress-count>span{flex:1;min-width:130px;border:1px solid #e0d8df;border-radius:14px;padding:15px 18px;background:white;color:#746471;font-size:12px}.deep-progress-count strong{display:block;color:#663c54;font-size:25px;margin-bottom:5px}.deep-card small.deep-finished,.deep-saved{color:#386b49}.deep-saved{background:#e9f2e8;border-radius:12px;padding:12px 16px;font-size:14px!important;line-height:1.5!important}

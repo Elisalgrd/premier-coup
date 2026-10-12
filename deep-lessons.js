@@ -1,5 +1,5 @@
 import {Chess} from './chess.js';
-import {findPuzzle,position} from './academy.js?v=19';
+import {findPuzzle,position} from './academy.js?v=20';
 
 // Original teaching scripts. Coordinates are data for the board, never narration.
 const P=(id,moves=[])=>{const g=position(findPuzzle(id));for(const m of moves)g.move({from:m.slice(0,2),to:m.slice(2,4),promotion:m[4]});return g.fen();};

@@ -1,5 +1,5 @@
 import {Chess} from './chess.js';
-import {explainMistake} from './coaching.js?v=19';
+import {explainMistake} from './coaching.js?v=20';
 const fr=s=>s.replace(/[KQRBN]/g,c=>({K:'R',Q:'D',R:'T',B:'F',N:'C'}[c]));
 const points={p:1,n:3,b:3,r:5,q:9,k:0};
 const names={p:'pion',n:'cavalier',b:'fou',r:'tour',q:'dame',k:'roi'};
