@@ -1,7 +1,7 @@
-import {renderSongReference} from './song-method.js?v=18';
-import {mediaLessons} from './media-library.js?v=18';
+import {renderSongReference} from './song-method.js?v=19';
+import {mediaLessons} from './media-library.js?v=19';
 export {mediaLessons};
-import {narratorFor,narrationFor,mediaBase,narratorPicker,narrationPosition} from './narrator.js?v=18';
+import {narratorFor,narrationFor,mediaBase,narratorPicker,narrationPosition} from './narrator.js?v=19';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const time=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
 export function libraryState(state){return state.library??={positions:{},notes:{},watched:[]};}

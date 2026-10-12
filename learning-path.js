@@ -1,6 +1,6 @@
-import {courses,academyState} from './academy.js?v=18';
-import {essentialSkills,priorityCourseIds} from './essential-skills.js?v=18';
-import {renderEssentialCards,nextEssential,skillProgress} from './essentials.js?v=18';
+import {courses,academyState} from './academy.js?v=19';
+import {essentialSkills,priorityCourseIds} from './essential-skills.js?v=19';
+import {renderEssentialCards,nextEssential,skillProgress} from './essentials.js?v=19';
 export const pathGroups=[
  {title:'Ton 20/80 : six idées prioritaires',subtitle:'Gagner du matériel, éviter les pièges, construire un plan.',ids:essentialSkills.map(s=>s.id)},
  {title:'Renforcer tes bases',subtitle:'Centre, développement, sécurité du roi et activité.',ids:['king-safety','center','development','queen-time','active-piece']},

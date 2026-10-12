@@ -1,7 +1,7 @@
 import {Chess} from './chess.js';
-import {boardHtml,position,courses} from './academy.js?v=18';
-import {lessonForPuzzle} from './puzzle-lessons.js?v=18';
-import {deepLessonFor} from './deep-lessons.js?v=18';
+import {boardHtml,position,courses} from './academy.js?v=19';
+import {lessonForPuzzle} from './puzzle-lessons.js?v=19';
+import {deepLessonFor} from './deep-lessons.js?v=19';
 const names={p:'pion',n:'cavalier',b:'fou',r:'tour',q:'dame',k:'roi'};
 const article=t=>['q','r'].includes(t)?'la ':'le ';
 const points={p:1,n:3,b:3,r:5,q:9,k:0};

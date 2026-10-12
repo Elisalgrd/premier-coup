@@ -1,5 +1,5 @@
 import {Chess} from './chess.js';
-import {deepLessons} from './deep-lessons.js?v=18';
+import {deepLessons} from './deep-lessons.js?v=19';
 
 // All scripts are original. SAN is used only to validate the demonstration data.
 const start=moves=>{const g=new Chess();for(const m of moves)g.move(m);return g.fen();};
