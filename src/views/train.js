@@ -1,6 +1,7 @@
+import { pendingAnalysisCard } from "../play/analysis-task.js";
 import { esc } from "../ui/helpers.js";
-export function trainView(entries) {
-  return `<header class="page-intro"><span class="eyebrow">CHOISIS TON ENTRAÎNEMENT</span><h1>À toi de jouer.</h1><p>Tu peux t’entraîner directement, sans relancer une leçon.</p></header><div class="training-grid">${[
+export function trainView(entries, state) {
+  return `<header class="page-intro"><span class="eyebrow">CHOISIS TON ENTRAÎNEMENT</span><h1>À toi de jouer.</h1><p>Tu peux t’entraîner directement, sans relancer une leçon.</p></header>${pendingAnalysisCard(state)}<div class="training-grid">${[
     [
       "puzzles",
       "◇",

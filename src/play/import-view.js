@@ -1,5 +1,5 @@
 import { Engine } from "../chess/engine.js";
-import { analyzeGame } from "../chess/analysis.js";
+import { analyzePendingGame } from "./analysis-task.js";
 import { Board } from "../chess/board.js";
 import { Chess } from "../chess/chess.js";
 import { moveUci, describeMove } from "../chess/notation.js";
@@ -8,6 +8,7 @@ import { friendlyMistake, esc, $ } from "../ui/helpers.js";
 export async function startImport(ctx, root) {
   let disposed = false,
     engine = null,
+    controller = null,
     boards = [];
   const render = () => {
     root.innerHTML = `<a class="back-link" href="#train">← S’entraîner</a><header class="page-intro"><span class="eyebrow">APPRENDRE DE TES PARTIES</span><h1>Tes erreurs, tes exercices.</h1><p>Colle le texte d’une partie ou récupère tes dernières parties publiques. L’analyse reste sur ton appareil.</p></header><div class="import-grid"><section class="session-card"><h2>Coller une partie</h2><label class="form-label">Texte de la partie (bouton « Copier PGN » sur Lichess ou Chess.com)<textarea id="pgn-input" rows="7" placeholder="Colle ici le texte copié depuis ton site d’échecs."></textarea></label><label class="form-label">Tu jouais<select id="pgn-color"><option value="w">Les blancs</option><option value="b">Les noirs</option></select></label><button id="import-pgn" class="button primary">Ajouter la partie →</button></section><section class="session-card"><h2>Ton compte public</h2><label class="form-label">Plateforme<select id="import-platform"><option value="lichess">Lichess</option><option value="chesscom">Chess.com</option></select></label><label class="form-label">Pseudo<input id="import-user" autocomplete="off" value="${esc(ctx.state.preferences.lichess || "")}" placeholder="Ton pseudo"></label><button id="import-public" class="button secondary">Récupérer mes parties</button><small>20 parties maximum. Seul ton pseudo est envoyé au service choisi.</small></section></div><p id="import-feedback" role="status"></p><div class="section-title"><h2>Mes parties (${ctx.state.games.length})</h2></div><div class="game-list">${
@@ -15,7 +16,7 @@ export async function startImport(ctx, root) {
         .reverse()
         .map(
           (g) =>
-            `<article><div><strong>${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</strong><small>${esc(g.source)} · ${Math.ceil(g.moves.length / 2)} coups · ${g.analysis ? "analysée" : "à analyser"}</small></div><button class="button secondary" data-analyze="${esc(g.id)}">${g.analysis ? "Voir le rapport" : "Analyser"} →</button></article>`,
+            `<article><div><strong>${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</strong><small>${esc(g.source)} · ${Math.ceil(g.moves.length / 2)} coups · ${g.analysis ? "analysée" : ["running", "interrupted"].includes(g.analysisStatus) ? "Analyse interrompue, reprendre" : "à analyser"}</small></div><button class="button secondary" data-analyze="${esc(g.id)}">${g.analysis ? "Voir le rapport" : "Analyser"} →</button></article>`,
         )
         .join("") || "<p>Aucune partie importée pour le moment.</p>"
     }</div>`;
@@ -59,37 +60,43 @@ export async function startImport(ctx, root) {
     for (const b of boards) b.destroy();
     boards = [];
     if (!g.analysis) {
-      engine = new Engine();
+      const taskEngine = new Engine(), task = new AbortController();
+      engine = taskEngine;
+      controller = task;
+      const cancel = () => {
+        task.abort();
+        taskEngine.close();
+        g.analysisStatus = "interrupted";
+        ctx.save();
+        render();
+      };
       root.innerHTML =
         '<button class="back-link" id="report-back">← Mes parties</button><h1>Recherche des moments clés.</h1><p id="analysis-status" role="status">Chargement du moteur (environ 7 Mo au premier lancement)…</p><progress id="analysis-progress" max="1" value="0"></progress><button class="button secondary" id="analysis-cancel">Annuler</button>';
-      $("#report-back", root).onclick = () => {
-        engine?.close();
-        render();
-      };
-      $("#analysis-cancel", root).onclick = () => {
-        engine.close();
-        render();
-      };
+      $("#report-back", root).onclick = cancel;
+      $("#analysis-cancel", root).onclick = cancel;
       try {
-        await analyzeGame(g, engine, {
+        await analyzePendingGame(g, taskEngine, {
+          save: ctx.save,
+          signal: task.signal,
           depth: matchMedia("(max-width:700px)").matches ? 12 : 16,
           state: ctx.state,
           onProgress: (n, total) => {
-            if (disposed || !$("#analysis-progress", root)) return;
+            if (disposed || task.signal.aborted || !$("#analysis-progress", root)) return;
             $("#analysis-progress", root).max = total;
             $("#analysis-progress", root).value = n;
             $("#analysis-status", root).textContent =
               n + " / " + total + " coups analysés.";
           },
         });
-        ctx.save();
       } catch (e) {
-        if (!disposed && $("#analysis-status", root))
-          $("#analysis-status", root).textContent = e.message;
+        if (!disposed && !task.signal.aborted) render();
         return;
       } finally {
-        engine.close();
-        engine = null;
+        taskEngine.close();
+        if (controller === task) {
+          engine = null;
+          controller = null;
+        }
       }
     }
     if (disposed) return;
@@ -133,11 +140,11 @@ export async function startImport(ctx, root) {
   render();
   const pending = ctx.state.games.find((g) => g.autoAnalyze && !g.analysis);
   if (pending) {
-    pending.autoAnalyze = false;
     report(pending);
   }
   return () => {
     disposed = true;
+    controller?.abort();
     engine?.close();
     for (const b of boards) b.destroy();
   };

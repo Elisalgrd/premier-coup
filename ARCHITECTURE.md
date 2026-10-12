@@ -53,3 +53,5 @@ Le service worker précache seulement l’interface et le catalogue. Les problè
 Six PR empilées, puis intégration ordonnée sur main. Le workflow publie uniquement `dist`. Une installation iPhone utilise la même origine et conserve donc sa sauvegarde lors d’une mise à jour. Changer de navigateur ou d’appareil requiert export/import.
 
 La banque de repérage stratégique contient aussi 1 440 exercices : 180 positions réelles pour huit thèmes. Elle se régénère avec `npm run build:drills`. Ces questions de cases et de pièces entraînent la reconnaissance, sans prétendre certifier le meilleur coup.
+
+L’analyse utilise un signal d’annulation vérifié après chaque recherche. `analysisStatus` distingue une interruption ; `autoAnalyze` est consommé seulement après succès. Toute partie sans rapport reste visible, même si une ancienne version avait déjà consommé son drapeau.
