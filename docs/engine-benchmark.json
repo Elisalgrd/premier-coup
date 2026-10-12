@@ -1,0 +1,114 @@
+{
+  "environment": "Windows Node 24, desktop, single-thread WASM",
+  "physicalIphoneMeasured": false,
+  "seconds": 5.44,
+  "depth": 12,
+  "analyzedMoves": 40,
+  "moments": [
+    {
+      "ply": 47,
+      "fen": "rnb2k1r/1p1p3p/p5pn/4p1P1/1P2PP2/b1p4P/2P1Kq1R/1RB2QN1 w - - 4 24",
+      "played": "e2d1",
+      "playedSan": "Rd1",
+      "best": "h2f2",
+      "line": [
+        "h2f2",
+        "e5f4",
+        "c1a3",
+        "d7d6",
+        "f2f4"
+      ],
+      "reply": "f2f1",
+      "loss": 1536,
+      "severity": "gaffe",
+      "missedMate": false,
+      "sufferedMate": true,
+      "label": "Mat du couloir",
+      "entryId": "mat-back-rank"
+    },
+    {
+      "ply": 49,
+      "fen": "1nb2k1r/rp1p3p/p5pn/4p1P1/1P2PP2/b1p4P/2P2q1R/1RBK1QN1 w - - 6 25",
+      "played": "h2h1",
+      "playedSan": "Th1",
+      "best": "h2f2",
+      "line": [
+        "h2f2",
+        "a3c1",
+        "f4e5",
+        "f8g7",
+        "b1c1"
+      ],
+      "reply": "f2f1",
+      "loss": 1535,
+      "severity": "gaffe",
+      "missedMate": false,
+      "sufferedMate": true,
+      "label": "Mat du couloir",
+      "entryId": "mat-back-rank"
+    },
+    {
+      "ply": 45,
+      "fen": "rnb2k1r/1p1p3p/p5pn/2q1p1P1/1P2PP2/b1p4P/2P1K2R/R1B2QN1 w - - 2 23",
+      "played": "a1b1",
+      "playedSan": "Tb1",
+      "best": "b4c5",
+      "line": [
+        "b4c5",
+        "a3c1",
+        "a1c1",
+        "h6f7",
+        "e2e3"
+      ],
+      "reply": "c5b5",
+      "loss": 998,
+      "severity": "gaffe",
+      "missedMate": false,
+      "sufferedMate": false,
+      "label": "Menace adverse ignorée",
+      "entryId": "proc-opponent-threat"
+    },
+    {
+      "ply": 77,
+      "fen": "2b1k2r/2rnb2p/pQ5P/4p1p1/1p2K3/2p4P/2P2R2/2B3NR w - - 2 39",
+      "played": "f2f6",
+      "playedSan": "Tf6",
+      "best": "b6c7",
+      "line": [
+        "b6c7",
+        "c8b7",
+        "e4e3",
+        "b7d5",
+        "c7c8"
+      ],
+      "reply": "c8b7",
+      "loss": 998,
+      "severity": "gaffe",
+      "missedMate": false,
+      "sufferedMate": false,
+      "label": "Pièce laissée en prise",
+      "entryId": "proc-blunder-check"
+    },
+    {
+      "ply": 43,
+      "fen": "rnb2k1r/1p1p3p/p5pn/q3p1P1/1P2PP2/b1p4P/2P1K3/R1B2QNR w - - 0 22",
+      "played": "h1h2",
+      "playedSan": "Th2",
+      "best": "b4a5",
+      "line": [
+        "b4a5",
+        "a3c1",
+        "f1c1",
+        "h6f7",
+        "c1a3"
+      ],
+      "reply": "a5b5",
+      "loss": 967,
+      "severity": "gaffe",
+      "missedMate": false,
+      "sufferedMate": false,
+      "label": "Capture gratuite ratée",
+      "entryId": "proc-free-material"
+    }
+  ]
+}
