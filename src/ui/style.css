@@ -1954,10 +1954,10 @@ html[data-theme="dark"] .material-advantage, html[data-theme="dark"] .coach-oppo
   .review-video { height:calc(100dvh - 110px); display:flex; flex-direction:column; }
   .review-video > header { flex-shrink:0; font-size:12px; margin:0 0 4px; }
   .review-stage { display:flex; flex-direction:column; gap:8px; min-height:0; flex:1; }
-  #video-board { width:min(100%, calc(100dvh - 530px)); min-width:220px; max-width:355px; flex-shrink:0; }
+  #video-board { width:min(100%, calc(100dvh - 420px - var(--review-caption-height, 140px))); min-width:180px; max-width:355px; flex-shrink:0; }
   #video-board .player-strip { min-height:32px; padding:5px 2px; }
-  .review-caption { width:100%; padding:12px 14px; flex:1; min-height:110px; overflow-y:auto; }
-  .review-caption p { font-size:15px; line-height:1.55; margin:7px 0 0; }
+  .review-caption { width:100%; padding:12px 14px; flex:1; min-height:var(--review-caption-height, 140px); overflow-y:auto; }
+  .review-caption p { font-size:14px; line-height:1.5; margin:7px 0 0; }
   .review-caption .eyebrow { font-size:10px; }
   .review-controls { width:100%; margin-top:4px; flex-shrink:0; }
   .review-transport .button { padding:10px; font-size:13px; }
