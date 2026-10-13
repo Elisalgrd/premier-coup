@@ -58,7 +58,7 @@ export async function startReviews(
       g = new Chess(challenge.fen);
     let clean = true,
       done = false;
-    root.innerHTML = `<a href="#train" class="back-link">← S’entraîner</a><header class="activity-header"><div><span class="eyebrow">RÉVISION ${index + 1} / ${cards.length}</span><h1>Retrouve l’idée que tu as apprise.</h1></div></header><div class="play-layout"><div id="review-board"></div><section class="play-coach"><p>${esc(challenge.prompt || "Trouve le meilleur coup.")}</p><div id="review-feedback" role="status"></div><button id="review-help" class="button secondary">Revoir le principe</button><button id="review-next" class="button primary" hidden>Suivante →</button></section></div>`;
+    root.innerHTML = `<a href="#train" class="back-link">← S’entraîner</a><header class="activity-header"><div><span class="eyebrow">RÉVISION ${index + 1} / ${cards.length}</span><h1>Retrouve l’idée que tu as apprise.</h1></div></header><div class="play-layout"><div id="review-board"></div><section class="play-coach"><p>${esc(challenge.prompt || "Trouve le meilleur coup.")}</p><div id="review-feedback" role="status"></div>${c.type === "mistake" && c.gameId ? `<a class="text-link" href="#train/review-video/${esc(c.gameId)}/${c.ply || Number(c.id.split(":").at(-1))}">▶ Revoir cette erreur en vidéo</a>` : ""}<button id="review-help" class="button secondary">Revoir le principe</button><button id="review-next" class="button primary" hidden>Suivante →</button></section></div>`;
     const answer = (m) => {
       if (done) return;
       let ok = (challenge.accept || challenge.solution).includes(m),

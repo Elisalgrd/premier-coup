@@ -1,3 +1,10 @@
+# 2.6.0 — Revue animée et commentée
+
+- Relecture locale avec narration française, sous-titres, flèches et chapitres.
+- Lecture, pause, navigation entre erreurs et trois vitesses ; reprise synchronisée.
+- Accès depuis la fin de partie, les rapports, les parties et chaque révision.
+- Voix locales sélectionnables ; lecture par sous-titres si aucune voix ne fonctionne.
+
 # 2.5.0 — Toutes les erreurs de la partie
 
 - Analyse chronologique complète, imprécisions séparées et ancien top 5 conservé.

@@ -1932,3 +1932,34 @@ html[data-theme="dark"] .material-advantage, html[data-theme="dark"] .coach-oppo
   #view:has(#coach-sheet.is-open) .play-layout { margin-top:0; }
   #view:has(#coach-sheet.is-open) .play-layout > section:first-child { width:min(100%, calc(45dvh - 90px)); margin:0 auto; }
 }
+.review-video { max-width:1000px; margin:0 auto; }
+.review-video > header { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+.review-video .back-link { margin:0; }
+.review-stage { display:grid; grid-template-columns:minmax(250px,1fr) minmax(230px,.8fr); gap:28px; align-items:center; }
+.review-caption { background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:22px; }
+.review-caption p { font-size:19px; line-height:1.65; margin:12px 0 0; }
+.review-controls { max-width:600px; margin:16px auto 0; }
+.review-chapters { display:flex; gap:5px; padding:8px 0; overflow-x:auto; }
+.review-chapters button { flex:1; min-width:32px; border:0; border-radius:8px; background:#e7dfe4; color:#604653; height:30px; }
+.review-chapters button[aria-current=true] { background:#774b67; color:white; }
+.review-transport { display:flex; gap:8px; align-items:center; justify-content:space-between; }
+.review-transport > button { min-width:44px; min-height:44px; border:1px solid var(--line); border-radius:10px; background:var(--paper); color:var(--ink); }
+.review-transport > .primary { background:#774b67; color:white; }
+.review-transport label { font-size:11px; }
+.review-transport select { display:block; padding:5px; border-radius:8px; }
+#video-skip { display:block; margin:8px auto; }
+@media (max-width:700px) {
+  .main:has(.review-video) .topbar { display:none; }
+  .main:has(.review-video) { padding:12px 14px 90px; }
+  .review-video { height:calc(100dvh - 110px); display:flex; flex-direction:column; }
+  .review-video > header { flex-shrink:0; font-size:12px; margin:0 0 4px; }
+  .review-stage { display:flex; flex-direction:column; gap:8px; min-height:0; flex:1; }
+  #video-board { width:min(100%, calc(100dvh - 530px)); min-width:220px; max-width:355px; flex-shrink:0; }
+  #video-board .player-strip { min-height:32px; padding:5px 2px; }
+  .review-caption { width:100%; padding:12px 14px; flex:1; min-height:110px; overflow-y:auto; }
+  .review-caption p { font-size:15px; line-height:1.55; margin:7px 0 0; }
+  .review-caption .eyebrow { font-size:10px; }
+  .review-controls { width:100%; margin-top:4px; flex-shrink:0; }
+  .review-transport .button { padding:10px; font-size:13px; }
+}
+

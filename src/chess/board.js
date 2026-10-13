@@ -174,12 +174,13 @@ export class Board {
     }
     this.onMove(from + to);
   }
-  animate(fen, move, duration = 400) {
+  animate(fen, move, duration = 400, options = {}) {
     moveSound();
     this.set(fen, {
       last: [move.slice(0, 2), move.slice(2, 4)],
       marks: [],
       arrows: [[move.slice(0, 2), move.slice(2, 4)]],
+      ...options,
     });
     if (globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches)
       return;

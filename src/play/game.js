@@ -85,9 +85,10 @@ export async function startGame(ctx, root, entryId = null) {
     ctx.state.activeGame = null;
     ctx.save();
     $("#game-feedback", root).innerHTML =
-      `<h2>${esc(reason)}</h2><p>Ta partie est enregistrée. Retrouve maintenant tes moments clés.</p><a href="#train/import" class="button primary">Voir l’analyse →</a>`;
+      `<h2>${esc(reason)}</h2><p>Ta partie est enregistrée. Comprends tes erreurs, puis retrouve les meilleurs coups.</p><a href="#train/review-video/${esc(record.id)}" class="button primary">▶ Revoir mes erreurs en vidéo</a><a href="#train/import/${esc(record.id)}" class="button secondary">Voir l’analyse →</a>`;
     $("#game-stop", root).hidden = true;
-    ctx.navigate("train/import");
+    alertUI?.close();
+    $("#game-feedback", root).scrollIntoView({ block: "center" });
   };
   const update = () => {
     $("#game-turn", root).textContent =

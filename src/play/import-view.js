@@ -6,7 +6,7 @@ import { Chess } from "../chess/chess.js";
 import { moveUci, describeMove } from "../chess/notation.js";
 import { parsePgn, importPublic, saveGames } from "./import.js";
 import { friendlyMistake, esc, $ } from "../ui/helpers.js";
-export async function startImport(ctx, root) {
+export async function startImport(ctx, root, gameId = null) {
   let disposed = false,
     engine = null,
     controller = null,
@@ -19,7 +19,7 @@ export async function startImport(ctx, root) {
         .reverse()
         .map(
           (g) =>
-            `<article><div><strong>${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</strong><small>${esc(g.source)} · ${Math.ceil(g.moves.length / 2)} coups · ${g.analysis ? "analysée" : ["running", "interrupted"].includes(g.analysisStatus) ? "Analyse interrompue, reprendre" : "à analyser"}</small></div><button class="text-link" data-review="${esc(g.id)}">Revoir la partie</button><button class="button secondary" data-analyze="${esc(g.id)}">${g.analysis ? "Voir le rapport" : "Analyser"} →</button></article>`,
+            `<article><div><strong>${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</strong><small>${esc(g.source)} · ${Math.ceil(g.moves.length / 2)} coups · ${g.analysis ? "analysée" : ["running", "interrupted"].includes(g.analysisStatus) ? "Analyse interrompue, reprendre" : "à analyser"}</small></div><a class="button primary" href="#train/review-video/${esc(g.id)}">▶ Revoir mes erreurs en vidéo</a><button class="text-link" data-review="${esc(g.id)}">Revoir la partie</button><button class="button secondary" data-analyze="${esc(g.id)}">${g.analysis ? "Voir le rapport" : "Analyser"} →</button></article>`,
         )
         .join("") || "<p>Aucune partie importée pour le moment.</p>"
     }</div>`;
@@ -126,7 +126,7 @@ export async function startImport(ctx, root) {
     }
     if (disposed) return;
     const moments = g.analysis.moments.slice(0, 3);
-    root.innerHTML = `<button class="back-link" id="report-back">← Mes parties</button><header class="page-intro"><span class="eyebrow">${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</span><h1>${moments.length ? "Tes moments clés." : "Une partie sans grosse erreur détectée."}</h1><p>${g.analysis.analyzedMoves} de tes coups vérifiés. Les positions à retravailler sont enregistrées.</p></header>${!Array.isArray(g.analysis.allMoments) ? '<button class="button secondary" id="analysis-full">Relancer l’analyse complète</button>' : `<p>${g.analysis.allMoments.length} erreurs conservées dans l’ordre de la partie.</p>`}${coachSummaryHtml(g)}${moments.map((m, i) => `<article class="report-moment"><div id="report-board-${i}"></div><section><span class="eyebrow">COUP ${Math.ceil(m.ply / 2)} · ${m.severity.toUpperCase()}</span><h2>${esc(friendlyMistake(m.label))}</h2><p>Ton coup : <strong>${esc(describeMove(moveUci(new Chess(m.fen), m.played)))}</strong> Le logiciel préfère une autre suite. Joue les deux réponses pour comprendre ce qui change.</p><p id="report-line-${i}" class="notation"></p><button data-line="${i}" class="button primary">Voir le meilleur coup →</button><button data-played="${i}" class="button secondary">Revoir mon coup et sa réponse</button><a class="text-link" href="#lesson/${m.entryId}">Revoir le principe ↗</a></section></article>`).join("")}<a class="button primary" href="#train/mistakes">Retravailler mes erreurs →</a>`;
+    root.innerHTML = `<button class="back-link" id="report-back">← Mes parties</button><header class="page-intro"><span class="eyebrow">${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</span><h1>${moments.length ? "Tes moments clés." : "Une partie sans grosse erreur détectée."}</h1><p>${g.analysis.analyzedMoves} de tes coups vérifiés. Les positions à retravailler sont enregistrées.</p></header>${!Array.isArray(g.analysis.allMoments) ? '<button class="button secondary" id="analysis-full">Relancer l’analyse complète</button>' : `<p>${g.analysis.allMoments.length} erreurs conservées dans l’ordre de la partie.</p>`}<a class="button primary" href="#train/review-video/${esc(g.id)}">▶ Revoir mes erreurs en vidéo</a>${coachSummaryHtml(g)}${moments.map((m, i) => `<article class="report-moment"><div id="report-board-${i}"></div><section><span class="eyebrow">COUP ${Math.ceil(m.ply / 2)} · ${m.severity.toUpperCase()}</span><h2>${esc(friendlyMistake(m.label))}</h2><p>Ton coup : <strong>${esc(describeMove(moveUci(new Chess(m.fen), m.played)))}</strong> Le logiciel préfère une autre suite. Joue les deux réponses pour comprendre ce qui change.</p><p id="report-line-${i}" class="notation"></p><button data-line="${i}" class="button primary">Voir le meilleur coup →</button><button data-played="${i}" class="button secondary">Revoir mon coup et sa réponse</button><a class="text-link" href="#lesson/${m.entryId}">Revoir le principe ↗</a></section></article>`).join("")}<a class="button primary" href="#train/mistakes">Retravailler mes erreurs →</a>`;
     $("#report-back", root).onclick = render;
     if ($("#analysis-full", root)) $("#analysis-full", root).onclick = () => report(g, true);
     moments.forEach((m, i) => {
@@ -162,7 +162,7 @@ export async function startImport(ctx, root) {
     });
   };
   render();
-  const pending = ctx.state.games.find((g) => g.autoAnalyze && !g.analysis);
+  const pending = ctx.state.games.find((g) => g.id === gameId) || ctx.state.games.find((g) => g.autoAnalyze && !g.analysis);
   if (pending) {
     report(pending);
   }

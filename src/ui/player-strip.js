@@ -35,7 +35,7 @@ export class PlayerBoard {
     this.root.querySelector(".player-below").innerHTML = playerStrip(game, this.side, { name: this.names[this.side] });
   }
   set(game, options = {}) { this.board.set(game.fen(), options); this.strips(game); }
-  animate(game, move) { this.board.animate(game.fen(), move); this.strips(game); }
+  animate(game, move, duration, options) { this.board.animate(game.fen(), move, duration, options); this.strips(game); }
   get options() { return this.board.options; }
   render() { this.board.render(); }
   destroy() { this.board.destroy(); }
