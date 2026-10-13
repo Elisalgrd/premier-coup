@@ -13,9 +13,10 @@ const entry = (id) => read("curriculum/entries/" + id + ".json");
 test("lesson stages keep each board and skip absent stages", () => {
   const e = entry("vis-start"),
     stages = lessonStages(e);
-  assert.equal(stages.length, e.screens.length + e.exercises.length + 1);
-  assert.equal(stages[0].data, e.screens[0]);
-  assert.equal(stages.at(-1).data.text, e.retenir);
+  assert.equal(stages.length, e.screens.length + e.exercises.length + 3);
+  assert.equal(stages[0].key, "objective");
+  assert.equal(stages[1].data, e.screens[0]);
+  assert.equal(stages.at(-1).data.text, e.retenir || e.principle);
   assert.equal(
     stages.some((s) => s.kind === "practice" || s.kind === "challenge"),
     false,
@@ -23,7 +24,7 @@ test("lesson stages keep each board and skip absent stages", () => {
   const fork = entry("tac-fork");
   assert.equal(
     lessonStages(fork).length,
-    1 + fork.screens.length + fork.exercises.length + 2,
+    3 + fork.screens.length + fork.exercises.length + 2,
   );
 });
 test("a multi-move answer resumes before and after the opponent response", () => {

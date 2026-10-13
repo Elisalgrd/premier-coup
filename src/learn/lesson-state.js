@@ -1,13 +1,15 @@
 import { Chess } from "../chess/chess.js";
 import { moveUci } from "../chess/notation.js";
+import { courseFor } from "./daily-courses.js";
 export function lessonStages(e) {
+  const course = courseFor(e);
   return [
-    ...(e.challenge
-      ? [{ key: "challenge", kind: "challenge", data: e.challenge }]
-      : []),
+    { key: "objective", kind: "screen", data: { title: course.goal, text: course.why, boardless: true, step: "intro" } },
     ...e.screens
       .filter((s) => s.text)
       .map((s, i) => ({ key: "screen:" + i, kind: "screen", data: s })),
+    { key: "quiz", kind: "quiz", data: course },
+    ...(e.challenge ? [{ key: "challenge", kind: "challenge", data: e.challenge }] : []),
     ...(e.exercises || []).map((c, i) => ({
       key: "exercise:" + i,
       kind: "exercise",
@@ -19,7 +21,7 @@ export function lessonStages(e) {
     {
       key: "retain",
       kind: "retain",
-      data: { text: e.retenir, fen: e.screens[0]?.fen },
+      data: { text: course.transfer, fen: e.screens[0]?.fen },
     },
   ];
 }

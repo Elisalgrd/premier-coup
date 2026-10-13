@@ -1,4 +1,3 @@
-import { mistakeRecapHtml, bindMistakeRecap } from "./mistake-recap.js";
 import { coachSummaryHtml } from "./coach-panel.js";
 import { Engine } from "../chess/engine.js";
 import { analyzePendingGame } from "./analysis-task.js";
@@ -19,7 +18,7 @@ export async function startImport(ctx, root, gameId = null) {
         .reverse()
         .map(
           (g) =>
-            `<article><div><strong>${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</strong><small>${esc(g.source)} · ${Math.ceil(g.moves.length / 2)} coups · ${g.analysis ? "analysée" : ["running", "interrupted"].includes(g.analysisStatus) ? "Analyse interrompue, reprendre" : "à analyser"}</small></div><a class="button primary" href="#train/review-video/${esc(g.id)}">▶ Comprendre mes erreurs pas à pas</a><button class="text-link" data-review="${esc(g.id)}">Revoir la partie</button><button class="button secondary" data-analyze="${esc(g.id)}">${g.analysis ? "Voir le rapport" : "Analyser"} →</button></article>`,
+            `<article><div><strong>${esc(g.headers.White || "Blancs")} / ${esc(g.headers.Black || "Noirs")}</strong><small>${esc(g.source)} · ${Math.ceil(g.moves.length / 2)} coups · ${g.analysis ? "analysée" : ["running", "interrupted"].includes(g.analysisStatus) ? "Analyse interrompue, reprendre" : "à analyser"}</small></div><a class="button primary" href="#train/review-video/${esc(g.id)}">Analyser mon jeu →</a><button class="text-link" data-review="${esc(g.id)}">Revoir la partie</button><button class="button secondary" data-analyze="${esc(g.id)}">${g.analysis ? "Voir le rapport" : "Analyser"} →</button></article>`,
         )
         .join("") || '<p>Aucune partie enregistrée pour le moment. <a href="#train/game">Jouer ma première partie →</a></p>'
     }</div><details class="import-options"><summary>Ajouter une partie de Chess.com ou Lichess</summary><div class="import-grid"><section class="session-card"><h2>Coller une partie</h2><label class="form-label">Texte de la partie (bouton « Copier PGN » sur Lichess ou Chess.com)<textarea id="pgn-input" rows="7" placeholder="Colle ici le texte copié depuis ton site d’échecs."></textarea></label><label class="form-label">Tu jouais<select id="pgn-color"><option value="w">Les blancs</option><option value="b">Les noirs</option></select></label><button id="import-pgn" class="button primary">Ajouter la partie →</button></section><section class="session-card"><h2>Ton compte public</h2><label class="form-label">Plateforme<select id="import-platform"><option value="lichess">Lichess</option><option value="chesscom">Chess.com</option></select></label><label class="form-label">Pseudo<input id="import-user" autocomplete="off" value="${esc(ctx.state.preferences.lichess || "")}" placeholder="Ton pseudo"></label><button id="import-public" class="button secondary">Récupérer mes parties</button><small>20 parties maximum. Seul ton pseudo est envoyé au service choisi.</small></section></div><p id="import-feedback" role="status"></p></details>`;
@@ -59,7 +58,7 @@ export async function startImport(ctx, root, gameId = null) {
       button.onclick = () => review(ctx.state.games.find((g) => g.id === button.dataset.review));
     for (const button of root.querySelectorAll("[data-analyze]"))
       button.onclick = () =>
-        report(ctx.state.games.find((g) => g.id === button.dataset.analyze));
+        ctx.navigate("train/review-video/" + button.dataset.analyze);
   };
   const review = (record) => {
     for (const b of boards) b.destroy();
@@ -125,11 +124,7 @@ export async function startImport(ctx, root, gameId = null) {
       }
     }
     if (disposed) return;
-    const count = (g.analysis.allMoments || g.analysis.moments || []).length;
-    root.innerHTML = `<button class="back-link" id="report-back">← Mes parties</button><header class="page-intro"><span class="eyebrow">BILAN DE TA PARTIE</span><h1>${count ? `${count} moment${count > 1 ? "s" : ""} à comprendre.` : "Pas de grosse erreur détectée."}</h1><p>${g.analysis.analyzedMoves} de tes coups vérifiés. Tes positions à retravailler sont enregistrées.</p></header>${!Array.isArray(g.analysis.allMoments) ? '<button class="button secondary" id="analysis-full">Relancer l’analyse complète</button>' : ""}<a class="button primary" href="#train/review-video/${esc(g.id)}">Comprendre mes erreurs pas à pas →</a>${mistakeRecapHtml(g)}<details><summary>Les alertes reçues pendant la partie</summary>${coachSummaryHtml(g)}</details>`;
-    $("#report-back", root).onclick = render;
-    if ($("#analysis-full", root)) $("#analysis-full", root).onclick = () => report(g, true);
-    bindMistakeRecap(root, g);
+    ctx.navigate("train/review-video/" + g.id);
   };
   render();
   const pending = ctx.state.games.find((g) => g.id === gameId) || ctx.state.games.find((g) => g.autoAnalyze && !g.analysis);

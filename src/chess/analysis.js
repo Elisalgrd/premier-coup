@@ -11,7 +11,7 @@ export async function analyzeGame(
   { depth = 12, onProgress = () => {}, state = null, signal = null } = {},
 ) {
   const g = new Chess(record.initialFen),
-    moments = [], inaccuracies = [], actual = new Map(),
+    moments = [], inaccuracies = [], decisions = [], actual = new Map(),
     total = record.moves.filter(
       (m, i) =>
         (i % 2 === 0 ? g.turn() : g.turn() === "w" ? "b" : "w") ===
@@ -34,6 +34,7 @@ export async function analyzeGame(
     else if (g.isDraw()) after = { type: "cp", score: 0, line: [] };
     else after = await engine.search(g.fen(), { depth });
     if (signal?.aborted) throw Error("Analyse interrompue.");
+    decisions.push({ ply: i + 1, fen, played: move, before: { type: before.type, score: before.score, best: before.best, depth: before.depth }, after: { type: after.type, score: after.score, best: after.best, depth: after.depth } });
     const message = mistakeMessage(fen, move, before, after, { includeInaccuracies: true });
     if (message) {
       const moment = { ...message, ply: i + 1, playedSan: sanFr(made.san) };
@@ -53,6 +54,7 @@ export async function analyzeGame(
   const allMoments = [...byPly.values()].sort((a, b) => a.ply - b.ply);
   moments.sort((a, b) => b.loss - a.loss);
   const result = {
+    version: 3, decisions,
     depth,
     at: Date.now(),
     moments: moments.slice(0, 5),

@@ -1,0 +1,349 @@
+[
+  {
+    "color": "w",
+    "profile": {
+      "facts": [
+        {
+          "kind": "opening",
+          "title": "Comment tu as construit ta position",
+          "text": "Après 4 de tes coups, tu avais sorti 1 de tes quatre cavaliers et fous. Tu n’avais pas encore mis ton roi à l’abri avec une tour.",
+          "ply": 7,
+          "entryId": "ouv-principles"
+        },
+        {
+          "kind": "strength",
+          "title": "Un bon réflexe au coup 4",
+          "text": "Tu as trouvé le coup qui attaque le roi sans lui laisser de défense : tu as terminé la partie.",
+          "ply": 7
+        }
+      ],
+      "focus": {
+        "text": "Aucune erreur importante repérée dans cette analyse. Compare aussi tes idées dans les positions calmes ; cela ne signifie pas que chaque coup était parfait.",
+        "entryId": "str-worst-piece"
+      },
+      "ownMoves": 4,
+      "errors": 0,
+      "recurringGames": 0,
+      "comparedGames": 0,
+      "summary": "4 de tes coups examinés. Aucune erreur importante détectée à cette profondeur.",
+      "complete": true
+    },
+    "record": {
+      "id": "74a4ad26-a3b4-4158-9a1b-7f0ec9d693ce",
+      "source": "Partie collée",
+      "color": "w",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"1-0\"]\n\n1. e4 e5 2. Bc4 Nc6 3. Qh5 Nf6 4. Qxf7# 1-0",
+      "headers": {
+        "Event": "?",
+        "Site": "?",
+        "Date": "????.??.??",
+        "Round": "?",
+        "White": "?",
+        "Black": "?",
+        "Result": "1-0"
+      },
+      "initialFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "moves": [
+        "e2e4",
+        "e7e5",
+        "f1c4",
+        "b8c6",
+        "d1h5",
+        "g8f6",
+        "h5f7"
+      ],
+      "createdAt": 1791922761523,
+      "analysis": {
+        "version": 3,
+        "decisions": [
+          {
+            "ply": 1,
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "played": "e2e4",
+            "before": {
+              "type": "cp",
+              "score": 37,
+              "best": "e2e4",
+              "depth": 12
+            },
+            "after": {
+              "type": "cp",
+              "score": -41,
+              "best": "e7e6",
+              "depth": 12
+            }
+          },
+          {
+            "ply": 3,
+            "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+            "played": "f1c4",
+            "before": {
+              "type": "cp",
+              "score": 35,
+              "best": "g1f3",
+              "depth": 12
+            },
+            "after": {
+              "type": "cp",
+              "score": -10,
+              "best": "g8f6",
+              "depth": 12
+            }
+          },
+          {
+            "ply": 5,
+            "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3",
+            "played": "d1h5",
+            "before": {
+              "type": "cp",
+              "score": 26,
+              "best": "g1f3",
+              "depth": 12
+            },
+            "after": {
+              "type": "cp",
+              "score": 31,
+              "best": "g7g6",
+              "depth": 12
+            }
+          },
+          {
+            "ply": 7,
+            "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+            "played": "h5f7",
+            "before": {
+              "type": "mate",
+              "score": 1,
+              "best": "h5f7",
+              "depth": 12
+            },
+            "after": {
+              "type": "mate",
+              "score": 0
+            }
+          }
+        ],
+        "depth": 12,
+        "at": 1791922761957,
+        "moments": [],
+        "allMoments": [],
+        "inaccuracies": [
+          {
+            "replyLine": [
+              "g7g6",
+              "h5d1",
+              "g8f6",
+              "b1c3",
+              "c6a5"
+            ],
+            "loss": 57,
+            "severity": "imprécision",
+            "missedMate": false,
+            "sufferedMate": false,
+            "label": "Autre décision à revoir",
+            "entryId": "proc-candidates-calc",
+            "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3",
+            "played": "d1h5",
+            "best": "g1f3",
+            "line": [
+              "g1f3",
+              "g8f6",
+              "d2d4",
+              "e5d4",
+              "e1g1",
+              "f6e4"
+            ],
+            "reply": "g7g6",
+            "afterFen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+            "question": "Quels sont mes deux meilleurs coups, et sa meilleure réponse à chacun ?",
+            "title": "Deux idées à comparer",
+            "risk": "L’adversaire déplace son pion. Ce coup n’entraîne pas une perte immédiate visible dans cette réponse. Le moteur préfère une autre suite. On va la comparer, sans prétendre qu’une pièce est déjà perdue.",
+            "better": "Tu déplaces ton cavalier. Tu sors une pièce de sa case de départ pour qu’elle participe au jeu. C’est ce qu’on appelle développer une pièce. Au début, fais travailler tes cavaliers et tes fous, au lieu de déplacer toujours la même pièce.",
+            "opportunity": "",
+            "ply": 5,
+            "playedSan": "Dh5"
+          }
+        ],
+        "analyzedMoves": 4
+      }
+    }
+  },
+  {
+    "color": "b",
+    "profile": {
+      "facts": [
+        {
+          "kind": "turning",
+          "title": "Ta décision la plus coûteuse : coup 3",
+          "text": "Sa dame peut prendre ton pion et attaquer ton roi. Dans cette suite, aucun déplacement du roi, aucune prise de la pièce qui l’attaque et aucune pièce interposée ne le sauvent : c’est échec et mat.",
+          "ply": 6,
+          "moment": 6,
+          "entryId": "proc-opponent-threat"
+        }
+      ],
+      "focus": {
+        "text": "Après mon coup, l’adversaire peut-il attaquer mon roi sans lui laisser aucune défense ?",
+        "entryId": "proc-opponent-threat",
+        "ply": 6
+      },
+      "ownMoves": 3,
+      "errors": 1,
+      "recurringGames": 0,
+      "comparedGames": 0,
+      "summary": "3 de tes coups examinés. Commence par le coup 3 : c’est la décision qui coûte le plus selon cette analyse.",
+      "complete": true
+    },
+    "record": {
+      "id": "fcc5cb7d-5bb4-48bd-ad96-d7fa91337616",
+      "source": "Partie collée",
+      "color": "b",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"1-0\"]\n\n1. e4 e5 2. Bc4 Nc6 3. Qh5 Nf6 4. Qxf7# 1-0",
+      "headers": {
+        "Event": "?",
+        "Site": "?",
+        "Date": "????.??.??",
+        "Round": "?",
+        "White": "?",
+        "Black": "?",
+        "Result": "1-0"
+      },
+      "initialFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "moves": [
+        "e2e4",
+        "e7e5",
+        "f1c4",
+        "b8c6",
+        "d1h5",
+        "g8f6",
+        "h5f7"
+      ],
+      "createdAt": 1791922761963,
+      "analysis": {
+        "version": 3,
+        "decisions": [
+          {
+            "ply": 2,
+            "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+            "played": "e7e5",
+            "before": {
+              "type": "cp",
+              "score": -29,
+              "best": "e7e5",
+              "depth": 12
+            },
+            "after": {
+              "type": "cp",
+              "score": 29,
+              "best": "g1f3",
+              "depth": 12
+            }
+          },
+          {
+            "ply": 4,
+            "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+            "played": "b8c6",
+            "before": {
+              "type": "cp",
+              "score": -9,
+              "best": "g8f6",
+              "depth": 12
+            },
+            "after": {
+              "type": "cp",
+              "score": 14,
+              "best": "g1f3",
+              "depth": 12
+            }
+          },
+          {
+            "ply": 6,
+            "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+            "played": "g8f6",
+            "before": {
+              "type": "cp",
+              "score": 37,
+              "best": "g7g6",
+              "depth": 12
+            },
+            "after": {
+              "type": "mate",
+              "score": 1,
+              "best": "h5f7",
+              "depth": 12
+            }
+          }
+        ],
+        "depth": 12,
+        "at": 1791922762250,
+        "moments": [
+          {
+            "replyLine": [
+              "h5f7"
+            ],
+            "loss": 1037,
+            "severity": "gaffe",
+            "missedMate": false,
+            "sufferedMate": true,
+            "label": "Mat du couloir",
+            "entryId": "mat-back-rank",
+            "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+            "played": "g8f6",
+            "best": "g7g6",
+            "line": [
+              "g7g6",
+              "h5d1",
+              "g8f6",
+              "b1c3",
+              "c6a5",
+              "c4b3"
+            ],
+            "reply": "h5f7",
+            "afterFen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+            "question": "Mon roi a-t-il une case de fuite ?",
+            "title": "Ton roi ne peut plus être sauvé",
+            "risk": "La dame adverse prend ton pion. Ton roi est attaqué et aucun coup ne peut le sauver. La partie est terminée : c’est échec et mat. Il fallait empêcher cette attaque au coup précédent.",
+            "better": "Tu déplaces ton pion. Voici l’autre coup proposé. Son intérêt dépend de la suite, et cette seule image ne suffit pas à expliquer tout l’avantage. Compare surtout ce que l’adversaire peut répondre aux deux coups, plutôt que de mémoriser ce déplacement.",
+            "opportunity": "",
+            "ply": 6,
+            "playedSan": "Cf6"
+          }
+        ],
+        "allMoments": [
+          {
+            "replyLine": [
+              "h5f7"
+            ],
+            "loss": 1037,
+            "severity": "gaffe",
+            "missedMate": false,
+            "sufferedMate": true,
+            "label": "Mat du couloir",
+            "entryId": "mat-back-rank",
+            "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+            "played": "g8f6",
+            "best": "g7g6",
+            "line": [
+              "g7g6",
+              "h5d1",
+              "g8f6",
+              "b1c3",
+              "c6a5",
+              "c4b3"
+            ],
+            "reply": "h5f7",
+            "afterFen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+            "question": "Mon roi a-t-il une case de fuite ?",
+            "title": "Ton roi ne peut plus être sauvé",
+            "risk": "La dame adverse prend ton pion. Ton roi est attaqué et aucun coup ne peut le sauver. La partie est terminée : c’est échec et mat. Il fallait empêcher cette attaque au coup précédent.",
+            "better": "Tu déplaces ton pion. Voici l’autre coup proposé. Son intérêt dépend de la suite, et cette seule image ne suffit pas à expliquer tout l’avantage. Compare surtout ce que l’adversaire peut répondre aux deux coups, plutôt que de mémoriser ce déplacement.",
+            "opportunity": "",
+            "ply": 6,
+            "playedSan": "Cf6"
+          }
+        ],
+        "inaccuracies": [],
+        "analyzedMoves": 3
+      }
+    }
+  }
+]

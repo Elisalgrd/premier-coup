@@ -1,28 +1,13 @@
 import { dueCards } from "./srs.js";
-import { entryStatus } from "../state/schema.js";
 import { dateKey } from "../ui/helpers.js";
+import { nextDailyEntry } from "./daily-courses.js";
 export function sessionPlan(state, entries, today = dateKey()) {
   const minutes = state.preferences.minutes,
-    working = entries.filter(
-      (e) =>
-        ["viewed", "practice", "review"].includes(entryStatus(state, e)) &&
-        !(e.drill && state.entries[e.id]?.drillAt),
-    ),
-    notion =
-      working.find((e) => !e.drill) ||
-      working[0] ||
-      entries.find((e) => entryStatus(state, e) === "new") ||
-      entries[0],
-    due = dueCards(state, today).slice(
-      0,
-      Math.floor((minutes * 0.32 * 60) / 45),
-    ),
-    vision = entries
-      .filter((e) => e.tier === 0)
-      .some((e) => entryStatus(state, e) !== "mastered"),
-    reviews = Math.min(minutes * 0.32, due.length * 0.75),
-    v = vision ? 1 : 0;
-  const tasks = [];
+    notion = nextDailyEntry(state, entries),
+    due = dueCards(state, today).slice(0, minutes === 45 ? 5 : 3),
+    reviews = due.length * 0.75;
+  const tasks = [{ kind: "lesson", label: notion.title, entryId: notion.id,
+    minutes: minutes - reviews - 0.5, count: minutes === 15 ? 4 : minutes === 25 ? 6 : 8 }];
   if (due.length)
     tasks.push({
       kind: "reviews",
@@ -30,29 +15,9 @@ export function sessionPlan(state, entries, today = dateKey()) {
       minutes: reviews,
       cards: due.map((c) => c.id),
     });
-  if (vision)
-    tasks.push({ kind: "vision", label: "Une minute de vision", minutes: v });
-  tasks.push({
-    kind: "lesson",
-    label: notion.title,
-    entryId: notion.id,
-    minutes: minutes * 0.2,
-  });
-  tasks.push({
-    kind: "targeted",
-    label: "Exercices de la leçon",
-    entryId: notion.id,
-    count: minutes === 15 ? 8 : minutes === 25 ? 10 : 12,
-    minutes: minutes * 0.28,
-  });
-  tasks.push({
-    kind: "mixed",
-    label: "Résoudre des problèmes variés",
-    count: minutes === 15 ? 5 : 8,
-    minutes: minutes - reviews - v - minutes * 0.48 - 0.5,
-  });
   tasks.push({ kind: "finish", label: "Ton bilan", minutes: 0.5 });
   return {
+    version: 3,
     day: today,
     minutes,
     tasks,
