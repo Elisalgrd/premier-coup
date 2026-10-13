@@ -1,3 +1,4 @@
+import { CoachAlerts, currentBadge } from "./coach-alerts.js";
 import { playerStrip } from "../ui/player-strip.js";
 import { LiveCoach, coachModes, coachMode } from "./live-coach.js";
 import { CoachPanel } from "./coach-panel.js";
@@ -21,6 +22,7 @@ export async function startGame(ctx, root, entryId = null) {
     epoch = 0,
     coach = null,
     panel = null,
+    alertUI = null,
     alerts = [],
     takebacks = 0,
     increment = 10,
@@ -174,7 +176,7 @@ export async function startGame(ctx, root, entryId = null) {
     if (!takeback(game, alert, { mode: liveCoach, used: takebacks, time })) return false;
     takebacks++;
     busy = false;
-    board.set(game.fen(), { interactive: true, marks: [], arrows: [], last: [] });
+    board.set(game.fen(), { interactive: true, marks: [], arrows: [], last: [], badges: [] });
     $("#game-feedback", root).textContent = `Coup repris. Cherche une meilleure réponse. ${3 - takebacks} reprise${takebacks === 2 ? "" : "s"} restante${takebacks === 2 ? "" : "s"}.`;
     update();
     coach.prepare(game.fen());
@@ -190,8 +192,9 @@ export async function startGame(ctx, root, entryId = null) {
       rememberMistake(ctx.state, gameId, alert);
       persist();
       panel.add(alert);
-      $("#coach-notification", root).hidden = false;
-      $("#coach-notification", root).textContent = `Un conseil sur ton coup ${Math.ceil(ply / 2)} ↓`;
+      board.options.badges = currentBadge(alert, game.history().length, liveCoach);
+      board.render();
+      alertUI.notify(alert);
     }).catch(() => {});
   };
   const launch = (resume = false) => {
@@ -220,19 +223,17 @@ export async function startGame(ctx, root, entryId = null) {
       game.setHeader("Black", side === "b" ? "Toi" : "Adversaire");
     }
     newCoach();
-    root.innerHTML = `<a class="back-link" href="#train">← S’entraîner (partie conservée)</a><header class="activity-header"><div><span class="eyebrow">NIVEAU ${level}</span><h1 id="game-turn">À toi de jouer.</h1><button id="coach-notification" class="text-link" aria-live="polite" hidden></button></div></header><div class="play-layout"><section><div id="player-above"></div><div id="game-board"></div><div id="player-below"></div></section><section class="play-coach"><div id="game-feedback" role="status"></div><button id="game-coach" class="button secondary">Vérifier ma position</button><div id="live-coach-panel"></div><details><summary>Coups joués</summary><p id="game-moves" class="notation"></p></details><button id="game-stop" class="text-link">Terminer et analyser cette partie</button><small>${increment ? `${increment} secondes ajoutées après chaque coup. ` : ""}Le chrono se suspend quand tu quittes cet écran.</small></section></div>`;
+    root.innerHTML = `<a class="back-link" href="#train">← S’entraîner (partie conservée)</a><header class="activity-header"><div><span class="eyebrow">NIVEAU ${level}</span><h1 id="game-turn">À toi de jouer.</h1></div></header><div class="play-layout"><section><div id="player-above"></div><div id="game-board"></div><div id="player-below"></div></section><section class="play-coach"><div id="game-feedback" role="status"></div><button id="game-coach" class="button secondary">Vérifier ma position</button><div id="coach-sheet"><div class="coach-sheet-handle"><span></span><button aria-label="Fermer le conseil">✕</button></div><div id="live-coach-panel"></div></div><details><summary>Coups joués</summary><p id="game-moves" class="notation"></p></details><button id="game-stop" class="text-link">Terminer et analyser cette partie</button><small>${increment ? `${increment} secondes ajoutées après chaque coup. ` : ""}Le chrono se suspend quand tu quittes cet écran.</small></section></div>`;
     panel = new CoachPanel($("#live-coach-panel", root), {
       side, alerts, canTakeback: (alert) => !finished && !!takebackCount(game, alert, liveCoach, takebacks),
       onTakeback: rewind, onDismiss: persist,
     });
     $("#live-coach-panel", root).hidden = liveCoach === "off";
-    $("#coach-notification", root).onclick = () => {
-      $("#live-coach-panel", root).scrollIntoView({ behavior: "smooth", block: "start" });
-      $("#coach-notification", root).hidden = true;
-    };
+    alertUI = new CoachAlerts(root, panel, alerts);
     board = new Board($("#game-board", root), {
       fen: game.fen(),
       flipped: side === "b",
+      onBadge: () => alertUI.open(),
       onMove: (m) => {
         if (busy || disposed || finished || game.turn() !== side) return;
         const fen = game.fen(), timeBefore = { ...time };
@@ -241,6 +242,8 @@ export async function startGame(ctx, root, entryId = null) {
         } catch {
           return;
         }
+        alertUI.close();
+        board.options.badges = [];
         applyIncrement(time, side, increment);
         board.animate(game.fen(), m);
         assess(fen, m, game.history().length, timeBefore);
@@ -288,6 +291,7 @@ export async function startGame(ctx, root, entryId = null) {
     epoch++;
     coach?.close();
     panel?.destroy();
+    alertUI?.destroy();
     clearInterval(clock);
     board?.destroy();
     engine?.close();

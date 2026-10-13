@@ -1,3 +1,9 @@
+# 2.4.1 — Alertes visibles sur mobile
+
+- Badges sur la case du coup fautif, dans les deux orientations.
+- Conseil flottant puis compteur, feuille non modale refermable sans arrêter la partie.
+- Suppression du lien hors écran ; analyses tardives sans badge sur un coup dépassé.
+
 # Changelog
 
 ## 2.4.0
