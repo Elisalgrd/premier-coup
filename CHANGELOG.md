@@ -1,3 +1,10 @@
+# 2.8.0 — Corriger sa propre partie
+
+- Exercices issus de chaque erreur, validation locale à profondeur 12, autres bons coups acceptés.
+- Réponse adverse montrée après un essai raté ; indice après deux essais et solution animée.
+- Une seule mise à jour par position, y compris après rechargement ; erreurs dues demain.
+- Solution enregistrée accessible même si le moteur ne démarre pas.
+
 # 2.7.0 — Bilan et règle pour la prochaine partie
 
 - Liste de toutes les erreurs, chacune reliée à sa scène commentée.
