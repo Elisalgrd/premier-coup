@@ -78,7 +78,7 @@
         "d5",
         "e5"
       ],
-      "text": "Au début de la partie, tu as trois objectifs. Un : prendre de la place au « centre », les 4 cases du milieu (d4, e4, d5, e5). Deux : sortir tes pièces de leur case de départ. Trois : mettre ton roi à l’abri en roquant. Ces trois idées marchent dans toutes les ouvertures."
+      "text": "Au début, vise trois objectifs. Prends de la place sur les quatre cases du milieu, colorées ici. Fais sortir tes cavaliers et tes fous pour qu’ils participent au jeu. Mets ton roi à l’abri avec une tour : ce coup spécial s’appelle le roque. Mais si l’adversaire menace quelque chose, occupe-t’en avant de poursuivre ces objectifs."
     },
     {
       "step": "pourquoi",
@@ -118,7 +118,7 @@
           "e2"
         ]
       ],
-      "text": "Une pièce au centre contrôle beaucoup plus de cases qu’une pièce au bord. Ce cavalier en d4 atteint 8 cases. Dans un coin, il n’en atteindrait que 2. Celui qui tient le centre a plus de place pour ses pièces."
+      "text": "Regarde le cavalier au milieu. Les flèches montrent les huit cases qu’il peut atteindre. Depuis un coin, il n’en atteindrait que deux. Avoir une pièce près du centre lui donne plus de possibilités pour aider des deux côtés. Il faut quand même vérifier qu’elle ne peut pas être prise en y arrivant."
     },
     {
       "step": "principe",
@@ -150,13 +150,19 @@
           "g1"
         ]
       ],
-      "text": "Quand ton cavalier et ton fou côté roi sont sortis, la voie est libre pour roquer. Fais-le tôt, en général avant le 10e coup. Un roi qui reste au milieu se fait attaquer dès que des lignes s’ouvrent."
+      "text": "Le cavalier et le fou du côté droit sont sortis : ils ont libéré le passage. Tu peux mettre ton roi à l’abri avec ta tour. Ce coup spécial s’appelle le roque : le roi avance de deux cases vers la tour, et la tour passe juste de l’autre côté du roi. Regarde le déplacement.",
+      "line": [
+        {
+          "uci": "e1g1",
+          "text": "Le roi rejoint l’abri derrière ses pions. La tour passe à sa gauche et se rapproche du milieu. Le roi ne pouvait pas roquer s’il était attaqué, traversait une case attaquée ou arrivait sur une case attaquée."
+        }
+      ]
     },
     {
       "step": "methode",
       "title": "Les règles pratiques",
       "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-      "text": "Quelques règles simples. Ne bouge pas deux fois la même pièce sans raison. Ne sors pas ta dame trop tôt. Ne va pas chercher un pion loin sur le côté si ça retarde tes autres pièces. Et quand toutes tes pièces sont sorties, tes deux tours doivent pouvoir se voir sur la rangée du fond."
+      "text": "Si rien ne t’oblige à réagir, préfère faire participer une nouvelle pièce plutôt que rejouer sans raison celle qui est déjà sortie. Évite de partir à la chasse aux pions avec ta dame pendant que tes cavaliers et tes fous attendent. Ce sont des repères : une menace urgente ou un gain concret peut justifier une exception."
     },
     {
       "step": "piege",
@@ -165,7 +171,7 @@
       "line": [
         {
           "uci": "d1h5",
-          "text": "Les blancs sortent leur dame dès le 2e coup. Elle menace (ce que l’adversaire pourrait faire de dangereux au prochain coup) le pion en e5 et la case f7."
+          "text": "La dame blanche sort très tôt, sur le côté droit. Elle vise le pion noir du milieu et le pion placé devant le fou noir près du roi."
         },
         {
           "uci": "b8c6",
@@ -173,7 +179,7 @@
         },
         {
           "uci": "f1c4",
-          "text": "Les blancs menacent maintenant Dxf7, qui serait mat."
+          "text": "Le fou blanc sort et rejoint l’attaque contre le pion proche du roi noir. La dame pourrait prendre ce pion et terminer la partie : le roi n’aurait aucune défense."
         },
         {
           "uci": "g7g6",
@@ -181,11 +187,11 @@
         },
         {
           "uci": "h5f3",
-          "text": "La dame revient, et menace encore f7."
+          "text": "La dame recule. Elle vise encore le pion proche du roi noir, cette fois le long d’une ligne droite."
         },
         {
           "uci": "g8f6",
-          "text": "Le cavalier bloque la ligne de la dame vers f7, en se développant. Les noirs ont sorti deux pièces ; la dame blanche a bougé trois fois."
+          "text": "Le cavalier noir sort et coupe le passage de la dame. Les noirs ont fait participer deux cavaliers ; les blancs ont joué deux fois leur dame."
         }
       ],
       "text": "Sortir la dame très tôt semble agressif, mais l’adversaire la chasse en sortant ses pièces. Regarde."
@@ -207,14 +213,14 @@
       "marks": [
         "f7"
       ],
-      "text": "Une règle d’ouverture ne passe jamais avant une menace. Ici, la dame et le fou blancs visent f7 : si les noirs continuent à sortir tranquillement leurs pièces, Dxf7 est mat. On répond d’abord à la menace, puis on reprend le développement."
+      "text": "Les deux flèches convergent vers le pion près du roi noir. Si les noirs ignorent cette attaque, la dame blanche prend ce pion : elle attaque le roi, protégée par son fou, et aucun coup ne sauve le roi. On répond d’abord à ce danger. Ensuite seulement, on reprend la sortie de ses pièces."
     }
   ],
   "exercises": [
     {
       "kind": "move",
       "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-      "prompt": "Après 1.e4 e5, sors une pièce vers le centre.",
+      "prompt": "Les deux camps ont avancé un pion au milieu. Fais maintenant sortir un cavalier ou un fou vers le centre.",
       "solution": [
         "g1f3"
       ],
@@ -225,7 +231,7 @@
         "f1c4"
       ],
       "success": "Une pièce de plus dans le jeu, vers le centre. Bien.",
-      "hint": "Tes cavaliers et ton fou en f1 peuvent sortir.",
+      "hint": "Regarde tes deux cavaliers et ton fou du côté droit : une route leur permet de participer au jeu.",
       "engine": {
         "best": "g1f3",
         "score": 33,
@@ -244,13 +250,13 @@
     {
       "kind": "move",
       "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
-      "prompt": "Tu joues les noirs. Les blancs menacent Dxf7, mat. Protège-toi.",
+      "prompt": "Tu joues les noirs. La dame et le fou blancs visent ensemble le pion proche de ton roi. Empêche la dame de le prendre et de terminer la partie.",
       "solution": [
         "g7g6"
       ],
       "check": "engine",
       "success": "La menace est parée. Ensuite, tu pourras chasser cette dame en sortant tes pièces.",
-      "hint": "Tu peux chasser la dame, ou protéger (pouvoir reprendre si l’adversaire prend cette pièce) f7 avec ta dame.",
+      "hint": "Tu peux chasser la dame blanche avec un pion, ou ajouter une protection au pion visé.",
       "accept": [
         "g7g6",
         "d8e7",

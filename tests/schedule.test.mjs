@@ -33,26 +33,27 @@ test("due queue prioritises game mistakes, then failed puzzles; cards deduplicat
   );
   assert.equal(dueCards(s, "2026-10-10").length, 0);
 });
-test("15/25/45 minute plans preserve total time and review priority", () => {
+test("15/25/45 minute plans teach first and preserve time and due-card priority", () => {
   for (const minutes of [15, 25, 45]) {
     const s = emptyState();
     s.preferences.minutes = minutes;
     for (let i = 0; i < 20; i++)
       addCard(s, { id: "m" + i, type: "mistake" }, "2026-10-10");
     const p = sessionPlan(s, entries, "2026-10-12");
-    assert.equal(p.tasks[0].kind, "reviews");
+    assert.equal(p.tasks[0].kind, "lesson");
+    assert.equal(p.tasks[1].kind, "reviews");
     assert.ok(
       Math.abs(p.tasks.reduce((n, t) => n + t.minutes, 0) - minutes) < 0.01,
     );
-    assert.equal(new Set(p.tasks[0].cards).size, p.tasks[0].cards.length);
+    assert.equal(new Set(p.tasks[1].cards).size, p.tasks[1].cards.length);
     assert.equal(p.tasks.filter((t) => t.kind === "lesson").length, 1);
   }
 });
-test("consolidate before opening another notion", () => {
+test("a viewed notion no longer blocks a new daily course", () => {
   const s = emptyState();
   s.entries["tac-fork"] = { viewedAt: "2026-10-11" };
   assert.equal(
     sessionPlan(s, entries).tasks.find((t) => t.kind === "lesson").entryId,
-    "tac-fork",
+    "ouv-principles",
   );
 });

@@ -21,7 +21,7 @@ export function mistakeMessage(fen, played, before, after, { includeInaccuracies
   if (!cls.severity || (!includeInaccuracies && cls.severity === "imprécision")) return null;
   const tag = labelMistake(fen, played, before.best, before, after);
   const lineGame = new Chess(fen), line = [];
-  for (const move of before.line?.length ? before.line.slice(0, 5) : [before.best]) {
+  for (const move of before.line?.length ? before.line.slice(0, 6) : [before.best]) {
     try { moveUci(lineGame, move); line.push(move); } catch { break; }
   }
   if (!line.length || line[0] !== before.best) return null;
@@ -31,7 +31,11 @@ export function mistakeMessage(fen, played, before, after, { includeInaccuracies
   if (reply && reply !== "(none)") {
     try { replyMove = moveUci(afterGame, reply); } catch { /* Missing PV is not a made-up threat. */ }
   }
-  const base = { ...cls, ...tag, fen, played, best: before.best, line, reply: replyMove ? reply : null, afterFen };
+  const replyGame = new Chess(afterFen), replyLine = [];
+  for (const step of after.line?.length ? after.line.slice(0, 5) : [reply].filter(Boolean)) {
+    try { moveUci(replyGame, step); replyLine.push(step); } catch { break; }
+  }
+  const base = { replyLine, ...cls, ...tag, fen, played, best: before.best, line, reply: replyMove ? reply : null, afterFen };
   const explanation = explainMistake(base);
   return { ...base, question: mistakeQuestion(tag.label), title: explanation.title,
     risk: [explanation.reply, explanation.risk].filter(Boolean).join(" "),

@@ -25,10 +25,11 @@ const labels = {
   piège: "À vérifier",
 };
 export class LessonPlayer {
-  constructor(e, ctx, { onDone = null } = {}) {
-    Object.assign(this, { e, ctx, onDone });
+  constructor(e, ctx, { onDone = null, sessionKey = null, practiceCount = 6 } = {}) {
+    Object.assign(this, { e, ctx, onDone, sessionKey, practiceCount });
     this.stages = lessonStages(e);
-    const saved = ctx.state.entries[e.id]?.lesson;
+    const previous = ctx.state.entries[e.id]?.lesson;
+    const saved = !sessionKey || previous?.sessionKey === sessionKey || (previous?.sessionKey && !previous.finished) ? previous : null;
     this.step =
       saved?.version === 2 && !saved.finished
         ? Math.max(
@@ -36,13 +37,6 @@ export class LessonPlayer {
             this.stages.findIndex((s) => s.key === saved.key),
           )
         : 0;
-    if (saved?.finished && onDone)
-      this.step = Math.max(
-        0,
-        this.stages.findIndex(
-          (s) => s.kind === "exercise" || s.kind === "practice",
-        ),
-      );
     this.restored = saved?.version === 2 ? saved : null;
     this.timers = new Set();
     this.disposed = false;
@@ -72,6 +66,7 @@ export class LessonPlayer {
     const r = (this.ctx.state.entries[this.e.id] ??= {});
     r.lesson = {
       version: 2,
+      sessionKey: this.sessionKey,
       key: this.stages[this.step].key,
       step: this.step,
       demo: this.demoIndex || 0,
@@ -99,7 +94,9 @@ export class LessonPlayer {
     this.save();
     const title =
       stage.kind === "challenge"
-        ? "Essaie, ça ne compte pas."
+        ? "Applique ce que tu viens d’apprendre"
+        : stage.kind === "quiz"
+          ? "As-tu compris l’idée ?"
         : stage.kind === "exercise"
           ? "À toi de jouer"
           : stage.kind === "practice"
@@ -107,7 +104,7 @@ export class LessonPlayer {
             : stage.kind === "retain"
               ? "À retenir"
               : c.title;
-    this.root.innerHTML = `<a class="back-link" href="#catalogue">← Catalogue</a><header class="activity-header"><div><span class="eyebrow">${esc(this.e.title)} · ${this.step + 1} / ${this.stages.length}</span><h1>${esc(title)}</h1></div><button id="lesson-restart" class="text-link">Recommencer</button></header><progress class="lesson-progress" value="${this.step + 1}" max="${this.stages.length}" aria-label="Étape ${this.step + 1} sur ${this.stages.length}"></progress><div class="lesson-flow"><section class="lesson-explanation"><span class="eyebrow">${esc(labels[c.step] || (stage.kind === "exercise" ? "Exercice" : stage.kind === "challenge" ? "Avant l’explication" : ""))}</span><p class="prompt">${esc(interactive ? c.prompt : stage.kind === "practice" ? "Tu vas retrouver cette idée dans plusieurs positions. Les indices restent disponibles." : c.text || "")}</p></section>${!c.boardless && c.fen ? '<section class="lesson-board-panel"><div class="board-top"><div id="lesson-turn"></div><button id="lesson-flip" class="text-link">Retourner ↻</button></div><div id="active-board"></div><p class="demo-comment" id="lesson-notation" aria-live="polite"></p></section>' : ""}<section class="lesson-controls"><div id="lesson-feedback" role="status"></div>${c.line?.length ? '<div class="demo-controls"><button id="lesson-demo" class="button secondary">Voir la démonstration</button><button id="demo-back" class="text-link" hidden>← Coup précédent</button><button id="demo-next" class="button secondary" hidden>Coup suivant →</button><button id="demo-replay" class="text-link" hidden>Rejouer</button><span id="demo-count" class="muted"></span></div>' : ""}<div class="puzzle-actions">${interactive ? '<button class="button secondary" id="lesson-hint" hidden>Un indice</button><button class="button secondary" id="lesson-solution" hidden>Voir la solution</button>' : ""}${stage.kind === "practice" ? '<button class="button primary" id="lesson-practice">Commencer les problèmes →</button>' : ""}<button class="button primary" id="lesson-next" ${(stage.kind === "exercise" && !this.run.done) || stage.kind === "practice" ? "hidden" : ""}>${stage.kind === "challenge" ? "Voir l’explication" : stage.kind === "retain" ? "Terminer la fiche" : "Continuer"} →</button>${this.step > 0 ? '<button class="text-link" id="lesson-back">← Explication précédente</button>' : ""}</div>${stage.kind === "retain" ? `<p class="muted">Cette fiche est conservée dans ton catalogue. Tes révisions t’aideront à retrouver l’idée sans aide.</p>${this.e.id.startsWith("fin-") || this.e.id.startsWith("ouv-") ? `<a class="text-link" href="#train/game/${this.e.id}">Jouer cette position →</a>` : ""}${videoResources(this.e, this.ctx.state.preferences)}${sourceResources(this.e)}` : ""}</section></div>`;
+    this.root.innerHTML = `<a class="back-link" href="#catalogue">← Catalogue</a><header class="activity-header"><div><span class="eyebrow">${esc(this.e.title)} · ${this.step + 1} / ${this.stages.length}</span><h1>${esc(title)}</h1></div><button id="lesson-restart" class="text-link">Recommencer</button></header><progress class="lesson-progress" value="${this.step + 1}" max="${this.stages.length}" aria-label="Étape ${this.step + 1} sur ${this.stages.length}"></progress><div class="lesson-flow"><section class="lesson-explanation"><span class="eyebrow">${esc(labels[c.step] || (stage.kind === "exercise" ? "Exercice" : stage.kind === "challenge" ? "Exercice guidé" : ""))}</span><p class="prompt">${esc(interactive ? c.prompt : stage.kind === "practice" ? "Tu vas retrouver cette idée dans plusieurs positions. Les indices restent disponibles." : c.text || "")}</p></section>${!c.boardless && c.fen ? '<section class="lesson-board-panel"><div class="board-top"><div id="lesson-turn"></div><button id="lesson-flip" class="text-link">Retourner ↻</button></div><div id="active-board"></div><p class="demo-comment" id="lesson-notation" aria-live="polite"></p></section>' : ""}<section class="lesson-controls"><div id="lesson-feedback" role="status"></div>${c.line?.length ? '<div class="demo-controls"><button id="lesson-demo" class="button secondary">Voir la démonstration</button><button id="demo-back" class="text-link" hidden>← Coup précédent</button><button id="demo-next" class="button secondary" hidden>Coup suivant →</button><button id="demo-replay" class="text-link" hidden>Rejouer</button><span id="demo-count" class="muted"></span></div>' : ""}<div class="puzzle-actions">${interactive ? '<button class="button secondary" id="lesson-hint" hidden>Un indice</button><button class="button secondary" id="lesson-solution" hidden>Voir la solution</button>' : ""}${stage.kind === "practice" ? '<button class="button primary" id="lesson-practice">Commencer les problèmes →</button>' : ""}<button class="button primary" id="lesson-next" ${(stage.kind === "exercise" && !this.run.done) || stage.kind === "practice" ? "hidden" : ""}>${stage.kind === "challenge" ? "Continuer la pratique" : stage.kind === "retain" ? "Terminer la fiche" : "Continuer"} →</button>${this.step > 0 ? '<button class="text-link" id="lesson-back">← Explication précédente</button>' : ""}</div>${stage.kind === "retain" ? `<p class="muted">Cette fiche est conservée dans ton catalogue. Tes révisions t’aideront à retrouver l’idée sans aide.</p>${this.e.id.startsWith("fin-") || this.e.id.startsWith("ouv-") ? `<a class="text-link" href="#train/game/${this.e.id}">Jouer cette position →</a>` : ""}${videoResources(this.e, this.ctx.state.preferences)}${sourceResources(this.e)}` : ""}</section></div>`;
     if (c.fen && !c.boardless) {
       this.side = new Chess(
         interactive
@@ -130,6 +127,20 @@ export class LessonPlayer {
         this.board.render();
       };
       this.updateTurn();
+    }
+    const phase = stage.kind === "retain" ? 3 : ["practice", "exercise", "challenge"].includes(stage.kind) ? 2 : stage.kind === "quiz" ? 1 : 0;
+    $(".lesson-progress", this.root).insertAdjacentHTML("beforebegin", `<ol class="course-phases" aria-label="Les étapes du cours">${["Comprendre", "Quiz", "Pratiquer", "Retenir"].map((s,i) => `<li ${i === phase ? 'aria-current="step"' : ''}>${i+1}. ${s}</li>`).join("")}</ol>`);
+    if (stage.key === "objective") $(".lesson-explanation", this.root).insertAdjacentHTML("beforeend", `<p>Tu vas regarder ${this.e.screens.filter(s => s.text).length} explications et exemples, vérifier ce que tu as compris, puis essayer sur l’échiquier.</p>${videoResources(this.e, this.ctx.state.preferences)}`);
+    if (stage.kind === "quiz") {
+      $(".prompt", this.root).textContent = c.question;
+      $("#lesson-next", this.root).hidden = true;
+      $("#lesson-feedback", this.root).innerHTML = `<div class="course-answers">${c.answers.map((answer,i) => `<button class="button secondary" data-answer="${i}">${esc(answer)}</button>`).join("")}</div><p id="quiz-reason" role="status"></p>`;
+      for (const b of this.root.querySelectorAll("[data-answer]")) b.onclick = () => {
+        const correct = Number(b.dataset.answer) === c.correct;
+        $("#quiz-reason", this.root).textContent = (correct ? "Oui. " : "Pas tout à fait. ") + c.feedback;
+        b.setAttribute("aria-pressed", "true");
+        $("#lesson-next", this.root).hidden = !correct;
+      };
     }
     $("#lesson-next", this.root).onclick = () => this.next();
     $("#lesson-restart", this.root).onclick = () => {
@@ -164,16 +175,22 @@ export class LessonPlayer {
       rememberPrinciple(this.ctx.state, this.e);
       this.ctx.save();
     }
+    window.scrollTo(0, 0);
   }
   updateTurn() {
     const el = $("#lesson-turn", this.root);
     if (!el || !this.board) return;
     const turn = this.board.game.turn();
+    if (!this.run) {
+      el.innerHTML = `<strong>Regarde l’exemple.</strong><small>${this.board.game.isCheckmate() ? "Échec et mat : le roi n’a aucune défense." : `C’est aux ${turn === "w" ? "blancs" : "noirs"} de jouer.`}</small>`;
+      return;
+    }
     el.innerHTML = `<strong>Tu joues les ${this.side === "w" ? "blancs" : "noirs"}.</strong><small>${this.board.game.isCheckmate() ? "La partie est terminée : échec et mat." : this.board.game.isStalemate() ? "Personne ne gagne : le roi n’est pas attaqué, mais il ne peut rien jouer." : turn === this.side ? "C’est à toi." : `C’est aux ${turn === "w" ? "blancs" : "noirs"} de jouer.`}</small>`;
   }
   next() {
     if (this.stages[this.step].kind === "retain") {
       this.finished = true;
+      this.ctx.state.entries[this.e.id].lastTaught = dateKey();
       this.save();
       if (this.e.id === "vis-start") {
         this.ctx.state.preferences.tutorialDone = true;
@@ -282,7 +299,7 @@ export class LessonPlayer {
       '<p class="feedback correct">' +
       esc(
         this.run.c.success ||
-          "Bravo, c’est ce coup-là. Voyons pourquoi il marche.",
+          "Bien. " + this.e.retenir,
       ) +
       "</p>";
     $("#lesson-next", this.root).hidden = false;
@@ -403,7 +420,7 @@ export class LessonPlayer {
         if (this.disposed || ticket !== this.turn) return;
         this.sub = {
           destroy: startDrill(this.ctx, this.root, this.e, {
-            rows,
+            rows: rows.slice(0, this.practiceCount),
             scope: "lesson:" + this.e.id,
             onDone,
           }),
@@ -411,7 +428,7 @@ export class LessonPlayer {
         return;
       }
       const rows = pickPuzzles(data.rows, this.ctx.state, this.e.id, {
-        count: 10,
+        count: this.practiceCount,
       }).sort((a, b) => a[3] - b[3]);
       if (!rows.length) {
         onDone();

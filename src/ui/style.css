@@ -2057,3 +2057,82 @@ html[data-theme=dark] .essentials-invite { background:#3d2d38; color:#f7e7ef; }
 
 .import-options { margin-top:30px; border-top:1px solid var(--line); padding-top:20px; }
 .import-options > summary { padding:12px 0; cursor:pointer; }
+
+/* Daily teaching and evidence-based game report. */
+.daily-course { margin-bottom:28px; }
+.daily-course > p { max-width:64ch; line-height:1.7; }
+.daily-course .daily-list strong small { display:block; font-weight:400; line-height:1.5; color:var(--muted); margin-top:5px; }
+.daily-course .daily-list li { grid-template-columns:32px 1fr; }
+.course-phases { list-style:none; display:flex; justify-content:space-between; gap:8px; padding:0; margin:18px 0; color:var(--muted); font-size:13px; }
+.course-phases li[aria-current] { color:var(--ink); font-weight:700; border-bottom:3px solid #895b73; padding-bottom:8px; }
+.course-answers { display:grid; gap:12px; }
+.course-answers .button { text-align:left; white-space:normal; line-height:1.5; }
+.course-answers [aria-pressed=true] { border-color:#895b73; }
+#quiz-reason { line-height:1.7; }
+.course-extras { display:flex; flex-wrap:wrap; gap:12px; }
+.personal-report { max-width:900px; margin:auto; }
+.report-priority { border-radius:18px; padding:26px; background:#efe7ed; border:1px solid #d9c7d2; margin-bottom:24px; }
+.report-priority h2 { font-size:23px; line-height:1.45; margin:12px 0 20px; }
+.report-priority .text-link { display:block; margin-top:18px; line-height:1.6; }
+.report-findings { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.report-fact { border:1px solid var(--line); border-radius:16px; padding:24px; background:var(--paper); }
+.report-fact.strength { border-top:4px solid #648773; }
+.report-fact h2 { font-size:21px; line-height:1.4; }
+.report-fact p { line-height:1.7; font-size:16px; }
+.report-fact .text-link { display:block; margin-top:14px; line-height:1.5; }
+#report-position { margin-top:24px; padding:22px; border:1px solid var(--line); border-radius:16px; scroll-margin-top:14px; }
+#report-proof-board { max-width:420px; margin:auto; }
+#report-proof-text { line-height:1.7; }
+.report-moments { margin:28px 0; }
+.report-moment { display:grid; grid-template-columns:68px 1fr 18px; gap:12px; text-align:left; width:100%; padding:18px 0; border:0; border-bottom:1px solid var(--line); color:var(--ink); background:none; font:inherit; line-height:1.5; }
+.report-moments .button { margin-top:22px; }
+.branch-controls { display:flex; justify-content:center; align-items:center; gap:12px; margin:12px 0 0; font-size:12px; }
+.branch-controls[hidden], #review-audio[hidden] { display:none; }
+.branch-controls .button { min-width:44px; min-height:44px; padding:10px; }
+.branch-outcome:empty { display:none; }
+.branch-outcome { padding-top:12px; border-top:1px solid var(--line); }
+#review-audio { padding-top:16px; }
+#review-audio small { display:block; color:var(--muted); line-height:1.5; font-size:12px; margin-top:10px; }
+html[data-theme=dark] .report-priority { background:#3d2d38; }
+@media(max-width:700px) {
+ .daily-course .pill { font-size:9px; }
+ .session-kicker { flex-wrap:wrap; gap:8px; }
+ .course-phases { font-size:11px; }
+ .report-findings { grid-template-columns:1fr; }
+ .report-priority,.report-fact { padding:20px; }
+ .report-priority h2 { font-size:20px; }
+ .report-fact h2 { font-size:20px; }
+ .guided-explanation { display:block; }
+ .guided-explanation h2 { font-size:17px; }
+ .guided-explanation > p { margin-top:12px; }
+ #review-audio small { display:block; }
+ .guided-board:has(.branch-controls:not([hidden])) #review-board { width:min(100%,290px,max(220px,calc(100dvh - 630px))); }
+}
+
+@media(max-width:700px) {
+ .main:has(.lesson-flow) .topbar { display:none; }
+ .main:has(.lesson-flow) { padding:14px 16px 100px; }
+ .main:has(.lesson-flow) .activity-header { margin:12px 0; }
+ .main:has(.lesson-flow) .activity-header h1 { font-size:23px; line-height:1.25; }
+ .main:has(.lesson-flow) .back-link { margin:0 0 10px; }
+ .main:has(.lesson-flow) .lesson-progress { margin:4px 0 12px; }
+ .lesson-flow { display:flex; flex-direction:column; gap:12px; }
+ .lesson-flow .lesson-board-panel { order:1; width:min(100%,max(250px,calc(100dvh - 590px))); max-width:330px; margin:0 auto; }
+ .lesson-flow .lesson-explanation { order:2; }
+ .lesson-flow .lesson-controls { order:3; margin:0; }
+ .lesson-flow .lesson-explanation > .eyebrow { display:none; }
+ .lesson-flow .lesson-explanation .prompt { font-size:15px; line-height:1.6; margin:0; }
+ .lesson-flow .board-top { margin:0 0 6px; }
+ .lesson-flow .demo-comment { font-size:14px; line-height:1.55; }
+ .course-phases { margin:12px 0; }
+ .daily-course > .button { margin:6px 0 12px; }
+}
+
+@media(max-width:700px) {
+ .main:has(.lesson-flow) .course-phases { margin:8px 0; }
+ .lesson-flow { gap:10px; }
+ .lesson-flow .puzzle-actions { margin-top:0; }
+ .lesson-flow .lesson-board-panel:has(#active-board button:not(:disabled)) { width:100%; max-width:330px; }
+}
+
+@media(max-width:700px) { .guided-actions { position:static; } }

@@ -112,7 +112,7 @@ test("takeback rewinds only the current mistake and at most its reply, restores 
   for (const move of ["e4", "e5", "Nf3"]) game.move(move);
   assert.equal(takebackCount(game, { fen, played: "e2e4", ply: 1 }, "all", 0), 0);
 });
-test("increment, settings and alerts survive backup; next day starts with game mistakes", () => {
+test("increment, settings and alerts survive backup; next day reviews keep game mistakes first after teaching", () => {
   assert.equal(timeControls[0].id, "15+10");
   assert.ok(timeControls.some((t) => t.id === "10+5"));
   const time = { w: 1, b: 3 };
@@ -129,7 +129,7 @@ test("increment, settings and alerts survive backup; next day starts with game m
   state.cards = { "mistake:g:1": { id: "mistake:g:1", type: "mistake", due: "2026-10-12" }, p: { id: "p", type: "puzzle", due: "2026-10-11" } };
   const entries = JSON.parse(fs.readFileSync("curriculum/index.json"));
   assert.equal(dueCards(state, "2026-10-12")[0].type, "mistake");
-  assert.equal(sessionPlan(state, entries, "2026-10-12").tasks[0].cards[0], "mistake:g:1");
+  assert.equal(sessionPlan(state, entries, "2026-10-12").tasks.find(t => t.kind === "reviews").cards[0], "mistake:g:1");
 });
 test("red and green annotations can coexist while the main board stays interactive", () => {
   const game = new Chess(hanging.fen);

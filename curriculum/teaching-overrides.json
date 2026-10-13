@@ -1,0 +1,208 @@
+{
+  "ouv-principles": {
+    "screens": [
+      {
+        "step": "principe",
+        "title": "Trois objectifs pour les 10 premiers coups",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "marks": [
+          "d4",
+          "e4",
+          "d5",
+          "e5"
+        ],
+        "text": "Au début, vise trois objectifs. Prends de la place sur les quatre cases du milieu, colorées ici. Fais sortir tes cavaliers et tes fous pour qu’ils participent au jeu. Mets ton roi à l’abri avec une tour : ce coup spécial s’appelle le roque. Mais si l’adversaire menace quelque chose, occupe-t’en avant de poursuivre ces objectifs."
+      },
+      {
+        "step": "pourquoi",
+        "title": "Pourquoi le centre",
+        "fen": "rnbqkbnr/pppppppp/8/8/3NP3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 1",
+        "arrows": [
+          [
+            "d4",
+            "c6"
+          ],
+          [
+            "d4",
+            "e6"
+          ],
+          [
+            "d4",
+            "f5"
+          ],
+          [
+            "d4",
+            "b5"
+          ],
+          [
+            "d4",
+            "f3"
+          ],
+          [
+            "d4",
+            "b3"
+          ],
+          [
+            "d4",
+            "c2"
+          ],
+          [
+            "d4",
+            "e2"
+          ]
+        ],
+        "text": "Regarde le cavalier au milieu. Les flèches montrent les huit cases qu’il peut atteindre. Depuis un coin, il n’en atteindrait que deux. Avoir une pièce près du centre lui donne plus de possibilités pour aider des deux côtés. Il faut quand même vérifier qu’elle ne peut pas être prise en y arrivant."
+      },
+      {
+        "step": "principe",
+        "title": "Sortir ses pièces",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "arrows": [
+          [
+            "g1",
+            "f3"
+          ],
+          [
+            "b1",
+            "c3"
+          ],
+          [
+            "f1",
+            "c4"
+          ]
+        ],
+        "text": "« Développer » une pièce, c’est la sortir de sa case de départ pour qu’elle participe au jeu. Commence par les cavaliers et les fous, vers le centre. Chaque pièce qui reste chez elle, c’est un joueur de moins dans ton équipe."
+      },
+      {
+        "step": "principe",
+        "title": "Mettre son roi à l’abri",
+        "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+        "arrows": [
+          [
+            "e1",
+            "g1"
+          ]
+        ],
+        "text": "Le cavalier et le fou du côté droit sont sortis : ils ont libéré le passage. Tu peux mettre ton roi à l’abri avec ta tour. Ce coup spécial s’appelle le roque : le roi avance de deux cases vers la tour, et la tour passe juste de l’autre côté du roi. Regarde le déplacement.",
+        "line": [
+          {
+            "uci": "e1g1",
+            "text": "Le roi rejoint l’abri derrière ses pions. La tour passe à sa gauche et se rapproche du milieu. Le roi ne pouvait pas roquer s’il était attaqué, traversait une case attaquée ou arrivait sur une case attaquée."
+          }
+        ]
+      },
+      {
+        "step": "methode",
+        "title": "Les règles pratiques",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "text": "Si rien ne t’oblige à réagir, préfère faire participer une nouvelle pièce plutôt que rejouer sans raison celle qui est déjà sortie. Évite de partir à la chasse aux pions avec ta dame pendant que tes cavaliers et tes fous attendent. Ce sont des repères : une menace urgente ou un gain concret peut justifier une exception."
+      },
+      {
+        "step": "piege",
+        "title": "La dame sortie trop tôt",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "line": [
+          {
+            "uci": "d1h5",
+            "text": "La dame blanche sort très tôt, sur le côté droit. Elle vise le pion noir du milieu et le pion placé devant le fou noir près du roi."
+          },
+          {
+            "uci": "b8c6",
+            "text": "Les noirs protègent leur pion en sortant un cavalier. Une pièce de plus dans le jeu."
+          },
+          {
+            "uci": "f1c4",
+            "text": "Le fou blanc sort et rejoint l’attaque contre le pion proche du roi noir. La dame pourrait prendre ce pion et terminer la partie : le roi n’aurait aucune défense."
+          },
+          {
+            "uci": "g7g6",
+            "text": "Le pion chasse la dame. Les noirs gagnent du temps."
+          },
+          {
+            "uci": "h5f3",
+            "text": "La dame recule. Elle vise encore le pion proche du roi noir, cette fois le long d’une ligne droite."
+          },
+          {
+            "uci": "g8f6",
+            "text": "Le cavalier noir sort et coupe le passage de la dame. Les noirs ont fait participer deux cavaliers ; les blancs ont joué deux fois leur dame."
+          }
+        ],
+        "text": "Sortir la dame très tôt semble agressif, mais l’adversaire la chasse en sortant ses pièces. Regarde."
+      },
+      {
+        "step": "piege",
+        "title": "Les règles cèdent devant les menaces",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+        "arrows": [
+          [
+            "h5",
+            "f7"
+          ],
+          [
+            "c4",
+            "f7"
+          ]
+        ],
+        "marks": [
+          "f7"
+        ],
+        "text": "Les deux flèches convergent vers le pion près du roi noir. Si les noirs ignorent cette attaque, la dame blanche prend ce pion : elle attaque le roi, protégée par son fou, et aucun coup ne sauve le roi. On répond d’abord à ce danger. Ensuite seulement, on reprend la sortie de ses pièces."
+      }
+    ],
+    "exercises": [
+      {
+        "kind": "move",
+        "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "prompt": "Les deux camps ont avancé un pion au milieu. Fais maintenant sortir un cavalier ou un fou vers le centre.",
+        "solution": [
+          "g1f3"
+        ],
+        "check": "list",
+        "accept": [
+          "g1f3",
+          "b1c3",
+          "f1c4"
+        ],
+        "success": "Une pièce de plus dans le jeu, vers le centre. Bien.",
+        "hint": "Regarde tes deux cavaliers et ton fou du côté droit : une route leur permet de participer au jeu.",
+        "engine": {
+          "best": "g1f3",
+          "score": 33,
+          "depth": 16
+        },
+        "alsoGood": [
+          "d2d4",
+          "g1e2",
+          "d2d3",
+          "a2a3",
+          "f1e2",
+          "a2a4",
+          "c2c3"
+        ]
+      },
+      {
+        "kind": "move",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+        "prompt": "Tu joues les noirs. La dame et le fou blancs visent ensemble le pion proche de ton roi. Empêche la dame de le prendre et de terminer la partie.",
+        "solution": [
+          "g7g6"
+        ],
+        "check": "engine",
+        "success": "La menace est parée. Ensuite, tu pourras chasser cette dame en sortant tes pièces.",
+        "hint": "Tu peux chasser la dame blanche avec un pion, ou ajouter une protection au pion visé.",
+        "accept": [
+          "g7g6",
+          "d8e7",
+          "d8f6",
+          "g8h6"
+        ],
+        "engine": {
+          "best": "g7g6",
+          "score": 25,
+          "depth": 16
+        },
+        "alsoGood": []
+      }
+    ]
+  }
+}

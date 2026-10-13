@@ -1,17 +1,18 @@
-<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../src/ui/style.css"><title>Vérification locale de la revue</title><body><div class="app-shell"><aside class="sidebar"><a class="brand" href="#white">premier coup</a><nav><a href="#white">Erreur blancs</a><a href="#black">Erreur noirs</a><a href="#empty">Sans erreur</a><a href="#essentials">Fiche 20/80</a></nav></aside><main class="main"><div id="view"></div></main></div><script type="module">
+<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../src/ui/style.css"><title>Vérification locale de la revue</title><body><div class="app-shell"><aside class="sidebar"><a class="brand" href="#white">premier coup</a><nav><a href="#white">Erreur blancs</a><a href="#black">Erreur noirs</a><a href="#empty">Sans erreur</a><a href="#audit-b">Vraie partie analysée</a><a href="#audit-w">Partie gagnée</a><a href="#essentials">Fiche 20/80</a></nav></aside><main class="main"><div id="view"></div></main></div><script type="module">
 import { startReviewVideo } from '../src/play/review-player.js';
 import { startEssentials } from '../src/views/essentials.js';
 import { startCorrection } from '../src/play/correction-player.js';
 import { emptyState } from '../src/state/schema.js';
 const state=emptyState();let cleanup;
-function load(){
+async function load(){
  cleanup?.();const route=location.hash.slice(1)||'white';
- const ctx={state,save:async()=>{},navigate:path=>location.hash=path};
+ const ctx={entries:[],state,save:async()=>{},navigate:path=>location.hash=path};
+ if(route.startsWith('audit-')) {const rows=await fetch('./personal-engine-audit.json').then(r=>r.json());state.games=[rows.find(x=>x.color===route.slice(-1)).record];cleanup=startReviewVideo(ctx,document.querySelector('#view'),{id:state.games[0].id});return;}
  if(route==='essentials'){cleanup=startEssentials(ctx,document.querySelector('#view'));return;}
  if(route.startsWith('train/correct/')){cleanup=startCorrection(ctx,document.querySelector('#view'),'local-test');return;}
  const black=route==='black',m=black?{fen:'6k1/7p/1b6/8/8/8/8/R6K b - - 0 1',played:'b6a5',best:'h7h6',reply:'a1a5'}:{fen:'r6k/8/8/8/8/1B6/P7/6K1 w - - 0 1',played:'b3a4',best:'a2a3',reply:'a8a4'};
  const moment={...m,ply:1,label:'Pièce laissée en prise',entryId:'proc-blunder-check',severity:'gaffe',line:[m.best]};
- state.games=[{id:'local-test',initialFen:m.fen,moves:[m.played],color:black?'b':'w',headers:{White:'Test blancs',Black:'Test noirs'},analysis:{allMoments:route==='empty'?[]:[moment],moments:[moment]}}];
+ state.games=[{id:'local-test',initialFen:m.fen,moves:[m.played],color:black?'b':'w',headers:{White:'Test blancs',Black:'Test noirs'},analysis:{version:3,decisions:[],allMoments:route==='empty'?[]:[moment],moments:[moment]}}];
  cleanup=startReviewVideo(ctx,document.querySelector('#view'),{id:'local-test'});
 }
 window.addEventListener('hashchange',load);load();

@@ -1,3 +1,11 @@
+# 2.11.0 · Un cours chaque jour, un bilan de ton jeu
+
+- Le parcours quotidien commence par un cours expliqué, puis un quiz commenté, des exercices guidés et une courte pratique du thème. Treize cours prioritaires mêlent bases, tactique, plans avec les pièces, échanges et roi actif. Les leçons vues ne bloquent plus la suivante pendant leur consolidation.
+- Objectif et quatre étapes visibles ; vidéos accessibles au début. Reprise par étape, y compris le lendemain, et séance terminée conservée. Cours d’ouverture clarifié, démonstration du roque et disposition mobile avec plateau avant le texte.
+- Analyse version 3 : conservation des décisions de toute la partie, bilan du début, moment coûteux, mécanismes répétés, bon réflexe vérifié et objectif lié à un cours. Les anciens rapports sont mis à niveau à l’ouverture ; une interruption préserve le rapport précédent.
+- Explications fondées sur les pièces et les suites légales, avec distinction entre coup réellement joué et réponse calculée. Les deux suites se parcourent manuellement, prises et reprises comprises. Le mat prime sur une simple prise ; les défenses par blocage de ligne sont expliquées.
+- Les détails personnels sont écrits et animés. La voix enregistrée accompagne le principe à retenir, avec un libellé explicite ; elle ne prétend plus réciter une analyse personnelle générique. Aucun envoi de parties à un service vocal.
+
 # 2.10.0 · Comprendre ses coups et garder les bons réflexes
 
 - Revue guidée en quatre étapes, arrêtée par défaut : ton coup, sa conséquence, une meilleure idée et le réflexe. Chaque étape se rejoue ; la lecture continue reste facultative.

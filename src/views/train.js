@@ -1,8 +1,9 @@
+import { dailyCourseCard } from "./today.js";
 import { essentialsLink } from "./essentials.js";
 import { pendingAnalysisCard } from "../play/analysis-task.js";
 import { esc } from "../ui/helpers.js";
 export function trainView(entries, state) {
-  return `<header class="page-intro"><span class="eyebrow">CHOISIS TON ENTRAÎNEMENT</span><h1>À toi de jouer.</h1><p>Tu peux t’entraîner directement, sans relancer une leçon.</p></header>${essentialsLink()}${pendingAnalysisCard(state)}<div class="training-grid">${[
+  return `<header class="page-intro"><span class="eyebrow">CHOISIS TON ENTRAÎNEMENT</span><h1>Apprendre, puis essayer.</h1><p>Ton parcours commence par un cours. Les activités libres sont juste en dessous.</p></header>${dailyCourseCard(entries,state)}<div class="section-title"><h2>Pratique libre</h2></div>${essentialsLink()}${pendingAnalysisCard(state)}<div class="training-grid">${[
     [
       "puzzles",
       "◇",
