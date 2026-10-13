@@ -1,4 +1,3 @@
-import { primeReviewSpeech } from "./play/review-speech.js";
 import { startGlossary } from "./ui/glossary.js";
 import { Store } from "./state/store.js";
 import { loadIndex, loadEntry, loadSearch } from "./learn/catalogue.js";
@@ -118,6 +117,7 @@ export async function render() {
         placement: ["./learn/placement.js", "startPlacement"],
         game: ["./play/game.js", "startGame", theme],
         import: ["./play/import-view.js", "startImport", theme],
+        essentials: ["./views/essentials.js", "startEssentials"],
         targeted: ["./learn/targeted-player.js", "startTargeted", theme],
         correct: ["./play/correction-player.js", "startCorrection", theme],
         "review-video": ["./play/review-player.js", "startReviewVideo", { id: theme, ply: detailPly }],
@@ -183,9 +183,6 @@ async function start() {
   }
   await startGlossary();
   await render();
-  document.addEventListener("click", e => {
-    if (e.target.closest('a[href^="#train/review-video/"]')) primeReviewSpeech(store.state.preferences);
-  }, true);
   window.addEventListener("hashchange", () => {
     render();
     window.scrollTo(0, 0);

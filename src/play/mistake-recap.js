@@ -1,7 +1,6 @@
-import { Chess } from "../chess/chess.js";
-import { moveUci, describeMove } from "../chess/notation.js";
+import { explainMistake } from "../chess/coach-explanation.js";
 import { mistakeQuestion } from "../chess/mistake-questions.js";
-import { esc, friendlyMistake } from "../ui/helpers.js";
+import { esc } from "../ui/helpers.js";
 
 export function dominantMistake(moments) {
   const counts = new Map();
@@ -13,9 +12,9 @@ export function dominantMistake(moments) {
 }
 export function mistakeList(record) {
   return [...(record.analysis?.allMoments || record.analysis?.moments || [])].sort((a,b) => a.ply - b.ply).map(m => {
-    const played = describeMove(moveUci(new Chess(m.fen), m.played)), best = describeMove(moveUci(new Chess(m.fen), m.best));
-    const question = m.question || mistakeQuestion(m.label), title = `Coup ${Math.ceil(m.ply / 2)} · ${m.severity === "gaffe" ? "Gaffe" : "Erreur"} · ${m.title || friendlyMistake(m.label)}`;
-    return { ...m, question, title, playedText: played, bestText: best, text: `${title}. Ton coup : ${played} Mieux : ${best} Question à te poser : ${question}` };
+    const explanation = explainMistake(m), played = explanation.played, best = explanation.best + " " + explanation.why;
+    const question = m.question || mistakeQuestion(m.label), title = `Coup ${Math.ceil(m.ply / 2)} · ${m.severity === "gaffe" ? "Gaffe" : "Erreur"} · ${explanation.title}`;
+    return { ...m, question, title, playedText: played, bestText: best, reason: explanation.shortReason, text: `${title}. Ton coup : ${played} Mieux : ${best} Question à te poser : ${question}` };
   });
 }
 export function nextGameRule(record) {
@@ -24,7 +23,7 @@ export function nextGameRule(record) {
 }
 export function mistakeRecapHtml(record) {
   const list = mistakeList(record), rule = nextGameRule(record);
-  return `<section class="mistake-recap"><h2>Tes erreurs dans cette partie</h2>${rule ? `<aside class="next-game-rule"><strong>Ta règle pour la prochaine partie</strong><p>${esc(rule)}</p></aside>` : "<p>Aucune erreur importante détectée. Continue à vérifier ce que ton adversaire menace.</p>"}<ul>${list.map(m => `<li><a href="#train/review-video/${esc(record.id)}/${m.ply}"><strong>${esc(m.title)}</strong><span>Ton coup : ${esc(m.playedText)}</span><span>Mieux : ${esc(m.bestText)}</span><em>${esc(m.question)}</em><small>▶ Revoir cette erreur</small></a></li>`).join("")}</ul>${list.length ? '<button class="button secondary" data-copy-mistakes>Copier la liste</button>' : ""}<div data-copy-fallback></div>${list.length ? `<a class="button primary" href="#train/correct/${esc(record.id)}">Corriger ma partie (${list.length} positions) →</a>` : ""}</section>`;
+  return `<section class="mistake-recap"><h2>Tes erreurs dans cette partie</h2>${rule ? `<aside class="next-game-rule"><strong>Ta règle pour la prochaine partie</strong><p>${esc(rule)}</p></aside>` : "<p>Aucune erreur importante détectée. Continue à vérifier ce que ton adversaire menace.</p>"}<ul>${list.map(m => `<li><a href="#train/review-video/${esc(record.id)}/${m.ply}"><strong>${esc(m.title)}</strong><span>${esc(m.reason)}</span><small>Comprendre sur l’échiquier →</small></a></li>`).join("")}</ul>${list.length ? '<button class="button secondary" data-copy-mistakes>Copier la liste</button>' : ""}<div data-copy-fallback></div>${list.length ? `<a class="button primary" href="#train/correct/${esc(record.id)}">Corriger ma partie (${list.length} position${list.length > 1 ? "s" : ""}) →</a>` : ""}</section>`;
 }
 export function bindMistakeRecap(root, record) {
   const button = root.querySelector("[data-copy-mistakes]"); if (!button) return;

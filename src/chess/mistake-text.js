@@ -1,7 +1,7 @@
+import { explainMistake } from "./coach-explanation.js";
 import { Chess } from "./chess.js";
 import { classify, labelMistake } from "./mistake-core.js";
-import { moveUci, describeMove, pieceName } from "./notation.js";
-import { friendlyMistake } from "../ui/helpers.js";
+import { moveUci } from "./notation.js";
 import { mistakeQuestion } from "./mistake-questions.js";
 export function materialLoss(loss) {
   if (loss >= 800) return "environ la valeur d’une dame";
@@ -19,7 +19,6 @@ export function mistakeMessage(fen, played, before, after, { includeInaccuracies
   if (afterGame.isCheckmate()) return null;
   const cls = classify(before, after);
   if (!cls.severity || (!includeInaccuracies && cls.severity === "imprécision")) return null;
-  const bestGame = new Chess(fen), bestMove = moveUci(bestGame, before.best);
   const tag = labelMistake(fen, played, before.best, before, after);
   const lineGame = new Chess(fen), line = [];
   for (const move of before.line?.length ? before.line.slice(0, 5) : [before.best]) {
@@ -32,20 +31,12 @@ export function mistakeMessage(fen, played, before, after, { includeInaccuracies
   if (reply && reply !== "(none)") {
     try { replyMove = moveUci(afterGame, reply); } catch { /* Missing PV is not a made-up threat. */ }
   }
-  const risk = cls.sufferedMate
-    ? `L’adversaire peut forcer la fin de la partie : ton roi ne pourra plus être sauvé en ${Math.abs(after.score)} coup${Math.abs(after.score) > 1 ? "s" : ""}.`
-    : cls.missedMate
-      ? "Tu pouvais attaquer le roi sans lui laisser de défense. Cette victoire forcée n’est plus disponible."
-      : replyMove
-        ? `Après ton coup : ${describeMove(replyMove)} La position se dégrade d’${materialLoss(cls.loss)}.`
-        : `Ce coup laisse une meilleure position à l’adversaire : l’écart vaut ${materialLoss(cls.loss)}.`;
-  const idea = tag.label === "Capture gratuite ratée" ? " Tu prenais cette pièce sans exposer la tienne à une reprise immédiate."
-    : tag.label === "Mat raté" ? " Cette attaque permettait de terminer la partie sans laisser de défense au roi."
-    : ["Pièce laissée en prise", "Menace adverse ignorée", "Fourchette subie", "Mat du couloir"].includes(tag.label) ? " Ce coup limitait le danger adverse." : " Compare ensuite la réponse adverse.";
-  const opportunity = tag.label === "Capture gratuite ratée" && bestMove.captured
-    ? `L’adversaire t’offrait ${["q", "r"].includes(bestMove.captured) ? "sa" : "son"} ${pieceName[bestMove.captured]} en ${bestMove.to}.` : "";
-  return { ...cls, ...tag, fen, played, best: before.best, line, reply: replyMove ? reply : null,
-    afterFen,
-    question: mistakeQuestion(tag.label), title: friendlyMistake(tag.label), risk, better: describeMove(bestMove) + idea, opportunity };
+  const base = { ...cls, ...tag, fen, played, best: before.best, line, reply: replyMove ? reply : null, afterFen };
+  const explanation = explainMistake(base);
+  return { ...base, question: mistakeQuestion(tag.label), title: explanation.title,
+    risk: [explanation.reply, explanation.risk].filter(Boolean).join(" "),
+    better: explanation.best + " " + explanation.why,
+    opportunity: explanation.bestReason === "bestTake" ? "Une pièce adverse pouvait être prise sans reprise immédiate." : "" };
+
 }
 

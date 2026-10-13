@@ -5,7 +5,8 @@ import { mistakeList, nextGameRule, dominantMistake } from "../src/play/mistake-
 const m={fen:new Chess().fen(),played:'e2e4',best:'d2d4',severity:'gaffe',label:'Mat raté',ply:1,loss:200};
 test('list is chronological, human-readable and links the right question',()=>{
  const list=mistakeList({analysis:{allMoments:[{...m,ply:3},m]}});
- assert.deepEqual(list.map(x=>x.ply),[1,3]);assert.match(list[0].playedText,/pion de e2 à e4/);assert.match(list[0].bestText,/pion de d2 à d4/);assert.ok(list[0].question);
+ assert.deepEqual(list.map(x=>x.ply),[1,3]);assert.match(list[0].playedText,/ton pion/);assert.match(list[0].bestText,/au centre/);assert.ok(list[0].question);
+ assert.doesNotMatch(list[0].playedText + list[0].bestText,/\b[a-h][1-8]\b/);
 });
 test('next rule favours frequency, then the largest loss, with a quiet empty result',()=>{
  const other={...m,label:'Mat du couloir',loss:400};

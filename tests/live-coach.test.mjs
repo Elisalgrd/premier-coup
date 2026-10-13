@@ -20,23 +20,25 @@ const messageOf = (f) => coachMessage(f.fen, f.played, beforeOf(f), f.after);
 test("coach explains a hanging piece, fork, missed mate, free capture and ignores good moves", () => {
   const message = messageOf(hanging);
   assert.equal(message.label, "Pièce laissée en prise");
-  assert.match(message.risk, /prennent le fou/);
-  assert.match(message.risk, /cavalier ou un fou/);
+  assert.match(message.risk, /prend ton fou/);
+  assert.match(message.risk, /ne peux pas reprendre/);
+  assert.doesNotMatch(message.risk, /environ la valeur/);
   const fork = messageOf({
     fen: "7k/8/8/8/2n5/8/8/1Q3R1K w - - 0 1", played: "h1h2", best: "f1f8",
     before: { type: "cp", score: 0 }, after: { type: "cp", score: 300, line: ["c4d2"] },
   });
   assert.equal(fork.label, "Fourchette subie");
-  assert.match(fork.risk, /cavalier de c4 à d2/);
+  assert.match(fork.risk, /cavalier/);
+  assert.match(fork.risk, /deux des tiennes/);
   const mate = messageOf(fixtures[5]);
   assert.equal(mate.label, "Mat raté");
-  assert.match(mate.better, /roi ne peut plus être sauvé/);
+  assert.match(mate.better, /aucune défense légale/);
   const free = messageOf({
     fen: "6k1/8/8/3r4/8/8/8/3Q2K1 w - - 0 1", played: "g1f1", best: "d1d5",
     before: { type: "cp", score: 500 }, after: { type: "cp", score: 500, line: ["d5d1"] },
   });
   assert.equal(free.label, "Capture gratuite ratée");
-  assert.equal(free.opportunity, "L’adversaire t’offrait sa tour en d5.");
+  assert.match(free.opportunity, /sans reprise immédiate/);
   for (const m of [message, fork, mate, free]) {
     assert.doesNotMatch(m.risk + m.better, /centipion|\bcp\b|\+\d\.\d/);
     const game = new Chess(m.fen);

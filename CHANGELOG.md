@@ -1,3 +1,11 @@
+# 2.10.0 · Comprendre ses coups et garder les bons réflexes
+
+- Revue guidée en quatre étapes, arrêtée par défaut : ton coup, sa conséquence, une meilleure idée et le réflexe. Chaque étape se rejoue ; la lecture continue reste facultative.
+- Explications tirées des positions légales : prise sans reprise immédiate, échange, double attaque, roi attaqué et occasions de terminer la partie. Aucune estimation du moteur n’est présentée comme une pièce réellement perdue. Les anciens rapports profitent aussi des nouveaux textes.
+- 41 séquences originales avec narration masculine neuronale préenregistrée, sous-titres et animations. Plus de voix du système dans la revue. Lecture locale et mise en cache des fichiers ; aucune partie transmise au service vocal.
+- Fiche « Les essentiels 20/80 » accessible depuis l’accueil et l’entraînement : quatre questions dans l’ordre, sept principes expliqués et 18 étapes illustrées. Le roi actif en fin de partie est distingué du roi à protéger au début.
+- Les parties enregistrées précèdent les formulaires d’import. Le rapport conduit à la même revue guidée, puis aux exercices, sans trois lecteurs concurrents.
+
 # 2.9.1 — Sous-titres plus lisibles sur iPhone
 
 - Davantage de place pour les explications sous le plateau, sans décaler les commandes de lecture.

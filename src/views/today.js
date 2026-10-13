@@ -1,3 +1,4 @@
+import { essentialsLink } from "./essentials.js";
 import { pendingAnalysisCard } from "../play/analysis-task.js";
 import { sessionPlan } from "../learn/session.js";
 import { dueCards } from "../learn/srs.js";
@@ -8,7 +9,7 @@ export function dailyView(entries, state) {
         ? state.session
         : sessionPlan(state, entries),
     due = dueCards(state).length;
-  return `<header class="page-intro"><span class="eyebrow">${new Intl.DateTimeFormat("fr-FR", { weekday: "long", day: "numeric", month: "long" }).format(new Date()).toUpperCase()}</span><h1>Un meilleur coup,<br>chaque jour.</h1><p>Tes révisions d’abord, puis une idée à retrouver sur l’échiquier.</p></header><div class="overview"><span><strong>${state.preferences.minutes} min</strong>ton rythme</span><span><strong>${due}</strong>à revoir aujourd’hui</span><span><strong>${state.ratings.global.value}</strong>ton niveau en problèmes</span></div><p class="level-explanation">Ce score sert à choisir tes problèmes. Il évolue avec tes réponses et reste propre à cette app.</p>${pendingAnalysisCard(state)}<section class="session-card"><div class="session-kicker"><span class="eyebrow">TA SÉANCE PERSONNALISÉE</span><span class="pill">${s.index ? "EN COURS" : state.entries[s.tasks.find((t) => t.kind === "lesson")?.entryId]?.viewedAt ? "À REVOIR" : "PRÊTE"}</span></div><h2>${esc(s.tasks.find((t) => t.kind === "lesson")?.label || "Consolider tes réflexes")}</h2><ol class="daily-list">${s.tasks
+  return `<header class="page-intro"><span class="eyebrow">${new Intl.DateTimeFormat("fr-FR", { weekday: "long", day: "numeric", month: "long" }).format(new Date()).toUpperCase()}</span><h1>Un meilleur coup,<br>chaque jour.</h1><p>Tes révisions d’abord, puis une idée à retrouver sur l’échiquier.</p></header><div class="overview"><span><strong>${state.preferences.minutes} min</strong>ton rythme</span><span><strong>${due}</strong>à revoir aujourd’hui</span><span><strong>${state.ratings.global.value}</strong>ton niveau en problèmes</span></div><p class="level-explanation">Ce score sert à choisir tes problèmes. Il évolue avec tes réponses et reste propre à cette app.</p>${essentialsLink()}${pendingAnalysisCard(state)}<section class="session-card"><div class="session-kicker"><span class="eyebrow">TA SÉANCE PERSONNALISÉE</span><span class="pill">${s.index ? "EN COURS" : state.entries[s.tasks.find((t) => t.kind === "lesson")?.entryId]?.viewedAt ? "À REVOIR" : "PRÊTE"}</span></div><h2>${esc(s.tasks.find((t) => t.kind === "lesson")?.label || "Consolider tes réflexes")}</h2><ol class="daily-list">${s.tasks
     .filter((t) => t.kind !== "finish")
     .map(
       (t, i) =>
