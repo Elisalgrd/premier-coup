@@ -1,3 +1,4 @@
+import { nextGameRule } from "./mistake-recap.js";
 import { CoachAlerts, currentBadge } from "./coach-alerts.js";
 import { playerStrip } from "../ui/player-strip.js";
 import { LiveCoach, coachModes, coachMode } from "./live-coach.js";
@@ -41,7 +42,9 @@ export async function startGame(ctx, root, entryId = null) {
     side = initial.split(" ")[1];
   }
   const saved = ctx.state.activeGame;
-  root.innerHTML = `<a class="back-link" href="#train">← S’entraîner</a><header class="page-intro"><span class="eyebrow">JOUER, PUIS COMPRENDRE</span><h1>Une partie à ton rythme.</h1><p>Les premiers niveaux font des erreurs. Le coach explique tes erreurs après tes coups. Tu peux aussi vérifier ta position cinq fois avant de jouer.</p></header><section class="session-card"><label class="form-label">Adversaire<select id="game-level">${["1 · Découverte (repère ≈ 400)", "2 · Premiers réflexes (≈ 600)", "3 · Consolidation (≈ 800)", "4 · Un adversaire attentif", "5 · Des menaces à repérer", "6 · Un vrai défi", "7 · Peu d’erreurs à exploiter", "8 · Le défi le plus difficile"].map((x, i) => `<option value="${i + 1}">${x}</option>`).join("")}</select></label><label class="form-label">Tu joues<select id="game-color"><option value="w" ${side === "w" ? "selected" : ""}>Les blancs</option><option value="b" ${side === "b" ? "selected" : ""}>Les noirs</option></select></label><label class="form-label">Temps par camp<select id="game-time">${timeControls.map((t) => `<option value="${t.id}">${t.label}</option>`).join("")}</select></label><p class="small muted">Les secondes ajoutées après chaque coup te laissent le temps de vérifier les menaces.</p><label class="form-label">Coach en direct<select id="game-live-coach">${Object.entries(coachModes).map(([key, label]) => `<option value="${key}" ${key === liveCoach ? "selected" : ""}>${label}</option>`).join("")}</select></label><button id="game-start" class="button primary">Commencer →</button>${saved && !entryId ? '<button id="game-resume" class="button secondary">Reprendre ma partie →</button>' : ""}</section>`;
+  const reminder = nextGameRule(ctx.state.games.at(-1));
+  let reminderShown = false;
+  root.innerHTML = `<a class="back-link" href="#train">← S’entraîner</a><header class="page-intro"><span class="eyebrow">JOUER, PUIS COMPRENDRE</span><h1>Une partie à ton rythme.</h1><p>Les premiers niveaux font des erreurs. Le coach explique tes erreurs après tes coups. Tu peux aussi vérifier ta position cinq fois avant de jouer.</p></header>${reminder ? `<aside class="next-game-rule"><strong>Rappel de ta dernière partie</strong><p>${esc(reminder)}</p></aside>` : ""}<section class="session-card"><label class="form-label">Adversaire<select id="game-level">${["1 · Découverte (repère ≈ 400)", "2 · Premiers réflexes (≈ 600)", "3 · Consolidation (≈ 800)", "4 · Un adversaire attentif", "5 · Des menaces à repérer", "6 · Un vrai défi", "7 · Peu d’erreurs à exploiter", "8 · Le défi le plus difficile"].map((x, i) => `<option value="${i + 1}">${x}</option>`).join("")}</select></label><label class="form-label">Tu joues<select id="game-color"><option value="w" ${side === "w" ? "selected" : ""}>Les blancs</option><option value="b" ${side === "b" ? "selected" : ""}>Les noirs</option></select></label><label class="form-label">Temps par camp<select id="game-time">${timeControls.map((t) => `<option value="${t.id}">${t.label}</option>`).join("")}</select></label><p class="small muted">Les secondes ajoutées après chaque coup te laissent le temps de vérifier les menaces.</p><label class="form-label">Coach en direct<select id="game-live-coach">${Object.entries(coachModes).map(([key, label]) => `<option value="${key}" ${key === liveCoach ? "selected" : ""}>${label}</option>`).join("")}</select></label><button id="game-start" class="button primary">Commencer →</button>${saved && !entryId ? '<button id="game-resume" class="button secondary">Reprendre ma partie →</button>' : ""}</section>`;
   const persist = () => {
     ctx.state.activeGame = {
       id: gameId,
@@ -243,6 +246,7 @@ export async function startGame(ctx, root, entryId = null) {
         } catch {
           return;
         }
+        if (!reminderShown && reminder && liveCoach !== "off") { alertUI.remind(reminder); reminderShown = true; }
         alertUI.close();
         board.options.badges = [];
         applyIncrement(time, side, increment);

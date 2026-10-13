@@ -1,3 +1,4 @@
+import { dominantMistake } from "./mistake-recap.js";
 import { gameAt } from "../ui/player-strip.js";
 import { moveUci, describeMove } from "../chess/notation.js";
 import { mistakeQuestion } from "../chess/mistake-questions.js";
@@ -11,13 +12,8 @@ export function buildReviewScript(record, onlyPly = null) {
     scenes.push({ kind, fen: g.fen(), basePly, path: [...path], move, arrows: move && color ? [[move.slice(0, 2), move.slice(2, 4), color]] : [], text, minMs, ply });
   };
   if (!moments.length) return [{ kind: "intro", fen: initial, basePly: 0, path: [], move: null, arrows: [], text: "Aucune erreur importante détectée, bravo. Continue à vérifier les menaces avant chaque coup.", minMs: 3000 }];
-  const counts = new Map();
-  for (const m of moments) {
-    const item = counts.get(m.label) || { count: 0, loss: 0, moment: m };
-    item.count++; item.loss = Math.max(item.loss, m.loss || 0); counts.set(m.label, item);
-  }
-  const repeated = [...counts.values()].sort((a, b) => b.count - a.count || b.loss - a.loss)[0];
-  add("intro", 0, [], null, `Dans cette partie, ${moments.length} erreur${moments.length > 1 ? "s" : ""} mérite${moments.length > 1 ? "nt" : ""} ton attention.${repeated.count > 1 ? ` ${repeated.count} fois la même : ${repeated.moment.title}.` : ""} On les revoit une par une.`, 2000);
+  const repeated = dominantMistake(moments);
+  add("intro", 0, [], null, `Dans cette partie, ${moments.length} erreur${moments.length > 1 ? "s" : ""} mérite${moments.length > 1 ? "nt" : ""} ton attention.${repeated.count > 1 ? ` ${repeated.count} fois la même : ${repeated.title}.` : ""} On les revoit une par une.`, 2000);
   let cursor = 0;
   for (const m of moments) {
     if (!onlyPly) for (let i = cursor; i < m.ply - 1; i++) add("fast", i, [], record.moves[i], "", 600);
@@ -36,7 +32,7 @@ export function buildReviewScript(record, onlyPly = null) {
     add("takeaway", m.ply - 1, [], null, m.question || mistakeQuestion(m.label), 3000, m.ply);
     cursor = m.ply - 1;
   }
-  add("outro", record.moves.length, [], null, `Ta règle pour la prochaine partie : ${repeated.moment.question || mistakeQuestion(repeated.moment.label)} Maintenant, retrouve toi-même les meilleurs coups.`, 2500);
+  add("outro", record.moves.length, [], null, `Ta règle pour la prochaine partie : ${repeated.question || mistakeQuestion(repeated.label)} Maintenant, retrouve toi-même les meilleurs coups.`, 2500);
   return scenes;
 }
 

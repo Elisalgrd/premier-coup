@@ -27,6 +27,11 @@ export class CoachAlerts {
     moveSound();
     this.timer = setTimeout(() => this.compact(), 4000);
   }
+  remind(text) {
+    clearTimeout(this.timer);
+    this.host.innerHTML = `<div class="coach-toast" role="status">Rappel : ${esc(text)}</div>`;
+    this.timer = setTimeout(() => this.alerts.length ? this.compact() : this.host.replaceChildren(), 6000);
+  }
   compact() { this.host.innerHTML = `<button class="coach-toast compact" aria-label="Voir les ${this.alerts.length} conseils du coach">⚠ ${this.alerts.length}</button>`; }
   open() {
     const alert = this.latest || this.alerts.at(-1);
