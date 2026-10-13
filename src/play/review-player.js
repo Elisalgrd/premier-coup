@@ -12,9 +12,10 @@ import { esc, $ } from "../ui/helpers.js";
 export function startReviewVideo(ctx, root, { id, ply } = {}) {
   const record = ctx.state.games.find(g => g.id === id);
   if (!record) { root.innerHTML = '<p>Cette partie est introuvable.</p><a href="#train/import">Mes parties</a>'; return; }
-  let disposed = false, engine, board, timeline;
+  let disposed = false, engine, board, timeline, resizeObserver;
   const controller = new AbortController();
   const finish = () => {
+    resizeObserver?.disconnect();
     board?.destroy();
     root.innerHTML = `<a href="#train/import" class="back-link">← Mes parties</a><h1>Comprendre, puis retrouver.</h1>${mistakeRecapHtml(record)}`;
     bindMistakeRecap(root, record);
@@ -32,6 +33,15 @@ export function startReviewVideo(ctx, root, { id, ply } = {}) {
     const scenes = buildReviewScript(record, Number(ply) || null), chapters = scenes.map((s, i) => ({ ...s, index: i })).filter(s => s.kind === "before");
     root.innerHTML = `<section class="review-video"><header><a class="back-link" href="#train/import">← Mes parties</a><span id="review-chapter">Ta revue commentée</span></header><div class="review-stage"><div id="video-board"></div><div class="review-caption"><span class="eyebrow" id="video-kind"></span><p id="video-subtitle" aria-live="off"></p></div></div><div class="review-controls"><div class="review-chapters" aria-label="Chapitres de la revue">${chapters.map((s,i) => `<button data-chapter="${s.index}" aria-label="Erreur ${i+1}, coup ${Math.ceil(s.ply/2)}">${i+1}</button>`).join("")}</div><div class="review-transport"><button id="video-prev" aria-label="Erreur précédente">⏮</button><button id="video-play" class="button primary">Pause</button><button id="video-next" aria-label="Erreur suivante">⏭</button><button id="video-replay" aria-label="Rejouer cette scène">↺</button><label>Vitesse<select id="video-speed"><option value="1">1×</option><option value="1.25">1,25×</option><option value="1.5">1,5×</option></select></label></div><button id="video-skip" class="text-link">Passer l’avance rapide</button></div></section>`;
     board = new PlayerBoard($("#video-board", root), gameAt(record, 0), { side: record.color, names: { w: record.headers.White, b: record.headers.Black } });
+    const fitCaption = () => {
+      if (!matchMedia("(max-width:700px)").matches || !$("#video-subtitle", root)) return;
+      const height = Math.max(100, $("#video-subtitle", root).scrollHeight + 50) + "px";
+      if (root.style.getPropertyValue("--review-caption-height") !== height) root.style.setProperty("--review-caption-height", height);
+    };
+    if (globalThis.ResizeObserver) {
+      resizeObserver = new ResizeObserver(fitCaption);
+      resizeObserver.observe($(".review-caption", root));
+    }
     const labels = { intro: "Ta partie, expliquée", fast: "Avance rapide", before: "Avant ton coup", played: "Ton coup", reply: "Le danger", best: "Une meilleure idée", line: "La suite", takeaway: "À retenir", outro: "Ta prochaine partie" };
     timeline = new ReviewTimeline(scenes, {
       preferences: ctx.state.preferences,
@@ -42,6 +52,7 @@ export function startReviewVideo(ctx, root, { id, ply } = {}) {
         if (scene.move) { moveUci(g, scene.move); board.animate(g, scene.move, 500 / speed, { arrows: scene.arrows }); }
         $("#video-subtitle", root).textContent = scene.text || "La partie avance jusqu’à ta prochaine erreur…";
         $("#video-kind", root).textContent = labels[scene.kind];
+        fitCaption();
         $("#review-chapter", root).textContent = scene.ply ? `Coup ${Math.ceil(scene.ply / 2)}` : "Ta revue commentée";
       },
       onChange: t => {
@@ -60,5 +71,5 @@ export function startReviewVideo(ctx, root, { id, ply } = {}) {
     timeline.play();
   };
   start().catch(() => { if (!disposed) root.innerHTML = `<h1>La préparation a été interrompue.</h1><p>Ta partie reste enregistrée.</p><a class="button primary" href="#train/import">Reprendre depuis Mes parties</a>`; });
-  return () => { disposed = true; controller.abort(); engine?.close(); timeline?.destroy(); board?.destroy(); };
+  return () => { disposed = true; controller.abort(); engine?.close(); timeline?.destroy(); board?.destroy(); resizeObserver?.disconnect(); };
 }

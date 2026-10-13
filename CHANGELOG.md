@@ -1,3 +1,7 @@
+# 2.9.1 — Sous-titres plus lisibles sur iPhone
+
+- Davantage de place pour les explications sous le plateau, sans décaler les commandes de lecture.
+
 # 2.9.0 — Repérer avant de jouer, renforcer après
 
 - Signaux discrets de menace ou d’occasion, sans donner la pièce ni la case.
