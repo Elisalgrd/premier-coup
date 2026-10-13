@@ -1,3 +1,9 @@
+# 2.7.0 — Bilan et règle pour la prochaine partie
+
+- Liste de toutes les erreurs, chacune reliée à sa scène commentée.
+- Règle choisie par fréquence puis gravité ; rappel à la partie suivante.
+- Copie du bilan dans les notes avec solution de repli sans presse-papiers.
+
 # 2.6.0 — Revue animée et commentée
 
 - Relecture locale avec narration française, sous-titres, flèches et chapitres.

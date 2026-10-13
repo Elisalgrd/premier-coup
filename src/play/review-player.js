@@ -1,3 +1,4 @@
+import { mistakeRecapHtml, bindMistakeRecap } from "./mistake-recap.js";
 import { Engine } from "../chess/engine.js";
 import { moveUci } from "../chess/notation.js";
 import { PlayerBoard, gameAt } from "../ui/player-strip.js";
@@ -15,7 +16,8 @@ export function startReviewVideo(ctx, root, { id, ply } = {}) {
   const controller = new AbortController();
   const finish = () => {
     board?.destroy();
-    root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>À toi de retrouver les coups.</h1><p>Tu as revu ta partie. Essaie maintenant de corriger tes erreurs sans aide.</p><a class="button primary" href="#train/mistakes">Retravailler mes erreurs →</a><a href="#train/import" class="text-link">Mes parties</a></section>`;
+    root.innerHTML = `<a href="#train/import" class="back-link">← Mes parties</a><h1>Comprendre, puis retrouver.</h1>${mistakeRecapHtml(record)}<a class="button primary" href="#train/mistakes">Retravailler mes erreurs →</a>`;
+    bindMistakeRecap(root, record);
   };
   const start = async () => {
     if (!hasCompleteAnalysis(record)) {
