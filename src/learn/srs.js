@@ -43,7 +43,7 @@ export function rememberPuzzle(state, row, theme) {
   });
 }
 export function rememberMistake(state, gameId, m) {
-  return addCard(state, {
+  const data = {
     id: "mistake:" + gameId + ":" + m.ply,
     type: "mistake",
     entryId: m.entryId,
@@ -53,7 +53,10 @@ export function rememberMistake(state, gameId, m) {
       prompt: "Trouve une meilleure réponse dans ta partie.",
     },
     principle: m.label,
-  });
+  };
+  const card = addCard(state, data);
+  // The same ply can be replayed after a takeback; retain learning history but refresh its position.
+  return Object.assign(card, data);
 }
 export function rememberPrinciple(state, e) {
   addCard(state, {

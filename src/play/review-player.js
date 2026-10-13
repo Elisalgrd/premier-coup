@@ -16,7 +16,7 @@ export function startReviewVideo(ctx, root, { id, ply } = {}) {
   const controller = new AbortController();
   const finish = () => {
     board?.destroy();
-    root.innerHTML = `<a href="#train/import" class="back-link">← Mes parties</a><h1>Comprendre, puis retrouver.</h1>${mistakeRecapHtml(record)}<a class="button primary" href="#train/mistakes">Retravailler mes erreurs →</a>`;
+    root.innerHTML = `<a href="#train/import" class="back-link">← Mes parties</a><h1>Comprendre, puis retrouver.</h1>${mistakeRecapHtml(record)}`;
     bindMistakeRecap(root, record);
   };
   const start = async () => {

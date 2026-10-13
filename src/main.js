@@ -118,6 +118,7 @@ export async function render() {
         placement: ["./learn/placement.js", "startPlacement"],
         game: ["./play/game.js", "startGame", theme],
         import: ["./play/import-view.js", "startImport", theme],
+        correct: ["./play/correction-player.js", "startCorrection", theme],
         "review-video": ["./play/review-player.js", "startReviewVideo", { id: theme, ply: detailPly }],
         mistakes: [
           "./learn/reviews.js",
