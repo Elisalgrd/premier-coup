@@ -12,6 +12,7 @@ export function boardHtml(
     targets = [],
     marks = [],
     arrows = [],
+    badges = [],
     interactive = false,
     last = [],
     arrowColor = null,
@@ -37,7 +38,7 @@ export function boardHtml(
     )
     .join(
       "",
-    )}</div><svg class="board-arrows ${arrowColor === "danger" ? "danger-arrows" : ""}" viewBox="0 0 800 800" aria-hidden="true"><defs><marker id="${id}" markerWidth="3" markerHeight="3" refX="1.5" refY="1.5" orient="auto"><path d="M0 0L3 1.5L0 3Z" fill="currentColor"/></marker>${["danger", "good"].map((color) => `<marker id="${id}-${color}" class="${color}-arrow" markerWidth="3" markerHeight="3" refX="1.5" refY="1.5" orient="auto"><path d="M0 0L3 1.5L0 3Z" fill="currentColor"/></marker>`).join("")}</defs>${arrows
+    )}</div><div class="board-badges">${badges.filter(b => /^[a-h][1-8]$/.test(b.square)).map(b => `<button type="button" class="board-badge ${b.kind === "gaffe" ? "blunder" : "error"}" data-badge="${b.square}" style="left:${files.indexOf(b.square[0]) * 12.5 + 8}%;top:${ranks.indexOf(b.square[1]) * 12.5}%" aria-label="${b.kind === "gaffe" ? "Gaffe" : "Erreur"} en ${b.square} : voir le conseil">${b.kind === "gaffe" ? "??" : "?"}</button>`).join("")}</div><svg class="board-arrows ${arrowColor === "danger" ? "danger-arrows" : ""}" viewBox="0 0 800 800" aria-hidden="true"><defs><marker id="${id}" markerWidth="3" markerHeight="3" refX="1.5" refY="1.5" orient="auto"><path d="M0 0L3 1.5L0 3Z" fill="currentColor"/></marker>${["danger", "good"].map((color) => `<marker id="${id}-${color}" class="${color}-arrow" markerWidth="3" markerHeight="3" refX="1.5" refY="1.5" orient="auto"><path d="M0 0L3 1.5L0 3Z" fill="currentColor"/></marker>`).join("")}</defs>${arrows
     .map(([a, b, color]) => {
       const [x1, y1] = xy(a),
         [x2, y2] = xy(b);
@@ -88,6 +89,8 @@ export class Board {
         this.suppressClick = false;
         return;
       }
+      const badge = e.target.closest("[data-badge]");
+      if (badge) { this.options.onBadge?.(badge.dataset.badge); return; }
       const sq = e.target.closest("[data-square]")?.dataset.square;
       if (sq) this.tap(sq);
     };
