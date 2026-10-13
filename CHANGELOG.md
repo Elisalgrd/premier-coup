@@ -1,3 +1,10 @@
+# 2.9.0 — Repérer avant de jouer, renforcer après
+
+- Signaux discrets de menace ou d’occasion, sans donner la pièce ni la case.
+- Recherche du coach réutilisée ; bilan des signaux et réponses vérifiées.
+- Priorité sur les dix dernières parties et séries mêlant ses erreurs à des positions Lichess du même thème.
+- Série reprenable, aucune remise à zéro de la progression.
+
 # 2.8.0 — Corriger sa propre partie
 
 - Exercices issus de chaque erreur, validation locale à profondeur 12, autres bons coups acceptés.

@@ -22,6 +22,7 @@ export const emptyState = () => ({
   exercise: null,
   drill: null,
   activeGame: null,
+  targeted: null,
   placement: null,
   notes: {},
   legacy: null,
@@ -51,6 +52,7 @@ export function validateState(raw) {
   s.exercise = raw.exercise || null;
   s.drill = raw.drill || null;
   s.activeGame = raw.activeGame || null;
+  s.targeted = raw.targeted || null;
   s.placement = raw.placement || null;
   s.woodpecker = raw.woodpecker || null;
   s.legacy = raw.legacy || null;

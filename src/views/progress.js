@@ -1,3 +1,4 @@
+import { mostFrequentMistake } from "../learn/targeted.js";
 import { entryStatus } from "../state/schema.js";
 import { dueCards } from "../learn/srs.js";
 import {
@@ -9,6 +10,7 @@ import {
 } from "../ui/helpers.js";
 import { tiers } from "./catalogue.js";
 export function progressView(entries, state) {
+  const priority = mostFrequentMistake(state);
   const activity = new Set([
     ...Object.keys(state.days),
     ...state.history.map((h) => h.day),
@@ -47,11 +49,11 @@ export function progressView(entries, state) {
       .sort((a, b) => b[1].attempts - a[1].attempts),
     errors = {};
   for (const m of state.games
-    .slice(-20)
-    .flatMap((g) => g.analysis?.moments || []))
+    .slice(-10)
+    .flatMap((g) => g.analysis?.allMoments || g.analysis?.moments || []))
     errors[m.label] = (errors[m.label] || 0) + 1;
   const maxErrors = Math.max(1, ...Object.values(errors));
-  return `<header class="page-intro"><span class="eyebrow">TES ACQUIS, PAS UNE COURSE</span><h1>Ce qui devient un réflexe.</h1><p>Une fiche vue a été lue. Une idée maîtrisée a été retrouvée sans aide dans plusieurs positions.</p></header><div class="overview"><span><strong>${state.ratings.global.value}</strong>ton niveau en problèmes</span><span><strong>${streak} jour${streak > 1 ? "s" : ""}</strong>ta série</span><span><strong>${Math.round(seconds / 60)} min</strong>pratique enregistrée</span></div><section class="chart-card"><div class="section-title"><h2>Ton niveau en problèmes</h2><span class="pill">${state.ratings.global.attempts} essais</span></div><svg viewBox="0 0 700 200" role="img" aria-label="Évolution du classement de ${ratings[0]} à ${ratings.at(-1)}"><line x1="20" y1="170" x2="680" y2="170" stroke="#e7e0e4"/><polyline points="${points}" fill="none" stroke="#84526d" stroke-width="3" stroke-linecap="round"/><text x="20" y="196" fill="#998592" font-size="12">${ratings[0]}</text><text x="645" y="196" fill="#84526d" font-size="12">${ratings.at(-1)}</text></svg><p>${series.length ? "Les 100 dernières positions évaluées. Les révisions ne changent pas ton classement." : "La courbe se dessinera au fil de tes problèmes."}</p></section><div class="progress-columns"><section class="chart-card"><h2>Par thème</h2>${themes.map(([id, r]) => `<div class="rating-row"><span>${esc(entries.find((e) => e.id === id)?.title || id)}</span><strong>${r.value}</strong><progress max="2200" value="${r.value}"></progress></div>`).join("") || "<p>Pratique un thème pour voir son estimation.</p>"}</section><section class="chart-card"><h2>Mes erreurs récurrentes</h2><p>Sur tes 20 dernières parties.</p>${
+  return `<header class="page-intro"><span class="eyebrow">TES ACQUIS, PAS UNE COURSE</span><h1>Ce qui devient un réflexe.</h1><p>Une fiche vue a été lue. Une idée maîtrisée a été retrouvée sans aide dans plusieurs positions.</p></header>${priority ? `<section class="next-game-rule"><strong>Ton erreur n°1 sur tes 10 dernières parties</strong><p>${esc(friendlyMistake(priority.label))} (${priority.count} fois)</p><a class="button primary" href="#train/targeted/${encodeURIComponent(priority.label)}">Série ciblée (10 positions) →</a></section>` : ""}<div class="overview"><span><strong>${state.ratings.global.value}</strong>ton niveau en problèmes</span><span><strong>${streak} jour${streak > 1 ? "s" : ""}</strong>ta série</span><span><strong>${Math.round(seconds / 60)} min</strong>pratique enregistrée</span></div><section class="chart-card"><div class="section-title"><h2>Ton niveau en problèmes</h2><span class="pill">${state.ratings.global.attempts} essais</span></div><svg viewBox="0 0 700 200" role="img" aria-label="Évolution du classement de ${ratings[0]} à ${ratings.at(-1)}"><line x1="20" y1="170" x2="680" y2="170" stroke="#e7e0e4"/><polyline points="${points}" fill="none" stroke="#84526d" stroke-width="3" stroke-linecap="round"/><text x="20" y="196" fill="#998592" font-size="12">${ratings[0]}</text><text x="645" y="196" fill="#84526d" font-size="12">${ratings.at(-1)}</text></svg><p>${series.length ? "Les 100 dernières positions évaluées. Les révisions ne changent pas ton classement." : "La courbe se dessinera au fil de tes problèmes."}</p></section><div class="progress-columns"><section class="chart-card"><h2>Par thème</h2>${themes.map(([id, r]) => `<div class="rating-row"><span>${esc(entries.find((e) => e.id === id)?.title || id)}</span><strong>${r.value}</strong><progress max="2200" value="${r.value}"></progress></div>`).join("") || "<p>Pratique un thème pour voir son estimation.</p>"}</section><section class="chart-card"><h2>Mes erreurs récurrentes</h2><p>Sur tes 10 dernières parties.</p>${
     Object.entries(errors)
       .sort((a, b) => b[1] - a[1])
       .map(

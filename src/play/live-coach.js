@@ -3,21 +3,22 @@ import { Engine } from "../chess/engine.js";
 import { mistakeMessage as coachMessage } from "../chess/mistake-text.js";
 export { mistakeMessage as coachMessage, materialLoss } from "../chess/mistake-text.js";
 import { moveUci, describeMove, pieceName } from "../chess/notation.js";
-import { friendlyMistake } from "../ui/helpers.js";
+import { classify } from "../chess/mistake-core.js";
 
 export const coachModes = { all: "Gaffes et erreurs", blunders: "Gaffes seulement", off: "Désactivé (mode partie sérieuse)" };
 export const coachMode = (mode) => Object.hasOwn(coachModes, mode) ? mode : "all";
 
 export class LiveCoach {
-  constructor({ mode = "all", mobile = false, engineFactory = () => new Engine() } = {}) {
+  constructor({ mode = "all", mobile = false, signals = false, engineFactory = () => new Engine() } = {}) {
     this.mode = coachMode(mode);
+    this.signals = signals;
     this.options = { depth: 12, ...(mobile ? { maxTime: 700 } : {}) };
     this.factory = engineFactory;
     this.cache = new Map();
     this.closed = false;
   }
   prepare(fen) {
-    if (this.closed || this.mode === "off") return Promise.resolve(null);
+    if (this.closed || (this.mode === "off" && !this.signals)) return Promise.resolve(null);
     if (!this.cache.has(fen)) {
       const task = (async () => {
         try { this.engine ??= this.factory(); return await this.engine.search(fen, this.options); }
@@ -28,8 +29,8 @@ export class LiveCoach {
     }
     return this.cache.get(fen);
   }
-  async afterMove(fen, played) {
-    if (this.closed || this.mode === "off") return null;
+  async evaluateMove(fen, played) {
+    if (this.closed || (this.mode === "off" && !this.signals)) return null;
     try {
       const afterGame = new Chess(fen);
       moveUci(afterGame, played);
@@ -38,11 +39,13 @@ export class LiveCoach {
         ? Promise.resolve({ type: afterGame.isCheckmate() ? "mate" : "cp", score: 0, line: [] })
         : this.prepare(afterGame.fen());
       const [before, after] = await Promise.all([beforeTask, afterTask]);
-      if (this.closed) return null;
+      if (this.closed || !before?.best || !after || before.depth === 0 || after.depth === 0) return null;
       const message = coachMessage(fen, played, before, after);
-      return this.mode === "blunders" && message?.severity !== "gaffe" ? null : message;
+      const classification = before.best === played || afterGame.isCheckmate() ? { severity: null, loss: 0 } : classify(before, after);
+      return { classification, message: this.mode === "off" || (this.mode === "blunders" && message?.severity !== "gaffe") ? null : message };
     } catch { return null; }
   }
+  async afterMove(fen, played) { return (await this.evaluateMove(fen, played))?.message || null; }
   close() { this.closed = true; this.engine?.close(); this.cache.clear(); }
 }
 

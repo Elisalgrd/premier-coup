@@ -17,6 +17,7 @@ export class PuzzlePlayer {
       theme = "mixed",
       title = "Problèmes mélangés",
       onDone = null,
+      autoContinue = false,
       review = false,
       onResult = null,
       scope = null,
@@ -30,6 +31,7 @@ export class PuzzlePlayer {
       theme,
       title,
       onDone,
+      autoContinue,
       review,
       onResult,
     });
@@ -354,6 +356,7 @@ export class PuzzlePlayer {
     });
     else await this.ctx.save();
     if (this.disposed) return;
+    if (this.autoContinue && this.onDone) { this.onDone(); return; }
     this.root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>Une idée mieux reconnue.</h1><p>${this.rows.length} positions travaillées · ${this.cleanCount} sans aide.</p>${this.ctx.store?.error ? `<p class="feedback wrong">${esc(this.ctx.store.error)}</p>` : entry && !this.review ? lessonReceipt(this.ctx.state, entry) : ""}<button id="exercise-done" class="button primary">${this.onDone ? "Continuer ma séance" : "Revenir à l’entraînement"} →</button><a href="#progress" class="text-link">Voir mes progrès ↗</a></section>`;
     $("#exercise-done", this.root).onclick = () =>
       this.onDone ? this.onDone() : this.ctx.navigate("train");

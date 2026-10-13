@@ -40,7 +40,7 @@ export async function speakReview(text, { preferences = {}, speed = 1, signal, s
     u.onend = done; u.onerror = failed;
     signal?.addEventListener("abort", cancel, { once: true });
     // Some iOS voices neither start nor raise an error. Subtitles still progress.
-    timer = setTimeout(done, fallbackMs + 4000);
+    timer = setTimeout(done, fallbackMs * 2 + 5000);
     try { synth.cancel(); synth.speak(u); } catch { failed(); }
   });
 }

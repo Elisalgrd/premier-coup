@@ -1,10 +1,10 @@
 import { speakReview, waitReview } from "./review-speech.js";
 export class ReviewTimeline {
-  constructor(scenes, { show, onChange = () => {}, onDone = () => {}, preferences = {}, speak = speakReview, wait = waitReview }) {
-    Object.assign(this, { scenes, show, onChange, onDone, preferences, speak, wait });
+  constructor(scenes, { show, onChange = () => {}, onPause = () => {}, onDone = () => {}, preferences = {}, speak = speakReview, wait = waitReview }) {
+    Object.assign(this, { scenes, show, onChange, onPause, onDone, preferences, speak, wait });
     this.index = 0; this.speed = 1; this.running = false; this.generation = 0;
   }
-  pause() { this.running = false; this.generation++; this.controller?.abort(); this.onChange(this); }
+  pause() { this.running = false; this.generation++; this.controller?.abort(); this.onPause(); this.onChange(this); }
   async play() {
     if (this.running) return;
     this.running = true; const generation = ++this.generation; this.onChange(this);

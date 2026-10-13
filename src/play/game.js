@@ -1,3 +1,4 @@
+import { defaultSignals, detectSignal, signalSummary } from "./pre-move-signals.js";
 import { nextGameRule } from "./mistake-recap.js";
 import { CoachAlerts, currentBadge } from "./coach-alerts.js";
 import { playerStrip } from "../ui/player-strip.js";
@@ -26,6 +27,9 @@ export async function startGame(ctx, root, entryId = null) {
     alertUI = null,
     alerts = [],
     takebacks = 0,
+    signalsEnabled = ctx.state.preferences.preMoveSignals ?? true,
+    signals = [],
+    activeSignal = null,
     increment = 10,
     liveCoach = coachMode(ctx.state.preferences.liveCoach),
     busy = false,
@@ -44,8 +48,9 @@ export async function startGame(ctx, root, entryId = null) {
   const saved = ctx.state.activeGame;
   const reminder = nextGameRule(ctx.state.games.at(-1));
   let reminderShown = false;
-  root.innerHTML = `<a class="back-link" href="#train">← S’entraîner</a><header class="page-intro"><span class="eyebrow">JOUER, PUIS COMPRENDRE</span><h1>Une partie à ton rythme.</h1><p>Les premiers niveaux font des erreurs. Le coach explique tes erreurs après tes coups. Tu peux aussi vérifier ta position cinq fois avant de jouer.</p></header>${reminder ? `<aside class="next-game-rule"><strong>Rappel de ta dernière partie</strong><p>${esc(reminder)}</p></aside>` : ""}<section class="session-card"><label class="form-label">Adversaire<select id="game-level">${["1 · Découverte (repère ≈ 400)", "2 · Premiers réflexes (≈ 600)", "3 · Consolidation (≈ 800)", "4 · Un adversaire attentif", "5 · Des menaces à repérer", "6 · Un vrai défi", "7 · Peu d’erreurs à exploiter", "8 · Le défi le plus difficile"].map((x, i) => `<option value="${i + 1}">${x}</option>`).join("")}</select></label><label class="form-label">Tu joues<select id="game-color"><option value="w" ${side === "w" ? "selected" : ""}>Les blancs</option><option value="b" ${side === "b" ? "selected" : ""}>Les noirs</option></select></label><label class="form-label">Temps par camp<select id="game-time">${timeControls.map((t) => `<option value="${t.id}">${t.label}</option>`).join("")}</select></label><p class="small muted">Les secondes ajoutées après chaque coup te laissent le temps de vérifier les menaces.</p><label class="form-label">Coach en direct<select id="game-live-coach">${Object.entries(coachModes).map(([key, label]) => `<option value="${key}" ${key === liveCoach ? "selected" : ""}>${label}</option>`).join("")}</select></label><button id="game-start" class="button primary">Commencer →</button>${saved && !entryId ? '<button id="game-resume" class="button secondary">Reprendre ma partie →</button>' : ""}</section>`;
+  root.innerHTML = `<a class="back-link" href="#train">← S’entraîner</a><header class="page-intro"><span class="eyebrow">JOUER, PUIS COMPRENDRE</span><h1>Une partie à ton rythme.</h1><p>Les premiers niveaux font des erreurs. Le coach explique tes erreurs après tes coups. Tu peux aussi vérifier ta position cinq fois avant de jouer.</p></header>${reminder ? `<aside class="next-game-rule"><strong>Rappel de ta dernière partie</strong><p>${esc(reminder)}</p></aside>` : ""}<section class="session-card"><label class="form-label">Adversaire<select id="game-level">${["1 · Découverte (repère ≈ 400)", "2 · Premiers réflexes (≈ 600)", "3 · Consolidation (≈ 800)", "4 · Un adversaire attentif", "5 · Des menaces à repérer", "6 · Un vrai défi", "7 · Peu d’erreurs à exploiter", "8 · Le défi le plus difficile"].map((x, i) => `<option value="${i + 1}">${x}</option>`).join("")}</select></label><label class="form-label">Tu joues<select id="game-color"><option value="w" ${side === "w" ? "selected" : ""}>Les blancs</option><option value="b" ${side === "b" ? "selected" : ""}>Les noirs</option></select></label><label class="form-label">Temps par camp<select id="game-time">${timeControls.map((t) => `<option value="${t.id}">${t.label}</option>`).join("")}</select></label><p class="small muted">Les secondes ajoutées après chaque coup te laissent le temps de vérifier les menaces.</p><label class="form-label">Coach en direct<select id="game-live-coach">${Object.entries(coachModes).map(([key, label]) => `<option value="${key}" ${key === liveCoach ? "selected" : ""}>${label}</option>`).join("")}</select></label><label class="form-label">Signaux avant ton coup<select id="game-signals"><option value="on" ${signalsEnabled ? "selected" : ""}>Activés</option><option value="off" ${!signalsEnabled ? "selected" : ""}>Désactivés</option></select></label><button id="game-start" class="button primary">Commencer →</button>${saved && !entryId ? '<button id="game-resume" class="button secondary">Reprendre ma partie →</button>' : ""}</section>`;
   const persist = () => {
+    if (finished) { ctx.save(); return; }
     ctx.state.activeGame = {
       id: gameId,
       pgn: game.pgn(),
@@ -53,13 +58,16 @@ export async function startGame(ctx, root, entryId = null) {
       side,
       level,
       tokens,
-      time, increment, liveCoach, alerts, takebacks,
+      time, increment, liveCoach, alerts, takebacks, signalsEnabled, signals,
     };
     ctx.save();
   };
   const finish = (reason) => {
     if (disposed || finished) return;
     finished = true;
+    $("#game-turn", root).textContent = "Partie terminée.";
+    $("#game-coach", root).disabled = true;
+    $("#pre-move-signal", root).textContent = "";
     epoch++;
     clearInterval(clock);
     coach?.close();
@@ -81,14 +89,14 @@ export async function startGame(ctx, root, entryId = null) {
       source: "Premier coup, niveau " + level,
       id: gameId,
     });
-    Object.assign(record, { liveCoach, alerts, takebacks, increment });
+    Object.assign(record, { liveCoach, alerts, takebacks, increment, signalsEnabled, signals });
     record.autoAnalyze = true;
     record.resultReason = reason;
     saveGames(ctx.state, [record]);
     ctx.state.activeGame = null;
     ctx.save();
     $("#game-feedback", root).innerHTML =
-      `<h2>${esc(reason)}</h2><p>Ta partie est enregistrée. Comprends tes erreurs, puis retrouve les meilleurs coups.</p><a href="#train/review-video/${esc(record.id)}" class="button primary">▶ Revoir mes erreurs en vidéo</a><a href="#train/import/${esc(record.id)}" class="button secondary">Voir l’analyse →</a>`;
+      `<h2>${esc(reason)}</h2><p>${esc(signalSummary(signals))}</p><p>Ta partie est enregistrée. Comprends tes erreurs, puis retrouve les meilleurs coups.</p><a href="#train/review-video/${esc(record.id)}" class="button primary">▶ Revoir mes erreurs en vidéo</a><a href="#train/import/${esc(record.id)}" class="button secondary">Voir l’analyse →</a>`;
     $("#game-stop", root).hidden = true;
     alertUI?.close();
     $("#game-feedback", root).scrollIntoView({ block: "center" });
@@ -151,7 +159,7 @@ export async function startGame(ctx, root, entryId = null) {
         board.options.interactive = true;
         board.render();
         update();
-        coach?.prepare(game.fen());
+        prepareTurn(expectedFen, move);
       }
     } catch (e) {
       if (ticket !== epoch || disposed || finished) return;
@@ -169,7 +177,7 @@ export async function startGame(ctx, root, entryId = null) {
   };
   const newCoach = () => {
     coach?.close();
-    coach = new LiveCoach({ mode: liveCoach, mobile: matchMedia("(max-width:700px)").matches });
+    coach = new LiveCoach({ mode: liveCoach, mobile: matchMedia("(max-width:700px)").matches, signals: signalsEnabled });
   };
   const rewind = (alert) => {
     if (disposed || finished || !takebackCount(game, alert, liveCoach, takebacks)) return false;
@@ -179,6 +187,9 @@ export async function startGame(ctx, root, entryId = null) {
     newCoach();
     if (!takeback(game, alert, { mode: liveCoach, used: takebacks, time })) return false;
     takebacks++;
+    for (const signal of signals) if (signal.ply >= alert.ply) signal.retracted = true;
+    activeSignal = null;
+    $("#pre-move-signal", root).textContent = "";
     busy = false;
     board.set(game.fen(), { interactive: true, marks: [], arrows: [], last: [], badges: [] });
     $("#game-feedback", root).textContent = `Coup repris. Cherche une meilleure réponse. ${3 - takebacks} reprise${takebacks === 2 ? "" : "s"} restante${takebacks === 2 ? "" : "s"}.`;
@@ -186,10 +197,30 @@ export async function startGame(ctx, root, entryId = null) {
     coach.prepare(game.fen());
     return true;
   };
-  const assess = (fen, move, ply, timeBefore) => {
+  const prepareTurn = (previousFen = null, lastMove = null) => {
+    const fen = game.fen(), ticket = epoch;
+    activeSignal = null;
+    $("#pre-move-signal", root).textContent = "";
+    const current = coach.prepare(fen);
+    if (!signalsEnabled || !previousFen || !lastMove) return;
+    Promise.all([current, coach.prepare(previousFen)]).then(([currentScore, previousScore]) => {
+      if (disposed || finished || ticket !== epoch || game.fen() !== fen || game.turn() !== side) return;
+      const signal = detectSignal({ fen, previousFen, lastMove, currentScore, previousScore });
+      if (!signal) return;
+      const ply = game.history().length + 1;
+      activeSignal = signals.find(s => !s.retracted && s.ply === ply && s.fen === fen) || { ...signal, fen, ply, success: null };
+      if (!signals.includes(activeSignal)) signals.push(activeSignal);
+      $("#pre-move-signal", root).textContent = signal.text;
+      persist();
+    }).catch(() => {});
+  };
+  const assess = (fen, move, ply, timeBefore, signal) => {
     const ticket = epoch;
-    coach.afterMove(fen, move).then((message) => {
-      if (!message || disposed || finished || ticket !== epoch) return;
+    coach.evaluateMove(fen, move).then((result) => {
+      if (!result || disposed || finished || ticket !== epoch) return;
+      if (signal) { signal.success = !["gaffe", "erreur"].includes(result.classification.severity); persist(); }
+      const message = result.message;
+      if (!message) return;
       if (alerts.some((a) => a.ply === ply && a.fen === fen && a.played === move && !a.retracted)) return;
       const alert = { ...message, ply, timeBefore, at: Date.now() };
       alerts.push(alert);
@@ -212,6 +243,8 @@ export async function startGame(ctx, root, entryId = null) {
       liveCoach = coachMode(saved.liveCoach ?? ctx.state.preferences.liveCoach);
       alerts = saved.alerts || [];
       takebacks = saved.takebacks || 0;
+      signalsEnabled = saved.signalsEnabled ?? defaultSignals(level);
+      signals = saved.signals || [];
     } else {
       side = $("#game-color", root).value;
       level = Number($("#game-level", root).value);
@@ -220,6 +253,8 @@ export async function startGame(ctx, root, entryId = null) {
       increment = control.increment;
       liveCoach = coachMode($("#game-live-coach", root).value);
       ctx.state.preferences.liveCoach = liveCoach;
+      signalsEnabled = $("#game-signals", root).value === "on";
+      ctx.state.preferences.preMoveSignals = signalsEnabled;
       time = { w: seconds, b: seconds };
       game = new Chess(initial);
       game.setHeader("TimeControl", seconds + "+" + increment);
@@ -227,7 +262,7 @@ export async function startGame(ctx, root, entryId = null) {
       game.setHeader("Black", side === "b" ? "Toi" : "Adversaire");
     }
     newCoach();
-    root.innerHTML = `<a class="back-link" href="#train">← S’entraîner (partie conservée)</a><header class="activity-header"><div><span class="eyebrow">NIVEAU ${level}</span><h1 id="game-turn">À toi de jouer.</h1></div></header><div class="play-layout"><section><div id="player-above"></div><div id="game-board"></div><div id="player-below"></div></section><section class="play-coach"><div id="game-feedback" role="status"></div><button id="game-coach" class="button secondary">Vérifier ma position</button><div id="coach-sheet"><div class="coach-sheet-handle"><span></span><button aria-label="Fermer le conseil">✕</button></div><div id="live-coach-panel"></div></div><details><summary>Coups joués</summary><p id="game-moves" class="notation"></p></details><button id="game-stop" class="text-link">Terminer et analyser cette partie</button><small>${increment ? `${increment} secondes ajoutées après chaque coup. ` : ""}Le chrono se suspend quand tu quittes cet écran.</small></section></div>`;
+    root.innerHTML = `<a class="back-link" href="#train">← S’entraîner (partie conservée)</a><header class="activity-header"><div><span class="eyebrow">NIVEAU ${level}</span><h1 id="game-turn">À toi de jouer.</h1></div></header><div class="play-layout"><section><div id="player-above"></div><div id="game-board"></div><div id="player-below"></div><p id="pre-move-signal" role="status"></p></section><section class="play-coach"><div id="game-feedback" role="status"></div><button id="game-coach" class="button secondary">Vérifier ma position</button><div id="coach-sheet"><div class="coach-sheet-handle"><span></span><button aria-label="Fermer le conseil">✕</button></div><div id="live-coach-panel"></div></div><details><summary>Coups joués</summary><p id="game-moves" class="notation"></p></details><button id="game-stop" class="text-link">Terminer et analyser cette partie</button><small>${increment ? `${increment} secondes ajoutées après chaque coup. ` : ""}Le chrono se suspend quand tu quittes cet écran.</small></section></div>`;
     panel = new CoachPanel($("#live-coach-panel", root), {
       side, alerts, canTakeback: (alert) => !finished && !!takebackCount(game, alert, liveCoach, takebacks),
       onTakeback: rewind, onDismiss: persist,
@@ -238,9 +273,10 @@ export async function startGame(ctx, root, entryId = null) {
       fen: game.fen(),
       flipped: side === "b",
       onBadge: () => alertUI.open(),
+      badges: alerts.length ? currentBadge(alerts.at(-1), game.history().length, liveCoach) : [],
       onMove: (m) => {
         if (busy || disposed || finished || game.turn() !== side) return;
-        const fen = game.fen(), timeBefore = { ...time };
+        const fen = game.fen(), timeBefore = { ...time }, signal = activeSignal;
         try {
           moveUci(game, m);
         } catch {
@@ -251,7 +287,10 @@ export async function startGame(ctx, root, entryId = null) {
         board.options.badges = [];
         applyIncrement(time, side, increment);
         board.animate(game.fen(), m);
-        assess(fen, m, game.history().length, timeBefore);
+        if (signal) signal.played = m;
+        activeSignal = null;
+        $("#pre-move-signal", root).textContent = "";
+        assess(fen, m, game.history().length, timeBefore, signal);
         update();
         if (!terminal()) reply();
       },
@@ -284,9 +323,15 @@ export async function startGame(ctx, root, entryId = null) {
       else if (time[game.turn()] % 10 === 0) persist();
     }, 1000);
     update();
-    if (game.turn() === side) coach.prepare(game.fen());
+    if (game.turn() === side) {
+      const last = game.history({ verbose: true }).at(-1);
+      prepareTurn(last?.before, last ? last.from + last.to + (last.promotion || "") : null);
+    }
     reply();
   };
+  let signalsChosen = ctx.state.preferences.preMoveSignals != null;
+  $("#game-signals", root).onchange = () => { signalsChosen = true; };
+  $("#game-level", root).onchange = e => { if (!signalsChosen) $("#game-signals", root).value = defaultSignals(e.target.value) ? "on" : "off"; };
   $("#game-start", root).onclick = () => launch();
   if ($("#game-resume", root))
     $("#game-resume", root).onclick = () => launch(true);
