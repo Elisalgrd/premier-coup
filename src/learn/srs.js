@@ -47,7 +47,7 @@ export function rememberMistake(state, gameId, m) {
     id: "mistake:" + gameId + ":" + m.ply,
     type: "mistake",
     entryId: m.entryId,
-    gameId,
+    gameId, ply: m.ply, question: m.question,
     challenge: {
       fen: m.fen, solution: m.line, mode: "move",
       prompt: "Trouve une meilleure réponse dans ta partie.",

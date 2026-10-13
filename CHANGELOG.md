@@ -1,3 +1,9 @@
+# 2.5.0 — Toutes les erreurs de la partie
+
+- Analyse chronologique complète, imprécisions séparées et ancien top 5 conservé.
+- Textes du coach partagés, question concrète par erreur, fusion sans doublon.
+- Relance des anciens rapports sans effacer leurs données en cas d’interruption.
+
 # 2.4.1 — Alertes visibles sur mobile
 
 - Badges sur la case du coup fautif, dans les deux orientations.
