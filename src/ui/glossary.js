@@ -44,7 +44,7 @@ function decorate(root) {
       acceptNode(n) {
         return n.textContent.trim() &&
           !n.parentElement.closest(
-            "a,button,input,textarea,select,svg,video,script,style,.board-shell,[data-no-glossary]",
+            "a,button,summary,h1,h2,h3,input,textarea,select,svg,video,script,style,.board-shell,[data-no-glossary]",
           )
           ? NodeFilter.FILTER_ACCEPT
           : NodeFilter.FILTER_REJECT;

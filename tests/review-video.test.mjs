@@ -12,19 +12,19 @@ const moment={...mistakeMessage(fixture.fen,fixture.played,{...fixture.before,be
 const record={initialFen:fixture.fen,color:'w',moves:[fixture.played],analysis:{allMoments:[moment]}};
 test('review scenes show the played move, punishment, reset and best move, then a question',()=>{
  const scenes=buildReviewScript(record);
- assert.deepEqual(scenes.map(s=>s.kind),['intro','before','played','reply','best','takeaway','outro']);
+ assert.deepEqual(scenes.map(s=>s.kind),['played','reply','best','takeaway']);
  for(const s of scenes){assert.ok(s.text);const g=reviewSceneGame(record,s);assert.equal(g.fen(),s.fen);if(s.move)moveUci(g,s.move);}
  assert.equal(scenes.find(s=>s.kind==='reply').arrows[0][2],'danger');
  assert.equal(scenes.find(s=>s.kind==='best').fen,fixture.fen);
  assert.equal(scenes.find(s=>s.kind==='best').arrows[0][2],'good');
- assert.equal(scenes.find(s=>s.kind==='takeaway').minMs,3000);
+ assert.match(scenes.find(s=>s.kind==='takeaway').text,/peux-tu reprendre/);
  const black={initialFen:new Chess().fen(),moves:['e2e4','e7e5'],color:'b',analysis:{allMoments:[]}};
  const g=new Chess();moveUci(g,'e2e4');
  const m=mistakeMessage(g.fen(),'e7e5',{type:'cp',score:0,best:'c7c5',line:['c7c5']},{type:'cp',score:250,line:['g1f3']});
  black.analysis.allMoments=[{...m,ply:2}];
  const b=buildReviewScript(black);assert.equal(b.find(s=>s.kind==='best').fen.split(' ')[1],'b');
- assert.equal(b.find(s=>s.kind==='fast').move,'e2e4');
- assert.equal(buildReviewScript({...record,analysis:{allMoments:[]}}).length,1);
+ assert.equal(b.find(s=>s.kind==='played').basePly,1);
+ assert.equal(buildReviewScript({...record,analysis:{allMoments:[]}}).length,0);
 });
 test('missing speech uses readable subtitle timing and remote voices are excluded',async()=>{
  let duration;await speakReview('Une phrase lisible.',{synth:null,wait:async ms=>duration=ms});assert.ok(duration>=1500);

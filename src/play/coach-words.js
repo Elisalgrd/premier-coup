@@ -1,0 +1,27 @@
+// Complete recorded sentences, never assembled syllables or coordinates.
+// These same words are the visible explanation and the audio transcript.
+export const coachWords = {
+  played: "Voici ton coup. La flèche montre le déplacement que tu as choisi. Maintenant, on va regarder ce que ton adversaire pouvait faire juste après.",
+  taken: "Regarde la flèche rouge : l’adversaire peut prendre ta pièce. Tu ne peux pas reprendre la sienne immédiatement. Avant de déplacer une pièce, vérifie qui pourra la prendre sur sa nouvelle case.",
+  capture: "L’adversaire peut prendre la pièce au bout de la flèche rouge. Une prise ne veut pas forcément dire qu’il gagne : il faut aussi regarder ce que tu peux reprendre. Compare les pièces que chacun perd.",
+  mate: "Ton roi est attaqué et aucun coup ne peut le sauver. La partie est terminée : c’est échec et mat. Il fallait empêcher cette attaque au coup précédent.",
+  check: "Cette réponse attaque ton roi. Tu dois t’en occuper tout de suite : le sauver, bloquer l’attaque ou prendre la pièce qui l’attaque, si c’est possible. Ton propre projet doit attendre.",
+  fork: "Regarde les deux flèches rouges : une seule pièce adverse attaque deux des tiennes. Cela s’appelle une fourchette. Vérifie si tu peux prendre l’attaquant ou sauver les deux pièces avant de choisir ta réponse.",
+  missed: "Ton coup laisse passer une occasion. Le problème, ici, n’est pas forcément une pièce que tu perds : c’est ce que tu pouvais gagner. Revenons à la même position pour regarder cette possibilité.",
+  quiet: "Ce coup n’entraîne pas une perte immédiate visible dans cette réponse. Le moteur préfère une autre suite. On va la comparer, sans prétendre qu’une pièce est déjà perdue.",
+  bestMate: "Cette fois, tu attaques le roi et il n’a aucune défense légale. C’est échec et mat : tu gagnes. Le réflexe à retenir, c’est de regarder les attaques contre le roi avant de jouer un coup tranquille.",
+  bestTake: "Cette prise te rapporte une pièce. L’adversaire ne peut pas reprendre la tienne immédiatement sur cette case. Avant de construire un grand plan, cherche les pièces qu’il te laisse prendre.",
+  bestExchange: "Cette prise est une meilleure possibilité dans la suite calculée. Mais la pièce qui prend peut être reprise : il faut compter ce que chacun perd. Une prise n’est pas automatiquement une pièce gagnée.",
+  bestEscape: "Tu choisis une autre case pour ta pièce. Sur cette case, aucune pièce adverse ne l’attaque immédiatement. Tu évites ainsi la prise montrée en rouge tout à l’heure.",
+  bestStay: "Cette fois, la pièce que l’adversaire pouvait te prendre reste à sa place, hors de son attaque. Tu peux jouer ailleurs, sans l’envoyer sur la case dangereuse montrée en rouge tout à l’heure.",
+  bestStop: "Ce coup empêche la même prise immédiate. Regarde la différence avec ton coup : la pièce menacée reste sur l’échiquier. Répondre à un danger passe avant ton propre plan d’attaque.",
+  bestCastle: "Tu mets ton roi à l’abri et tu rapproches ta tour du centre en un seul coup. Ce déplacement spécial du roi et de la tour s’appelle le roque. Il se prépare en libérant les cases entre eux.",
+  bestCheck: "Ce coup attaque le roi adverse : l’adversaire doit répondre à cette attaque. Cela réduit ses choix. Ce n’est pas forcément une victoire immédiate : il faut encore vérifier comment il peut se défendre.",
+  bestDevelop: "Tu sors une pièce de sa case de départ pour qu’elle participe au jeu. C’est ce qu’on appelle développer une pièce. Au début, fais travailler tes cavaliers et tes fous, au lieu de déplacer toujours la même pièce.",
+  bestCentre: "Ce coup place une pièce ou un pion au centre. Depuis le milieu, tes pièces peuvent agir des deux côtés du plateau. Mais le centre n’est utile que si tu ne donnes pas une pièce en y allant.",
+  bestQuiet: "Voici l’autre coup proposé. Son intérêt dépend de la suite, et cette seule image ne suffit pas à expliquer tout l’avantage. Compare surtout ce que l’adversaire peut répondre aux deux coups, plutôt que de mémoriser ce déplacement.",
+  rememberSafety: "Le réflexe à garder : imagine ton coup déjà joué. Quelle pièce adverse peut prendre une des tiennes ? Si elle prend, peux-tu reprendre, et est-ce un bon échange pour toi ?",
+  rememberThreat: "Le réflexe à garder : qu’est-ce que son dernier coup attaque ? Regarde d’abord ton roi, puis tes autres pièces. Un danger concret passe avant le plan que tu avais prévu.",
+  rememberChance: "Le réflexe à garder : puis-je attaquer son roi, prendre une pièce ou créer une menace ? Examine ces possibilités avant de choisir un coup tranquille. Vérifie ensuite sa meilleure réponse.",
+  rememberCompare: "Le réflexe à garder : compare deux idées. Pour chacune, imagine la réponse la plus gênante de ton adversaire. Choisis le coup qui reste utile après cette réponse.",
+};
