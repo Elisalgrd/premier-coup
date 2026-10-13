@@ -1,3 +1,4 @@
+import { signalSummary } from "./pre-move-signals.js";
 import { Board } from "../chess/board.js";
 import { Chess } from "../chess/chess.js";
 import { moveUci } from "../chess/notation.js";
@@ -6,9 +7,9 @@ import { esc, friendlyMistake } from "../ui/helpers.js";
 
 const severityLabel = (m) => m.severity === "gaffe" ? "Gaffe" : "Erreur";
 export function coachSummaryHtml(record) {
-  if (!record.liveCoach || record.liveCoach === "off") return "";
+  if (!record.liveCoach || record.liveCoach === "off") return record.signals?.length ? `<p>${esc(signalSummary(record.signals))}</p>` : "";
   const { total, repeated } = coachSummary(record.alerts);
-  return `<section class="coach-summary"><h2>Ton bilan avec le coach</h2><p>Le coach t’a signalé ${total} erreur${total > 1 ? "s" : ""} pendant la partie.${repeated?.count >= 2 ? ` Dont ${repeated.count} du même type : ${esc(friendlyMistake(repeated.label))}.` : ""}</p>${repeated ? `<a class="text-link" href="#lesson/${esc(repeated.entryId)}">Revoir le principe →</a>` : ""}<p>${record.takebacks || 0} coup${record.takebacks === 1 ? "" : "s"} repris sur 3 possibles.</p></section>`;
+  return `<section class="coach-summary"><h2>Ton bilan avec le coach</h2><p>${esc(signalSummary(record.signals))}</p><p>Le coach t’a signalé ${total} erreur${total > 1 ? "s" : ""} pendant la partie.${repeated?.count >= 2 ? ` Dont ${repeated.count} du même type : ${esc(friendlyMistake(repeated.label))}.` : ""}</p>${repeated ? `<a class="text-link" href="#lesson/${esc(repeated.entryId)}">Revoir le principe →</a>` : ""}<p>${record.takebacks || 0} coup${record.takebacks === 1 ? "" : "s"} repris sur 3 possibles.</p></section>`;
 }
 
 export class CoachPanel {

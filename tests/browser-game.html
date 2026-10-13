@@ -1,0 +1,18 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../src/ui/style.css"><title>Vérification locale du coach</title><body><nav id="test-controls"><button id="white">Occasion blancs</button><button id="black">Menace noirs</button><button id="off">Coach désactivé</button></nav><main class="main" style="margin:0"><div id="view"></div></main><script type="module">
+import { startGame } from '../src/play/game.js';
+import { Chess } from '../src/chess/chess.js';
+import { moveUci } from '../src/chess/notation.js';
+import { emptyState } from '../src/state/schema.js';
+let cleanup;
+async function load(kind) {
+  cleanup?.();
+  const state = emptyState(), black = kind === 'black';
+  const initialFen = black ? '6k1/p7/8/1b6/8/8/8/R6K w - - 0 1' : 'r6k/8/8/8/B7/8/P7/6K1 b - - 0 1';
+  const g = new Chess(initialFen); moveUci(g, black ? 'a1b1' : 'a8e8');
+  g.setHeader('White', black ? 'Adversaire' : 'Toi');g.setHeader('Black', black ? 'Toi' : 'Adversaire');
+  state.activeGame = {id:'signal-test',initialFen,pgn:g.pgn(),side:black?'b':'w',level:1,tokens:5,time:{w:3600,b:3600},liveCoach:kind==='off'?'off':'all',signalsEnabled:kind!=='off',signals:[],alerts:[],increment:10};
+  cleanup = await startGame({state,save:async()=>{},navigate:()=>{}},document.querySelector('#view'));
+}
+for(const id of ['white','black','off']) document.querySelector('#'+id).onclick=()=>load(id);
+load('white');
+</script></body></html>

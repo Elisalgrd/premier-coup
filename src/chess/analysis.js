@@ -60,6 +60,10 @@ export async function analyzeGame(
     analyzedMoves: n,
   };
   record.analysis = result;
+  for (const s of record.signals || []) {
+    const played = actual.get(s.ply);
+    if (!s.retracted && played?.fen === s.fen && played.played === s.played) s.success = !byPly.has(s.ply);
+  }
   if (state) {
     for (const m of result.allMoments)
       rememberMistake(state, record.id, m);

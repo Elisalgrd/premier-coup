@@ -1,3 +1,4 @@
+import { mostFrequentMistake } from "../learn/targeted.js";
 import { Engine } from "../chess/engine.js";
 import { Board } from "../chess/board.js";
 import { Chess } from "../chess/chess.js";
@@ -7,8 +8,8 @@ import { mistakeQuestion } from "../chess/mistake-questions.js";
 import { CorrectionSession, checkCorrection } from "./correction.js";
 import { esc, $ } from "../ui/helpers.js";
 
-export function startCorrection(ctx, root, id) {
-  const record = ctx.state.games.find(g => g.id === id);
+export function startCorrection(ctx, root, id, { record: providedRecord = null, onDone = null } = {}) {
+  const record = providedRecord || ctx.state.games.find(g => g.id === id);
   if (!record?.analysis?.allMoments) {
     root.innerHTML = `<p>Prépare d’abord l’analyse complète de cette partie.</p><a class="button primary" href="#train/review-video/${esc(id)}">Préparer ma revue →</a>`; return;
   }
@@ -16,7 +17,9 @@ export function startCorrection(ctx, root, id) {
   let board, disposed = false, engine = new Engine(), generation = 0;
   const finish = () => {
     board?.destroy(); engine.close();
-    root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>${session.cleanCount} / ${session.moments.length} retrouvées du premier coup.</h1><p>${session.moments.length - session.cleanCount ? "Les positions faites avec une erreur ou une aide reviendront demain, en priorité." : "Les positions reviendront plus tard pour vérifier que le réflexe reste."}</p><a href="#train/game" class="button primary">Jouer avec mon nouveau réflexe →</a><a href="#train/import/${esc(id)}" class="button secondary">Revoir mon bilan</a></section>`;
+    if (onDone) { onDone(); return; }
+    const priority = mostFrequentMistake(ctx.state);
+    root.innerHTML = `<section class="completion"><span class="complete-icon">✓</span><h1>${session.cleanCount} / ${session.moments.length} retrouvées du premier coup.</h1><p>${session.moments.length - session.cleanCount ? "Les positions faites avec une erreur ou une aide reviendront demain, en priorité." : "Les positions reviendront plus tard pour vérifier que le réflexe reste."}</p>${priority ? `<a class="button primary" href="#train/targeted/${encodeURIComponent(priority.label)}">Série ciblée (10 positions) →</a>` : ""}<a href="#train/game" class="button secondary">Jouer avec mon nouveau réflexe →</a><a href="#train/import/${esc(id)}" class="button secondary">Revoir mon bilan</a></section>`;
   };
   const show = () => {
     if (disposed) return;

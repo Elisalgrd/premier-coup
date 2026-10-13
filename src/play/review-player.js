@@ -35,6 +35,7 @@ export function startReviewVideo(ctx, root, { id, ply } = {}) {
     const labels = { intro: "Ta partie, expliquée", fast: "Avance rapide", before: "Avant ton coup", played: "Ton coup", reply: "Le danger", best: "Une meilleure idée", line: "La suite", takeaway: "À retenir", outro: "Ta prochaine partie" };
     timeline = new ReviewTimeline(scenes, {
       preferences: ctx.state.preferences,
+      onPause: () => board?.root.getAnimations?.({ subtree: true }).forEach(a => a.pause()),
       show: (scene, speed) => {
         const g = reviewSceneGame(record, scene);
         board.set(g, { arrows: [], last: [], marks: [] });

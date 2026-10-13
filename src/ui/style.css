@@ -1972,3 +1972,11 @@ html[data-theme="dark"] .material-advantage, html[data-theme="dark"] .coach-oppo
 .mistake-recap li a small { color:#79546b; font-weight:bold; }
 .mistake-recap em { font-style:normal; font-weight:600; }
 [data-copy-fallback] textarea { width:100%; }
+
+#pre-move-signal:not(:empty) { margin:8px 0; padding:10px 12px; border-radius:10px; background:#fff0cd; color:#63451c; font-size:14px; line-height:1.5; }
+.targeted-banner { padding:15px 18px; background:#efe7ed; color:#604354; border-radius:12px; margin-bottom:22px; }
+.targeted-banner p { margin:8px 0; }
+.targeted-banner + #targeted-content .activity-header .eyebrow { display:none; }
+@media (max-width:700px) {
+  #game-board { max-width:min(100%, calc(100dvh - 400px)); margin:0 auto; }
+}

@@ -1,0 +1,13 @@
+# Vérifications de la boucle de progression — 2.9.0
+
+Vérifications dans le navigateur à 390 × 844 et 1280 × 900. Les captures sont dans `docs/screenshots`. La sauvegarde réelle de l’utilisatrice sur GitHub Pages n’a pas été modifiée : les parties d’essai sont sur l’origine locale.
+
+- **Alertes** : une erreur volontaire déclenche la pastille et le badge. La feuille occupe au plus 55 % de la hauteur, sans modale. Le plateau réduit reste entier ; jouer le roi depuis la feuille ouverte ferme celle-ci et le jeu continue. Les boutons de cases sont actifs. Les tests couvrent aussi l’orientation noire, le mode désactivé et les analyses tardives.
+- **Analyse complète** : un ancien rapport affiche la relance ; après celle-ci, les deux erreurs de la partie d’essai sont conservées. La fixture unitaire à sept erreurs conserve sept moments chronologiques et le top 5 attendu, sans doubler les cartes.
+- **Revue** : accès depuis Mes parties, chapitre individuel, pause, reprise et sous-titres testés. Les tests vérifient la remise à la position antérieure, les flèches et l’historique des captures ; le mode sans synthèse continue à un rythme lisible. La disponibilité et le timbre des voix dépendent du téléphone ; aucune prétention de test sur un iPhone physique.
+- **Bilan** : toutes les erreurs et leurs questions apparaissent. Le bouton de copie confirme « Liste copiée ». Une égalité de fréquence privilégie la perte la plus élevée.
+- **Correction** : coup fautif rejeté avec réponse adverse rouge, meilleur coup accepté, deuxième position réussie au premier essai, bilan 1/2. Le résultat est conservé. Les tests vérifient les alternatives à moins de 50 cp, les mats, l’indisponibilité du moteur et l’absence de double notation après rechargement.
+- **Série ciblée** : une carte personnelle puis un problème Lichess du thème ont été parcourus. Le rechargement conserve la position 2/10. Les cartes personnelles utilisent la même validation moteur que la correction de partie.
+- **Signaux** : `tests/browser-game.html` fournit des positions fixes en mémoire, sans stockage. Une tour offerte déclenche « occasion » ; une pièce menacée déclenche « menace » avec les noirs en bas. Une gaffe avec les noirs place bien son badge en h8, et le plateau reste au-dessus de la feuille. Le mode désactivé ne produit ni badge, ni pastille, ni signal. La sélection du niveau 6 désactive les signaux par défaut. Le bilan ne transforme pas une analyse encore en cours en réussite et exclut les signaux sans coup joué.
+
+Le harnais de navigateur se copie temporairement dans `dist/tests/` pour le test local. Le build normal ne copie pas `tests/` dans la publication.

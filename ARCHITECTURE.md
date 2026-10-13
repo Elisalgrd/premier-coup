@@ -36,7 +36,7 @@ La séance consolide une notion en cours avant d’en ouvrir une autre. Sa prati
 
 Niveaux 1 à 3 : recherche locale courte et erreurs probabilistes. Niveaux 4 à 8 : Stockfish, Skill Level 0/3/6/10/15, temps borné. Cinq jetons permettent de voir les pièces exposées. Les coups, la pendule et le camp choisi sont sauvegardés.
 
-Les imports publics sont explicites et bornés à 20 parties. Le PGN est validé par chess.js. L’analyse compare avant et après chaque coup de l’élève, avec score ramené à son point de vue et plafonné à ±1000 cp. Seuils : 50/100/200 cp ; les mats sont traités séparément. Cinq erreurs maximum sont conservées, trois moments présentés. Les motifs sont des heuristiques, pas une preuve tactique exhaustive. Des cartes de révision sont créées.
+Les imports publics sont explicites et bornés à 20 parties. Le PGN est validé par chess.js. L’analyse compare avant et après chaque coup de l’élève, avec score ramené à son point de vue et plafonné à ±1000 cp. Seuils : 50/100/200 cp ; les mats sont traités séparément. `allMoments` garde toutes les erreurs chronologiques ; `moments` conserve le top 5 historique et `inaccuracies` les imprécisions. Les motifs sont des heuristiques, pas une preuve tactique exhaustive. Chaque erreur crée une carte de révision.
 
 Après un mauvais coup de problème, une réponse légale est montrée immédiatement. Stockfish vérifie ensuite la réfutation et l’évaluation en local. S’il trouve une valeur proche, le texte explique qu’il s’agit d’une autre combinaison, sans prétendre que toute alternative perd.
 
@@ -65,3 +65,15 @@ Le coach en direct possède son propre Worker, distinct de l’adversaire, y com
 Chaque alerte conserve sa position avant/après, ses suites légales et ses textes. Le petit échiquier du panneau ne modifie jamais le plateau de jeu. `rememberMistake` partage le même identifiant avec l’analyse finale et préserve les révisions existantes. Les cartes dues issues des parties passent déjà en premier dans la séance quotidienne.
 
 Les reprises vérifient le coup, sa position et la longueur de l’historique. Elles annulent une ou deux actions, invalident les calculs en cours et restaurent les horloges antérieures. Les alertes reprises restent visibles et utiles en révision. Le mode, les alertes, l’incrément et le compteur sont conservés dans `activeGame`, puis dans le rapport. Les anciens instantanés sans incrément gardent zéro seconde ajoutée.
+
+## Revue et correction (2.9)
+
+Sur mobile, le coach utilise un badge indépendant des cases jouables, une pastille flottante et une feuille non modale. Le plateau se réduit pendant l’ouverture de la feuille pour rester intégralement accessible. Une réponse tardive ne pose pas de badge sur un ancien coup. Le panneau de bureau reste à côté du jeu.
+
+`mistake-core`, `mistake-text` et `mistake-questions` séparent classification, explications et questions. L’analyse finale fusionne les alertes seulement si leur position et leur coup correspondent à la partie réellement jouée. Les reprises conservent leur historique sans fausser les scènes. Les anciennes analyses restent consultables pendant leur mise à niveau.
+
+`buildReviewScript` produit des scènes pures. Chacune conserve la profondeur dans l’historique réel et la variante qui mène à sa position ; les bandeaux de captures restent donc justes. `ReviewTimeline` attend l’animation et la voix, annule les deux attentes sur pause/navigation, et recommence la scène courante à la reprise. Le premier énoncé est lancé dans le clic d’accès à la revue. Seules les voix françaises locales sont utilisées. Sans voix ou en cas d’échec, les sous-titres disposent d’un temps de lecture. Aucun fichier MP4 ni serveur de narration n’est nécessaire.
+
+Le bilan expose toutes les erreurs et choisit une question prioritaire par fréquence puis perte maximale. La correction utilise un Worker distinct à profondeur 12, compare les scores depuis le bon camp sans les plafonner pour le seuil de 50 cp, et accepte les mats alternatifs. L’instantané de correction vit dans la partie ; une position terminée ne note pas deux fois sa carte après rechargement. En cas d’indisponibilité du moteur, la solution du rapport reste accessible et la position revient en révision.
+
+Les signaux avant le coup réutilisent le cache du coach et restent génériques. Leur affichage n’attend jamais la réponse de l’adversaire. Une réponse non analysée est comptée comme en attente, jamais comme réussie ; l’analyse complète peut ensuite la vérifier. Les signaux repris sont exclus du bilan. La série ciblée mélange jusqu’à cinq cartes personnelles et les problèmes Lichess portant les thèmes attendus, sélectionnés autour du niveau actuel. Les cartes personnelles utilisent le même lecteur de correction et le même moteur de validation. L’instantané `targeted` garde le plan, l’index et les résultats pour reprendre sans recompter.
